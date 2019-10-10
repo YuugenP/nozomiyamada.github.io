@@ -117,9 +117,14 @@ function yes_no(input_text){
 
 // 3. keyword
 function keyword(input_text){
-    const word_list = input_text.replace('?','').replace('.','').split(' ');
     for(let k_to_r of keyword_list){
-        if(word_list.indexOf(k_to_r[0]) >= 0){
+        kw = k_to_r[0];
+        kw_big = kw[0].toUpperCase()+kw.substring(1);
+        pattern1 = new RegExp(kw_big + '[ \.\?]');
+        pattern2 = new RegExp(' '+kw + '[ \.\?]');
+        if(input_text.match(pattern1)){
+            return k_to_r[1];
+        }else if(input_text.match(pattern2)){
             return k_to_r[1];
         }
     }
@@ -139,7 +144,7 @@ function reflecting(input_text){
 
 // 5. repeating
 function repeating(input_text){
-    pattern = /([Mm]y|I|[Mm]ine|me)/;
+    const pattern = /([Mm]y|I|[Mm]ine|me)/;
     const result = input_text.match(pattern);
     if(result==null){
         return null;
