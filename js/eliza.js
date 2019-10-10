@@ -86,8 +86,8 @@ const keyword_list = [['mother', 'Do you resemble your mother?'],
 ['Bangkok','Bangkok? You mean Krung Thep Mahanakhon Amon Rattanakosin Mahinthara Ayuthaya Mahadilok Phop Noppharat Ratchathani Burirom Udomratchaniwet Mahasathan Amon Piman Awatan Sathit Sakkathattiya Witsanukam Prasit?'],
 ['BNK48', 'Who is your Oshimen?'],
 ['Jojo', 'Oraoraoraoraoraoraoraoraoraora'],
-['Sora Aoi', 'You know her too? I love watching her movies!'],
-['King', 'Vive le roi.']];
+['Sora Aoi', 'You know her too? I love watching her movies!']
+];
 
 
 // 1. canned response
