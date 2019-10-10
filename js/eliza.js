@@ -2,6 +2,7 @@ const canned_dic = {'How old are you?': 'You should not ask a lady about age.',
 'Is this a pen?': 'Yes, this is a pen.',
 'This is a pen.': 'Yes, that is a pen.',
 'Who is he?': 'He is Tom.',
+'Hello': 'สวัสดีค่ะ',
 'Who are you?': 'I am the most beautiful lady in the world.',
 'Where are you from?': "I'm from land of dream.",
 'You are very beautiful.': 'I know it.',
@@ -18,6 +19,8 @@ const canned_dic = {'How old are you?': 'You should not ask a lady about age.',
 'Country road.': 'Take me home.',
 'What is the plural of wug?': 'Wugs.',
 'What is your favorite movie?': 'I love Star Wars.',
+'Good morning.': 'Ohayo',
+'Ohayo': 'How are you?',
 'How are you?': "I'm fine, and you?",
 "I'm fine, and you?": "I'm good.",
 "I'm good.": 'What about you?',
@@ -141,15 +144,9 @@ function repeating(input_text){
     if(result==null){
         return null;
     }else{
-        let res = input_text.replace(/(I|me)/, 'y|ou');
-        res = res.replace(/[Mm]y/, 'y|our');
-        res = res.replace(/[Mm]ine/, 'y|ours');
-        res = res.replace(/You/, 'AAII');
-        res = res.replace(/you/, 'm|e');
-        res = res.replace(/[Yy]our/, 'm|y');
-        res = res.replace(/[Yy]ours/, 'm|ine');
-        res = res.replace('|', '');
-        res = res.replace('AAII', 'I')
+        let res = input_text.replace(/(I|me)/, 'you');
+        res = res.replace(/[Mm]y/, 'your');
+        res = res.replace(/[Mm]ine/, 'yours');
         return res[0].toUpperCase() + res.substring(1).replace('.','') + '?'; // capitalize
     }
 }
