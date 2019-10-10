@@ -133,7 +133,7 @@ function keyword(input_text){
 
 // 4. reflecting
 function reflecting(input_text){
-    const result = /[Yy]ou ((:?\w+ ){2,3})me/.exec(input_text);
+    const result = /[Yy]ou ((:?\S+ ){2,3})me/.exec(input_text);
     if(result==null){
         return null;
     }else{
