@@ -47,10 +47,23 @@
   <script src="./js/eliza.js" charset="utf-8"></script>
   <script type="text/javascript">
     function response(input_text){
-      const res = select_res(input_text);
-      document.getElementById("result").innerHTML += ">>> " + input_text + '\n' + res + '\n';
-
+      const response = select_res(input_text);
+      let target = document.getElementById("result");
+      
+      target.innerHTML += ">>> " + input_text + '\n' + response + '\n'; // append response
+      document.getElementById("text").value = ""; // clear input form
+      
+      let row_length = Number(target.getAttribute("rows"));
+      while(target.scrollHeight > target.offsetHeight){
+        row_length++;
+        target.setAttribute("rows", row_length)
+      }
       return false;
+    }
+    function reset_res(){
+      document.getElementById("result").innerHTML = "";
+      document.getElementById("result").setAttribute("rows", 10);
+      document.getElementById("text").value = "";
     }
   </script>
 </head>
@@ -98,9 +111,8 @@
           <form name="input_form" onsubmit="return response(text.value);">
               <p>
                 INPUT: <input type="text" class="form-control form-control-sm" placeholder="enter message" id="text" autocomplete="off"><br />
+                <input type="reset" class="btn btn-secondary" value='Reset' onClick="reset_res();">
               </p>
-              <input type="button" class="btn btn-primary" value="OK" onclick="response(text.value);">
-              <input type="reset" class="btn btn-secondary" value='Reset'>
           </form>
         </div>
       </div>
