@@ -144,7 +144,11 @@ function repeating(input_text){
         let res = input_text.replace(/(I|me)/, 'you');
         res = res.replace(/[Mm]y/, 'your');
         res = res.replace(/[Mm]ine/, 'yours');
-        return res[0].toUpperCase() + res.substring(1).replace('.','') + '?';
+        res = res.replace(/You/, 'I');
+        res = res.replace(/you/, 'me');
+        res = res.replace(/[Yy]our/, 'my');
+        res = res.replace(/[Yy]ours/, 'mine');
+        return res[0].toUpperCase() + res.substring(1).replace('.','') + '?'; // capitalize
     }
 }
 
