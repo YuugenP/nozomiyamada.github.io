@@ -141,13 +141,15 @@ function repeating(input_text){
     if(result==null){
         return null;
     }else{
-        let res = input_text.replace(/(I|me)/, 'you');
-        res = res.replace(/[Mm]y/, 'your');
-        res = res.replace(/[Mm]ine/, 'yours');
-        res = res.replace(/You/, 'I');
-        res = res.replace(/you/, 'me');
-        res = res.replace(/[Yy]our/, 'my');
-        res = res.replace(/[Yy]ours/, 'mine');
+        let res = input_text.replace(/(I|me)/, 'y|ou');
+        res = res.replace(/[Mm]y/, 'y|our');
+        res = res.replace(/[Mm]ine/, 'y|ours');
+        res = res.replace(/You/, 'AAII');
+        res = res.replace(/you/, 'm|e');
+        res = res.replace(/[Yy]our/, 'm|y');
+        res = res.replace(/[Yy]ours/, 'm|ine');
+        res = res.replace('|', '');
+        res = res.replace('AAII', 'I')
         return res[0].toUpperCase() + res.substring(1).replace('.','') + '?'; // capitalize
     }
 }
