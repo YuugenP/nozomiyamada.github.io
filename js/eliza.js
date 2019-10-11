@@ -148,7 +148,7 @@ function repeating(input_text){
     const pattern2 = / (my|I|mine|me)[ ,\.\?]/;
     const result1 = input_text.match(pattern1);
     const result2 = input_text.match(pattern2);
-    if(result1==null && result2==null){
+    if(result1==null&&result2==null){
         return null;
     }else{
         res = input_text.replace(/^I /, 'You ');
@@ -156,12 +156,14 @@ function repeating(input_text){
         res = res.replace(/ (I|me),/, ' you,');
         res = res.replace(/ (I|me)\./, ' you.');
         res = res.replace(/ (I|me)\?/, ' you?');
-        res = res.replace(/[Mm]y /, 'your ');
-        res = res.replace(/[Mm]ine /, 'yours ');
+        res = res.replace(/My /, 'Your ');
+        res = res.replace(/Mine /, 'Yours ');
+        res = res.replace(/ my /, ' your ');
+        res = res.replace(/ mine /, ' yours ');
         res = res.replace(/ mine,/, ' yours,');
-        res = res.replace(/ mine./, ' yours.');
-        res = res.replace(/ mine?/, ' yours?');
-        return res[0].toUpperCase() + res.substring(1).replace(/[\.\?]$/,'?'); // capitalize
+        res = res.replace(/ mine\./, ' yours.');
+        res = res.replace(/ mine\?/, ' yours?');
+        return res.replace(/[\.\?]+$/,'?'); // capitalize
     }
 }
 
