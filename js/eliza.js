@@ -119,9 +119,9 @@ function yes_no(input_text){
 function keyword(input_text){
     for(let k_to_r of keyword_list){
         kw = k_to_r[0];
-        kw_big = kw[0].toUpperCase()+kw.substring(1);
-        pattern1 = new RegExp(kw_big + '[ ,\.\?]');
-        pattern2 = new RegExp(' '+kw + '[ ,\.\?]');
+        kw_big = kw[0].toUpperCase()+kw.substring(1); // capitalize
+        pattern1 = new RegExp(kw_big + '[ ,\.\?]');  // "A**[ ,.?]"
+        pattern2 = new RegExp(' '+kw + '[ ,\.\?]');  // " a**[ ,.?]"
         if(input_text.match(pattern1)){
             return k_to_r[1];
         }else if(input_text.match(pattern2)){
@@ -133,7 +133,7 @@ function keyword(input_text){
 
 // 4. reflecting
 function reflecting(input_text){
-    const result = /[Yy]ou ((:?\S+ ){2,3})me/.exec(input_text);
+    const result = /[Yy]ou ((:?\S+ ){2,3})me[ ,\.\?]/.exec(input_text);
     if(result==null){
         return null;
     }else{
@@ -148,7 +148,7 @@ function repeating(input_text){
     const pattern2 = / (my|I|mine|me)[ ,\.\?]/;
     const result1 = input_text.match(pattern1);
     const result2 = input_text.match(pattern2);
-    if(result1==null&&result2==null){
+    if(result1==null && result2==null){
         return null;
     }else{
         res = input_text.replace(/^I /, 'You ');
@@ -158,7 +158,10 @@ function repeating(input_text){
         res = res.replace(/ (I|me)\?/, ' you?');
         res = res.replace(/[Mm]y /, 'your ');
         res = res.replace(/[Mm]ine /, 'yours ');
-        return res[0].toUpperCase() + res.substring(1).replace('.','') + '?'; // capitalize
+        res = res.replace(/ mine,/, ' yours,');
+        res = res.replace(/ mine./, ' yours.');
+        res = res.replace(/ mine?/, ' yours?');
+        return res[0].toUpperCase() + res.substring(1).replace(/[\.\?]$/,'?'); // capitalize
     }
 }
 
