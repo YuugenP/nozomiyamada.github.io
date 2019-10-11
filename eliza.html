@@ -50,7 +50,7 @@
       const response = select_res(input_text);
       let target = document.getElementById("result");
       
-      target.innerHTML += ">>> " + input_text + '\n' + response + '\n'; // append response
+      target.innerHTML += `>>> ${input_text}\n(${response[0]}) ${response[1]}\n`; // append response
       document.getElementById("text").value = ""; // clear input form
       
       let row_length = Number(target.getAttribute("rows"));

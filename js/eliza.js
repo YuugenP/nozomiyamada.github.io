@@ -107,9 +107,9 @@ function yes_no(input_text){
     }else{
         const aux = result[1];
         sent = result[2];
-        sent = sent.replace(/ me /, ' YYOOUU ');
-        sent = sent.replace(/ me$/, ' YYOOUU');
-        sent = sent.replace(/ my /, ' YYOOUURR ');
+        sent = sent.replace(/ (me|us) /, ' YYOOUU ');
+        sent = sent.replace(/ (me|us)$/, ' YYOOUU');
+        sent = sent.replace(/ (my|our) /, ' YYOOUURR ');
         sent = sent.replace(/ you /, ' me ');
         sent = sent.replace(/ you$/, ' me');
         sent = sent.replace(/ your /, ' my ');
@@ -193,9 +193,9 @@ function give_up(){
 
 function select_res(t){
     const candidates = [canned(t),yes_no(t),keyword(t),reflecting(t),repeating(t),give_up()];
-    for(let candidate of candidates){
-        if(candidate != null){
-            return candidate;
+    for(let i=0; i<6; i++){
+        if(candidates[i] != null){
+            return [i+1, candidates[i]];
         }
     }
 }
