@@ -143,14 +143,18 @@ function reflecting(input_text){
 
 // 5. repeating
 function repeating(input_text){
-    const pattern1 = /^(My|I|Mine|) /;
-    const pattern2 = / (my|I|mine|me)[ ,\.\?]/;
+    const pattern1 = /^(My|I|I'm|Mine|)/;
+    const pattern2 = / (my|I|I'm|mine|me)[ ,\.\?]/;
     const result1 = input_text.match(pattern1);
     const result2 = input_text.match(pattern2);
     if(result1==null&&result2==null){
         return null;
     }else{
-        res = input_text.replace(/^I /, 'You ');
+        res = input_text.replace(/^I am/, 'You are');
+        res = res.replace(/ I am/, 'you are');
+        res = res.replace(/^I'm /, "You're ");
+        res = res.replace(/ I'm /, " you're ");
+        res = res.replace(/^I /, "You ");
         res = res.replace(/ (I|me) /, ' you ');
         res = res.replace(/ (I|me),/, ' you,');
         res = res.replace(/ (I|me)\./, ' you.');
@@ -162,7 +166,7 @@ function repeating(input_text){
         res = res.replace(/ mine,/, ' yours,');
         res = res.replace(/ mine\./, ' yours.');
         res = res.replace(/ mine\?/, ' yours?');
-        return res.replace(/[\.\?]+$/,'?'); // capitalize
+        return res.replace(/[\.\?]+$/,'') + '?'; // delete puctuation + add ?
     }
 }
 
