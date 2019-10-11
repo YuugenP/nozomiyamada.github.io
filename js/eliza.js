@@ -101,12 +101,20 @@ function canned(input_text){
 
 // 2. yes-no question
 function yes_no(input_text){
-    const result = /(Are|Can|Could|Do|Did|May|Might|Must|Shall|Should|Have|Had|Will|Would) you (.*)\?/.exec(input_text);
+    const result = /(Are|Can|Could|Do|Did|May|Might|Must|Shall|Should|Have|Had|Will|Would) you (.*?)[ \?\.]*$/.exec(input_text);
     if(result==null){
         return null;
     }else{
         const aux = result[1];
-        const sent = result[2];
+        sent = result[2];
+        sent = sent.replace(/ me /, ' YYOOUU ');
+        sent = sent.replace(/ me$/, ' YYOOUU');
+        sent = sent.replace(/ my /, ' YYOOUURR ');
+        sent = sent.replace(/ you /, ' me ');
+        sent = sent.replace(/ you$/, ' me');
+        sent = sent.replace(/ your /, ' my ');
+        sent = sent.replace('YYOOUURR', 'your');
+        sent = sent.replace('YYOOUU', 'you');
         if(aux == 'Are'){
             return `Yes, I am ${sent}. Are you?`;
         }else{
