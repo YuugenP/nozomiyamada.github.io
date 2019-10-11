@@ -143,7 +143,7 @@ function reflecting(input_text){
 
 // 5. repeating
 function repeating(input_text){
-    const pattern1 = /^(My|I|I'm|Mine|)/;
+    const pattern1 = /^(My|I|I'm|Mine)/;
     const pattern2 = / (my|I|I'm|mine|me)[ ,\.\?]/;
     const result1 = input_text.match(pattern1);
     const result2 = input_text.match(pattern2);
