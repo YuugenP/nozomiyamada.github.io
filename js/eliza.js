@@ -120,11 +120,10 @@ function keyword(input_text){
     for(let k_to_r of keyword_list){
         kw = k_to_r[0];
         kw_big = kw[0].toUpperCase()+kw.substring(1); // capitalize
-        pattern1 = new RegExp(kw_big + '[ ,\.\?]');  // "A**[ ,.?]"
-        pattern2 = new RegExp(' '+kw + '[ ,\.\?]');  // " a**[ ,.?]"
-        if(input_text.match(pattern1)){
-            return k_to_r[1];
-        }else if(input_text.match(pattern2)){
+        pattern0 = new RegExp(kw.toLowerCase() + '([ ,\.\?]|$)');  // only lowercased word
+        pattern1 = new RegExp(kw_big + '([ ,\.\?]|$)');  // "A**[ ,.?]"
+        pattern2 = new RegExp(' '+kw + '([ ,\.\?]|$)');  // " a**[ ,.?]"
+        if(input_text.match(pattern0)||input_text.match(pattern1)||input_text.match(pattern2)){
             return k_to_r[1];
         }
     }
