@@ -101,7 +101,7 @@ function canned(input_text){
 
 // 2. yes-no question
 function yes_no(input_text){
-    const result = /(Are|Can|Could|Do|Did|May|Might|Must|Shall|Should|Have|Had|Will|Would) you (.*?)[ \?\.]*$/.exec(input_text);
+    const result = /(Are|Were|Can|Could|Do|Did|May|Might|Must|Shall|Should|Have|Had|Will|Would) you (.*?)[ \?\.]*$/.exec(input_text);
     if(result==null){
         return null;
     }else{
@@ -117,6 +117,8 @@ function yes_no(input_text){
         sent = sent.replace('YYOOUU', 'you');
         if(aux == 'Are'){
             return `Yes, I am ${sent}. Are you?`;
+        }else if(aux == "Were"){
+            return `Yes, I was ${sent}. Were you?`;
         }else{
             return `Yes, I ${aux.toLowerCase()} ${sent}. ${aux} you?`;
         }
