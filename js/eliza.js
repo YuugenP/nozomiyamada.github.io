@@ -94,6 +94,10 @@ const keyword_list = [['mother', 'Do you resemble your mother?'],
 function canned(input_text){
     if(canned_dic[input_text]){
         return canned_dic[input_text];
+    }else if(canned_dic[input_text+'.']){
+        return canned_dic[input_text+'.'];
+    }else if(canned_dic[input_text+'?']){
+        return canned_dic[input_text+'?'];
     }else{
         return null;
     }
@@ -160,7 +164,7 @@ function repeating(input_text){
     if(result1==null&&result2==null){
         return null;
     }else{
-        res = input_text.replace(/^I am/, 'You are');
+        res = input_text.replace(/^I am /, 'You are ');
         res = res.replace(/ I am/, 'you are');
         res = res.replace(/^I'm /, "You're ");
         res = res.replace(/ I'm /, " you're ");
