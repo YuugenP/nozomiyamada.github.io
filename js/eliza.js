@@ -170,6 +170,7 @@ function repeating(input_text){
         res = res.replace(/ I'm /, " you're ");
         res = res.replace(/^I /, "You ");
         res = res.replace(/ (I|me) /, ' you ');
+        res = res.replace(/ (I|me)$/, ' you');
         res = res.replace(/ (I|me),/, ' you,');
         res = res.replace(/ (I|me)\./, ' you.');
         res = res.replace(/ (I|me)\?/, ' you?');
@@ -177,6 +178,7 @@ function repeating(input_text){
         res = res.replace(/Mine /, 'Yours ');
         res = res.replace(/ my /, ' your ');
         res = res.replace(/ mine /, ' yours ');
+        res = res.replace(/ mine$/, ' yours');
         res = res.replace(/ mine,/, ' yours,');
         res = res.replace(/ mine\./, ' yours.');
         res = res.replace(/ mine\?/, ' yours?');
