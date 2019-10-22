@@ -146,11 +146,11 @@ function keyword(input_text){
 
 // 4. reflecting
 function reflecting(input_text){
-    const result = /(^| )[Yy]ou ((:?\S+ ){2,3})me([ ,\.\?]|$)/.exec(input_text);
+    const result = /(^[Yy]ou| you) ((:?\S+ ){2,3})me([ ,\.\?]|$)/.exec(input_text);
     if(result==null){
         return null;
     }else{
-        const phrase = result[1];
+        const phrase = result[2];
         return `What makes you think I ${phrase.replace('are','am')}you?`
     }
 }
