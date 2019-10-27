@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <title>PA5 Eliza</title>
+  <title>Random Thai Word</title>
 
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
   <style type="text/css">
@@ -44,14 +44,21 @@
     }
   }
   </style>
-  <script src="./js/eliza.js" charset="utf-8"></script>
-  <script type="text/javascript">
-    function response(input_text){
-      const response = select_res(input_text);
+  <script src="./js/words.js" charset="utf-8"></script>
+	<script type="text/javascript">
+		let all_words = [];
+		for(let genre in word_dic){
+			for(let word of word_dic[genre]){
+				all_words.push([genre,word])
+			}
+		}
+    function random_select(){
+			let random = Math.floor( Math.random() * all_words.length );
+			let genre = all_words[random][0];
+			let word = all_words[random][1]
+
       let target = document.getElementById("result");
-      
-      target.innerHTML += `>>>${input_text}\n(${response[0]}) ${response[1]}\n`; // append response
-      document.getElementById("text").value = ""; // clear input form
+      target.innerHTML += `${genre} : ${word}\n`; // append result
       
       let row_length = Number(target.getAttribute("rows"));
       while(target.scrollHeight > target.offsetHeight){
@@ -60,7 +67,7 @@
       }
       return false;
     }
-    function reset_res(){
+    function reset_all(){
       document.getElementById("result").innerHTML = "";
       document.getElementById("result").setAttribute("rows", 10);
       document.getElementById("text").value = "";
@@ -73,7 +80,7 @@
 <header>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-      <a class="navbar-brand" href="eliza.html">Eliza</a>
+      <a class="navbar-brand" href="eliza.html">Random Thai Word</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -85,35 +92,22 @@
   <div class="page-header" id="banner">
     <div class="row my-4">
       <div class="col-12">
-        <h3 class="display-5">PA5: Chatbot Eliza ปลอม</h3>
-        สามารถทดสอบได้โดยไม่ต้องเปิด console<br />
-        >>> <a href="https://docs.google.com/document/d/1qYOOQC_af3-rr_Jb1sH_3-AFVvsAKuOVFhOZ4jsjY8g/edit?usp=sharing" target="_blank">PA5 Instruction (Google Doc)</a><br />
-        priority of responses:
-        <ol>
-          <li>Canned question-response</li>
-          <li>Yes/No question</li>
-          <li>Keyword to canned response</li>
-          <li>Reflecting</li>
-          <li>Repeating</li>
-          <li>Give up</li>
-        </ol>
+        <h3 class="display-5">กด "select" จะสุ่มเลือกคำภาษาไทย</h3>
       </div>
     </div>
   </div>
 
   <div class="row">
     <div class="col-lg-12">
-      <div class="card text-white bg-info mb-3">
+      <div class="card text-white bg-success mb-3">
         <div class="card-header">
             <textarea class="form-control" id="result" rows="10" readonly></textarea>
         </div>
         <div class="card-body">
-          <form name="input_form" onsubmit="return response(text.value);">
-              <p>
-                INPUT: <input type="text" class="form-control form-control-sm" placeholder="enter message" id="text" autocomplete="off"><br />
-                <input type="reset" class="btn btn-secondary" value='Reset' onClick="reset_res();">
-              </p>
-          </form>
+					<p>
+						<input type="submit" class="btn btn-primary" value='Select' onClick="random_select();">
+						<input type="reset" class="btn btn-secondary" value='Reset' onClick="reset_all();">
+					</p>
         </div>
       </div>
     </div>
