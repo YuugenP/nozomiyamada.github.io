@@ -53,9 +53,11 @@
 			}
 		}
     function random_select(){
-			let random = Math.floor( Math.random() * all_words.length );
-			let genre = all_words[random][0];
-			let word = all_words[random][1]
+			let index = Math.floor( Math.random() * all_words.length );
+			let genre = all_words[index][0];
+			let word = all_words[index][1]
+
+			all_words.splice( index, 1 );
 
       let target = document.getElementById("result");
       target.innerHTML += `${genre} : ${word}\n`; // append result
