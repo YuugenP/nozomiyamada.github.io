@@ -52,6 +52,7 @@
 				all_words.push([genre,word])
 			}
 		}
+
     function random_select(){
 			let index = Math.floor( Math.random() * all_words.length );
 			let genre = all_words[index][0];
@@ -93,10 +94,10 @@
 <div class="container">
   <div class="page-header" id="banner">
     <div class="row my-4">
-      <div class="col-12">
+      <div class="col-12" id=txt>
 				<h3 class="display-5">กด "select" จะสุ่มเลือกคำภาษาไทย</h3>
 				ประเภท : คำ <br />
-				total 485 words
+				total 502 words
       </div>
     </div>
   </div>
