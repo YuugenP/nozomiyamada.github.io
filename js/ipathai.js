@@ -6,7 +6,7 @@ function Clear(){
 
 function BS(){
     target = document.getElementById("inputform");
-    if (target.value.length > 1 && "ɯ̀ɯ̂ɯ́ɯ̌ɛ̀ɛ̂ɛ́ɛ̌ɔ̀ɔ̂ɔ́ɔ̌ə̀ə̂ə́ə̌".indexOf(target.value.slice(-2)) >= 0){
+    if (target.value.length > 1 && "ɯ̀ɯ̂ɯ́ɯ̌ɛ̀ɛ̂ɛ́ɛ̌ɔ̀ɔ̂ɔ́ɔ̌ə̀ə̂ə́ə̌ätɕ".indexOf(target.value.slice(-2)) >= 0){
         target.value = target.value.slice(0,-2);
     }else if (target.value.length > 0){
         target.value = target.value.slice(0,-1);
@@ -17,8 +17,7 @@ function BS(){
 function Copy() {
 target = document.getElementById("inputform");
 target.select();
-    document.execCommand("Copy");
-    target.focus(); // move cursor
+document.execCommand("Copy");
 }
 
 function Click(char){
