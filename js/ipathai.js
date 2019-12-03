@@ -11,19 +11,19 @@ function BS(){
     }else if (target.value.length > 0){
         target.value = target.value.slice(0,-1);
     }
-    target.setActive();
+    focusWithoutScrolling(target);
 }
 
 function Copy() {
-target = document.getElementById("inputform");
-target.select();
-document.execCommand("Copy");
+    target = document.getElementById("inputform");
+    target.select();
+    document.execCommand("Copy");
 }
 
 function Click(char){
     target = document.getElementById("inputform");
     target.value += char; // append result
-    target.setActive(); 
+    focusWithoutScrolling(target);
 }
 
 function Click2(){
@@ -33,7 +33,7 @@ function Click2(){
     if (dic[finalchar]){
         target.value = (target.value.slice(0,-1) + dic[finalchar]);
     }
-    target.setActive();
+    focusWithoutScrolling(target);
 }
 
 function Click3(){
@@ -43,7 +43,7 @@ function Click3(){
     if(dic[finalchar]){
         target.value = (target.value.slice(0,-1) + dic[finalchar]);
     }
-    target.setActive();
+    focusWithoutScrolling(target);
 }
 
 function Click4(){
@@ -53,7 +53,7 @@ function Click4(){
     if(dic[finalchar]){
         target.value = (target.value.slice(0,-1) + dic[finalchar]);
     }
-    target.setActive();
+    focusWithoutScrolling(target);
 }
 
 function Click5(){
@@ -63,5 +63,11 @@ function Click5(){
     if(dic[finalchar]){
         target.value = (target.value.slice(0,-1) + dic[finalchar]);
     }
-    target.setActive();
+    focusWithoutScrolling(target);
+}
+
+function focusWithoutScrolling(target){
+    var x = window.scrollX, y = window.scrollY;
+    target.focus();
+    window.scrollTo(x, y);
 }
