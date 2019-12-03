@@ -23,71 +23,28 @@ function Copy() {
 function Click(char){
     target = document.getElementById("inputform");
     target.value += char; // append result
-    focusWithoutScrolling(target);
+    target.focus({preventScroll:true});
 }
 
-function Click2(){
+function ClickTone(tone){
     target = document.getElementById("inputform");
     finalchar = target.value.slice(-1);
-    dic = {"a":"à","i":"ì","ɯ":"ɯ̀","u":"ù","e":"è","ɛ":"ɛ̀","o":"ò","ɔ":"ɔ̀","ə":"ə̀"};
+    switch (tone) {
+        case 2:
+            dic = {"a":"à","i":"ì","ɯ":"ɯ̀","u":"ù","e":"è","ɛ":"ɛ̀","o":"ò","ɔ":"ɔ̀","ə":"ə̀"};
+            break;
+        case 3:
+            dic = {"a":"â","i":"î","ɯ":"ɯ̂","u":"û","e":"ê","ɛ":"ɛ̂","o":"ô","ɔ":"ɔ̂","ə":"ə̂"};
+            break;
+        case 4:
+            dic = {"a":"á","i":"í","ɯ":"ɯ́","u":"ú","e":"é","ɛ":"ɛ́","o":"ó","ɔ":"ɔ́","ə":"ə́"};
+            break;
+        case 5:
+            dic = {"a":"ǎ","i":"ǐ","ɯ":"ɯ̌","u":"ǔ","e":"ě","ɛ":"ɛ̌","o":"ǒ","ɔ":"ɔ̌","ə":"ə̌"};
+            break;
+    }
     if (dic[finalchar]){
         target.value = (target.value.slice(0,-1) + dic[finalchar]);
     }
-    focusWithoutScrolling(target);
-}
-
-function Click3(){
-    target = document.getElementById("inputform");
-    finalchar = target.value.slice(-1);
-    dic = {"a":"â","i":"î","ɯ":"ɯ̂","u":"û","e":"ê","ɛ":"ɛ̂","o":"ô","ɔ":"ɔ̂","ə":"ə̂"};
-    if(dic[finalchar]){
-        target.value = (target.value.slice(0,-1) + dic[finalchar]);
-    }
-    focusWithoutScrolling(target);
-}
-
-function Click4(){
-    target = document.getElementById("inputform");
-    finalchar = target.value.slice(-1);
-    dic = {"a":"á","i":"í","ɯ":"ɯ́","u":"ú","e":"é","ɛ":"ɛ́","o":"ó","ɔ":"ɔ́","ə":"ə́"};
-    if(dic[finalchar]){
-        target.value = (target.value.slice(0,-1) + dic[finalchar]);
-    }
-    focusWithoutScrolling(target);
-}
-
-function Click5(){
-    target = document.getElementById("inputform");
-    finalchar = target.value.slice(-1);
-    dic = {"a":"ǎ","i":"ǐ","ɯ":"ɯ̌","u":"ǔ","e":"ě","ɛ":"ɛ̌","o":"ǒ","ɔ":"ɔ̌","ə":"ə̌"};
-    if(dic[finalchar]){
-        target.value = (target.value.slice(0,-1) + dic[finalchar]);
-    }
-    focusWithoutScrolling(target);
-}
-
-function focusWithoutScrolling(target){
-    preventScroll.enable();	
     target.focus({preventScroll:true});
-    preventScroll.disable();	
 }
-
-var preventScroll={
-	x:0,
-	y:0,
-	setPos(x=window.pageXOffset,y=window.pageYOffset){
-		this.x=x;
-		this.y=y;
-	},
-	handleEvent(){
-		window.scrollTo(this.x,this.y);
-	},
-	enable(){
-		this.setPos();
-		window.addEventListener("scroll",this);
-	},
-	disable(){
-		window.removeEventListener("scroll",this);
-	}
-};
-
