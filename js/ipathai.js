@@ -67,7 +67,13 @@ function Click5(){
 }
 
 function focusWithoutScrolling(target){
-    var x = window.scrollX, y = window.scrollY;
+    document.addEventListener('touchmove', handleTouchMove, { passive: false });
     target.focus();
-    window.scrollTo(x, y);
+    document.removeEventListener('touchmove', handleTouchMove, { passive: false });
 }
+
+function handleTouchMove(event) {
+    event.preventDefault();
+}
+
+
