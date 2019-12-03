@@ -226,6 +226,10 @@ label {
   width: 40px !important;
 }
 
+.wfix2 {
+  width: 35px !important;
+}
+
 button {
   border-radius: 0;
 }
