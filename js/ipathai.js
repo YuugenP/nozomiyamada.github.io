@@ -11,7 +11,7 @@ function BS(){
     }else if (target.value.length > 0){
         target.value = target.value.slice(0,-1);
     }
-    focusWithoutScrolling(target);
+    target.focus({preventScroll:true});
 }
 
 function Copy() {
@@ -23,7 +23,7 @@ function Copy() {
 function Click(char){
     target = document.getElementById("inputform");
     target.value += char; // append result
-    focusWithoutScrolling(target);
+    target.focus({preventScroll:true});
 }
 
 function Click2(){
@@ -33,7 +33,7 @@ function Click2(){
     if (dic[finalchar]){
         target.value = (target.value.slice(0,-1) + dic[finalchar]);
     }
-    focusWithoutScrolling(target);
+    target.focus({preventScroll:true});
 }
 
 function Click3(){
@@ -43,7 +43,7 @@ function Click3(){
     if(dic[finalchar]){
         target.value = (target.value.slice(0,-1) + dic[finalchar]);
     }
-    focusWithoutScrolling(target);
+    target.focus({preventScroll:true});
 }
 
 function Click4(){
@@ -53,7 +53,7 @@ function Click4(){
     if(dic[finalchar]){
         target.value = (target.value.slice(0,-1) + dic[finalchar]);
     }
-    focusWithoutScrolling(target);
+    target.focus({preventScroll:true});
 }
 
 function Click5(){
@@ -63,17 +63,6 @@ function Click5(){
     if(dic[finalchar]){
         target.value = (target.value.slice(0,-1) + dic[finalchar]);
     }
-    focusWithoutScrolling(target);
+    target.focus({preventScroll:true});
 }
-
-function focusWithoutScrolling(target){
-    document.addEventListener('touchmove', handleTouchMove, { passive: false });
-    target.focus();
-    document.removeEventListener('touchmove', handleTouchMove, { passive: false });
-}
-
-function handleTouchMove(event) {
-    event.preventDefault();
-}
-
 
