@@ -6,7 +6,11 @@ function Clear(){
 
 function BS(){
     target = document.getElementById("inputform");
-    target.value = target.value.slice(0,-1);
+    if (target.value.length > 1 && "ɯ̀ɯ̂ɯ́ɯ̌ɛ̀ɛ̂ɛ́ɛ̌ɔ̀ɔ̂ɔ́ɔ̌ə̀ə̂ə́ə̌".indexOf(target.value.slice(-2)) >= 0){
+        target.value = target.value.slice(0,-2);
+    }else if (target.value.length > 0){
+        target.value = target.value.slice(0,-1);
+    }
     target.focus(); // move cursor
 }
 
@@ -27,7 +31,7 @@ function Click2(){
     target = document.getElementById("inputform");
     finalchar = target.value.slice(-1);
     dic = {"a":"à","i":"ì","ɯ":"ɯ̀","u":"ù","e":"è","ɛ":"ɛ̀","o":"ò","ɔ":"ɔ̀","ə":"ə̀"};
-    if(dic[finalchar]){
+    if (dic[finalchar]){
         target.value = (target.value.slice(0,-1) + dic[finalchar]);
     }
     target.focus(); // move cursor
