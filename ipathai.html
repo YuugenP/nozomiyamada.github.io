@@ -43,32 +43,11 @@
       margin-bottom: 10px;
     }
   }
-  </style>
+	</style>
+	<script src="./js/ipathai.js" charset="utf-8"></script>
 	<script language="javascript" type="text/javascript">
 		window.onload = function () {
 			document.getElementById("inputform").focus();
-		}
-		function Click(){
-			character = document.activeElement.innerHTML;
-			target = document.getElementById("inputform");
-			target.value += character; // append result
-			target.focus(); // move cursor
-		}
-		function Clear(){
-			target = document.getElementById("inputform");
-			target.value = '';
-			target.focus(); // move cursor
-		}
-		function BS(){
-			target = document.getElementById("inputform");
-			target.value = target.value.slice(0,-1);
-			target.focus(); // move cursor
-		}
-		function Copy() {
-      target = document.getElementById("inputform");
-      target.select();
-			document.execCommand("Copy");
-			target.focus(); // move cursor
 		}
   </script>
 </head>
@@ -92,12 +71,24 @@
     <div class="col-lg-12">
 			<button type="button" class="btn btn-outline-danger" onClick="Copy();">copy to clipboard</button>
 			<button type="button" class="btn btn-outline-primary" onClick="Clear();">clear</button>
-      <div class="form-group">
+			<div class="form-group">
 				<input class="form-control form-control-lg" type="text" placeholder="sawàtdii" id="inputform">
 			</div>
 
 			<div class="bs-component" style="margin-bottom: 15px;">
 				
+				<div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">					
+					<div class="btn-group mr-2" role="group" aria-label="First group">
+						<button type="button" class="btn btn-outline-info" onClick="BS();">BS</button>
+					</div>
+					<div class="btn-group mr-2" role="group" aria-label="Second group">
+						<button type="button" class="btn btn-outline-secondary wfix" onClick="Click2();">̀</button>
+						<button type="button" class="btn btn-outline-secondary wfix" onClick="Click3();"> ̂</button>
+						<button type="button" class="btn btn-outline-secondary wfix" onClick="Click4();">́</button>
+						<button type="button" class="btn btn-outline-secondary wfix" onClick="Click5();">ˇ</button>
+					</div>
+				</div>
+
 				<div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">					
 					<div class="btn-group mr-2" role="group" aria-label="First group">
 						<button type="button" class="btn btn-primary wfix" onClick="Click();">a</button>
@@ -110,92 +101,35 @@
 						<button type="button" class="btn btn-primary wfix" onClick="Click();">ɔ</button>
 						<button type="button" class="btn btn-primary wfix" onClick="Click();">ə</button>
 					</div>
-					<div class="btn-group mr-2" role="group" aria-label="Second group">
-						<button type="button" class="btn btn-outline-info" onClick="BS();">BS</button>
+				</div>
+
+				<div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">					
+					<div class="btn-group mr-2" role="group" aria-label="First group">
+						<button type="button" class="btn btn-success wfix" onClick="Click();">p</button>
+						<button type="button" class="btn btn-success wfix" onClick="Click();">t</button>
+						<button type="button" class="btn btn-success wfix" onClick="Click();">c</button>
+						<button type="button" class="btn btn-success wfix" onClick="Click();">k</button>
+						<button type="button" class="btn btn-success wfix" onClick="Click();">b</button>
+						<button type="button" class="btn btn-success wfix" onClick="Click();">d</button>
+						<button type="button" class="btn btn-success wfix" onClick="Click();">f</button>
+						<button type="button" class="btn btn-success wfix" onClick="Click();">s</button>
+						<button type="button" class="btn btn-success wfix" onClick="Click();">h</button>
 					</div>
 				</div>
 
 				<div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">					
 					<div class="btn-group mr-2" role="group" aria-label="First group">
-						<button type="button" class="btn btn-secondary wfix" onClick="Click();">à</button>
-						<button type="button" class="btn btn-secondary wfix" onClick="Click();">ì</button>
-						<button type="button" class="btn btn-secondary wfix" onClick="Click();">ɯ̀</button>
-						<button type="button" class="btn btn-secondary wfix" onClick="Click();">ù</button>
-						<button type="button" class="btn btn-secondary wfix" onClick="Click();">è</button>
-						<button type="button" class="btn btn-secondary wfix" onClick="Click();">ɛ̀</button>
-						<button type="button" class="btn btn-secondary wfix" onClick="Click();">ò</button>
-						<button type="button" class="btn btn-secondary wfix" onClick="Click();">ɔ̀</button>
-						<button type="button" class="btn btn-secondary wfix" onClick="Click();">ə̀</button>
+						<button type="button" class="btn btn-success wfix" onClick="Click();">ʰ</button>
+						<button type="button" class="btn btn-success wfix" onClick="Click();">r</button>
+						<button type="button" class="btn btn-success wfix" onClick="Click();">l</button>
+						<button type="button" class="btn btn-success wfix" onClick="Click();">y</button>
+						<button type="button" class="btn btn-success wfix" onClick="Click();">w</button>
+						<button type="button" class="btn btn-success wfix" onClick="Click();">m</button>
+						<button type="button" class="btn btn-success wfix" onClick="Click();">n</button>
+						<button type="button" class="btn btn-success wfix" onClick="Click();">ŋ</button>
+						<button type="button" class="btn btn-success wfix" onClick="Click();">ʔ</button>
 					</div>
 				</div>
-
-				<div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">					
-					<div class="btn-group mr-2" role="group" aria-label="First group">
-						<button type="button" class="btn btn-success wfix" onClick="Click();">â</button>
-						<button type="button" class="btn btn-success wfix" onClick="Click();">î</button>
-						<button type="button" class="btn btn-success wfix" onClick="Click();">ɯ̂</button>
-						<button type="button" class="btn btn-success wfix" onClick="Click();">û</button>
-						<button type="button" class="btn btn-success wfix" onClick="Click();">ê</button>
-						<button type="button" class="btn btn-success wfix" onClick="Click();">ɛ̂</button>
-						<button type="button" class="btn btn-success wfix" onClick="Click();">ô</button>
-						<button type="button" class="btn btn-success wfix" onClick="Click();">ɔ̂</button>
-						<button type="button" class="btn btn-success wfix" onClick="Click();">ə̂</button>
-					</div>
-					<div class="btn-group mr-2" role="group" aria-label="Second group">
-						<button type="button" class="btn btn-info wfix" onClick="Click();">p</button>
-						<button type="button" class="btn btn-info wfix" onClick="Click();">b</button>
-						<button type="button" class="btn btn-info wfix" onClick="Click();">t</button>
-						<button type="button" class="btn btn-info wfix" onClick="Click();">d</button>
-						<button type="button" class="btn btn-info wfix" onClick="Click();">c</button>
-						<button type="button" class="btn btn-info wfix" onClick="Click();">k</button>
-					</div>
-				</div>
-
-				<div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">					
-					<div class="btn-group mr-2" role="group" aria-label="First group">
-						<button type="button" class="btn btn-danger wfix" onClick="Click();">á</button>
-						<button type="button" class="btn btn-danger wfix" onClick="Click();">í</button>
-						<button type="button" class="btn btn-danger wfix" onClick="Click();">ɯ́</button>
-						<button type="button" class="btn btn-danger wfix" onClick="Click();">ú</button>
-						<button type="button" class="btn btn-danger wfix" onClick="Click();">é</button>
-						<button type="button" class="btn btn-danger wfix" onClick="Click();">ɛ́</button>
-						<button type="button" class="btn btn-danger wfix" onClick="Click();">ó</button>
-						<button type="button" class="btn btn-danger wfix" onClick="Click();">ɔ́</button>
-						<button type="button" class="btn btn-danger wfix" onClick="Click();">ə́</button>
-					</div>
-					<div class="btn-group mr-2" role="group" aria-label="Second group">
-						<button type="button" class="btn btn-info wfix" onClick="Click();">r</button>
-						<button type="button" class="btn btn-info wfix" onClick="Click();">l</button>
-						<button type="button" class="btn btn-info wfix" onClick="Click();">y</button>
-						<button type="button" class="btn btn-info wfix" onClick="Click();">w</button>
-						<button type="button" class="btn btn-info wfix" onClick="Click();">ʰ</button>
-						<button type="button" class="btn btn-info wfix" onClick="Click();">ʔ</button>
-						
-					</div>
-				</div>
-
-				<div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">					
-					<div class="btn-group mr-2" role="group" aria-label="First group">
-						<button type="button" class="btn btn-warning wfix" onClick="Click();">ǎ</button>
-						<button type="button" class="btn btn-warning wfix" onClick="Click();">ǐ</button>
-						<button type="button" class="btn btn-warning wfix" onClick="Click();">ɯ̌</button>
-						<button type="button" class="btn btn-warning wfix" onClick="Click();">ǔ</button>
-						<button type="button" class="btn btn-warning wfix" onClick="Click();">ě</button>
-						<button type="button" class="btn btn-warning wfix" onClick="Click();">ɛ̌</button>
-						<button type="button" class="btn btn-warning wfix" onClick="Click();">ǒ</button>
-						<button type="button" class="btn btn-warning wfix" onClick="Click();">ɔ̌</button>
-						<button type="button" class="btn btn-warning wfix" onClick="Click();">ə̌</button>
-					</div>
-					<div class="btn-group mr-2" role="group" aria-label="Second group">
-						<button type="button" class="btn btn-info wfix" onClick="Click();">m</button>
-						<button type="button" class="btn btn-info wfix" onClick="Click();">n</button>
-						<button type="button" class="btn btn-info wfix" onClick="Click();">ŋ</button>
-						<button type="button" class="btn btn-info wfix" onClick="Click();">f</button>
-						<button type="button" class="btn btn-info wfix" onClick="Click();">s</button>
-						<button type="button" class="btn btn-info wfix" onClick="Click();">h</button>
-					</div>
-				</div>
-
 			</div>
 		</div>
 	</div>
@@ -206,43 +140,57 @@
 				<table class="table table-hover">
 					<thead>
 						<tr>
-							<th scope="col">Thai</th>
-							<th scope="col">อา</th>
-							<th scope="col">อี</th>
-							<th scope="col">อือ</th>
-							<th scope="col">อู</th>
-							<th scope="col">เอ</th>
-							<th scope="col">แอ</th>
-							<th scope="col">โอ</th>
-							<th scope="col">ออ</th>
-							<th scope="col">เออ</th>
+							<th scope="col">Vowel</th>
+							<th scope="col">Phonemic</th>
+							<th scope="col">Phonetic</th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
-							<th scope="row">Phonemic</th>
+							<th scope="row">อา</th>
 							<td>/aa/</td>
-							<td>/ii/</td>
-							<td>/ɯɯ/</td>
-							<td>/uu/</td>
-							<td>/ee/</td>
-							<td>/ɛɛ/</td>
-							<td>/oo/</td>
-							<td>/ɔɔ/</td>
-							<td>/əə/</td>
+							<td>[äː]</td>
 						</tr>
 						<tr>
-								<th scope="row">Phonetic</th>
-								<td>[äː]</td>
-								<td>[iː]</td>
-								<td>[ɨː]</td>
-								<td>[uː]</td>
-								<td>[eː]</td>
-								<td>[ɛː]</td>
-								<td>[oː]</td>
-								<td>[ɔː]</td>
-								<td>[əː]</td>
-							</tr>
+							<th scope="row">อี</th>
+							<td>/ii/</td>
+							<td>[iː]</td>
+						</tr>
+						<tr>
+							<th scope="row">อือ</th>
+							<td>/ɯɯ/</td>
+							<td>[ɨː]</td>
+						</tr>
+						<tr>
+							<th scope="row">อู</th>
+							<td>/uu/</td>
+							<td>[uː]</td>
+						</tr>
+						<tr>
+							<th scope="row">เอ</th>
+							<td>/ee/</td>
+							<td>[eː]</td>
+						</tr>
+						<tr>
+							<th scope="row">แอ</th>
+							<td>/ɛɛ/</td>
+							<td>[ɛː]</td>
+						</tr>
+						<tr>
+							<th scope="row">โอ</th>
+							<td>/oo/</td>
+							<td>[oː]</td>
+						</tr>
+						<tr>
+							<th scope="row">ออ</th>
+							<td>/ɔɔ/</td>
+							<td>[ɔː]</td>
+						</tr>
+						<tr>
+							<th scope="row">เออ</th>
+							<td>/əə/</td>
+							<td>[əː] [ɤː]</td>
+						</tr>
 					</tbody>
 				</table>
 			</div>
