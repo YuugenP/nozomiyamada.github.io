@@ -11,7 +11,7 @@ function BS(){
     }else if (target.value.length > 0){
         target.value = target.value.slice(0,-1);
     }
-    target.focus(); // move cursor
+    target.setActive();
 }
 
 function Copy() {
@@ -23,7 +23,7 @@ document.execCommand("Copy");
 function Click(char){
     target = document.getElementById("inputform");
     target.value += char; // append result
-    target.focus(); // move cursor
+    target.setActive(); 
 }
 
 function Click2(){
@@ -33,7 +33,7 @@ function Click2(){
     if (dic[finalchar]){
         target.value = (target.value.slice(0,-1) + dic[finalchar]);
     }
-    target.focus(); // move cursor
+    target.setActive();
 }
 
 function Click3(){
@@ -43,7 +43,7 @@ function Click3(){
     if(dic[finalchar]){
         target.value = (target.value.slice(0,-1) + dic[finalchar]);
     }
-    target.focus(); // move cursor
+    target.setActive();
 }
 
 function Click4(){
@@ -53,7 +53,7 @@ function Click4(){
     if(dic[finalchar]){
         target.value = (target.value.slice(0,-1) + dic[finalchar]);
     }
-    target.focus(); // move cursor
+    target.setActive();
 }
 
 function Click5(){
@@ -63,5 +63,5 @@ function Click5(){
     if(dic[finalchar]){
         target.value = (target.value.slice(0,-1) + dic[finalchar]);
     }
-    target.focus(); // move cursor
+    target.setActive();
 }
