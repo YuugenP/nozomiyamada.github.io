@@ -222,6 +222,10 @@ label {
   margin-bottom: 0.5rem;
 }
 
+.wfix {
+  width: 40px !important;
+}
+
 button {
   border-radius: 0;
 }
