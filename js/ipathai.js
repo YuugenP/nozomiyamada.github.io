@@ -17,10 +17,9 @@ target.select();
     target.focus(); // move cursor
 }
 
-function Click(){
-    character = document.activeElement.innerHTML;
+function Click(char){
     target = document.getElementById("inputform");
-    target.value += character; // append result
+    target.value += char; // append result
     target.focus(); // move cursor
 }
 
