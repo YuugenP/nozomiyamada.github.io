@@ -11,7 +11,7 @@ function BS(){
     }else if (target.value.length > 0){
         target.value = target.value.slice(0,-1);
     }
-    target.focus({preventScroll:true});
+    focusWithoutScrolling(target);
 }
 
 function Copy() {
@@ -23,7 +23,7 @@ function Copy() {
 function Click(char){
     target = document.getElementById("inputform");
     target.value += char; // append result
-    target.focus({preventScroll:true});
+    focusWithoutScrolling(target);
 }
 
 function Click2(){
@@ -33,7 +33,7 @@ function Click2(){
     if (dic[finalchar]){
         target.value = (target.value.slice(0,-1) + dic[finalchar]);
     }
-    target.focus({preventScroll:true});
+    focusWithoutScrolling(target);
 }
 
 function Click3(){
@@ -43,7 +43,7 @@ function Click3(){
     if(dic[finalchar]){
         target.value = (target.value.slice(0,-1) + dic[finalchar]);
     }
-    target.focus({preventScroll:true});
+    focusWithoutScrolling(target);
 }
 
 function Click4(){
@@ -53,7 +53,7 @@ function Click4(){
     if(dic[finalchar]){
         target.value = (target.value.slice(0,-1) + dic[finalchar]);
     }
-    target.focus({preventScroll:true});
+    focusWithoutScrolling(target);
 }
 
 function Click5(){
@@ -63,6 +63,31 @@ function Click5(){
     if(dic[finalchar]){
         target.value = (target.value.slice(0,-1) + dic[finalchar]);
     }
-    target.focus({preventScroll:true});
+    focusWithoutScrolling(target);
 }
+
+function focusWithoutScrolling(target){
+    preventScroll.enable();	
+    target.focus({preventScroll:true});
+    preventScroll.disable();	
+}
+
+var preventScroll={
+	x:0,
+	y:0,
+	setPos(x=window.pageXOffset,y=window.pageYOffset){
+		this.x=x;
+		this.y=y;
+	},
+	handleEvent(){
+		window.scrollTo(this.x,this.y);
+	},
+	enable(){
+		this.setPos();
+		window.addEventListener("scroll",this);
+	},
+	disable(){
+		window.removeEventListener("scroll",this);
+	}
+};
 
