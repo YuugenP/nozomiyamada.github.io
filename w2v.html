@@ -46,17 +46,25 @@
 	</style>
 	<script src="./js/ipathai.js" charset="utf-8"></script>
 	<script type="text/javascript" language="javascript">
+		function reset_result() {
+			document.getElementById('thairath').innerHTML = '';
+			document.getElementById('matichon').innerHTML = '';
+			document.getElementById('dailynews').innerHTML = '';
+		}
 		function click_mode1() {
 			document.getElementById('inputwords').innerHTML = 
 			'<input type="text" class="form-control" id="word1" placeholder="word1">';
+			reset_result();
 		}
 		function click_mode2() {
 			document.getElementById('inputwords').innerHTML = 
 			'<input type="text" class="form-control" id="word1" placeholder="word1"><input type="text" class="form-control" id="word2" placeholder="word2">';
+			reset_result();
 		}
 		function click_mode3() {
 			document.getElementById('inputwords').innerHTML = 
-			'<input type="text" class="form-control" id="word1" placeholder="word1"><input type="text" class="form-control" id="word2" placeholder="word2"><input type="text" class="form-control" id="word3" placeholder="word3">';
+			'<input type="text" class="form-control" id="word1" placeholder="word1"><input type="text" class="form-control" id="word2" placeholder="- word2"><input type="text" class="form-control" id="word3" placeholder="+ word3">';
+			reset_result();
 		}
 	</script>
 </head>
@@ -79,7 +87,7 @@
   <div class="row">
     <div class="col-lg-12">
 			<legend>About</legend>
-			cosine similarity searcher for word embeddings of Thai news corpora
+			cosine similarity calculator for word embeddings of Thai news corpora
 			<ul>
 				<li>Data: Thairath, Matichon, Dailynews</li>
 				<li>Library: gensim 3.8.1 package</li>
