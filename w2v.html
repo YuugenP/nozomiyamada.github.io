@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>w2v Thai</title>
+
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  <style type="text/css">
+  .bs-component + .bs-component {
+    margin-top: 1rem;
+  }
+  @media (min-width: 768px) {
+    .bs-docs-section {
+      margin-top: 8em;
+    }
+    .bs-component {
+      position: relative;
+    }
+    .bs-component .modal {
+      position: relative;
+      top: auto;
+      right: auto;
+      bottom: auto;
+      left: auto;
+      z-index: 1;
+      display: block;
+    }
+    .bs-component .modal-dialog {
+      width: 90%;
+    }
+    .bs-component .popover {
+      position: relative;
+      display: inline-block;
+      width: 220px;
+      margin: 20px;
+    }
+    .nav-tabs {
+      margin-bottom: 15px;
+    }
+    .progress {
+      margin-bottom: 10px;
+    }
+  }
+	</style>
+	<script src="./js/ipathai.js" charset="utf-8"></script>
+	<script type="text/javascript" language="javascript">
+		function click_mode1() {
+			document.getElementById('inputwords').innerHTML = 
+			'<input type="text" class="form-control" id="word1" placeholder="word1">';
+		}
+		function click_mode2() {
+			document.getElementById('inputwords').innerHTML = 
+			'<input type="text" class="form-control" id="word1" placeholder="word1"><input type="text" class="form-control" id="word2" placeholder="word2">';
+		}
+		function click_mode3() {
+			document.getElementById('inputwords').innerHTML = 
+			'<input type="text" class="form-control" id="word1" placeholder="word1"><input type="text" class="form-control" id="word2" placeholder="word2"><input type="text" class="form-control" id="word3" placeholder="word3">';
+		}
+	</script>
+</head>
+
+<body>
+
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="ipathai.html">Word Embeddings of Thai News Corpora</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<br />
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+			<legend>About</legend>
+			cosine similarity searcher for word embeddings of Thai news corpora
+			<ul>
+				<li>Data: Thairath, Matichon, Dailynews</li>
+				<li>Library: gensim 3.8.1 package</li>
+				<li>Algorithm: skipgram, window size of 5, 150 epochs</li>
+			</ul>
+			<fieldset class="form-group">
+				<legend>Select Mode</legend>
+				<div class="form-check">
+					<label class="form-check-label">
+						<input type="radio" class="form-check-input" name="mode" id="optionsRadios1" value="option1" onclick="click_mode1()" checked>
+						search mode: gives the most similar 10 words
+					</label>
+				</div>
+				<div class="form-check">
+				<label class="form-check-label">
+						<input type="radio" class="form-check-input" name="mode" id="optionsRadios2" value="option2" onclick="click_mode2()">
+						compare mode: gives the cosine similarity of two words
+					</label>
+				</div>
+				<div class="form-check disabled">
+				<label class="form-check-label">
+						<input type="radio" class="form-check-input" name="mode" id="optionsRadios3" value="option3" onclick="click_mode3()">
+						calculate mode: gives the result of "word1 - word2 + word3"
+					</label>
+				</div>
+			</fieldset>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="bs-component">
+				<form>
+					<fieldset>
+						<legend>Input Words</legend><button type="submit" class="btn btn-primary">Search</button>
+						<div class="form-group", id='inputwords'>
+							<input type="email" class="form-control" id="word1" placeholder="word1">
+						</div>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-12">
+			<legend>Results</legend>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-4">			
+			<div class="card border-success mb-3" style="max-width: 20rem;">
+				<div class="card-header">Thairath</div>
+				<div class="card-body">
+					<p class="card-text" id='thairath'></p>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-4">
+			<div class="card border-warning mb-3" style="max-width: 20rem;">
+				<div class="card-header">Matichon</div>
+				<div class="card-body">
+					<p class="card-text" id='matichon'></p>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-4">
+			<div class="card border-danger mb-3" style="max-width: 20rem;">
+				<div class="card-header">Dailynews</div>
+				<div class="card-body">
+					<p class="card-text" id='dailynews'></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<footer>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <p><font color="white">&copy; 2020 Nozomi Yamada All Rights Reserved.</font></p>
+  </nav>
+</footer>
+
+</body>
+</html>
