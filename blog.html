@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
+	<meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <title>Blog</title>
@@ -12,12 +12,8 @@
     margin-top: 1rem;
   }
   @media (min-width: 768px) {
-    .bs-docs-section {
-      margin-top: 8em;
-    }
-    .bs-component {
-      position: relative;
-    }
+    .bs-docs-section {margin-top: 8em;}
+    .bs-component {position: relative;}
     .bs-component .modal {
       position: relative;
       top: auto;
@@ -27,76 +23,92 @@
       z-index: 1;
       display: block;
     }
-    .bs-component .modal-dialog {
-      width: 90%;
-    }
+    .bs-component .modal-dialog {width: 90%;}
     .bs-component .popover {
       position: relative;
       display: inline-block;
       width: 220px;
       margin: 20px;
     }
-    .nav-tabs {
-      margin-bottom: 15px;
-    }
-    .progress {
-      margin-bottom: 10px;
-    }
+    .nav-tabs {margin-bottom: 15px;}
+    .progress {margin-bottom: 10px;}
   }
   </style>
+
+	<title>Colorboxで指定のURLをオーバーレイ表示するサンプル1</title>
+	<meta name="viewport" content="width=640">
+	<link rel="stylesheet" href="./js/colorbox/colorbox.css" />
+	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="./js/colorbox/jquery.colorbox-min.js"></script>
+	<script>
+		var $d = jQuery.noConflict();
+		$d(document).ready(function(){
+			$d(".iframe").colorbox({rel:'group1', iframe:true, width:"80%", height:"80%"});
+			$d(".inline").colorbox({inline:true, width:"50%"});
+		});
+	</script>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="./js/bootstrap.min.js"></script>
+	
+	<script type="text/javascript">
+		$('.bs-component [data-toggle="popover"]').popover();
+		$('.bs-component [data-toggle="tooltip"]').tooltip();
+	</script>
 </head>
+
 <body>
 
 <header>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="index.html">Nozomi</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<a class="navbar-brand" href="index.html">Nozomi</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
 
-    <div class="collapse navbar-collapse" id="navbarColor02">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="index.html">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="about.html">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="link.html">Links</a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="blog.html">Blog</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="ipathai.html">タイ語入力</a>
-        </li>
-      </ul>
-      <!--
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="text" placeholder="Search">
-        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-      </form>
-      -->
-    </div>
-  </nav>
+		<div class="collapse navbar-collapse" id="navbarColor02">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="index.html">Home</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="about.html">About</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="link.html">Links</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="blog.html">Blog</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="ipathai.html">タイ語入力</a>
+				</li>
+			</ul>
+			<!--
+			<form class="form-inline my-2 my-lg-0">
+				<input class="form-control mr-sm-2" type="text" placeholder="Search">
+				<button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+			</form>
+			-->
+		</div>
+	</nav>
 </header>
-  
+
 <div class="container">
 
-  <div class="page-header" id="banner">
-    <div class="row my-3">
-      <div class="col-12">
-        <h1 class="display-4">Blog</h1>
-      </div>
-    </div>
-  </div>
+	<div class="page-header" id="banner">
+		<div class="row my-3">
+			<div class="col-12">
+				<h1 class="display-4">Blog</h1>
+			</div>
+		</div>
+	</div>
 
-  <div class="row">
-    <div class="col-lg-6">
-      <div class="bs-component">
-        <h3>日本語応用言語学 2020</h3>
-        <table class="table table-hover">
+	<div class="row">
+		<div class="col-lg-6">
+			<div class="bs-component">
+				<h3>日本語応用言語学 2020</h3>
+				<table class="table table-hover">
 					<thead>
 						<tr>
 							<th scope="col">date</th>
@@ -105,51 +117,49 @@
 					</thead>
 					<tbody>
 						<tr>
-							<th scope="row">2020/1/6</th>
-							<td>応用言語学と一般言語学</td>
+							<th scope="row">1/6</th>
+							<td><a class="iframe" href="./blogs/0106.html" title="応用言語学と一般言語学">応用言語学と一般言語学</a></td>
 						</tr>
 						<tr>
-							<th scope="row">2020/1/20</th>
+							<th scope="row">1/20</th>
 							<td>指示語の性質</td>
 						</tr>
 						<tr>
-							<th scope="row">2020/1/27</th>
+							<th scope="row">1/27</th>
 							<td></td>
 						</tr>
 						<tr>
-							<th scope="row">2020/2/3</th>
+							<th scope="row">2/3</th>
+							<td></td>
+						</tr>
+						<tr>
+							<th scope="row">2/10</th>
+							<td></td>
+						</tr>
+						<tr>
+							<th scope="row">2/17</th>
 							<td></td>
 						</tr>
 					</tbody>
 				</table>
-      </div>
-    </div>
+			</div>
+		</div>
 
-    <div class="col-lg-6">
-      <div class="bs-component">
-        <h2>others</h2>
-        <legend>Under Construction</legend>
-      </div>
-    </div>
-  </div>
+		<div class="col-lg-6">
+			<div class="bs-component">
+				<h2>others</h2>
+				<legend>Under Construction</legend>
+			</div>
+		</div>
+	</div>
 
 </div>
-
 
 <footer>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <p><font color="white">&copy; 2020 Nozomi Yamada All Rights Reserved.</font></p>
   </nav>
 </footer>
-
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="./js/bootstrap.min.js"></script>
-
-<script type="text/javascript">
-  $('.bs-component [data-toggle="popover"]').popover();
-  $('.bs-component [data-toggle="tooltip"]').tooltip();
-</script>
 
 </body>
 </html>
