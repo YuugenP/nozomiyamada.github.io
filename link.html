@@ -49,50 +49,57 @@
 
 <header>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">Nozomi Yamada</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+    <a class="navbar-brand" href="index.html">Nozomi</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-      <div class="collapse navbar-collapse" id="navbar">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about.html">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="link.html">Links<span class="sr-only">(current)</span></a>
-          </li>
-        </ul>
-      </div>
+    <div class="collapse navbar-collapse" id="navbarColor02">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">About</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="link.html">Links</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="blog.html">Blog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="ipathai.html">タイ語入力</a>
+        </li>
+      </ul>
+      <!--
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search">
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+      </form>
+      -->
     </div>
   </nav>
 </header>
-
+  
 <div class="container">
 
   <div class="page-header" id="banner">
     <div class="row my-3">
       <div class="col-12">
-        <h2 class="display-3">Links</h2>
+        <h1 class="display-4">Links</h1>
       </div>
     </div>
   </div>
 
-<section class="bs-docs-section">
-
   <div class="row">
-
     <div class="col-lg-4">
       <div class="bs-component">
-        <h3>Chulalongkorn University</h3>
+        <h3>Chulalongkorn U</h3>
         <ul>
           <li><a href="https://attapol.github.io/lab.html" target="_blank">NLP Lab @ Chula</a></li>
-          <br>
           <li><a href="http://www.arts.chula.ac.th/ling/" target="_blank">Department of Linguistics</a></li>
+          <br />
           <li><a href="http://http://www.arts.chula.ac.th/" target="_blank">Faculty of Arts</a></li>
           <li><a href="https://www.chula.ac.th" target="_blank">Chulalongkorn University</a></li>
           <li><a href="http://www.arts.chula.ac.th/libsci/" target="_blank">Department of Library Science</a></li>
@@ -105,27 +112,37 @@
       </div>
     </div>
 
-    <div class="col-lg-8">
+    <div class="col-lg-4">
       <div class="bs-component">
-        <h2>Database, etc</h2>
+        <h2>Database</h2>
+        <legend>Thai corpora</legend>
         <ul>
-          General Linguistics
-          <li><a href="http://www.nativlang.com/linguistics/" target="_blank">nativlang</a></li>
-
-          Thai corpora
           <li><a href="http://www.arts.chula.ac.th/~ling/tnc3/" target="_blank">Thai National Corpus (TNC)</a></li>
           <li><a href="https://www.arts.chula.ac.th/tnhc/search" target="_blank">Thai National Historical Corpus (TNHC)</a></li>
           <li><a href="https://attapol.github.io/tlc.html">Thai Literature Corpus (TLC)</a></li>
           <li><a href="https://www.nectec.or.th/corpus/" target="_blank">Annotated & Multimedia Corpus by NECTEC</a></li>
+        </ul>
 
-          <br> other corpora
+        <legend>other corpora</legend>
+        <ul>
           <li><a href="http://www.natcorp.ox.ac.uk" target="_blank">British National Corpus (BNC)</a></li>
           <li><a href="https://corpus.byu.edu/coca/" target="_blank">Corpus of Contemporary American English</a></li>
           <li><a href="https://corpus.byu.edu/coha/" target="_blank">Corpus of Historical American English</a></li>
           <li><a href="http://nlb.ninjal.ac.jp/search/" target="_blank">Balanced Corpus of Contemporary Written Japanese</a></li>
           <li><a href="https://wals.info" target="_blank">The World Atlas of Language Structures</a></li>
+        </ul>
+      </div>
+    </div>
 
-          <br>syntax / semantics
+    <div class="col-lg-4">
+      <div class="bs-component">
+        <h2>Others</h2>
+        <legend>General Linguistics</legend>
+        <ul>
+          <li><a href="http://www.nativlang.com/linguistics/" target="_blank">nativlang</a></li>
+        </ul>
+        <legend>Syntax / Semantics</legend>
+        <ul>
           <li><a href="https://framenet.icsi.berkeley.edu/fndrupal/" target="_blank">FrameNet</a></li>
           <li><a href="https://wordnet.princeton.edu" target="_blank">WordNet</a></li>
           <li><a href="http://vectors.nlpl.eu/explore/embeddings/en/similar/" target="_blank">WebVectors</a></li>
@@ -133,8 +150,9 @@
           <li><a href="http://nlp.stanford.edu:8080/parser/index.jsp">Stanford Parser</a></li>
           <li><a href="https://universaldependencies.org/u/dep/index.html" target="_blank">Universal Dependency Relations</a></li>
           <li><a href="https://universaldependencies.org/u/pos/index.html" target="_blank">Universal POS tags</a></li>
-
-          <br>phonology / phonetics
+        </ul>
+        <legend>Phonology / Phonetics</legend>
+        <ul>
           <li><a href="http://www.phonology.us" target="_blank">PhonoApps</a></li>
           <li><a href="http://www.ipachart.com" target="_blank">Interactive IPA Chart</a></li>
           <li><a href="https://ipa.typeit.org/full/" target="_blank">Type IPA</a></li>
@@ -142,18 +160,14 @@
         </ul>
       </div>
     </div>
-
   </div>
-</section>
 
 </div>
 
-<section class="bs-docs-section">
-</section>
 
 <footer>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <p><font color="white">&copy; 2019 Nozomi Yamada All Rights Reserved.</font></p>
+    <p><font color="white">&copy; 2020 Nozomi Yamada All Rights Reserved.</font></p>
   </nav>
 </footer>
 
