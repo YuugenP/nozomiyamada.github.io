@@ -58,15 +58,12 @@
 			num = document.getElementById('selectbox').selectedIndex;
 			articleID = document.getElementById('selectbox').options[num].value;
 			dic = data[articleID];
-			articleN = dic['normal'];
-			articleE = dic['easy'];
-			urlnormal = dic['urlnormal'];
-			urleasy = dic['urleasy'];
 			document.getElementById('articleid').innerHTML = articleID;
-			document.getElementById('normal').innerHTML = articleN;
-			document.getElementById('easy').innerHTML = articleE;
-			document.getElementById('urlnormal').innerHTML = `<a href="${urlnormal}" target=blank_>go to website</a>`;
-			document.getElementById('urleasy').innerHTML = `<a href="${urleasy}" target=blank_>go to website</a>`;
+			document.getElementById('date').innerHTML = dic['date'];
+			document.getElementById('normal').innerHTML = dic['normal'];
+			document.getElementById('easy').innerHTML = dic['easy'];
+			document.getElementById('urlnormal').innerHTML = `<a href="${dic['urlnormal']}" target=blank_>go to website</a>`;
+			document.getElementById('urleasy').innerHTML = `<a href="${dic['urleasy']}" target=blank_>go to website</a>`;
 		}
 		function Copy() {
     target = document.getElementById("articleid");
@@ -128,16 +125,17 @@
 		<div class="bs-component">
 			<div class="form-group">
 				<select class="custom-select" id='selectbox' name='selectbox' onchange="selectboxChange();">
-					<option selected>--- select News ---</option>				
+					<option selected>--- select news ---</option>				
 				</select>
 				ID : <span id='articleid'></span> <!-- <button type="button" onClick="Copy();">copy</button> --> <br>
+				date : <span id='date'></span><br>
 				URL normal : <span id='urlnormal'></span><br>
 				URL easy : <span id='urleasy'></span>
 			</div>
 		</div>
 	</div>
 
-	<div class="row">
+	<div class="row my-3">
 		<div class="col-lg-6">
 			<div class="bs-component">
 				<h3>normal</h3>
@@ -156,10 +154,19 @@
 </div>
 
 <footer>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <p><font color="white">&copy; 2020 Nozomi Yamada All Rights Reserved.</font></p>
-  </nav>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<p><font color="white">&copy; 2020 Nozomi Yamada All Rights Reserved.</font></p>
+	</nav>
 </footer>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="./js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+  $('.bs-component [data-toggle="popover"]').popover();
+  $('.bs-component [data-toggle="tooltip"]').tooltip();
+</script>
 
 </body>
 </html>
