@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>NHK WEB</title>
+
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  <style type="text/css">
+  .bs-component + .bs-component {
+    margin-top: 1rem;
+	}
+	.org {color:crimson}
+	.plc {color:blue}
+	.per {color:darkgreen}
+  @media (min-width: 768px) {
+    .bs-docs-section {
+      margin-top: 8em;
+    }
+    .bs-component {
+      position: relative;
+    }
+    .bs-component .modal {
+      position: relative;
+      top: auto;
+      right: auto;
+      bottom: auto;
+      left: auto;
+      z-index: 1;
+      display: block;
+    }
+    .bs-component .modal-dialog {
+      width: 90%;
+    }
+    .bs-component .popover {
+      position: relative;
+      display: inline-block;
+      width: 220px;
+      margin: 20px;
+    }
+    .nav-tabs {
+      margin-bottom: 15px;
+    }
+    .progress {
+      margin-bottom: 10px;
+    }
+  }
+	</style>
+	<script src="./js/nhk/join.js" charset="utf-8"></script>
+	<script type="text/javascript">
+		window.onload = function(){
+			for(dic of data){
+				document.getElementById('selectbox').innerHTML += `<option value="${dic['id']}">${dic['id'].slice(0,-4)} : ${dic['normal'].slice(0,20)}</option>`;
+			}
+		}
+		function selectboxChange(){
+			num = document.getElementById('selectbox').selectedIndex;
+			articleID = document.getElementById('selectbox').options[num].value;
+			for(dic of data){
+				if(articleID == dic['id']){
+					articleN = dic['normal'];
+					articleE = dic['easy'];
+					urlnormal = dic['urlnormal'];
+					urleasy = dic['urleasy'];
+				}
+			}
+			document.getElementById('articleid').innerHTML = articleID;
+			document.getElementById('normal').innerHTML = articleN;
+			document.getElementById('easy').innerHTML = articleE;
+			document.getElementById('urlnormal').innerHTML = `<a href="${urlnormal}" target=blank_>go to website</a>`;
+			document.getElementById('urleasy').innerHTML = `<a href="${urleasy}" target=blank_>go to website</a>`;
+		}
+		function Copy() {
+    target = document.getElementById("articleid");
+    target.innerHTML.select();
+    document.execCommand("Copy");
+}
+	</script>
+</head>
+<body>
+
+<body>
+
+<header>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<a class="navbar-brand" href="index.html">Nozomi</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarColor02">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="index.html">Home</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="about.html">About</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="link.html">Links</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="blog.html">Blog</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="ipathai.html">タイ語入力</a>
+				</li>
+			</ul>
+			<!--
+			<form class="form-inline my-2 my-lg-0">
+				<input class="form-control mr-sm-2" type="text" placeholder="Search">
+				<button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+			</form>
+			-->
+		</div>
+	</nav>
+</header>
+
+<div class="container">
+
+	<div class="page-header" id="banner">
+		<div class="row my-3">
+			<div class="col-12">
+				<h1 class="display-5">NHK WEB</h1>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-12">
+		<div class="bs-component">
+			<div class="form-group">
+				<select class="custom-select" id='selectbox' name='selectbox' onchange="selectboxChange();">
+					<option selected>--- select News ---</option>				
+				</select>
+				ID : <span id='articleid'></span> <!-- <button type="button" onClick="Copy();">copy</button> --> <br>
+				URL normal : <span id='urlnormal'></span><br>
+				URL easy : <span id='urleasy'></span>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-6">
+			<div class="bs-component">
+				<h3>normal</h3>
+				<div id='normal'></div>
+			</div>
+		</div>
+
+		<div class="col-lg-6">
+			<div class="bs-component">
+				<h3>easy</h3>
+				<div id='easy'></div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+<footer>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <p><font color="white">&copy; 2020 Nozomi Yamada All Rights Reserved.</font></p>
+  </nav>
+</footer>
+
+</body>
+</html>
