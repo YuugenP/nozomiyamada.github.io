@@ -50,21 +50,18 @@
 	<script src="./js/nhk/join.js" charset="utf-8"></script>
 	<script type="text/javascript">
 		window.onload = function(){
-			for(dic of data){
-				document.getElementById('selectbox').innerHTML += `<option value="${dic['id']}">${dic['id'].slice(0,-4)} : ${dic['normal'].slice(0,20)}</option>`;
+			for(var ID in data){
+				document.getElementById('selectbox').innerHTML += `<option value="${ID}">${ID.slice(0,-4)} : ${data[ID]['normal'].slice(0,30)}</option>`;
 			}
 		}
 		function selectboxChange(){
 			num = document.getElementById('selectbox').selectedIndex;
 			articleID = document.getElementById('selectbox').options[num].value;
-			for(dic of data){
-				if(articleID == dic['id']){
-					articleN = dic['normal'];
-					articleE = dic['easy'];
-					urlnormal = dic['urlnormal'];
-					urleasy = dic['urleasy'];
-				}
-			}
+			dic = data[articleID];
+			articleN = dic['normal'];
+			articleE = dic['easy'];
+			urlnormal = dic['urlnormal'];
+			urleasy = dic['urleasy'];
 			document.getElementById('articleid').innerHTML = articleID;
 			document.getElementById('normal').innerHTML = articleN;
 			document.getElementById('easy').innerHTML = articleE;
@@ -75,7 +72,7 @@
     target = document.getElementById("articleid");
     target.innerHTML.select();
     document.execCommand("Copy");
-}
+		}
 	</script>
 </head>
 <body>
