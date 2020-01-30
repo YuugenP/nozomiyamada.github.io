@@ -11,8 +11,8 @@
   .bs-component + .bs-component {
     margin-top: 1rem;
 	}
-	.org {color:crimson}
-	.plc {color:blue}
+	.org {color:blue}
+	.plc {color:orange}
 	.per {color:darkgreen}
   @media (min-width: 768px) {
     .bs-docs-section {
@@ -53,6 +53,7 @@
 			for(var ID in data){
 				document.getElementById('selectbox').innerHTML += `<option value="${ID}">${ID.slice(0,-4)} : ${data[ID]['normal'].slice(0,30)}</option>`;
 			}
+			document.getElementById('articlen').innerHTML = Object.keys(data).length;
 		}
 		function selectboxChange(){
 			num = document.getElementById('selectbox').selectedIndex;
@@ -116,7 +117,7 @@
 	<div class="page-header" id="banner">
 		<div class="row my-3">
 			<div class="col-12">
-				<h1 class="display-5">NHKWEB</h1>
+				<h1 class="display-5">NHK WEB</h1>
 			</div>
 		</div>
 	</div>
@@ -124,6 +125,7 @@
 	<div class="col-12">
 		<div class="bs-component">
 			<div class="form-group">
+				total <span id='articlen'></span> articles - <a href="https://docs.google.com/spreadsheets/d/1ObBdiCKT-1ZcKTtRW1so7aOOQJ-nWBZRzL-O2iO15Lg/edit?usp=sharing" target="blank_">google sheet</a><br>
 				<select class="custom-select" id='selectbox' name='selectbox' onchange="selectboxChange();">
 					<option selected>--- select news ---</option>				
 				</select>
