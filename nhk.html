@@ -62,6 +62,7 @@
 			document.getElementById('articleid').innerHTML = articleID;
 			document.getElementById('date').innerHTML = dic['date'];
 			document.getElementById('normal').innerHTML = dic['normal'];
+			document.getElementById('titleeasy').innerHTML = dic['title'];
 			document.getElementById('easy').innerHTML = dic['easy'];
 			document.getElementById('urlnormal').innerHTML = `<a href="${dic['urlnormal']}" target=blank_>go to website</a>`;
 			document.getElementById('urleasy').innerHTML = `<a href="${dic['urleasy']}" target=blank_>go to website</a>`;
@@ -130,6 +131,7 @@
 					<option selected>--- select news ---</option>				
 				</select>
 				ID : <span id='articleid'></span> <!-- <button type="button" onClick="Copy();">copy</button> --> <br>
+				title easy : <span id='titleeasy'></span><br>
 				date : <span id='date'></span><br>
 				URL normal : <span id='urlnormal'></span><br>
 				URL easy : <span id='urleasy'></span>
