@@ -67,10 +67,19 @@
 			document.getElementById('urlnormal').innerHTML = `<a href="${dic['urlnormal']}" target=blank_>go to website</a>`;
 			document.getElementById('urleasy').innerHTML = `<a href="${dic['urleasy']}" target=blank_>go to website</a>`;
 		}
-		function Copy() {
-    target = document.getElementById("articleid");
-    target.innerHTML.select();
-    document.execCommand("Copy");
+		function freq() {
+			targets = document.getElementsByClassName('newsdata');
+			for(target of targets){
+				target.innerHTML = '';
+			}
+			document.getElementById('normal').innerHTML = '<table class="table table-hover"><thead><tr><th>rank</th><th>漢字</th><th>count</th><th>percent</th></tr></thead><tbody id="tablenormal"></tbody></table>'
+			for(var i=0; i<rank_n.length; i++){
+				document.getElementById('tablenormal').innerHTML += `<tr><td>${i+1}</td><td>${rank_n[i][0]}</td><td>${rank_n[i][1]}</td><td>${rank_n[i][2]}</td></tr>`;
+			}
+			document.getElementById('easy').innerHTML = '<table class="table table-hover"><thead><tr><th>rank</th><th>漢字</th><th>count</th><th>percent</th></tr></thead><tbody id="tableeasy"></tbody></table>'
+			for(var i=0; i<rank_n.length; i++){
+				document.getElementById('tableeasy').innerHTML += `<tr><td>${i+1}</td><td>${rank_e[i][0]}</td><td>${rank_e[i][1]}</td><td>${rank_e[i][2]}</td></tr>`;
+			}
 		}
 	</script>
 </head>
@@ -78,7 +87,7 @@
 
 <body>
 
-<header>
+	<header>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 		<a class="navbar-brand" href="index.html">Nozomi</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
@@ -130,11 +139,11 @@
 				<select class="custom-select" id='selectbox' name='selectbox' onchange="selectboxChange();">
 					<option selected>--- select news ---</option>				
 				</select>
-				ID : <span id='articleid'></span> <!-- <button type="button" onClick="Copy();">copy</button> --> <br>
-				title easy : <span id='titleeasy'></span><br>
-				date : <span id='date'></span><br>
-				URL normal : <span id='urlnormal'></span><br>
-				URL easy : <span id='urleasy'></span>
+				ID : <span id='articleid' class='newsdata'></span> <!--  --> <br>
+				title easy : <span id='titleeasy' class='newsdata'></span><br>
+				date : <span id='date' class='newsdata'></span><br>
+				URL normal : <span id='urlnormal' class='newsdata'></span>, URL easy : <span id='urleasy' class='newsdata'></span><br>
+				<button type="button" onClick="freq();">Kanji Frequency</button>
 			</div>
 		</div>
 	</div>
@@ -143,14 +152,14 @@
 		<div class="col-lg-6">
 			<div class="bs-component">
 				<h3>normal</h3>
-				<div id='normal'></div>
+				<div id='normal' class='newsdata'></div>
 			</div>
 		</div>
 
 		<div class="col-lg-6">
 			<div class="bs-component">
 				<h3>easy</h3>
-				<div id='easy'></div>
+				<div id='easy' class='newsdata'></div>
 			</div>
 		</div>
 	</div>
