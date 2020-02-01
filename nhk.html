@@ -53,7 +53,7 @@
 			for(var ID in data){
 				document.getElementById('selectbox').innerHTML += `<option value="${ID}">${ID.slice(0,-4)} : ${data[ID]['normal'].slice(0,30)}</option>`;
 			}
-			document.getElementById('articlen').innerHTML = Object.keys(data).length;
+			document.getElementById('articlen').innerHTML = `total ${Object.keys(data).length} articles`;
 		}
 		function selectboxChange(){
 			num = document.getElementById('selectbox').selectedIndex;
@@ -67,17 +67,17 @@
 			document.getElementById('urlnormal').innerHTML = `<a href="${dic['urlnormal']}" target=blank_>go to website</a>`;
 			document.getElementById('urleasy').innerHTML = `<a href="${dic['urleasy']}" target=blank_>go to website</a>`;
 		}
-		function freq() {
+		function freq(n) {
 			targets = document.getElementsByClassName('newsdata');
 			for(target of targets){
 				target.innerHTML = '';
 			}
 			document.getElementById('normal').innerHTML = `<table class="table table-hover"><thead><tr><th>rank/${rank_n.length}</th><th>漢字</th><th>count/${total_n}</th><th>percent</th></tr></thead><tbody id="tablenormal"></tbody></table>`
-			for(var i=0; i<100; i++){
+			for(var i=0; i<n; i++){
 				document.getElementById('tablenormal').innerHTML += `<tr><td>${i+1}</td><td>${rank_n[i][0]}</td><td>${rank_n[i][1]}</td><td>${rank_n[i][2]}</td></tr>`;
 			}
 			document.getElementById('easy').innerHTML = `<table class="table table-hover"><thead><tr><th>rank/${rank_e.length}</th><th>漢字</th><th>count/${total_e}</th><th>percent</th></tr></thead><tbody id="tableeasy"></tbody></table>`
-			for(var i=0; i<100; i++){
+			for(var i=0; i<n; i++){
 				document.getElementById('tableeasy').innerHTML += `<tr><td>${i+1}</td><td>${rank_e[i][0]}</td><td>${rank_e[i][1]}</td><td>${rank_e[i][2]}</td></tr>`;
 			}
 		}
@@ -102,6 +102,40 @@
 				}
 			}
 			return false;
+		}
+					
+		function drawChart() {
+			document.getElementById('normal').innerHTML = '<div id="chartContainer1" style="height: 400px; max-width: 920px; margin: 0px auto;"></div>'
+			var chart1 = new CanvasJS.Chart("chartContainer1", {
+				theme: "light2", // "light1", "light2", "dark1", "dark2"
+				animationEnabled: true,
+				zoomEnabled: true,
+				axisY:{logarithmic: true},
+				data: [{type: "area", dataPoints: []}],
+				options:{
+					legend:{display:false},
+				}
+			});
+			for(var i=0; i<rank_n.length; i++) {
+				chart1.options.data[0].dataPoints.push({x: i+1, y: rank_n[i][1], label: `${i+1} ${rank_n[i][0]}`});
+			}
+			chart1.render();
+
+			document.getElementById('easy').innerHTML = '<div id="chartContainer2" style="height: 400px; max-width: 920px; margin: 0px auto;"></div>'
+			var chart2 = new CanvasJS.Chart("chartContainer2", {
+				theme: "light1", // "light1", "light2", "dark1", "dark2"
+				animationEnabled: true,
+				zoomEnabled: true,
+				axisY:{logarithmic: true},
+				data: [{type: "area", dataPoints: []}],
+				options:{
+					legend:{display:false},
+				}
+			});
+			for(var i=0; i<rank_e.length; i++) {
+				chart2.options.data[0].dataPoints.push({x: i+1, y: rank_e[i][1], label: `${i+1} ${rank_e[i][0]}`});
+			}
+			chart2.render();
 		}
 	</script>
 </head>
@@ -157,7 +191,7 @@
 	<div class="col-12">
 		<div class="bs-component">
 			<div class="form-group">
-				total <span id='articlen'></span> articles - <a href="https://docs.google.com/spreadsheets/d/1ObBdiCKT-1ZcKTtRW1so7aOOQJ-nWBZRzL-O2iO15Lg/edit?usp=sharing" target="blank_">google sheet</a><br>
+				<span id='articlen'>LOADING</span> - <a href="https://docs.google.com/spreadsheets/d/1ObBdiCKT-1ZcKTtRW1so7aOOQJ-nWBZRzL-O2iO15Lg/edit?usp=sharing" target="blank_">google sheet</a><br>
 				<select class="custom-select" id='selectbox' name='selectbox' onchange="selectboxChange();">
 					<option selected>--- select news ---</option>				
 				</select>
@@ -165,7 +199,9 @@
 				title easy : <span id='titleeasy' class='newsdata'></span><br>
 				date : <span id='date' class='newsdata'></span><br>
 				URL normal : <span id='urlnormal' class='newsdata'></span>, URL easy : <span id='urleasy' class='newsdata'></span><br>
-				<button type="button" onClick="freq();">Kanji Frequency 100</button><br>
+				<button type="button" onClick="freq(30);">Kanji Frequency 30</button>
+				<button type="button" onClick="freq(100);">Kanji Frequency 100</button>
+				<button type="button" onClick="drawChart();">Draw Chart</button><br>
 				<form onsubmit="return search()">
 					<input type="text" id="inputform" size="5" maxlength='1'><button type="button" onClick="search();">Kanji Frequency Search</button>
 				</form>
@@ -201,6 +237,7 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="./js/bootstrap.min.js"></script>
+<script src="./js/canvas/canvasjs.min.js"></script>
 
 <script type="text/javascript">
   $('.bs-component [data-toggle="popover"]').popover();
