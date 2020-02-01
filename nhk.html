@@ -72,14 +72,36 @@
 			for(target of targets){
 				target.innerHTML = '';
 			}
-			document.getElementById('normal').innerHTML = '<table class="table table-hover"><thead><tr><th>rank</th><th>漢字</th><th>count</th><th>percent</th></tr></thead><tbody id="tablenormal"></tbody></table>'
-			for(var i=0; i<rank_n.length; i++){
+			document.getElementById('normal').innerHTML = `<table class="table table-hover"><thead><tr><th>rank/${rank_n.length}</th><th>漢字</th><th>count/${total_n}</th><th>percent</th></tr></thead><tbody id="tablenormal"></tbody></table>`
+			for(var i=0; i<100; i++){
 				document.getElementById('tablenormal').innerHTML += `<tr><td>${i+1}</td><td>${rank_n[i][0]}</td><td>${rank_n[i][1]}</td><td>${rank_n[i][2]}</td></tr>`;
 			}
-			document.getElementById('easy').innerHTML = '<table class="table table-hover"><thead><tr><th>rank</th><th>漢字</th><th>count</th><th>percent</th></tr></thead><tbody id="tableeasy"></tbody></table>'
-			for(var i=0; i<rank_n.length; i++){
+			document.getElementById('easy').innerHTML = `<table class="table table-hover"><thead><tr><th>rank/${rank_e.length}</th><th>漢字</th><th>count/${total_e}</th><th>percent</th></tr></thead><tbody id="tableeasy"></tbody></table>`
+			for(var i=0; i<100; i++){
 				document.getElementById('tableeasy').innerHTML += `<tr><td>${i+1}</td><td>${rank_e[i][0]}</td><td>${rank_e[i][1]}</td><td>${rank_e[i][2]}</td></tr>`;
 			}
+		}
+		function search(){
+			kanji = document.getElementById('inputform').value;
+			document.getElementById('normal').innerHTML = `<table class="table table-hover"><thead><tr><th>rank/${rank_n.length}</th><th>count/${total_n}</th><th>percent</th></tr></thead><tbody id="tablenormal"></tbody></table>`;
+			document.getElementById('easy').innerHTML = `<table class="table table-hover"><thead><tr><th>rank/${rank_e.length}</th><th>count/${total_e}</th><th>percent</th></tr></thead><tbody id="tableeasy"></tbody></table>`;
+			for(var i=0; i<rank_n.length; i++){
+				if(rank_n[i][0] == kanji){
+					document.getElementById('tablenormal').innerHTML += `<tr><td>${i+1}</td><td>${rank_n[i][1]}</td><td>${rank_n[i][2]}</td></tr>`;
+						break;
+				}else if(i == rank_n.length - 1){
+					document.getElementById('tablenormal').innerHTML += `<tr><td>not found</td><td> - </td><td> - </td></tr>`;
+				}
+			}
+			for(var i=0; i<rank_e.length; i++){
+				if(rank_e[i][0] == kanji){
+				document.getElementById('tableeasy').innerHTML += `<tr><td>${i+1}</td><td>${rank_e[i][1]}</td><td>${rank_e[i][2]}</td></tr>`;
+					break;
+				}else if(i == rank_e.length - 1){
+					document.getElementById('tableeasy').innerHTML += `<tr><td>not found</td><td> - </td><td> - </td></tr>`;
+				}
+			}
+			return false;
 		}
 	</script>
 </head>
@@ -143,7 +165,11 @@
 				title easy : <span id='titleeasy' class='newsdata'></span><br>
 				date : <span id='date' class='newsdata'></span><br>
 				URL normal : <span id='urlnormal' class='newsdata'></span>, URL easy : <span id='urleasy' class='newsdata'></span><br>
-				<button type="button" onClick="freq();">Kanji Frequency</button>
+				<button type="button" onClick="freq();">Kanji Frequency 100</button><br>
+				<form onsubmit="return search()">
+					<input type="text" id="inputform" size="5" maxlength='1'><button type="button" onClick="search();">Kanji Frequency Search</button>
+				</form>
+				
 			</div>
 		</div>
 	</div>
