@@ -55,6 +55,7 @@
 			}
 			document.getElementById('articlen').innerHTML = `total ${Object.keys(data).length} articles`;
 		}
+
 		function selectboxChange(){
 			num = document.getElementById('selectbox').selectedIndex;
 			articleID = document.getElementById('selectbox').options[num].value;
@@ -67,6 +68,7 @@
 			document.getElementById('urlnormal').innerHTML = `<a href="${dic['urlnormal']}" target=blank_>go to website</a>`;
 			document.getElementById('urleasy').innerHTML = `<a href="${dic['urleasy']}" target=blank_>go to website</a>`;
 		}
+
 		function freq(n) {
 			targets = document.getElementsByClassName('newsdata');
 			for(target of targets){
@@ -104,7 +106,20 @@
 			return false;
 		}
 					
-		function drawChart() {
+		function drawChart(topn, percent) {
+			if(topn == null){
+				maxn = rank_n.length;
+				maxe = rank_e.length;
+			}else{
+				maxn = topn;
+				maxe = topn;
+			}
+			if(percent == true){
+				k = 2;
+			}else{
+				k = 1;
+			}
+
 			document.getElementById('normal').innerHTML = '<div id="chartContainer1" style="height: 400px; max-width: 920px; margin: 0px auto;"></div>'
 			var chart1 = new CanvasJS.Chart("chartContainer1", {
 				theme: "light2", // "light1", "light2", "dark1", "dark2"
@@ -116,8 +131,10 @@
 					legend:{display:false},
 				}
 			});
-			for(var i=0; i<rank_n.length; i++) {
-				chart1.options.data[0].dataPoints.push({x: i+1, y: rank_n[i][1], label: `${i+1} ${rank_n[i][0]}`});
+			entropy1 = 0;
+			for(var i=0; i<maxn; i++) {
+				chart1.options.data[0].dataPoints.push({x: i+1, y: rank_n[i][k], label: `${i+1} ${rank_n[i][0]}`});
+				entropy1 += - (rank_n[i][2]/100 * Math.log2(rank_n[i][2]/100))
 			}
 			chart1.render();
 
@@ -132,10 +149,17 @@
 					legend:{display:false},
 				}
 			});
-			for(var i=0; i<rank_e.length; i++) {
-				chart2.options.data[0].dataPoints.push({x: i+1, y: rank_e[i][1], label: `${i+1} ${rank_e[i][0]}`});
+			entropy2 = 0;
+			for(var i=0; i<maxe; i++) {
+				chart2.options.data[0].dataPoints.push({x: i+1, y: rank_e[i][k], label: `${i+1} ${rank_e[i][0]}`});
+				entropy2 += - (rank_e[i][2]/100 * Math.log2(rank_e[i][2]/100))
 			}
 			chart2.render();
+			if(topn == null){
+				document.getElementById('entropy').innerHTML = `kanji entropy : normal ${Math.round(entropy1*1000)/1000}, easy ${Math.round(entropy2*1000)/1000}`;
+			}else{
+				document.getElementById('entropy').innerHTML = ''
+			}
 		}
 	</script>
 </head>
@@ -200,12 +224,15 @@
 				date : <span id='date' class='newsdata'></span><br>
 				URL normal : <span id='urlnormal' class='newsdata'></span>, URL easy : <span id='urleasy' class='newsdata'></span><br>
 				<button type="button" onClick="freq(30);">Kanji Frequency 30</button>
-				<button type="button" onClick="freq(100);">Kanji Frequency 100</button>
-				<button type="button" onClick="drawChart();">Draw Chart</button><br>
+				<button type="button" onClick="freq(100);">Kanji Frequency 100</button><br>
 				<form onsubmit="return search()">
 					<input type="text" id="inputform" size="5" maxlength='1'><button type="button" onClick="search();">Kanji Frequency Search</button>
 				</form>
-				
+				<button type="button" onClick="drawChart(1000, false);">Draw Count 1000</button>
+				<button type="button" onClick="drawChart(null, false);">Draw Count all</button><br>
+				<button type="button" onClick="drawChart(1000, true);">Draw Percent 1000</button>
+				<button type="button" onClick="drawChart(null, true);">Draw Percent all</button><br>
+				<span id='entropy'></span>
 			</div>
 		</div>
 	</div>
