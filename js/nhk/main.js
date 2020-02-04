@@ -27,7 +27,7 @@ function selectCategory(){
     document.head.appendChild(newscript);
     document.getElementById('selectarticle').innerHTML = "";
     document.getElementById('selectarticle').innerHTML = '<option selected id="firstoption">--- LOADING ---</option>';
-    setTimeout(function(){appendArticle()}, 3000);
+    setTimeout(function(){appendArticle()}, 1000);
 }
 
 function appendArticle(){
@@ -47,17 +47,23 @@ function selectArticle(){
     document.getElementById('date').innerHTML = dic['date'];
     document.getElementById('titlenormal').innerHTML = dic['title_n'];
     document.getElementById('titleeasy').innerHTML = dic['title_e'];
+    document.getElementById('titlenormal2').innerHTML = dic['title_n'];
+    document.getElementById('titleeasy2').innerHTML = dic['title_e_ruby'];
     document.getElementById('normal').innerHTML = dic['article_n'];
     document.getElementById('easy').innerHTML = dic['article_e'];
     document.getElementById('urlnormal').innerHTML = `<a href="${dic['urlnormal']}" target=blank_>go to website</a>`;
     document.getElementById('urleasy').innerHTML = `<a href="${dic['urleasy']}" target=blank_>go to website</a>`;
 }
 
-function freq(n) {
+function clearData(){
     targets = document.getElementsByClassName('newsdata');
     for(target of targets){
         target.innerHTML = '';
     }
+}
+
+function freq(n) {
+    clearData();
     document.getElementById('normal').innerHTML = `<table class="table table-hover"><thead><tr><th>rank/${rank_n.length}</th><th>漢字</th><th>count/${total_n}</th><th>percent</th></tr></thead><tbody id="tablenormal"></tbody></table>`
     for(var i=0; i<n; i++){
         document.getElementById('tablenormal').innerHTML += `<tr><td>${i+1}</td><td>${rank_n[i][0]}</td><td>${rank_n[i][1]}</td><td>${rank_n[i][2]}</td></tr>`;
@@ -68,6 +74,9 @@ function freq(n) {
     }
 }
 function search(){
+    clearData();
+    document.getElementById('titlenormal2').innerHTML = "";
+    document.getElementById('titleeasy2').innerHTML = "";
     kanji = document.getElementById('inputform').value;
     document.getElementById('normal').innerHTML = `<table class="table table-hover"><thead><tr><th>rank/${rank_n.length}</th><th>count/${total_n}</th><th>percent</th></tr></thead><tbody id="tablenormal"></tbody></table>`;
     document.getElementById('easy').innerHTML = `<table class="table table-hover"><thead><tr><th>rank/${rank_e.length}</th><th>count/${total_e}</th><th>percent</th></tr></thead><tbody id="tableeasy"></tbody></table>`;
@@ -91,6 +100,7 @@ function search(){
 }
             
 function drawChart(topn, percent) {
+    clearData();
     if(topn == null){
         maxn = rank_n.length;
         maxe = rank_e.length;

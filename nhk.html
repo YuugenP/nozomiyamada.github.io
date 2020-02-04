@@ -12,8 +12,11 @@
     margin-top: 1rem;
 	}
 	.org {color:blue}
+	.colorC {color:blue}
 	.plc {color:orange}
+	.colorL {color:orange}
 	.per {color:darkgreen}
+	.colorN {color:darkgreen}
   @media (min-width: 768px) {
     .bs-docs-section {
       margin-top: 8em;
@@ -122,9 +125,8 @@
 				</select>
 				ID : <span id='articleid' class='newsdata'></span><br>
 				date : <span id='date' class='newsdata'></span><br>
-				title normal : <span id='titlenormal' class='newsdata'></span><br>
-				title easy : <span id='titleeasy' class='newsdata'></span><br>
-				URL normal : <span id='urlnormal' class='newsdata'></span>, URL easy : <span id='urleasy' class='newsdata'></span><br>
+				title normal : <span id='titlenormal' class='newsdata'></span> - <span id='urlnormal' class='newsdata'></span><br>
+				title easy : <span id='titleeasy' class='newsdata'></span> - <span id='urleasy' class='newsdata'></span><br>
 				<button type="button" onClick="freq(30);">Kanji Frequency 30</button>
 				<button type="button" onClick="freq(100);">Kanji Frequency 100</button><br>
 				<form onsubmit="return search()">
@@ -142,14 +144,16 @@
 	<div class="row my-3">
 		<div class="col-lg-6">
 			<div class="bs-component">
-				<h3>normal</h3>
+				<h3>normal</h3><br>
+				<h4 id='titlenormal2' class='newsdata'></h4>
 				<div id='normal' class='newsdata'></div>
 			</div>
 		</div>
 
 		<div class="col-lg-6">
 			<div class="bs-component">
-				<h3>easy</h3>
+				<h3>easy</h3><br>
+				<h4 id='titleeasy2' class='newsdata'></h4>
 				<div id='easy' class='newsdata'></div>
 			</div>
 		</div>
