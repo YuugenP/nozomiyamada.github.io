@@ -25,8 +25,8 @@ function selectCategory(){
     newscript = document.createElement('script');
     newscript.src = `./js/nhk/${js_to_read}`;
     document.head.appendChild(newscript);
-    document.getElementById('selectarticle').innerHTML = ''
-    document.getElementById('selectarticle').innerHTML = '<option selected id="firstoption">--- LOADING ---</option>'
+    document.getElementById('selectarticle').innerHTML = "";
+    document.getElementById('selectarticle').innerHTML = '<option selected id="firstoption">--- LOADING ---</option>';
     setTimeout(function(){appendArticle()}, 3000);
 }
 
@@ -34,7 +34,7 @@ function appendArticle(){
     for(dic of article_data){
         document.getElementById('selectarticle').innerHTML += `<option value="${dic['id']}">${dic['date']} : ${dic['title_n']}</option>`;    
     }
-    document.getElementById('firstoption').innerHTML = '--- select article ---'
+    document.getElementById('firstoption').innerHTML = '--- select article ---';
 }
 
 function selectArticle(){
