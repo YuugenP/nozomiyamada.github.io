@@ -47,7 +47,7 @@ function selectArticle(){
     document.getElementById('date').innerHTML = dic['date'];
     document.getElementById('titlenormal').innerHTML = dic['title_n'];
     document.getElementById('titleeasy').innerHTML = dic['title_e'];
-    document.getElementById('titlenormal2').innerHTML = dic['title_n'];
+    document.getElementById('titlenormal2').innerHTML = "<br>" + dic['title_n'];
     document.getElementById('titleeasy2').innerHTML = dic['title_e_ruby'];
     document.getElementById('normal').innerHTML = dic['article_n'];
     document.getElementById('easy').innerHTML = dic['article_e'];
