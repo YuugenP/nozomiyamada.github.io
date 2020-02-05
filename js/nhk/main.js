@@ -32,7 +32,7 @@ function selectCategory(){
 
 function appendArticle(){
     for(dic of article_data){
-        document.getElementById('selectarticle').innerHTML += `<option value="${dic['id']}">${dic['id'].slice(0,-4)} ${dic['date']} : ${dic['title_n']}</option>`;    
+        document.getElementById('selectarticle').innerHTML += `<option value="${dic['id']}">${dic['id'].slice(4,-4)} ${dic['date']} : ${dic['title_n']}</option>`;    
     }
     document.getElementById('firstoption').innerHTML = '--- select article ---';
 }
