@@ -1105,5 +1105,33 @@ article_data = [
         "date": "2018-12-27",
         "urlnormal": "https://www3.nhk.or.jp/news/html/20181227/k10011761001000.html",
         "urleasy": "https://www3.nhk.or.jp/news/easy/k10011761001000/k10011761001000.html"
+    },
+    {
+        "id": "k10010262281000",
+        "article_n": "安倍総理大臣は、内閣改造を行い、新設した一億総活躍担当大臣に加藤勝信氏を、文部科学大臣に馳浩氏を、また、農林水産大臣に森山裕氏を初入閣させるなど、第３次安倍改造内閣の１９人の閣僚の陣容を決め、菅官房長官が、閣僚名簿を発表しました。皇居での新閣僚の認証式を経て、第３次安倍改造内閣が正式に発足しました。\n\n安倍総理大臣は、７日午後、総理大臣官邸で、公明党の山口代表との党首会談に臨んだうえで、組閣本部を設置し、内閣改造を行いました。そして、菅官房長官が、第３次安倍改造内閣の閣僚名簿を発表しました。それによりますと、副総理兼財務大臣、金融担当大臣に麻生太郎氏が留任。総務大臣に高市早苗氏が留任。法務大臣に自民党の参議院議員副会長の岩城光英氏。外務大臣に岸田文雄氏が留任。文部科学大臣に元文部科学副大臣の馳浩氏。厚生労働大臣に塩崎恭久氏が留任。農林水産大臣に自民党のＴＰＰ対策委員長の森山裕氏。経済産業大臣に衆議院議院運営委員長の林幹雄氏。国土交通大臣に公明党の政務調査会長の石井啓一氏。環境大臣に参議院厚生労働委員長の丸川珠代氏。防衛大臣に中谷元氏が留任。官房長官に菅義偉氏が留任。復興大臣に元国土交通副大臣の高木毅氏。国家公安委員長兼行政改革担当大臣、防災担当大臣に自民党の行政改革推進本部長の河野太郎氏。沖縄・北方担当大臣兼科学技術担当大臣に参議院環境委員長の島尻安伊子氏。経済再生担当大臣に甘利明氏が留任。新設した一億総活躍担当大臣に、官房副長官の加藤勝信氏。加藤氏は、拉致問題担当大臣と女性活躍担当大臣、少子化担当大臣も兼務します。地方創生担当大臣に石破茂氏が留任。オリンピック・パラリンピック担当大臣に、遠藤利明氏が留任です。午後５時すぎから皇居で新閣僚の認証式が行われ、第３次安倍改造内閣が正式に発足しました。安倍総理大臣は、午後６時半から記者会見を行い、閣僚人事のねらいや、今後の政権運営などについて、みずからの考えを明らかにすることにしています。その後、改造内閣の初めての閣議が午後７時１５分から行われる予定です。",
+        "article_e": "<span class=\"colorN\"><ruby>安倍<rt>あべ</rt></ruby></span><ruby>総理大臣<rt>そうりだいじん</rt></ruby>は<ruby>７日<rt>なのか</rt></ruby>、<ruby>大臣<rt>だいじん</rt></ruby>をかえて<ruby>新<rt>あたら</rt></ruby>しい<ruby>内閣<rt>ないかく</rt></ruby>をつくりました。<ruby>大臣<rt>だいじん</rt></ruby>は<ruby>全部<rt>ぜんぶ</rt></ruby>で１９<ruby>人<rt>にん</rt></ruby>で、<ruby>新<rt>あたら</rt></ruby>しく「<ruby>一億<rt>いちおく</rt></ruby><ruby>総<rt>そう</rt></ruby><ruby>活躍<rt>かつやく</rt></ruby><ruby>担当<rt>たんとう</rt></ruby><ruby>大臣<rt>だいじん</rt></ruby>」もできました。「<ruby>外務大臣<rt>がいむだいじん</rt></ruby>」や<br/>「<ruby>防衛<rt>ぼうえい</rt></ruby><ruby>大臣<rt>だいじん</rt></ruby>」など９<ruby>人<rt>にん</rt></ruby>はかわりませんでした。\n<ruby>女性<rt>じょせい</rt></ruby>の<ruby>大臣<rt>だいじん</rt></ruby>は３<ruby>人<rt>にん</rt></ruby>で、<ruby>前<rt>まえ</rt></ruby>より<ruby>１人<rt>ひとり</rt></ruby><ruby>少<rt>すく</rt></ruby>なくなりました。<ruby>大臣<rt>だいじん</rt></ruby>の<ruby>年齢<rt>ねんれい</rt></ruby>の<ruby>平均<rt>へいきん</rt></ruby>は、<br/>６０.１<ruby>歳<rt>さい</rt></ruby>です。\n<span class=\"colorN\"><ruby>安倍<rt>あべ</rt></ruby></span><ruby>総理大臣<rt>そうりだいじん</rt></ruby>は<ruby>７日<rt>なのか</rt></ruby>の<ruby>夜<rt>よる</rt></ruby>、これからも<ruby>経済<rt>けいざい</rt></ruby>をよくすることを<ruby>最<rt>もっと</rt></ruby>も<ruby>大切<rt>たいせつ</rt></ruby>にしていくと<ruby>言<rt>い</rt></ruby>いました。そして、<ruby>子<rt>こ</rt></ruby>どもを<ruby>増<rt>ふ</rt></ruby>やして５０<ruby>年<rt>ねん</rt></ruby><ruby>後<rt>ご</rt></ruby>も<ruby>人口<rt>じんこう</rt></ruby>が１<ruby>億<rt>おく</rt></ruby><ruby>人<rt>にん</rt></ruby><ruby>以下<rt>いか</rt></ruby>にならないように、「<ruby>一億<rt>いちおく</rt></ruby><ruby>総<rt>そう</rt></ruby><ruby>活躍<rt>かつやく</rt></ruby><ruby>担当<rt>たんとう</rt></ruby><ruby>大臣<rt>だいじん</rt></ruby>」に<ruby>急<rt>いそ</rt></ruby>いで<ruby>計画<rt>けいかく</rt></ruby>を<ruby>作<rt>つく</rt></ruby>ってほしいと<ruby>言<rt>い</rt></ruby>いました。",
+        "genre": [
+            "政治"
+        ],
+        "title_n": "第３次安倍改造内閣が発足",
+        "title_e": "安倍総理大臣が新しい内閣をつくる",
+        "title_e_ruby": "<ruby>安倍<rt>あべ</rt></ruby><ruby>総理大臣<rt>そうりだいじん</rt></ruby>が<ruby>新<rt>あたら</rt></ruby>しい<ruby>内閣<rt>ないかく</rt></ruby>をつくる",
+        "date": "2015-10-07",
+        "urlnormal": "http://www3.nhk.or.jp/news/html/20151007/k10010262281000.html",
+        "urleasy": "http://www3.nhk.or.jp/news/easy/k10010262281000/k10010262281000.html"
+    },
+    {
+        "id": "k10010259911000",
+        "article_n": "ＴＰＰ＝環太平洋パートナーシップ協定の閣僚会合の共同記者会見が開かれ、議長国アメリカのフロマン通商代表は「ＴＰＰの交渉を成功裏に終結させることができた」と述べ、交渉が大筋で合意したと発表しました。",
+        "article_e": "ＴＰＰ＝<ruby>環太平洋<rt>かんたいへいよう</rt></ruby>パートナーシップ<ruby>協定<rt>きょうてい</rt></ruby>を<ruby>話<rt>はな</rt></ruby>し<ruby>合<rt>あ</rt></ruby>う<ruby>会議<rt>かいぎ</rt></ruby>が<span class=\"colorL\">アメリカ</span>でありました。ＴＰＰは、<ruby>太平洋<rt>たいへいよう</rt></ruby>の<ruby>周<rt>まわ</rt></ruby>りにある<ruby>国<rt>くに</rt></ruby>と<ruby>国<rt>くに</rt></ruby>の<ruby>間<rt>あいだ</rt></ruby>で<ruby>関税<rt>かんぜい</rt></ruby>（＝<ruby>物<rt>もの</rt></ruby>を<ruby>輸入<rt>ゆにゅう</rt></ruby>するときに<ruby>払<rt>はら</rt></ruby>う<ruby>税金<rt>ぜいきん</rt></ruby>）を<ruby>低<rt>ひく</rt></ruby>くしたり、なくしたりして<ruby>経済<rt>けいざい</rt></ruby>を<ruby>盛<rt>さか</rt></ruby>んにするための<ruby>協定<rt>きょうてい</rt></ruby>です。\n<ruby>会議<rt>かいぎ</rt></ruby>には<span class=\"colorL\"><ruby>日本<rt>にっぽん</rt></ruby></span>、<span class=\"colorL\">アメリカ</span>、<span class=\"colorL\">メキシコ</span>、<span class=\"colorL\">ペルー</span>、<span class=\"colorL\">シンガポール</span>、<span class=\"colorL\">オーストラリア</span>など<ruby>全部<rt>ぜんぶ</rt></ruby>で１２の<ruby>国<rt>くに</rt></ruby>が<ruby>参加<rt>さんか</rt></ruby>して、９<ruby>月<rt>がつ</rt></ruby>３０<ruby>日<rt>にち</rt></ruby>から<ruby>始<rt>はじ</rt></ruby>まりました。この<ruby>会議<rt>かいぎ</rt></ruby>では、<ruby>米<rt>こめ</rt></ruby>、<ruby>牛肉<rt>ぎゅうにく</rt></ruby>、<ruby>豚肉<rt>ぶたにく</rt></ruby>、バター、<ruby>自動車<rt>じどうしゃ</rt></ruby>、<ruby>薬<rt>くすり</rt></ruby>などの<ruby>輸入<rt>ゆにゅう</rt></ruby>や<ruby>輸出<rt>ゆしゅつ</rt></ruby>をするときなどのルールについて<ruby>話<rt>はな</rt></ruby>し<ruby>合<rt>あ</rt></ruby>いました。ＴＰＰの<ruby>話<rt>はな</rt></ruby>し<ruby>合<rt>あ</rt></ruby>いは５<ruby>年<rt>ねん</rt></ruby><ruby>以上<rt>いじょう</rt></ruby><ruby>前<rt>まえ</rt></ruby>から<ruby>続<rt>つづ</rt></ruby>いていましたが、<ruby>５日<rt>いつか</rt></ruby>、ほとんどのルールが<ruby>決<rt>き</rt></ruby>まりました。\nＴＰＰに<ruby>参加<rt>さんか</rt></ruby>する<ruby>国<rt>くに</rt></ruby>のＧＤＰ（＝<ruby>国<rt>くに</rt></ruby>の<ruby>中<rt>なか</rt></ruby>で<ruby>生産<rt>せいさん</rt></ruby>した<ruby>物<rt>もの</rt></ruby>やサービスを<ruby>足<rt>た</rt></ruby>した<ruby>金額<rt>きんがく</rt></ruby>）を<ruby>全部<rt>ぜんぶ</rt></ruby><ruby>足<rt>た</rt></ruby>すと<ruby>世界<rt>せかい</rt></ruby>の<ruby>約<rt>やく</rt></ruby>４０％になります。ＴＰＰがスタートすると、<ruby>世界<rt>せかい</rt></ruby>でもとても<ruby>大<rt>おお</rt></ruby>きな<ruby>貿易<rt>ぼうえき</rt></ruby>グループができます。",
+        "genre": [
+            "政治"
+        ],
+        "title_n": "ＴＰＰ閣僚会合 共同会見で大筋合意を発表",
+        "title_e": "ＴＰＰ　太平洋の周りの国の貿易などのルールが決まる",
+        "title_e_ruby": "ＴＰＰ　<ruby>太平洋<rt>たいへいよう</rt></ruby>の<ruby>周<rt>まわ</rt></ruby>りの<ruby>国<rt>くに</rt></ruby>の<ruby>貿易<rt>ぼうえき</rt></ruby>などのルールが<ruby>決<rt>き</rt></ruby>まる",
+        "date": "2015-10-05",
+        "urlnormal": "http://www3.nhk.or.jp/news/html/20151005/k10010259911000.html",
+        "urleasy": "http://www3.nhk.or.jp/news/easy/k10010259911000/k10010259911000.html"
     }
 ];
