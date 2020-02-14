@@ -2357,6 +2357,366 @@ article_data = [
         "urleasy": "https://www3.nhk.or.jp/news/easy/k10011384481000/k10011384481000.html"
     },
     {
+        "id": "k10011198151000",
+        "article_n": "栃木県那須町の動物園で、人気者のカピバラが、色づいたモミジの葉を浮かべた温泉に入浴する催しが行われ、訪れた人たちを楽しませています。\n那須町の動物園「那須どうぶつ王国」では、冬の間にカピバラが露天風呂に入る姿が人気を集めていて、ことしから秋にも楽しんでもらおうと、湯船に紅葉したモミジを浮かべる催しを始めました。飼育員が展示施設にある専用の温泉に赤や黄色に色づいたモミジの葉を浮かべると、カピバラは湯につかりながら葉を食べます。動物園には多くの人たちが訪れ、湯船のカピバラと一緒に写真を撮ったり、モミジの葉をカピバラの頭に載せたりして楽しんでいました。千葉県から子どもと一緒に訪れたという女性は、「カピバラがお風呂に入る姿に癒やされました。娘も喜んでいたのでよかったです」と話していました。この催しは、今月２９日まで行われるということです。",
+        "article_e": "<span class=\"colorL\"><ruby>栃木県<rt>とちぎけん</rt></ruby></span><span class=\"colorL\"><ruby>那須町<rt>なすまち</rt></ruby></span>にある<ruby>動物園<rt>どうぶつえん</rt></ruby>「<span class=\"colorC\"><ruby>那須<rt>なす</rt></ruby>どうぶつ<ruby>王国<rt>おうこく</rt></ruby></span>」では、<ruby>冬<rt>ふゆ</rt></ruby>になると、ねずみの<ruby>仲間<rt>なかま</rt></ruby>のカピバラを<ruby>外<rt>そと</rt></ruby>の<ruby>温泉<rt>おんせん</rt></ruby>のお<ruby>風呂<rt>ふろ</rt></ruby>に<ruby>入<rt>い</rt></ruby>れています。お<ruby>風呂<rt>ふろ</rt></ruby>に<ruby>入<rt>はい</rt></ruby>っているカピバラはとても<ruby>人気<rt>にんき</rt></ruby>があるため、<ruby>動物園<rt>どうぶつえん</rt></ruby>は<ruby>今年<rt>ことし</rt></ruby>は<ruby>秋<rt>あき</rt></ruby>もお<ruby>風呂<rt>ふろ</rt></ruby>に<ruby>入<rt>い</rt></ruby>れることにしました。\nカピバラのお<ruby>風呂<rt>ふろ</rt></ruby>には、<ruby>赤<rt>あか</rt></ruby>や<ruby>黄色<rt>きいろ</rt></ruby>のもみじの<ruby>葉<rt>は</rt></ruby>が<ruby>入<rt>い</rt></ruby>れてあって、カピバラは、もみじの<ruby>葉<rt>は</rt></ruby>を<ruby>食<rt>た</rt></ruby>べながらお<ruby>風呂<rt>ふろ</rt></ruby>を<ruby>楽<rt>たの</rt></ruby>しんでいます。\n<ruby>見<rt>み</rt></ruby>に<ruby>来<rt>き</rt></ruby>た<ruby>人<rt>ひと</rt></ruby>は、お<ruby>風呂<rt>ふろ</rt></ruby>に<ruby>入<rt>はい</rt></ruby>っているカピバラと<ruby>一緒<rt>いっしょ</rt></ruby>に<ruby>写真<rt>しゃしん</rt></ruby>を<ruby>撮<rt>と</rt></ruby>ったり、もみじの<ruby>葉<rt>は</rt></ruby>をカピバラの<ruby>頭<rt>あたま</rt></ruby>の<ruby>上<rt>うえ</rt></ruby>にのせたりして<ruby>楽<rt>たの</rt></ruby>しんでいました。<span class=\"colorL\"><ruby>千葉県<rt>ちばけん</rt></ruby></span>から<ruby>子<rt>こ</rt></ruby>どもと<ruby>一緒<rt>いっしょ</rt></ruby>に<ruby>来<rt>き</rt></ruby>た<ruby>女性<rt>じょせい</rt></ruby>は「お<ruby>風呂<rt>ふろ</rt></ruby>に<ruby>入<rt>はい</rt></ruby>っているカピバラを<ruby>見<rt>み</rt></ruby>て、<ruby>子<rt>こ</rt></ruby>どもも<ruby>喜<rt>よろこ</rt></ruby>んでいました」と<ruby>話<rt>はな</rt></ruby>していました。\nお<ruby>風呂<rt>ふろ</rt></ruby>に<ruby>入<rt>はい</rt></ruby>っているカピバラは、１０<ruby>月<rt>がつ</rt></ruby>２９<ruby>日<rt>にち</rt></ruby>まで<ruby>見<rt>み</rt></ruby>ることができます。",
+        "genre": [
+            "地域",
+            "暮らし"
+        ],
+        "title_n": "カピバラがモミジ浮かべた温泉に 栃木 那須町",
+        "title_e": "栃木県の動物園のカピバラ　もみじが入ったお風呂に入る",
+        "title_e_ruby": "<ruby>栃木県<rt>とちぎけん</rt></ruby>の<ruby>動物園<rt>どうぶつえん</rt></ruby>のカピバラ　もみじが<ruby>入<rt>はい</rt></ruby>ったお<ruby>風呂<rt>ふろ</rt></ruby>に<ruby>入<rt>はい</rt></ruby>る",
+        "date": "2017-10-26",
+        "urlnormal": "http://www3.nhk.or.jp/news/html/20171026/k10011198151000.html",
+        "urleasy": "http://www3.nhk.or.jp/news/easy/k10011198151000/k10011198151000.html"
+    },
+    {
+        "id": "k10011196291000",
+        "article_n": "福井県勝山市にある老舗の酒造会社で、地元の新米を使って仕込んだ新酒ができあがり初しぼりが行われました。\n福井県勝山市沢町にある創業１００年を超える酒造会社では、今月上旬から地元でとれた新米を使って日本酒の仕込みを行ってきました。新酒が順調にできあがったことから２４日、酒蔵の軒先に新酒ができたことを知らせる直径およそ７０センチの杉玉が飾られ、初しぼりが行われました。酒米を発酵させた「もろみ」を大型の機械を使ってしぼると直径１メートルほどのタンクにしぼりたての酒が勢いよく流れこんでいました。酒蔵には新酒のふくよかな香りが広がり、仕込みをする蔵人がしぼりたての新酒を口に含むなどして出来栄えを確かめていました。酒造会社の大井信積醸造課長は「味わいが深くキレのよいお酒に仕上がったと思います。おいしい食べ物と一緒に味わってほしいです」と話していました。",
+        "article_e": "<span class=\"colorL\"><ruby>福井県<rt>ふくいけん</rt></ruby></span><span class=\"colorL\"><ruby>勝山市<rt>かつやまし</rt></ruby></span>で１００<ruby>年<rt>ねん</rt></ruby><ruby>以上<rt>いじょう</rt></ruby><ruby>続<rt>つづ</rt></ruby>いているお<ruby>酒<rt>さけ</rt></ruby>の<ruby>会社<rt>かいしゃ</rt></ruby>で<ruby>２４日<rt>にじゅうよっか</rt></ruby>、<ruby>今年<rt>ことし</rt></ruby>とれた<ruby>米<rt>こめ</rt></ruby>を<ruby>使<rt>つか</rt></ruby>った<ruby>日本酒<rt>にほんしゅ</rt></ruby>ができました。<ruby>会社<rt>かいしゃ</rt></ruby>では、１０<ruby>月<rt>がつ</rt></ruby>の<ruby>初<rt>はじ</rt></ruby>めからこの<ruby>日本酒<rt>にほんしゅ</rt></ruby>をつくっていました。\n<ruby>発酵<rt>はっこう</rt></ruby>した<ruby>米<rt>こめ</rt></ruby>を<ruby>大<rt>おお</rt></ruby>きな<ruby>機械<rt>きかい</rt></ruby>でしぼると、<ruby>新<rt>あたら</rt></ruby>しくできたお<ruby>酒<rt>さけ</rt></ruby>が<ruby>出<rt>で</rt></ruby>てきます。<ruby>建物<rt>たてもの</rt></ruby>の<ruby>中<rt>なか</rt></ruby>には、<ruby>日本酒<rt>にほんしゅ</rt></ruby>のいい<ruby>匂<rt>にお</rt></ruby>いが<ruby>広<rt>ひろ</rt></ruby>がりました。\n<ruby>会社<rt>かいしゃ</rt></ruby>の<ruby>人<rt>ひと</rt></ruby>は「<ruby>新<rt>あたら</rt></ruby>しくできた<ruby>日本酒<rt>にほんしゅ</rt></ruby>をおいしい<ruby>食<rt>た</rt></ruby>べ<ruby>物<rt>もの</rt></ruby>と<ruby>一緒<rt>いっしょ</rt></ruby>に<ruby>楽<rt>たの</rt></ruby>しんでほしいと<ruby>思<rt>おも</rt></ruby>います」と<ruby>話<rt>はな</rt></ruby>していました。",
+        "genre": [
+            "地域",
+            "暮らし"
+        ],
+        "title_n": "地元の新米仕込んだ新酒の初しぼり 福井",
+        "title_e": "福井県　今年とれた米を使った日本酒ができる",
+        "title_e_ruby": "<ruby>福井県<rt>ふくいけん</rt></ruby>　<ruby>今年<rt>ことし</rt></ruby>とれた<ruby>米<rt>こめ</rt></ruby>を<ruby>使<rt>つか</rt></ruby>った<ruby>日本酒<rt>にほんしゅ</rt></ruby>ができる",
+        "date": "2017-10-25",
+        "urlnormal": "http://www3.nhk.or.jp/news/html/20171025/k10011196291000.html",
+        "urleasy": "http://www3.nhk.or.jp/news/easy/k10011196291000/k10011196291000.html"
+    },
+    {
+        "id": "k10011180401000",
+        "article_n": "栃木県日光市の日光東照宮で、武者などにふんした市民が参道を練り歩く「百物揃千人武者行列」が行われました。\n「百物揃千人武者行列」は、江戸時代に徳川家康の遺骨を静岡県の久能山から日光に移した際の様子を再現したもので、毎年、春と秋の日光東照宮の例大祭に行われています。１７日は、よろいかぶと姿の武者や鉄砲持ちなどにふんしたおよそ８００人の市民が参加し、徳川家康をまつった重さ１トン以上のみこしを中心に、およそ１キロの参道をゆっくりと練り歩きました。秋の観光シーズンを迎える中、参道脇には大勢の観光客が訪れ、豪華な時代絵巻を楽しんでいました。東京から訪れた女性は「初めて見ましたが、迫力があって圧倒されました。時代を感じさせる華やかな行列で、よろいかぶと姿がかっこよかったです。また見に来たいです」と話していました。",
+        "article_e": "<span class=\"colorL\"><ruby>栃木県<rt>とちぎけん</rt></ruby></span><span class=\"colorL\"><ruby>日光市<rt>にっこうし</rt></ruby></span>にある<span class=\"colorC\"><ruby>日光東照宮<rt>にっこうとうしょうぐう</rt></ruby></span>で１７<ruby>日<rt>にち</rt></ruby>、「<ruby>百物揃<rt>ひゃくものぞろい</rt></ruby><ruby>千人武者行列<rt>せんにんむしゃぎょうれつ</rt></ruby>」という<ruby>行事<rt>ぎょうじ</rt></ruby>がありました。<ruby>毎年<rt>まいとし</rt></ruby><ruby>春<rt>はる</rt></ruby>と<ruby>秋<rt>あき</rt></ruby>にあって、<ruby>武士<rt>ぶし</rt></ruby>などの<ruby>格好<rt>かっこう</rt></ruby>をした８００<ruby>人<rt>にん</rt></ruby>ぐらいの<ruby>人<rt>ひと</rt></ruby>が、１ｋｍの<ruby>道<rt>みち</rt></ruby>をゆっくり<ruby>歩<rt>ある</rt></ruby>きました。\n<ruby>江戸時代<rt>えどじだい</rt></ruby>に、<span class=\"colorN\"><ruby>徳川家康<rt>とくがわいえやす</rt></ruby></span>が<ruby>亡<rt>な</rt></ruby>くなったあと<ruby>骨<rt>ほね</rt></ruby>を<ruby>今<rt>いま</rt></ruby>の<span class=\"colorL\"><ruby>静岡県<rt>しずおかけん</rt></ruby></span>から<span class=\"colorC\"><ruby>日光東照宮<rt>にっこうとうしょうぐう</rt></ruby></span>まで<ruby>運<rt>はこ</rt></ruby>んだときと<ruby>同<rt>おな</rt></ruby>じような<ruby>格好<rt>かっこう</rt></ruby>をしています。\n<span class=\"colorL\"><ruby>東京<rt>とうきょう</rt></ruby></span>から<ruby>来<rt>き</rt></ruby>た<ruby>女性<rt>じょせい</rt></ruby>は「<ruby>江戸時代<rt>えどじだい</rt></ruby>を<ruby>感<rt>かん</rt></ruby>じる<ruby>美<rt>うつく</rt></ruby>しい<ruby>行列<rt>ぎょうれつ</rt></ruby>で、すばらしいと<ruby>思<rt>おも</rt></ruby>いました」と<ruby>話<rt>はな</rt></ruby>していました。",
+        "genre": [
+            "地域",
+            "科学・文化"
+        ],
+        "title_n": "日光東照宮で武者行列 800人が参道練り歩き",
+        "title_e": "日光東照宮で武士の格好をした８００人が歩く",
+        "title_e_ruby": "<ruby>日光東照宮<rt>にっこうとうしょうぐう</rt></ruby>で<ruby>武士<rt>ぶし</rt></ruby>の<ruby>格好<rt>かっこう</rt></ruby>をした８００<ruby>人<rt>にん</rt></ruby>が<ruby>歩<rt>ある</rt></ruby>く",
+        "date": "2017-10-17",
+        "urlnormal": "http://www3.nhk.or.jp/news/html/20171017/k10011180401000.html",
+        "urleasy": "http://www3.nhk.or.jp/news/easy/k10011180401000/k10011180401000.html"
+    },
+    {
+        "id": "k10011180201000",
+        "article_n": "埼玉県所沢市の屋内スキー場では、今週末のオープンを前にゲレンデづくりが急ピッチで進められています。\n埼玉県所沢市にある屋内スキー場「狭山スキー場」では、本格的なシーズンを前にオープンするため、先月初めから人工の雪をまく作業を進めています。１７日朝も、ゲレンデの中央に作られた高さ３メートルほどの雪の山を特殊な車両で平らにならしたり、人工の雪をまいたりする作業が急ピッチで行われていました。このところ気温の低い日が続き、ゲレンデづくりは順調に進んでいるということで、今月２１日のオープンまでには、積雪７０センチのゲレンデに仕上げることにしています。スキー場の塩井誠一さんは「初心者や小さな子どもたちに喜んでもらえるような安心安全なゲレンデになるよう最後まで気を抜かずに準備に当たりたいです」と話していました。",
+        "article_e": "<span class=\"colorL\"><ruby>埼玉県<rt>さいたまけん</rt></ruby></span><span class=\"colorL\"><ruby>所沢市<rt>ところざわし</rt></ruby></span>にある<span class=\"colorC\"><ruby>狭山<rt>さやま</rt></ruby>スキー<ruby>場<rt>じょう</rt></ruby></span>は、<ruby>建物<rt>たてもの</rt></ruby>の<ruby>中<rt>なか</rt></ruby>でスキーを<ruby>楽<rt>たの</rt></ruby>しむことができる<ruby>所<rt>ところ</rt></ruby>です。<ruby>雪<rt>ゆき</rt></ruby>は<ruby>機械<rt>きかい</rt></ruby>で<ruby>作<rt>つく</rt></ruby>ります。<ruby>今年<rt>ことし</rt></ruby>のオープンは１０<ruby>月<rt>がつ</rt></ruby>２１<ruby>日<rt>にち</rt></ruby>です。\n<ruby>今<rt>いま</rt></ruby>、<ruby>雪<rt>ゆき</rt></ruby>を<ruby>作<rt>つく</rt></ruby>ってゲレンデにまいたり、<ruby>特別<rt>とくべつ</rt></ruby>な<ruby>車<rt>くるま</rt></ruby>を<ruby>使<rt>つか</rt></ruby>って<ruby>雪<rt>ゆき</rt></ruby>を<ruby>平<rt>たい</rt></ruby>らにしたりしています。<ruby>雪<rt>ゆき</rt></ruby>の<ruby>深<rt>ふか</rt></ruby>さは７０ｃｍにする<ruby>予定<rt>よてい</rt></ruby>です。\nスキー<ruby>場<rt>じょう</rt></ruby>の<ruby>人<rt>ひと</rt></ruby>は「<ruby>初<rt>はじ</rt></ruby>めてスキーをする<ruby>人<rt>ひと</rt></ruby>や<ruby>子<rt>こ</rt></ruby>どもたちも<ruby>安心<rt>あんしん</rt></ruby>して<ruby>滑<rt>すべ</rt></ruby>ることができるように<ruby>準備<rt>じゅんび</rt></ruby>します」と<ruby>話<rt>はな</rt></ruby>していました。",
+        "genre": [
+            "地域",
+            "暮らし"
+        ],
+        "title_n": "屋内スキー場でゲレンデづくり 埼玉 所沢",
+        "title_e": "埼玉県　建物の中にあるスキー場でゲレンデの準備",
+        "title_e_ruby": "<ruby>埼玉県<rt>さいたまけん</rt></ruby>　<ruby>建物<rt>たてもの</rt></ruby>の<ruby>中<rt>なか</rt></ruby>にあるスキー<ruby>場<rt>じょう</rt></ruby>でゲレンデの<ruby>準備<rt>じゅんび</rt></ruby>",
+        "date": "2017-10-17",
+        "urlnormal": "http://www3.nhk.or.jp/news/html/20171017/k10011180201000.html",
+        "urleasy": "http://www3.nhk.or.jp/news/easy/k10011180201000/k10011180201000.html"
+    },
+    {
+        "id": "k10011177971000",
+        "article_n": "東日本大震災で大きな被害を受けた岩手県沿岸を走る三陸鉄道で、地元出身の女性運転士が誕生し、１４日初めて乗客を乗せて列車を運転しました。\n岩手県宮古市出身の宇都宮聖花さん（２３）は、高校１年生の時に東日本大震災に被災し、ふるさとに貢献しようと去年４月、三陸鉄道に入社し、社内での運転の訓練などを受けてきました。訓練を終えた宇都宮さんは、宮古駅と久慈駅を結ぶ列車を運転する運転士としてデビューすることになり、１４日、宮古市の三陸鉄道の本社で運転士の辞令とネームプレートを受け取りました。そのあと宮古駅のホームに移動し、宇都宮さんは乗客を前に「信頼され、愛される運転士を目指します」と決意を語りました。１４日は午前９時すぎに列車の出発のベルを鳴らして運転席に座ると、一つ一つ手順を確認しながら列車を発車させ、運転士としての第一歩を踏み出しました。宇都宮さんは「運転士としてお客様の命を預かる責任感で身が引き締まる思いです。少しでも地元を元気づけることに貢献したい」と話していました。",
+        "article_e": "<span class=\"colorC\"><ruby>三陸鉄道<rt>さんりくてつどう</rt></ruby></span>は<span class=\"colorL\"><ruby>岩手県<rt>いわてけん</rt></ruby></span>の<ruby>海<rt>うみ</rt></ruby>の<ruby>近<rt>ちか</rt></ruby>くを<ruby>走<rt>はし</rt></ruby>る<ruby>鉄道<rt>てつどう</rt></ruby>で、６<ruby>年<rt>ねん</rt></ruby><ruby>前<rt>まえ</rt></ruby>の<ruby>東日本大震災<rt>ひがしにほんだいしんさい</rt></ruby>のとき<ruby>大<rt>おお</rt></ruby>きな<ruby>被害<rt>ひがい</rt></ruby>がありました。\n<ruby>１４日<rt>じゅうよっか</rt></ruby>、<ruby>高校<rt>こうこう</rt></ruby>１<ruby>年<rt>ねん</rt></ruby>のときに<ruby>東日本大震災<rt>ひがしにほんだいしんさい</rt></ruby>を<ruby>経験<rt>けいけん</rt></ruby>した<ruby>女性<rt>じょせい</rt></ruby>の<ruby>運転士<rt>うんてんし</rt></ruby>が、<ruby>初<rt>はじ</rt></ruby>めて<span class=\"colorC\"><ruby>三陸鉄道<rt>さんりくてつどう</rt></ruby></span>の<ruby>列車<rt>れっしゃ</rt></ruby>を<ruby>運転<rt>うんてん</rt></ruby>しました。この<ruby>運転士<rt>うんてんし</rt></ruby>は<span class=\"colorL\"><ruby>岩手県<rt>いわてけん</rt></ruby></span><span class=\"colorL\"><ruby>宮古市<rt>みやこし</rt></ruby></span>の<span class=\"colorN\"><ruby>宇都宮<rt>うつのみや</rt></ruby></span><span class=\"colorN\"><ruby>聖花<rt>せいか</rt></ruby></span>さんです。ふるさとのために<ruby>働<rt>はたら</rt></ruby>きたいと<ruby>思<rt>おも</rt></ruby>って、<ruby>去年<rt>きょねん</rt></ruby>の４<ruby>月<rt>がつ</rt></ruby>に<span class=\"colorC\"><ruby>三陸鉄道<rt>さんりくてつどう</rt></ruby></span>の<ruby>社員<rt>しゃいん</rt></ruby>になりました。<ruby>今<rt>いま</rt></ruby>まで<ruby>運転<rt>うんてん</rt></ruby>の<ruby>練習<rt>れんしゅう</rt></ruby>をしてきて、この<ruby>日<rt>ひ</rt></ruby>から<span class=\"colorL\"><ruby>宮古駅<rt>みやこえき</rt></ruby></span>と<span class=\"colorL\"><ruby>久慈駅<rt>くじえき</rt></ruby></span>の<ruby>間<rt>あいだ</rt></ruby>を<ruby>運転<rt>うんてん</rt></ruby>することになりました。\n<ruby>午前<rt>ごぜん</rt></ruby>９<ruby>時<rt>じ</rt></ruby>すぎ、<span class=\"colorN\"><ruby>宇都宮<rt>うつのみや</rt></ruby></span>さんは<span class=\"colorL\"><ruby>宮古駅<rt>みやこえき</rt></ruby></span>でベルを<ruby>鳴<rt>な</rt></ruby>らして、<ruby>出発<rt>しゅっぱつ</rt></ruby>しました。<span class=\"colorN\"><ruby>宇都宮<rt>うつのみや</rt></ruby></span>さんは「<ruby>少<rt>すこ</rt></ruby>しでもふるさとを<ruby>元気<rt>げんき</rt></ruby>にしたいです」と<ruby>話<rt>はな</rt></ruby>していました。",
+        "genre": [
+            "地域",
+            "社会"
+        ],
+        "title_n": "三陸鉄道に地元出身の女性運転士誕生 岩手",
+        "title_e": "三陸鉄道の運転士になった女性「ふるさとのために働きたい」",
+        "title_e_ruby": "<ruby>三陸鉄道<rt>さんりくてつどう</rt></ruby>の<ruby>運転士<rt>うんてんし</rt></ruby>になった<ruby>女性<rt>じょせい</rt></ruby>「ふるさとのために<ruby>働<rt>はたら</rt></ruby>きたい」",
+        "date": "2017-10-14",
+        "urlnormal": "http://www3.nhk.or.jp/news/html/20171014/k10011177971000.html",
+        "urleasy": "http://www3.nhk.or.jp/news/easy/k10011177971000/k10011177971000.html"
+    },
+    {
+        "id": "k10011174651000",
+        "article_n": "渡り鳥の中継地になっている北海道稚内市の大沼に、ことしも「冬の使者」と呼ばれるコハクチョウの群れが飛来し、羽を休めています。\n主にシベリアで繁殖するコハクチョウは、冬の間、本州などで過ごしていて、稚内市郊外の大沼には毎年この時期、越冬地へ向かう多くの群れが飛来します。ことしは今月３日に最初の群れが飛来し、１１日朝の時点でおよそ１５００羽が羽を休めています。中には夏に生まれたばかりで、まだ灰色の毛に覆われた子どもの鳥もいて、親鳥のあとをついて水の上を進む姿などが見られました。大沼では７年前にカモから鳥インフルエンザウイルスが見つかって以降、観光客などが鳥に触れないよう、市が周りをネットで囲っています。訪れた人たちは、時折大きく羽を広げるコハクチョウの姿を眺めたり、写真に収めたりしていました。東京から夫婦で観光に来ていた男性は「冬の訪れを感じます。見ることができてよかったです」と話していました。大沼のコハクチョウは、このあと順次、越冬地の本州へ向けて飛び立ちます。",
+        "article_e": "コハクチョウという<ruby>白鳥<rt>はくちょう</rt></ruby>は<span class=\"colorL\">ロシア</span>の<span class=\"colorL\">シベリア</span>で<ruby>卵<rt>たまご</rt></ruby>を<ruby>産<rt>う</rt></ruby>んで、<ruby>子<rt>こ</rt></ruby>どもを<ruby>育<rt>そだ</rt></ruby>てます。そして、<ruby>寒<rt>さむ</rt></ruby>くなる<ruby>前<rt>まえ</rt></ruby>に<span class=\"colorL\"><ruby>日本<rt>にっぽん</rt></ruby></span>に<ruby>飛<rt>と</rt></ruby>んできて、<ruby>冬<rt>ふゆ</rt></ruby>の<ruby>間<rt>あいだ</rt></ruby><ruby>本州<rt>ほんしゅう</rt></ruby>にいます。<span class=\"colorL\">ロシア</span>から<ruby>本州<rt>ほんしゅう</rt></ruby>に<ruby>向<rt>む</rt></ruby>かう<ruby>途中<rt>とちゅう</rt></ruby>、<ruby>毎年<rt>まいとし</rt></ruby><span class=\"colorL\"><ruby>北海道<rt>ほっかいどう</rt></ruby></span>のいちばん<ruby>北<rt>きた</rt></ruby>にある<span class=\"colorL\"><ruby>稚内市<rt>わっかないし</rt></ruby></span>の<span class=\"colorL\"><ruby>大沼<rt>おおぬま</rt></ruby></span>という<ruby>沼<rt>ぬま</rt></ruby>でしばらく<ruby>休<rt>やす</rt></ruby>みます。\n<ruby>３日<rt>みっか</rt></ruby>、<span class=\"colorL\"><ruby>大沼<rt>おおぬま</rt></ruby></span>に<ruby>今年<rt>ことし</rt></ruby><ruby>最初<rt>さいしょ</rt></ruby>のコハクチョウが<ruby>飛<rt>と</rt></ruby>んできました。１１<ruby>日<rt>にち</rt></ruby>には１５００<ruby>羽<rt>わ</rt></ruby>ぐらいのコハクチョウが<span class=\"colorL\"><ruby>大沼<rt>おおぬま</rt></ruby></span>で<ruby>休<rt>やす</rt></ruby>んでいました。<ruby>夏<rt>なつ</rt></ruby>に<ruby>生<rt>う</rt></ruby>まれてまだ<ruby>灰色<rt>はいいろ</rt></ruby>の<ruby>毛<rt>け</rt></ruby>がある<ruby>子<rt>こ</rt></ruby>どもの<ruby>鳥<rt>とり</rt></ruby>もいました。\n<span class=\"colorL\"><ruby>大沼<rt>おおぬま</rt></ruby></span>では７<ruby>年<rt>ねん</rt></ruby><ruby>前<rt>まえ</rt></ruby>に<ruby>鳥<rt>とり</rt></ruby>からウイルスが<ruby>見<rt>み</rt></ruby>つかったため、<ruby>人<rt>ひと</rt></ruby>が<ruby>鳥<rt>とり</rt></ruby>に<ruby>触<rt>さわ</rt></ruby>ることができないように<ruby>周<rt>まわ</rt></ruby>りにネットを<ruby>置<rt>お</rt></ruby>いています。<span class=\"colorL\"><ruby>大沼<rt>おおぬま</rt></ruby></span>に<ruby>来<rt>き</rt></ruby>た<ruby>人<rt>ひと</rt></ruby>たちは、<ruby>大<rt>おお</rt></ruby>きく<ruby>羽<rt>はね</rt></ruby>を<ruby>広<rt>ひろ</rt></ruby>げるコハクチョウをネットの<ruby>外<rt>そと</rt></ruby>から<ruby>見<rt>み</rt></ruby>て、<ruby>写真<rt>しゃしん</rt></ruby>を<ruby>撮<rt>と</rt></ruby>っていました。\nコハクチョウは、もうすぐ<ruby>本州<rt>ほんしゅう</rt></ruby>に<ruby>飛<rt>と</rt></ruby>んでいきます。",
+        "genre": [
+            "地域",
+            "社会"
+        ],
+        "title_n": "冬の使者コハクチョウ飛来 北海道 稚内",
+        "title_e": "北海道稚内市　大沼に今年もコハクチョウが来た",
+        "title_e_ruby": "<ruby>北海道<rt>ほっかいどう</rt></ruby><ruby>稚内市<rt>わっかないし</rt></ruby>　<ruby>大沼<rt>おおぬま</rt></ruby>に<ruby>今年<rt>ことし</rt></ruby>もコハクチョウが<ruby>来<rt>き</rt></ruby>た",
+        "date": "2017-10-11",
+        "urlnormal": "http://www3.nhk.or.jp/news/html/20171011/k10011174651000.html",
+        "urleasy": "http://www3.nhk.or.jp/news/easy/k10011174651000/k10011174651000.html"
+    },
+    {
+        "id": "k10011174451000",
+        "article_n": "鹿児島と宮崎の県境にある霧島連山の新燃岳について、気象庁は、１１日午前１１時すぎ火口周辺警報を発表し、噴火警戒レベルを「入山規制」を示す３に引き上げました。新燃岳では１１日朝から連続して噴火が発生しているほか、山の膨張を示す地殻変動や火山性微動も観測されています。このため気象庁は今後、より規模の大きな噴火が起きるおそれがあるとして、火口からおおむね２キロの範囲で大きな噴石や火砕流に警戒するよう呼びかけています。新燃岳の噴火警戒レベルが３になるのは、平成２５年の１０月以来です。",
+        "article_e": "１１<ruby>日<rt>にち</rt></ruby>の<ruby>朝<rt>あさ</rt></ruby>、<span class=\"colorL\"><ruby>鹿児島県<rt>かごしまけん</rt></ruby></span>と<span class=\"colorL\"><ruby>宮崎県<rt>みやざきけん</rt></ruby></span>の<ruby>間<rt>あいだ</rt></ruby>にある<span class=\"colorL\"><ruby>新燃岳<rt>しんもえだけ</rt></ruby></span>という<ruby>山<rt>やま</rt></ruby>で<ruby>小<rt>ちい</rt></ruby>さな<ruby>噴火<rt>ふんか</rt></ruby>がありました。<ruby>煙<rt>けむり</rt></ruby>は<ruby>火口<rt>かこう</rt></ruby>から３００ｍの<ruby>高<rt>たか</rt></ruby>さまで<ruby>上<rt>あ</rt></ruby>がって、そのあとも<ruby>噴火<rt>ふんか</rt></ruby>が<ruby>続<rt>つづ</rt></ruby>いています。\n<span class=\"colorL\"><ruby>新燃岳<rt>しんもえだけ</rt></ruby></span>では、<ruby>先月<rt>せんげつ</rt></ruby>の<ruby>下旬<rt>げじゅん</rt></ruby>から<ruby>火山<rt>かざん</rt></ruby>の<ruby>活動<rt>かつどう</rt></ruby>が<ruby>原因<rt>げんいん</rt></ruby>の<ruby>地震<rt>じしん</rt></ruby>が<ruby>増<rt>ふ</rt></ruby>えました。このため<span class=\"colorC\"><ruby>気象庁<rt>きしょうちょう</rt></ruby></span>は<ruby>今月<rt>こんげつ</rt></ruby><ruby>５日<rt>いつか</rt></ruby>、「<ruby>噴火<rt>ふんか</rt></ruby><ruby>警戒<rt>けいかい</rt></ruby>」のレベルを２と<ruby>発表<rt>はっぴょう</rt></ruby>して、<ruby>火口<rt>かこう</rt></ruby>の<ruby>近<rt>ちか</rt></ruby>くには<ruby>行<rt>い</rt></ruby>かないように<ruby>言<rt>い</rt></ruby>っていました。\n<span class=\"colorC\"><ruby>気象庁<rt>きしょうちょう</rt></ruby></span>は、<span class=\"colorL\"><ruby>新燃岳<rt>しんもえだけ</rt></ruby></span>ではこれからも<ruby>今<rt>いま</rt></ruby>より<ruby>大<rt>おお</rt></ruby>きな<ruby>噴火<rt>ふんか</rt></ruby>が<ruby>起<rt>お</rt></ruby>こる<ruby>可能性<rt>かのうせい</rt></ruby>があると<ruby>考<rt>かんが</rt></ruby>えていて、「<ruby>噴火<rt>ふんか</rt></ruby><ruby>警戒<rt>けいかい</rt></ruby>」のレベルを３に<ruby>上<rt>あ</rt></ruby>げました。そして、<ruby>火口<rt>かこう</rt></ruby>から２ｋｍぐらいの<ruby>所<rt>ところ</rt></ruby>では、<ruby>大<rt>おお</rt></ruby>きな<ruby>石<rt>いし</rt></ruby>が<ruby>飛<rt>と</rt></ruby>んでくる<ruby>可能性<rt>かのうせい</rt></ruby>があるので<ruby>山<rt>やま</rt></ruby>に<ruby>入<rt>はい</rt></ruby>らないように<ruby>言<rt>い</rt></ruby>っています。\n<span class=\"colorL\"><ruby>新燃岳<rt>しんもえだけ</rt></ruby></span>では、６<ruby>年<rt>ねん</rt></ruby><ruby>前<rt>まえ</rt></ruby>にも<ruby>噴火<rt>ふんか</rt></ruby>がありました。",
+        "genre": [
+            "地域",
+            "気象・災害"
+        ],
+        "title_n": "新燃岳 噴火警戒レベル３に",
+        "title_e": "鹿児島県と宮崎県の間の新燃岳で噴火「山に入らないで」",
+        "title_e_ruby": "<ruby>鹿児島県<rt>かごしまけん</rt></ruby>と<ruby>宮崎県<rt>みやざきけん</rt></ruby>の<ruby>間<rt>あいだ</rt></ruby>の<ruby>新燃岳<rt>しんもえだけ</rt></ruby>で<ruby>噴火<rt>ふんか</rt></ruby>「<ruby>山<rt>やま</rt></ruby>に<ruby>入<rt>はい</rt></ruby>らないで」",
+        "date": "2017-10-11",
+        "urlnormal": "http://www3.nhk.or.jp/news/html/20171011/k10011174451000.html",
+        "urleasy": "http://www3.nhk.or.jp/news/easy/k10011174451000/k10011174451000.html"
+    },
+    {
+        "id": "k10011167531000",
+        "article_n": "記録的なサンマの不漁の影響で、サンマの缶詰などを製造する岩手県釜石市の会社が、宮古市にある工場を来月で休止し、７０人余りのパートなどの従業員を解雇することになりました。\n来月で休止することが決まったのは、昭和１６年から操業している釜石市に本社がある食品製造会社「岩手缶詰」の宮古工場です。岩手缶詰によりますと、この工場では大手食品メーカーから注文を受けてサンマのかば焼きの缶詰などを製造していますが、ここ数年の全国的なサンマの不漁に加えて、ことしに入って岩手県での水揚量も記録的に少なくなっているため、原材料の確保が難しくなったということです。このため会社は来月末で工場を休止し、工場に勤めるパートなどの従業員８８人のうち７６人を解雇することを決め、従業員に説明したということです。県内にあるほかの工場では、操業を続けるということです。岩手県水産技術センターによりますと、岩手県沿岸でことし水揚げされたサンマは、先月までで１５８０トン余りと、記録的な不漁となったおととしの同じ時期と比べておよそ４割にとどまり、統計を取り始めた平成６年以降、最も少なくなっています。岩手缶詰は「工場の休止は苦渋の決断だった。従業員の再就職を全力で支援したい。漁獲量や経済状況を見ながら、工場を再開できるように努力したい」とコメントしています。\n\n\n岩手県水産技術センターによりますと、岩手県沿岸の市場に水揚げされたサンマは、おととし、年間２万３００トン余りと、統計を取り始めた平成６年以降、最も少なくなりました。そして、ことしは先月までで１５８０トン余りと、おととしの同じ時期のおよそ４割しかなく、統計開始以降の同じ時期で最も少なくなっています。サンマの不漁にともなって、価格も上がっていて、先月は１キロ当たり平均およそ４３０円と去年の同じ時期のおよそ１．６倍となっています。国の研究所は、平成２２年ごろから日本近海のサンマが減る傾向にあり、背景として水温が低下してサンマの餌となるプランクトンが減ったことや、台湾や中国などの漁船による漁獲量が増えたことなどが影響している可能性があるとしています。",
+        "article_e": "<ruby>最近<rt>さいきん</rt></ruby>、<span class=\"colorL\"><ruby>日本<rt>にっぽん</rt></ruby></span>の<ruby>海<rt>うみ</rt></ruby>でサンマがあまりとれません。<span class=\"colorL\"><ruby>岩手県<rt>いわてけん</rt></ruby></span>でも、<ruby>今年<rt>ことし</rt></ruby><ruby>港<rt>みなと</rt></ruby>に<ruby>届<rt>とど</rt></ruby>いたサンマは９<ruby>月<rt>がつ</rt></ruby>までに１５８０ｔぐらいで、１９９４<ruby>年<rt>ねん</rt></ruby>から<ruby>今<rt>いま</rt></ruby>まででいちばん<ruby>少<rt>すく</rt></ruby>なくなっています。\nサンマの<ruby>缶詰<rt>かんづめ</rt></ruby>などを<ruby>作<rt>つく</rt></ruby>っている<span class=\"colorL\"><ruby>岩手県<rt>いわてけん</rt></ruby></span>の<ruby>会社<rt>かいしゃ</rt></ruby>は、サンマが<ruby>足<rt>た</rt></ruby>りないため、<span class=\"colorL\"><ruby>宮古市<rt>みやこし</rt></ruby></span>にある<ruby>工場<rt>こうじょう</rt></ruby>を１１<ruby>月<rt>がつ</rt></ruby>から<ruby>閉<rt>し</rt></ruby>めて<ruby>休<rt>やす</rt></ruby>むことにしました。この<ruby>工場<rt>こうじょう</rt></ruby>では８８<ruby>人<rt>にん</rt></ruby>が<ruby>働<rt>はたら</rt></ruby>いていましたが、その<ruby>中<rt>なか</rt></ruby>の７６<ruby>人<rt>にん</rt></ruby>が<ruby>工場<rt>こうじょう</rt></ruby>をやめます。\n<ruby>会社<rt>かいしゃ</rt></ruby>は<span class=\"colorL\"><ruby>岩手県<rt>いわてけん</rt></ruby></span>にあるほかの<ruby>工場<rt>こうじょう</rt></ruby>は<ruby>仕事<rt>しごと</rt></ruby>を<ruby>続<rt>つづ</rt></ruby>けると<ruby>言<rt>い</rt></ruby>っています。そして「サンマがとれるようになったら、<ruby>工場<rt>こうじょう</rt></ruby>をまた<ruby>始<rt>はじ</rt></ruby>めることができるように<ruby>頑張<rt>がんば</rt></ruby>りたいです」と<ruby>言<rt>い</rt></ruby>っています。",
+        "genre": [
+            "地域",
+            "ビジネス"
+        ],
+        "title_n": "サンマ不漁で缶詰工場休止へ 岩手 宮古",
+        "title_e": "岩手県　サンマがとれなくて缶詰の工場を閉める",
+        "title_e_ruby": "<ruby>岩手県<rt>いわてけん</rt></ruby>　サンマがとれなくて<ruby>缶詰<rt>かんづめ</rt></ruby>の<ruby>工場<rt>こうじょう</rt></ruby>を<ruby>閉<rt>し</rt></ruby>める",
+        "date": "2017-10-04",
+        "urlnormal": "http://www3.nhk.or.jp/news/html/20171004/k10011167531000.html",
+        "urleasy": "http://www3.nhk.or.jp/news/easy/k10011167531000/k10011167531000.html"
+    },
+    {
+        "id": "k10011156371000",
+        "article_n": "松山市の観光名所、「道後温泉」で、１２０年余りの歴史がある本館の近くに２６日、新たに別館がオープンし、地元では温泉街の活性化につながると期待しています。\n「道後温泉別館飛鳥乃湯泉」と名付けられたこの施設は、松山市が道後温泉本館の近くに、およそ２０億円をかけて建設した公衆浴場です。初日の２６日は、午前７時のオープン直後から、市民や観光客が次々と訪れ、完成したての施設で由緒ある温泉の湯を楽しんでいました。別館の建物には、聖徳太子が道後温泉を訪れたという伝説などにちなんで飛鳥時代の建築様式が取り入れられているほか、ロビーや休憩室には愛媛県に古くから伝わる工芸品などを使った色鮮やかな装飾が施されています。また、浴場の壁には瀬戸内海をはじめとする地元の風景が描かれ、さらに最新の映像技術を使って海を渡る船の情景などが映し出される仕掛けになっています。２５日から並んでオープンを待っていたという地元の大学生は「温泉につかって疲れが取れました。別館は浴室の飾りがきれいで驚きました」と話していました。松山市は、別館の利用客を年間３０万人以上と見込んでいて、明治時代から１２０年余りの歴史がある道後温泉本館に加わる新たな観光名所として、温泉街の活性化につながると期待しています。\n\n\n「道後温泉別館飛鳥乃湯泉」と名付けられたこの施設は、松山市が道後温泉本館の近くに、およそ２０億円をかけて建設した公衆浴場です。初日の２６日は、午前７時のオープン直後から、市民や観光客が次々と訪れ、完成したての施設で由緒ある温泉の湯を楽しんでいました。別館の建物には、聖徳太子が道後温泉を訪れたという伝説などにちなんで飛鳥時代の建築様式が取り入れられているほか、ロビーや休憩室には愛媛県に古くから伝わる工芸品などを使った色鮮やかな装飾が施されています。また、浴場の壁には瀬戸内海をはじめとする地元の風景が描かれ、さらに最新の映像技術を使って海を渡る船の情景などが映し出される仕掛けになっています。２５日から並んでオープンを待っていたという地元の大学生は「温泉につかって疲れが取れました。別館は浴室の飾りがきれいで驚きました」と話していました。松山市は、別館の利用客を年間３０万人以上と見込んでいて、明治時代から１２０年余りの歴史がある道後温泉本館に加わる新たな観光名所として、温泉街の活性化につながると期待しています。",
+        "article_e": "<span class=\"colorL\"><ruby>道後温泉<rt>どうごおんせん</rt></ruby></span>は<span class=\"colorL\"><ruby>愛媛県<rt>えひめけん</rt></ruby></span><span class=\"colorL\"><ruby>松山市<rt>まつやまし</rt></ruby></span>にある<ruby>有名<rt>ゆうめい</rt></ruby>な<ruby>温泉<rt>おんせん</rt></ruby>です。ここに１２０<ruby>年<rt>ねん</rt></ruby>ぐらい<ruby>前<rt>まえ</rt></ruby>からある「<span class=\"colorC\"><ruby>道後温泉<rt>どうごおんせん</rt></ruby><ruby>本館<rt>ほんかん</rt></ruby></span>」という<ruby>建物<rt>たてもの</rt></ruby>では、<ruby>大<rt>おお</rt></ruby>きな<ruby>風呂<rt>ふろ</rt></ruby>で<ruby>温泉<rt>おんせん</rt></ruby>を<ruby>楽<rt>たの</rt></ruby>しむことができます。\n<span class=\"colorL\"><ruby>松山市<rt>まつやまし</rt></ruby></span>はもっとたくさんの<ruby>人<rt>ひと</rt></ruby>に<ruby>来<rt>き</rt></ruby>てほしいと<ruby>考<rt>かんが</rt></ruby>えて、２０<ruby>億<rt>おく</rt></ruby><ruby>円<rt>えん</rt></ruby>かけて、もう１つ<ruby>新<rt>あたら</rt></ruby>しい<ruby>建物<rt>たてもの</rt></ruby>をつくりました。\nこの<ruby>建物<rt>たてもの</rt></ruby>は、１４００<ruby>年<rt>ねん</rt></ruby>ぐらい<ruby>前<rt>まえ</rt></ruby>の<ruby>建物<rt>たてもの</rt></ruby>のようにつくりました。この<ruby>時代<rt>じだい</rt></ruby>に<ruby>政治<rt>せいじ</rt></ruby>を<ruby>行<rt>おこな</rt></ruby>った<span class=\"colorN\"><ruby>聖徳太子<rt>しょうとくたいし</rt></ruby></span>という<ruby>人<rt>ひと</rt></ruby>が、<span class=\"colorL\"><ruby>道後温泉<rt>どうごおんせん</rt></ruby></span>に<ruby>来<rt>き</rt></ruby>たことがあると<ruby>言<rt>い</rt></ruby>われているためです。<ruby>風呂<rt>ふろ</rt></ruby><ruby>場<rt>ば</rt></ruby>の<ruby>壁<rt>かべ</rt></ruby>には、<span class=\"colorL\"><ruby>松山市<rt>まつやまし</rt></ruby></span>の<ruby>近<rt>ちか</rt></ruby>くの<ruby>瀬戸内海<rt>せとないかい</rt></ruby>などの<ruby>景色<rt>けしき</rt></ruby>がかいてあります。\n２６<ruby>日<rt>にち</rt></ruby>の<ruby>朝<rt>あさ</rt></ruby>、<ruby>新<rt>あたら</rt></ruby>しい<ruby>建物<rt>たてもの</rt></ruby>がオープンして、<span class=\"colorL\"><ruby>松山市<rt>まつやまし</rt></ruby></span>の<ruby>人<rt>ひと</rt></ruby>や<ruby>観光<rt>かんこう</rt></ruby>に<ruby>来<rt>き</rt></ruby>た<ruby>人<rt>ひと</rt></ruby>などが<ruby>温泉<rt>おんせん</rt></ruby>を<ruby>楽<rt>たの</rt></ruby>しんでいました。<span class=\"colorL\"><ruby>松山市<rt>まつやまし</rt></ruby></span>は、<ruby>新<rt>あたら</rt></ruby>しい<ruby>建物<rt>たてもの</rt></ruby>には１<ruby>年<rt>ねん</rt></ruby>に３０<ruby>万<rt>まん</rt></ruby><ruby>人<rt>にん</rt></ruby><ruby>以上<rt>いじょう</rt></ruby>が<ruby>来<rt>く</rt></ruby>ると<ruby>考<rt>かんが</rt></ruby>えています。",
+        "genre": [
+            "地域",
+            "暮らし"
+        ],
+        "title_n": "松山 道後温泉に新温泉施設がオープン",
+        "title_e": "愛媛県松山市の道後温泉に新しい建物がオープン",
+        "title_e_ruby": "<ruby>愛媛県<rt>えひめけん</rt></ruby><ruby>松山市<rt>まつやまし</rt></ruby>の<ruby>道後温泉<rt>どうごおんせん</rt></ruby>に<ruby>新<rt>あたら</rt></ruby>しい<ruby>建物<rt>たてもの</rt></ruby>がオープン",
+        "date": "2017-09-26",
+        "urlnormal": "http://www3.nhk.or.jp/news/html/20170926/k10011156371000.html",
+        "urleasy": "http://www3.nhk.or.jp/news/easy/k10011156371000/k10011156371000.html"
+    },
+    {
+        "id": "k10011148981000",
+        "article_n": "サンマの全国的な不漁が続く中、全国有数の水揚げを誇る宮城県の女川港で、記録の残る平成２１年以降、最も遅い水揚げとなる、ことし初めてのサンマの水揚げが行われました。\n女川港に水揚げされたのはサンマ８５トンで、２０日朝は、漁船が港に着くと、漁業者たちが新鮮なサンマを網ですくい上げ、次々と船から運び出しました。このあと去年、完成したばかりの新しい荷さばき場で競りが行われ、買い受け人たちがサンマの大きさや鮮度を確かめていました。女川魚市場によりますと、全国各地でサンマの不漁が続く中、女川港でのことしの初水揚げは去年より１５日遅れ、記録の残る平成２１年以降、最も遅いということです。水揚げされたサンマの多くは１２０グラムほどの小ぶりのものが多かったものの、２０日は１キロ当たり４６０円から５２０円の高値で取り引きされました。例年取れていた１６０グラムほどの大きなサンマはほとんど取れなかったということです。女川魚市場買受人協同組合の高橋孝信理事長は「待ちに待った水揚げにとても感謝している。ただ、こんなに小さいサンマは初めてで、消費者に納得してもらえるか不安だ。鮮度と味はとてもいいのでぜひ多くの人に味わってほしい」と話していました。",
+        "article_e": "<ruby>今年<rt>ことし</rt></ruby>は<ruby>日本中<rt>にほんじゅう</rt></ruby>でサンマがあまりとれていません。<span class=\"colorL\"><ruby>宮城県<rt>みやぎけん</rt></ruby></span>の<span class=\"colorL\"><ruby>女川港<rt>おながわこう</rt></ruby></span>に<ruby>２０日<rt>はつか</rt></ruby>の<ruby>朝<rt>あさ</rt></ruby>、サンマをとった<ruby>船<rt>ふね</rt></ruby>が、<ruby>今年<rt>ことし</rt></ruby><ruby>初<rt>はじ</rt></ruby>めて<ruby>着<rt>つ</rt></ruby>きました。サンマをとった<ruby>船<rt>ふね</rt></ruby>が<span class=\"colorL\"><ruby>女川港<rt>おながわこう</rt></ruby></span>に<ruby>最初<rt>さいしょ</rt></ruby>に<ruby>着<rt>つ</rt></ruby>いた<ruby>日<rt>ひ</rt></ruby>は、<ruby>去年<rt>きょねん</rt></ruby>より１５<ruby>日<rt>にち</rt></ruby><ruby>遅<rt>おそ</rt></ruby>くて、<ruby>今<rt>いま</rt></ruby>まででいちばん<ruby>遅<rt>おそ</rt></ruby>くなりました。\nこの<ruby>日<rt>ひ</rt></ruby>は、８５ｔのサンマが<ruby>港<rt>みなと</rt></ruby>に<ruby>届<rt>とど</rt></ruby>きました。<ruby>港<rt>みなと</rt></ruby>では、<ruby>市場<rt>いちば</rt></ruby>の<ruby>人<rt>ひと</rt></ruby>たちがサンマの<ruby>大<rt>おお</rt></ruby>きさや<ruby>新鮮<rt>しんせん</rt></ruby>さを<ruby>調<rt>しら</rt></ruby>べていました。１２０ｇぐらいの<ruby>小<rt>ちい</rt></ruby>さなサンマが<ruby>多<rt>おお</rt></ruby>くて、いつもの<ruby>年<rt>とし</rt></ruby>に<ruby>多<rt>おお</rt></ruby>い１６０ｇぐらいの<ruby>大<rt>おお</rt></ruby>きなサンマはほとんどありませんでした。\n<span class=\"colorL\"><ruby>女川港<rt>おながわこう</rt></ruby></span>の<ruby>市場<rt>いちば</rt></ruby>で<ruby>働<rt>はたら</rt></ruby>いている<ruby>人<rt>ひと</rt></ruby>は「こんなに<ruby>小<rt>ちい</rt></ruby>さなサンマは<ruby>初<rt>はじ</rt></ruby>めてなので、お<ruby>客<rt>きゃく</rt></ruby>さんがどう<ruby>思<rt>おも</rt></ruby>うか<ruby>心配<rt>しんぱい</rt></ruby>です。<ruby>味<rt>あじ</rt></ruby>はいいので、たくさんの<ruby>人<rt>ひと</rt></ruby>に<ruby>食<rt>た</rt></ruby>べてほしいです」と<ruby>言<rt>い</rt></ruby>っていました。",
+        "genre": [
+            "地域",
+            "暮らし"
+        ],
+        "title_n": "サンマ不漁 女川港で遅い初水揚げ 宮城",
+        "title_e": "宮城県女川港に今年最初のサンマ　今まででいちばん遅い",
+        "title_e_ruby": "<ruby>宮城県<rt>みやぎけん</rt></ruby><ruby>女川港<rt>おながわこう</rt></ruby>に<ruby>今年<rt>ことし</rt></ruby><ruby>最初<rt>さいしょ</rt></ruby>のサンマ　<ruby>今<rt>いま</rt></ruby>まででいちばん<ruby>遅<rt>おそ</rt></ruby>い",
+        "date": "2017-09-20",
+        "urlnormal": "http://www3.nhk.or.jp/news/html/20170920/k10011148981000.html",
+        "urleasy": "http://www3.nhk.or.jp/news/easy/k10011148981000/k10011148981000.html"
+    },
+    {
+        "id": "k10011146851000",
+        "article_n": "国産の漆の生産量の７０％を占める岩手県二戸市で、漆の生産が大幅に減少し、文化財の修復作業が遅れるなどの影響が出ていることがわかりました。\n国産漆の生産量の７０％を占める岩手県二戸市では、中国などからの安い輸入品に押されて年々生産量が減少しています。二戸市が去年からことしにかけて市内に分布する漆の木の数を調べたところ、１５万２０００本で、記録がある８年前に比べおよそ６０％まで減っていることがわかりました。市は、漆を採取し終わった木を伐採したあとに苗木を植えるなどの対応が十分取られず山が荒廃したことが主な原因だと見ていますが、これに伴い文化財の修復作業に影響が出ていることもわかりました。栃木県日光市の世界遺産「輪王寺」では重要文化財である本堂の修復に必要な漆が、おととしと去年、合わせて１００キロ以上足りず、作業に遅れが出ているということです。日光社寺文化財保存会の原田正彦上席主任技師は「ことしも二戸市から漆が入ってくるのを待っている状態だ。質のよい漆が届くことを期待したい」と話しています。国宝など文化財の修復をめぐっては、文化庁が来年度から国産の漆を使うよう通知し、このままでは必要な量が確保できず影響が広がるおそれがあることから、市は対策を急ぐことにしています。",
+        "article_e": "<span class=\"colorL\"><ruby>岩手県<rt>いわてけん</rt></ruby></span><span class=\"colorL\"><ruby>二戸<rt>にのへ</rt></ruby><ruby>市<rt>し</rt></ruby></span>では、<span class=\"colorL\"><ruby>日本<rt>にっぽん</rt></ruby></span>の<ruby>漆<rt>うるし</rt></ruby>の７０％を<ruby>生産<rt>せいさん</rt></ruby>しています。<span class=\"colorL\"><ruby>二戸<rt>にのへ</rt></ruby><ruby>市<rt>し</rt></ruby></span>が<ruby>去年<rt>きょねん</rt></ruby>から<ruby>今年<rt>ことし</rt></ruby>に<ruby>調<rt>しら</rt></ruby>べると、<ruby>漆<rt>うるし</rt></ruby>の<ruby>木<rt>き</rt></ruby>は１５<ruby>万<rt>まん</rt></ruby>２０００<ruby>本<rt>ぼん</rt></ruby>で、８<ruby>年<rt>ねん</rt></ruby><ruby>前<rt>まえ</rt></ruby>の６０％に<ruby>減<rt>へ</rt></ruby>っていました。<span class=\"colorL\"><ruby>二戸<rt>にのへ</rt></ruby><ruby>市<rt>し</rt></ruby></span>は、<ruby>漆<rt>うるし</rt></ruby>の<ruby>木<rt>き</rt></ruby>を<ruby>切<rt>き</rt></ruby>ったあとに、<ruby>新<rt>あたら</rt></ruby>しい<ruby>木<rt>き</rt></ruby>を<ruby>植<rt>う</rt></ruby>えなかったことなどが<ruby>原因<rt>げんいん</rt></ruby>だと<ruby>考<rt>かんが</rt></ruby>えています。\nこのため、<ruby>文化財<rt>ぶんかざい</rt></ruby>の<ruby>修理<rt>しゅうり</rt></ruby>に<ruby>使<rt>つか</rt></ruby>う<ruby>漆<rt>うるし</rt></ruby>が<ruby>足<rt>た</rt></ruby>りなくなっています。<span class=\"colorL\"><ruby>栃木県<rt>とちぎけん</rt></ruby></span><span class=\"colorL\"><ruby>日光市<rt>にっこうし</rt></ruby></span>にある「<span class=\"colorC\"><ruby>輪王寺<rt>りんのうじ</rt></ruby></span>」の<ruby>本堂<rt>ほんどう</rt></ruby>の<ruby>建物<rt>たてもの</rt></ruby>は<ruby>国<rt>くに</rt></ruby>の<ruby>文化財<rt>ぶんかざい</rt></ruby>で、<ruby>今<rt>いま</rt></ruby><ruby>修理<rt>しゅうり</rt></ruby>をしています。しかし、この<ruby>寺<rt>てら</rt></ruby>では<ruby>漆<rt>うるし</rt></ruby>が１００ｋｇ<ruby>以上<rt>いじょう</rt></ruby><ruby>足<rt>た</rt></ruby>りないので<ruby>修理<rt>しゅうり</rt></ruby>が<ruby>遅<rt>おく</rt></ruby>れていると<ruby>言<rt>い</rt></ruby>っています。\n<span class=\"colorC\"><ruby>文化庁<rt>ぶんかちょう</rt></ruby></span>は<ruby>来年<rt>らいねん</rt></ruby>の４<ruby>月<rt>がつ</rt></ruby>から、<ruby>国<rt>くに</rt></ruby>の<ruby>文化財<rt>ぶんかざい</rt></ruby>を<ruby>修理<rt>しゅうり</rt></ruby>するときは、<ruby>外国<rt>がいこく</rt></ruby>から<ruby>輸入<rt>ゆにゅう</rt></ruby>した<ruby>漆<rt>うるし</rt></ruby>ではなくて、<span class=\"colorL\"><ruby>日本<rt>にっぽん</rt></ruby></span>で<ruby>生産<rt>せいさん</rt></ruby>した<ruby>漆<rt>うるし</rt></ruby>を<ruby>使<rt>つか</rt></ruby>うように<ruby>言<rt>い</rt></ruby>っています。このため<span class=\"colorL\"><ruby>二戸<rt>にのへ</rt></ruby><ruby>市<rt>し</rt></ruby></span>は、<ruby>漆<rt>うるし</rt></ruby>の<ruby>生産<rt>せいさん</rt></ruby>を<ruby>増<rt>ふ</rt></ruby>やすためにはどうすればいいか<ruby>考<rt>かんが</rt></ruby>えています。",
+        "genre": [
+            "地域",
+            "科学・文化"
+        ],
+        "title_n": "国産の漆 安い輸入品に押され生産大幅減 文化財修復に遅れも",
+        "title_e": "日本で生産した漆が足りない　修理が遅れる寺もある",
+        "title_e_ruby": "<ruby>日本<rt>にっぽん</rt></ruby>で<ruby>生産<rt>せいさん</rt></ruby>した<ruby>漆<rt>うるし</rt></ruby>が<ruby>足<rt>た</rt></ruby>りない　<ruby>修理<rt>しゅうり</rt></ruby>が<ruby>遅<rt>おく</rt></ruby>れる<ruby>寺<rt>てら</rt></ruby>もある",
+        "date": "2017-09-19",
+        "urlnormal": "http://www3.nhk.or.jp/news/html/20170919/k10011146851000.html",
+        "urleasy": "http://www3.nhk.or.jp/news/easy/k10011146851000/k10011146851000.html"
+    },
+    {
+        "id": "k10011146191000",
+        "article_n": "敬老の日の１８日、鹿児島県では、国内最高齢の１１７歳の女性のもとを知事が訪れ長寿を祝いました。\n鹿児島県の喜界島に住む田島ナビさんは国内最高齢の１９００年生まれの１１７歳です。田島さんの５か月前に生まれ、これまで世界最高齢だったジャマイカの女性が今月１５日に亡くなったことから、世界最高齢になったと見られています。敬老の日の１８日、田島さんが入所する特別養護老人ホーム「喜界園」を鹿児島県の三反園知事が訪れ、「おめでとうございます。ますますお元気でご健勝にお過ごしください」と声をかけました。そして、地元の人が島唄を披露し、田島さんの家族や施設の職員が拍手をしながら長寿を祝いました。施設によりますと、田島さんは毎日３食欠かさず食べているということで、１８日も職員の手助けを受けながら朝ごはんを完食していました。田島さんは１日のほとんどを寝て過ごしているということですが、耳元で、施設の職員から愛称の「オバー」と呼ばれると「はーい」と返事をしたり、三味線の音に合わせてゆっくり手を動かし踊るようなしぐさを見せたりすることもあるということです。孫の田島廣行さん（６４）は「まさか世界最高齢になるとは思っていなかったので夢のようです。もっともっと長生きしてほしい」と話していました。",
+        "article_e": "１９００<ruby>年<rt>ねん</rt></ruby>に<ruby>生<rt>う</rt></ruby>まれた<span class=\"colorL\"><ruby>鹿児島県<rt>かごしまけん</rt></ruby></span>の<span class=\"colorN\"><ruby>田島<rt>たじま</rt></ruby>ナビ</span>さんは１１７<ruby>歳<rt>さい</rt></ruby>で、<span class=\"colorL\"><ruby>日本<rt>にっぽん</rt></ruby></span>でいちばん<ruby>長生<rt>ながい</rt></ruby>きの<ruby>人<rt>ひと</rt></ruby>です。\n<ruby>今月<rt>こんげつ</rt></ruby>１５<ruby>日<rt>にち</rt></ruby>、<ruby>世界<rt>せかい</rt></ruby>でいちばん<ruby>長生<rt>ながい</rt></ruby>きの<ruby>人<rt>ひと</rt></ruby>だった<span class=\"colorL\">ジャマイカ</span>の<ruby>女性<rt>じょせい</rt></ruby>が<ruby>亡<rt>な</rt></ruby>くなりました。このため、<span class=\"colorN\"><ruby>田島<rt>たじま</rt></ruby></span>さんが<ruby>世界<rt>せかい</rt></ruby>でいちばん<ruby>長生<rt>ながい</rt></ruby>きの<ruby>人<rt>ひと</rt></ruby>になりそうです。\n１８<ruby>日<rt>にち</rt></ruby>は「<ruby>敬老<rt>けいろう</rt></ruby>の<ruby>日<rt>ひ</rt></ruby>」でした。<span class=\"colorL\"><ruby>鹿児島県<rt>かごしまけん</rt></ruby></span>の<ruby>知事<rt>ちじ</rt></ruby>は<span class=\"colorN\"><ruby>田島<rt>たじま</rt></ruby></span>さんに<ruby>会<rt>あ</rt></ruby>いに<ruby>行<rt>い</rt></ruby>って、「おめでとうございます」と<ruby>言<rt>い</rt></ruby>いました。<ruby>近所<rt>きんじょ</rt></ruby>の<ruby>人<rt>ひと</rt></ruby>たちも<span class=\"colorN\"><ruby>田島<rt>たじま</rt></ruby></span>さんのために<ruby>歌<rt>うた</rt></ruby>を<ruby>歌<rt>うた</rt></ruby>って、お<ruby>祝<rt>いわ</rt></ruby>いしました。\n<span class=\"colorN\"><ruby>田島<rt>たじま</rt></ruby></span>さんは１<ruby>日<rt>にち</rt></ruby>のうち、ほとんど<ruby>寝<rt>ね</rt></ruby>ていますが、<ruby>耳<rt>みみ</rt></ruby>の<ruby>近<rt>ちか</rt></ruby>くで<ruby>呼<rt>よ</rt></ruby>ぶと<ruby>返事<rt>へんじ</rt></ruby>をしたり、<ruby>三味線<rt>しゃみせん</rt></ruby>の<ruby>音<rt>おと</rt></ruby>に<ruby>合<rt>あ</rt></ruby>わせて<ruby>踊<rt>おど</rt></ruby>るように<ruby>手<rt>て</rt></ruby>を<ruby>動<rt>うご</rt></ruby>かしたりします。\n６４<ruby>歳<rt>さい</rt></ruby>の<ruby>孫<rt>まご</rt></ruby>は「<ruby>世界<rt>せかい</rt></ruby>でいちばん<ruby>長生<rt>ながい</rt></ruby>きの<ruby>人<rt>ひと</rt></ruby>になると<ruby>思<rt>おも</rt></ruby>っていなかったので、<ruby>夢<rt>ゆめ</rt></ruby>のようです」と<ruby>話<rt>はな</rt></ruby>しました。",
+        "genre": [
+            "地域",
+            "社会"
+        ],
+        "title_n": "敬老の日 国内最高齢１１７歳女性の長寿祝う",
+        "title_e": "日本でいちばん長生きの１１７歳の女性をお祝い",
+        "title_e_ruby": "<ruby>日本<rt>にっぽん</rt></ruby>でいちばん<ruby>長生<rt>ながい</rt></ruby>きの１１７<ruby>歳<rt>さい</rt></ruby>の<ruby>女性<rt>じょせい</rt></ruby>をお<ruby>祝<rt>いわ</rt></ruby>い",
+        "date": "2017-09-18",
+        "urlnormal": "http://www3.nhk.or.jp/news/html/20170918/k10011146191000.html",
+        "urleasy": "http://www3.nhk.or.jp/news/easy/k10011146191000/k10011146191000.html"
+    },
+    {
+        "id": "k10011135531000",
+        "article_n": "今月から始まっている北海道の胆振地方沿岸の秋サケの定置網漁で、これまでにないほど大量のブリが水揚げされ、漁業関係者からは戸惑いの声が出ています。\n北海道の胆振地方沿岸の登別漁港では、１１日午前５時に漁船２隻が沖合の定置網から港に戻り、水揚げを行いました。しかし、これから最盛期を迎える秋サケの姿は少なく、その一方で大量のブリが揚がりました。いぶり中央漁業協同組合によりますと、サケの水揚げ量は漁が始まった今月１日から１１日までに１５トンほどでしたが、ブリは１３０トンと去年１年間の１５トンをはるかに上回っていて、過去にない水揚げ量だということです。ブリは、もともと暖かい海流を好み、これまで北海道まで北上することはあまりありませんでしたが、近年、地球温暖化の影響などから北海道各地で水揚げ量が増えています。漁業関係者からは、本来取れるべき取引価格の高い秋サケの水揚げが振るわず、価格の安いブリが揚がっていることに戸惑いの声が出ています。漁業者の１人は「これから秋サケの時期なのにブリばかり取れて困っています。今後、サケの水揚げ量が元どおりになり、量が増えることを期待したい」と話していました。",
+        "article_e": "<span class=\"colorL\"><ruby>北海道<rt>ほっかいどう</rt></ruby></span>では、サケをとる<ruby>季節<rt>きせつ</rt></ruby>になりました。<span class=\"colorL\"><ruby>登別<rt>のぼりべつ</rt></ruby></span>などの<ruby>漁協<rt>ぎょきょう</rt></ruby>によると、<ruby>１日<rt>ついたち</rt></ruby>から１１<ruby>日<rt>にち</rt></ruby>までにとれたサケは、いつもの<ruby>年<rt>とし</rt></ruby>より<ruby>少<rt>すく</rt></ruby>ない１５ｔぐらいでした。しかし、ブリは１３０ｔもとれました。\nブリは<ruby>暖<rt>あたた</rt></ruby>かい<ruby>海<rt>うみ</rt></ruby>が<ruby>好<rt>す</rt></ruby>きなので、<ruby>今<rt>いま</rt></ruby>まで<span class=\"colorL\"><ruby>日本<rt>にっぽん</rt></ruby></span>の<ruby>北<rt>きた</rt></ruby>のほうにある<span class=\"colorL\"><ruby>北海道<rt>ほっかいどう</rt></ruby></span>まではあまり<ruby>来<rt>き</rt></ruby>ませんでした。<ruby>去年<rt>きょねん</rt></ruby>１<ruby>年<rt>ねん</rt></ruby>にとれたブリは１５ｔでした。しかし<ruby>最近<rt>さいきん</rt></ruby>、<ruby>地球<rt>ちきゅう</rt></ruby>の<ruby>気温<rt>きおん</rt></ruby>が<ruby>上<rt>あ</rt></ruby>がっていることなどが<ruby>原因<rt>げんいん</rt></ruby>で、<span class=\"colorL\"><ruby>北海道<rt>ほっかいどう</rt></ruby></span>でブリがたくさんとれています。\n<ruby>漁師<rt>りょうし</rt></ruby>の<ruby>人<rt>ひと</rt></ruby>は「<ruby>値段<rt>ねだん</rt></ruby>が<ruby>高<rt>たか</rt></ruby>いサケがあまりとれなくて、<ruby>安<rt>やす</rt></ruby>いブリばかりで<ruby>困<rt>こま</rt></ruby>っています」と<ruby>話<rt>はな</rt></ruby>していました。",
+        "genre": [
+            "地域",
+            "社会"
+        ],
+        "title_n": "秋サケの定置網に大量のブリ 北海道の漁業者に戸惑い",
+        "title_e": "北海道で暖かい海にいる魚がたくさんとれる",
+        "title_e_ruby": "<ruby>北海道<rt>ほっかいどう</rt></ruby>で<ruby>暖<rt>あたた</rt></ruby>かい<ruby>海<rt>うみ</rt></ruby>にいる<ruby>魚<rt>さかな</rt></ruby>がたくさんとれる",
+        "date": "2017-09-11",
+        "urlnormal": "http://www3.nhk.or.jp/news/html/20170911/k10011135531000.html",
+        "urleasy": "http://www3.nhk.or.jp/news/easy/k10011135531000/k10011135531000.html"
+    },
+    {
+        "id": "k10011134241000",
+        "article_n": "富士山はこれから雪が本格的に降る季節を迎えるため、１０日で登山道が閉鎖となり、ことしの夏山シーズンが終わりました。\nこのうち静岡県小山町にある５合目の須走口では、１０日午後５時すぎに「通行禁止」などと書かれた看板が設置されました。静岡県側では、このほか富士宮口と御殿場口の登山道も閉鎖されました。初めて富士山に登ったという大阪の７３歳の男性は「けさ、ご来光を見てお鉢巡りもしてきました。閉山前に登ることができてよかったです。８０歳になったら再びチャレンジしようと思います」と話していました。また、３０年ぶりに登ったという神奈川の男性は「山頂付近は景色もよく、きょう登ることができてよかったです」と話していました。富士山は山梨県側の登山道も１０日いっぱいで閉鎖となり、下山道も１１日の正午には閉鎖されます。",
+        "article_e": "これから<ruby>雪<rt>ゆき</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>る<ruby>季節<rt>きせつ</rt></ruby>になるため、<span class=\"colorL\"><ruby>静岡県<rt>しずおかけん</rt></ruby></span>と<span class=\"colorL\"><ruby>山梨県<rt>やまなしけん</rt></ruby></span>では<ruby>富士山<rt>ふじさん</rt></ruby>に<ruby>登<rt>のぼ</rt></ruby>る４つの<ruby>道<rt>みち</rt></ruby>を<ruby>閉<rt>し</rt></ruby>めました。１１<ruby>日<rt>にち</rt></ruby>から、<ruby>頂上<rt>ちょうじょう</rt></ruby>まで<ruby>登<rt>のぼ</rt></ruby>ることができなくなりました。\n５<ruby>合<rt>ごう</rt></ruby><ruby>目<rt>め</rt></ruby>の<span class=\"colorL\"><ruby>須走口<rt>すばしりぐち</rt></ruby></span>という<ruby>入<rt>い</rt></ruby>り<ruby>口<rt>ぐち</rt></ruby>では、<ruby>１０日<rt>とおか</rt></ruby><ruby>午後<rt>ごご</rt></ruby>５<ruby>時<rt>じ</rt></ruby>ごろ<span class=\"colorL\"><ruby>静岡県<rt>しずおかけん</rt></ruby></span>の<ruby>職員<rt>しょくいん</rt></ruby>が、<ruby>道<rt>みち</rt></ruby>を<ruby>閉<rt>し</rt></ruby>めたことを<ruby>知<rt>し</rt></ruby>らせる<ruby>看板<rt>かんばん</rt></ruby>を<ruby>置<rt>お</rt></ruby>きました。<span class=\"colorL\"><ruby>静岡県<rt>しずおかけん</rt></ruby></span>から<ruby>登<rt>のぼ</rt></ruby>るほかの２つの<ruby>道<rt>みち</rt></ruby>と、<span class=\"colorL\"><ruby>山梨県<rt>やまなしけん</rt></ruby></span>から<ruby>登<rt>のぼ</rt></ruby>る<ruby>道<rt>みち</rt></ruby>も<ruby>閉<rt>し</rt></ruby>めました。\n<ruby>初<rt>はじ</rt></ruby>めて<ruby>富士山<rt>ふじさん</rt></ruby>に<ruby>登<rt>のぼ</rt></ruby>った７３<ruby>歳<rt>さい</rt></ruby>の<ruby>男性<rt>だんせい</rt></ruby>は「<ruby>朝<rt>あさ</rt></ruby>、<ruby>日<rt>ひ</rt></ruby>の<ruby>出<rt>で</rt></ruby>を<ruby>見<rt>み</rt></ruby>ることができてよかったです。８０<ruby>歳<rt>さい</rt></ruby>になったらまた<ruby>登<rt>のぼ</rt></ruby>りたいと<ruby>思<rt>おも</rt></ruby>います」と<ruby>話<rt>はな</rt></ruby>していました。",
+        "genre": [
+            "地域",
+            "社会"
+        ],
+        "title_n": "富士山の登山道閉鎖 夏山シーズン終わる",
+        "title_e": "夏が終わって富士山に登る道を閉める",
+        "title_e_ruby": "<ruby>夏<rt>なつ</rt></ruby>が<ruby>終<rt>お</rt></ruby>わって<ruby>富士山<rt>ふじさん</rt></ruby>に<ruby>登<rt>のぼ</rt></ruby>る<ruby>道<rt>みち</rt></ruby>を<ruby>閉<rt>し</rt></ruby>める",
+        "date": "2017-09-10",
+        "urlnormal": "http://www3.nhk.or.jp/news/html/20170910/k10011134241000.html",
+        "urleasy": "http://www3.nhk.or.jp/news/easy/k10011134241000/k10011134241000.html"
+    },
+    {
+        "id": "k10011134181000",
+        "article_n": "岐阜県揖斐川町と三重県桑名市を結ぶ養老鉄道で、子猫と触れ合うことのできる「ねこカフェ列車」と名付けられたイベント列車が運行されました。\nこのイベント列車は養老鉄道が猫の保護活動に取り組む団体の協力を受けて、１０日に１日限定で運行しました。３両編成の列車の車内では、保健所などから引き取られた２０匹余りの子猫と触れ合うことができます。およそ８０人の参加者たちは終点に着くまでのおよそ２時間、子猫を抱いたり一緒におもちゃで遊んだりして楽しんでいました。養老鉄道によりますと、このイベント列車は募集と同時に定員が埋まるほどの人気で、参加者の中には東京から来た人もいたということです。愛知県から参加した女性は「もうメロメロになりました。いろいろな子猫に触れあえてとてもよかったです」と話していました。この「ねこカフェ列車」の参加料の一部は、猫の保護活動に充てられるということです。",
+        "article_e": "<span class=\"colorL\"><ruby>岐阜県<rt>ぎふけん</rt></ruby></span>と<span class=\"colorL\"><ruby>三重県<rt>みえけん</rt></ruby></span>を<ruby>走<rt>はし</rt></ruby>る<span class=\"colorC\"><ruby>養老鉄道<rt>ようろうてつどう</rt></ruby></span>の<ruby>列車<rt>れっしゃ</rt></ruby>の<ruby>中<rt>なか</rt></ruby>で、<ruby>子<rt>こ</rt></ruby>どもの<ruby>猫<rt>ねこ</rt></ruby>と<ruby>遊<rt>あそ</rt></ruby>ぶことができるイベントがありました。このイベントは、<ruby>飼<rt>か</rt></ruby>う<ruby>人<rt>ひと</rt></ruby>がいない<ruby>猫<rt>ねこ</rt></ruby>などを<ruby>助<rt>たす</rt></ruby>ける<ruby>活動<rt>かつどう</rt></ruby>をしている<ruby>団体<rt>だんたい</rt></ruby>と<span class=\"colorC\"><ruby>養老鉄道<rt>ようろうてつどう</rt></ruby></span>が<ruby>一緒<rt>いっしょ</rt></ruby>に<ruby>開<rt>ひら</rt></ruby>きました。\n<ruby>列車<rt>れっしゃ</rt></ruby>には８０<ruby>人<rt>にん</rt></ruby>ぐらいが<ruby>乗<rt>の</rt></ruby>って、この<ruby>団体<rt>だんたい</rt></ruby>が<ruby>助<rt>たす</rt></ruby>けた２０<ruby>匹<rt>ぴき</rt></ruby><ruby>以上<rt>いじょう</rt></ruby>の<ruby>子<rt>こ</rt></ruby>どもの<ruby>猫<rt>ねこ</rt></ruby>と<ruby>遊<rt>あそ</rt></ruby>びました。<ruby>列車<rt>れっしゃ</rt></ruby>が<ruby>走<rt>はし</rt></ruby>っている２<ruby>時間<rt>じかん</rt></ruby>ぐらいの<ruby>間<rt>あいだ</rt></ruby>、<ruby>猫<rt>ねこ</rt></ruby>を<ruby>触<rt>さわ</rt></ruby>ったり<ruby>抱<rt>だ</rt></ruby>いたりして<ruby>楽<rt>たの</rt></ruby>しんでいました。\nこのイベントは<ruby>人気<rt>にんき</rt></ruby>があって、<span class=\"colorL\"><ruby>東京<rt>とうきょう</rt></ruby></span>から<ruby>来<rt>き</rt></ruby>た<ruby>人<rt>ひと</rt></ruby>もいました。<span class=\"colorL\"><ruby>愛知県<rt>あいちけん</rt></ruby></span>から<ruby>来<rt>き</rt></ruby>た<ruby>女性<rt>じょせい</rt></ruby>は「いろいろな<ruby>猫<rt>ねこ</rt></ruby>と<ruby>遊<rt>あそ</rt></ruby>ぶことができて、とてもよかったです」と<ruby>話<rt>はな</rt></ruby>していました。\nこのイベントに<ruby>参加<rt>さんか</rt></ruby>した<ruby>人<rt>ひと</rt></ruby>が<ruby>払<rt>はら</rt></ruby>ったお<ruby>金<rt>かね</rt></ruby>は、<ruby>猫<rt>ねこ</rt></ruby>を<ruby>助<rt>たす</rt></ruby>ける<ruby>活動<rt>かつどう</rt></ruby>にも<ruby>使<rt>つか</rt></ruby>うことになっています。",
+        "genre": [
+            "地域",
+            "科学・文化"
+        ],
+        "title_n": "「ねこカフェ列車」が運行 養老鉄道",
+        "title_e": "走る列車の中で２０匹の子どもの猫と遊ぶイベント",
+        "title_e_ruby": "<ruby>走<rt>はし</rt></ruby>る<ruby>列車<rt>れっしゃ</rt></ruby>の<ruby>中<rt>なか</rt></ruby>で２０<ruby>匹<rt>ぴき</rt></ruby>の<ruby>子<rt>こ</rt></ruby>どもの<ruby>猫<rt>ねこ</rt></ruby>と<ruby>遊<rt>あそ</rt></ruby>ぶイベント",
+        "date": "2017-09-10",
+        "urlnormal": "http://www3.nhk.or.jp/news/html/20170910/k10011134181000.html",
+        "urleasy": "http://www3.nhk.or.jp/news/easy/k10011134181000/k10011134181000.html"
+    },
+    {
+        "id": "k10011131041000",
+        "article_n": "福岡県筑後市で、段ボールを使って実際と同じ大きさの蒸気機関車の模型が作られ、近く一般に公開されることになりました。\n段ボールで蒸気機関車を再現したのは長崎県南島原市の工芸作家、島英雄さんです。筑後市にある段ボールメーカーの協力を受けて去年１月から会社の倉庫で制作し、旅客用に使われていた蒸気機関車「Ｃ６２」の模型をほぼ完成させました。大きさは本物と同じ全長およそ２２メートル、高さおよそ４メートルで、使った段ボールの重さは３トンを超えるということです。車輪などの部品の数は合わせて２０００個に上り、接着剤を使ったり段ボールを「ほぞ」のようにはめたりして組み立てたということです。島さんは「鉄でできていた機関車を紙の段ボールを使って精巧に作ったところをぜひ見てほしいです」と話していました。段ボール製の蒸気機関車は今月２８日から筑後市の九州芸文館で公開されます。",
+        "article_e": "<ruby>工芸品<rt>こうげいひん</rt></ruby>を<ruby>作<rt>つく</rt></ruby>る<ruby>仕事<rt>しごと</rt></ruby>をしている<span class=\"colorN\"><ruby>島<rt>しま</rt></ruby></span><span class=\"colorN\"><ruby>英雄<rt>ひでお</rt></ruby></span>さんは、<ruby>紙<rt>かみ</rt></ruby>の<ruby>段<rt>だん</rt></ruby>ボールで「Ｃ６２」という<ruby>蒸気機関車<rt>じょうききかんしゃ</rt></ruby>を<ruby>作<rt>つく</rt></ruby>りました。<ruby>大<rt>おお</rt></ruby>きさは<ruby>本当<rt>ほんとう</rt></ruby>の<ruby>蒸気機関車<rt>じょうききかんしゃ</rt></ruby>と<ruby>同<rt>おな</rt></ruby>じで、<ruby>長<rt>なが</rt></ruby>さが２２ｍ、<ruby>高<rt>たか</rt></ruby>さが４ｍです。\n<span class=\"colorN\"><ruby>島<rt>しま</rt></ruby></span>さんは、<span class=\"colorL\"><ruby>福岡県<rt>ふくおかけん</rt></ruby></span><span class=\"colorL\"><ruby>筑後<rt>ちくご</rt></ruby><ruby>市<rt>し</rt></ruby></span>にある<ruby>会社<rt>かいしゃ</rt></ruby>からもらった<ruby>段<rt>だん</rt></ruby>ボールを３ｔ<ruby>以上<rt>いじょう</rt></ruby><ruby>使<rt>つか</rt></ruby>って、この<ruby>会社<rt>かいしゃ</rt></ruby>の<ruby>倉庫<rt>そうこ</rt></ruby>の<ruby>中<rt>なか</rt></ruby>で<ruby>去年<rt>きょねん</rt></ruby>の１<ruby>月<rt>がつ</rt></ruby>から<ruby>作<rt>つく</rt></ruby>り<ruby>始<rt>はじ</rt></ruby>めました。\nこの<ruby>蒸気機関車<rt>じょうききかんしゃ</rt></ruby>は、<ruby>車輪<rt>しゃりん</rt></ruby>など２０００<ruby>個<rt>こ</rt></ruby>の<ruby>部品<rt>ぶひん</rt></ruby>からできています。<span class=\"colorN\"><ruby>島<rt>しま</rt></ruby></span>さんは「<ruby>本当<rt>ほんとう</rt></ruby>の<ruby>蒸気機関車<rt>じょうききかんしゃ</rt></ruby>と<ruby>同<rt>おな</rt></ruby>じように<ruby>作<rt>つく</rt></ruby>ったので、<ruby>細<rt>こま</rt></ruby>かいところまで<ruby>見<rt>み</rt></ruby>てほしいです」と<ruby>話<rt>はな</rt></ruby>していました。\nこの<ruby>蒸気機関車<rt>じょうききかんしゃ</rt></ruby>は、<ruby>今月<rt>こんげつ</rt></ruby>２８<ruby>日<rt>にち</rt></ruby>から<span class=\"colorL\"><ruby>筑後<rt>ちくご</rt></ruby><ruby>市<rt>し</rt></ruby></span>の<span class=\"colorC\"><ruby>九州芸文館<rt>きゅうしゅうげいぶんかん</rt></ruby></span>で<ruby>見<rt>み</rt></ruby>ることができます。",
+        "genre": [
+            "地域",
+            "暮らし"
+        ],
+        "title_n": "段ボールで原寸大の蒸気機関車を制作 福岡 筑後",
+        "title_e": "紙の段ボールで蒸気機関車を作る",
+        "title_e_ruby": "<ruby>紙<rt>かみ</rt></ruby>の<ruby>段<rt>だん</rt></ruby>ボールで<ruby>蒸気機関車<rt>じょうききかんしゃ</rt></ruby>を<ruby>作<rt>つく</rt></ruby>る",
+        "date": "2017-09-07",
+        "urlnormal": "http://www3.nhk.or.jp/news/html/20170907/k10011131041000.html",
+        "urleasy": "http://www3.nhk.or.jp/news/easy/k10011131041000/k10011131041000.html"
+    },
+    {
+        "id": "k10011128721000",
+        "article_n": "日本海の秋の味覚、ベニズワイガニの水揚げ量が日本一の鳥取県境港市の境港では、日本海でベニズワイガニ漁を終えたばかりの漁船が港に戻り、今シーズンの初水揚げと初競りが行われました。\n日本海のベニズワイガニ漁は、資源保護のため毎年７月と８月の２か月間が休漁期間となっていて、今月１日に今シーズンの漁が解禁されました。北朝鮮のミサイル発射で緊張が高まる中、日本の排他的経済水域の境界に近い海域で操業していたカニかご漁船１隻が５日夜、鳥取県境港市の境港に戻り、６日午前５時ごろから次々と水揚げされました。港では、関係者が三本締めをして初水揚げを祝ったあと競りが始まり、仲買人たちが甲羅の色合いや身のつまり具合などを確かめながら次々と競り落としていました。今シーズンは、海外産のベニズワイガニの流通量が少ないことなどから、３０キロ入りの１ケースが平均で１万１１００円余りと、昨シーズンよりも１４００円ほど高値で競り落とされていきました。カニかご漁船の舩津泰漁労長は「北朝鮮のミサイル発射は、船員の家族も心配していると思うので困る。私たちにはどうしようもないが早くやめてもらいたい」と話していました。ベニズワイガニ漁は来年６月末まで続きます。\n\n\n日本海のベニズワイガニ漁は、資源保護のため毎年７月と８月の２か月間が休漁期間となっていて、今月１日に今シーズンの漁が解禁されました。北朝鮮のミサイル発射で緊張が高まる中、日本の排他的経済水域の境界に近い海域で操業していたカニかご漁船１隻が５日夜、鳥取県境港市の境港に戻り、６日午前５時ごろから次々と水揚げされました。港では、関係者が三本締めをして初水揚げを祝ったあと競りが始まり、仲買人たちが甲羅の色合いや身のつまり具合などを確かめながら次々と競り落としていました。今シーズンは、海外産のベニズワイガニの流通量が少ないことなどから、３０キロ入りの１ケースが平均で１万１１００円余りと、昨シーズンよりも１４００円ほど高値で競り落とされていきました。カニかご漁船の舩津泰漁労長は「北朝鮮のミサイル発射は、船員の家族も心配していると思うので困る。私たちにはどうしようもないが早くやめてもらいたい」と話していました。ベニズワイガニ漁は来年６月末まで続きます。",
+        "article_e": "<ruby>日本海<rt>にほんかい</rt></ruby>では<ruby>毎年<rt>まいとし</rt></ruby>９<ruby>月<rt>がつ</rt></ruby>から<ruby>次<rt>つぎ</rt></ruby>の<ruby>年<rt>とし</rt></ruby>の６<ruby>月<rt>がつ</rt></ruby>まで、ベニズワイガニというかにの<ruby>漁<rt>りょう</rt></ruby>をします。このかにが<ruby>少<rt>すく</rt></ruby>なくならないように、７<ruby>月<rt>がつ</rt></ruby>と８<ruby>月<rt>がつ</rt></ruby>は<ruby>漁<rt>りょう</rt></ruby>を<ruby>休<rt>やす</rt></ruby>んでいます。<ruby>今年<rt>ことし</rt></ruby>も９<ruby>月<rt>がつ</rt></ruby><ruby>１日<rt>ついたち</rt></ruby>から<ruby>漁<rt>りょう</rt></ruby>が<ruby>始<rt>はじ</rt></ruby>まりました。\n<ruby>５日<rt>いつか</rt></ruby>の<ruby>夜<rt>よる</rt></ruby>、<ruby>漁<rt>りょう</rt></ruby>に<ruby>行<rt>い</rt></ruby>っていた１<ruby>隻<rt>せき</rt></ruby>の<ruby>船<rt>ふね</rt></ruby>が、<span class=\"colorL\"><ruby>鳥取県<rt>とっとりけん</rt></ruby></span><span class=\"colorL\"><ruby>境港市<rt>さかいみなとし</rt></ruby></span>の<ruby>港<rt>みなと</rt></ruby>に<ruby>戻<rt>もど</rt></ruby>ってきました。この<ruby>港<rt>みなと</rt></ruby>には、<ruby>日本海<rt>にほんかい</rt></ruby>でとったベニズワイガニが<span class=\"colorL\"><ruby>日本<rt>にっぽん</rt></ruby></span>でいちばん<ruby>多<rt>おお</rt></ruby>く<ruby>集<rt>あつ</rt></ruby>まります。<ruby>競<rt>せ</rt></ruby>りでは、かにを<ruby>買<rt>か</rt></ruby>う<ruby>人<rt>ひと</rt></ruby>が<ruby>色<rt>いろ</rt></ruby>をチェックしたり、かにを<ruby>触<rt>さわ</rt></ruby>ったりしていました。３０ｋｇの<ruby>値段<rt>ねだん</rt></ruby>は１<ruby>万<rt>まん</rt></ruby>１１００<ruby>円<rt>えん</rt></ruby>ぐらいで、<ruby>去年<rt>きょねん</rt></ruby>より１４００<ruby>円<rt>えん</rt></ruby>ぐらい<ruby>高<rt>たか</rt></ruby>くなりました。\n<ruby>戻<rt>もど</rt></ruby>ってきた<ruby>船<rt>ふね</rt></ruby>は、<span class=\"colorL\"><ruby>北朝鮮<rt>きたちょうせん</rt></ruby></span>のミサイルが<ruby>落<rt>お</rt></ruby>ちたことがある<ruby>日本海<rt>にほんかい</rt></ruby>で<ruby>漁<rt>りょう</rt></ruby>をしていました。<ruby>漁<rt>りょう</rt></ruby>をしている<ruby>人<rt>ひと</rt></ruby>は「<ruby>家族<rt>かぞく</rt></ruby>も<span class=\"colorL\"><ruby>北朝鮮<rt>きたちょうせん</rt></ruby></span>のミサイルを<ruby>心配<rt>しんぱい</rt></ruby>していると<ruby>思<rt>おも</rt></ruby>います。<ruby>私<rt>わたし</rt></ruby>たちは<ruby>何<rt>なに</rt></ruby>もできませんが、<ruby>早<rt>はや</rt></ruby>くやめてもらいたいです」と<ruby>話<rt>はな</rt></ruby>していました。",
+        "genre": [
+            "地域",
+            "暮らし"
+        ],
+        "title_n": "ベニズワイガニの初水揚げ 鳥取 境港",
+        "title_e": "鳥取県　ベニズワイガニの漁が始まる",
+        "title_e_ruby": "<ruby>鳥取県<rt>とっとりけん</rt></ruby>　ベニズワイガニの<ruby>漁<rt>りょう</rt></ruby>が<ruby>始<rt>はじ</rt></ruby>まる",
+        "date": "2017-09-06",
+        "urlnormal": "http://www3.nhk.or.jp/news/html/20170906/k10011128721000.html",
+        "urleasy": "http://www3.nhk.or.jp/news/easy/k10011128721000/k10011128721000.html"
+    },
+    {
+        "id": "k10011121901000",
+        "article_n": "ナポレオン最後の戦いの地として知られるベルギーのワーテルローの地元自治体と、天下分け目の合戦で知られる岐阜県関ケ原町が姉妹協定を結び、観光地としての魅力の発信などに向けて連携を強化することになりました。\nベルギーのワーテルローは、１８１５年にフランス皇帝ナポレオンをイギリスをはじめとする連合軍などが破り、長く続いたヨーロッパの戦乱に終止符を打つきっかけとなった戦いの地として知られています。ワーテルローの地元の自治体と関ヶ原古戦場がある岐阜県や関ケ原町は、このほど観光地としての魅力の発信や歴史遺産の保存に向けて連携を強めようと「姉妹古戦場協定」を結ぶことになりました。３１日にワーテルローを訪れた岐阜県の古田肇知事や、関ケ原町の西脇康世町長らは、戦いで使われた武器を所蔵する博物館やイギリスの将軍の宿営地跡などを視察し、地元自治体の関係者らと意見を交換しました。このあと、近くの記念館で協定の調印式が行われ、古戦場としての魅力を連携して発信していくことを確認しました。関ケ原町の西脇町長は「古戦場の観光や保全の在り方について意見や情報の交換を行うなど協力を進めるとともに、日本に関ヶ原があることをＰＲして多くの人に訪れてもらいたい」と話していました。",
+        "article_e": "<ruby>昔<rt>むかし</rt></ruby>、<ruby>戦場<rt>せんじょう</rt></ruby>だった２つのまち、<span class=\"colorL\">ベルギー</span>の<span class=\"colorL\">ワーテルロー</span>と<span class=\"colorL\"><ruby>岐阜県<rt>ぎふけん</rt></ruby></span>の<span class=\"colorL\"><ruby>関ケ原<rt>せきがはら</rt></ruby></span>が「<ruby>姉妹<rt>しまい</rt></ruby><ruby>古戦場<rt>こせんじょう</rt></ruby>」になりました。\n<span class=\"colorL\">ワーテルロー</span>は、１８１５<ruby>年<rt>ねん</rt></ruby>に<span class=\"colorL\">イギリス</span>などが<span class=\"colorL\">フランス</span>の<ruby>皇帝<rt>こうてい</rt></ruby>の<span class=\"colorN\">ナポレオン</span>と<ruby>戦<rt>たたか</rt></ruby>った<ruby>有名<rt>ゆうめい</rt></ruby>な<ruby>場所<rt>ばしょ</rt></ruby>です。ここで<span class=\"colorL\">イギリス</span>などが<ruby>勝<rt>か</rt></ruby>って、ヨーロッパで<ruby>長<rt>なが</rt></ruby>く<ruby>続<rt>つづ</rt></ruby>いていた<ruby>戦争<rt>せんそう</rt></ruby>が<ruby>終<rt>お</rt></ruby>わったと<ruby>言<rt>い</rt></ruby>われています。\n<span class=\"colorL\"><ruby>関ケ原<rt>せきがはら</rt></ruby></span>は、１６００<ruby>年<rt>ねん</rt></ruby>に<ruby>日本中<rt>にほんじゅう</rt></ruby>の<ruby>武士<rt>ぶし</rt></ruby>たちが<ruby>東<rt>ひがし</rt></ruby>と<ruby>西<rt>にし</rt></ruby>に<ruby>分<rt>わ</rt></ruby>かれて<ruby>戦<rt>たたか</rt></ruby>った<ruby>場所<rt>ばしょ</rt></ruby>です。<ruby>東<rt>ひがし</rt></ruby>の<span class=\"colorN\"><ruby>徳川<rt>とくがわ</rt></ruby><ruby>家康<rt>いえやす</rt></ruby></span>が<ruby>勝<rt>か</rt></ruby>って、<span class=\"colorL\"><ruby>日本<rt>にっぽん</rt></ruby></span>で２６０<ruby>年<rt>ねん</rt></ruby><ruby>続<rt>つづ</rt></ruby>いた<ruby>江戸時代<rt>えどじだい</rt></ruby>が<ruby>始<rt>はじ</rt></ruby>まりました。\n８<ruby>月<rt>がつ</rt></ruby>３１<ruby>日<rt>にち</rt></ruby>、<span class=\"colorL\"><ruby>関ケ原<rt>せきがはら</rt></ruby><ruby>町<rt>ちょう</rt></ruby></span>の<ruby>町長<rt>ちょうちょう</rt></ruby>たちが<span class=\"colorL\">ワーテルロー</span>に<ruby>行<rt>い</rt></ruby>って、「<ruby>姉妹<rt>しまい</rt></ruby><ruby>古戦場<rt>こせんじょう</rt></ruby>」になる<ruby>式<rt>しき</rt></ruby>に<ruby>出席<rt>しゅっせき</rt></ruby>しました。<ruby>町長<rt>ちょうちょう</rt></ruby>たちは、<ruby>戦争<rt>せんそう</rt></ruby>で<ruby>使<rt>つか</rt></ruby>った<ruby>武器<rt>ぶき</rt></ruby>などがある<ruby>博物館<rt>はくぶつかん</rt></ruby>なども<ruby>見<rt>み</rt></ruby>ました。\n２つのまちは、<ruby>昔<rt>むかし</rt></ruby><ruby>戦争<rt>せんそう</rt></ruby>があった<ruby>場所<rt>ばしょ</rt></ruby>を<ruby>大切<rt>たいせつ</rt></ruby>にして、<ruby>大勢<rt>おおぜい</rt></ruby>の<ruby>人<rt>ひと</rt></ruby>に<ruby>観光<rt>かんこう</rt></ruby>に<ruby>来<rt>き</rt></ruby>てもらうため、これから<ruby>協力<rt>きょうりょく</rt></ruby>していくことになりました。",
+        "genre": [
+            "国際",
+            "地域"
+        ],
+        "title_n": "ワーテルローと関ケ原が“姉妹古戦場”に",
+        "title_e": "戦場だったワーテルローと関ケ原が「姉妹古戦場」になる",
+        "title_e_ruby": "<ruby>戦場<rt>せんじょう</rt></ruby>だったワーテルローと<ruby>関ケ原<rt>せきがはら</rt></ruby>が「<ruby>姉妹<rt>しまい</rt></ruby><ruby>古戦場<rt>こせんじょう</rt></ruby>」になる",
+        "date": "2017-09-01",
+        "urlnormal": "http://www3.nhk.or.jp/news/html/20170901/k10011121901000.html",
+        "urleasy": "http://www3.nhk.or.jp/news/easy/k10011121901000/k10011121901000.html"
+    },
+    {
+        "id": "k10011118941000",
+        "article_n": "去年の熊本地震で被害を受けた熊本城の天守閣のしゃちほこの復元が完了し、城に隣接する観光施設で一般公開が始まりました。\n公開が始まったのは、熊本城の大天守と小天守にそれぞれ２体ずつ設置されるしゃちほこ、合わせて４体です。以前のしゃちほこは、地震で落下するなどして破損したため、熊本市の依頼を受けて瓦職人の藤本康祐さんが３月から新しいしゃちほこづくりを進めてきました。復元されたしゃちほこは以前と同じ姿で、大天守用が高さ１１９センチ、重さ１００キロ、小天守用が高さ８６センチ、重さ７０キロで、ぎょろっと飛び出ている目と大きな尾びれが特徴です。熊本市は２年後を目指して天守閣の復旧を進めていますが、それに先立って展示することを決め、３０日、熊本城に隣接する観光施設で行われた記念式典で、大西市長は「間近で見ることができるのは今だけなので、多くの人に復興のシンボルであるしゃちほこを見てほしい」とあいさつしました。復元を手がけた藤本さんは「地震前に飾られていたしゃちほこは父がつくったものだったので、壊れてしまったのはとても残念でしたが、自分の手で復元できてよかったと思います」と話していました。公開は、大天守用が来年２月末まで、小天守用が再来年８月末までの予定です。",
+        "article_e": "<span class=\"colorL\"><ruby>熊本県<rt>くまもとけん</rt></ruby></span>では<ruby>去年<rt>きょねん</rt></ruby>、<ruby>大<rt>おお</rt></ruby>きな<ruby>地震<rt>じしん</rt></ruby>がありました。この<ruby>地震<rt>じしん</rt></ruby>で、<ruby>有名<rt>ゆうめい</rt></ruby>な<ruby>城<rt>しろ</rt></ruby>の<span class=\"colorC\"><ruby>熊本城<rt>くまもとじょう</rt></ruby></span>の<ruby>天守閣<rt>てんしゅかく</rt></ruby>の<ruby>屋根<rt>やね</rt></ruby>の<ruby>上<rt>うえ</rt></ruby>に<ruby>飾<rt>かざ</rt></ruby>ってあった「しゃちほこ」が、<ruby>落<rt>お</rt></ruby>ちたりして<ruby>壊<rt>こわ</rt></ruby>れました。\nこのため、<span class=\"colorL\"><ruby>熊本市<rt>くまもとし</rt></ruby></span>は<ruby>大<rt>おお</rt></ruby>きな<ruby>天守閣<rt>てんしゅかく</rt></ruby>と<ruby>小<rt>ちい</rt></ruby>さな<ruby>天守閣<rt>てんしゅかく</rt></ruby>の<ruby>上<rt>うえ</rt></ruby>に<ruby>飾<rt>かざ</rt></ruby>るしゃちほこを、２つずつ<ruby>新<rt>あたら</rt></ruby>しく<ruby>作<rt>つく</rt></ruby>りました。<ruby>新<rt>あたら</rt></ruby>しいしゃちほこは、<ruby>前<rt>まえ</rt></ruby>と<ruby>同<rt>おな</rt></ruby>じ<ruby>形<rt>かたち</rt></ruby>です。<ruby>大<rt>おお</rt></ruby>きな<ruby>天守閣<rt>てんしゅかく</rt></ruby>に<ruby>飾<rt>かざ</rt></ruby>る<ruby>物<rt>もの</rt></ruby>は<ruby>高<rt>たか</rt></ruby>さが１１９ｃｍで、<ruby>重<rt>おも</rt></ruby>さが１００ｋｇです。<ruby>小<rt>ちい</rt></ruby>さな<ruby>天守閣<rt>てんしゅかく</rt></ruby>に<ruby>飾<rt>かざ</rt></ruby>る<ruby>物<rt>もの</rt></ruby>は<ruby>高<rt>たか</rt></ruby>さが８６ｃｍ、<ruby>重<rt>おも</rt></ruby>さが７０ｋｇです。\n<ruby>大<rt>おお</rt></ruby>きな<ruby>天守閣<rt>てんしゅかく</rt></ruby>のしゃちほこは２０１８<ruby>年<rt>ねん</rt></ruby>２<ruby>月<rt>がつ</rt></ruby>まで、<ruby>小<rt>ちい</rt></ruby>さな<ruby>天守閣<rt>てんしゅかく</rt></ruby>のしゃちほこは２０１９<ruby>年<rt>ねん</rt></ruby>８<ruby>月<rt>がつ</rt></ruby>まで、<span class=\"colorC\"><ruby>熊本城<rt>くまもとじょう</rt></ruby></span>の<ruby>隣<rt>となり</rt></ruby>にある<ruby>建物<rt>たてもの</rt></ruby>で<ruby>見<rt>み</rt></ruby>せる<ruby>予定<rt>よてい</rt></ruby>です。\n<span class=\"colorL\"><ruby>熊本市<rt>くまもとし</rt></ruby></span>の<span class=\"colorN\"><ruby>大西<rt>おおにし</rt></ruby></span><ruby>市長<rt>しちょう</rt></ruby>は「<ruby>近<rt>ちか</rt></ruby>くでしゃちほこを<ruby>見<rt>み</rt></ruby>ることができるのは<ruby>今<rt>いま</rt></ruby>だけなので、たくさんの<ruby>人<rt>ひと</rt></ruby>に<ruby>見<rt>み</rt></ruby>に<ruby>来<rt>き</rt></ruby>てほしいです」と<ruby>話<rt>はな</rt></ruby>しました。",
+        "genre": [
+            "地域",
+            "科学・文化"
+        ],
+        "title_n": "地震被害の熊本城天守閣のしゃちほこ 復元完了し公開",
+        "title_e": "地震で壊れた熊本城　新しい「しゃちほこ」ができる",
+        "title_e_ruby": "<ruby>地震<rt>じしん</rt></ruby>で<ruby>壊<rt>こわ</rt></ruby>れた<ruby>熊本城<rt>くまもとじょう</rt></ruby>　<ruby>新<rt>あたら</rt></ruby>しい「しゃちほこ」ができる",
+        "date": "2017-08-30",
+        "urlnormal": "http://www3.nhk.or.jp/news/html/20170830/k10011118941000.html",
+        "urleasy": "http://www3.nhk.or.jp/news/easy/k10011118941000/k10011118941000.html"
+    },
+    {
+        "id": "k10011107821000",
+        "article_n": "蚊取り線香を入れる陶器「蚊やり豚」にユニークなデザインを施した作品展が三重県四日市市で開かれています。\nこの展示会は四日市市の地場産業の萬古焼をＰＲするのが狙いで、会場には素焼きの「蚊やり豚」に全国の応募者がさまざまなデザインを施した作品５０点余りが展示されています。このうち『陶器蚊遣リン豚～２０１８平昌～』（とうき・かやりんぴっぐ）という作品は来年、韓国で行われるピョンチャンオリンピックのマスコットのトラをイメージした白黒のもようになっています。また『人気にあやかやりたい』という作品は東京の上野動物園でことし６月に誕生したパンダの赤ちゃんをモチーフに、耳や目の周りが黒く塗られています。訪れた人たちはアイデアあふれる作品を楽しみながら見ていました。愛知県から訪れた３６歳の男性は「どれもよくできていて感心しました。お気に入りの作品がたくさんありすぎて、しぼりきれません」と話していました。この作品展は四日市市の「じばさん三重」で来月３日まで開かれています。（※休館日は８月２３日）",
+        "article_e": "<span class=\"colorL\"><ruby>三重県<rt>みえけん</rt></ruby></span><span class=\"colorL\"><ruby>四日市市<rt>よっかいちし</rt></ruby></span>で、いろいろな<ruby>絵<rt>え</rt></ruby>をかいたり<ruby>色<rt>いろ</rt></ruby>を<ruby>塗<rt>ぬ</rt></ruby>ったりした「<ruby>蚊<rt>か</rt></ruby>やり<ruby>豚<rt>ぶた</rt></ruby>」の<ruby>展覧会<rt>てんらんかい</rt></ruby>を<ruby>行<rt>おこな</rt></ruby>っています。<ruby>蚊<rt>か</rt></ruby>やり<ruby>豚<rt>ぶた</rt></ruby>は、<ruby>豚<rt>ぶた</rt></ruby>の<ruby>形<rt>かたち</rt></ruby>の<ruby>焼<rt>や</rt></ruby>き<ruby>物<rt>もの</rt></ruby>で、<ruby>蚊<rt>か</rt></ruby>が<ruby>来<rt>こ</rt></ruby>ないようにする<ruby>線香<rt>せんこう</rt></ruby>を<ruby>入<rt>い</rt></ruby>れて<ruby>使<rt>つか</rt></ruby>います。\n<span class=\"colorL\"><ruby>四日市市<rt>よっかいちし</rt></ruby></span>の「<ruby>萬古焼<rt>ばんこやき</rt></ruby>」という<ruby>焼<rt>や</rt></ruby>き<ruby>物<rt>もの</rt></ruby>を<ruby>紹介<rt>しょうかい</rt></ruby>するために、５０<ruby>個<rt>こ</rt></ruby><ruby>以上<rt>いじょう</rt></ruby>を<ruby>集<rt>あつ</rt></ruby>めて<ruby>見<rt>み</rt></ruby>せています。<span class=\"colorL\"><ruby>東京<rt>とうきょう</rt></ruby></span>の<span class=\"colorC\"><ruby>上野動物園<rt>うえのどうぶつえん</rt></ruby></span>で６<ruby>月<rt>がつ</rt></ruby>に<ruby>生<rt>う</rt></ruby>まれたパンダの<ruby>赤<rt>あか</rt></ruby>ちゃんのように、<ruby>耳<rt>みみ</rt></ruby>や<ruby>目<rt>め</rt></ruby>の<ruby>周<rt>まわ</rt></ruby>りを<ruby>黒<rt>くろ</rt></ruby>く<ruby>塗<rt>ぬ</rt></ruby>った<ruby>蚊<rt>か</rt></ruby>やり<ruby>豚<rt>ぶた</rt></ruby>もあります。\n<span class=\"colorL\"><ruby>愛知県<rt>あいちけん</rt></ruby></span>から<ruby>来<rt>き</rt></ruby>た<ruby>男性<rt>だんせい</rt></ruby>は「<ruby>全部<rt>ぜんぶ</rt></ruby>よくできていておもしろいと<ruby>思<rt>おも</rt></ruby>います」と<ruby>話<rt>はな</rt></ruby>していました。\n<ruby>展覧会<rt>てんらんかい</rt></ruby>は９<ruby>月<rt>がつ</rt></ruby><ruby>３日<rt>みっか</rt></ruby>までです。",
+        "genre": [
+            "地域",
+            "科学・文化"
+        ],
+        "title_n": "「蚊やり豚」の作品展 三重 四日市",
+        "title_e": "蚊が来ないようにする線香を入れる「蚊やり豚」の展覧会",
+        "title_e_ruby": "<ruby>蚊<rt>か</rt></ruby>が<ruby>来<rt>こ</rt></ruby>ないようにする<ruby>線香<rt>せんこう</rt></ruby>を<ruby>入<rt>い</rt></ruby>れる「<ruby>蚊<rt>か</rt></ruby>やり<ruby>豚<rt>ぶた</rt></ruby>」の<ruby>展覧会<rt>てんらんかい</rt></ruby>",
+        "date": "2017-08-22",
+        "urlnormal": "http://www3.nhk.or.jp/news/html/20170822/k10011107821000.html",
+        "urleasy": "http://www3.nhk.or.jp/news/easy/k10011107821000/k10011107821000.html"
+    },
+    {
+        "id": "k10011105461000",
+        "article_n": "北海道東部の沖のサンマ漁は、主力の大型船による棒受け網漁が解禁され、サンマの水揚げ量が全国で最も多い根室市の花咲港からはおよそ２０隻が一斉に出漁しました。\n先月から始まった北海道東部の沖のサンマ漁は、２０日、主力の１００トン以上の大型船による棒受け網漁が解禁になりました。サンマの水揚げ量が７年連続で全国で最も多い根室市の花咲港では、未明から漁業者が船に食料などを積み込み、およそ２０隻が北方四島周辺の漁場へ向けて出漁しました。今シーズンのサンマ漁をめぐっては、国の研究機関が、日本近海に来るサンマの数は過去最低の水揚げとなった去年をさらに下回るとする見通しを示しています。漁業者の男性は「魚がいるかどうかは行ってみないとわからないので不安はありますが、大漁になるよう願っています」と話していました。北海道東部の沖のサンマ漁は１１月ごろまで続きます。",
+        "article_e": "さんまは、<ruby>日本人<rt>にっぽんじん</rt></ruby>が<ruby>好<rt>す</rt></ruby>きな<ruby>魚<rt>さかな</rt></ruby>の１つで、<ruby>焼<rt>や</rt></ruby>いたりして<ruby>食<rt>た</rt></ruby>べます。\n<span class=\"colorL\"><ruby>北海道<rt>ほっかいどう</rt></ruby></span>の<ruby>東<rt>ひがし</rt></ruby>の<ruby>海<rt>うみ</rt></ruby>では７<ruby>月<rt>がつ</rt></ruby>から１１<ruby>月<rt>がつ</rt></ruby>ごろまでさんまの<ruby>漁<rt>りょう</rt></ruby>をします。８<ruby>月<rt>がつ</rt></ruby><ruby>２０日<rt>はつか</rt></ruby>、１００ｔ<ruby>以上<rt>いじょう</rt></ruby>ある<ruby>大<rt>おお</rt></ruby>きな<ruby>船<rt>ふね</rt></ruby>のさんまの<ruby>漁<rt>りょう</rt></ruby>が<ruby>始<rt>はじ</rt></ruby>まりました。\n<span class=\"colorL\"><ruby>根室市<rt>ねむろし</rt></ruby></span>の<span class=\"colorC\"><ruby>花咲港<rt>はなさきこう</rt></ruby></span>では<ruby>２０日<rt>はつか</rt></ruby>の<ruby>朝<rt>あさ</rt></ruby>、<ruby>大<rt>おお</rt></ruby>きな<ruby>船<rt>ふね</rt></ruby>が２０<ruby>隻<rt>せき</rt></ruby>ぐらいさんまをとるために<ruby>近<rt>ちか</rt></ruby>くの<ruby>海<rt>うみ</rt></ruby>に<ruby>向<rt>む</rt></ruby>かいました。\n<ruby>国<rt>くに</rt></ruby>の<ruby>研究<rt>けんきゅう</rt></ruby>によると、<ruby>今年<rt>ことし</rt></ruby><span class=\"colorL\"><ruby>日本<rt>にっぽん</rt></ruby></span>の<ruby>近<rt>ちか</rt></ruby>くの<ruby>海<rt>うみ</rt></ruby>に<ruby>来<rt>く</rt></ruby>るさんまは、<ruby>今<rt>いま</rt></ruby>まででいちばんとれなかった<ruby>去年<rt>きょねん</rt></ruby>より<ruby>少<rt>すく</rt></ruby>なくなりそうです。\n<ruby>漁<rt>りょう</rt></ruby>に<ruby>向<rt>む</rt></ruby>かう<ruby>男性<rt>だんせい</rt></ruby>は「<ruby>頑張<rt>がんば</rt></ruby>ってたくさんとってきます」と<ruby>話<rt>はな</rt></ruby>していました。",
+        "genre": [
+            "地域",
+            "暮らし"
+        ],
+        "title_n": "秋サンマ漁が本格化 大型船一斉に出港 北海道",
+        "title_e": "北海道の港から大きな船がさんまをとりに海に向かう",
+        "title_e_ruby": "<ruby>北海道<rt>ほっかいどう</rt></ruby>の<ruby>港<rt>みなと</rt></ruby>から<ruby>大<rt>おお</rt></ruby>きな<ruby>船<rt>ふね</rt></ruby>がさんまをとりに<ruby>海<rt>うみ</rt></ruby>に<ruby>向<rt>む</rt></ruby>かう",
+        "date": "2017-08-20",
+        "urlnormal": "http://www3.nhk.or.jp/news/html/20170820/k10011105461000.html",
+        "urleasy": "http://www3.nhk.or.jp/news/easy/k10011105461000/k10011105461000.html"
+    },
+    {
+        "id": "k10011104821000",
+        "article_n": "愛好家などが育てた巨大なスイカの重さを競うコンテストが埼玉県桶川市で開かれました。\nこのコンテストは巨大なスイカを地域の名物にしようと、埼玉県桶川市の農家などで作る愛好家グループが毎年、開いています。会場には地元の愛好家や中学校の生徒などがことし５月に主催グループから配付された苗をそれぞれの方法で育てた巨大なスイカ、およそ３０個が出品されました。このスイカは観賞用や牛などの飼料に使われるアメリカ原産の「カロライナクロス」という品種で、ことしは長雨の影響で腐ったり破裂したりしたものが多く、出品数は去年と比べて２割ほど減っているということです。審査の結果、趣味で巨大なスイカを栽培しているという地元の６７歳の男性が育てた、重さ７８キロ余りのスイカが優勝しました。優勝した男性は「雨が降れば屋根をかけるなど、毎日毎日手をかけて育てたので、多くの人に見てもらいたいです」と話していました。出品された巨大なスイカは２０日まで、桶川市の「べに花ふるさと館」に展示されます。",
+        "article_e": "<span class=\"colorL\"><ruby>埼玉県<rt>さいたまけん</rt></ruby></span><span class=\"colorL\"><ruby>桶川市<rt>おけがわし</rt></ruby></span>で、<ruby>大<rt>おお</rt></ruby>きく<ruby>育<rt>そだ</rt></ruby>てたすいかを<ruby>集<rt>あつ</rt></ruby>めて、どれがいちばん<ruby>重<rt>おも</rt></ruby>いかを<ruby>決<rt>き</rt></ruby>めるイベントがありました。このイベントは、<span class=\"colorL\"><ruby>桶川市<rt>おけがわし</rt></ruby></span>をもっと<ruby>知<rt>し</rt></ruby>ってほしいと<ruby>考<rt>かんが</rt></ruby>えて、<ruby>農業<rt>のうぎょう</rt></ruby>をしている<ruby>人<rt>ひと</rt></ruby>などのグループが<ruby>毎年<rt>まいとし</rt></ruby><ruby>行<rt>おこな</rt></ruby>っています。\n<ruby>会場<rt>かいじょう</rt></ruby>には３０<ruby>個<rt>こ</rt></ruby>ぐらいのすいかが<ruby>集<rt>あつ</rt></ruby>まりました。<ruby>農業<rt>のうぎょう</rt></ruby>の<ruby>人<rt>ひと</rt></ruby>や<ruby>中学生<rt>ちゅうがくせい</rt></ruby>などが、イベントを<ruby>行<rt>おこな</rt></ruby>うグループから５<ruby>月<rt>がつ</rt></ruby>に<ruby>苗<rt>なえ</rt></ruby>をもらって<ruby>育<rt>そだ</rt></ruby>てました。<ruby>今年<rt>ことし</rt></ruby>は<ruby>雨<rt>あめ</rt></ruby>の<ruby>日<rt>ひ</rt></ruby>が<ruby>続<rt>つづ</rt></ruby>いて、すいかが<ruby>腐<rt>くさ</rt></ruby>ったり<ruby>割<rt>わ</rt></ruby>れたりしたため、<ruby>集<rt>あつ</rt></ruby>まったすいかは<ruby>去年<rt>きょねん</rt></ruby>より<ruby>少<rt>すく</rt></ruby>なくなりました。\n<ruby>重<rt>おも</rt></ruby>さを<ruby>調<rt>しら</rt></ruby>べた<ruby>結果<rt>けっか</rt></ruby>、６７<ruby>歳<rt>さい</rt></ruby>の<ruby>男性<rt>だんせい</rt></ruby>が<ruby>育<rt>そだ</rt></ruby>てた７８ｋｇぐらいのすいかが１<ruby>番<rt>ばん</rt></ruby>になりました。この<ruby>男性<rt>だんせい</rt></ruby>は「<ruby>雨<rt>あめ</rt></ruby>ですいかが<ruby>悪<rt>わる</rt></ruby>くならないように<ruby>一生懸命<rt>いっしょうけんめい</rt></ruby><ruby>育<rt>そだ</rt></ruby>てました」と<ruby>話<rt>はな</rt></ruby>していました。",
+        "genre": [
+            "地域",
+            "科学・文化"
+        ],
+        "title_n": "重さ自慢 巨大スイカのコンテスト 埼玉 桶川",
+        "title_e": "埼玉県　いちばん重いすいかを決めるイベント",
+        "title_e_ruby": "<ruby>埼玉県<rt>さいたまけん</rt></ruby>　いちばん<ruby>重<rt>おも</rt></ruby>いすいかを<ruby>決<rt>き</rt></ruby>めるイベント",
+        "date": "2017-08-19",
+        "urlnormal": "http://www3.nhk.or.jp/news/html/20170819/k10011104821000.html",
+        "urleasy": "http://www3.nhk.or.jp/news/easy/k10011104821000/k10011104821000.html"
+    },
+    {
+        "id": "k10011099111000",
+        "article_n": "世界文化遺産に登録された合掌造りの集落で知られる岐阜県白川村で、恒例の真夏の成人式が行われました。\n白川村では多くの若者が就職や進学で村を離れているうえ、冬は雪深いため毎年、お盆の帰省の時期に成人式を行っています。１４日は合掌造りの建物で行われた成人式には、村出身の新成人２８人のうち２５人が浴衣や着物姿で参加し、はじめにそれぞれ近況を報告しました。そして、成原茂村長が「故郷白川村を誇りに思い、感謝の気持ちを忘れず、夢に向かって前進してください」と激励の言葉を贈りました。続いて、新成人を代表して野村日菜ノさんが「ふるさとを誇りに社会に貢献していきたい」と誓いの言葉を述べました。新成人たちは再会を喜び合いながら、門出の式典で気持ちを新たにしていました。新成人の１人で、現在、富山大学の工学部に通う飯波優平さんは「将来、白川村に戻り、観光に貢献したい」と話していました。",
+        "article_e": "<span class=\"colorL\"><ruby>日本<rt>にっぽん</rt></ruby></span>の<ruby>多<rt>おお</rt></ruby>くの<ruby>町<rt>まち</rt></ruby>や<ruby>村<rt>むら</rt></ruby>では、１<ruby>月<rt>がつ</rt></ruby>に<ruby>成人式<rt>せいじんしき</rt></ruby>を<ruby>行<rt>おこな</rt></ruby>って<ruby>２０歳<rt>はたち</rt></ruby>の<ruby>人<rt>ひと</rt></ruby>たちのお<ruby>祝<rt>いわ</rt></ruby>いをしています。\n<span class=\"colorL\"><ruby>岐阜県<rt>ぎふけん</rt></ruby></span><span class=\"colorL\"><ruby>白川村<rt>しらかわむら</rt></ruby></span>は、<ruby>仕事<rt>しごと</rt></ruby>や<ruby>勉強<rt>べんきょう</rt></ruby>のために<ruby>村<rt>むら</rt></ruby>を<ruby>出<rt>で</rt></ruby>て<ruby>生活<rt>せいかつ</rt></ruby>している<ruby>若<rt>わか</rt></ruby>い<ruby>人<rt>ひと</rt></ruby>が<ruby>大勢<rt>おおぜい</rt></ruby>います。１<ruby>月<rt>がつ</rt></ruby>は<ruby>雪<rt>ゆき</rt></ruby>がたくさん<ruby>降<rt>ふ</rt></ruby>るため、<ruby>毎年<rt>まいとし</rt></ruby>、<ruby>若<rt>わか</rt></ruby>い<ruby>人<rt>ひと</rt></ruby>たちが<ruby>村<rt>むら</rt></ruby>に<ruby>帰<rt>かえ</rt></ruby>る<ruby>夏休<rt>なつやす</rt></ruby>みに<ruby>成人式<rt>せいじんしき</rt></ruby>を<ruby>行<rt>おこな</rt></ruby>っています。\n<ruby>１４日<rt>じゅうよっか</rt></ruby>、<ruby>有名<rt>ゆうめい</rt></ruby>な<ruby>合掌造<rt>がっしょうづく</rt></ruby>りの<ruby>建物<rt>たてもの</rt></ruby>で<ruby>成人式<rt>せいじんしき</rt></ruby>を<ruby>行<rt>おこな</rt></ruby>いました。<span class=\"colorL\"><ruby>白川村<rt>しらかわむら</rt></ruby></span>には<ruby>合掌造<rt>がっしょうづく</rt></ruby>りの<ruby>家<rt>いえ</rt></ruby>がたくさんあって、<ruby>世界遺産<rt>せかいいさん</rt></ruby>になっています。<ruby>式<rt>しき</rt></ruby>には、<ruby>今年<rt>ことし</rt></ruby><ruby>２０歳<rt>はたち</rt></ruby>の２５<ruby>人<rt>にん</rt></ruby>が<ruby>浴衣<rt>ゆかた</rt></ruby>などを<ruby>着<rt>き</rt></ruby>て<ruby>出席<rt>しゅっせき</rt></ruby>しました。\n<span class=\"colorN\"><ruby>成原<rt>なりはら</rt></ruby><ruby>茂<rt>しげる</rt></ruby></span><ruby>村長<rt>そんちょう</rt></ruby>は「<span class=\"colorL\"><ruby>白川村<rt>しらかわむら</rt></ruby></span>を<ruby>誇<rt>ほこ</rt></ruby>りに<ruby>思<rt>おも</rt></ruby>って、<ruby>将来<rt>しょうらい</rt></ruby>の<ruby>夢<rt>ゆめ</rt></ruby>のために<ruby>頑張<rt>がんば</rt></ruby>ってください」と<ruby>言<rt>い</rt></ruby>いました。<span class=\"colorL\"><ruby>富山県<rt>とやまけん</rt></ruby></span>の<ruby>大学<rt>だいがく</rt></ruby>に<ruby>通<rt>かよ</rt></ruby>っている<ruby>男性<rt>だんせい</rt></ruby>は「<ruby>将来<rt>しょうらい</rt></ruby>、<span class=\"colorL\"><ruby>白川村<rt>しらかわむら</rt></ruby></span>に<ruby>戻<rt>もど</rt></ruby>って、<ruby>村<rt>むら</rt></ruby>のために<ruby>観光<rt>かんこう</rt></ruby>の<ruby>仕事<rt>しごと</rt></ruby>をしたいです」と<ruby>話<rt>はな</rt></ruby>していました。",
+        "genre": [
+            "地域",
+            "暮らし"
+        ],
+        "title_n": "世界遺産で真夏の成人式  岐阜 白川村",
+        "title_e": "岐阜県白川村　夏の成人式で２０歳のお祝いをする",
+        "title_e_ruby": "<ruby>岐阜県<rt>ぎふけん</rt></ruby><ruby>白川村<rt>しらかわむら</rt></ruby>　<ruby>夏<rt>なつ</rt></ruby>の<ruby>成人式<rt>せいじんしき</rt></ruby>で<ruby>２０歳<rt>はたち</rt></ruby>のお<ruby>祝<rt>いわ</rt></ruby>いをする",
+        "date": "2017-08-14",
+        "urlnormal": "http://www3.nhk.or.jp/news/html/20170814/k10011099111000.html",
+        "urleasy": "http://www3.nhk.or.jp/news/easy/k10011099111000/k10011099111000.html"
+    },
+    {
+        "id": "k10011089721000",
+        "article_n": "東北を代表する夏祭りの一つ「仙台七夕まつり」が始まり、仙台市中心部の商店街に飾られた色とりどりの七夕飾りが訪れた人たちを楽しませています。\n仙台七夕まつりは、伊達政宗が仙台藩主だった４００年以上前から続くとされる東北を代表する夏祭りの一つです。６日は仙台市中心部のアーケード街で午前中、開幕を祝うセレモニーが行われました。会場にはおよそ８万８０００羽の折り鶴で作った七夕飾りがつるされ、制作した市内の小学生や中学生が東日本大震災からの復興への願いを込めた歌を披露しました。折り鶴を作った小学６年生の女子児童は、「復興が進み、みんなが元気になるようにという思いを込めて折りました。飾りを見た人には、復興に対する多くの人の気持ちを感じてほしい」と話していました。会場には色とりどりの吹き流しや短冊で彩られたおよそ３０００本の七夕飾りが取り付けられ、訪れた家族連れなどが写真をとったり眺めたりして楽しんでいました。茨城県から家族と訪れた５２歳の男性は「震災は大変なことだったと思うが被災地の人にはこの七夕を通して元気を出して頑張ってほしい」と話していました。仙台七夕まつりは８日まで開かれ、期間中、およそ２２０万人の人出が見込まれています。",
+        "article_e": "<span class=\"colorL\"><ruby>宮城県<rt>みやぎけん</rt></ruby></span><span class=\"colorL\"><ruby>仙台市<rt>せんだいし</rt></ruby></span>で、「<ruby>仙台七夕<rt>せんだいたなばた</rt></ruby>まつり」という<ruby>有名<rt>ゆうめい</rt></ruby>なお<ruby>祭<rt>まつ</rt></ruby>りが<ruby>行<rt>おこな</rt></ruby>われています。このお<ruby>祭<rt>まつ</rt></ruby>りは、<ruby>毎年<rt>まいとし</rt></ruby>７<ruby>月<rt>がつ</rt></ruby><ruby>７日<rt>なのか</rt></ruby>の<ruby>七夕<rt>たなばた</rt></ruby>の１か<ruby>月<rt>げつ</rt></ruby>あとの８<ruby>月<rt>がつ</rt></ruby><ruby>６日<rt>むいか</rt></ruby>〜<ruby>８日<rt>ようか</rt></ruby>に<ruby>行<rt>おこな</rt></ruby>われていて、４００<ruby>年<rt>ねん</rt></ruby><ruby>以上<rt>いじょう</rt></ruby><ruby>前<rt>まえ</rt></ruby>から<ruby>続<rt>つづ</rt></ruby>いていると<ruby>言<rt>い</rt></ruby>われています。\n<ruby>６日<rt>むいか</rt></ruby>はお<ruby>祭<rt>まつ</rt></ruby>りを<ruby>始<rt>はじ</rt></ruby>める<ruby>式<rt>しき</rt></ruby>がありました。<ruby>会場<rt>かいじょう</rt></ruby>には<span class=\"colorL\"><ruby>仙台市<rt>せんだいし</rt></ruby></span>の<ruby>小学生<rt>しょうがくせい</rt></ruby>や<ruby>中学生<rt>ちゅうがくせい</rt></ruby>が<ruby>作<rt>つく</rt></ruby>った８<ruby>万<rt>まん</rt></ruby>８０００の<ruby>折<rt>お</rt></ruby>り<ruby>紙<rt>がみ</rt></ruby>の<ruby>鶴<rt>つる</rt></ruby>が<ruby>飾<rt>かざ</rt></ruby>ってあります。<ruby>鶴<rt>つる</rt></ruby>を<ruby>折<rt>お</rt></ruby>った<ruby>子<rt>こ</rt></ruby>どもたちは、６<ruby>年<rt>ねん</rt></ruby><ruby>前<rt>まえ</rt></ruby>の<ruby>東日本大震災<rt>ひがしにほんだいしんさい</rt></ruby>で<ruby>被害<rt>ひがい</rt></ruby>があった<ruby>町<rt>まち</rt></ruby>が<ruby>元気<rt>げんき</rt></ruby>になるように<ruby>歌<rt>うた</rt></ruby>を<ruby>歌<rt>うた</rt></ruby>いました。\n<span class=\"colorL\"><ruby>茨城県<rt>いばらきけん</rt></ruby></span>から<ruby>来<rt>き</rt></ruby>た<ruby>男性<rt>だんせい</rt></ruby>は「<ruby>被害<rt>ひがい</rt></ruby>があった<ruby>町<rt>まち</rt></ruby>の<ruby>人<rt>ひと</rt></ruby>たちは、このお<ruby>祭<rt>まつ</rt></ruby>りで<ruby>元気<rt>げんき</rt></ruby>になって<ruby>頑張<rt>がんば</rt></ruby>ってほしいです」と<ruby>話<rt>はな</rt></ruby>していました。\n<ruby>商店街<rt>しょうてんがい</rt></ruby>には、いろいろな<ruby>色<rt>いろ</rt></ruby>の<ruby>吹<rt>ふ</rt></ruby>き<ruby>流<rt>なが</rt></ruby>しや<ruby>短冊<rt>たんざく</rt></ruby>が<ruby>付<rt>つ</rt></ruby>いている３０００<ruby>本<rt>ぼん</rt></ruby>の<ruby>飾<rt>かざ</rt></ruby>りがあります。<ruby>見<rt>み</rt></ruby>に<ruby>来<rt>き</rt></ruby>た<ruby>人<rt>ひと</rt></ruby>たちは、<ruby>写真<rt>しゃしん</rt></ruby>を<ruby>撮<rt>と</rt></ruby>ったりゆっくり<ruby>見<rt>み</rt></ruby>たりして<ruby>楽<rt>たの</rt></ruby>しんでいました。\n「<ruby>仙台七夕<rt>せんだいたなばた</rt></ruby>まつり」には、２２０<ruby>万<rt>まん</rt></ruby><ruby>人<rt>にん</rt></ruby>が<ruby>来<rt>く</rt></ruby>ると<ruby>考<rt>かんが</rt></ruby>えられています。",
+        "genre": [
+            "地域",
+            "暮らし"
+        ],
+        "title_n": "仙台七夕まつり始まる",
+        "title_e": "宮城県の「仙台七夕まつり」　いろいろな色の飾りを楽しむ",
+        "title_e_ruby": "<ruby>宮城県<rt>みやぎけん</rt></ruby>の「<ruby>仙台七夕<rt>せんだいたなばた</rt></ruby>まつり」　いろいろな<ruby>色<rt>いろ</rt></ruby>の<ruby>飾<rt>かざ</rt></ruby>りを<ruby>楽<rt>たの</rt></ruby>しむ",
+        "date": "2017-08-06",
+        "urlnormal": "http://www3.nhk.or.jp/news/html/20170806/k10011089721000.html",
+        "urleasy": "http://www3.nhk.or.jp/news/easy/k10011089721000/k10011089721000.html"
+    },
+    {
         "id": "k10011083751000",
         "article_n": "岩手の夏の風物詩「盛岡さんさ踊り」が１日開幕し、浴衣姿の踊り手が太鼓や笛の音に合わせて盛岡市中心部を練り歩きました。\n「盛岡さんさ踊り」は３００年以上前に悪さをしていた鬼を神様が退治したのを喜んだ人たちが踊ったのが始まりと言われていて、ことしは４日までの期間中、延べ２５７団体合わせて３万５０００人余りが参加します。祭りは１日午後６時に開幕し、メイン会場の盛岡市の中央通りでは「ミスさんさ踊り」を先頭に、色鮮やかな浴衣を着て華やかに着飾った踊り手たちが華麗な踊りを披露しました。沿道には日中から観光客が詰めかけ、祭りの熱気を包み込むように大勢の人たちで埋め尽くされていました。職場の仲間と見に来た女性は「初めて見たが、祭の雰囲気がとてもよかった。見ていたら踊りたくなってまねしていました」と話していました。また踊り手として、３日に参加する予定の小学生は「さんさ踊りは伝統的なところと新しいところが両方あるのがいい。あさっては緊張するけど一生懸命頑張りたい」と話していました。",
         "article_e": "<span class=\"colorL\"><ruby>岩手県<rt>いわてけん</rt></ruby></span><span class=\"colorL\"><ruby>盛岡市<rt>もりおかし</rt></ruby></span>で「<ruby>盛岡<rt>もりおか</rt></ruby>さんさ<ruby>踊<rt>おど</rt></ruby>り」というお<ruby>祭<rt>まつ</rt></ruby>りが<ruby>１日<rt>ついたち</rt></ruby>に<ruby>始<rt>はじ</rt></ruby>まりました。お<ruby>祭<rt>まつ</rt></ruby>りでは、きれいな<ruby>浴衣<rt>ゆかた</rt></ruby>を<ruby>着<rt>き</rt></ruby>た<ruby>人<rt>ひと</rt></ruby>たちが、<ruby>太鼓<rt>たいこ</rt></ruby>や<ruby>笛<rt>ふえ</rt></ruby>の<ruby>音<rt>おと</rt></ruby>に<ruby>合<rt>あ</rt></ruby>わせて<ruby>踊<rt>おど</rt></ruby>りながらまちの<ruby>中<rt>なか</rt></ruby>を<ruby>歩<rt>ある</rt></ruby>きます。\n<ruby>見<rt>み</rt></ruby>に<ruby>来<rt>き</rt></ruby>た<ruby>女性<rt>じょせい</rt></ruby>は「<ruby>初<rt>はじ</rt></ruby>めて<ruby>見<rt>み</rt></ruby>ましたが、<ruby>私<rt>わたし</rt></ruby>も<ruby>踊<rt>おど</rt></ruby>りたくなりました」と<ruby>話<rt>はな</rt></ruby>していました。\n<ruby>盛岡<rt>もりおか</rt></ruby>さんさ<ruby>踊<rt>おど</rt></ruby>りは、３００<ruby>年<rt>ねん</rt></ruby><ruby>以上<rt>いじょう</rt></ruby><ruby>前<rt>まえ</rt></ruby>、<ruby>神<rt>かみ</rt></ruby><ruby>様<rt>さま</rt></ruby>のおかげで<ruby>悪<rt>わる</rt></ruby>いことをした<ruby>鬼<rt>おに</rt></ruby>がいなくなって、<ruby>喜<rt>よろこ</rt></ruby>んだ<ruby>人<rt>ひと</rt></ruby>たちが<ruby>踊<rt>おど</rt></ruby>ったことから<ruby>始<rt>はじ</rt></ruby>まったと<ruby>言<rt>い</rt></ruby>われています。\nお<ruby>祭<rt>まつ</rt></ruby>りは<ruby>４日<rt>よっか</rt></ruby>までで、２５７のグループの３<ruby>万<rt>まん</rt></ruby>５０００<ruby>人<rt>にん</rt></ruby>ぐらいが<ruby>踊<rt>おど</rt></ruby>ります。",
