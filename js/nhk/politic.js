@@ -2532,5 +2532,56 @@ article_data = [
         "date": "2015-03-03",
         "urlnormal": "http://www3.nhk.or.jp/news/html/20150303/k10010001981000.html",
         "urleasy": "http://www3.nhk.or.jp/news/easy/k10010001981000/k10010001981000.html"
+    },
+    {
+        "id": "k10014329891000",
+        "article_n": "安倍総理大臣は３日、内閣改造を断行して第２次安倍改造内閣を発足させ、新設した地方創生担当大臣に自民党前幹事長の石破茂氏を起用しました。そして、近く「まち・ひと・しごと創生本部」の初めての会合を開き、人口減少や地方都市の衰退などの克服に向けた取り組みを本格化させる方針です。\n安倍総理大臣は３日、第２次安倍内閣発足後、初めてとなる内閣改造を断行し、第２次安倍改造内閣は皇居での認証式を経て発足しました。内閣改造では、新設した地方創生担当大臣に自民党前幹事長の石破茂氏を起用しました。改造内閣の発足を受けて、記者会見した安倍総理大臣は、経済の再生とデフレからの脱却とともに、地方創生、外交・安全保障の立て直し、女性の輝く社会の実現、防災対策などへの取り組みを強化していく考えを強調しました。そのうえで、「改造内閣の最大の課題の１つが、元気で、豊かな『地方の創生』だ」と述べ、経済の再生に向けて、人口減少や地方都市の衰退といった課題を克服することを目指す考えを示しました。そして改造後、初めて開いた３日夜の閣議で、地方創生に内閣が総力を挙げて取り組むとした基本方針を決定するとともに、安倍総理大臣を本部長として、すべての閣僚で作る「まち・ひと・しごと創生本部」を立ち上げました。このあと、石破地方創生担当大臣は記者会見で、「若い世代が元気に働き、子どもを育てることができる地方づくりを後押ししていく。従来の公共事業の延長をやるつもりはない」と述べました。政府は、秋の臨時国会に、地方創生の実現に向けた関連法案を提出するとともに、今後５年間に政府が取り組む「総合戦略」を取りまとめる方針で、近く創生本部の初会合を開き、取り組みを本格化させる方針です。",
+        "article_e": "<span class=\"colorN\"><ruby>安倍<rt>あべ</rt></ruby></span><ruby>総理大臣<rt>そうりだいじん</rt></ruby>は<ruby>３日<rt>みっか</rt></ruby>、<ruby>大臣<rt>だいじん</rt></ruby>をかえて<ruby>新<rt>あたら</rt></ruby>しい<ruby>内閣<rt>ないかく</rt></ruby>をつくりました。\n１８<ruby>人<rt>にん</rt></ruby>の<ruby>大臣<rt>だいじん</rt></ruby>のうち、「<ruby>外務<rt>がいむ</rt></ruby><ruby>大臣<rt>だいじん</rt></ruby>」や「<ruby>文部<rt>もんぶ</rt></ruby><ruby>科学<rt>かがく</rt></ruby><ruby>大臣<rt>だいじん</rt></ruby>」など、６<ruby>人<rt>にん</rt></ruby>はかわりませんでした。\nまた、５<ruby>人<rt>にん</rt></ruby>の<ruby>女性<rt>じょせい</rt></ruby>が「<ruby>経済<rt>けいざい</rt></ruby><ruby>産業<rt>さんぎょう</rt></ruby><ruby>大臣<rt>だいじん</rt></ruby>」や「<ruby>法務<rt>ほうむ</rt></ruby><ruby>大臣<rt>だいじん</rt></ruby>」などの<ruby>大臣<rt>だいじん</rt></ruby>になりました。<ruby>女性<rt>じょせい</rt></ruby>の<ruby>大臣<rt>だいじん</rt></ruby>は、<ruby>前<rt>まえ</rt></ruby>より３<ruby>人<rt>にん</rt></ruby><ruby>増<rt>ふ</rt></ruby>えました。５<ruby>人<rt>にん</rt></ruby>の<ruby>女性<rt>じょせい</rt></ruby>が<ruby>大臣<rt>だいじん</rt></ruby>になるのは、２００１<ruby>年<rt>ねん</rt></ruby>の<span class=\"colorN\"><ruby>小泉<rt>こいずみ</rt></ruby></span><ruby>総理大臣<rt>そうりだいじん</rt></ruby>のときと<ruby>同<rt>おな</rt></ruby>じで、<ruby>最<rt>もっと</rt></ruby>も<ruby>多<rt>おお</rt></ruby>い<ruby>人数<rt>にんずう</rt></ruby>です。\n<span class=\"colorN\"><ruby>安倍<rt>あべ</rt></ruby></span><ruby>総理大臣<rt>そうりだいじん</rt></ruby>は<ruby>３日<rt>みっか</rt></ruby><ruby>夜<rt>よる</rt></ruby>、<ruby>新<rt>あたら</rt></ruby>しい<ruby>内閣<rt>ないかく</rt></ruby>で、<ruby>地方<rt>ちほう</rt></ruby>を<ruby>元気<rt>げんき</rt></ruby>にしたり、<ruby>女性<rt>じょせい</rt></ruby>が<ruby>活躍<rt>かつやく</rt></ruby>できる<ruby>社会<rt>しゃかい</rt></ruby>をつくっていきたいと<ruby>言<rt>い</rt></ruby>いました。",
+        "genre": [
+            "政治",
+            "公共事業",
+            "地方都市",
+            "安倍改造内閣"
+        ],
+        "title_n": "政府 地方創生実現へ本格始動へ",
+        "title_e": "安倍総理大臣が大臣をかえて新しい内閣をつくる",
+        "title_e_ruby": "<ruby>安倍<rt>あべ</rt></ruby><ruby>総理大臣<rt>そうりだいじん</rt></ruby>が<ruby>大臣<rt>だいじん</rt></ruby>をかえて<ruby>新<rt>あたら</rt></ruby>しい<ruby>内閣<rt>ないかく</rt></ruby>をつくる",
+        "date": "2014-09-04",
+        "urlnormal": "http://www3.nhk.or.jp/news/html/20140904/k10014329891000.html",
+        "urleasy": "http://www3.nhk.or.jp/news/easy/k10014329891000/k10014329891000.html"
+    },
+    {
+        "id": "k10014912911000",
+        "article_n": "菅官房長官は閣議のあとの記者会見で、フランスで開かれている国際漫画祭で韓国政府がいわゆる従軍慰安婦をテーマにした企画展を開いていることについて「国際的な文化交流の促進といった漫画祭の趣旨が大きく損なわれる」と述べ、懸念を示しました。\nフランスで開かれているヨーロッパ最大規模の国際漫画祭で、韓国政府は、いわゆる従軍慰安婦をテーマにした漫画やイラストなど１２０点余りを紹介する企画展を開いています。これについて菅官房長官は閣議のあとの記者会見で「漫画を通じた国際的な文化交流の促進、相互理解、友好親善という漫画祭の趣旨にそぐわない状況が発生していることは極めて残念だ。韓国政府が主導する慰安婦関連の展示が行われることで、漫画祭の趣旨が大きく損なわれることを強く懸念している」と述べました。また菅官房長官は「漫画祭の会場に、慰安婦問題についてのわが国の立場やこれまでの取り組みを説明する、英語、フランス語、韓国語の資料を置くとともに、現地入りしているフランス大使館の職員が資料に関する説明を行っており、明確に日本の立場を主張している」と述べました。",
+        "article_e": "かきの<ruby>養殖<rt>ようしょく</rt></ruby>が<ruby>盛<rt>さか</rt></ruby>んな<span class=\"colorL\"><ruby>岩手県<rt>いわてけん</rt></ruby></span><span class=\"colorL\"><ruby>大船渡市<rt>おおふなとし</rt></ruby></span>では、おととし３<ruby>月<rt>がつ</rt></ruby>の<ruby>東日本大震災<rt>ひがしにほんだいしんさい</rt></ruby>の<ruby>津波<rt>つなみ</rt></ruby>で<ruby>壊<rt>こわ</rt></ruby>れた<ruby>所<rt>ところ</rt></ruby>を<ruby>直<rt>なお</rt></ruby>しています。ことしは、<ruby>紫外線<rt>しがいせん</rt></ruby>を<ruby>使<rt>つか</rt></ruby>って<ruby>海<rt>うみ</rt></ruby>の<ruby>水<rt>みず</rt></ruby>の<ruby>菌<rt>きん</rt></ruby>などをなくす<ruby>水槽<rt>すいそう</rt></ruby>が<ruby>直<rt>なお</rt></ruby>ったため、<ruby>生<rt>なま</rt></ruby>で<ruby>食<rt>た</rt></ruby>べるかきを<ruby>市場<rt>いちば</rt></ruby>に<ruby>送<rt>おく</rt></ruby>ることができるようになりました。\n<ruby>先月<rt>せんげつ</rt></ruby>３０<ruby>日<rt>にち</rt></ruby>、<ruby>水槽<rt>すいそう</rt></ruby>からかきを<ruby>出<rt>だ</rt></ruby>して、<ruby>箱<rt>はこ</rt></ruby>に<ruby>入<rt>い</rt></ruby>れました。１つの<ruby>箱<rt>はこ</rt></ruby>に２０<ruby>個<rt>こ</rt></ruby>から４０<ruby>個<rt>こ</rt></ruby>のかきが<ruby>入<rt>はい</rt></ruby>っています。そして、<span class=\"colorL\"><ruby>東京<rt>とうきょう</rt></ruby></span>の<span class=\"colorC\"><ruby>築地市場<rt>つきじしじょう</rt></ruby></span>などに<ruby>震災<rt>しんさい</rt></ruby>の<ruby>前<rt>まえ</rt></ruby>とほとんど<ruby>同<rt>おな</rt></ruby>じ４５０の<ruby>箱<rt>はこ</rt></ruby>を<ruby>送<rt>おく</rt></ruby>りました。<ruby>養殖<rt>ようしょく</rt></ruby>をしている<ruby>人<rt>ひと</rt></ruby>の<ruby>話<rt>はなし</rt></ruby>によると、<ruby>震災<rt>しんさい</rt></ruby>の<ruby>津波<rt>つなみ</rt></ruby>で<ruby>防波堤<rt>ぼうはてい</rt></ruby>が<ruby>壊<rt>こわ</rt></ruby>れて、<ruby>栄養<rt>えいよう</rt></ruby>がある<ruby>海<rt>うみ</rt></ruby>の<ruby>水<rt>みず</rt></ruby>が<ruby>湾<rt>わん</rt></ruby>の<ruby>中<rt>なか</rt></ruby>に<ruby>入<rt>はい</rt></ruby>ってくるようになりました。このため、ことしは<ruby>大<rt>おお</rt></ruby>きなかきがたくさんできました。\n<ruby>養殖<rt>ようしょく</rt></ruby>をしている<ruby>人<rt>ひと</rt></ruby>たちのグループは「<ruby>生<rt>なま</rt></ruby>で<ruby>食<rt>た</rt></ruby>べることができるかきは<ruby>利益<rt>りえき</rt></ruby>が<ruby>多<rt>おお</rt></ruby>いので、また<ruby>市場<rt>いちば</rt></ruby>に<ruby>送<rt>おく</rt></ruby>ることができるようになってうれしいです。<ruby>来年<rt>らいねん</rt></ruby>も<ruby>再来年<rt>さらいねん</rt></ruby>ももっといいかきがとれるようにしていきたいです」と<ruby>話<rt>はな</rt></ruby>していました。",
+        "genre": [
+            "政治",
+            "企画展",
+            "従軍慰安婦",
+            "イラスト"
+        ],
+        "title_n": "官房長官 従軍慰安婦企画展に懸念",
+        "title_e": "岩手県大船渡市　生で食べるかきを市場に送る",
+        "title_e_ruby": "<ruby>岩手県<rt>いわてけん</rt></ruby><ruby>大船渡市<rt>おおふなとし</rt></ruby>　<ruby>生<rt>なま</rt></ruby>で<ruby>食<rt>た</rt></ruby>べるかきを<ruby>市場<rt>いちば</rt></ruby>に<ruby>送<rt>おく</rt></ruby>る",
+        "date": "2014-01-31",
+        "urlnormal": "http://www3.nhk.or.jp/news/html/20140131/k10014912911000.html",
+        "urleasy": "http://www3.nhk.or.jp/news/easy/k10014912911000/k10014912911000.html"
+    },
+    {
+        "id": "k10015807081000",
+        "article_n": "第２３回参議院選挙が４日公示され、ＮＨＫのまとめによりますと、選挙区と比例代表合わせて４３３人が立候補を届け出ました。自民・公明両党が参議院でも過半数を獲得し、国会のねじれを解消するのかを焦点に、各候補者は、今月２１日の投票日に向けて１７日間の選挙戦に入りました。\n参議院選挙の立候補の受け付けは、午後５時に締め切られました。\n\n\nＮＨＫのまとめによりますと、全国４７の選挙区に立候補したのは２７１人で、▽自民党が４９人、▽民主党が３５人、▽日本維新の会が１４人、▽公明党が４人、▽みんなの党が１９人、▽生活の党が５人、▽共産党が４６人、▽社民党が５人、▽みどりの風が５人、▽新党大地が２人、▽社大党が１人、▽幸福実現党が４７人、▽緑の党が１人、▽その他の政治団体や無所属が合わせて３８人となっています。新旧別では、▽現職が５７人、▽元議員が１人、▽新人が２１３人で、定員７３に対する競争率は、３．７１倍です。\n\n\n\n一方、比例代表に名簿を提出したのは１２の政党と政治団体で、届け出順に、▽みんなの党が１５人、▽民主党が２０人、▽新党大地が９人、▽社民党が４人、▽生活の党が６人、▽みどりの風が３人、▽自民党が２９人、▽共産党が１７人、▽公明党が１７人、▽緑の党が９人、▽日本維新の会が３０人、▽幸福実現党が３人で、合わせて１６２人が立候補しており、定員４８に対する競争率は３．３８倍です。この結果、選挙区と比例代表を合わせた立候補者数は４３３人で、前回・３年前の選挙と比べて４人少なくなりました。また、女性の候補者の数は、前回より５人多い１０５人となりました。\n\n\n\n今回の参議院選挙は、自民・公明両党が参議院でも過半数を獲得し、国会のねじれを解消するのか、それとも、民主党など野党側がこれを阻止するのかが焦点です。安倍総理大臣が進める経済政策をはじめ、半年余りの政権運営に対する評価などを争点に、各候補者は、今月２１日の投票日に向けて１７日間の選挙戦に入りました。",
+        "article_e": "<ruby>４日<rt>よっか</rt></ruby>、<ruby>参議院<rt>さんぎいん</rt></ruby><ruby>議員<rt>ぎいん</rt></ruby>を<ruby>選<rt>えら</rt></ruby>ぶ<ruby>選挙<rt>せんきょ</rt></ruby>の<ruby>公示<rt>こうじ</rt></ruby>がありました。<ruby>政党<rt>せいとう</rt></ruby>や<ruby>立候補<rt>りっこうほ</rt></ruby>した<ruby>人<rt>ひと</rt></ruby>たちは<ruby>選挙運動<rt>せんきょうんどう</rt></ruby>を<ruby>始<rt>はじ</rt></ruby>めました。<ruby>投票<rt>とうひょう</rt></ruby>は<ruby>今月<rt>こんげつ</rt></ruby>２１<ruby>日<rt>にち</rt></ruby>です。\n<ruby>参議院<rt>さんぎいん</rt></ruby><ruby>議員<rt>ぎいん</rt></ruby>の<ruby>定員<rt>ていいん</rt></ruby>は２４２で、<ruby>今回<rt>こんかい</rt></ruby>の<ruby>選挙<rt>せんきょ</rt></ruby>では<ruby>半分<rt>はんぶん</rt></ruby>の１２１を<ruby>選<rt>えら</rt></ruby>びます。<ruby>選<rt>えら</rt></ruby>び<ruby>方<rt>かた</rt></ruby>は２つあります。それぞれの<ruby>都道府県<rt>とどうふけん</rt></ruby>から<ruby>選<rt>えら</rt></ruby>ぶ「<ruby>選挙区<rt>せんきょく</rt></ruby>」と、<ruby>政党<rt>せいとう</rt></ruby>と<ruby>立候補<rt>りっこうほ</rt></ruby>した<ruby>人<rt>ひと</rt></ruby>が<ruby>取<rt>と</rt></ruby>った<ruby>票<rt>ひょう</rt></ruby>の<ruby>割合<rt>わりあい</rt></ruby>で<ruby>議員<rt>ぎいん</rt></ruby>が<ruby>決<rt>き</rt></ruby>まる「<ruby>比例代表<rt>ひれいだいひょう</rt></ruby>」です。\n７３<ruby>人<rt>にん</rt></ruby>を<ruby>選<rt>えら</rt></ruby>ぶ「<ruby>選挙区<rt>せんきょく</rt></ruby>」には、２７１<ruby>人<rt>にん</rt></ruby>が<ruby>立候補<rt>りっこうほ</rt></ruby>しています。４８<ruby>人<rt>にん</rt></ruby>を<ruby>選<rt>えら</rt></ruby>ぶ「<ruby>比例代表<rt>ひれいだいひょう</rt></ruby>」には、１６２<ruby>人<rt>にん</rt></ruby>が<ruby>立候補<rt>りっこうほ</rt></ruby>しています。<ruby>全部<rt>ぜんぶ</rt></ruby>で４３３<ruby>人<rt>にん</rt></ruby>が<ruby>立候補<rt>りっこうほ</rt></ruby>しました。\n<ruby>今<rt>いま</rt></ruby>の<ruby>国会<rt>こっかい</rt></ruby>は、<ruby>衆議院<rt>しゅうぎいん</rt></ruby>では<span class=\"colorC\"><ruby>自民党<rt>じみんとう</rt></ruby></span>などの<ruby>与党<rt>よとう</rt></ruby>の<ruby>議員<rt>ぎいん</rt></ruby>が<ruby>多<rt>おお</rt></ruby>くなっていて、<ruby>参議院<rt>さんぎいん</rt></ruby>では<span class=\"colorC\"><ruby>民主党<rt>みんしゅとう</rt></ruby></span>などの<ruby>野党<rt>やとう</rt></ruby>の<ruby>議員<rt>ぎいん</rt></ruby>が<ruby>多<rt>おお</rt></ruby>くなっています。<ruby>今回<rt>こんかい</rt></ruby>の<ruby>参議院<rt>さんぎいん</rt></ruby><ruby>選挙<rt>せんきょ</rt></ruby>が<ruby>終<rt>お</rt></ruby>わったあと、これが<ruby>変<rt>か</rt></ruby>わるかどうかが<ruby>焦点<rt>しょうてん</rt></ruby>です。\nそして、<span class=\"colorN\"><ruby>安倍<rt>あべ</rt></ruby></span><ruby>総理大臣<rt>そうりだいじん</rt></ruby>の<ruby>経済<rt>けいざい</rt></ruby><ruby>政策<rt>せいさく</rt></ruby>などをどう<ruby>考<rt>かんが</rt></ruby>えるかについても<ruby>関心<rt>かんしん</rt></ruby>が<ruby>集<rt>あつ</rt></ruby>まっています。",
+        "genre": [
+            "政治",
+            "参院選",
+            "新党大地",
+            "政治団体"
+        ],
+        "title_n": "参院選公示 ４３３人が立候補",
+        "title_e": "参議院選挙が公示　選挙運動が始まる",
+        "title_e_ruby": "<ruby>参議院<rt>さんぎいん</rt></ruby><ruby>選挙<rt>せんきょ</rt></ruby>が<ruby>公示<rt>こうじ</rt></ruby>　<ruby>選挙運動<rt>せんきょうんどう</rt></ruby>が<ruby>始<rt>はじ</rt></ruby>まる",
+        "date": "2013-07-04",
+        "urlnormal": "http://www3.nhk.or.jp/news/html/20130704/k10015807081000.html",
+        "urleasy": "http://www3.nhk.or.jp/news/easy/k10015807081000/k10015807081000.html"
     }
 ];

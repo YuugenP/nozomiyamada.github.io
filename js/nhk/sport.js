@@ -5575,5 +5575,73 @@ article_data = [
         "date": "2015-03-02",
         "urlnormal": "http://www3.nhk.or.jp/news/html/20150302/k10010001851000.html",
         "urleasy": "http://www3.nhk.or.jp/news/easy/k10010001851000/k10010001851000.html"
+    },
+    {
+        "id": "k10014809341000",
+        "article_n": "インチョンアジア大会、競泳の男子４００メートル自由形の予選で、４つ目の金メダル獲得を目指す萩野公介選手が全体の２位のタイムで決勝進出を決めました。\n２０歳の萩野選手は、２２日まで４つの種目に出場して２００メートル自由形などで３つの金メダルを獲得しています。５種目目となった４００メートル自由形の予選で、萩野選手は最初の５０メートルで抜けだしてそのままリードを広げ、全体の２位のタイムで決勝に進みました。この種目には、ロンドンオリンピックの金メダリスト、中国の孫楊選手と北京オリンピック金メダリストの韓国のパク・テファン選手も順当に全体の１位と３位で決勝進出を決めていて、２３日夜の決勝が注目されます。この種目では、山本耕平選手も全体の５位のタイムで決勝に進んでいます。このほか、男子では５０メートル自由形で日本記録保持者の塩浦慎理選手が全体の２位、伊藤健太選手が全体の４位、２００メートル平泳ぎで小日向一輝選手が全体の２位、小関也朱篤選手が全体の４位でそれぞれ決勝進出を決めました。女子の予選では、５０メートル背泳ぎで竹村幸選手が全体の４位、赤瀬紗也香選手が７位、４００メートル個人メドレーで清水咲子選手が全体の２位、高橋美帆選手が６位でそれぞれ決勝に進みました。１００メートルバタフライでは星奈津美選手が２位、中野未夢選手が全体の３位で決勝進出を決めました。",
+        "article_e": "<span class=\"colorL\">ＵＡＥ</span>＝<span class=\"colorL\">アラブ<ruby>首長国<rt>しゅちょうこく</rt></ruby><ruby>連邦<rt>れんぽう</rt></ruby></span>で、１９<ruby>日<rt>にち</rt></ruby>から<ruby>再生<rt>さいせい</rt></ruby><ruby>可能<rt>かのう</rt></ruby>エネルギー（＝<ruby>自然<rt>しぜん</rt></ruby>の<ruby>力<rt>ちから</rt></ruby>を<ruby>利用<rt>りよう</rt></ruby>したエネルギー）と<ruby>省<rt>しょう</rt></ruby>エネルギー（＝エネルギーの<ruby>節約<rt>せつやく</rt></ruby>）の<ruby>技術<rt>ぎじゅつ</rt></ruby>を<ruby>紹介<rt>しょうかい</rt></ruby>するイベントが<ruby>始<rt>はじ</rt></ruby>まりました。<ruby>約<rt>やく</rt></ruby>４０の<ruby>国<rt>くに</rt></ruby>から６００<ruby>以上<rt>いじょう</rt></ruby>の<ruby>会社<rt>かいしゃ</rt></ruby>や<ruby>団体<rt>だんたい</rt></ruby>が<ruby>参加<rt>さんか</rt></ruby>しています。\n<span class=\"colorL\"><ruby>日本<rt>にっぽん</rt></ruby></span>の<span class=\"colorC\">ＪＡＸＡ</span>＝<span class=\"colorC\"><ruby>宇宙<rt>うちゅう</rt></ruby><ruby>航空<rt>こうくう</rt></ruby><ruby>研究<rt>けんきゅう</rt></ruby><ruby>開発<rt>かいはつ</rt></ruby><ruby>機構<rt>きこう</rt></ruby></span>は、<ruby>宇宙<rt>うちゅう</rt></ruby>で<ruby>太陽<rt>たいよう</rt></ruby>の<ruby>光<rt>ひかり</rt></ruby>を<ruby>集<rt>あつ</rt></ruby>めて<ruby>電気<rt>でんき</rt></ruby>をつくるやり<ruby>方<rt>かた</rt></ruby>を<ruby>紹介<rt>しょうかい</rt></ruby>しました。<ruby>太陽<rt>たいよう</rt></ruby>の<ruby>光<rt>ひかり</rt></ruby>を<ruby>集<rt>あつ</rt></ruby>めるパネルは<ruby>縦<rt>たて</rt></ruby>と<ruby>横<rt>よこ</rt></ruby>の<ruby>長<rt>なが</rt></ruby>さが２ｋｍで、つくった<ruby>電気<rt>でんき</rt></ruby>を<ruby>地球<rt>ちきゅう</rt></ruby>に<ruby>送<rt>おく</rt></ruby>ります。\n<span class=\"colorL\"><ruby>日本<rt>にっぽん</rt></ruby></span>の<ruby>建設<rt>けんせつ</rt></ruby><ruby>会社<rt>がいしゃ</rt></ruby>は、<ruby>海<rt>うみ</rt></ruby>の<ruby>上<rt>うえ</rt></ruby>に<ruby>高<rt>たか</rt></ruby>さ１０００mのビルを<ruby>建<rt>た</rt></ruby>てて、<ruby>再生<rt>さいせい</rt></ruby><ruby>可能<rt>かのう</rt></ruby>エネルギーでつくった<ruby>電気<rt>でんき</rt></ruby>を<ruby>使<rt>つか</rt></ruby>う<ruby>考<rt>かんが</rt></ruby>えを<ruby>紹介<rt>しょうかい</rt></ruby>しています。\n<span class=\"colorL\">ＵＡＥ</span>＝<span class=\"colorL\">アラブ<ruby>首長国<rt>しゅちょうこく</rt></ruby><ruby>連邦<rt>れんぽう</rt></ruby></span>は、<ruby>今<rt>いま</rt></ruby>は<ruby>石油<rt>せきゆ</rt></ruby>がたくさん<ruby>出<rt>で</rt></ruby>ていますが、<ruby>将来<rt>しょうらい</rt></ruby>は<ruby>石油<rt>せきゆ</rt></ruby>が<ruby>出<rt>で</rt></ruby>なくなる<ruby>可能性<rt>かのうせい</rt></ruby>もあります。このため、<ruby>環境<rt>かんきょう</rt></ruby>を<ruby>考<rt>かんが</rt></ruby>えた<ruby>世界<rt>せかい</rt></ruby>の<ruby>新<rt>あたら</rt></ruby>しい<ruby>技術<rt>ぎじゅつ</rt></ruby>を<ruby>積極的<rt>せっきょくてき</rt></ruby>に<ruby>使<rt>つか</rt></ruby>っています。",
+        "genre": [
+            "スポーツ",
+            "自由形",
+            "金メダル",
+            "伊藤健"
+        ],
+        "title_n": "萩野 ４００ｍ自由形で決勝進出",
+        "title_e": "ＵＡＥで環境を考えた新しい技術を紹介するイベント",
+        "title_e_ruby": "ＵＡＥで<ruby>環境<rt>かんきょう</rt></ruby>を<ruby>考<rt>かんが</rt></ruby>えた<ruby>新<rt>あたら</rt></ruby>しい<ruby>技術<rt>ぎじゅつ</rt></ruby>を<ruby>紹介<rt>しょうかい</rt></ruby>するイベント",
+        "date": "2014-09-23",
+        "urlnormal": "http://www3.nhk.or.jp/news/html/20140923/k10014809341000.html",
+        "urleasy": "http://www3.nhk.or.jp/news/easy/k10014809341000/k10014809341000.html"
+    },
+    {
+        "id": "k10014452761000",
+        "article_n": "テニスの全米オープンは８日、男子シングルスの決勝が行われ、錦織圭選手はクロアチアのマリン・チリッチ選手に敗れ、準優勝となりました。四大大会のシングルスで日本選手として初めての優勝はなりませんでした。\n錦織選手は、準決勝で世界ランキング１位のノバク・ジョコビッチ選手を破り、四大大会のシングルスで日本選手として初めて決勝に進みました。今大会、第１０シードで、大会中に世界ランキングを８位に上げた錦織選手は決勝で、第１４シードで、世界ランキング１２位となったチリッチ選手と対戦しました。錦織選手は、チリッチ選手の時速２００キロを超える速いサーブに苦しみ、打ち合いでも力強いショットに押される場面が続き、第１セットを３ー６、第２セットを３ー６と続けて落としました。錦織選手は粘り強いプレーを見せましたが、チリッチ選手の勢いを止めることはできず、第３セットも３ー６で落とし、セットカウント０対３のストレートで敗れました。錦織選手は、四大大会のシングルスで日本選手として初めての優勝はなりませんでしたが、日本選手のシングルスで初となる四大大会準優勝を果たしました。",
+        "article_e": "テニスの<ruby>全米<rt>ぜんべい</rt></ruby>オープンは、<ruby>８日<rt>ようか</rt></ruby>、<ruby>男子<rt>だんし</rt></ruby>シングルスの<ruby>決勝戦<rt>けっしょうせん</rt></ruby>がありました。<span class=\"colorN\"><ruby>錦織圭<rt>にしこりけい</rt></ruby></span><ruby>選手<rt>せんしゅ</rt></ruby>が、テニスの<ruby>四大<rt>よんだい</rt></ruby><ruby>大会<rt>たいかい</rt></ruby>（＝<ruby>世界<rt>せかい</rt></ruby>で<ruby>最<rt>もっと</rt></ruby>も<ruby>大<rt>おお</rt></ruby>きな４つの<ruby>大会<rt>たいかい</rt></ruby>）のシングルスで<ruby>日本人<rt>にっぽんじん</rt></ruby>で<ruby>初<rt>はじ</rt></ruby>めて、<ruby>決勝戦<rt>けっしょうせん</rt></ruby>に<ruby>出<rt>で</rt></ruby>ました。<ruby>試合<rt>しあい</rt></ruby>の<ruby>相手<rt>あいて</rt></ruby>は<span class=\"colorL\">クロアチア</span>の<span class=\"colorN\">マリン</span>・<span class=\"colorN\">チリッチ</span><ruby>選手<rt>せんしゅ</rt></ruby>でした。\n<span class=\"colorN\">チリッチ</span><ruby>選手<rt>せんしゅ</rt></ruby>のサーブは<ruby>時速<rt>じそく</rt></ruby>２００ｋｍ<ruby>以上<rt>いじょう</rt></ruby>の<ruby>速<rt>はや</rt></ruby>さで、<span class=\"colorN\"><ruby>錦織<rt>にしこり</rt></ruby></span><ruby>選手<rt>せんしゅ</rt></ruby>はとても<ruby>苦<rt>くる</rt></ruby>しみました。ラリーでも<span class=\"colorN\">チリッチ</span><ruby>選手<rt>せんしゅ</rt></ruby>はとても<ruby>強<rt>つよ</rt></ruby>く<ruby>打<rt>う</rt></ruby>って、<span class=\"colorN\"><ruby>錦織<rt>にしこり</rt></ruby></span><ruby>選手<rt>せんしゅ</rt></ruby>は０ー３で<ruby>負<rt>ま</rt></ruby>けました。\n<span class=\"colorN\"><ruby>錦織<rt>にしこり</rt></ruby></span><ruby>選手<rt>せんしゅ</rt></ruby>は<ruby>優勝<rt>ゆうしょう</rt></ruby>できませんでしたが、<ruby>日本人<rt>にっぽんじん</rt></ruby>で<ruby>初<rt>はじ</rt></ruby>めて、<ruby>四大<rt>よんだい</rt></ruby><ruby>大会<rt>たいかい</rt></ruby>のシングルスで２<ruby>番<rt>ばん</rt></ruby>になりました。\n<span class=\"colorN\"><ruby>錦織圭<rt>にしこりけい</rt></ruby></span><ruby>選手<rt>せんしゅ</rt></ruby>は「きょうは<span class=\"colorN\">チリッチ</span><ruby>選手<rt>せんしゅ</rt></ruby>がすばらしくて、<ruby>自分<rt>じぶん</rt></ruby>のテニスができませんでした。また<ruby>来年<rt>らいねん</rt></ruby>も<ruby>決勝戦<rt>けっしょうせん</rt></ruby>に<ruby>出<rt>で</rt></ruby>たいです」と<ruby>話<rt>はな</rt></ruby>していました。",
+        "genre": [
+            "スポーツ",
+            "クロアチア",
+            "ショット",
+            "カウント"
+        ],
+        "title_n": "全米オープンテニス 錦織敗れて準優勝",
+        "title_e": "全米オープンテニス　錦織選手は決勝戦で負けて２番",
+        "title_e_ruby": "<ruby>全米<rt>ぜんべい</rt></ruby>オープンテニス　<ruby>錦織<rt>にしこり</rt></ruby><ruby>選手<rt>せんしゅ</rt></ruby>は<ruby>決勝戦<rt>けっしょうせん</rt></ruby>で<ruby>負<rt>ま</rt></ruby>けて２<ruby>番<rt>ばん</rt></ruby>",
+        "date": "2014-09-09",
+        "urlnormal": "http://www3.nhk.or.jp/news/html/20140909/k10014452761000.html",
+        "urleasy": "http://www3.nhk.or.jp/news/easy/k10014452761000/k10014452761000.html"
+    },
+    {
+        "id": "k10014331441000",
+        "article_n": "テニスの四大大会の最終戦、全米オープンの男子シングルス準々決勝で、錦織圭選手がスイスのスタニスラス・バブリンカ選手にセットカウント３対２で勝ち、準決勝進出を決めました。四大大会の男子シングルスで、日本選手がベスト４に進むのは８１年ぶり、全米オープンでは９６年ぶりとなります。",
+        "article_e": "<span class=\"colorL\">アメリカ</span>で<ruby>行<rt>おこな</rt></ruby>っているテニスの<ruby>全米<rt>ぜんべい</rt></ruby>オープンの<ruby>男子<rt>だんし</rt></ruby>シングルスで、<span class=\"colorN\"><ruby>錦織圭<rt>にしこりけい</rt></ruby></span><ruby>選手<rt>せんしゅ</rt></ruby>は<span class=\"colorL\">スイス</span>の<span class=\"colorN\">スタニスラス</span>・<span class=\"colorN\">バブリンカ</span><ruby>選手<rt>せんしゅ</rt></ruby>と<ruby>試合<rt>しあい</rt></ruby>をしました。\n<span class=\"colorN\">バブリンカ</span><ruby>選手<rt>せんしゅ</rt></ruby>は、<ruby>世界<rt>せかい</rt></ruby>ランキングで４<ruby>番<rt>ばん</rt></ruby>のとても<ruby>強<rt>つよ</rt></ruby>い<ruby>選手<rt>せんしゅ</rt></ruby>です。サーブは<ruby>時速<rt>じそく</rt></ruby>２１０ｋm<ruby>以上<rt>いじょう</rt></ruby>で、<span class=\"colorN\"><ruby>錦織<rt>にしこり</rt></ruby></span><ruby>選手<rt>せんしゅ</rt></ruby>はとても<ruby>苦<rt>くる</rt></ruby>しみました。<ruby>試合<rt>しあい</rt></ruby>は４<ruby>時間<rt>じかん</rt></ruby>１５<ruby>分<rt>ふん</rt></ruby>も<ruby>続<rt>つづ</rt></ruby>きましたが、<span class=\"colorN\"><ruby>錦織<rt>にしこり</rt></ruby></span><ruby>選手<rt>せんしゅ</rt></ruby>は<ruby>最後<rt>さいご</rt></ruby>まであきらめないで<ruby>攻<rt>せ</rt></ruby>め<ruby>続<rt>つづ</rt></ruby>けました。その<ruby>結果<rt>けっか</rt></ruby>、<span class=\"colorN\"><ruby>錦織<rt>にしこり</rt></ruby></span><ruby>選手<rt>せんしゅ</rt></ruby>が３−２で<ruby>勝<rt>か</rt></ruby>って、<ruby>準決勝<rt>じゅんけっしょう</rt></ruby>に<ruby>進<rt>すす</rt></ruby>みました。\n<ruby>全米<rt>ぜんべい</rt></ruby>オープンは<ruby>四大<rt>よんだい</rt></ruby><ruby>大会<rt>たいかい</rt></ruby>（＝<ruby>世界<rt>せかい</rt></ruby>で<ruby>最<rt>もっと</rt></ruby>も<ruby>大<rt>おお</rt></ruby>きな４つの<ruby>大会<rt>たいかい</rt></ruby>）の<ruby>一<rt>ひと</rt></ruby>つです。<span class=\"colorN\"><ruby>錦織<rt>にしこり</rt></ruby></span><ruby>選手<rt>せんしゅ</rt></ruby>の<ruby>前<rt>まえ</rt></ruby>に、<span class=\"colorL\"><ruby>日本<rt>にっぽん</rt></ruby></span>の<ruby>選手<rt>せんしゅ</rt></ruby>が<ruby>四大<rt>よんだい</rt></ruby><ruby>大会<rt>たいかい</rt></ruby>の<ruby>準決勝<rt>じゅんけっしょう</rt></ruby>に<ruby>進<rt>すす</rt></ruby>んだのは１９３３<ruby>年<rt>ねん</rt></ruby>でした。\n<span class=\"colorN\"><ruby>錦織圭<rt>にしこりけい</rt></ruby></span><ruby>選手<rt>せんしゅ</rt></ruby>は「<ruby>勝<rt>か</rt></ruby>つことができると、<ruby>最後<rt>さいご</rt></ruby>まで<ruby>思<rt>おも</rt></ruby>っていませんでした。でも、<ruby>攻<rt>せ</rt></ruby>める<ruby>気持<rt>きも</rt></ruby>ちを<ruby>最後<rt>さいご</rt></ruby>まで<ruby>持<rt>も</rt></ruby>ち<ruby>続<rt>つづ</rt></ruby>けました」と<ruby>笑顔<rt>えがお</rt></ruby>で<ruby>話<rt>はな</rt></ruby>しました。\n<ruby>女子<rt>じょし</rt></ruby>ダブルスでは、<span class=\"colorN\">クルム</span><span class=\"colorN\"><ruby>伊達<rt>だて</rt></ruby></span><span class=\"colorN\"><ruby>公子<rt>きみこ</rt></ruby></span><ruby>選手<rt>せんしゅ</rt></ruby>のペアが<ruby>勝<rt>か</rt></ruby>って、<ruby>準決勝<rt>じゅんけっしょう</rt></ruby>に<ruby>進<rt>すす</rt></ruby>みました。",
+        "genre": [
+            "スポーツ",
+            "準々決勝",
+            "全米オープン",
+            "シングルス"
+        ],
+        "title_n": "全米オープン錦織勝利でベスト４",
+        "title_e": "テニスの全米オープン　錦織選手が準決勝に進む",
+        "title_e_ruby": "テニスの<ruby>全米<rt>ぜんべい</rt></ruby>オープン　<ruby>錦織<rt>にしこり</rt></ruby><ruby>選手<rt>せんしゅ</rt></ruby>が<ruby>準決勝<rt>じゅんけっしょう</rt></ruby>に<ruby>進<rt>すす</rt></ruby>む",
+        "date": "2014-09-04",
+        "urlnormal": "http://www3.nhk.or.jp/news/html/20140904/k10014331441000.html",
+        "urleasy": "http://www3.nhk.or.jp/news/easy/k10014331441000/k10014331441000.html"
+    },
+    {
+        "id": "k10014175201000",
+        "article_n": "２年後のリオデジャネイロオリンピックとパラリンピックで、大会のサポートを行うボランティアの受け付けが、インターネットなどで２８日から始まりました。\nリオデジャネイロオリンピックとパラリンピックでは、選手のサポートや会場での観客の誘導など、大会の運営を支えるボランティアを合わせて７万人集める計画で、その受け付けが大会の組織委員会のホームページや電話などで、２８日、始まりました。これに併せて、リオデジャネイロで記者会見を行った組織委員会のカルロス・ヌズマン会長は、「ボランティアの存在なしには大会の成功はありえません。ボランティアとして大会に参加することはすばらしい経験になるはずです」と述べ、積極的な参加を呼びかけました。会見には、この日、ボランティアに登録した人たちも出席し、２０００年のシドニー大会からボランティアを続けているというオーストラリア出身で７３歳のローズマリー・ムーラさんは、「ボランティアを通し、すばらしい経験をしてきました。ボランティアは私の人生の一部です」と、その魅力を訴えました。大会ボランティアには、２０１６年２月の時点で義務教育を終了している１８歳以上であれば、国籍を問わず申し込みができます。受け付けはことし１１月１５日までで、組織委員会によりますと、最終選考を通過した人は、現地での研修などを受けたあと大会に関連する５００以上の仕事を担うということです。",
+        "article_e": "２０１６<ruby>年<rt>ねん</rt></ruby>に<span class=\"colorL\">ブラジル</span>の<span class=\"colorL\">リオデジャネイロ</span>でオリンピックとパラリンピックがあります。<span class=\"colorL\">ブラジル</span>は<ruby>選手<rt>せんしゅ</rt></ruby>の<ruby>手伝<rt>てつだ</rt></ruby>いや<ruby>試合<rt>しあい</rt></ruby>を<ruby>見<rt>み</rt></ruby>に<ruby>来<rt>き</rt></ruby>た<ruby>人<rt>ひと</rt></ruby>たちの<ruby>案内<rt>あんない</rt></ruby>など、オリンピックとパラリンピックを<ruby>手伝<rt>てつだ</rt></ruby>うボランティアを７<ruby>万<rt>まん</rt></ruby><ruby>人<rt>にん</rt></ruby><ruby>集<rt>あつ</rt></ruby>める<ruby>計画<rt>けいかく</rt></ruby>です。\nオリンピックを<ruby>準備<rt>じゅんび</rt></ruby>している<span class=\"colorC\"><ruby>組織<rt>そしき</rt></ruby><ruby>委員<rt>いいん</rt></ruby><ruby>会<rt>かい</rt></ruby></span>の<span class=\"colorN\">カルロス・ヌズマン</span><ruby>会長<rt>かいちょう</rt></ruby>は「ボランティアでオリンピックに<ruby>参加<rt>さんか</rt></ruby>することは、すばらしい<ruby>経験<rt>けいけん</rt></ruby>になると<ruby>思<rt>おも</rt></ruby>います」と<ruby>言<rt>い</rt></ruby>っています。\n<span class=\"colorC\"><ruby>組織<rt>そしき</rt></ruby><ruby>委員<rt>いいん</rt></ruby><ruby>会<rt>かい</rt></ruby></span>はウェブサイトや<ruby>電話<rt>でんわ</rt></ruby>などで、ことし１１<ruby>月<rt>がつ</rt></ruby>１５<ruby>日<rt>にち</rt></ruby>まで<ruby>受<rt>う</rt></ruby>け<ruby>付<rt>つ</rt></ruby>けをしています。２０１６<ruby>年<rt>ねん</rt></ruby>２<ruby>月<rt>がつ</rt></ruby>までに<ruby>義務<rt>ぎむ</rt></ruby><ruby>教育<rt>きょういく</rt></ruby>が<ruby>終<rt>お</rt></ruby>わって１８<ruby>歳<rt>さい</rt></ruby><ruby>以上<rt>いじょう</rt></ruby>になる<ruby>人<rt>ひと</rt></ruby>は<ruby>誰<rt>だれ</rt></ruby>でも<ruby>申<rt>もう</rt></ruby>し<ruby>込<rt>こ</rt></ruby>むことができます。",
+        "genre": [
+            "スポーツ",
+            "ボランティア",
+            "リオデジャネイロ",
+            "仕事"
+        ],
+        "title_n": "リオ五輪ボランティアを受け付け",
+        "title_e": "リオのオリンピック　７万人のボランティアを集めたい",
+        "title_e_ruby": "リオのオリンピック　７<ruby>万<rt>まん</rt></ruby><ruby>人<rt>にん</rt></ruby>のボランティアを<ruby>集<rt>あつ</rt></ruby>めたい",
+        "date": "2014-08-29",
+        "urlnormal": "http://www3.nhk.or.jp/news/html/20140829/k10014175201000.html",
+        "urleasy": "http://www3.nhk.or.jp/news/easy/k10014175201000/k10014175201000.html"
     }
 ];
