@@ -2382,6 +2382,21 @@ article_data = [
         "urleasy": "http://www3.nhk.or.jp/news/easy/k10011174451000/k10011174451000.html"
     },
     {
+        "id": "k10011157761000",
+        "article_n": "日本からも大勢の観光客が訪れるインドネシアのバリ島ではおよそ５０年ぶりに火山が噴火する可能性が高まっていて、避難した住民は７万５０００人以上に上り、インドネシアのジョコ大統領は万全な態勢をとる考えを強調しました。\nインドネシアのバリ島にあるアグン山ではこのところ火山性地震が増加しており、地元当局は今月２２日に警戒レベルを最も高いレベル４に引き上げ、噴火口から半径９キロから１２キロの区域を立ち入り禁止にしました。当局などによりますと、その後もアグン山では火山性地震が観測されているほか、上昇したマグマによって山頂付近の水が温められて発生した水蒸気と見られる白煙も立ち上り、１９６３年に１０００人以上の死者を出した噴火以来、およそ５０年ぶりとなる噴火の可能性が高まっているということです。これまでに避難した住民は７万５０００人以上に上り、インドネシアのジョコ大統領は２６日、現地の避難所を訪れて住民に支援物資を直接手渡したうえで「人々の安全を最優先する」と述べ、インドネシア政府として万全な態勢をとる考えを強調しました。これまでのところバリ島の空港は通常どおり運用されていますが、バリ島のデンパサールにある日本総領事館は、現地に在住する日本人や滞在している観光客に対して情報を集め、安全を確保するよう呼びかけています。",
+        "article_e": "<span class=\"colorL\">インドネシア</span>の<span class=\"colorL\">バリ<ruby>島<rt>とう</rt></ruby></span>にある<span class=\"colorL\">アグン<ruby>山<rt>さん</rt></ruby></span>は、<ruby>高<rt>たか</rt></ruby>さが３０００ｍ<ruby>以上<rt>いじょう</rt></ruby>の<ruby>火山<rt>かざん</rt></ruby>です。\n<span class=\"colorL\">アグン<ruby>山<rt>さん</rt></ruby></span>では<ruby>最近<rt>さいきん</rt></ruby>、<ruby>火山<rt>かざん</rt></ruby>が<ruby>活動<rt>かつどう</rt></ruby>しているときに<ruby>起<rt>お</rt></ruby>こる<ruby>地震<rt>じしん</rt></ruby>が<ruby>増<rt>ふ</rt></ruby>えていて、<ruby>噴火<rt>ふんか</rt></ruby>する<ruby>可能性<rt>かのうせい</rt></ruby>が<ruby>高<rt>たか</rt></ruby>くなっています。このため、<ruby>噴火口<rt>ふんかこう</rt></ruby>から<ruby>半径<rt>はんけい</rt></ruby>９ｋｍ〜１２ｋｍの<ruby>場所<rt>ばしょ</rt></ruby>に<ruby>入<rt>はい</rt></ruby>ってはいけないことになりました。<ruby>安全<rt>あんぜん</rt></ruby>のために７<ruby>万<rt>まん</rt></ruby>５０００<ruby>人<rt>にん</rt></ruby><ruby>以上<rt>いじょう</rt></ruby>が<ruby>避難<rt>ひなん</rt></ruby>しています。\n<span class=\"colorL\">アグン<ruby>山<rt>さん</rt></ruby></span>は１９６３<ruby>年<rt>ねん</rt></ruby>に<ruby>噴火<rt>ふんか</rt></ruby>して１０００<ruby>人<rt>にん</rt></ruby><ruby>以上<rt>いじょう</rt></ruby>が<ruby>亡<rt>な</rt></ruby>くなりました。<span class=\"colorL\">インドネシア</span>の<span class=\"colorN\">ジョコ</span><ruby>大統領<rt>だいとうりょう</rt></ruby>は２６<ruby>日<rt>にち</rt></ruby>、<ruby>避難<rt>ひなん</rt></ruby>した<ruby>人<rt>ひと</rt></ruby>たちがいる<ruby>所<rt>ところ</rt></ruby>に<ruby>行<rt>い</rt></ruby>って、<ruby>生活<rt>せいかつ</rt></ruby>に<ruby>必要<rt>ひつよう</rt></ruby>な<ruby>物<rt>もの</rt></ruby>を<ruby>渡<rt>わた</rt></ruby>しました。そして、「みなさんの<ruby>安全<rt>あんぜん</rt></ruby>をいちばん<ruby>大切<rt>たいせつ</rt></ruby>にします」と<ruby>言<rt>い</rt></ruby>いました。",
+        "genre": [
+            "気象・災害",
+            "国際"
+        ],
+        "title_n": "バリ島 火山噴火の可能性高まる７万５０００人超避難",
+        "title_e": "インドネシア　バリ島の山が噴火する可能性",
+        "title_e_ruby": "インドネシア　バリ<ruby>島<rt>とう</rt></ruby>の<ruby>山<rt>やま</rt></ruby>が<ruby>噴火<rt>ふんか</rt></ruby>する<ruby>可能性<rt>かのうせい</rt></ruby>",
+        "date": "2017-09-27",
+        "urlnormal": "http://www3.nhk.or.jp/news/html/20170927/k10011157761000.html",
+        "urleasy": "http://www3.nhk.or.jp/news/easy/k10011157761000/k10011157761000.html"
+    },
+    {
         "id": "k10011148681000",
         "article_n": "日本時間の２０日午前３時すぎ、メキシコでマグニチュード７．１の地震があり、地元メディアによりますと、これまでにメキシコ国内で少なくとも１１９人が死亡したということです。震源地に近い首都メキシコシティーなどでは多くの建物が倒壊して、取り残された人たちの救出活動が続いています。\n日本時間の２０日午前３時すぎ、メキシコの首都メキシコシティーに近い、内陸部プエブラ州を震源とするマグニチュード７．１の地震がありました。震源の深さは５１キロと推定されています。この地震でメキシコシティーなどでは激しい揺れに見舞われ、多くの建物が倒壊する被害が出ていて、地元メディアによりますと、これまでにメキシコ国内で少なくとも１１９人が死亡したということです。建物の中には閉じ込められている人もいるということで、取り残された人たちの救出活動が続いています。一方、現地の日本大使館によりますと、日本時間の午前７時現在、今回の地震で日本人が被害にあったという情報は入っていないということで、引き続き、情報収集を続けるということです。メキシコのペニャニエト大統領はツイッターで声明を発表し、今回の地震を受けて、緊急の委員会を招集して被害状況の把握を進めるとしています。メキシコでは、およそ２週間前にも南部を中心にマグニチュード８．１の地震が起きたばかりです。",
         "article_e": "<span class=\"colorL\"><ruby>日本<rt>にっぽん</rt></ruby></span>の<ruby>時間<rt>じかん</rt></ruby>の<ruby>２０日<rt>はつか</rt></ruby><ruby>午前<rt>ごぜん</rt></ruby>３<ruby>時<rt>じ</rt></ruby>ごろ、<span class=\"colorL\">メキシコ</span>の<span class=\"colorL\">プエブラ<ruby>州<rt>しゅう</rt></ruby></span>でマグニチュード７．１（Ｍ７．１）の<ruby>大<rt>おお</rt></ruby>きな<ruby>地震<rt>じしん</rt></ruby>がありました。<span class=\"colorL\">プエブラ<ruby>州<rt>しゅう</rt></ruby></span>に<ruby>近<rt>ちか</rt></ruby>い<ruby>首都<rt>しゅと</rt></ruby>の<span class=\"colorL\">メキシコシティー</span>などでは<ruby>強<rt>つよ</rt></ruby>く<ruby>揺<rt>ゆ</rt></ruby>れて、たくさんの<ruby>建物<rt>たてもの</rt></ruby>が<ruby>壊<rt>こわ</rt></ruby>れました。\n<ruby>通信社<rt>つうしんしゃ</rt></ruby>などは、<ruby>２０日<rt>はつか</rt></ruby>の<ruby>昼<rt>ひる</rt></ruby>までに１４９<ruby>人<rt>にん</rt></ruby>が<ruby>亡<rt>な</rt></ruby>くなったと<ruby>伝<rt>つた</rt></ruby>えています。<span class=\"colorL\">メキシコシティー</span>では<ruby>軍<rt>ぐん</rt></ruby>などが、<ruby>壊<rt>こわ</rt></ruby>れた<ruby>建物<rt>たてもの</rt></ruby>の<ruby>中<rt>なか</rt></ruby>から<ruby>出<rt>で</rt></ruby>ることができなくなった<ruby>人<rt>ひと</rt></ruby>を<ruby>助<rt>たす</rt></ruby>けています。\n３８０<ruby>万<rt>まん</rt></ruby>の<ruby>家<rt>いえ</rt></ruby>などで<ruby>電気<rt>でんき</rt></ruby>が<ruby>止<rt>と</rt></ruby>まっていて、ガスが<ruby>止<rt>と</rt></ruby>まっている<ruby>所<rt>ところ</rt></ruby>もあります。\n<span class=\"colorL\">メキシコ</span>では、<ruby>今月<rt>こんげつ</rt></ruby><ruby>８日<rt>ようか</rt></ruby>にも<ruby>大<rt>おお</rt></ruby>きな<ruby>地震<rt>じしん</rt></ruby>があって９０<ruby>人<rt>にん</rt></ruby><ruby>以上<rt>いじょう</rt></ruby>が<ruby>亡<rt>な</rt></ruby>くなっています。",
@@ -2438,6 +2453,21 @@ article_data = [
         "date": "2017-09-04",
         "urlnormal": "http://www3.nhk.or.jp/news/html/20170904/k10011125981000.html",
         "urleasy": "http://www3.nhk.or.jp/news/easy/k10011125981000/k10011125981000.html"
+    },
+    {
+        "id": "k10011116441000",
+        "article_n": "アメリカ南部に上陸したハリケーンに伴う大雨で、大都市のヒューストンなどでは大規模な洪水が起きていて、消防などが、浸水した地域に取り残された人たちの救出を急いでいます。\n２５日にアメリカ南部テキサス州に上陸したハリケーン「ハービ－」は熱帯低気圧に変わりましたが、その後も雨が降り続き、中心都市、ヒューストンなど各地で、洪水による被害が拡大しています。アメリカの新聞、ワシントン・ポストは政府関係者の話として、これまでに少なくとも８人が死亡したと伝えました。地元の警察によりますと２８日の朝までに、浸水によって自宅などに取り残された人たち、少なくとも２０００人を救助したものの、今も２００件近い緊急の救助要請が来ており、消防や警察が救出を急いでいるということです。ＦＥＭＡ＝連邦緊急事態管理庁などは２８日、家に帰れず、避難場所を必要とする被災者は３万人を超えるという見通しを示していて、市内の会議場の建物には２０００人を超える市民が避難し、食料や水の提供を受けています。地元メディアはヒューストンの北西部にある２基のダムが決壊しないよう放水を始めたと伝えていて、現在、雨の勢いは弱まっているものの、２９日から再び雨が強まる予報になっていることから地元当局は厳重な警戒を続けています。これまでのところヒューストンで、日本人や日系企業に被害が出ているという情報は確認されていませんが、ヒューストンにある日本総領事館は在留邦人に対して被災地域に足を踏み入れたり、冠水した道路を車で通ったりしないよう呼びかけています。\n\n\nトランプ大統領は２８日、ホワイトハウスで記者団に対し、「歴史的な雨量だが、対応は驚くほどうまくいっている。テキサス州の住民は粘り強く、助け合いやチームワークの精神は、すばらしい」と述べたうえで、２９日、テキサス州の被災地にみずから向かう考えを示しました。同時にトランプ大統領は、来月２日には大雨による被害が出ることが予想されている南部ルイジアナ州を訪れることを検討していることも明らかにしました。",
+        "article_e": "２５<ruby>日<rt>にち</rt></ruby>、<span class=\"colorL\">アメリカ</span>の<span class=\"colorL\">テキサス<ruby>州<rt>しゅう</rt></ruby></span>にハリケーンが<ruby>来<rt>き</rt></ruby>て、とてもたくさんの<ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>りました。<ruby>雨<rt>あめ</rt></ruby>はそのあとも<ruby>続<rt>つづ</rt></ruby>いて、<ruby>大<rt>おお</rt></ruby>きなまちの<span class=\"colorL\">ヒューストン</span>などでは<ruby>川<rt>かわ</rt></ruby>の<ruby>水<rt>みず</rt></ruby>があふれました。<span class=\"colorL\">アメリカ</span>の<ruby>新聞<rt>しんぶん</rt></ruby>は、<ruby>今<rt>いま</rt></ruby>までに８<ruby>人<rt>にん</rt></ruby>が<ruby>亡<rt>な</rt></ruby>くなったと<ruby>伝<rt>つた</rt></ruby>えています。\n<ruby>家<rt>いえ</rt></ruby>の<ruby>中<rt>なか</rt></ruby>などに<ruby>水<rt>みず</rt></ruby>が<ruby>入<rt>はい</rt></ruby>ってきて、<ruby>逃<rt>に</rt></ruby>げることができなくなった<ruby>人<rt>ひと</rt></ruby>も<ruby>大勢<rt>おおぜい</rt></ruby>います。<ruby>警察<rt>けいさつ</rt></ruby>が３０００<ruby>人<rt>にん</rt></ruby>ぐらい<ruby>助<rt>たす</rt></ruby>けましたが、<ruby>今<rt>いま</rt></ruby>も<ruby>助<rt>たす</rt></ruby>けてほしいという<ruby>電話<rt>でんわ</rt></ruby>が１５０<ruby>件<rt>けん</rt></ruby>ぐらい<ruby>来<rt>き</rt></ruby>ています。\n<span class=\"colorL\">アメリカ</span>の<ruby>政府<rt>せいふ</rt></ruby>は、<ruby>家<rt>いえ</rt></ruby>に<ruby>帰<rt>かえ</rt></ruby>ることができないため<ruby>避難<rt>ひなん</rt></ruby>する<ruby>場所<rt>ばしょ</rt></ruby>が<ruby>必要<rt>ひつよう</rt></ruby>な<ruby>人<rt>ひと</rt></ruby>は３<ruby>万<rt>まん</rt></ruby><ruby>人<rt>にん</rt></ruby><ruby>以上<rt>いじょう</rt></ruby>いると<ruby>考<rt>かんが</rt></ruby>えています。",
+        "genre": [
+            "気象・災害",
+            "国際"
+        ],
+        "title_n": "米南部ハリケーン直撃 取り残された人の救出急ぐ",
+        "title_e": "アメリカのテキサス州　たくさんの雨で川の水があふれる",
+        "title_e_ruby": "アメリカのテキサス<ruby>州<rt>しゅう</rt></ruby>　たくさんの<ruby>雨<rt>あめ</rt></ruby>で<ruby>川<rt>かわ</rt></ruby>の<ruby>水<rt>みず</rt></ruby>があふれる",
+        "date": "2017-08-29",
+        "urlnormal": "http://www3.nhk.or.jp/news/html/20170829/k10011116441000.html",
+        "urleasy": "http://www3.nhk.or.jp/news/easy/k10011116441000/k10011116441000.html"
     },
     {
         "id": "k10011106191000",
@@ -3109,6 +3139,20 @@ article_data = [
         "date": "2016-11-26",
         "urlnormal": "http://www3.nhk.or.jp/news/html/20161126/k10010785521000.html",
         "urleasy": "http://www3.nhk.or.jp/news/easy/k10010785521000/k10010785521000.html"
+    },
+    {
+        "id": "k10010783491000",
+        "article_n": "今月２２日に福島県沖で発生した地震による津波は、気象庁の観測では最高で１メートル４０センチでしたが、宮城県東松島市の漁港では２メートル以上の高さにまで達したと見られることがわかりました。専門家は「津波は、局所的に高くなることがあり、早めに避難することが大切だ」としています。\n宮城県漁業協同組合宮戸支所によりますと、東松島市の大浜漁港では、今月２２日、福島県沖でマグニチュード７．４の地震が発生したあとの午前８時ごろに津波が押し寄せ、岸壁を乗り越えて周辺の道路にまで広がったということです。漁船６隻が転覆する被害が出ましたが、港や周辺にいた人たちは、高台に避難するなどして無事でした。当時、漁協の職員が撮影した写真には、岸壁からおよそ６０メートル陸側に入った坂の路面が、本来の海面から２メートル以上の高さまでぬれている様子が捉えられています。これについて東北大学災害科学国際研究所の今村文彦教授は、「津波のあとであることは間違いない」としています。さらに、今回、気象庁が観測した最も高い津波の高さは、仙台港での１メートル４０センチでしたが、今村教授らのグループがコンピューターでシミュレーションした結果、大浜漁港の西およそ１０キロの塩釜市では高さ２メートル５０センチに達したということです。今村教授は、「津波は、局所的に高くなることがある。住民は、気象庁の予想の高さ以上の津波が来ることを念頭に早めに避難することが大切だ」と話しています。また、宮城県漁協宮戸支所の佐々木孝支所長は、「人の背丈を超えるような津波が来ていたことがわかってとても驚いた」と話していました。",
+        "article_e": "<span class=\"colorC\"><ruby>気象庁<rt>きしょうちょう</rt></ruby></span>は、<ruby>今月<rt>こんげつ</rt></ruby>２２<ruby>日<rt>にち</rt></ruby>の<ruby>地震<rt>じしん</rt></ruby>のときに<ruby>来<rt>き</rt></ruby>た<ruby>津波<rt>つなみ</rt></ruby>の<ruby>中<rt>なか</rt></ruby>でいちばん<ruby>高<rt>たか</rt></ruby>かったのは、<span class=\"colorL\"><ruby>宮城県<rt>みやぎけん</rt></ruby></span><span class=\"colorL\"><ruby>仙台<rt>せんだい</rt></ruby><ruby>港<rt>こう</rt></ruby></span>の１m４０ｃmだと<ruby>発表<rt>はっぴょう</rt></ruby>しました。しかし、<span class=\"colorL\"><ruby>宮城県<rt>みやぎけん</rt></ruby></span><span class=\"colorL\"><ruby>東松島<rt>ひがしまつしま</rt></ruby><ruby>市<rt>し</rt></ruby></span>の<span class=\"colorL\"><ruby>大浜<rt>おおはま</rt></ruby><ruby>漁港<rt>ぎょこう</rt></ruby></span>には、<ruby>高<rt>たか</rt></ruby>さ２mの<ruby>津波<rt>つなみ</rt></ruby>が<ruby>来<rt>き</rt></ruby>ていたことがわかりました。\n<span class=\"colorC\"><ruby>宮城県<rt>みやぎけん</rt></ruby><ruby>漁業協同組合<rt>ぎょぎょうきょうどうくみあい</rt></ruby></span>によると、<span class=\"colorL\"><ruby>大浜<rt>おおはま</rt></ruby><ruby>漁港<rt>ぎょこう</rt></ruby></span>には<ruby>午前<rt>ごぜん</rt></ruby>８<ruby>時<rt>じ</rt></ruby>ごろ<ruby>津波<rt>つなみ</rt></ruby>が<ruby>来<rt>き</rt></ruby>て、<ruby>近<rt>ちか</rt></ruby>くの<ruby>道路<rt>どうろ</rt></ruby>まで<ruby>入<rt>はい</rt></ruby>ってきました。<ruby>組合<rt>くみあい</rt></ruby>の<ruby>人<rt>ひと</rt></ruby>が<ruby>撮<rt>と</rt></ruby>った<ruby>写真<rt>しゃしん</rt></ruby>には、<ruby>海<rt>うみ</rt></ruby>から６０mぐらいの<ruby>所<rt>ところ</rt></ruby>にある<ruby>坂<rt>さか</rt></ruby>が２m<ruby>以上<rt>いじょう</rt></ruby>の<ruby>高<rt>たか</rt></ruby>さまでぬれていました。<span class=\"colorC\"><ruby>東北大学<rt>とうほくだいがく</rt></ruby></span>の<span class=\"colorN\"><ruby>今村<rt>いまむら</rt></ruby></span><span class=\"colorN\"><ruby>文彦<rt>ふみひこ</rt></ruby></span><ruby>教授<rt>きょうじゅ</rt></ruby>は<ruby>写真<rt>しゃしん</rt></ruby>を<ruby>見<rt>み</rt></ruby>て、「<ruby>津波<rt>つなみ</rt></ruby>が２m<ruby>以上<rt>いじょう</rt></ruby><ruby>来<rt>き</rt></ruby>たことがわかります」と<ruby>話<rt>はな</rt></ruby>しました。\n<span class=\"colorN\"><ruby>今村<rt>いまむら</rt></ruby></span><ruby>教授<rt>きょうじゅ</rt></ruby>たちはコンピューターを<ruby>使<rt>つか</rt></ruby>って<ruby>津波<rt>つなみ</rt></ruby>の<ruby>高<rt>たか</rt></ruby>さを<ruby>計算<rt>けいさん</rt></ruby>してみました。その<ruby>結果<rt>けっか</rt></ruby>、<span class=\"colorL\"><ruby>大浜<rt>おおはま</rt></ruby><ruby>漁港<rt>ぎょこう</rt></ruby></span>から<ruby>西<rt>にし</rt></ruby>に１０ｋmぐらいの<ruby>所<rt>ところ</rt></ruby>にある<span class=\"colorL\"><ruby>塩釜<rt>しおがま</rt></ruby><ruby>市<rt>し</rt></ruby></span>には<ruby>高<rt>たか</rt></ruby>さ２m５０ｃmの<ruby>津波<rt>つなみ</rt></ruby>が<ruby>来<rt>き</rt></ruby>たと<ruby>考<rt>かんが</rt></ruby>えています。\n<span class=\"colorN\"><ruby>今村<rt>いまむら</rt></ruby></span><ruby>教授<rt>きょうじゅ</rt></ruby>は「<ruby>津波<rt>つなみ</rt></ruby>は<span class=\"colorC\"><ruby>気象庁<rt>きしょうちょう</rt></ruby></span>の<ruby>予想<rt>よそう</rt></ruby>より<ruby>高<rt>たか</rt></ruby>くなることもあります。<ruby>予想<rt>よそう</rt></ruby>より<ruby>高<rt>たか</rt></ruby>い<ruby>波<rt>なみ</rt></ruby>が<ruby>来<rt>く</rt></ruby>ると<ruby>思<rt>おも</rt></ruby>って、<ruby>早<rt>はや</rt></ruby>く<ruby>逃<rt>に</rt></ruby>げることが<ruby>大切<rt>たいせつ</rt></ruby>です」と<ruby>話<rt>はな</rt></ruby>しています。",
+        "genre": [
+            "気象・災害"
+        ],
+        "title_n": "津波 宮城の漁港で２メートル以上に達したか",
+        "title_e": "津波が２m以上の高さまで来た所もあった",
+        "title_e_ruby": "<ruby>津波<rt>つなみ</rt></ruby>が２m<ruby>以上<rt>いじょう</rt></ruby>の<ruby>高<rt>たか</rt></ruby>さまで<ruby>来<rt>き</rt></ruby>た<ruby>所<rt>ところ</rt></ruby>もあった",
+        "date": "2016-11-25",
+        "urlnormal": "http://www3.nhk.or.jp/news/html/20161125/k10010783491000.html",
+        "urleasy": "http://www3.nhk.or.jp/news/easy/k10010783491000/k10010783491000.html"
     },
     {
         "id": "k10010782171000",
