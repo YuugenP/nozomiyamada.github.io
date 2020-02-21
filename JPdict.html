@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>JPdict beta version</title>
+
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  <style type="text/css">
+  .bs-component + .bs-component {
+    margin-top: 1rem;
+  }
+  @media (min-width: 768px) {
+    .bs-docs-section {
+      margin-top: 8em;
+    }
+    .bs-component {
+      position: relative;
+    }
+    .bs-component .modal {
+      position: relative;
+      top: auto;
+      right: auto;
+      bottom: auto;
+      left: auto;
+      z-index: 1;
+      display: block;
+    }
+    .bs-component .modal-dialog {
+      width: 90%;
+    }
+    .bs-component .popover {
+      position: relative;
+      display: inline-block;
+      width: 220px;
+      margin: 20px;
+    }
+    .nav-tabs {
+      margin-bottom: 15px;
+    }
+    .progress {
+      margin-bottom: 10px;
+    }
+  }
+  </style>
+  <script src="./js/eliza.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    function response(input_text){
+      const response = select_res(input_text);
+      let target = document.getElementById("result");
+      
+      target.innerHTML += `>>>${input_text}\n(${response[0]}) ${response[1]}\n`; // append response
+      document.getElementById("text").value = ""; // clear input form
+      
+      let row_length = Number(target.getAttribute("rows"));
+      while(target.scrollHeight > target.offsetHeight){
+        row_length++;
+        target.setAttribute("rows", row_length)
+      }
+      return false;
+    }
+    function reset_res(){
+      document.getElementById("result").innerHTML = "";
+      document.getElementById("result").setAttribute("rows", 10);
+      document.getElementById("text").value = "";
+    }
+  </script>
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="index.html">Nozomi</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarColor02">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="link.html">Links</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="blog.html">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="nhk.html">NHKWeb</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="ipathai.html">タイ語入力</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="JPdict.html">JPdict</a>
+          </li>
+        </ul>
+        <!--
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search">
+          <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+        </form>
+        -->
+      </div>
+    </nav>
+  </header>
+
+<div class="container">
+  <div class="page-header" id="banner">
+    <div class="row my-4">
+      <div class="col-12">
+        <h3 class="display-5">Test page</h3>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card bg-light mb-3">
+        <div class="card-header">
+          <form name="input_form" onsubmit="return response(text.value);">
+            <p>
+              enter word: <input type="text" class="form-control form-control-sm" placeholder="書く" id="text" autocomplete="off"><br />
+              <input type="reset" class="btn btn-secondary" value='clear' onClick="reset_res();">
+            </p>
+          </form>
+            
+        </div>
+        <div class="card-body">
+          <table class="table table-hover">
+            <tbody>
+              <tr>
+                <th scope="row">คำ</th>
+                <td>書く</td>
+              </tr>
+              <tr>
+                <th scope="row">คานะ</th>
+                <td>かく</td>
+              </tr>
+              <tr>
+                <th scope="row">POS</th>
+                <td>グループ1動詞 group1 verb</td>
+              </tr>
+              <tr>
+                <th scope="row">อู</th>
+                <td>/uu/</td>
+                <td>[uː]</td>
+              </tr>
+              <tr>
+                <th scope="row">เอ</th>
+                <td>/ee/</td>
+                <td>[eː]</td>
+              </tr>
+              <tr>
+                <th scope="row">แอ</th>
+                <td>/ɛɛ/</td>
+                <td>[ɛː]</td>
+              </tr>
+              <tr>
+                <th scope="row">โอ</th>
+                <td>/oo/</td>
+                <td>[oː]</td>
+              </tr>
+              <tr>
+                <th scope="row">ออ</th>
+                <td>/ɔɔ/</td>
+                <td>[ɔː]</td>
+              </tr>
+              <tr>
+                <th scope="row">เออ</th>
+                <td>/əə/</td>
+                <td>[əː] [ɤː]</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <p><font color="white">&copy; 2020 Nozomi Yamada All Rights Reserved.</font></p>
+  </nav>
+</footer>
+
+</body>
+</html>
