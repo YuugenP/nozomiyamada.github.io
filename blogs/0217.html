@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>0217</title>
+
+  <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+  <style type="text/css">
+  .bs-component + .bs-component {
+    margin-top: 1rem;
+  }
+  @media (min-width: 768px) {
+    .bs-docs-section {margin-top: 8em;}
+    .bs-component {position: relative;}
+    .bs-component .modal {
+      position: relative;
+      top: auto;
+      right: auto;
+      bottom: auto;
+      left: auto;
+      z-index: 1;
+      display: block;
+    }
+    .bs-component .modal-dialog {width: 90%;}
+    .bs-component .popover {
+      position: relative;
+      display: inline-block;
+      width: 220px;
+      margin: 20px;
+    }
+    .nav-tabs {margin-bottom: 15px;}
+    .progress {margin-bottom: 10px;}
+  }
+  .image-center{text-align:center;}
+  blockquote{text-align:center;}
+  ul {list-style: none;}
+  </style>
+</head>
+
+<body>
+<div class="container">
+  <div class="row my-3">
+    <div class="col-lg-12">
+			<p>
+        日本語は世界の言語の中でも語彙が多い言語とよく言われる。では、「語彙」とはそもそも何なのだろうか？結論からいうと、個人またはその言語自体が持っている「単語のストック」のことである。英語では lexicon または vocaburary、タイ語では คลังศัพท์ という語を用いることが多い。
+      </p>
+      <p>
+        語彙の多さ（vocaburary size）は習得のしやすさ（learnability）と強い関連を持つ。当然のことながら、語彙数が多い言語ほど習得しにくくなるであろう。逆に語彙数が少なすぎると今度は表現性（expressivity）が減ることになるので、そのバランスが重要である。また、その言語の語彙数そのものが多かったとしても、いつも同じような単語ばかり使い、大半の単語はほとんど使われなかったとしたら、それはむしろ習得しやすい言語と言えるかもしれない。そこで、「実質的な単語の多さ」を測るために何かしらの工夫が必要になってくる。その一つは授業で用いた語彙のカバー率を用いる方法で、「上位xxxx単語覚えていれば、全体の何%までを読むことができる」といったものである。これを用いると確かに英語のカバー率の高さと日本語のカバー率の低さが目立つ。ただ日本語の場合、「単語そのもの」を覚えていなくても、「漢字の意味」を理解していれば推測できるものも多く、実際の数値はこれより上がることも考えられる。 
+      </p>
+      <p>
+        最近読んだ Bentz, et al (2017) の論文に、別の面白い手法が紹介されていた。これは entropy という指標を用いるもので、その具体的な計算式はここでは触れないが、簡単に言えば「どの単語をよく使うか？」という予測性（predictability）を平均化した数値だと考えてもらうとよい。entropy が高い＝予測しにくい＝様々な単語をまんべんなく用いる、と言える。以下がそのグラフである（残念ながら日本語のデータはない）。
+      </p>
+      <div class="image-center">
+        <img style="width: 90%;" src="0217.png">
+      </div>
+      <p>
+        赤い点ほど entropy が高い。この図によるとタイ語は entropy は低めで、実際に使われる単語も他の言語に比べると少ないと予想できる。英語なども比較的低めである。一方韓国語やロシア語やアラビア語などはかなり高い数値となっていることがわかる。特にこれは単純な語彙数だけでなく、語の屈折（inflection การผันรูป）なども影響しており、ロシア語は格（case การก）・性（gender เพศ）・数（number พจน์）などのルールが非常に多いことも一つの原因であろう。
+      </p>
+      <p>
+        では第二言語学習者は、その多くの語彙の中から何を基準として選び、覚えれば良いのであろうか？それはクラッシェンの理論と共に次回の記事で紹介する。
+      </p>
+      <p>
+        参考文献<br>
+        Bentz, C., Alikaniotis, D., Cysouw, M., & Ferrer-i-Cancho, R. (2017). The entropy of words—Learnability and expressivity across more than 1000 languages. <i>Entropy, 19</i>(6), 275.
+      </p>
+      
+      <div id="disqus_thread"></div>
+      <script>
+        var disqus_config = function () {
+        this.page.url = 'https://nozomiyamada.github.io/blogs/0217.html';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = blog0217; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://nozomiyamada.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+      </script>
+      
+    </div>
+  </div>
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="./js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+  $('.bs-component [data-toggle="popover"]').popover();
+  $('.bs-component [data-toggle="tooltip"]').tooltip();
+</script>
+
+</body>
+</html>
