@@ -27,7 +27,7 @@ function selectCategory(){
     document.head.appendChild(newscript);
     document.getElementById('selectarticle').innerHTML = "";
     document.getElementById('selectarticle').innerHTML = '<option selected id="firstoption">--- LOADING ---</option>';
-    setTimeout(function(){appendArticle()}, 4000);
+    setTimeout(function(){appendArticle()}, 8000);
 }
 
 function appendArticle(){
