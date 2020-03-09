@@ -52,15 +52,15 @@
 	</style>
 	<script src="./js/nhk/data_summary.js" charset="utf-8"></script>
 	<script src="./js/nhk/main.js" charset="utf-8"></script>
-	<script type="text/javascript">
-		window.onload = function(){
-			// add option of category
-			for(name_count of category){
-				document.getElementById('selectcategory').innerHTML += `<option value="${name_count[0]}">${name_count[0]} (${name_count[1]})</option>`;
+		<script type="text/javascript">
+			window.onload = function(){
+				// add option of category
+				for(name_count of category){
+					document.getElementById('selectcategory').innerHTML += `<option value="${name_count[0]}">${name_count[0]} (${name_count[1]})</option>`;
+				}
+				document.getElementById('articlen').innerHTML = `total ${article_number} articles`;
 			}
-			document.getElementById('articlen').innerHTML = `total ${article_number} articles`;
-		}
-	</script>
+		</script>
 </head>
 
 <body>
