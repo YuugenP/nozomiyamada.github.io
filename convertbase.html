@@ -1,0 +1,52 @@
+<h2>Base Converter</h2>
+<form onsubmit="convert();return false;">
+    <table>
+    <tr>
+        <td><label for='from_value'>from</label></td>
+        <td>
+            <select id='from_base'>
+                <option value=10 selected>10</option>
+                <option value=16>16</option>
+                <option value=2>2</option>
+                <option value=3>3</option>
+                <option value=4>4</option>
+                <option value=5>5</option>
+                <option value=6>6</option>
+                <option value=7>7</option>
+                <option value=8>8</option>
+                <option value=9>9</option>
+            </select>
+        </td>
+        <td><input type='text' id='from_value'></td>
+    </tr>
+    <tr>
+        <td>to</td>
+        <td>
+            <select id='to_base'>
+                <option value=16 selected>16</option>
+                <option value=10>10</option>
+                <option value=2>2</option>
+                <option value=3>3</option>
+                <option value=4>4</option>
+                <option value=5>5</option>
+                <option value=6>6</option>
+                <option value=7>7</option>
+                <option value=8>8</option>
+                <option value=9>9</option>
+            </select>
+        </td>
+        <td><input type='submit' value='convert' onclick="convert();"></td>
+    </tr>
+    </table>
+</form>
+<h3 id='answer'></h3>
+<script>
+    function convert(){
+        var from_base = document.getElementById('from_base').value
+        var to_base = document.getElementById('to_base').value
+        var from_value = document.getElementById('from_value').value
+        var temp = parseInt(from_value, from_base) // m -> 10
+        var answer = temp.toString(to_base) // 10 -. n
+        document.getElementById('answer').innerText = answer
+    }
+</script>
