@@ -129,7 +129,7 @@
                 </td>
                 <td>
                   <button class="btn btn-outline-primary" onclick="convert();return false">convert</button>
-                  <button class="btn btn-outline-primary" onclick="reset();return false">reset</button>
+                  <button class="btn btn-outline-primary" onclick="reset_base();return false">reset</button>
                 </td>
               </tr>
               <tr class="table-active">
@@ -367,7 +367,7 @@
   }
 
   // functions for reset input form
-  function reset(){
+  function reset_base(){
     document.getElementById('from_value').value = '';
     document.getElementById('answer').innerText = 'answer';
     document.getElementById('from_value').focus();
