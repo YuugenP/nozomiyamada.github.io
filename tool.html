@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Nozomi Yamada</title>
+
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  <style type="text/css">
+  .bs-component + .bs-component {
+    margin-top: 1rem;
+  }
+  @media (min-width: 768px) {
+    .bs-docs-section {margin-top: 8em;}
+    .bs-component {position: relative;}
+    .bs-component .modal {
+      position: relative;
+      top: auto;
+      right: auto;
+      bottom: auto;
+      left: auto;
+      z-index: 1;
+      display: block;
+    }
+    .bs-component .modal-dialog {width: 90%;}
+    .bs-component .popover {
+      position: relative;
+      display: inline-block;
+      width: 220px;
+      margin: 20px;
+    }
+    .nav-tabs {margin-bottom: 15px;}
+    .progress {margin-bottom: 10px;}
+  }
+  </style>
+</head>
+
+<body>
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="index.html">Nozomi</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor02">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="link.html">Links</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="blog.html">Blog</a>
+        </li>
+        <li class="nav-item">
+					<a class="nav-link" href="nhk.html">NHKWeb</a>
+				</li>
+        <li class="nav-item">
+          <a class="nav-link" href="ipathai.html">タイ語入力</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="tool.html">Math Tools<span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+      <!--
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search">
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+      </form>
+      -->
+    </div>
+  </nav>
+</header>
+
+<br>
+<div class="container">
+
+  <div class="row">
+    <div class="col-lg-12">
+      <h2>Tools</h2>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-lg-5">
+      <div class="bs-component">
+        <div class="card border-primary mb-3" style="min-height: 16rem;">
+          <div class="card-header">Base Converter</div>
+          <div class="card-body">
+            <form onsubmit="convert();return false;">
+            <table class='table'>
+              <tr>
+                <td>
+                  <select class="form-control" id='from_base'>
+                    <option value=10 selected>10</option>
+                    <option value=16>16</option>
+                    <option value=2>2</option>
+                    <option value=3>3</option>
+                    <option value=4>4</option>
+                    <option value=5>5</option>
+                    <option value=6>6</option>
+                    <option value=7>7</option>
+                    <option value=8>8</option>
+                    <option value=9>9</option>
+                  </select>
+                </td>
+                <td><input type='text' class="form-control" id='from_value' placeholder="from"></td>
+              </tr>
+              <tr>
+                <td>
+                  <select class="form-control" id='to_base'>
+                    <option value=16 selected>16</option>
+                    <option value=10>10</option>
+                    <option value=2>2</option>
+                    <option value=3>3</option>
+                    <option value=4>4</option>
+                    <option value=5>5</option>
+                    <option value=6>6</option>
+                    <option value=7>7</option>
+                    <option value=8>8</option>
+                    <option value=9>9</option>
+                  </select>
+                </td>
+                <td>
+                  <button class="btn btn-outline-primary" onclick="convert();return false">convert</button>
+                  <button class="btn btn-outline-primary" onclick="reset1();return false">reset</button>
+                </td>
+              </tr>
+              <tr class="table-active">
+                <td colspan="2" align="center"><strong id="answer">answer</strong></td>
+              </tr>
+            </table>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+
+    <div class="col-lg-6" style="display:none">
+      <div class="bs-component">
+        <div class="card border-primary mb-3" style="min-height: 16rem;">
+          <div class="card-header">something</div>
+          <div class="card-body">
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="row">
+
+    <div class="col-lg-3">
+      <div class="bs-component">
+        <div class="card border-success mb-3" style="min-height: 16rem;">
+          <div class="card-header">z-score to P(0&lt;x&lt;z)</div>
+          <div class="card-body">
+            <form onsubmit="z_to_p1();return false;">
+            <table class='table'>
+              <tr><td><input type='text' class="form-control" id='z1' placeholder="z-score" autocomplete="off"></td></tr>
+              <tr>
+                <td>
+                <button class="btn btn-outline-success" onclick="z_to_p1();return false">calculate</button>
+                <button class="btn btn-outline-success" onclick="resetp1();return false">reset</button>
+                </td>
+              </tr>
+              <tr class="table-active">
+                <td align="center"><strong id="P1">P(0&lt;x&lt;z)</strong></td>
+              </tr>
+            </table>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3">
+      <div class="bs-component">
+        <div class="card border-success mb-3" style="min-height: 16rem;">
+          <div class="card-header">z-score to P(z&lt;x)</div>
+          <div class="card-body">
+            <form onsubmit="z_to_p2();return false;">
+            <table class='table'>
+              <tr><td><input type='text' class="form-control" id='z2' placeholder="z-score" autocomplete="off"></td></tr>
+              <tr>
+                <td>
+                <button class="btn btn-outline-success" onclick="z_to_p2();return false">calculate</button>
+                <button class="btn btn-outline-success" onclick="resetp2();return false">reset</button>
+                </td>
+              </tr>
+              <tr class="table-active">
+                <td align="center"><strong id="P2">P(z&lt;x)</strong></td>
+              </tr>
+            </table>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3">
+      <div class="bs-component">
+        <div class="card border-warning mb-3" style="min-height: 16rem;">
+          <div class="card-header">P(0&lt;x&lt;z) to z-score</div>
+          <div class="card-body">
+            <form onsubmit="p3_to_z();return false;">
+            <table class='table'>
+              <tr><td><input type='text' class="form-control" id='P3' placeholder="P(0&lt;x&lt;z)" autocomplete="off"></td></tr>
+              <tr>
+                <td>
+                <button class="btn btn-outline-warning" onclick="p3_to_z();return false">calculate</button>
+                <button class="btn btn-outline-warning" onclick="resetp3();return false">reset</button>
+                </td>
+              </tr>
+              <tr class="table-active">
+                <td align="center"><strong id="z3">z-score</strong></td>
+              </tr>
+            </table>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3">
+      <div class="bs-component">
+        <div class="card border-warning mb-3" style="min-height: 16rem;">
+          <div class="card-header">P(z&lt;x) to z-score</div>
+          <div class="card-body">
+            <form onsubmit="p4_to_z();return false;">
+            <table class='table'>
+              <tr><td><input type='text' class="form-control" id='P4' placeholder="P(z&lt;x)" autocomplete="off"></td></tr>
+              <tr>
+                <td>
+                <button class="btn btn-outline-warning" onclick="p4_to_z();return false">calculate</button>
+                <button class="btn btn-outline-warning" onclick="resetp4();return false">reset</button>
+                </td>
+              </tr>
+              <tr class="table-active">
+                <td align="center"><strong id="z4">z-score</strong></td>
+              </tr>
+            </table>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div> <!--row-->
+
+</div> <!--container-->
+
+
+<script>
+    function convert(){
+        var from_base = document.getElementById('from_base').value
+        var to_base = document.getElementById('to_base').value
+        var from_value = document.getElementById('from_value').value
+        var temp = parseInt(from_value, from_base) // m -> 10
+        var answer = temp.toString(to_base) // 10 -. n
+        document.getElementById('answer').innerText = answer;
+    }
+
+    // function for factorial
+    function fact(n){
+      if(n==0){
+        return 1;
+      }else{
+        var product = 1;
+        for(i=1;i<=n;i++){
+          product *= i;
+        }
+        return product
+      }
+    }
+    function round(num, f){
+      return Math.round(num * (10**f)) / (10**f)
+    }
+
+    // function for integrating Gaussian (zscore -> P)
+    // with Taylor expansion N=100
+    function erf(z){
+      var z = z/(2**0.5)
+      var sum = 0;
+      for(n=0;n<=100;n++){
+        var product = 1;
+        for(k=1;k<=n;k++){
+          product *= -z*z/k
+        }
+        sum += (z * product / (2*n+1))
+      }
+      return sum / Math.PI**0.5
+    }
+
+    // inverse erf (P -> z-score)
+    function ierf(p){
+      // aray for coef
+      var ck = [1]; 
+      for(k=1;k<=150;k++){
+        var s=0;
+        for(m=0;m<k;m++){
+          s += ck[m]*ck[k-1-m]/(m+1)/(2*m+1);
+        }
+        ck.push(s);
+      }
+      // calculate
+      var total = 0
+      for(k=0;k<=150;k++){
+        total += ck[k]/(2*k+1) * ((Math.PI)**0.5 * p)**(2*k+1);
+      }
+      return total*(2**0.5)
+    }
+    // input validation
+    document.getElementById('P3').oninput = validation;
+    document.getElementById('P4').oninput = validation;
+    function validation(){
+      var p3 = document.getElementById('P3').value;
+      var p4 = document.getElementById('P4').value;
+      if(p3!='' && (0>p3 || p3>0.5)){
+        document.getElementById('P3').classList.add('is-invalid')
+      }else{
+        document.getElementById('P3').classList.remove('is-invalid')
+      }
+      if(p4!='' && (0>p4 || p4>0.5)){
+        document.getElementById('P4').classList.add('is-invalid')
+      }else{
+        document.getElementById('P4').classList.remove('is-invalid')
+      }
+    }
+
+    // functions for calcualation
+    function z_to_p1(){
+      var z = document.getElementById('z1').value;
+      document.getElementById('P1').innerText = round(erf(z),5);
+    }
+    function z_to_p2(){
+      var z = document.getElementById('z2').value;
+      document.getElementById('P2').innerText = round(0.5-erf(z),5);
+    }
+    function p3_to_z(){
+      var p = document.getElementById('P3').value;
+      if(0<=p && p<=0.5){
+        document.getElementById('z3').innerText = round(ierf(p),4);
+      }else{
+        alert('P must be in range [0, 0.5]')
+      }
+    }
+    function p4_to_z(){
+      var p = document.getElementById('P4').value;
+      if(0<=p && p<=0.5){
+        document.getElementById('z4').innerText = round(ierf(0.5-p),4);
+      }else{
+        alert('P must be in range [0, 0.5]')
+      }
+    }
+
+    // function for reset input form
+    function reset(){
+      document.getElementById('from_value').value = '';
+      document.getElementById('answer').innerText = 'answer';
+      document.getElementById('from_value').focus();
+    }
+    function resetp1(){
+      document.getElementById('z1').value = '';
+      document.getElementById('P1').innerText = 'P(0<x<z)';
+      document.getElementById('z1').focus();
+    }
+    function resetp2(){
+      document.getElementById('z2').value = '';
+      document.getElementById('P2').innerText = 'P(z<x)';
+      document.getElementById('z2').focus();
+    }
+    function resetp3(){
+      document.getElementById('P3').value = '';
+      document.getElementById('z3').innerText = 'z-score';
+      document.getElementById('P3').focus();
+    }
+    function resetp4(){
+      document.getElementById('P4').value = '';
+      document.getElementById('z4').innerText = 'z-score';
+      document.getElementById('P4').focus();
+    }
+</script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="./js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+  $('.bs-component [data-toggle="popover"]').popover();
+  $('.bs-component [data-toggle="tooltip"]').tooltip();
+</script>
+</body>
+</html>
