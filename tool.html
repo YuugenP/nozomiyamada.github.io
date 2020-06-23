@@ -88,9 +88,9 @@
   </div>
   
   <div class="row">
-    <div class="col-lg-5">
+    <div class="col-lg-6">
       <div class="bs-component">
-        <div class="card border-primary mb-3" style="min-height: 16rem;">
+        <div class="card border-secondary mb-3" style="min-height: 16rem;">
           <div class="card-header">Base Converter</div>
           <div class="card-body">
             <form onsubmit="convert();return false;">
@@ -128,8 +128,8 @@
                   </select>
                 </td>
                 <td>
-                  <button class="btn btn-outline-primary" onclick="convert();return false">convert</button>
-                  <button class="btn btn-outline-primary" onclick="reset_base();return false">reset</button>
+                  <button class="btn btn-outline-secondary" onclick="convert();return false">convert</button>
+                  <button class="btn btn-outline-secondary" onclick="reset_base();return false">reset</button>
                 </td>
               </tr>
               <tr class="table-active">
@@ -156,13 +156,18 @@
 
   </div>
 
+  <div class="row">
+    <div class="col-lg-12">
+      <h2>Normal Distribution</h2>
+    </div>
+  </div>
 
   <div class="row">
 
     <div class="col-lg-3">
       <div class="bs-component">
         <div class="card border-success mb-3" style="min-height: 16rem;">
-          <div class="card-header">z-score to P(0&lt;x&lt;z)</div>
+          <div class="card-header">z-score to P(0≤x≤z)</div>
           <div class="card-body">
             <form onsubmit="z_to_p1();return false;">
             <table class='table'>
@@ -174,7 +179,7 @@
                 </td>
               </tr>
               <tr class="table-active">
-                <td align="center"><strong id="P1">P(0&lt;x&lt;z)</strong></td>
+                <td align="center"><strong id="P1">P(0≤x≤z)</strong></td>
               </tr>
             </table>
             </form>
@@ -186,7 +191,7 @@
     <div class="col-lg-3">
       <div class="bs-component">
         <div class="card border-success mb-3" style="min-height: 16rem;">
-          <div class="card-header">z-score to P(z&lt;x)</div>
+          <div class="card-header">z-score to P(z≤x)</div>
           <div class="card-body">
             <form onsubmit="z_to_p2();return false;">
             <table class='table'>
@@ -198,7 +203,7 @@
                 </td>
               </tr>
               <tr class="table-active">
-                <td align="center"><strong id="P2">P(z&lt;x)</strong></td>
+                <td align="center"><strong id="P2">P(z≤x)</strong></td>
               </tr>
             </table>
             </form>
@@ -210,11 +215,11 @@
     <div class="col-lg-3">
       <div class="bs-component">
         <div class="card border-warning mb-3" style="min-height: 16rem;">
-          <div class="card-header">P(0&lt;x&lt;z) to z-score</div>
+          <div class="card-header">P(0≤x≤z) to z-score</div>
           <div class="card-body">
             <form onsubmit="p3_to_z();return false;">
             <table class='table'>
-              <tr><td><input type='text' class="form-control" id='P3' placeholder="P(0&lt;x&lt;z)" autocomplete="off"></td></tr>
+              <tr><td><input type='text' class="form-control" id='P3' placeholder="P(0≤x≤z)" autocomplete="off"></td></tr>
               <tr>
                 <td>
                 <button class="btn btn-outline-warning" onclick="p3_to_z();return false">calculate</button>
@@ -234,11 +239,11 @@
     <div class="col-lg-3">
       <div class="bs-component">
         <div class="card border-warning mb-3" style="min-height: 16rem;">
-          <div class="card-header">P(z&lt;x) to z-score</div>
+          <div class="card-header">P(z≤x) to z-score</div>
           <div class="card-body">
             <form onsubmit="p4_to_z();return false;">
             <table class='table'>
-              <tr><td><input type='text' class="form-control" id='P4' placeholder="P(z&lt;x)" autocomplete="off"></td></tr>
+              <tr><td><input type='text' class="form-control" id='P4' placeholder="P(z≤x)" autocomplete="off"></td></tr>
               <tr>
                 <td>
                 <button class="btn btn-outline-warning" onclick="p4_to_z();return false">calculate</button>
@@ -255,7 +260,71 @@
       </div>
     </div>
 
-  </div> <!--row-->
+  </div> <!--row normal distribution-->
+
+  <div class="row">
+    <div class="col-lg-12">
+      <h2>Poisson & Gamma Distribution</h2>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-lg-5">
+      <div class="bs-component">
+        <div class="card border-primary mb-3" style="min-height: 16rem;">
+          <div class="card-header">Poisson Distribution</div>
+          <div class="card-body">
+            <form onsubmit="show_poisson();return false;">
+            <table class='table'>
+              <tr>
+                <td><input type='text' class="form-control" id='poisson_input1' placeholder="mean times λ" autocomplete="off"></td>
+                <td><input type='text' class="form-control" id='poisson_input2' placeholder="times k" autocomplete="off"></td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <button class="btn btn-outline-primary" onclick="show_poisson();return false">calculate</button>
+                  <button class="btn btn-outline-primary" onclick="reset_poisson();return false">reset</button>
+                </td>
+              </tr>
+              <tr class="table-active">
+                <td align="center"><strong id="poisson1">P(X=k)</strong></td>
+                <td align="center"><strong id="poisson2">P(X≤k)</strong></td>
+              </tr>
+            </table>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-7">
+      <div class="bs-component">
+        <div class="card border-info mb-3" style="min-height: 16rem;">
+          <div class="card-header">Gamma Distribution</div>
+          <div class="card-body">
+            <form onsubmit="show_gamma();return false;">
+            <table class='table'>
+              <tr>
+                <td colspan="2"><input type='text' class="form-control" id='gamma_input1' placeholder="mean period θ" autocomplete="off"></td>
+                <td colspan="2"><input type='text' class="form-control" id='gamma_input2' placeholder="times k" autocomplete="off"></td>
+                <td colspan="2"><input type='text' class="form-control" id='gamma_input3' placeholder="time x" autocomplete="off"></td>
+              </tr>
+              <tr>
+                <td colspan="6">
+                  <button class="btn btn-outline-info" onclick="show_gamma();return false">calculate</button>
+                  <button class="btn btn-outline-info" onclick="reset_gamma();return false">reset</button>
+                </td>
+              </tr>
+              <tr class="table-active">
+                <td colspan="3" align="center"><strong id="gamma1">P(x)</strong></td>
+                <td colspan="3" align="center"><strong id="gamma2">P(0~x)</strong></td>
+              </tr>
+            </table>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> <!--row Poisson % Gamma distribution-->
 
 </div> <!--container-->
 
@@ -293,9 +362,9 @@
   function erf(z){
     var z = z/(2**0.5)
     var sum = 0;
-    for(n=0;n<=150;n++){
+    for(var n=0;n<=150;n++){
       var product = 1;
-      for(k=1;k<=n;k++){
+      for(var k=1;k<=n;k++){
         product *= -z*z/k
       }
       sum += (z * product / (2*n+1))
@@ -307,25 +376,25 @@
   function ierf(p){
     // aray for coef
     var ck = [1]; 
-    for(k=1;k<=150;k++){
+    for(var k=1;k<=150;k++){
       var s=0;
-      for(m=0;m<k;m++){
+      for(var m=0;m<k;m++){
         s += ck[m]*ck[k-1-m]/(m+1)/(2*m+1);
       }
       ck.push(s);
     }
     // calculate
     var total = 0
-    for(k=0;k<=150;k++){
+    for(var k=0;k<=150;k++){
       total += ck[k]/(2*k+1) * ((Math.PI)**0.5 * p)**(2*k+1);
     }
     return total*(2**0.5)
   }
 
-  // validate input P
-  document.getElementById('P3').oninput = validation;
-  document.getElementById('P4').oninput = validation;
-  function validation(){
+  // validate input 
+  document.getElementById('P3').oninput = validation_ptoz;
+  document.getElementById('P4').oninput = validation_ptoz;
+  function validation_ptoz(){
     var p3 = document.getElementById('P3').value;
     var p4 = document.getElementById('P4').value;
     if(p3!='' && (0>p3 || p3>0.5)){
@@ -366,6 +435,82 @@
     }
   }
 
+  // functions for Poisson
+  function calc_poisson(l,k){
+    return (l**k) * (Math.E**(-l)) / fact(k)
+  }
+  function show_poisson(){
+    var elem1 = document.getElementById('poisson_input1');
+    var elem2 = document.getElementById('poisson_input2');
+    if(!elem1.classList.contains('is-invalid') && !elem2.classList.contains('is-invalid')){
+      var l = Math.round(elem1.value);
+      var k = Math.round(elem2.value);
+      var cum = 0;
+      var p = 0;
+      for(var i=0;i<=k;i++){
+        p = calc_poisson(l,i);
+        cum += p;
+      }
+      document.getElementById('poisson1').innerText = `P(X=${k}) = ` + round(p,4);
+      document.getElementById('poisson2').innerText = `P(X≤${k}) = ` + round(cum,4);
+    }
+  }
+
+  // validate poisson
+  document.getElementById('poisson_input1').oninput = validation_poisson;
+  document.getElementById('poisson_input2').oninput = validation_poisson;
+  function validation_poisson(){
+    var l = document.getElementById('poisson_input1').value;
+    var k = document.getElementById('poisson_input2').value;
+    if(l!='' && !Number.isInteger(Number(l))){
+      document.getElementById('poisson_input1').classList.add('is-invalid')
+    }else{
+      document.getElementById('poisson_input1').classList.remove('is-invalid')
+    }
+    if(k!='' && !Number.isInteger(Number(k))){
+      document.getElementById('poisson_input2').classList.add('is-invalid')
+    }else{
+      document.getElementById('poisson_input2').classList.remove('is-invalid')
+    }
+  }
+
+  // functions for Gamma (integration)
+  function calc_gamma(s){
+  var delta = 0.00001;
+  var area = 0;
+  var oldArea = -1;
+  var t = 0;
+  while(t < 3 || Math.abs(area-oldArea) > Number.EPSILON){
+        oldArea = area;
+        area += Math.pow(t, s-1)*Math.exp(-t)*delta;
+        t += delta;
+    }
+  return area;
+  }
+  function incomplete_gamma(s,x){
+  var delta = 0.000001;
+  var area = 0;
+  var oldArea = -1;
+  var t = 0;
+  while(t < x){
+        oldArea = area;
+        area += Math.pow(t, s-1)*Math.exp(-t)*delta;
+        t += delta;
+    }
+  return area;
+  }
+  function show_gamma(){
+    var t = document.getElementById('gamma_input1').value;
+    var k = document.getElementById('gamma_input2').value;
+    var x = document.getElementById('gamma_input3').value;
+    var gamma_k = calc_gamma(k);
+    var p = x**(k-1)*(Math.E**(-x/t))/gamma_k/(t**k);
+    var cum = incomplete_gamma(k,x/t)/gamma_k;
+    document.getElementById('gamma1').innerText = 'P(x) = ' + round(p,5);
+    document.getElementById('gamma2').innerText = 'P(0~x) = ' + round(cum,5);
+  }
+
+
   // functions for reset input form
   function reset_base(){
     document.getElementById('from_value').value = '';
@@ -374,12 +519,12 @@
   }
   function resetp1(){
     document.getElementById('z1').value = '';
-    document.getElementById('P1').innerText = 'P(0<x<z)';
+    document.getElementById('P1').innerText = 'P(0≤x≤z)';
     document.getElementById('z1').focus();
   }
   function resetp2(){
     document.getElementById('z2').value = '';
-    document.getElementById('P2').innerText = 'P(z<x)';
+    document.getElementById('P2').innerText = 'P(z≤x)';
     document.getElementById('z2').focus();
   }
   function resetp3(){
@@ -391,6 +536,21 @@
     document.getElementById('P4').value = '';
     document.getElementById('z4').innerText = 'z-score';
     document.getElementById('P4').focus();
+  }
+  function reset_poisson(){
+    document.getElementById('poisson_input1').value = '';
+    document.getElementById('poisson_input2').value = '';
+    document.getElementById('poisson1').innerText = 'P(X=k)';
+    document.getElementById('poisson2').innerText = 'P(X≤k)';
+    document.getElementById('poisson_input1').focus();
+  }
+  function reset_gamma(){
+    document.getElementById('gamma_input1').value = '';
+    document.getElementById('gamma_input2').value = '';
+    document.getElementById('gamma_input3').value = '';
+    document.getElementById('gamma1').innerText = 'P(x)';
+    document.getElementById('gamma2').innerText = 'P(0~x)';
+    document.getElementById('gamma_input1').focus();
   }
 
 </script>
