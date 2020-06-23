@@ -499,15 +499,44 @@
     }
   return area;
   }
-  function show_gamma(){
+  // validate gamma
+  document.getElementById('gamma_input1').oninput = validation_gamma;
+  document.getElementById('gamma_input2').oninput = validation_gamma;
+  document.getElementById('gamma_input3').oninput = validation_gamma;
+  function validation_gamma(){
     var t = document.getElementById('gamma_input1').value;
     var k = document.getElementById('gamma_input2').value;
     var x = document.getElementById('gamma_input3').value;
-    var gamma_k = calc_gamma(k);
-    var p = x**(k-1)*(Math.E**(-x/t))/gamma_k/(t**k);
-    var cum = incomplete_gamma(k,x/t)/gamma_k;
-    document.getElementById('gamma1').innerText = 'P(x) = ' + round(p,5);
-    document.getElementById('gamma2').innerText = 'P(0~x) = ' + round(cum,5);
+    if(t='' || Number(t)>=0){
+      document.getElementById('gamma_input1').classList.remove('is-invalid')
+    }else{
+      document.getElementById('gamma_input1').classList.add('is-invalid')
+    }
+    if(k='' || Number(k)>=0){
+      document.getElementById('gamma_input2').classList.remove('is-invalid')
+    }else{
+      document.getElementById('gamma_input2').classList.add('is-invalid')
+    }
+    if(x='' || Number(x)>=0){
+      document.getElementById('gamma_input3').classList.remove('is-invalid')
+    }else{
+      document.getElementById('gamma_input3').classList.add('is-invalid')
+    }
+  }
+  function show_gamma(){
+    var elem1 = document.getElementById('gamma_input1');
+    var elem2 = document.getElementById('gamma_input2');
+    var elem3 = document.getElementById('gamma_input3');
+    if(!elem1.classList.contains('is-invalid') && !elem2.classList.contains('is-invalid') && !elem3.classList.contains('is-invalid')){
+      var t = elem1.value;
+      var k = elem2.value;
+      var x = elem3.value;
+      var gamma_k = calc_gamma(k);
+      var p = x**(k-1)*(Math.E**(-x/t))/gamma_k/(t**k);
+      var cum = incomplete_gamma(k,x/t)/gamma_k;
+      document.getElementById('gamma1').innerText = 'P(x) = ' + round(p,5);
+      document.getElementById('gamma2').innerText = 'P(0~x) = ' + round(cum,5);
+    }
   }
 
 
