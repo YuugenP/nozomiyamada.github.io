@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <title>Nozomi Yamada</title>
+  <title>Math Tools</title>
 
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
   <style type="text/css">
@@ -83,7 +83,7 @@
 
   <div class="row">
     <div class="col-lg-12">
-      <h2>Tools</h2>
+      <h2>Math Tools</h2>
     </div>
   </div>
   
@@ -261,134 +261,138 @@
 
 
 <script>
-    function convert(){
-        var from_base = document.getElementById('from_base').value
-        var to_base = document.getElementById('to_base').value
-        var from_value = document.getElementById('from_value').value
-        var temp = parseInt(from_value, from_base) // m -> 10
-        var answer = temp.toString(to_base) // 10 -. n
-        document.getElementById('answer').innerText = answer;
-    }
 
-    // function for factorial
-    function fact(n){
-      if(n==0){
-        return 1;
-      }else{
-        var product = 1;
-        for(i=1;i<=n;i++){
-          product *= i;
-        }
-        return product
-      }
-    }
-    function round(num, f){
-      return Math.round(num * (10**f)) / (10**f)
-    }
+  // convert base
+  function convert(){
+      var from_base = document.getElementById('from_base').value
+      var to_base = document.getElementById('to_base').value
+      var from_value = document.getElementById('from_value').value
+      var temp = parseInt(from_value, from_base) // m -> 10
+      var answer = temp.toString(to_base) // 10 -. n
+      document.getElementById('answer').innerText = answer;
+  }
 
-    // function for integrating Gaussian (zscore -> P)
-    // with Taylor expansion N=100
-    function erf(z){
-      var z = z/(2**0.5)
-      var sum = 0;
-      for(n=0;n<=100;n++){
-        var product = 1;
-        for(k=1;k<=n;k++){
-          product *= -z*z/k
-        }
-        sum += (z * product / (2*n+1))
+  // functions for factorial, round
+  function fact(n){
+    if(n==0){
+      return 1;
+    }else{
+      var product = 1;
+      for(i=1;i<=n;i++){
+        product *= i;
       }
-      return sum / Math.PI**0.5
+      return product
     }
+  }
+  function round(num, f){
+    return Math.round(num * (10**f)) / (10**f)
+  }
 
-    // inverse erf (P -> z-score)
-    function ierf(p){
-      // aray for coef
-      var ck = [1]; 
-      for(k=1;k<=150;k++){
-        var s=0;
-        for(m=0;m<k;m++){
-          s += ck[m]*ck[k-1-m]/(m+1)/(2*m+1);
-        }
-        ck.push(s);
+  // function for integrating Gaussian (z-score -> P)
+  // with Taylor expansion N=150
+  function erf(z){
+    var z = z/(2**0.5)
+    var sum = 0;
+    for(n=0;n<=150;n++){
+      var product = 1;
+      for(k=1;k<=n;k++){
+        product *= -z*z/k
       }
-      // calculate
-      var total = 0
-      for(k=0;k<=150;k++){
-        total += ck[k]/(2*k+1) * ((Math.PI)**0.5 * p)**(2*k+1);
-      }
-      return total*(2**0.5)
+      sum += (z * product / (2*n+1))
     }
-    // input validation
-    document.getElementById('P3').oninput = validation;
-    document.getElementById('P4').oninput = validation;
-    function validation(){
-      var p3 = document.getElementById('P3').value;
-      var p4 = document.getElementById('P4').value;
-      if(p3!='' && (0>p3 || p3>0.5)){
-        document.getElementById('P3').classList.add('is-invalid')
-      }else{
-        document.getElementById('P3').classList.remove('is-invalid')
-      }
-      if(p4!='' && (0>p4 || p4>0.5)){
-        document.getElementById('P4').classList.add('is-invalid')
-      }else{
-        document.getElementById('P4').classList.remove('is-invalid')
-      }
-    }
+    return sum / Math.PI**0.5
+  }
 
-    // functions for calcualation
-    function z_to_p1(){
-      var z = document.getElementById('z1').value;
-      document.getElementById('P1').innerText = round(erf(z),5);
-    }
-    function z_to_p2(){
-      var z = document.getElementById('z2').value;
-      document.getElementById('P2').innerText = round(0.5-erf(z),5);
-    }
-    function p3_to_z(){
-      var p = document.getElementById('P3').value;
-      if(0<=p && p<=0.5){
-        document.getElementById('z3').innerText = round(ierf(p),4);
-      }else{
-        alert('P must be in range [0, 0.5]')
+  // inverse erf (P -> z-score)
+  function ierf(p){
+    // aray for coef
+    var ck = [1]; 
+    for(k=1;k<=150;k++){
+      var s=0;
+      for(m=0;m<k;m++){
+        s += ck[m]*ck[k-1-m]/(m+1)/(2*m+1);
       }
+      ck.push(s);
     }
-    function p4_to_z(){
-      var p = document.getElementById('P4').value;
-      if(0<=p && p<=0.5){
-        document.getElementById('z4').innerText = round(ierf(0.5-p),4);
-      }else{
-        alert('P must be in range [0, 0.5]')
-      }
+    // calculate
+    var total = 0
+    for(k=0;k<=150;k++){
+      total += ck[k]/(2*k+1) * ((Math.PI)**0.5 * p)**(2*k+1);
     }
+    return total*(2**0.5)
+  }
 
-    // function for reset input form
-    function reset(){
-      document.getElementById('from_value').value = '';
-      document.getElementById('answer').innerText = 'answer';
-      document.getElementById('from_value').focus();
+  // validate input P
+  document.getElementById('P3').oninput = validation;
+  document.getElementById('P4').oninput = validation;
+  function validation(){
+    var p3 = document.getElementById('P3').value;
+    var p4 = document.getElementById('P4').value;
+    if(p3!='' && (0>p3 || p3>0.5)){
+      document.getElementById('P3').classList.add('is-invalid')
+    }else{
+      document.getElementById('P3').classList.remove('is-invalid')
     }
-    function resetp1(){
-      document.getElementById('z1').value = '';
-      document.getElementById('P1').innerText = 'P(0<x<z)';
-      document.getElementById('z1').focus();
+    if(p4!='' && (0>p4 || p4>0.5)){
+      document.getElementById('P4').classList.add('is-invalid')
+    }else{
+      document.getElementById('P4').classList.remove('is-invalid')
     }
-    function resetp2(){
-      document.getElementById('z2').value = '';
-      document.getElementById('P2').innerText = 'P(z<x)';
-      document.getElementById('z2').focus();
+  }
+
+  // functions for calcualation z<>P
+  function z_to_p1(){
+    var z = document.getElementById('z1').value;
+    document.getElementById('P1').innerText = round(erf(z),5);
+  }
+  function z_to_p2(){
+    var z = document.getElementById('z2').value;
+    document.getElementById('P2').innerText = round(0.5-erf(z),5);
+  }
+  function p3_to_z(){
+    var p = document.getElementById('P3').value;
+    if(0<=p && p<=0.5){
+      document.getElementById('z3').innerText = round(ierf(p),4);
+    }else{
+      alert('P must be in range [0, 0.5]')
     }
-    function resetp3(){
-      document.getElementById('P3').value = '';
-      document.getElementById('z3').innerText = 'z-score';
-      document.getElementById('P3').focus();
+  }
+  function p4_to_z(){
+    var p = document.getElementById('P4').value;
+    if(0<=p && p<=0.5){
+      document.getElementById('z4').innerText = round(ierf(0.5-p),4);
+    }else{
+      alert('P must be in range [0, 0.5]')
     }
-    function resetp4(){
-      document.getElementById('P4').value = '';
-      document.getElementById('z4').innerText = 'z-score';
-      document.getElementById('P4').focus();
-    }
+  }
+
+  // functions for reset input form
+  function reset(){
+    document.getElementById('from_value').value = '';
+    document.getElementById('answer').innerText = 'answer';
+    document.getElementById('from_value').focus();
+  }
+  function resetp1(){
+    document.getElementById('z1').value = '';
+    document.getElementById('P1').innerText = 'P(0<x<z)';
+    document.getElementById('z1').focus();
+  }
+  function resetp2(){
+    document.getElementById('z2').value = '';
+    document.getElementById('P2').innerText = 'P(z<x)';
+    document.getElementById('z2').focus();
+  }
+  function resetp3(){
+    document.getElementById('P3').value = '';
+    document.getElementById('z3').innerText = 'z-score';
+    document.getElementById('P3').focus();
+  }
+  function resetp4(){
+    document.getElementById('P4').value = '';
+    document.getElementById('z4').innerText = 'z-score';
+    document.getElementById('P4').focus();
+  }
+  
 </script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
