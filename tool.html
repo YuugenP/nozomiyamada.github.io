@@ -142,13 +142,33 @@
       </div>
     </div>
 
-    
-
-    <div class="col-lg-6" style="display:none">
+    <div class="col-lg-6">
       <div class="bs-component">
-        <div class="card border-primary mb-3" style="min-height: 16rem;">
-          <div class="card-header">something</div>
+        <div class="card border-secondary mb-3" style="min-height: 16rem;">
+          <div class="card-header">GCD & LCM</div>
           <div class="card-body">
+            <form onsubmit="show_gcd();return false;">
+              <table class='table'>
+                <tr>
+                  <td colspan="2"><input type='text' class="form-control" id='gcd_input' placeholder="integers with space" autocomplete="off"></td>
+                </tr>
+                <tr>
+                  <td>
+                    <select class="form-control" id='select_gcd' style="min-width: 6rem;">
+                      <option value="gcd" selected>GCD</option>
+                      <option value="lcm" disabled>LCM</option>
+                    </select>
+                  </td>
+                  <td>
+                    <button class="btn btn-outline-secondary" onclick="show_gcd();return false">search</button>
+                    <button class="btn btn-outline-secondary" onclick="reset_gcd();return false">reset</button>
+                  </td>
+                </tr>
+                <tr class="table-active">
+                  <td colspan="2" align="center"><strong id="answer_gcd">answer</strong></td>
+                </tr>
+              </table>
+              </form>
           </div>
         </div>
       </div>
@@ -339,6 +359,45 @@
       var temp = parseInt(from_value, from_base) // m -> 10
       var answer = temp.toString(to_base) // 10 -. n
       document.getElementById('answer').innerText = answer;
+  }
+
+  // gcd algorithm
+  function euclid(a,b){
+    if(a < b){
+      [a, b] = [b, a];
+    }
+    while(r!=0){
+      var r = a%b;
+      a = b; b = r;
+    }
+    return a 
+  }
+  function gcd(nums){
+    while(nums.length>1){
+      var new_nums = [];
+      for(var i=0;i<nums.length-1;i++){
+        new_nums.push(euclid(nums[i], nums[i+1]));
+      }
+      nums = new_nums;
+    }
+    return nums[0]
+  }
+  // validate gcd
+  document.getElementById('gcd_input').oninput = validation_gcd;
+  function validation_gcd(){
+    var nums = document.getElementById('gcd_input').value.trim().split(/\s+/).map(Number);
+    if(nums.every(Number.isInteger) && !nums.includes(0)){
+      document.getElementById('gcd_input').classList.remove('is-invalid')
+    }else{
+      document.getElementById('gcd_input').classList.add('is-invalid')
+    }
+  }
+  function show_gcd(){
+    var elem = document.getElementById('gcd_input');
+    var nums = elem.value.trim().split(/\s+/).map(Number);
+    if(nums.length>0 && !elem.classList.contains('is-invalid')){
+      document.getElementById('answer_gcd').innerText = gcd(nums);
+    }
   }
 
   // functions for factorial, round
@@ -545,6 +604,11 @@
     document.getElementById('from_value').value = '';
     document.getElementById('answer').innerText = 'answer';
     document.getElementById('from_value').focus();
+  }
+  function reset_gcd(){
+    document.getElementById('gcd_input').value = '';
+    document.getElementById('answer_gcd').innerText = 'answer';
+    document.getElementById('gcd_input').focus();
   }
   function resetp1(){
     document.getElementById('z1').value = '';
