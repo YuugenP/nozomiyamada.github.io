@@ -156,7 +156,7 @@
                   <td>
                     <select class="form-control" id='select_gcd' style="min-width: 6rem;">
                       <option value="gcd" selected>GCD</option>
-                      <option value="lcm" disabled>LCM</option>
+                      <option value="lcm">LCM</option>
                     </select>
                   </td>
                   <td>
@@ -372,11 +372,24 @@
     }
     return a 
   }
+  function lcm2(a,b){
+    return Math.round(a*b/euclid(a,b))
+  }
   function gcd(nums){
     while(nums.length>1){
       var new_nums = [];
       for(var i=0;i<nums.length-1;i++){
         new_nums.push(euclid(nums[i], nums[i+1]));
+      }
+      nums = new_nums;
+    }
+    return nums[0]
+  }
+  function lcm(nums){
+    while(nums.length>1){
+      var new_nums = [];
+      for(var i=0;i<nums.length-1;i++){
+        new_nums.push(lcm2(nums[i], nums[i+1]));
       }
       nums = new_nums;
     }
@@ -395,8 +408,14 @@
   function show_gcd(){
     var elem = document.getElementById('gcd_input');
     var nums = elem.value.trim().split(/\s+/).map(Number);
+    var mode = document.getElementById('select_gcd').value;
     if(nums.length>0 && !elem.classList.contains('is-invalid')){
-      document.getElementById('answer_gcd').innerText = gcd(nums);
+      if(mode=='gcd'){
+        document.getElementById('answer_gcd').innerText = gcd(nums);
+      }else{
+        document.getElementById('answer_gcd').innerText = lcm(nums);
+      }
+      
     }
   }
 
