@@ -412,9 +412,9 @@
     var mode = document.getElementById('select_gcd').value;
     if(nums.length>0 && !elem.classList.contains('is-invalid')){
       if(mode=='gcd'){
-        document.getElementById('answer_gcd').innerText = gcd(nums);
+        document.getElementById('answer_gcd').innerText = 'GCD = ' + gcd(nums);
       }else{
-        document.getElementById('answer_gcd').innerText = lcm(nums);
+        document.getElementById('answer_gcd').innerText = 'LCM = ' + lcm(nums);
       }
       
     }
@@ -491,11 +491,11 @@
   // functions for calcualation z<>P
   function z_to_p1(){
     var z = document.getElementById('z1').value;
-    document.getElementById('P1').innerText = round(erf(z),5);
+    document.getElementById('P1').innerText = round(erf(z),6);
   }
   function z_to_p2(){
     var z = document.getElementById('z2').value;
-    document.getElementById('P2').innerText = round(0.5-erf(z),5);
+    document.getElementById('P2').innerText = round(0.5-erf(z),6);
   }
   function p3_to_z(){
     var p = document.getElementById('P3').value;
