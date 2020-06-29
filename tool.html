@@ -34,6 +34,10 @@
     .progress {margin-bottom: 10px;}
   }
   </style>
+  <script src='js/statistics.js'></script>
+  <script src='js/special_func.js'></script>
+  <script src='js/gcd_lcm.js'></script>
+  <script src='js/misc.js'></script>
 </head>
 
 <body>
@@ -84,6 +88,7 @@
   <div class="row">
     <div class="col-lg-12">
       <h2>Math Tools</h2>
+      <h5>source code -> <a href="https://github.com/nozomiyamada/JS_mathtool" target="_blank">GitHub</a></h5>
     </div>
   </div>
   
@@ -97,7 +102,7 @@
             <table class='table'>
               <tr>
                 <td>
-                  <select class="form-control" id='from_base' style="min-width: 4rem;">
+                  <select class="form-control" id='base_from' style="min-width: 4rem;">
                     <option value=10 selected>10</option>
                     <option value=16>16</option>
                     <option value=2>2</option>
@@ -110,11 +115,11 @@
                     <option value=9>9</option>
                   </select>
                 </td>
-                <td><input type='text' class="form-control" id='from_value' placeholder="from" autocomplete="off"></td>
+                <td><input type='text' class="form-control" id='num_to_convert' placeholder="from" autocomplete="off"></td>
               </tr>
               <tr>
                 <td>
-                  <select class="form-control" id='to_base' style="min-width: 4rem;">
+                  <select class="form-control" id='base_to' style="min-width: 4rem;">
                     <option value=16 selected>16</option>
                     <option value=10>10</option>
                     <option value=2>2</option>
@@ -178,7 +183,7 @@
 
   <div class="row">
     <div class="col-lg-12">
-      <h2>Normal Distribution</h2>
+      <h2>normal & t distribution</h2>
     </div>
   </div>
 
@@ -187,19 +192,20 @@
     <div class="col-lg-3">
       <div class="bs-component">
         <div class="card border-success mb-3" style="min-height: 16rem;">
-          <div class="card-header">z-score to P(0≤x≤z)</div>
+        <div class="card-header">z-score to p(z≤x)</div>
           <div class="card-body">
-            <form onsubmit="z_to_p1();return false;">
+            <p align="center"><img style="height: 100px; display: inline-block;" src="image/z_to_p.png"></p>
+            <form onsubmit="z2p();return false;">
             <table class='table'>
-              <tr><td><input type='text' class="form-control" id='z1' placeholder="z-score" autocomplete="off"></td></tr>
+              <tr><td><input type='text' class="form-control" id='input_z2p' placeholder="z-score" autocomplete="off"></td></tr>
               <tr>
                 <td>
-                <button class="btn btn-outline-success" onclick="z_to_p1();return false">calculate</button>
-                <button class="btn btn-outline-success" onclick="resetp1();return false">reset</button>
+                <button class="btn btn-outline-success" onclick="z2p();return false">calculate</button>
+                <button class="btn btn-outline-success" onclick="reset_z2p();return false">reset</button>
                 </td>
               </tr>
               <tr class="table-active">
-                <td align="center"><strong id="P1">P(0≤x≤z)</strong></td>
+                <td align="center"><strong id="answer_z2p">p(z≤x)</strong></td>
               </tr>
             </table>
             </form>
@@ -211,19 +217,20 @@
     <div class="col-lg-3">
       <div class="bs-component">
         <div class="card border-success mb-3" style="min-height: 16rem;">
-          <div class="card-header">z-score to P(z≤x)</div>
+          <div class="card-header">p(z≤x) to z-score</div>
           <div class="card-body">
-            <form onsubmit="z_to_p2();return false;">
+            <p align="center"><img style="height: 100px; display: inline-block;" src="image/z_to_p.png"></p>
+            <form onsubmit="p2z();return false;">
             <table class='table'>
-              <tr><td><input type='text' class="form-control" id='z2' placeholder="z-score" autocomplete="off"></td></tr>
+              <tr><td><input type='text' class="form-control" id='input_p2z' placeholder="P(z≤x)" autocomplete="off"></td></tr>
               <tr>
                 <td>
-                <button class="btn btn-outline-success" onclick="z_to_p2();return false">calculate</button>
-                <button class="btn btn-outline-success" onclick="resetp2();return false">reset</button>
+                <button class="btn btn-outline-success" onclick="p2z();return false">calculate</button>
+                <button class="btn btn-outline-success" onclick="reset_p2z();return false">reset</button>
                 </td>
               </tr>
               <tr class="table-active">
-                <td align="center"><strong id="P2">P(z≤x)</strong></td>
+                <td align="center"><strong id="answer_p2z">z-score</strong></td>
               </tr>
             </table>
             </form>
@@ -235,19 +242,23 @@
     <div class="col-lg-3">
       <div class="bs-component">
         <div class="card border-warning mb-3" style="min-height: 16rem;">
-          <div class="card-header">P(0≤x≤z) to z-score</div>
+          <div class="card-header">t-value to p(t≤x)</div>
           <div class="card-body">
-            <form onsubmit="p3_to_z();return false;">
+            <p align="center"><img style="height: 100px; display: inline-block;" src="image/t_to_p.png"></p>
+            <form onsubmit="t2p();return false;">
             <table class='table'>
-              <tr><td><input type='text' class="form-control" id='P3' placeholder="P(0≤x≤z)" autocomplete="off"></td></tr>
               <tr>
-                <td>
-                <button class="btn btn-outline-warning" onclick="p3_to_z();return false">calculate</button>
-                <button class="btn btn-outline-warning" onclick="resetp3();return false">reset</button>
+                <td><input type='text' class="form-control" id='input_t2p' placeholder="t-value" autocomplete="off"></td>
+                <td><input type='text' class="form-control" id='input_t2p_df' placeholder="df" autocomplete="off"></td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                <button class="btn btn-outline-warning" onclick="t2p();return false">calculate</button>
+                <button class="btn btn-outline-warning" onclick="reset_t2p();return false">reset</button>
                 </td>
               </tr>
               <tr class="table-active">
-                <td align="center"><strong id="z3">z-score</strong></td>
+                <td colspan="2" align="center"><strong id="answer_t2p">p(t≤x)</strong></td>
               </tr>
             </table>
             </form>
@@ -259,19 +270,23 @@
     <div class="col-lg-3">
       <div class="bs-component">
         <div class="card border-warning mb-3" style="min-height: 16rem;">
-          <div class="card-header">P(z≤x) to z-score</div>
+          <div class="card-header">p(t≤x) to t-value</div>
           <div class="card-body">
-            <form onsubmit="p4_to_z();return false;">
+            <p align="center"><img style="height: 100px; display: inline-block;" src="image/t_to_p.png"></p>
+            <form onsubmit="p2t();return false;">
             <table class='table'>
-              <tr><td><input type='text' class="form-control" id='P4' placeholder="P(z≤x)" autocomplete="off"></td></tr>
               <tr>
-                <td>
-                <button class="btn btn-outline-warning" onclick="p4_to_z();return false">calculate</button>
-                <button class="btn btn-outline-warning" onclick="resetp4();return false">reset</button>
+                <td><input type='text' class="form-control" id='input_p2t' placeholder="p(t≤x)" autocomplete="off"></td>
+                <td><input type='text' class="form-control" id='input_p2t_df' placeholder="df" autocomplete="off"></td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                <button class="btn btn-outline-warning" onclick="p2t();return false">calculate</button>
+                <button class="btn btn-outline-warning" onclick="reset_p2t();return false">reset</button>
                 </td>
               </tr>
               <tr class="table-active">
-                <td align="center"><strong id="z4">z-score</strong></td>
+                <td colspan="2" align="center"><strong id="answer_p2t">t-value</strong></td>
               </tr>
             </table>
             </form>
@@ -280,7 +295,129 @@
       </div>
     </div>
 
-  </div> <!--row normal distribution-->
+  </div> <!--row normal & t distribution-->
+
+  <div class="row">
+    <div class="col-lg-12">
+      <h2>χ<sup>2</sup> & F distribution</h2>
+    </div>
+  </div>
+
+  <div class="row">
+
+    <div class="col-lg-3">
+      <div class="bs-component">
+        <div class="card border-success mb-3" style="min-height: 16rem;">
+        <div class="card-header">χ<sup>2</sup> to p</div>
+          <div class="card-body">
+            <p align="center"><img style="height: 100px; display: inline-block;" src="image/chi_to_p.png"></p>
+            <form onsubmit="chi2p();return false;">
+            <table class='table'>
+              <tr>
+                <td><input type='text' class="form-control" id='input_chi2p' placeholder="chi2" autocomplete="off"></td>
+                <td><input type='text' class="form-control" id='input_chi2p_df' placeholder="df" autocomplete="off"></td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                <button class="btn btn-outline-success" onclick="chi2p();return false">calculate</button>
+                <button class="btn btn-outline-success" onclick="reset_chi2p();return false">reset</button>
+                </td>
+              </tr>
+              <tr class="table-active">
+                <td colspan="2" align="center"><strong id="answer_chi2p">p(χ<sup>2</sup>≤x)</strong></td>
+              </tr>
+            </table>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3">
+      <div class="bs-component">
+        <div class="card border-success mb-3" style="min-height: 16rem;">
+          <div class="card-header">p to χ<sup>2</sup></div>
+          <div class="card-body">
+            <p align="center"><img style="height: 100px; display: inline-block;" src="image/chi_to_p.png"></p>
+            <form onsubmit="p2chi();return false;">
+            <table class='table'>
+              <tr>
+                <td><input type='text' class="form-control" id='input_p2chi' placeholder="p" autocomplete="off"></td>
+                <td><input type='text' class="form-control" id='input_p2chi_df' placeholder="df" autocomplete="off"></td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                <button class="btn btn-outline-success" onclick="p2chi();return false">calculate</button>
+                <button class="btn btn-outline-success" onclick="reset_p2chi();return false">reset</button>
+                </td>
+              </tr>
+              <tr class="table-active">
+                <td colspan="2" align="center"><strong id="answer_p2chi">χ<sup>2</sup></strong></td>
+              </tr>
+            </table>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3">
+      <div class="bs-component">
+        <div class="card border-warning mb-3" style="min-height: 16rem;">
+          <div class="card-header">t-value to p(F≤x)</div>
+          <div class="card-body">
+            <p align="center"><img style="height: 100px; display: inline-block;" src="image/f_to_p.png"></p>
+            <form onsubmit="f2p();return false;">
+            <table class='table'>
+              <tr>
+                <td><input type='text' class="form-control" id='input_f2p' placeholder="F" autocomplete="off"></td>
+                <td><input type='text' class="form-control" id='input_f2p_df' placeholder="df1 df2" autocomplete="off"></td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                <button class="btn btn-outline-warning" onclick="f2p();return false">calculate</button>
+                <button class="btn btn-outline-warning" onclick="reset_f2p();return false">reset</button>
+                </td>
+              </tr>
+              <tr class="table-active">
+                <td colspan="2" align="center"><strong id="answer_f2p">p(F≤x)</strong></td>
+              </tr>
+            </table>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3">
+      <div class="bs-component">
+        <div class="card border-warning mb-3" style="min-height: 16rem;">
+          <div class="card-header">p to F-value</div>
+          <div class="card-body">
+            <p align="center"><img style="height: 100px; display: inline-block;" src="image/f_to_p.png"></p>
+            <form onsubmit="p2f();return false;">
+            <table class='table'>
+              <tr>
+                <td><input type='text' class="form-control" id='input_p2f' placeholder="p" autocomplete="off"></td>
+                <td><input type='text' class="form-control" id='input_p2f_df' placeholder="df1 df2" autocomplete="off"></td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                <button class="btn btn-outline-warning" onclick="p2f();return false">calculate</button>
+                <button class="btn btn-outline-warning" onclick="reset_p2f();return false">reset</button>
+                </td>
+              </tr>
+              <tr class="table-active">
+                <td colspan="2" align="center"><strong id="answer_p2f">F-value</strong></td>
+              </tr>
+            </table>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div> <!--chi2 & F distribution-->
 
   <div class="row">
     <div class="col-lg-12">
@@ -349,188 +486,145 @@
 </div> <!--container-->
 
 
+
 <script>
 
   // convert base
   function convert(){
-      var from_base = document.getElementById('from_base').value
-      var to_base = document.getElementById('to_base').value
-      var from_value = document.getElementById('from_value').value
-      var temp = parseInt(from_value, from_base) // m -> 10
-      var answer = temp.toString(to_base) // 10 -. n
-      document.getElementById('answer').innerText = answer;
+      let base_from = document.getElementById('base_from').value;
+      let base_to = document.getElementById('base_to').value;
+      let num = document.getElementById('num_to_convert').value;
+      document.getElementById('answer').innerText = convert_base(num,base_from,base_to)
   }
 
-  // gcd algorithm
-  function euclid(a,b){
-    if(a < b){
-      [a, b] = [b, a];
-    }
-    while(r!=0){
-      var r = a%b;
-      a = b; b = r;
-    }
-    return a 
-  }
-  function lcm2(a,b){
-    return Math.round(a*b/euclid(a,b))
-  }
-  function gcd(nums){
-    while(nums.length>1){
-      var new_nums = [];
-      for(var i=0;i<nums.length-1;i++){
-        new_nums.push(euclid(nums[i], nums[i+1]));
-      }
-      nums = new_nums;
-    }
-    return nums[0]
-  }
-  function lcm(nums){
-    while(nums.length>1){
-      var new_nums = [];
-      for(var i=0;i<nums.length-1;i++){
-        new_nums.push(lcm2(nums[i], nums[i+1]));
-      }
-      nums = new_nums;
-    }
-    return nums[0]
-  }
-  // validate gcd
-  document.getElementById('gcd_input').oninput = validation_gcd;
-  function validation_gcd(){
-    var nums = document.getElementById('gcd_input').value.trim().split(/\s+/).map(Number);
+  ///// GCD and LCM /////
+  document.getElementById('gcd_input').oninput = validate_gcd;
+  function validate_gcd(){
+    let nums = document.getElementById('gcd_input').value.trim().split(/\s+/).map(Number); // delete spaces, split, cast as Number
     if(nums.every(Number.isInteger) && !nums.includes(0)){
-      document.getElementById('gcd_input').classList.remove('is-invalid')
+      document.getElementById('gcd_input').classList.remove('is-invalid');
     }else{
-      document.getElementById('gcd_input').classList.add('is-invalid')
+      document.getElementById('gcd_input').classList.add('is-invalid');
     }
   }
   function show_gcd(){
-    var elem = document.getElementById('gcd_input');
-    var nums = elem.value.trim().split(/\s+/).map(Number);
-    var mode = document.getElementById('select_gcd').value;
+    let elem = document.getElementById('gcd_input');
+    let nums = elem.value.trim().split(/\s+/).map(Number);
+    let mode = document.getElementById('select_gcd').value;
     if(nums.length>0 && !elem.classList.contains('is-invalid')){
       if(mode=='gcd'){
         document.getElementById('answer_gcd').innerText = 'GCD = ' + gcd(nums);
-      }else{
+      }else if(mode='lcm'){
         document.getElementById('answer_gcd').innerText = 'LCM = ' + lcm(nums);
       }
       
     }
   }
 
-  // functions for factorial, round
-  function fact(n){
-    if(n==0){
-      return 1;
+  ///// validate /////
+  document.getElementById('input_p2z').oninput = validate_p;
+  document.getElementById('input_p2t').oninput = validate_p;
+  document.getElementById('input_p2chi').oninput = validate_p;
+  document.getElementById('input_p2f').oninput = validate_p;
+  function validate_p(){
+    let p1 = document.getElementById('input_p2z').value;
+    if(p1!='' && (p1<0 || p1>0.5)){
+      document.getElementById('input_p2z').classList.add('is-invalid');
     }else{
-      var product = 1;
-      for(i=1;i<=n;i++){
-        product *= i;
+      document.getElementById('input_p2z').classList.remove('is-invalid');
+    }
+    let p2 = document.getElementById('input_p2t').value;
+    if(p2!='' && (p2<0 || p2>0.5)){
+      document.getElementById('input_p2t').classList.add('is-invalid');
+    }else{
+      document.getElementById('input_p2t').classList.remove('is-invalid');
+    }
+    let p3 = document.getElementById('input_p2chi').value;
+    if(p3!='' && (p3<0 || p3>1)){
+      document.getElementById('input_p2chi').classList.add('is-invalid');
+    }else{
+      document.getElementById('input_p2chi').classList.remove('is-invalid');
+    }
+    let p4 = document.getElementById('input_p2f').value;
+    if(p4!='' && (p4<0 || p4>1)){
+      document.getElementById('input_p2f').classList.add('is-invalid');
+    }else{
+      document.getElementById('input_p2f').classList.remove('is-invalid');
+    }
+  }
+
+
+  // functions for calcualation z,t,chi<>P
+  function z2p(){
+    let z = document.getElementById('input_z2p').value;
+    document.getElementById('answer_z2p').innerText = round(z_to_p(z),6);
+  }
+  function p2z(){
+    if(!document.getElementById('input_p2z').classList.contains('is-invalid')){
+      let p = document.getElementById('input_p2z').value;
+      document.getElementById('answer_p2z').innerText = round(p_to_z(p),6);
+    }
+  }
+  function t2p(){
+    let t = Number(document.getElementById('input_t2p').value);
+    let df = Number(document.getElementById('input_t2p_df').value);
+    document.getElementById('answer_t2p').innerText = round(t_to_p(t,df),6);
+  }
+  function p2t(){
+    if(!document.getElementById('input_p2t').classList.contains('is-invalid')){
+      let p = Number(document.getElementById('input_p2t').value);
+      let df = Number(document.getElementById('input_p2t_df').value);
+      document.getElementById('answer_p2t').innerText = round(p_to_t(p,df),6);
+    }
+  }
+  function chi2p(){
+    let chi = Number(document.getElementById('input_chi2p').value);
+    let df = Number(document.getElementById('input_chi2p_df').value);
+    document.getElementById('answer_chi2p').innerText = round(chi_to_p(chi,df),6);
+  }
+  function p2chi(){
+    if(!document.getElementById('input_p2chi').classList.contains('is-invalid')){
+      let p = Number(document.getElementById('input_p2chi').value);
+      let df = Number(document.getElementById('input_p2chi_df').value);
+      document.getElementById('answer_p2chi').innerText = round(p_to_chi(p,df),6);
+    }
+  }
+  function f2p(){
+    let f = Number(document.getElementById('input_f2p').value);
+    let df = document.getElementById('input_f2p_df').value.trim().split(/\s+/).map(Number);
+    if(df.length==2 && df.every(Number)){
+      document.getElementById('input_f2p_df').classList.remove('is-invalid');
+      document.getElementById('answer_f2p').innerText = round(f_to_p(f,df[0],df[1]),6);
+    }else{
+      document.getElementById('input_f2p_df').classList.add('is-invalid');
+      document.getElementById('input_f2p_df').focus();
+    }
+  }
+  function p2f(){
+    if(!document.getElementById('input_p2f').classList.contains('is-invalid')){
+      let p = Number(document.getElementById('input_p2f').value);
+      let df = document.getElementById('input_p2f_df').value.trim().split(/\s+/).map(Number);
+      if(df.length==2 && df.every(Number)){
+        document.getElementById('input_p2f_df').classList.remove('is-invalid');
+        document.getElementById('answer_p2f').innerText = round(p_to_f(p,df[0],df[1]),6);
+      }else{
+        document.getElementById('input_p2f_df').classList.add('is-invalid');
+        document.getElementById('input_p2f_df').focus();
       }
-      return product
-    }
-  }
-  function round(num, f){
-    return Math.round(num * (10**f)) / (10**f)
-  }
-
-  // function for integrating Gaussian (z-score -> P)
-  // with Taylor expansion N=150
-  function erf(z){
-    var z = z/(2**0.5)
-    var sum = 0;
-    for(var n=0;n<=150;n++){
-      var product = 1;
-      for(var k=1;k<=n;k++){
-        product *= -z*z/k
-      }
-      sum += (z * product / (2*n+1))
-    }
-    return sum / Math.PI**0.5
-  }
-
-  // inverse erf (P -> z-score)
-  function ierf(p){
-    // aray for coef
-    var ck = [1]; 
-    for(var k=1;k<=150;k++){
-      var s=0;
-      for(var m=0;m<k;m++){
-        s += ck[m]*ck[k-1-m]/(m+1)/(2*m+1);
-      }
-      ck.push(s);
-    }
-    // calculate
-    var total = 0
-    for(var k=0;k<=150;k++){
-      total += ck[k]/(2*k+1) * ((Math.PI)**0.5 * p)**(2*k+1);
-    }
-    return total*(2**0.5)
-  }
-
-  // validate input 
-  document.getElementById('P3').oninput = validation_ptoz;
-  document.getElementById('P4').oninput = validation_ptoz;
-  function validation_ptoz(){
-    var p3 = document.getElementById('P3').value;
-    var p4 = document.getElementById('P4').value;
-    if(p3!='' && (0>p3 || p3>0.5)){
-      document.getElementById('P3').classList.add('is-invalid')
-    }else{
-      document.getElementById('P3').classList.remove('is-invalid')
-    }
-    if(p4!='' && (0>p4 || p4>0.5)){
-      document.getElementById('P4').classList.add('is-invalid')
-    }else{
-      document.getElementById('P4').classList.remove('is-invalid')
     }
   }
 
-  // functions for calcualation z<>P
-  function z_to_p1(){
-    var z = document.getElementById('z1').value;
-    document.getElementById('P1').innerText = round(erf(z),6);
-  }
-  function z_to_p2(){
-    var z = document.getElementById('z2').value;
-    document.getElementById('P2').innerText = round(0.5-erf(z),6);
-  }
-  function p3_to_z(){
-    var p = document.getElementById('P3').value;
-    if(0<=p && p<=0.5){
-      document.getElementById('z3').innerText = round(ierf(p),4);
-    }else{
-      alert('P must be in range [0, 0.5]')
-    }
-  }
-  function p4_to_z(){
-    var p = document.getElementById('P4').value;
-    if(0<=p && p<=0.5){
-      document.getElementById('z4').innerText = round(ierf(0.5-p),4);
-    }else{
-      alert('P must be in range [0, 0.5]')
-    }
-  }
 
-  // functions for Poisson
-  function calc_poisson(l,k){
-    return (l**k) * (Math.E**(-l)) / fact(k)
-  }
   function show_poisson(){
     var elem1 = document.getElementById('poisson_input1');
     var elem2 = document.getElementById('poisson_input2');
     if(!elem1.classList.contains('is-invalid') && !elem2.classList.contains('is-invalid')){
       var l = Math.round(elem1.value);
       var k = Math.round(elem2.value);
-      var cum = 0;
-      var p = 0;
-      for(var i=0;i<=k;i++){
-        p = calc_poisson(l,i);
-        cum += p;
-      }
+      p = poisson(l,k);
+      cum = poisson_cum(l,k);
       document.getElementById('poisson1').innerText = `P(X=${k}) = ` + round(p,4);
-      document.getElementById('poisson2').innerText = `P(X≤${k}) = ` + round(cum,4);
+      document.getElementById('poisson2').innerText = `P(X≥${k}) = ` + round(cum,4);
     }
   }
 
@@ -552,31 +646,7 @@
     }
   }
 
-  // functions for Gamma (integration)
-  function calc_gamma(s){
-  var delta = 0.00001;
-  var area = 0;
-  var oldArea = -1;
-  var t = 0;
-  while(t < 3 || Math.abs(area-oldArea) > Number.EPSILON){
-        oldArea = area;
-        area += Math.pow(t, s-1)*Math.exp(-t)*delta;
-        t += delta;
-    }
-  return area;
-  }
-  function incomplete_gamma(s,x){
-  var delta = 0.000001;
-  var area = 0;
-  var oldArea = -1;
-  var t = 0;
-  while(t < x){
-        oldArea = area;
-        area += Math.pow(t, s-1)*Math.exp(-t)*delta;
-        t += delta;
-    }
-  return area;
-  }
+
   // validate gamma
   document.getElementById('gamma_input1').oninput = validation_gamma;
   document.getElementById('gamma_input2').oninput = validation_gamma;
@@ -620,34 +690,60 @@
 
   // functions for reset input form
   function reset_base(){
-    document.getElementById('from_value').value = '';
+    document.getElementById('num_to_convert').value = '';
     document.getElementById('answer').innerText = 'answer';
-    document.getElementById('from_value').focus();
+    document.getElementById('num_to_convert').focus();
   }
   function reset_gcd(){
     document.getElementById('gcd_input').value = '';
     document.getElementById('answer_gcd').innerText = 'answer';
     document.getElementById('gcd_input').focus();
   }
-  function resetp1(){
-    document.getElementById('z1').value = '';
-    document.getElementById('P1').innerText = 'P(0≤x≤z)';
-    document.getElementById('z1').focus();
+  function reset_z2p(){
+    document.getElementById('input_z2p').value = '';
+    document.getElementById('answer_z2p').innerText = 'p(z≤x)';
+    document.getElementById('input_z2p').focus();
   }
-  function resetp2(){
-    document.getElementById('z2').value = '';
-    document.getElementById('P2').innerText = 'P(z≤x)';
-    document.getElementById('z2').focus();
+  function reset_p2z(){
+    document.getElementById('input_p2z').value = '';
+    document.getElementById('answer_p2z').innerText = 'z-score';
+    document.getElementById('input_p2z').focus();
   }
-  function resetp3(){
-    document.getElementById('P3').value = '';
-    document.getElementById('z3').innerText = 'z-score';
-    document.getElementById('P3').focus();
+  function reset_t2p(){
+    document.getElementById('input_t2p').value = '';
+    document.getElementById('input_t2p_df').value = '';
+    document.getElementById('answer_t2p').innerText = 'p(t≤x)';
+    document.getElementById('input_t2p').focus();
   }
-  function resetp4(){
-    document.getElementById('P4').value = '';
-    document.getElementById('z4').innerText = 'z-score';
-    document.getElementById('P4').focus();
+  function reset_p2t(){
+    document.getElementById('input_p2t').value = '';
+    document.getElementById('input_p2t_df').value = '';
+    document.getElementById('answer_p2t').innerText = 't-value';
+    document.getElementById('input_p2t').focus();
+  }
+  function reset_chi2p(){
+    document.getElementById('input_chi2p').value = '';
+    document.getElementById('input_chi2p_df').value = '';
+    document.getElementById('answer_chi2p').innerHTML = 'p(χ<sup>2</sup>≤x)';
+    document.getElementById('input_chi2p').focus();
+  }
+  function reset_p2chi(){
+    document.getElementById('input_p2chi').value = '';
+    document.getElementById('input_p2chi_df').value = '';
+    document.getElementById('answer_p2chi').innerHTML = 'χ<sup>2</sup>';
+    document.getElementById('input_p2chi').focus();
+  }
+  function reset_f2p(){
+    document.getElementById('input_f2p').value = '';
+    document.getElementById('input_f2p_df').value = '';
+    document.getElementById('answer_f2p').innerHTML = 'p(F≤x)';
+    document.getElementById('input_f2p').focus();
+  }
+  function reset_p2f(){
+    document.getElementById('input_p2f').value = '';
+    document.getElementById('input_p2f_df').value = '';
+    document.getElementById('answer_p2f').innerHTML = 'F-value';
+    document.getElementById('input_p2f').focus();
   }
   function reset_poisson(){
     document.getElementById('poisson_input1').value = '';
