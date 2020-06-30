@@ -226,7 +226,56 @@
       </div>
     </div>
 
+  </div> <!-- row GCD LCM-->
+
+  <div class="row">
+    <div class="col-lg-12">
+      <h2>Statistics</h2>
+    </div>
   </div>
+
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="bs-component">
+        <div class="card border-primary mb-3" style="min-height: 20rem;">
+          <div class="card-header">statistics values</div>
+          <div class="card-body">
+            <form onsubmit="show_stats();return false;">
+            <table class='table' style="table-layout: auto;">
+              <tr>
+                <td colspan="6"><input type='text' class="form-control" id='stats_input1' placeholder="values with space" autocomplete="off"></td>
+              </tr>
+              <tr>
+                <td colspan="6">
+                  <button class="btn btn-outline-primary" onclick="show_stats();return false">calculate</button>
+                  <button class="btn btn-outline-primary" onclick="reset_stats();return false">reset</button>
+                  <input type="checkbox" id="unbiased" checked><label for="unbiased">&nbsp;unbiased</label>
+                </td>
+              </tr>
+              <tr class="table-active">
+                <td align="center"><strong>N</strong></td>
+                <td align="center"><strong>mean</strong></td>
+                <td align="center"><strong>median</strong></td>
+                <td align="center"><strong>skewness</strong></td>
+                <td align="center"><strong>variance</strong></td>
+                <td align="center"><strong>SD</strong></td>
+              </tr>
+              <tr class="table-active">
+                <td align="center"><strong class='stats_output' id="N">0</strong></td>
+                <td align="center"><strong class='stats_output' id="mean">0</strong></td>
+                <td align="center"><strong class='stats_output' id="median">0</strong></td>
+                <td align="center"><strong class='stats_output' id="skewness">0</strong></td>
+                <td align="center"><strong class='stats_output' id="variance">0</strong></td>
+                <td align="center"><strong class='stats_output' id="std">0</strong></td>
+              </tr>
+            </table>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div> <!--row Poisson % Gamma distribution-->
 
   <div class="row">
     <div class="col-lg-12">
@@ -568,6 +617,24 @@
     }
   }
 
+  ///// show stats /////
+  function show_stats(){
+    let nums = document.getElementById('stats_input1').value.trim().split(/[,\s]+/).map(Number); // delete spaces, split, cast as Number
+    let N = Number(nums.length);
+    document.getElementById('N').innerText = N;
+    document.getElementById('mean').innerText = round(mean(nums),5);
+    document.getElementById('median').innerText = round(median(nums),5);
+    document.getElementById('skewness').innerText = round(skewness(nums),5);
+    if(document.getElementById('unbiased').checked==true){
+      document.getElementById('variance').innerText = round(variance(nums),5);
+      document.getElementById('std').innerText = round(std(nums),5);
+    }else{
+      document.getElementById('variance').innerText = round(variance(nums,false),5);
+      document.getElementById('std').innerText = round(std(nums,false),5);
+    }
+    
+  }
+
   ///// validate /////
   document.getElementById('input_p2z').oninput = validate_p;
   document.getElementById('input_p2t').oninput = validate_p;
@@ -745,6 +812,14 @@
     document.getElementById('gcd_input').value = '';
     document.getElementById('answer_gcd').innerText = 'answer';
     document.getElementById('gcd_input').focus();
+  }
+  function reset_stats(){
+    elems = document.getElementsByClassName('stats_output');
+    for(var elem of elems){
+      elem.innerText = 0;
+    }
+    document.getElementById('stats_input1').value = '';
+    document.getElementById('stats_input1').focus();
   }
   function reset_z2p(){
     document.getElementById('input_z2p').value = '';

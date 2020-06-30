@@ -1,5 +1,43 @@
 ////////// statistics /////////////
 
+
+function mean(arr){
+  let N = arr.length;
+  return arr.reduce(function(acc, cur){return acc + cur;})/N;
+}
+function median(arr){
+  let N = arr.length;
+  arr.sort();
+  if(N%2==0){
+    return (arr[N/2] + arr[N/2-1])/2;
+  }else{
+    return arr[(N-1)/2];
+  }
+}
+function variance(arr, unbiased=true){
+  if(unbiased==true){
+    var N = arr.length-1;
+  }else{
+    var N = arr.length;
+  }
+  let mu = mean(arr);
+  return arr.reduce(function(acc, cur){return acc+(cur-mu)**2;},0)/N;
+}
+function std(arr, unbiased=true){
+  return Math.sqrt(variance(arr, unbiased))
+}
+function skewness(arr, regularize=false){
+  let N = arr.length;
+  let mu = mean(arr);
+  let sd = std(arr, false);
+  let sk = arr.reduce(function(acc, cur){return acc+((cur-mu)/sd)**3;},0)/N;
+  if(regularize==false){
+    return sk;
+  }else{
+    return sk*Math.sqrt(N-1)/(N-2);
+  }
+}
+
 /** 
  * normal distribution
  * z-score -> one-tailed p(z≤x) [0≤p<0.5]
