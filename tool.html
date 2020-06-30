@@ -105,7 +105,9 @@
             <li><code>median(nums)</code></li>
             <li><code>variance(nums, unbiased=true)</code></li>
             <li><code>std(nums, unbiased=true)</code></li>
-            <li><code>skewness(arr, regularize=false)</code></li>        
+            <li><code>sme(nums)</code></li>
+            <li><code>skewness(arr, regularize=false)</code></li>
+            <li><code>welch(arr1, arr2)</code></li>    
             <li><code>convert_base(num, base_from, base_to)</code></li>
             <li><code>Euler_const</code></li>
             <li><code>gauss_legendre(func,a,b,split=1000,n=5)</code></li>
@@ -246,7 +248,7 @@
           <div class="card-header">statistics values</div>
           <div class="card-body">
             <form onsubmit="show_stats();return false;">
-            <table class='table' style="table-layout: auto;">
+            <table class='table' style="table-layout: fixed;">
               <tr id='input_first_row'>
                 <td colspan="6"><input type='text' class="form-control" id='stats_input1' placeholder="values with space" autocomplete="off"></td>
               </tr>
@@ -259,31 +261,37 @@
                   <button class="btn btn-outline-primary" onclick="reset_stats();return false">reset</button>
                   <input type="checkbox" id="unbiased" checked><label for="unbiased">&nbsp;unbiased</label>
                   <input type="checkbox" id="stats_add_check" onchange="stats_add_row();"><label for="stats_add_check">&nbsp;2 data</label>
+                  <input type="checkbox" id="welch_check" onchange="show_welch();" style="display: none;"><label for="welch" id="welch_label" style="display: none;">&nbsp;Welch's t</label>
                 </td>
               </tr>
               <tr>
-                <td align="center"><strong>N</strong></td>
+                <td align="center"><strong>df=N-1</strong></td>
                 <td align="center"><strong>mean</strong></td>
+                <td align="center"><strong>SD</strong></td>
+                <td align="center"><strong>SEM</strong></td>
                 <td align="center"><strong>median</strong></td>
                 <td align="center"><strong>skewness</strong></td>
-                <td align="center"><strong>variance</strong></td>
-                <td align="center"><strong>SD</strong></td>
               </tr>
               <tr class="table-active" id='output_first_row'>
-                <td align="center"><strong class='stats_output' id="N">0</strong></td>
+                <td align="center"><strong class='stats_output' id="df">0</strong></td>
                 <td align="center"><strong class='stats_output' id="mean">0</strong></td>
+                <td align="center"><strong class='stats_output' id="std">0</strong></td>
+                <td align="center"><strong class='stats_output' id="sem">0</strong></td>
                 <td align="center"><strong class='stats_output' id="median">0</strong></td>
                 <td align="center"><strong class='stats_output' id="skewness">0</strong></td>
-                <td align="center"><strong class='stats_output' id="variance">0</strong></td>
-                <td align="center"><strong class='stats_output' id="std">0</strong></td>
               </tr>
               <tr class="table-active" id='output_second_row' style="display: none">
-                <td align="center"><strong class='stats_output' id="N2">0</strong></td>
+                <td align="center"><strong class='stats_output' id="df2">0</strong></td>
                 <td align="center"><strong class='stats_output' id="mean2">0</strong></td>
+                <td align="center"><strong class='stats_output' id="std2">0</strong></td>
+                <td align="center"><strong class='stats_output' id="sem2">0</strong></td>
                 <td align="center"><strong class='stats_output' id="median2">0</strong></td>
                 <td align="center"><strong class='stats_output' id="skewness2">0</strong></td>
-                <td align="center"><strong class='stats_output' id="variance2">0</strong></td>
-                <td align="center"><strong class='stats_output' id="std2">0</strong></td>
+              </tr>
+              <tr id='output_welch' style="display: none;">
+                <td align="center"><strong id="welch_t">t-value</strong></td>
+                <td align="center"><strong id="welch_df">df</strong></td>
+                <td><button class="btn btn-outline-primary" id='btn_copy_t' onclick="copy_tvalue();return false">copy</button></td>
               </tr>
             </table>
             </form>
@@ -477,7 +485,7 @@
     <div class="col-lg-3">
       <div class="bs-component">
         <div class="card border-warning mb-3" style="min-height: 16rem;">
-          <div class="card-header">t-value to p(F≤x)</div>
+          <div class="card-header">F-value to p(F≤x)</div>
           <div class="card-body">
             <p align="center"><img style="height: 100px; display: inline-block;" src="image/f_to_p.png"></p>
             <form onsubmit="f2p();return false;">
@@ -640,40 +648,63 @@
     if(checked==true){
       document.getElementById('input_second_row').style.display = '';
       document.getElementById('output_second_row').style.display = '';
+      document.getElementById('welch_check').style.display = '';
+      document.getElementById('welch_label').style.display = '';
     }else{
       document.getElementById('input_second_row').style.display = 'none';
       document.getElementById('output_second_row').style.display = 'none';
+      document.getElementById('welch_check').style.display = 'none';
+      document.getElementById('welch_label').style.display = 'none';
+      document.getElementById('output_welch').style.display = 'none';
+    }
+  }
+  function show_welch(){
+    if(document.getElementById('welch_check').checked==true){
+      document.getElementById('output_welch').style.display = '';
+    }else{
+      document.getElementById('output_welch').style.display = 'none';
     }
   }
   function show_stats(){
     let nums1 = document.getElementById('stats_input1').value.trim().split(/[,\s]+/).map(Number); // delete spaces, split, cast as Number
     let N1 = Number(nums1.length);
-    document.getElementById('N').innerText = N1;
+    document.getElementById('df').innerText = N1-1;
     document.getElementById('mean').innerText = round(mean(nums1),5);
+    document.getElementById('sem').innerText = round(sem(nums1),5)
     document.getElementById('median').innerText = round(median(nums1),5);
     document.getElementById('skewness').innerText = round(skewness(nums1),5);
     if(document.getElementById('unbiased').checked==true){
-      document.getElementById('variance').innerText = round(variance(nums1),5);
       document.getElementById('std').innerText = round(std(nums1),5);
     }else{
-      document.getElementById('variance').innerText = round(variance(nums1,false),5);
       document.getElementById('std').innerText = round(std(nums1,false),5);
     }
     if(document.getElementById("stats_add_check").checked==true){
       let nums2 = document.getElementById('stats_input2').value.trim().split(/[,\s]+/).map(Number);
       let N2 = Number(nums2.length);
-      document.getElementById('N2').innerText = N2;
+      document.getElementById('df2').innerText = N2-1;
       document.getElementById('mean2').innerText = round(mean(nums2),5);
+      document.getElementById('sem2').innerText = round(sem(nums2),5)
       document.getElementById('median2').innerText = round(median(nums2),5);
       document.getElementById('skewness2').innerText = round(skewness(nums2),5);
       if(document.getElementById('unbiased').checked==true){
-        document.getElementById('variance2').innerText = round(variance(nums2),5);
         document.getElementById('std2').innerText = round(std(nums2),5);
       }else{
-        document.getElementById('variance2').innerText = round(variance(nums2,false),5);
         document.getElementById('std2').innerText = round(std(nums2,false),5);
       }
+      if(document.getElementById('welch_check').checked==true){
+        let t_df = welch(nums1, nums2);
+        document.getElementById('welch_t').innerText = 't-value = ' + round(t_df[0],5);
+        document.getElementById('welch_df').innerText = 'df = ' + round(t_df[1],5);
+      }
     }
+  }
+  function copy_tvalue(){
+    let tvalue = document.getElementById('welch_t').innerText.split(' ')[2];
+    let df = document.getElementById('welch_df').innerText.split(' ')[2];
+    document.getElementById('input_t2p').value = Math.abs(tvalue);
+    document.getElementById('input_t2p_df').value = df;
+    document.getElementById('input_p2t_df').value = df;
+    t2p();
   }
 
   ///// validate /////
@@ -861,6 +892,8 @@
     }
     document.getElementById('stats_input1').value = '';
     document.getElementById('stats_input2').value = '';
+    document.getElementById('welch_t').innerText = 't-value';
+    document.getElementById('welch_df').innerText = 'df';
     document.getElementById('stats_input1').focus();
   }
   function reset_z2p(){

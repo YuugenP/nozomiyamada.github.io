@@ -2,10 +2,12 @@
 
 
 function mean(arr){
+  if(!Array.isArray(arr)){arr = [arr];}
   let N = arr.length;
   return arr.reduce(function(acc, cur){return acc + cur;})/N;
 }
 function median(arr){
+  if(!Array.isArray(arr)){arr = [arr];}
   let N = arr.length;
   arr.sort();
   if(N%2==0){
@@ -15,6 +17,7 @@ function median(arr){
   }
 }
 function variance(arr, unbiased=true){
+  if(!Array.isArray(arr)){arr = [arr];}
   if(unbiased==true){
     var N = arr.length-1;
   }else{
@@ -24,9 +27,14 @@ function variance(arr, unbiased=true){
   return arr.reduce(function(acc, cur){return acc+(cur-mu)**2;},0)/N;
 }
 function std(arr, unbiased=true){
+  if(!Array.isArray(arr)){arr = [arr];}
   return Math.sqrt(variance(arr, unbiased))
 }
+function sem(arr){
+  return std(arr)/Math.sqrt(arr.length);
+}
 function skewness(arr, regularize=false){
+  if(!Array.isArray(arr)){arr = [arr];}
   let N = arr.length;
   let mu = mean(arr);
   let sd = std(arr, false);
@@ -36,6 +44,14 @@ function skewness(arr, regularize=false){
   }else{
     return sk*Math.sqrt(N-1)/(N-2);
   }
+}
+function welch(arr1, arr2){
+  let mu1 = mean(arr1); let mu2 = mean(arr2);
+  let v1 = variance(arr1); let v2 = variance(arr2);
+  let n1 = arr1.length; let n2 = arr2.length;
+  let t = (mu1-mu2)/Math.sqrt(v1/n1+v2/n2);
+  let df = (v1/n1+v2/n2)**2 / ((v1/n1)**2/(n1-1)+(v2/n2)**2/(n2-1));
+  return [t,df];
 }
 
 /** 
