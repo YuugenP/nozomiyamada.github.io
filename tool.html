@@ -32,6 +32,7 @@
     }
     .nav-tabs {margin-bottom: 15px;}
     .progress {margin-bottom: 10px;}
+    .function_list:hover {cursor: pointer; color:dodgerblue}
   }
   </style>
   <script src='js/statistics.js'></script>
@@ -89,7 +90,52 @@
     <div class="col-lg-12">
       <h2>Math Tools</h2>
       <h5>source code -> <a href="https://github.com/nozomiyamada/JS_mathtool" target="_blank">GitHub</a></h5>
-      <p>You can try all function on the console (for Goolge Chrome, press F12 key to open)</p>
+      <p>You can try all function on the console (for Goolge Chrome, press F12 key to open)<br>
+        <span onclick="show_hide();" class="function_list"><strong>+ list of functions</strong></span>
+        <div id='functions' style="display: none;">
+          <ul>
+            <li><code>gcd2(a,b)</code></li>
+            <li><code>gcd(nums)</code></li>
+            <li><code>lcm2(a,b)</code></li>
+            <li><code>lcm(nums)</code></li>
+            <li><code>combination(n,k)</code></li>
+            <li><code>permutation(n,k)</code></li>
+            <li><code>round(num,decimal=0)</code></li>         
+            <li><code>convert_base(num, base_from, base_to)</code></li>
+            <li><code>Euler_const</code></li>
+            <li><code>gauss_legendre(func,a,b,split=1000,n=5)</code></li>
+            <li><code>newton(func,func_prime,y,x0,iter=15)</code></li>
+            <li><code>brent(func,y,a0,b0,iter=100,epsiron=1e-15)</code></li>
+            <li><code>erf(z,split=1e3,n=5)</code></li>
+            <li><code>erf2(z, N=100)</code></li>
+            <li><code>erfc(z,split=1e3,n=5)</code></li>
+            <li><code>inv_erf(y,iter=30)</code></li>
+            <li><code>inv_erf2(y, N=300)</code></li>
+            <li><code>fact(n)</code></li>
+            <li><code>gamma(s,split=1e3,n=5)</code></li>
+            <li><code>incomplete_gamma(s,x,split=1e3,n=5)</code></li>
+            <li><code>inv_gamma(y,iter=30)</code></li>
+            <li><code>inv_incomplete_gamma(s,y,x0=1,iter=30)</code></li>
+            <li><code>gamma2(s,N=1e6)</code></li>
+            <li><code>beta(a,b,split=1e3,n=5)</code></li>
+            <li><code>incomplete_beta(a,b,x,split=1e3,n=5)</code></li>
+            <li><code>regularized_beta(a,b,x,split=1e3,n=5)</code></li>
+            <li><code>inv_regularized_beta(a,b,y,iter=30)</code></li>
+            <li><code>sigmoid(x)</code></li>
+            <li><code>z_to_p(z, taylor=false)</code></li>
+            <li><code>p_to_z(p, taylor=false)</code></li>
+            <li><code>t_to_p(t, df)</code></li>
+            <li><code>p_to_t(p, df)</code></li>
+            <li><code>chi_to_p(chi, df)</code></li>
+            <li><code>p_to_chi(p, df)</code></li>
+            <li><code>f_to_p(F, df1, df2)</code></li>
+            <li><code>p_to_f(p, df1, df2)</code></li>
+            <li><code>poisson(lambda, k)</code></li>
+            <li><code>poisson_cum(lambda, k)</code></li>
+            <li><code>poisson_to_p(lambda, k, split=100)</code></li>
+          </ul>
+        </div>
+      </p>
     </div>
   </div>
   
@@ -762,6 +808,14 @@
     document.getElementById('gamma_input1').focus();
   }
 
+  function show_hide(){
+    elem = document.getElementById('functions');
+    if(elem.style.display=='none'){
+      elem.style.display='block';
+    }else{
+      elem.style.display='none'
+    }
+  }
 </script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
