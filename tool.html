@@ -93,7 +93,8 @@
     <div class="col-lg-12">
       <h2>Math Tools</h2>
       <h5>source code -> <a href="https://github.com/nozomiyamada/JS_mathtool" target="_blank">GitHub</a></h5>
-      <p>You can try all function on the console (for Goolge Chrome, press F12 key to open)<br>
+      <p>You can try all functions on the console (for Goolge Chrome, press F12 key to open)<br>
+        Each answer displayed below can be copied to clipboard just by clicking.<br>
         <span onclick="show_function();" class="function_list"><strong>+ list of functions</strong></span>
         <div id='functions' style="display: none;">
           <ul>
@@ -276,24 +277,24 @@
                 <td align="center"><strong>skewness</strong></td>
               </tr>
               <tr class="table-active" id='stats_output1'>
-                <td align="center"><strong class='stats_output' id="df">0</strong></td>
-                <td align="center"><strong class='stats_output' id="mean">0</strong></td>
-                <td align="center"><strong class='stats_output' id="std">0</strong></td>
-                <td align="center"><strong class='stats_output' id="sem">0</strong></td>
-                <td align="center"><strong class='stats_output' id="median">0</strong></td>
-                <td align="center"><strong class='stats_output' id="skewness">0</strong></td>
+                <td align="center"><strong class='stats_output answer' id="df" onclick="copy_to_clipboard();">0</strong></td>
+                <td align="center"><strong class='stats_output answer' id="mean"onclick="copy_to_clipboard();">0</strong></td>
+                <td align="center"><strong class='stats_output answer' id="std" onclick="copy_to_clipboard();">0</strong></td>
+                <td align="center"><strong class='stats_output answer' id="sem" onclick="copy_to_clipboard();">0</strong></td>
+                <td align="center"><strong class='stats_output answer' id="median" onclick="copy_to_clipboard();">0</strong></td>
+                <td align="center"><strong class='stats_output' id="skewness" onclick="copy_to_clipboard();">0</strong></td>
               </tr>
               <tr class="table-active" id='stats_output2' style="display: none">
-                <td align="center"><strong class='stats_output' id="df2">0</strong></td>
-                <td align="center"><strong class='stats_output' id="mean2">0</strong></td>
-                <td align="center"><strong class='stats_output' id="std2">0</strong></td>
-                <td align="center"><strong class='stats_output' id="sem2">0</strong></td>
-                <td align="center"><strong class='stats_output' id="median2">0</strong></td>
-                <td align="center"><strong class='stats_output' id="skewness2">0</strong></td>
+                <td align="center"><strong class='stats_output answer' id="df2" onclick="copy_to_clipboard();">0</strong></td>
+                <td align="center"><strong class='stats_output answer' id="mean2" onclick="copy_to_clipboard();">0</strong></td>
+                <td align="center"><strong class='stats_output answer' id="std2" onclick="copy_to_clipboard();">0</strong></td>
+                <td align="center"><strong class='stats_output answer' id="sem2" onclick="copy_to_clipboard();">0</strong></td>
+                <td align="center"><strong class='stats_output answer' id="median2" onclick="copy_to_clipboard();">0</strong></td>
+                <td align="center"><strong class='stats_output answer' id="skewness2" onclick="copy_to_clipboard();">0</strong></td>
               </tr>
               <tr id='stats_output_welch' style="display: none;">
-                <td align="center"><strong id="welch_t">t-value</strong></td>
-                <td align="center"><strong id="welch_df">df</strong></td>
+                <td align="center"><strong id="welch_t" class="answer" onclick="copy_to_clipboard();">t-value</strong></td>
+                <td align="center"><strong id="welch_df" class="answer" onclick="copy_to_clipboard();">df</strong></td>
               </tr>
             </table>
             </form>
