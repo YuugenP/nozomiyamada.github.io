@@ -35,7 +35,7 @@
     .function_list:hover {cursor: pointer; color:dodgerblue}
     .answer:hover{cursor: pointer;}
     .red{color:indianred}
-    .blue{color:dodgerblue}
+    .blue{color:royalblue}
   }
   </style>
   <script src='js/statistics.js'></script>
@@ -329,7 +329,7 @@
                 </td>
               </tr>
               <tr class="table-active">
-                <td align="center" class="answer" onclick="copy_to_clipboard();"><strong id="answer_z2p">p(z≤x)</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();" data-toggle="tooltip" data-placement="bottom" title="click to copy"><strong id="answer_z2p">p(z≤x)</strong></td>
               </tr>
             </table>
             </form>
@@ -354,7 +354,7 @@
                 </td>
               </tr>
               <tr class="table-active">
-                <td align="center" class="answer" onclick="copy_to_clipboard();"><strong id="answer_p2z">z-score</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();" data-toggle="tooltip" data-placement="bottom" title="click to copy"><strong id="answer_p2z">z-score</strong></td>
               </tr>
             </table>
             </form>
@@ -382,7 +382,7 @@
                 </td>
               </tr>
               <tr class="table-active">
-                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();"><strong id="answer_t2p">p(t≤x)</strong></td>
+                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();" data-toggle="tooltip" data-placement="bottom" title="click to copy"><strong id="answer_t2p">p(t≤x)</strong></td>
               </tr>
             </table>
             </form>
@@ -410,7 +410,7 @@
                 </td>
               </tr>
               <tr class="table-active">
-                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();"><strong id="answer_p2t">t-value</strong></td>
+                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();" data-toggle="tooltip" data-placement="bottom" title="click to copy"><strong id="answer_p2t">t-value</strong></td>
               </tr>
             </table>
             </form>
@@ -448,10 +448,10 @@
                 </td>
               </tr>
               <tr class="table-active">
-                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();"><strong id="answer_chi2p_up">p(χ<sup>2</sup>≤x)</strong></td>
+                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();"><strong id="answer_chi2p_up" class='blue'>p(χ<sup>2</sup>≤x)</strong></td>
               </tr>
               <tr class="table-active">
-                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();"><strong id="answer_chi2p_low">p(x≤χ<sup>2</sup>)</strong></td>
+                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();" data-toggle="tooltip" data-placement="bottom" title="click to copy"><strong id="answer_chi2p_low" class='red'>p(x≤χ<sup>2</sup>)</strong></td>
               </tr>
             </table>
             </form>
@@ -479,10 +479,10 @@
                 </td>
               </tr>
               <tr class="table-active">
-                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();"><strong id="answer_p2chi_up">χ<sup>2</sup></strong></td>
+                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();"><strong id="answer_p2chi_up" class='blue'>χ<sup>2</sup></strong></td>
               </tr>
               <tr class="table-active">
-                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();"><strong id="answer_p2chi_low">χ<sup>2</sup></strong></td>
+                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();" data-toggle="tooltip" data-placement="bottom" title="click to copy"><strong id="answer_p2chi_low" class='red'>χ<sup>2</sup></strong></td>
               </tr>
             </table>
             </form>
@@ -510,10 +510,10 @@
                 </td>
               </tr>
               <tr class="table-active">
-                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();"><strong id="answer_f2p_up">p(F≤x)</strong></td>
+                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();"><strong id="answer_f2p_up" class='blue'>p(F≤x)</strong></td>
               </tr>
               <tr class="table-active">
-                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();"><strong id="answer_f2p_low">p(x≤F)</strong></td>
+                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();" data-toggle="tooltip" data-placement="bottom" title="click to copy"><strong id="answer_f2p_low" class='red'>p(x≤F)</strong></td>
               </tr>
             </table>
             </form>
@@ -541,10 +541,10 @@
                 </td>
               </tr>
               <tr class="table-active">
-                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();"><strong id="answer_p2f_up">F-value</strong></td>
+                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();"><strong id="answer_p2f_up" class='blue'>F-value</strong></td>
               </tr>
               <tr class="table-active">
-                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();"><strong id="answer_p2f_low">F-value</strong></td>
+                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();" data-toggle="tooltip" data-placement="bottom" title="click to copy"><strong id="answer_p2f_low" class='red'>F-value</strong></td>
               </tr>
             </table>
             </form>
@@ -764,8 +764,8 @@
     let chi = Number(document.getElementById('input_chi2p').value);
     let df = Number(document.getElementById('input_chi2p_df').value);
     let answer = round(chi_to_p(chi,df),6);
-    document.getElementById('answer_chi2p_up').innerHTML = '<span class="blue">upper</span> p=' + answer;
-    document.getElementById('answer_chi2p_low').innerHTML = '<span class="red">lower</span> p=' + round(1-answer,6);
+    document.getElementById('answer_chi2p_up').innerHTML = 'upper p=' + answer;
+    document.getElementById('answer_chi2p_low').innerHTML = 'lower p=' + round(1-answer,6);
   }
   function p2chi(){
     if(!document.getElementById('input_p2chi').classList.contains('is-invalid')){
@@ -773,8 +773,8 @@
       let df = Number(document.getElementById('input_p2chi_df').value);
       let answer1 = round(p_to_chi(p,df),6);
       let answer2 = round(p_to_chi(1-p,df),6);
-      document.getElementById('answer_p2chi_up').innerHTML = '<span class="blue">upper</span> χ<sup>2</sup>=' + answer1;
-      document.getElementById('answer_p2chi_low').innerHTML = '<span class="red">lower</span> χ<sup>2</sup>=' + answer2;
+      document.getElementById('answer_p2chi_up').innerHTML = 'upper χ<sup>2</sup>=' + answer1;
+      document.getElementById('answer_p2chi_low').innerHTML = 'lower χ<sup>2</sup>=' + answer2;
     }
   }
   function f2p(){
@@ -783,8 +783,8 @@
     if(df.length==2 && df.every(Number)){
       document.getElementById('input_f2p_df').classList.remove('is-invalid');
       let answer = round(f_to_p(f,df[0],df[1]),6);
-      document.getElementById('answer_f2p_up').innerHTML = '<span class="blue">upper</span> p=' + answer;
-      document.getElementById('answer_f2p_low').innerHTML = '<span class="red">lower</span> p=' + round(1-answer,6);
+      document.getElementById('answer_f2p_up').innerHTML = 'upper p=' + answer;
+      document.getElementById('answer_f2p_low').innerHTML = 'lower p=' + round(1-answer,6);
     }else{
       document.getElementById('input_f2p_df').classList.add('is-invalid');
       document.getElementById('input_f2p_df').focus();
@@ -798,8 +798,8 @@
         document.getElementById('input_p2f_df').classList.remove('is-invalid');
         let answer1 = round(p_to_f(p,df[0],df[1]),6);
         let answer2 = round(p_to_f(1-p,df[0],df[1]),6);
-        document.getElementById('answer_p2f_up').innerHTML = '<span class="blue">upper</span> F=' + answer1;
-        document.getElementById('answer_p2f_low').innerHTML = '<span class="red">lower</span> F=' + answer2;
+        document.getElementById('answer_p2f_up').innerHTML = 'upper F=' + answer1;
+        document.getElementById('answer_p2f_low').innerHTML = 'lower F=' + answer2;
       }else{
         document.getElementById('input_p2f_df').classList.add('is-invalid');
         document.getElementById('input_p2f_df').focus();
