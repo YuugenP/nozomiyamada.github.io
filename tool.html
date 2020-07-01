@@ -33,6 +33,9 @@
     .nav-tabs {margin-bottom: 15px;}
     .progress {margin-bottom: 10px;}
     .function_list:hover {cursor: pointer; color:dodgerblue}
+    .answer:hover{cursor: pointer;}
+    .red{color:indianred}
+    .blue{color:dodgerblue}
   }
   </style>
   <script src='js/statistics.js'></script>
@@ -91,7 +94,7 @@
       <h2>Math Tools</h2>
       <h5>source code -> <a href="https://github.com/nozomiyamada/JS_mathtool" target="_blank">GitHub</a></h5>
       <p>You can try all function on the console (for Goolge Chrome, press F12 key to open)<br>
-        <span onclick="show_hide();" class="function_list"><strong>+ list of functions</strong></span>
+        <span onclick="show_function();" class="function_list"><strong>+ list of functions</strong></span>
         <div id='functions' style="display: none;">
           <ul>
             <li><code>gcd2(a,b)</code></li>
@@ -188,7 +191,7 @@
                 </td>
                 <td>
                   <button class="btn btn-outline-secondary" onclick="convert();return false">convert</button>
-                  <button class="btn btn-outline-secondary" onclick="reset_base();return false">reset</button>
+                  <button class="btn btn-outline-secondary" onclick="reset_base.reset();return false">reset</button>
                 </td>
               </tr>
               <tr class="table-active">
@@ -220,7 +223,7 @@
                   </td>
                   <td>
                     <button class="btn btn-outline-secondary" onclick="show_gcd();return false">search</button>
-                    <button class="btn btn-outline-secondary" onclick="reset_gcd();return false">reset</button>
+                    <button class="btn btn-outline-secondary" onclick="reset_gcd.reset();return false">reset</button>
                   </td>
                 </tr>
                 <tr class="table-active">
@@ -245,23 +248,23 @@
     <div class="col-lg-12">
       <div class="bs-component">
         <div class="card border-primary mb-3" style="min-height: 20rem;">
-          <div class="card-header">statistics values</div>
+          <div class="card-header">statistics values & t-test</div>
           <div class="card-body">
             <form onsubmit="show_stats();return false;">
             <table class='table' style="table-layout: fixed;">
-              <tr id='input_first_row'>
+              <tr id='stats_input_row1'>
                 <td colspan="6"><input type='text' class="form-control" id='stats_input1' placeholder="values with space" autocomplete="off"></td>
               </tr>
-              <tr id='input_second_row' style="display: none;">
+              <tr id='stats_input_row2' style="display: none;">
                 <td colspan="6"><input type='text' class="form-control" id='stats_input2' placeholder="values with space" autocomplete="off"></td>
               </tr>
               <tr>
                 <td colspan="6">
                   <button class="btn btn-outline-primary" onclick="show_stats();return false">calculate</button>
-                  <button class="btn btn-outline-primary" onclick="reset_stats();return false">reset</button>
+                  <button class="btn btn-outline-primary" onclick="reset_stats.reset();return false">reset</button>
                   <input type="checkbox" id="unbiased" checked><label for="unbiased">&nbsp;unbiased</label>
-                  <input type="checkbox" id="stats_add_check" onchange="stats_add_row();"><label for="stats_add_check">&nbsp;2 data</label>
-                  <input type="checkbox" id="welch_check" onchange="show_welch();" style="display: none;"><label for="welch" id="welch_label" style="display: none;">&nbsp;Welch's t</label>
+                  <input type="checkbox" id="stats_add_check" onchange="stats_show_second_row();"><label for="stats_add_check">&nbsp;2 data</label>
+                  <input type="checkbox" id="welch_check" onchange="stats_show_check_welch();" style="display: none;"><label for="welch" id="welch_label" style="display: none;">&nbsp;Welch's t</label>
                 </td>
               </tr>
               <tr>
@@ -272,7 +275,7 @@
                 <td align="center"><strong>median</strong></td>
                 <td align="center"><strong>skewness</strong></td>
               </tr>
-              <tr class="table-active" id='output_first_row'>
+              <tr class="table-active" id='stats_output1'>
                 <td align="center"><strong class='stats_output' id="df">0</strong></td>
                 <td align="center"><strong class='stats_output' id="mean">0</strong></td>
                 <td align="center"><strong class='stats_output' id="std">0</strong></td>
@@ -280,7 +283,7 @@
                 <td align="center"><strong class='stats_output' id="median">0</strong></td>
                 <td align="center"><strong class='stats_output' id="skewness">0</strong></td>
               </tr>
-              <tr class="table-active" id='output_second_row' style="display: none">
+              <tr class="table-active" id='stats_output2' style="display: none">
                 <td align="center"><strong class='stats_output' id="df2">0</strong></td>
                 <td align="center"><strong class='stats_output' id="mean2">0</strong></td>
                 <td align="center"><strong class='stats_output' id="std2">0</strong></td>
@@ -288,10 +291,9 @@
                 <td align="center"><strong class='stats_output' id="median2">0</strong></td>
                 <td align="center"><strong class='stats_output' id="skewness2">0</strong></td>
               </tr>
-              <tr id='output_welch' style="display: none;">
+              <tr id='stats_output_welch' style="display: none;">
                 <td align="center"><strong id="welch_t">t-value</strong></td>
                 <td align="center"><strong id="welch_df">df</strong></td>
-                <td><button class="btn btn-outline-primary" id='btn_copy_t' onclick="copy_tvalue();return false">copy</button></td>
               </tr>
             </table>
             </form>
@@ -322,11 +324,11 @@
               <tr>
                 <td>
                 <button class="btn btn-outline-success" onclick="z2p();return false">calculate</button>
-                <button class="btn btn-outline-success" onclick="reset_z2p();return false">reset</button>
+                <button class="btn btn-outline-success" onclick="reset_z2p.reset();return false">reset</button>
                 </td>
               </tr>
               <tr class="table-active">
-                <td align="center"><strong id="answer_z2p">p(z≤x)</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();"><strong id="answer_z2p">p(z≤x)</strong></td>
               </tr>
             </table>
             </form>
@@ -347,11 +349,11 @@
               <tr>
                 <td>
                 <button class="btn btn-outline-success" onclick="p2z();return false">calculate</button>
-                <button class="btn btn-outline-success" onclick="reset_p2z();return false">reset</button>
+                <button class="btn btn-outline-success" onclick="reset_p2z.reset();return false">reset</button>
                 </td>
               </tr>
               <tr class="table-active">
-                <td align="center"><strong id="answer_p2z">z-score</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();"><strong id="answer_p2z">z-score</strong></td>
               </tr>
             </table>
             </form>
@@ -375,11 +377,11 @@
               <tr>
                 <td colspan="2">
                 <button class="btn btn-outline-warning" onclick="t2p();return false">calculate</button>
-                <button class="btn btn-outline-warning" onclick="reset_t2p();return false">reset</button>
+                <button class="btn btn-outline-warning" onclick="reset_t2p.reset();return false">reset</button>
                 </td>
               </tr>
               <tr class="table-active">
-                <td colspan="2" align="center"><strong id="answer_t2p">p(t≤x)</strong></td>
+                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();"><strong id="answer_t2p">p(t≤x)</strong></td>
               </tr>
             </table>
             </form>
@@ -403,11 +405,11 @@
               <tr>
                 <td colspan="2">
                 <button class="btn btn-outline-warning" onclick="p2t();return false">calculate</button>
-                <button class="btn btn-outline-warning" onclick="reset_p2t();return false">reset</button>
+                <button class="btn btn-outline-warning" onclick="reset_p2t.reset();return false">reset</button>
                 </td>
               </tr>
               <tr class="table-active">
-                <td colspan="2" align="center"><strong id="answer_p2t">t-value</strong></td>
+                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();"><strong id="answer_p2t">t-value</strong></td>
               </tr>
             </table>
             </form>
@@ -441,11 +443,14 @@
               <tr>
                 <td colspan="2">
                 <button class="btn btn-outline-success" onclick="chi2p();return false">calculate</button>
-                <button class="btn btn-outline-success" onclick="reset_chi2p();return false">reset</button>
+                <button class="btn btn-outline-success" onclick="reset_chi2p.reset();return false">reset</button>
                 </td>
               </tr>
               <tr class="table-active">
-                <td colspan="2" align="center"><strong id="answer_chi2p">p(χ<sup>2</sup>≤x)</strong></td>
+                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();"><strong id="answer_chi2p_up">p(χ<sup>2</sup>≤x)</strong></td>
+              </tr>
+              <tr class="table-active">
+                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();"><strong id="answer_chi2p_low">p(x≤χ<sup>2</sup>)</strong></td>
               </tr>
             </table>
             </form>
@@ -459,7 +464,7 @@
         <div class="card border-success mb-3" style="min-height: 16rem;">
           <div class="card-header">p to χ<sup>2</sup></div>
           <div class="card-body">
-            <p align="center"><img style="height: 100px; display: inline-block;" src="image/chi_to_p.png"></p>
+            <p align="center"><img style="height: 100px; display: inline-block;" src="image/p_to_chi.png"></p>
             <form onsubmit="p2chi();return false;">
             <table class='table'>
               <tr>
@@ -469,11 +474,14 @@
               <tr>
                 <td colspan="2">
                 <button class="btn btn-outline-success" onclick="p2chi();return false">calculate</button>
-                <button class="btn btn-outline-success" onclick="reset_p2chi();return false">reset</button>
+                <button class="btn btn-outline-success" onclick="reset_p2chi.reset();return false">reset</button>
                 </td>
               </tr>
               <tr class="table-active">
-                <td colspan="2" align="center"><strong id="answer_p2chi">χ<sup>2</sup></strong></td>
+                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();"><strong id="answer_p2chi_up">χ<sup>2</sup></strong></td>
+              </tr>
+              <tr class="table-active">
+                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();"><strong id="answer_p2chi_low">χ<sup>2</sup></strong></td>
               </tr>
             </table>
             </form>
@@ -497,11 +505,14 @@
               <tr>
                 <td colspan="2">
                 <button class="btn btn-outline-warning" onclick="f2p();return false">calculate</button>
-                <button class="btn btn-outline-warning" onclick="reset_f2p();return false">reset</button>
+                <button class="btn btn-outline-warning" onclick="reset_f2p.reset();return false">reset</button>
                 </td>
               </tr>
               <tr class="table-active">
-                <td colspan="2" align="center"><strong id="answer_f2p">p(F≤x)</strong></td>
+                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();"><strong id="answer_f2p_up">p(F≤x)</strong></td>
+              </tr>
+              <tr class="table-active">
+                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();"><strong id="answer_f2p_low">p(x≤F)</strong></td>
               </tr>
             </table>
             </form>
@@ -515,7 +526,7 @@
         <div class="card border-warning mb-3" style="min-height: 16rem;">
           <div class="card-header">p to F-value</div>
           <div class="card-body">
-            <p align="center"><img style="height: 100px; display: inline-block;" src="image/f_to_p.png"></p>
+            <p align="center"><img style="height: 100px; display: inline-block;" src="image/p_to_f.png"></p>
             <form onsubmit="p2f();return false;">
             <table class='table'>
               <tr>
@@ -525,11 +536,14 @@
               <tr>
                 <td colspan="2">
                 <button class="btn btn-outline-warning" onclick="p2f();return false">calculate</button>
-                <button class="btn btn-outline-warning" onclick="reset_p2f();return false">reset</button>
+                <button class="btn btn-outline-warning" onclick="reset_p2f.reset();return false">reset</button>
                 </td>
               </tr>
               <tr class="table-active">
-                <td colspan="2" align="center"><strong id="answer_p2f">F-value</strong></td>
+                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();"><strong id="answer_p2f_up">F-value</strong></td>
+              </tr>
+              <tr class="table-active">
+                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();"><strong id="answer_p2f_low">F-value</strong></td>
               </tr>
             </table>
             </form>
@@ -643,26 +657,24 @@
   }
 
   ///// show stats /////
-  function stats_add_row(){
+  function stats_show_second_row(){
     var checked = document.getElementById("stats_add_check").checked;
+    let ids_on = ['stats_input_row2','stats_output2','welch_check','welch_label'];
+    let ids_off = ['stats_input_row2','stats_output2','welch_check','welch_label','stats_output_welch'];
     if(checked==true){
-      document.getElementById('input_second_row').style.display = '';
-      document.getElementById('output_second_row').style.display = '';
-      document.getElementById('welch_check').style.display = '';
-      document.getElementById('welch_label').style.display = '';
+      for(var id of ids_on){
+        document.getElementById(id).style.display = '';}
     }else{
-      document.getElementById('input_second_row').style.display = 'none';
-      document.getElementById('output_second_row').style.display = 'none';
-      document.getElementById('welch_check').style.display = 'none';
-      document.getElementById('welch_label').style.display = 'none';
-      document.getElementById('output_welch').style.display = 'none';
+      for(var id of ids_off){
+        document.getElementById(id).style.display = 'none';}
+      document.getElementById('welch_check').checked=false;
     }
   }
-  function show_welch(){
+  function stats_show_check_welch(){
     if(document.getElementById('welch_check').checked==true){
-      document.getElementById('output_welch').style.display = '';
+      document.getElementById('stats_output_welch').style.display = '';
     }else{
-      document.getElementById('output_welch').style.display = 'none';
+      document.getElementById('stats_output_welch').style.display = 'none';
     }
   }
   function show_stats(){
@@ -695,6 +707,7 @@
         let t_df = welch(nums1, nums2);
         document.getElementById('welch_t').innerText = 't-value = ' + round(t_df[0],5);
         document.getElementById('welch_df').innerText = 'df = ' + round(t_df[1],5);
+        copy_tvalue();
       }
     }
   }
@@ -708,71 +721,59 @@
   }
 
   ///// validate /////
-  document.getElementById('input_p2z').oninput = validate_p;
-  document.getElementById('input_p2t').oninput = validate_p;
-  document.getElementById('input_p2chi').oninput = validate_p;
-  document.getElementById('input_p2f').oninput = validate_p;
-  function validate_p(){
-    let p1 = document.getElementById('input_p2z').value;
-    if(p1!='' && (p1<0 || p1>0.5)){
-      document.getElementById('input_p2z').classList.add('is-invalid');
+  function validate(){
+    let elem = event.target;
+    let p = elem.value;
+    if(p!='' && (p<0 || p>0.5)){
+      elem.classList.add('is-invalid');
     }else{
-      document.getElementById('input_p2z').classList.remove('is-invalid');
-    }
-    let p2 = document.getElementById('input_p2t').value;
-    if(p2!='' && (p2<0 || p2>0.5)){
-      document.getElementById('input_p2t').classList.add('is-invalid');
-    }else{
-      document.getElementById('input_p2t').classList.remove('is-invalid');
-    }
-    let p3 = document.getElementById('input_p2chi').value;
-    if(p3!='' && (p3<0 || p3>1)){
-      document.getElementById('input_p2chi').classList.add('is-invalid');
-    }else{
-      document.getElementById('input_p2chi').classList.remove('is-invalid');
-    }
-    let p4 = document.getElementById('input_p2f').value;
-    if(p4!='' && (p4<0 || p4>1)){
-      document.getElementById('input_p2f').classList.add('is-invalid');
-    }else{
-      document.getElementById('input_p2f').classList.remove('is-invalid');
+      elem.classList.remove('is-invalid');
     }
   }
+  document.getElementById('input_p2z').oninput = validate;
+  document.getElementById('input_p2t').oninput = validate;
+  document.getElementById('input_p2chi').oninput = validate;
+  document.getElementById('input_p2f').oninput = validate;
 
 
   // functions for calcualation z,t,chi<>P
   function z2p(){
     let z = document.getElementById('input_z2p').value;
-    document.getElementById('answer_z2p').innerText = round(z_to_p(z),6);
+    document.getElementById('answer_z2p').innerText = 'p=' + round(z_to_p(z),6);
   }
   function p2z(){
     if(!document.getElementById('input_p2z').classList.contains('is-invalid')){
       let p = document.getElementById('input_p2z').value;
-      document.getElementById('answer_p2z').innerText = round(p_to_z(p),6);
+      document.getElementById('answer_p2z').innerText = 'z=' + round(p_to_z(p),6);
     }
   }
   function t2p(){
     let t = Number(document.getElementById('input_t2p').value);
     let df = Number(document.getElementById('input_t2p_df').value);
-    document.getElementById('answer_t2p').innerText = round(t_to_p(t,df),6);
+    document.getElementById('answer_t2p').innerText = 'p=' + round(t_to_p(t,df),6);
   }
   function p2t(){
     if(!document.getElementById('input_p2t').classList.contains('is-invalid')){
       let p = Number(document.getElementById('input_p2t').value);
       let df = Number(document.getElementById('input_p2t_df').value);
-      document.getElementById('answer_p2t').innerText = round(p_to_t(p,df),6);
+      document.getElementById('answer_p2t').innerText = 't=' + round(p_to_t(p,df),6);
     }
   }
   function chi2p(){
     let chi = Number(document.getElementById('input_chi2p').value);
     let df = Number(document.getElementById('input_chi2p_df').value);
-    document.getElementById('answer_chi2p').innerText = round(chi_to_p(chi,df),6);
+    let answer = round(chi_to_p(chi,df),6);
+    document.getElementById('answer_chi2p_up').innerHTML = '<span class="blue">upper</span> p=' + answer;
+    document.getElementById('answer_chi2p_low').innerHTML = '<span class="red">lower</span> p=' + round(1-answer,6);
   }
   function p2chi(){
     if(!document.getElementById('input_p2chi').classList.contains('is-invalid')){
       let p = Number(document.getElementById('input_p2chi').value);
       let df = Number(document.getElementById('input_p2chi_df').value);
-      document.getElementById('answer_p2chi').innerText = round(p_to_chi(p,df),6);
+      let answer1 = round(p_to_chi(p,df),6);
+      let answer2 = round(p_to_chi(1-p,df),6);
+      document.getElementById('answer_p2chi_up').innerHTML = '<span class="blue">upper</span> χ<sup>2</sup>=' + answer1;
+      document.getElementById('answer_p2chi_low').innerHTML = '<span class="red">lower</span> χ<sup>2</sup>=' + answer2;
     }
   }
   function f2p(){
@@ -780,7 +781,9 @@
     let df = document.getElementById('input_f2p_df').value.trim().split(/\s+/).map(Number);
     if(df.length==2 && df.every(Number)){
       document.getElementById('input_f2p_df').classList.remove('is-invalid');
-      document.getElementById('answer_f2p').innerText = round(f_to_p(f,df[0],df[1]),6);
+      let answer = round(f_to_p(f,df[0],df[1]),6);
+      document.getElementById('answer_f2p_up').innerHTML = '<span class="blue">upper</span> p=' + answer;
+      document.getElementById('answer_f2p_low').innerHTML = '<span class="red">lower</span> p=' + round(1-answer,6);
     }else{
       document.getElementById('input_f2p_df').classList.add('is-invalid');
       document.getElementById('input_f2p_df').focus();
@@ -792,7 +795,10 @@
       let df = document.getElementById('input_p2f_df').value.trim().split(/\s+/).map(Number);
       if(df.length==2 && df.every(Number)){
         document.getElementById('input_p2f_df').classList.remove('is-invalid');
-        document.getElementById('answer_p2f').innerText = round(p_to_f(p,df[0],df[1]),6);
+        let answer1 = round(p_to_f(p,df[0],df[1]),6);
+        let answer2 = round(p_to_f(1-p,df[0],df[1]),6);
+        document.getElementById('answer_p2f_up').innerHTML = '<span class="blue">upper</span> F=' + answer1;
+        document.getElementById('answer_p2f_low').innerHTML = '<span class="red">lower</span> F=' + answer2;
       }else{
         document.getElementById('input_p2f_df').classList.add('is-invalid');
         document.getElementById('input_p2f_df').focus();
@@ -874,74 +880,48 @@
   }
 
 
-  // functions for reset input form
-  function reset_base(){
-    document.getElementById('num_to_convert').value = '';
-    document.getElementById('answer').innerText = 'answer';
-    document.getElementById('num_to_convert').focus();
+// inputs(array) - ID of input to be empty string
+// labelsID(dict) - {ID: innerText}
+// focusID(string) - one element to be focused
+// labels_class(dict) - {classname: innerText}
+class ResetBtn{
+  constructor(inputs,labelsID,focusID,labels_class=null){
+    this.inputs = inputs;
+    this.labelsID = labelsID;
+    this.labels_class = labels_class;
+    this.focus = focusID;
   }
-  function reset_gcd(){
-    document.getElementById('gcd_input').value = '';
-    document.getElementById('answer_gcd').innerText = 'answer';
-    document.getElementById('gcd_input').focus();
-  }
-  function reset_stats(){
-    elems = document.getElementsByClassName('stats_output');
-    for(var elem of elems){
-      elem.innerText = 0;
+  reset(){
+    for(var elemID of this.inputs){ // reset input
+      document.getElementById(elemID).value = '';
     }
-    document.getElementById('stats_input1').value = '';
-    document.getElementById('stats_input2').value = '';
-    document.getElementById('welch_t').innerText = 't-value';
-    document.getElementById('welch_df').innerText = 'df';
-    document.getElementById('stats_input1').focus();
+    for(var labelID in this.labelsID){ // reset label
+      document.getElementById(labelID).innerHTML = this.labelsID[labelID];
+    }
+    for(var label_class in this.labels_class){ 
+      for(var elem of document.getElementsByClassName(label_class)){
+        elem.innerText = this.labels_class[label_class];
+      }
+    }
+    document.getElementById(this.focus).focus(); // focus
   }
-  function reset_z2p(){
-    document.getElementById('input_z2p').value = '';
-    document.getElementById('answer_z2p').innerText = 'p(z≤x)';
-    document.getElementById('input_z2p').focus();
-  }
-  function reset_p2z(){
-    document.getElementById('input_p2z').value = '';
-    document.getElementById('answer_p2z').innerText = 'z-score';
-    document.getElementById('input_p2z').focus();
-  }
-  function reset_t2p(){
-    document.getElementById('input_t2p').value = '';
-    document.getElementById('input_t2p_df').value = '';
-    document.getElementById('answer_t2p').innerText = 'p(t≤x)';
-    document.getElementById('input_t2p').focus();
-  }
-  function reset_p2t(){
-    document.getElementById('input_p2t').value = '';
-    document.getElementById('input_p2t_df').value = '';
-    document.getElementById('answer_p2t').innerText = 't-value';
-    document.getElementById('input_p2t').focus();
-  }
-  function reset_chi2p(){
-    document.getElementById('input_chi2p').value = '';
-    document.getElementById('input_chi2p_df').value = '';
-    document.getElementById('answer_chi2p').innerHTML = 'p(χ<sup>2</sup>≤x)';
-    document.getElementById('input_chi2p').focus();
-  }
-  function reset_p2chi(){
-    document.getElementById('input_p2chi').value = '';
-    document.getElementById('input_p2chi_df').value = '';
-    document.getElementById('answer_p2chi').innerHTML = 'χ<sup>2</sup>';
-    document.getElementById('input_p2chi').focus();
-  }
-  function reset_f2p(){
-    document.getElementById('input_f2p').value = '';
-    document.getElementById('input_f2p_df').value = '';
-    document.getElementById('answer_f2p').innerHTML = 'p(F≤x)';
-    document.getElementById('input_f2p').focus();
-  }
-  function reset_p2f(){
-    document.getElementById('input_p2f').value = '';
-    document.getElementById('input_p2f_df').value = '';
-    document.getElementById('answer_p2f').innerHTML = 'F-value';
-    document.getElementById('input_p2f').focus();
-  }
+}
+var reset_base = new ResetBtn(['num_to_convert'],{'answer':'answer'},'num_to_convert');
+var reset_gcd = new ResetBtn(['gcd_input'],{'answer_gcd':'answer'},'gcd_input');
+var reset_stats = new ResetBtn(
+  ['stats_input1','stats_input2'],
+  {'welch_t':'t-value','welch_df':'df'},
+  'stats_input1',
+  {'stats_output':0});
+var reset_z2p = new ResetBtn(['input_z2p'],{'answer_z2p':'p(z≤x)'},'input_z2p');
+var reset_p2z = new ResetBtn(['input_p2z'],{'answer_p2z':'z-score'},'input_p2z');
+var reset_t2p = new ResetBtn(['input_t2p','input_t2p_df'],{'answer_t2p':'p(t≤x)'},'input_t2p');
+var reset_p2t = new ResetBtn(['input_p2t','input_p2t_df'],{'answer_p2t':'t-value'},'input_p2t');
+var reset_chi2p = new ResetBtn(['input_chi2p','input_chi2p_df'],{'answer_chi2p_up':'p(χ<sup>2</sup>≤x)','answer_chi2p_low':'p(x≤χ<sup>2</sup>)'},'input_chi2p');
+var reset_p2chi = new ResetBtn(['input_p2chi','input_p2chi_df'],{'answer_p2chi_up':'χ<sup>2</sup>','answer_p2chi_low':'χ<sup>2</sup>'},'input_p2chi');
+var reset_f2p = new ResetBtn(['input_f2p','input_f2p_df'],{'answer_f2p_up':'p(F≤x)','answer_f2p_low':'p(x≤F)'},'input_f2p');
+var reset_p2f = new ResetBtn(['input_p2f','input_p2f_df'],{'answer_p2f_up':'F-value','answer_p2f_low':'F-value'},'input_p2f');
+
   function reset_poisson(){
     document.getElementById('poisson_input1').value = '';
     document.getElementById('poisson_input2').value = '';
@@ -958,7 +938,7 @@
     document.getElementById('gamma_input1').focus();
   }
 
-  function show_hide(){
+  function show_function(){
     elem = document.getElementById('functions');
     if(elem.style.display=='none'){
       elem.style.display='block';
@@ -966,6 +946,18 @@
       elem.style.display='none'
     }
   }
+
+  function copy_to_clipboard(){
+    var temp_elem = document.createElement("textarea");
+    temp_elem.textContent = event.target.innerText.split('=').slice(-1)[0];
+    var body_elem = document.getElementsByTagName("body")[0];
+    body_elem.appendChild(temp_elem);
+    temp_elem.select();
+    document.execCommand("Copy");
+    body_elem.removeChild(temp_elem);
+  }
+
+
 </script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
