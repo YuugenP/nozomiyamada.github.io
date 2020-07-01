@@ -111,7 +111,8 @@
             <li><code>std(nums, unbiased=true)</code></li>
             <li><code>sme(nums)</code></li>
             <li><code>skewness(arr, regularize=false)</code></li>
-            <li><code>welch(arr1, arr2)</code></li>    
+            <li><code>welch(mu1,mu2,s1,s2,n1,n2)</code></li> 
+            <li><code>welch_arr(arr1, arr2)</code></li>
             <li><code>convert_base(num, base_from, base_to)</code></li>
             <li><code>Euler_const</code></li>
             <li><code>gauss_legendre(func,a,b,split=1000,n=5)</code></li>
@@ -150,94 +151,6 @@
     </div>
   </div>
   
-  <div class="row">
-    <div class="col-lg-6">
-      <div class="bs-component">
-        <div class="card border-secondary mb-3" style="min-height: 16rem;">
-          <div class="card-header">Base Converter</div>
-          <div class="card-body">
-            <form onsubmit="convert();return false;">
-            <table class='table'>
-              <tr>
-                <td>
-                  <select class="form-control" id='base_from' style="min-width: 4rem;">
-                    <option value=10 selected>10</option>
-                    <option value=16>16</option>
-                    <option value=2>2</option>
-                    <option value=3>3</option>
-                    <option value=4>4</option>
-                    <option value=5>5</option>
-                    <option value=6>6</option>
-                    <option value=7>7</option>
-                    <option value=8>8</option>
-                    <option value=9>9</option>
-                  </select>
-                </td>
-                <td><input type='text' class="form-control" id='num_to_convert' placeholder="from" autocomplete="off"></td>
-              </tr>
-              <tr>
-                <td>
-                  <select class="form-control" id='base_to' style="min-width: 4rem;">
-                    <option value=16 selected>16</option>
-                    <option value=10>10</option>
-                    <option value=2>2</option>
-                    <option value=3>3</option>
-                    <option value=4>4</option>
-                    <option value=5>5</option>
-                    <option value=6>6</option>
-                    <option value=7>7</option>
-                    <option value=8>8</option>
-                    <option value=9>9</option>
-                  </select>
-                </td>
-                <td>
-                  <button class="btn btn-outline-secondary" onclick="convert();return false">convert</button>
-                  <button class="btn btn-outline-secondary" onclick="reset_base.reset();return false">reset</button>
-                </td>
-              </tr>
-              <tr class="table-active">
-                <td colspan="2" align="center"><strong id="answer">answer</strong></td>
-              </tr>
-            </table>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-lg-6">
-      <div class="bs-component">
-        <div class="card border-secondary mb-3" style="min-height: 16rem;">
-          <div class="card-header">GCD & LCM</div>
-          <div class="card-body">
-            <form onsubmit="show_gcd();return false;">
-              <table class='table'>
-                <tr>
-                  <td colspan="2"><input type='text' class="form-control" id='gcd_input' placeholder="integers with space" autocomplete="off"></td>
-                </tr>
-                <tr>
-                  <td>
-                    <select class="form-control" id='select_gcd' style="min-width: 6rem;">
-                      <option value="gcd" selected>GCD</option>
-                      <option value="lcm">LCM</option>
-                    </select>
-                  </td>
-                  <td>
-                    <button class="btn btn-outline-secondary" onclick="show_gcd();return false">search</button>
-                    <button class="btn btn-outline-secondary" onclick="reset_gcd.reset();return false">reset</button>
-                  </td>
-                </tr>
-                <tr class="table-active">
-                  <td colspan="2" align="center"><strong id="answer_gcd">answer</strong></td>
-                </tr>
-              </table>
-              </form>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div> <!-- row GCD LCM-->
 
   <div class="row">
     <div class="col-lg-12">
@@ -249,7 +162,7 @@
     <div class="col-lg-12">
       <div class="bs-component">
         <div class="card border-primary mb-3" style="min-height: 20rem;">
-          <div class="card-header">statistics values & t-test</div>
+          <div class="card-header">statistics values</div>
           <div class="card-body">
             <form onsubmit="show_stats();return false;">
             <table class='table' style="table-layout: fixed;">
@@ -265,7 +178,6 @@
                   <button class="btn btn-outline-primary" onclick="reset_stats.reset();return false">reset</button>
                   <input type="checkbox" id="unbiased" checked><label for="unbiased">&nbsp;unbiased</label>
                   <input type="checkbox" id="stats_add_check" onchange="stats_show_second_row();"><label for="stats_add_check">&nbsp;2 data</label>
-                  <input type="checkbox" id="welch_check" onchange="stats_show_check_welch();" style="display: none;"><label for="welch" id="welch_label" style="display: none;">&nbsp;Welch's t</label>
                 </td>
               </tr>
               <tr>
@@ -276,7 +188,7 @@
                 <td align="center"><strong>median</strong></td>
                 <td align="center"><strong>skewness</strong></td>
               </tr>
-              <tr class="table-active" id='stats_output1'>
+              <tr class="table-active" id='stats_output_row1'>
                 <td align="center"><strong class='stats_output answer' id="df" onclick="copy_to_clipboard();">0</strong></td>
                 <td align="center"><strong class='stats_output answer' id="mean"onclick="copy_to_clipboard();">0</strong></td>
                 <td align="center"><strong class='stats_output answer' id="std" onclick="copy_to_clipboard();">0</strong></td>
@@ -284,17 +196,13 @@
                 <td align="center"><strong class='stats_output answer' id="median" onclick="copy_to_clipboard();">0</strong></td>
                 <td align="center"><strong class='stats_output' id="skewness" onclick="copy_to_clipboard();">0</strong></td>
               </tr>
-              <tr class="table-active" id='stats_output2' style="display: none">
+              <tr class="table-active" id='stats_output_row2' style="display: none">
                 <td align="center"><strong class='stats_output answer' id="df2" onclick="copy_to_clipboard();">0</strong></td>
                 <td align="center"><strong class='stats_output answer' id="mean2" onclick="copy_to_clipboard();">0</strong></td>
                 <td align="center"><strong class='stats_output answer' id="std2" onclick="copy_to_clipboard();">0</strong></td>
                 <td align="center"><strong class='stats_output answer' id="sem2" onclick="copy_to_clipboard();">0</strong></td>
                 <td align="center"><strong class='stats_output answer' id="median2" onclick="copy_to_clipboard();">0</strong></td>
                 <td align="center"><strong class='stats_output answer' id="skewness2" onclick="copy_to_clipboard();">0</strong></td>
-              </tr>
-              <tr id='stats_output_welch' style="display: none;">
-                <td align="center"><strong id="welch_t" class="answer" onclick="copy_to_clipboard();">t-value</strong></td>
-                <td align="center"><strong id="welch_df" class="answer" onclick="copy_to_clipboard();">df</strong></td>
               </tr>
             </table>
             </form>
@@ -303,7 +211,70 @@
       </div>
     </div>
     
-  </div> <!--row Poisson % Gamma distribution-->
+  </div> <!--row statistic values -->
+
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="bs-component">
+        <div class="card border-info mb-3" style="min-height: 16rem;">
+          <div class="card-header">Welch's t-test</div>
+          <div class="card-body">
+            <form onsubmit="show_ttest();return false;">
+            <table class='table' style="table-layout: fixed;">
+              <tr>
+                <td colspan="3"><input type='text' class="form-control" id='ttest_input1' placeholder="mean1, SD1, n1" autocomplete="off"></td>
+                <td colspan="3"><input type='text' class="form-control" id='ttest_input2' placeholder="mean2, SD2, n2" autocomplete="off"></td>
+              </tr>
+
+              <tr>
+                <td colspan="6">
+                  <button class="btn btn-outline-info" onclick="show_ttest();return false">calculate</button>
+                  <button class="btn btn-outline-info" onclick="reset_ttest.reset();return false">reset</button>
+                </td>
+              </tr>
+              <tr class="table-active">
+                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();" data-toggle="tooltip" data-placement="bottom" title="click to copy"><strong id="ttest_output_t">t-value</strong></td>
+                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();" data-toggle="tooltip" data-placement="bottom" title="click to copy"><strong id="ttest_output_df">df</strong></td>
+                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();" data-toggle="tooltip" data-placement="bottom" title="click to copy"><strong id="ttest_output_p">p(t≤x)</strong></td>
+              </tr>
+            </table>
+            </form>
+          </div>
+        </div>
+      </div> 
+    </div> <!-- Welch's t-test -->
+
+    <div class="col-lg-6">
+      <div class="bs-component">
+        <div class="card border-info mb-3" style="min-height: 16rem;">
+          <div class="card-header">F-test of 2 variances</div>
+          <div class="card-body">
+            <form onsubmit="show_ftest();return false;">
+            <table class='table' style="table-layout: fixed;">
+              <tr>
+                <td colspan="3"><input type='text' class="form-control" id='ftest_input1' placeholder="SD1, df1" autocomplete="off"></td>
+                <td colspan="3"><input type='text' class="form-control" id='ftest_input2' placeholder="SD2, df2" autocomplete="off"></td>
+              </tr>
+
+              <tr>
+                <td colspan="6">
+                  <button class="btn btn-outline-info" onclick="show_ftest();return false">calculate</button>
+                  <button class="btn btn-outline-info" onclick="reset_ftest.reset();return false">reset</button>
+                </td>
+              </tr>
+              <tr class="table-active">
+                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();" data-toggle="tooltip" data-placement="bottom" title="click to copy"><strong id="ftest_output_f">F-value</strong></td>
+                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();" data-toggle="tooltip" data-placement="bottom" title="click to copy"><strong id="ftest_output_p_up">p(F≤x)</strong></td>
+                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();" data-toggle="tooltip" data-placement="bottom" title="click to copy"><strong id="ftest_output_p_low">p(x≤F)</strong></td>
+              </tr>
+            </table>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div> <!-- F-test -->
+    
+  </div> <!--row statistic values -->
 
   <div class="row">
     <div class="col-lg-12">
@@ -494,7 +465,7 @@
     <div class="col-lg-3">
       <div class="bs-component">
         <div class="card border-warning mb-3" style="min-height: 16rem;">
-          <div class="card-header">F-value to p(F≤x)</div>
+          <div class="card-header">F-value to p</div>
           <div class="card-body">
             <p align="center"><img style="height: 100px; display: inline-block;" src="image/f_to_p.png"></p>
             <form onsubmit="f2p();return false;">
@@ -619,9 +590,110 @@
     </div>
   </div> <!--row Poisson % Gamma distribution-->
 
+  <div class="row">
+    <div class="col-lg-12">
+      <h2>misc</h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="bs-component">
+        <div class="card border-secondary mb-3" style="min-height: 16rem;">
+          <div class="card-header">Base Converter</div>
+          <div class="card-body">
+            <form onsubmit="convert();return false;">
+            <table class='table'>
+              <tr>
+                <td>
+                  <select class="form-control" id='base_from' style="min-width: 4rem;">
+                    <option value=10 selected>10</option>
+                    <option value=16>16</option>
+                    <option value=2>2</option>
+                    <option value=3>3</option>
+                    <option value=4>4</option>
+                    <option value=5>5</option>
+                    <option value=6>6</option>
+                    <option value=7>7</option>
+                    <option value=8>8</option>
+                    <option value=9>9</option>
+                  </select>
+                </td>
+                <td><input type='text' class="form-control" id='num_to_convert' placeholder="from" autocomplete="off"></td>
+              </tr>
+              <tr>
+                <td>
+                  <select class="form-control" id='base_to' style="min-width: 4rem;">
+                    <option value=16 selected>16</option>
+                    <option value=10>10</option>
+                    <option value=2>2</option>
+                    <option value=3>3</option>
+                    <option value=4>4</option>
+                    <option value=5>5</option>
+                    <option value=6>6</option>
+                    <option value=7>7</option>
+                    <option value=8>8</option>
+                    <option value=9>9</option>
+                  </select>
+                </td>
+                <td>
+                  <button class="btn btn-outline-secondary" onclick="convert();return false">convert</button>
+                  <button class="btn btn-outline-secondary" onclick="reset_base.reset();return false">reset</button>
+                </td>
+              </tr>
+              <tr class="table-active">
+                <td colspan="2" align="center"><strong id="answer">answer</strong></td>
+              </tr>
+            </table>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="bs-component">
+        <div class="card border-secondary mb-3" style="min-height: 16rem;">
+          <div class="card-header">GCD & LCM</div>
+          <div class="card-body">
+            <form onsubmit="show_gcd();return false;">
+              <table class='table'>
+                <tr>
+                  <td colspan="2"><input type='text' class="form-control" id='gcd_input' placeholder="integers with space" autocomplete="off"></td>
+                </tr>
+                <tr>
+                  <td>
+                    <select class="form-control" id='select_gcd' style="min-width: 6rem;">
+                      <option value="gcd" selected>GCD</option>
+                      <option value="lcm">LCM</option>
+                    </select>
+                  </td>
+                  <td>
+                    <button class="btn btn-outline-secondary" onclick="show_gcd();return false">search</button>
+                    <button class="btn btn-outline-secondary" onclick="reset_gcd.reset();return false">reset</button>
+                  </td>
+                </tr>
+                <tr class="table-active">
+                  <td colspan="2" align="center"><strong id="answer_gcd">answer</strong></td>
+                </tr>
+              </table>
+              </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div> <!-- row GCD LCM-->
+
 </div> <!--container-->
 
+<footer>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<p><font color="white">&copy; 2020 Nozomi Yamada All Rights Reserved.</font></p>
+	</nav>
+</footer>
 
+<!------- JavaScript --------->
 
 <script>
 
@@ -660,29 +732,23 @@
   ///// show stats /////
   function stats_show_second_row(){
     var checked = document.getElementById("stats_add_check").checked;
-    let ids_on = ['stats_input_row2','stats_output2','welch_check','welch_label'];
-    let ids_off = ['stats_input_row2','stats_output2','welch_check','welch_label','stats_output_welch'];
+    let IDs = ['stats_input_row2','stats_output_row2'];
     if(checked==true){
-      for(var id of ids_on){
+      for(var id of IDs){
         document.getElementById(id).style.display = '';}
     }else{
-      for(var id of ids_off){
+      for(var id of IDs){
         document.getElementById(id).style.display = 'none';}
-      document.getElementById('welch_check').checked=false;
     }
   }
-  function stats_show_check_welch(){
-    if(document.getElementById('welch_check').checked==true){
-      document.getElementById('stats_output_welch').style.display = '';
-    }else{
-      document.getElementById('stats_output_welch').style.display = 'none';
-    }
-  }
+
   function show_stats(){
     let nums1 = document.getElementById('stats_input1').value.trim().split(/[,\s]+/).map(Number); // delete spaces, split, cast as Number
     let N1 = Number(nums1.length);
+    let mu1 = round(mean(nums1),5);
+    let s1 = round(std(nums1),5);
     document.getElementById('df').innerText = N1-1;
-    document.getElementById('mean').innerText = round(mean(nums1),5);
+    document.getElementById('mean').innerText = mu1;
     document.getElementById('sem').innerText = round(sem(nums1),5)
     document.getElementById('median').innerText = round(median(nums1),5);
     document.getElementById('skewness').innerText = round(skewness(nums1),5);
@@ -691,9 +757,12 @@
     }else{
       document.getElementById('std').innerText = round(std(nums1,false),5);
     }
+    
     if(document.getElementById("stats_add_check").checked==true){
       let nums2 = document.getElementById('stats_input2').value.trim().split(/[,\s]+/).map(Number);
       let N2 = Number(nums2.length);
+      let mu2 = round(mean(nums2),5);
+      let s2 = round(std(nums2),5);
       document.getElementById('df2').innerText = N2-1;
       document.getElementById('mean2').innerText = round(mean(nums2),5);
       document.getElementById('sem2').innerText = round(sem(nums2),5)
@@ -704,21 +773,39 @@
       }else{
         document.getElementById('std2').innerText = round(std(nums2,false),5);
       }
-      if(document.getElementById('welch_check').checked==true){
-        let t_df = welch(nums1, nums2);
-        document.getElementById('welch_t').innerText = 't-value = ' + round(t_df[0],5);
-        document.getElementById('welch_df').innerText = 'df = ' + round(t_df[1],5);
-        copy_tvalue();
-      }
+      document.getElementById('ttest_input1').value = `${mu1} ${s1} ${N1}`;
+      document.getElementById('ttest_input2').value = `${mu2} ${s2} ${N2}`;
+      show_ttest();
+      document.getElementById('ftest_input1').value = `${s1} ${N1-1}`;
+      document.getElementById('ftest_input2').value = `${s2} ${N2-1}`;
+      show_ftest();
     }
+    
   }
-  function copy_tvalue(){
-    let tvalue = document.getElementById('welch_t').innerText.split(' ')[2];
-    let df = document.getElementById('welch_df').innerText.split(' ')[2];
-    document.getElementById('input_t2p').value = Math.abs(tvalue);
-    document.getElementById('input_t2p_df').value = df;
-    document.getElementById('input_p2t_df').value = df;
+  function show_ttest(){
+    let nums1 = document.getElementById('ttest_input1').value.trim().split(/[,\s]+/).map(Number);
+    let nums2 = document.getElementById('ttest_input2').value.trim().split(/[,\s]+/).map(Number);
+    let result = welch(nums1[0],nums2[0],nums1[1],nums2[1],nums1[2],nums2[2]);
+    document.getElementById('ttest_output_t').innerText = 't = ' + round(result[0],5);
+    document.getElementById('ttest_output_df').innerText = 'df = ' + round(result[1],5);
+    document.getElementById('ttest_output_p').innerText = 'p = ' + round(t_to_p(Math.abs(result[0]),result[1]),5);
+    document.getElementById('input_t2p').value = round(Math.abs(result[0]),5);
+    document.getElementById('input_t2p_df').value = round(result[1],5);
+    document.getElementById('input_p2t_df').value = round(result[1],5);
     t2p();
+  }
+  function show_ftest(){
+    let nums1 = document.getElementById('ftest_input1').value.trim().split(/[,\s]+/).map(Number);
+    let nums2 = document.getElementById('ftest_input2').value.trim().split(/[,\s]+/).map(Number);
+    let fvalue = (nums1[0]/nums2[0])**2;
+    let pvalue = f_to_p(fvalue,nums1[1],nums2[1])
+    document.getElementById('ftest_output_f').innerText = 'f = ' + round(fvalue,5);
+    document.getElementById('ftest_output_p_up').innerText = 'upper p = ' + round(pvalue,5);
+    document.getElementById('ftest_output_p_low').innerText = 'lower p = ' + round(1-pvalue,5);
+    document.getElementById('input_f2p').value = round(fvalue,5);
+    document.getElementById('input_f2p_df').value = `${nums1[1]} ${nums2[1]}`;
+    document.getElementById('input_p2f_df').value = `${nums1[1]} ${nums2[1]}`;
+    f2p();
   }
 
   ///// validate /////
@@ -740,39 +827,39 @@
   // functions for calcualation z,t,chi<>P
   function z2p(){
     let z = document.getElementById('input_z2p').value;
-    document.getElementById('answer_z2p').innerText = 'p=' + round(z_to_p(z),6);
+    document.getElementById('answer_z2p').innerText = 'p=' + round(z_to_p(z),5);
   }
   function p2z(){
     if(!document.getElementById('input_p2z').classList.contains('is-invalid')){
       let p = document.getElementById('input_p2z').value;
-      document.getElementById('answer_p2z').innerText = 'z=' + round(p_to_z(p),6);
+      document.getElementById('answer_p2z').innerText = 'z=' + round(p_to_z(p),5);
     }
   }
   function t2p(){
     let t = Number(document.getElementById('input_t2p').value);
     let df = Number(document.getElementById('input_t2p_df').value);
-    document.getElementById('answer_t2p').innerText = 'p=' + round(t_to_p(t,df),6);
+    document.getElementById('answer_t2p').innerText = 'p=' + round(t_to_p(t,df),5);
   }
   function p2t(){
     if(!document.getElementById('input_p2t').classList.contains('is-invalid')){
       let p = Number(document.getElementById('input_p2t').value);
       let df = Number(document.getElementById('input_p2t_df').value);
-      document.getElementById('answer_p2t').innerText = 't=' + round(p_to_t(p,df),6);
+      document.getElementById('answer_p2t').innerText = 't=' + round(p_to_t(p,df),5);
     }
   }
   function chi2p(){
     let chi = Number(document.getElementById('input_chi2p').value);
     let df = Number(document.getElementById('input_chi2p_df').value);
-    let answer = round(chi_to_p(chi,df),6);
+    let answer = round(chi_to_p(chi,df),5);
     document.getElementById('answer_chi2p_up').innerHTML = 'upper p=' + answer;
-    document.getElementById('answer_chi2p_low').innerHTML = 'lower p=' + round(1-answer,6);
+    document.getElementById('answer_chi2p_low').innerHTML = 'lower p=' + round(1-answer,5);
   }
   function p2chi(){
     if(!document.getElementById('input_p2chi').classList.contains('is-invalid')){
       let p = Number(document.getElementById('input_p2chi').value);
       let df = Number(document.getElementById('input_p2chi_df').value);
-      let answer1 = round(p_to_chi(p,df),6);
-      let answer2 = round(p_to_chi(1-p,df),6);
+      let answer1 = round(p_to_chi(p,df),5);
+      let answer2 = round(p_to_chi(1-p,df),5);
       document.getElementById('answer_p2chi_up').innerHTML = 'upper χ<sup>2</sup>=' + answer1;
       document.getElementById('answer_p2chi_low').innerHTML = 'lower χ<sup>2</sup>=' + answer2;
     }
@@ -782,9 +869,9 @@
     let df = document.getElementById('input_f2p_df').value.trim().split(/\s+/).map(Number);
     if(df.length==2 && df.every(Number)){
       document.getElementById('input_f2p_df').classList.remove('is-invalid');
-      let answer = round(f_to_p(f,df[0],df[1]),6);
+      let answer = round(f_to_p(f,df[0],df[1]),5);
       document.getElementById('answer_f2p_up').innerHTML = 'upper p=' + answer;
-      document.getElementById('answer_f2p_low').innerHTML = 'lower p=' + round(1-answer,6);
+      document.getElementById('answer_f2p_low').innerHTML = 'lower p=' + round(1-answer,5);
     }else{
       document.getElementById('input_f2p_df').classList.add('is-invalid');
       document.getElementById('input_f2p_df').focus();
@@ -796,8 +883,8 @@
       let df = document.getElementById('input_p2f_df').value.trim().split(/\s+/).map(Number);
       if(df.length==2 && df.every(Number)){
         document.getElementById('input_p2f_df').classList.remove('is-invalid');
-        let answer1 = round(p_to_f(p,df[0],df[1]),6);
-        let answer2 = round(p_to_f(1-p,df[0],df[1]),6);
+        let answer1 = round(p_to_f(p,df[0],df[1]),5);
+        let answer2 = round(p_to_f(1-p,df[0],df[1]),5);
         document.getElementById('answer_p2f_up').innerHTML = 'upper F=' + answer1;
         document.getElementById('answer_p2f_low').innerHTML = 'lower F=' + answer2;
       }else{
@@ -816,8 +903,8 @@
       var k = Math.round(elem2.value);
       p = poisson(l,k);
       cum = poisson_cum(l,k);
-      document.getElementById('poisson1').innerText = `P(X=${k}) = ` + round(p,4);
-      document.getElementById('poisson2').innerText = `P(X≥${k}) = ` + round(cum,4);
+      document.getElementById('poisson1').innerText = `P(X=${k}) = ` + round(p,5);
+      document.getElementById('poisson2').innerText = `P(X≥${k}) = ` + round(cum,5);
     }
   }
 
@@ -914,6 +1001,8 @@ var reset_stats = new ResetBtn(
   {'welch_t':'t-value','welch_df':'df'},
   'stats_input1',
   {'stats_output':0});
+var reset_ttest = new ResetBtn(['ttest_input1','ttest_input2'],{'ttest_output_t':'t-value','ttest_output_df':'df','ttest_output_p':'p(t≤x)'},'ttest_input1');
+var reset_ftest = new ResetBtn(['ftest_input1','ftest_input2'],{'ftest_output_f':'F-value','ftest_output_p_up':'p(F≤x)','ftest_output_p_low':'p(x≤F)'},'ftest_input1');
 var reset_z2p = new ResetBtn(['input_z2p'],{'answer_z2p':'p(z≤x)'},'input_z2p');
 var reset_p2z = new ResetBtn(['input_p2z'],{'answer_p2z':'z-score'},'input_p2z');
 var reset_t2p = new ResetBtn(['input_t2p','input_t2p_df'],{'answer_t2p':'p(t≤x)'},'input_t2p');
@@ -950,14 +1039,13 @@ var reset_p2f = new ResetBtn(['input_p2f','input_p2f_df'],{'answer_p2f_up':'F-va
 
   function copy_to_clipboard(){
     var temp_elem = document.createElement("textarea");
-    temp_elem.textContent = event.target.innerText.split('=').slice(-1)[0];
+    temp_elem.textContent = Number(event.target.innerText.split('=').slice(-1)[0]);
     var body_elem = document.getElementsByTagName("body")[0];
     body_elem.appendChild(temp_elem);
     temp_elem.select();
     document.execCommand("Copy");
     body_elem.removeChild(temp_elem);
   }
-
 
 </script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

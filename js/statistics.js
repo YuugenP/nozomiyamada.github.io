@@ -45,7 +45,13 @@ function skewness(arr, regularize=false){
     return sk*Math.sqrt(N-1)/(N-2);
   }
 }
-function welch(arr1, arr2){
+function welch(mu1,mu2,s1,s2,n1,n2){
+  let v1 = s1**2; let v2 = s2**2;
+  let t = (mu1-mu2)/Math.sqrt(v1/n1+v2/n2);
+  let df = (v1/n1+v2/n2)**2 / ((v1/n1)**2/(n1-1)+(v2/n2)**2/(n2-1));
+  return [t,df];
+}
+function welch_arr(arr1,arr2){
   let mu1 = mean(arr1); let mu2 = mean(arr2);
   let v1 = variance(arr1); let v2 = variance(arr2);
   let n1 = arr1.length; let n2 = arr2.length;
