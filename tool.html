@@ -95,7 +95,7 @@
       <h5>source code -> <a href="https://github.com/nozomiyamada/JS_mathtool" target="_blank">GitHub</a></h5>
       <p>You can try all functions on the console (for Goolge Chrome, press F12 key to open)<br>
         Each answer displayed below can be copied to clipboard just by clicking.<br>
-        <span onclick="show_function();" class="function_list"><strong>+ list of functions</strong></span>
+        <span onclick="show_function();" class="function_list"><strong>+ list of JS functions</strong></span>
         <div id='functions' style="display: none;">
           <ul>
             <li><code>gcd2(a,b)</code></li>
@@ -203,6 +203,10 @@
                 <td align="center"><strong class='stats_output answer' id="sem2" onclick="copy_to_clipboard();">0</strong></td>
                 <td align="center"><strong class='stats_output answer' id="median2" onclick="copy_to_clipboard();">0</strong></td>
                 <td align="center"><strong class='stats_output answer' id="skewness2" onclick="copy_to_clipboard();">0</strong></td>
+              </tr>
+              <tr id='stats_output_row3' style="display: none">
+                <td align="center"><strong class='answer' id="cov" onclick="copy_to_clipboard();">covariance</strong></td>
+                <td align="center"><strong class='answer' id="corr" onclick="copy_to_clipboard();">correlation</strong></td>
               </tr>
             </table>
             </form>
@@ -734,7 +738,7 @@
   ///// show stats /////
   function stats_show_second_row(){
     var checked = document.getElementById("stats_add_check").checked;
-    let IDs = ['stats_input_row2','stats_output_row2'];
+    let IDs = ['stats_input_row2','stats_output_row2','stats_output_row3'];
     if(checked==true){
       for(var id of IDs){
         document.getElementById(id).style.display = '';}
@@ -781,6 +785,14 @@
       document.getElementById('ftest_input1').value = `${s1} ${N1-1}`;
       document.getElementById('ftest_input2').value = `${s2} ${N2-1}`;
       show_ftest();
+      if(nums1.length==nums2.length){
+        let cov12 = cov(nums1,nums2);
+        document.getElementById('cov').innerText = 'cov = ' + round(cov12,5);
+        document.getElementById('corr').innerText = 'corr = ' + round(corr(cov12,s1,s2),5);
+      }else{
+        document.getElementById('cov').innerText = 'covariance';
+        document.getElementById('corr').innerText = 'correlation';
+      }
     }
     
   }
@@ -997,7 +1009,7 @@ var reset_base = new ResetBtn(['num_to_convert'],{'answer':'answer'},'num_to_con
 var reset_gcd = new ResetBtn(['gcd_input'],{'answer_gcd':'answer'},'gcd_input');
 var reset_stats = new ResetBtn(
   ['stats_input1','stats_input2'],
-  {'welch_t':'t-value','welch_df':'df'},
+  {'cov':'covariance','corr':'correlation'},
   'stats_input1',
   {'stats_output':0});
 var reset_ttest = new ResetBtn(['ttest_input1','ttest_input2'],{'ttest_output_t':'t-value','ttest_output_df':'df','ttest_output_p':'p(t≤x)'},'ttest_input1');

@@ -45,6 +45,29 @@ function skewness(arr, regularize=false){
     return sk*Math.sqrt(N-1)/(N-2);
   }
 }
+function cov(arr1, arr2, unbiased=true){
+  if(arr1.length!=arr2.length){
+    return NaN;
+  }else{
+    let mu1 = mean(arr1); let mu2 = mean(arr2);
+    let s = 0;
+    for(var i=0;i<arr1.length;i++){
+      s += (arr1[i]-mu1)*(arr2[i]-mu2);
+    }
+    if(unbiased==true){
+      return s/(arr1.length-1);
+    }else{
+      return s/arr1.length;
+    }
+  }
+}
+function corr(cov12,s1,s2){
+  return cov12/s1/s2;
+}
+function corr_arr(arr1,arr2){
+  return cov(arr1,arr2)/std(arr1)/std(arr2);
+}
+
 function welch(mu1,mu2,s1,s2,n1,n2){
   let v1 = s1**2; let v2 = s2**2;
   let t = (mu1-mu2)/Math.sqrt(v1/n1+v2/n2);
@@ -143,6 +166,33 @@ function p_to_f(p, df1, df2){
   return df2*x/(df1*(1-x));
 }
 
+
+/**
+ * Poisson Distribution
+ * @param {Number} lambda event rate in an interval
+ * @param {Int} k the number of times an event occurs in an interval 
+ * @return {Number} probability P(X=k)
+ */
+function poisson(lambda, k){
+  if(Number.isInteger(k)){
+    return (lambda**k) * (Math.exp(-lambda)) / fact(k)
+  }else{
+    return (lambda**k) * (Math.exp(-lambda)) / gamma(k+1)
+  }
+}
+function poisson_to_p(lambda, k, split=1e3, n=5){
+  let poi = function(t){
+    return (lambda**t) * (Math.exp(-lambda)) / gamma(t+1)
+  }
+  return 1 - gauss_legendre(0, k, poi, split, n)
+}
+function poisson_cum(lambda, k){
+  let sum = 0;
+  for(var i=0;i<=k;i++){
+    sum += poisson(lambda, k);
+  }
+  return sum
+}
 
 
 /**
