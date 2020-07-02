@@ -535,9 +535,10 @@
   <div class="row">
     <div class="col-lg-5">
       <div class="bs-component">
-        <div class="card border-primary mb-3" style="min-height: 16rem;">
+        <div class="card border-primary mb-3" style="min-height: 20rem;">
           <div class="card-header">Poisson Distribution</div>
           <div class="card-body">
+            <p align="center"><img style="height: 100px; display: inline-block;" src="image/poisson.png"></p>
             <form onsubmit="show_poisson();return false;">
             <table class='table'>
               <tr>
@@ -547,12 +548,12 @@
               <tr>
                 <td colspan="2">
                   <button class="btn btn-outline-primary" onclick="show_poisson();return false">calculate</button>
-                  <button class="btn btn-outline-primary" onclick="reset_poisson();return false">reset</button>
+                  <button class="btn btn-outline-primary" onclick="reset_poisson.reset();return false">reset</button>
                 </td>
               </tr>
               <tr class="table-active">
-                <td align="center"><strong id="poisson1">P(X=k)</strong></td>
-                <td align="center"><strong id="poisson2">P(X≤k)</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();" data-toggle="tooltip" data-placement="bottom" title="click to copy"><strong id="poisson_output1">P(X=k)</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();" data-toggle="tooltip" data-placement="bottom" title="click to copy"><strong id="poisson_output2">P(X≥k)</strong></td>
               </tr>
             </table>
             </form>
@@ -562,9 +563,10 @@
     </div>
     <div class="col-lg-7">
       <div class="bs-component">
-        <div class="card border-info mb-3" style="min-height: 16rem;">
+        <div class="card border-info mb-3" style="min-height: 20rem;">
           <div class="card-header">Gamma Distribution</div>
           <div class="card-body">
+            <p align="center"><img style="height: 100px; display: inline-block;" src="image/gamma.png"></p>
             <form onsubmit="show_gamma();return false;">
             <table class='table'>
               <tr>
@@ -808,8 +810,8 @@
     f2p();
   }
 
-  ///// validate /////
-  function validate(){
+  ///// validate p value/////
+  function validateP(){
     let elem = event.target;
     let p = elem.value;
     if(p!='' && (p<0 || p>0.5)){
@@ -818,10 +820,10 @@
       elem.classList.remove('is-invalid');
     }
   }
-  document.getElementById('input_p2z').oninput = validate;
-  document.getElementById('input_p2t').oninput = validate;
-  document.getElementById('input_p2chi').oninput = validate;
-  document.getElementById('input_p2f').oninput = validate;
+  document.getElementById('input_p2z').oninput = validateP;
+  document.getElementById('input_p2t').oninput = validateP;
+  document.getElementById('input_p2chi').oninput = validateP;
+  document.getElementById('input_p2f').oninput = validateP;
 
 
   // functions for calcualation z,t,chi<>P
@@ -882,7 +884,7 @@
       let p = Number(document.getElementById('input_p2f').value);
       let df = document.getElementById('input_p2f_df').value.trim().split(/\s+/).map(Number);
       if(df.length==2 && df.every(Number)){
-        document.getElementById('input_p2f_df').classList.remove('is-invalid');
+        document.getElementById('input_p2f_df').classList.remove('is-invalid'); //validate df
         let answer1 = round(p_to_f(p,df[0],df[1]),5);
         let answer2 = round(p_to_f(1-p,df[0],df[1]),5);
         document.getElementById('answer_p2f_up').innerHTML = 'upper F=' + answer1;
@@ -894,17 +896,14 @@
     }
   }
 
-
   function show_poisson(){
     var elem1 = document.getElementById('poisson_input1');
     var elem2 = document.getElementById('poisson_input2');
     if(!elem1.classList.contains('is-invalid') && !elem2.classList.contains('is-invalid')){
-      var l = Math.round(elem1.value);
-      var k = Math.round(elem2.value);
-      p = poisson(l,k);
-      cum = poisson_cum(l,k);
-      document.getElementById('poisson1').innerText = `P(X=${k}) = ` + round(p,5);
-      document.getElementById('poisson2').innerText = `P(X≥${k}) = ` + round(cum,5);
+      var l = Math.round(elem1.value); var k = Math.round(elem2.value);
+      p = poisson(l,k); cum = poisson_cum(l,k);
+      document.getElementById('poisson_output1').innerText = `P(X=${k})=` + round(p,5);
+      document.getElementById('poisson_output2').innerText = `P(X≥${k})=` + round(cum,5);
     }
   }
 
@@ -959,11 +958,11 @@
       var t = elem1.value;
       var k = elem2.value;
       var x = elem3.value;
-      var gamma_k = calc_gamma(k);
+      var gamma_k = gamma(k);
       var p = x**(k-1)*(Math.E**(-x/t))/gamma_k/(t**k);
       var cum = incomplete_gamma(k,x/t)/gamma_k;
-      document.getElementById('gamma1').innerText = 'P(x) = ' + round(p,5);
-      document.getElementById('gamma2').innerText = 'P(0~x) = ' + round(cum,5);
+      document.getElementById('gamma1').innerText = 'P(t) = ' + round(p,5);
+      document.getElementById('gamma2').innerText = 'P(x≥t) = ' + round(1-cum,5);
     }
   }
 
@@ -1011,14 +1010,8 @@ var reset_chi2p = new ResetBtn(['input_chi2p','input_chi2p_df'],{'answer_chi2p_u
 var reset_p2chi = new ResetBtn(['input_p2chi','input_p2chi_df'],{'answer_p2chi_up':'χ<sup>2</sup>','answer_p2chi_low':'χ<sup>2</sup>'},'input_p2chi');
 var reset_f2p = new ResetBtn(['input_f2p','input_f2p_df'],{'answer_f2p_up':'p(F≤x)','answer_f2p_low':'p(x≤F)'},'input_f2p');
 var reset_p2f = new ResetBtn(['input_p2f','input_p2f_df'],{'answer_p2f_up':'F-value','answer_p2f_low':'F-value'},'input_p2f');
+var reset_poisson = new ResetBtn(['poisson_input1','poisson_input1'],{'poisson_output1':'P(X=k)','poisson_output1':'P(X≥k)'},'poisson_input1')
 
-  function reset_poisson(){
-    document.getElementById('poisson_input1').value = '';
-    document.getElementById('poisson_input2').value = '';
-    document.getElementById('poisson1').innerText = 'P(X=k)';
-    document.getElementById('poisson2').innerText = 'P(X≤k)';
-    document.getElementById('poisson_input1').focus();
-  }
   function reset_gamma(){
     document.getElementById('gamma_input1').value = '';
     document.getElementById('gamma_input2').value = '';
