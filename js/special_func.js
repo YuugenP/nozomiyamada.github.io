@@ -51,15 +51,15 @@ function inv_erf(y,iter=30){
   return newton(f,f_prime,y,0.5,iter);
 }
 function erf2(z, N=100){
-  let sum = 0;
+  let total = 0;
   for(var n=0;n<=N;n++){ // Σ
     var product = 1;
     for(var k=1;k<=n;k++){ // Π
       product *= -z*z/k;
     }
-    sum += (z * product / (2*n+1));
+    total += (z * product / (2*n+1));
   }
-  return sum * 2 / Math.PI**0.5;
+  return total * 2 / Math.PI**0.5;
 }
 function inv_erf2(y, N=300){
   let Ck = [1];  // aray of coef Ck
@@ -115,11 +115,11 @@ function inv_incomplete_gamma(s,y,x0=s,iter=30){
  */
 const Euler_const = 0.5772156649015328606 // Euler's constant 
 function gamma2(s, N=1e5){
-  let sum = Math.log(s)+Euler_const*s;
+  let total = Math.log(s)+Euler_const*s;
   for(var m=1;m<N;m++){
-    sum += Math.log(1+s/m) - s/m
+    total += Math.log(1+s/m) - s/m
   }
-  return Math.exp(-sum)
+  return Math.exp(-total)
 }
 
 
@@ -210,11 +210,11 @@ function gauss_legendre(func,a,b,split=1000,n=5){
   for(var i=0;i<split;i++){
     var q = dx/2;
     var r = (2*i+1)*dx/2;
-    var sum = 0;
+    var total = 0;
     for(var j=0;j<n;j++){
-      sum += func(q*weight[j][0]+r)*weight[j][1];
+      total += func(q*weight[j][0]+r)*weight[j][1];
     }
-    cum_sum += sum * q;
+    cum_sum += total * q;
   }
   return cum_sum
 }

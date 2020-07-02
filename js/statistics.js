@@ -1,11 +1,16 @@
 ////////// statistics /////////////
 
+function sum(arr){
+  if(!Array.isArray(arr)){arr = [arr];}
+  return arr.reduce(function(acc, cur){return acc + cur;});
+}
 
 function mean(arr){
   if(!Array.isArray(arr)){arr = [arr];}
   let N = arr.length;
-  return arr.reduce(function(acc, cur){return acc + cur;})/N;
+  return sum(arr)/N;
 }
+
 function median(arr){
   if(!Array.isArray(arr)){arr = [arr];}
   let N = arr.length;
@@ -16,6 +21,7 @@ function median(arr){
     return arr[(N-1)/2];
   }
 }
+
 function variance(arr, unbiased=true){
   if(!Array.isArray(arr)){arr = [arr];}
   if(unbiased==true){
@@ -26,13 +32,16 @@ function variance(arr, unbiased=true){
   let mu = mean(arr);
   return arr.reduce(function(acc, cur){return acc+(cur-mu)**2;},0)/N;
 }
+
 function std(arr, unbiased=true){
   if(!Array.isArray(arr)){arr = [arr];}
   return Math.sqrt(variance(arr, unbiased))
 }
+
 function sem(arr){
   return std(arr)/Math.sqrt(arr.length);
 }
+
 function skewness(arr, regularize=false){
   if(!Array.isArray(arr)){arr = [arr];}
   let N = arr.length;
@@ -45,6 +54,7 @@ function skewness(arr, regularize=false){
     return sk*Math.sqrt(N-1)/(N-2);
   }
 }
+
 function cov(arr1, arr2, unbiased=true){
   if(arr1.length!=arr2.length){
     return NaN;
@@ -61,11 +71,41 @@ function cov(arr1, arr2, unbiased=true){
     }
   }
 }
+
 function corr(cov12,s1,s2){
   return cov12/s1/s2;
 }
+
 function corr_arr(arr1,arr2){
   return cov(arr1,arr2)/std(arr1)/std(arr2);
+}
+
+function chi2(arr1,arr2){
+  if(arr1.length!=arr2.length){
+    return NaN;
+  }else{
+    let chi2_value = 0;
+    for(var i=0;i<arr1.length;i++){
+      chi2_value += (arr1[i]-arr2[i])**2/arr2[i];
+    }
+  return chi2_value;
+  }
+}
+
+function chi2_independence(arr1,arr2){
+  if(arr1.length!=arr2.length){
+    return NaN;
+  }else{
+    let sum1 = sum(arr1); let sum2 = sum(arr2);
+    let chi2_value = 0;
+    for(var i=0;i<arr1.length;i++){
+      var E1 = (arr1[i]+arr2[i])*sum1/(sum1+sum2);
+      var E2 = (arr1[i]+arr2[i])*sum2/(sum1+sum2);
+      chi2_value += (arr1[i]-E1)**2/E1;
+      chi2_value += (arr2[i]-E2)**2/E2;
+    }
+  return chi2_value;
+  }
 }
 
 function welch(mu1,mu2,s1,s2,n1,n2){
@@ -187,11 +227,11 @@ function poisson_to_p(lambda, k, split=1e3, n=5){
   return 1 - gauss_legendre(0, k, poi, split, n)
 }
 function poisson_cum(lambda, k){
-  let sum = 0;
+  let cum = 0;
   for(var i=0;i<=k;i++){
-    sum += poisson(lambda, k);
+    cum += poisson(lambda, k);
   }
-  return sum
+  return cum
 }
 
 
@@ -222,14 +262,16 @@ function poisson(lambda, k){
     return (lambda**k) * (Math.exp(-lambda)) / gamma(k+1);
   }
 }
+
 function poisson_cum(lambda, k){
   if(!Number.isInteger(k)){return NaN;}
-  let sum = 0;
+  let cum = 0;
   for(var i=0;i<k;i++){
-    sum += poisson(lambda, i);
+    cum += poisson(lambda, i);
   }
-  return 1-sum;
+  return 1-cum;
 }
+
 function poisson_to_p(lambda, k, split=100){
   let func = function(t){return (lambda**t)*(Math.exp(-lambda))/gamma(t+1);}
   return 1-gauss_legendre(func,0,k,split);

@@ -105,12 +105,17 @@
             <li><code>combination(n,k)</code></li>
             <li><code>permutation(n,k)</code></li>
             <li><code>round(num,decimal=0)</code></li>
+            <li><code>sum(nums)</code></li>
             <li><code>mean(nums)</code></li>
             <li><code>median(nums)</code></li>
             <li><code>variance(nums, unbiased=true)</code></li>
             <li><code>std(nums, unbiased=true)</code></li>
             <li><code>sem(nums)</code></li>
-            <li><code>skewness(arr, regularize=false)</code></li>
+            <li><code>skewness(nums, regularize=false)</code></li>
+            <li><code>cov(nums1, nums2, unbiased=true)</code></li>
+            <li><code>corr(cov12, s1, s2)</code></li>
+            <li><code>corr_arr(arr1, arr2)</code></li>
+            <li><code>chi2(arr1, arr2)</code></li>
             <li><code>welch(mu1,mu2,s1,s2,n1,n2)</code></li> 
             <li><code>welch_arr(arr1, arr2)</code></li>
             <li><code>convert_base(num, base_from, base_to)</code></li>
@@ -216,7 +221,7 @@
     </div>
     
   </div> <!--row statistic values -->
-
+  
   <div class="row">
     <div class="col-lg-6">
       <div class="bs-component">
@@ -296,7 +301,7 @@
             <p align="center"><img style="height: 100px; display: inline-block;" src="image/z_to_p.png"></p>
             <form onsubmit="z2p();return false;">
             <table class='table'>
-              <tr><td><input type='text' class="form-control" id='input_z2p' placeholder="z-score" autocomplete="off"></td></tr>
+              <tr><td><input type='text' class="form-control" id='z2p_input' placeholder="z-score" autocomplete="off"></td></tr>
               <tr>
                 <td>
                 <button class="btn btn-outline-success" onclick="z2p();return false">calculate</button>
@@ -304,7 +309,7 @@
                 </td>
               </tr>
               <tr class="table-active">
-                <td align="center" class="answer" onclick="copy_to_clipboard();" data-toggle="tooltip" data-placement="bottom" title="click to copy"><strong id="answer_z2p">p(z≤x)</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();" data-toggle="tooltip" data-placement="bottom" title="click to copy"><strong id="z2p_output">p(z≤x)</strong></td>
               </tr>
             </table>
             </form>
@@ -321,7 +326,7 @@
             <p align="center"><img style="height: 100px; display: inline-block;" src="image/z_to_p.png"></p>
             <form onsubmit="p2z();return false;">
             <table class='table'>
-              <tr><td><input type='text' class="form-control" id='input_p2z' placeholder="P(z≤x)" autocomplete="off"></td></tr>
+              <tr><td><input type='text' class="form-control" id='p2z_input' placeholder="P(z≤x)" autocomplete="off"></td></tr>
               <tr>
                 <td>
                 <button class="btn btn-outline-success" onclick="p2z();return false">calculate</button>
@@ -329,7 +334,7 @@
                 </td>
               </tr>
               <tr class="table-active">
-                <td align="center" class="answer" onclick="copy_to_clipboard();" data-toggle="tooltip" data-placement="bottom" title="click to copy"><strong id="answer_p2z">z-score</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();" data-toggle="tooltip" data-placement="bottom" title="click to copy"><strong id="p2z_output">z-score</strong></td>
               </tr>
             </table>
             </form>
@@ -347,8 +352,8 @@
             <form onsubmit="t2p();return false;">
             <table class='table'>
               <tr>
-                <td><input type='text' class="form-control" id='input_t2p' placeholder="t-value" autocomplete="off"></td>
-                <td><input type='text' class="form-control" id='input_t2p_df' placeholder="df" autocomplete="off"></td>
+                <td><input type='text' class="form-control" id='t2p_input_t' placeholder="t-value" autocomplete="off"></td>
+                <td><input type='text' class="form-control" id='t2p_input_df' placeholder="df" autocomplete="off"></td>
               </tr>
               <tr>
                 <td colspan="2">
@@ -357,7 +362,7 @@
                 </td>
               </tr>
               <tr class="table-active">
-                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();" data-toggle="tooltip" data-placement="bottom" title="click to copy"><strong id="answer_t2p">p(t≤x)</strong></td>
+                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();" data-toggle="tooltip" data-placement="bottom" title="click to copy"><strong id="t2p_output">p(t≤x)</strong></td>
               </tr>
             </table>
             </form>
@@ -375,8 +380,8 @@
             <form onsubmit="p2t();return false;">
             <table class='table'>
               <tr>
-                <td><input type='text' class="form-control" id='input_p2t' placeholder="p(t≤x)" autocomplete="off"></td>
-                <td><input type='text' class="form-control" id='input_p2t_df' placeholder="df" autocomplete="off"></td>
+                <td><input type='text' class="form-control" id='p2t_input_p' placeholder="p(t≤x)" autocomplete="off"></td>
+                <td><input type='text' class="form-control" id='p2t_input_df' placeholder="df" autocomplete="off"></td>
               </tr>
               <tr>
                 <td colspan="2">
@@ -385,7 +390,7 @@
                 </td>
               </tr>
               <tr class="table-active">
-                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();" data-toggle="tooltip" data-placement="bottom" title="click to copy"><strong id="answer_p2t">t-value</strong></td>
+                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();" data-toggle="tooltip" data-placement="bottom" title="click to copy"><strong id="p2t_output">t-value</strong></td>
               </tr>
             </table>
             </form>
@@ -413,8 +418,8 @@
             <form onsubmit="chi2p();return false;">
             <table class='table'>
               <tr>
-                <td><input type='text' class="form-control" id='input_chi2p' placeholder="chi2" autocomplete="off"></td>
-                <td><input type='text' class="form-control" id='input_chi2p_df' placeholder="df" autocomplete="off"></td>
+                <td><input type='text' class="form-control" id='chi2p_input_chi' placeholder="chi2" autocomplete="off"></td>
+                <td><input type='text' class="form-control" id='chi2p_input_df' placeholder="df" autocomplete="off"></td>
               </tr>
               <tr>
                 <td colspan="2">
@@ -423,10 +428,10 @@
                 </td>
               </tr>
               <tr class="table-active">
-                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();"><strong id="answer_chi2p_up" class='blue'>p(χ<sup>2</sup>≤x)</strong></td>
+                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();"><strong id="chi2p_output_up" class='blue'>p(χ<sup>2</sup>≤x)</strong></td>
               </tr>
               <tr class="table-active">
-                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();" data-toggle="tooltip" data-placement="bottom" title="click to copy"><strong id="answer_chi2p_low" class='red'>p(x≤χ<sup>2</sup>)</strong></td>
+                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();" data-toggle="tooltip" data-placement="bottom" title="click to copy"><strong id="chi2p_output_low" class='red'>p(x≤χ<sup>2</sup>)</strong></td>
               </tr>
             </table>
             </form>
@@ -444,8 +449,8 @@
             <form onsubmit="p2chi();return false;">
             <table class='table'>
               <tr>
-                <td><input type='text' class="form-control" id='input_p2chi' placeholder="p" autocomplete="off"></td>
-                <td><input type='text' class="form-control" id='input_p2chi_df' placeholder="df" autocomplete="off"></td>
+                <td><input type='text' class="form-control" id='p2chi_input_p' placeholder="p" autocomplete="off"></td>
+                <td><input type='text' class="form-control" id='p2chi_input_df' placeholder="df" autocomplete="off"></td>
               </tr>
               <tr>
                 <td colspan="2">
@@ -454,10 +459,10 @@
                 </td>
               </tr>
               <tr class="table-active">
-                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();"><strong id="answer_p2chi_up" class='blue'>χ<sup>2</sup></strong></td>
+                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();"><strong id="p2chi_output_up" class='blue'>χ<sup>2</sup></strong></td>
               </tr>
               <tr class="table-active">
-                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();" data-toggle="tooltip" data-placement="bottom" title="click to copy"><strong id="answer_p2chi_low" class='red'>χ<sup>2</sup></strong></td>
+                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();" data-toggle="tooltip" data-placement="bottom" title="click to copy"><strong id="p2chi_output_low" class='red'>χ<sup>2</sup></strong></td>
               </tr>
             </table>
             </form>
@@ -475,8 +480,8 @@
             <form onsubmit="f2p();return false;">
             <table class='table'>
               <tr>
-                <td><input type='text' class="form-control" id='input_f2p' placeholder="F" autocomplete="off"></td>
-                <td><input type='text' class="form-control" id='input_f2p_df' placeholder="df1 df2" autocomplete="off"></td>
+                <td><input type='text' class="form-control" id='f2p_input_f' placeholder="F" autocomplete="off"></td>
+                <td><input type='text' class="form-control" id='f2p_input_df' placeholder="df1 df2" autocomplete="off"></td>
               </tr>
               <tr>
                 <td colspan="2">
@@ -485,10 +490,10 @@
                 </td>
               </tr>
               <tr class="table-active">
-                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();"><strong id="answer_f2p_up" class='blue'>p(F≤x)</strong></td>
+                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();"><strong id="f2p_output_up" class='blue'>p(F≤x)</strong></td>
               </tr>
               <tr class="table-active">
-                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();" data-toggle="tooltip" data-placement="bottom" title="click to copy"><strong id="answer_f2p_low" class='red'>p(x≤F)</strong></td>
+                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();" data-toggle="tooltip" data-placement="bottom" title="click to copy"><strong id="f2p_output_low" class='red'>p(x≤F)</strong></td>
               </tr>
             </table>
             </form>
@@ -506,8 +511,8 @@
             <form onsubmit="p2f();return false;">
             <table class='table'>
               <tr>
-                <td><input type='text' class="form-control" id='input_p2f' placeholder="p" autocomplete="off"></td>
-                <td><input type='text' class="form-control" id='input_p2f_df' placeholder="df1 df2" autocomplete="off"></td>
+                <td><input type='text' class="form-control" id='p2f_input_p' placeholder="p" autocomplete="off"></td>
+                <td><input type='text' class="form-control" id='p2f_input_df' placeholder="df1 df2" autocomplete="off"></td>
               </tr>
               <tr>
                 <td colspan="2">
@@ -516,10 +521,10 @@
                 </td>
               </tr>
               <tr class="table-active">
-                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();"><strong id="answer_p2f_up" class='blue'>F-value</strong></td>
+                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();"><strong id="p2f_output_up" class='blue'>F-value</strong></td>
               </tr>
               <tr class="table-active">
-                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();" data-toggle="tooltip" data-placement="bottom" title="click to copy"><strong id="answer_p2f_low" class='red'>F-value</strong></td>
+                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();" data-toggle="tooltip" data-placement="bottom" title="click to copy"><strong id="p2f_output_low" class='red'>F-value</strong></td>
               </tr>
             </table>
             </form>
@@ -529,6 +534,73 @@
     </div>
 
   </div> <!--chi2 & F distribution-->
+
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="bs-component">
+        <div class="card border-primary mb-3" style="min-height: 20rem;">
+          <div class="card-header">χ<sup>2</sup> test</div>
+          <div class="card-body">
+            <form onsubmit="show_chitest();return false;">
+            <table class='table' style="table-layout: fixed;">
+              <tr>
+                <td colspan="2">
+                  <select class="form-control" id='chitest_selectbox' onchange="chitest_select();">
+                    <option value="fit" selected>fit</option>
+                    <option value="independence">independence</option>
+                  </select>
+                </td>
+                <td colspan="6" id="chitest_description" style="padding-top: 1.2em;">1st row: observations　2nd row: expected ratio, e.g. 1:2:3</td>
+              </tr>
+              <tr>
+                <td><input type='text' class="form-control chitest_input" id='chitest_input11' placeholder="value" autocomplete="off"></td>
+                <td><input type='text' class="form-control chitest_input" id='chitest_input12' autocomplete="off"></td>
+                <td><input type='text' class="form-control chitest_input" id='chitest_input13' autocomplete="off"></td>
+                <td><input type='text' class="form-control chitest_input" id='chitest_input14' autocomplete="off"></td>
+                <td><input type='text' class="form-control chitest_input" id='chitest_input15' autocomplete="off"></td>
+                <td><input type='text' class="form-control chitest_input" id='chitest_input16' autocomplete="off"></td>
+                <td><input type='text' class="form-control chitest_input" id='chitest_input17' autocomplete="off"></td>
+                <td><input type='text' class="form-control chitest_input" id='chitest_input18' autocomplete="off"></td>
+              </tr>
+              <tr>
+                <td><input type='text' class="form-control chitest_input" id='chitest_input21' placeholder="value" autocomplete="off"></td>
+                <td><input type='text' class="form-control chitest_input" id='chitest_input22' autocomplete="off"></td>
+                <td><input type='text' class="form-control chitest_input" id='chitest_input23' autocomplete="off"></td>
+                <td><input type='text' class="form-control chitest_input" id='chitest_input24' autocomplete="off"></td>
+                <td><input type='text' class="form-control chitest_input" id='chitest_input25' autocomplete="off"></td>
+                <td><input type='text' class="form-control chitest_input" id='chitest_input26' autocomplete="off"></td>
+                <td><input type='text' class="form-control chitest_input" id='chitest_input27' autocomplete="off"></td>
+                <td><input type='text' class="form-control chitest_input" id='chitest_input28' autocomplete="off"></td>
+              </tr>
+              <tr>
+                <td colspan="8">
+                  <button class="btn btn-outline-primary" onclick="show_chitest();return false">calculate</button>
+                  <button class="btn btn-outline-primary" onclick="reset_chitest.reset();return false">reset</button>
+                </td>
+              </tr>
+              <tr id='chitest_output_row_E'>
+                <td align="center"><strong class='chitest_output answer' id="chitest_E1" onclick="copy_to_clipboard();">E<sub>1</sub></strong></td>
+                <td align="center"><strong class='chitest_output answer' id="chitest_E2" onclick="copy_to_clipboard();">E<sub>2</sub></strong></td>
+                <td align="center"><strong class='chitest_output answer' id="chitest_E3" onclick="copy_to_clipboard();">E<sub>3</sub></strong></td>
+                <td align="center"><strong class='chitest_output answer' id="chitest_E4" onclick="copy_to_clipboard();">E<sub>4</sub></strong></td>
+                <td align="center"><strong class='chitest_output answer' id="chitest_E5" onclick="copy_to_clipboard();">E<sub>5</sub></strong></td>
+                <td align="center"><strong class='chitest_output answer' id="chitest_E6" onclick="copy_to_clipboard();">E<sub>6</sub></strong></td>
+                <td align="center"><strong class='chitest_output answer' id="chitest_E7" onclick="copy_to_clipboard();">E<sub>7</sub></strong></td>
+                <td align="center"><strong class='chitest_output answer' id="chitest_E8" onclick="copy_to_clipboard();">E<sub>8</sub></strong></td>
+              </tr>
+              <tr class="table-active" id='chi_output_row2'>
+                <td colspan="2" align="center"><strong class='chitest_output answer' id="chitest_output_chi" onclick="copy_to_clipboard();">χ<sup>2</sup></strong></td>
+                <td align="center"><strong class='chitest_output answer' id="chitest_output_df" onclick="copy_to_clipboard();">df</strong></td>
+                <td colspan="5"></td>
+              </tr>
+            </table>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div> <!--row chi2 test -->
 
   <div class="row">
     <div class="col-lg-12">
@@ -581,12 +653,12 @@
               <tr>
                 <td colspan="6">
                   <button class="btn btn-outline-info" onclick="show_gamma();return false">calculate</button>
-                  <button class="btn btn-outline-info" onclick="reset_gamma();return false">reset</button>
+                  <button class="btn btn-outline-info" onclick="reset_gamma.reset();return false">reset</button>
                 </td>
               </tr>
               <tr class="table-active">
-                <td colspan="3" align="center"><strong id="gamma1">P(x)</strong></td>
-                <td colspan="3" align="center"><strong id="gamma2">P(0~x)</strong></td>
+                <td colspan="3" align="center"><strong id="gamma_output1">P(x)</strong></td>
+                <td colspan="3" align="center"><strong id="gamma_output2">P(0~x)</strong></td>
               </tr>
             </table>
             </form>
@@ -803,9 +875,9 @@
     document.getElementById('ttest_output_t').innerText = 't = ' + round(result[0],5);
     document.getElementById('ttest_output_df').innerText = 'df = ' + round(result[1],5);
     document.getElementById('ttest_output_p').innerText = 'p = ' + round(t_to_p(Math.abs(result[0]),result[1]),5);
-    document.getElementById('input_t2p').value = round(Math.abs(result[0]),5);
-    document.getElementById('input_t2p_df').value = round(result[1],5);
-    document.getElementById('input_p2t_df').value = round(result[1],5);
+    document.getElementById('t2p_input_t').value = round(Math.abs(result[0]),5);
+    document.getElementById('t2p_input_df').value = round(result[1],5);
+    document.getElementById('p2t_input_df').value = round(result[1],5);
     t2p();
   }
   function show_ftest(){
@@ -816,9 +888,9 @@
     document.getElementById('ftest_output_f').innerText = 'f = ' + round(fvalue,5);
     document.getElementById('ftest_output_p_up').innerText = 'upper p = ' + round(pvalue,5);
     document.getElementById('ftest_output_p_low').innerText = 'lower p = ' + round(1-pvalue,5);
-    document.getElementById('input_f2p').value = round(fvalue,5);
-    document.getElementById('input_f2p_df').value = `${nums1[1]} ${nums2[1]}`;
-    document.getElementById('input_p2f_df').value = `${nums1[1]} ${nums2[1]}`;
+    document.getElementById('f2p_input_f').value = round(fvalue,5);
+    document.getElementById('f2p_input_df').value = `${nums1[1]} ${nums2[1]}`;
+    document.getElementById('p2f_input_df').value = `${nums1[1]} ${nums2[1]}`;
     f2p();
   }
 
@@ -832,79 +904,136 @@
       elem.classList.remove('is-invalid');
     }
   }
-  document.getElementById('input_p2z').oninput = validateP;
-  document.getElementById('input_p2t').oninput = validateP;
-  document.getElementById('input_p2chi').oninput = validateP;
-  document.getElementById('input_p2f').oninput = validateP;
+  document.getElementById('p2z_input').oninput = validateP;
+  document.getElementById('p2t_input_p').oninput = validateP;
+  document.getElementById('p2chi_input_p').oninput = validateP;
+  document.getElementById('p2f_input_p').oninput = validateP;
 
 
   // functions for calcualation z,t,chi<>P
   function z2p(){
-    let z = document.getElementById('input_z2p').value;
-    document.getElementById('answer_z2p').innerText = 'p=' + round(z_to_p(z),5);
+    let z = document.getElementById('z2p_input').value;
+    document.getElementById('z2p_output').innerText = 'p=' + round(z_to_p(z),5);
   }
   function p2z(){
-    if(!document.getElementById('input_p2z').classList.contains('is-invalid')){
-      let p = document.getElementById('input_p2z').value;
-      document.getElementById('answer_p2z').innerText = 'z=' + round(p_to_z(p),5);
+    if(!document.getElementById('p2z_input').classList.contains('is-invalid')){
+      let p = document.getElementById('p2z_input').value;
+      document.getElementById('p2z_output').innerText = 'z=' + round(p_to_z(p),5);
     }
   }
   function t2p(){
-    let t = Number(document.getElementById('input_t2p').value);
-    let df = Number(document.getElementById('input_t2p_df').value);
-    document.getElementById('answer_t2p').innerText = 'p=' + round(t_to_p(t,df),5);
+    let t = Number(document.getElementById('t2p_input_t').value);
+    let df = Number(document.getElementById('t2p_input_df').value);
+    document.getElementById('t2p_output').innerText = 'p=' + round(t_to_p(t,df),5);
   }
   function p2t(){
-    if(!document.getElementById('input_p2t').classList.contains('is-invalid')){
-      let p = Number(document.getElementById('input_p2t').value);
-      let df = Number(document.getElementById('input_p2t_df').value);
-      document.getElementById('answer_p2t').innerText = 't=' + round(p_to_t(p,df),5);
+    if(!document.getElementById('p2t_input_p').classList.contains('is-invalid')){
+      let p = Number(document.getElementById('p2t_input_p').value);
+      let df = Number(document.getElementById('p2t_input_df').value);
+      document.getElementById('p2t_output').innerText = 't=' + round(p_to_t(p,df),5);
     }
   }
   function chi2p(){
-    let chi = Number(document.getElementById('input_chi2p').value);
-    let df = Number(document.getElementById('input_chi2p_df').value);
+    let chi = Number(document.getElementById('chi2p_input_chi').value);
+    let df = Number(document.getElementById('chi2p_input_df').value);
     let answer = round(chi_to_p(chi,df),5);
-    document.getElementById('answer_chi2p_up').innerHTML = 'upper p=' + answer;
-    document.getElementById('answer_chi2p_low').innerHTML = 'lower p=' + round(1-answer,5);
+    document.getElementById('chi2p_output_up').innerHTML = 'upper p=' + answer;
+    document.getElementById('chi2p_output_low').innerHTML = 'lower p=' + round(1-answer,5);
   }
   function p2chi(){
-    if(!document.getElementById('input_p2chi').classList.contains('is-invalid')){
-      let p = Number(document.getElementById('input_p2chi').value);
-      let df = Number(document.getElementById('input_p2chi_df').value);
+    if(!document.getElementById('p2chi_input_p').classList.contains('is-invalid')){
+      let p = Number(document.getElementById('p2chi_input_p').value);
+      let df = Number(document.getElementById('p2chi_input_df').value);
       let answer1 = round(p_to_chi(p,df),5);
       let answer2 = round(p_to_chi(1-p,df),5);
-      document.getElementById('answer_p2chi_up').innerHTML = 'upper χ<sup>2</sup>=' + answer1;
-      document.getElementById('answer_p2chi_low').innerHTML = 'lower χ<sup>2</sup>=' + answer2;
+      document.getElementById('p2chi_output_up').innerHTML = 'upper χ<sup>2</sup>=' + answer1;
+      document.getElementById('p2chi_output_low').innerHTML = 'lower χ<sup>2</sup>=' + answer2;
     }
   }
   function f2p(){
-    let f = Number(document.getElementById('input_f2p').value);
-    let df = document.getElementById('input_f2p_df').value.trim().split(/\s+/).map(Number);
+    let f = Number(document.getElementById('f2p_input_f').value);
+    let df = document.getElementById('f2p_input_df').value.trim().split(/\s+/).map(Number);
     if(df.length==2 && df.every(Number)){
-      document.getElementById('input_f2p_df').classList.remove('is-invalid');
+      document.getElementById('f2p_input_df').classList.remove('is-invalid');
       let answer = round(f_to_p(f,df[0],df[1]),5);
-      document.getElementById('answer_f2p_up').innerHTML = 'upper p=' + answer;
-      document.getElementById('answer_f2p_low').innerHTML = 'lower p=' + round(1-answer,5);
+      document.getElementById('f2p_output_up').innerHTML = 'upper p=' + answer;
+      document.getElementById('f2p_output_low').innerHTML = 'lower p=' + round(1-answer,5);
     }else{
-      document.getElementById('input_f2p_df').classList.add('is-invalid');
-      document.getElementById('input_f2p_df').focus();
+      document.getElementById('f2p_input_df').classList.add('is-invalid');
+      document.getElementById('f2p_input_df').focus();
     }
   }
   function p2f(){
-    if(!document.getElementById('input_p2f').classList.contains('is-invalid')){
-      let p = Number(document.getElementById('input_p2f').value);
-      let df = document.getElementById('input_p2f_df').value.trim().split(/\s+/).map(Number);
+    if(!document.getElementById('p2f_input_p').classList.contains('is-invalid')){
+      let p = Number(document.getElementById('p2f_input_p').value);
+      let df = document.getElementById('p2f_input_df').value.trim().split(/\s+/).map(Number);
       if(df.length==2 && df.every(Number)){
-        document.getElementById('input_p2f_df').classList.remove('is-invalid'); //validate df
+        document.getElementById('p2f_input_df').classList.remove('is-invalid'); //validate df
         let answer1 = round(p_to_f(p,df[0],df[1]),5);
         let answer2 = round(p_to_f(1-p,df[0],df[1]),5);
-        document.getElementById('answer_p2f_up').innerHTML = 'upper F=' + answer1;
-        document.getElementById('answer_p2f_low').innerHTML = 'lower F=' + answer2;
+        document.getElementById('p2f_output_up').innerHTML = 'upper F=' + answer1;
+        document.getElementById('p2f_output_low').innerHTML = 'lower F=' + answer2;
       }else{
-        document.getElementById('input_p2f_df').classList.add('is-invalid');
-        document.getElementById('input_p2f_df').focus();
+        document.getElementById('p2f_input_df').classList.add('is-invalid');
+        document.getElementById('p2f_input_df').focus();
       }
+    }
+  }
+
+  // chi2 test
+  function chitest_select(){
+    if(document.getElementById('chitest_selectbox').value=="fit"){
+      document.getElementById('chitest_description').innerText = "1st row: observations　2nd row: expected ratio, e.g. 1:2:3";
+      document.getElementById('chitest_output_row_E').style.display = '';
+    }else{
+      document.getElementById('chitest_description').innerText = "1st row: data1　2nd row: data2";
+      document.getElementById('chitest_output_row_E').style.display = 'none';
+    }
+    
+  }
+  const chitest_inputs1 = ['chitest_input11','chitest_input12','chitest_input13','chitest_input14','chitest_input15','chitest_input16','chitest_input17','chitest_input18']
+  const chitest_inputs2 = ['chitest_input21','chitest_input22','chitest_input23','chitest_input24','chitest_input25','chitest_input26','chitest_input27','chitest_input28']
+  const chitest_E = ['chitest_E1','chitest_E2','chitest_E3','chitest_E4','chitest_E5','chitest_E6','chitest_E7','chitest_E8']
+  function show_chitest(){
+    let arr1 = []; let arr2 = [];
+    // collect input1
+    for(id of chitest_inputs1){
+      var num = Number(document.getElementById(id).value);
+      if(num!=0 && num!=NaN){
+        arr1.push(num);
+      }else{break;}
+    }
+    // collect input2
+    for(id of chitest_inputs2){
+      var num = Number(document.getElementById(id).value);
+      if(num!=0 && num!=NaN){
+        arr2.push(num);
+      }else{break;}
+    }
+    if(arr1.length==arr2.length){
+      let sum1 = sum(arr1); let sum2 = sum(arr2);
+      let chi2_value = 0;
+      // test for fit
+      if(document.getElementById('chitest_selectbox').value=='fit'){
+        arr2 = arr2.map(x => x*sum1/sum2); // convert to Ei
+        for(var i=0;i<8;i++){
+          if(arr2[i]!=undefined){
+          document.getElementById(chitest_E[i]).innerHTML = `E<sub>${i+1}</sub>=${round(arr2[i],5)}`;
+          }else{
+          document.getElementById(chitest_E[i]).innerHTML = `E<sub>${i+1}</sub>`;
+          }
+        }
+        chi2_value = chi2(arr1,arr2);
+      }else{ // test for independence
+        chi2_value = chi2_independence(arr1,arr2);
+      }
+      let df = arr1.length-1;
+      document.getElementById('chitest_output_chi').innerHTML = `χ<sup>2</sup> = ${round(chi2_value,5)}`;
+      document.getElementById('chitest_output_df').innerText = `df = ${df}`;
+      document.getElementById('chi2p_input_chi').value = round(chi2_value,5);
+      document.getElementById('chi2p_input_df').value = df;
+      document.getElementById('p2chi_input_df').value = df;
+      chi2p();
     }
   }
 
@@ -973,8 +1102,8 @@
       var gamma_k = gamma(k);
       var p = x**(k-1)*(Math.E**(-x/t))/gamma_k/(t**k);
       var cum = incomplete_gamma(k,x/t)/gamma_k;
-      document.getElementById('gamma1').innerText = 'P(t) = ' + round(p,5);
-      document.getElementById('gamma2').innerText = 'P(x≥t) = ' + round(1-cum,5);
+      document.getElementById('gamma_output1').innerText = 'P(t) = ' + round(p,5);
+      document.getElementById('gamma_output2').innerText = 'P(x≥t) = ' + round(1-cum,5);
     }
   }
 
@@ -984,22 +1113,29 @@
 // focusID(string) - one element to be focused
 // labels_class(dict) - {classname: innerText}
 class ResetBtn{
-  constructor(inputs,labelsID,focusID,labels_class=null){
-    this.inputs = inputs;
-    this.labelsID = labelsID;
-    this.labels_class = labels_class;
+  constructor(inputIDs,labelIDs,focusID,labelclass=null,inputclass=null){
+    this.inputIDs = inputIDs;
+    this.labelIDs = labelIDs;
     this.focus = focusID;
+    this.labelclass = labelclass;
+    this.inputclass = inputclass;
+    
   }
   reset(){
-    for(var elemID of this.inputs){ // reset input
+    for(var elemID of this.inputIDs){ // reset input
       document.getElementById(elemID).value = '';
     }
-    for(var labelID in this.labelsID){ // reset label
-      document.getElementById(labelID).innerHTML = this.labelsID[labelID];
+    for(var labelID in this.labelIDs){ // reset label
+      document.getElementById(labelID).innerHTML = this.labelIDs[labelID];
     }
-    for(var label_class in this.labels_class){ 
+    for(var label_class in this.labelclass){ 
       for(var elem of document.getElementsByClassName(label_class)){
-        elem.innerText = this.labels_class[label_class];
+        elem.innerHTML = this.labels_class[label_class];
+      }
+    }
+    for(var input_class in this.inputclass){ 
+      for(var elem of document.getElementsByClassName(input_class)){
+        elem.value = this.inputclass[input_class];
       }
     }
     document.getElementById(this.focus).focus(); // focus
@@ -1007,31 +1143,23 @@ class ResetBtn{
 }
 var reset_base = new ResetBtn(['num_to_convert'],{'answer':'answer'},'num_to_convert');
 var reset_gcd = new ResetBtn(['gcd_input'],{'answer_gcd':'answer'},'gcd_input');
-var reset_stats = new ResetBtn(
-  ['stats_input1','stats_input2'],
-  {'cov':'covariance','corr':'correlation'},
-  'stats_input1',
-  {'stats_output':0});
+var reset_stats = new ResetBtn(['stats_input1','stats_input2'],{'cov':'covariance','corr':'correlation'},'stats_input1',{'stats_output':0});
 var reset_ttest = new ResetBtn(['ttest_input1','ttest_input2'],{'ttest_output_t':'t-value','ttest_output_df':'df','ttest_output_p':'p(t≤x)'},'ttest_input1');
 var reset_ftest = new ResetBtn(['ftest_input1','ftest_input2'],{'ftest_output_f':'F-value','ftest_output_p_up':'p(F≤x)','ftest_output_p_low':'p(x≤F)'},'ftest_input1');
-var reset_z2p = new ResetBtn(['input_z2p'],{'answer_z2p':'p(z≤x)'},'input_z2p');
-var reset_p2z = new ResetBtn(['input_p2z'],{'answer_p2z':'z-score'},'input_p2z');
-var reset_t2p = new ResetBtn(['input_t2p','input_t2p_df'],{'answer_t2p':'p(t≤x)'},'input_t2p');
-var reset_p2t = new ResetBtn(['input_p2t','input_p2t_df'],{'answer_p2t':'t-value'},'input_p2t');
-var reset_chi2p = new ResetBtn(['input_chi2p','input_chi2p_df'],{'answer_chi2p_up':'p(χ<sup>2</sup>≤x)','answer_chi2p_low':'p(x≤χ<sup>2</sup>)'},'input_chi2p');
-var reset_p2chi = new ResetBtn(['input_p2chi','input_p2chi_df'],{'answer_p2chi_up':'χ<sup>2</sup>','answer_p2chi_low':'χ<sup>2</sup>'},'input_p2chi');
-var reset_f2p = new ResetBtn(['input_f2p','input_f2p_df'],{'answer_f2p_up':'p(F≤x)','answer_f2p_low':'p(x≤F)'},'input_f2p');
-var reset_p2f = new ResetBtn(['input_p2f','input_p2f_df'],{'answer_p2f_up':'F-value','answer_p2f_low':'F-value'},'input_p2f');
+var reset_z2p = new ResetBtn(['z2p_input'],{'z2p_output':'p(z≤x)'},'z2p_input');
+var reset_p2z = new ResetBtn(['p2z_input'],{'p2z_output':'z-score'},'p2z_input');
+var reset_t2p = new ResetBtn(['t2p_input_t','t2p_input_df'],{'t2p_output':'p(t≤x)'},'t2p_input_t');
+var reset_p2t = new ResetBtn(['p2t_input_p','p2t_input_df'],{'p2t_output':'t-value'},'p2t_input_p');
+var reset_chi2p = new ResetBtn(['chi2p_input_chi','chi2p_input_df'],{'chi2p_output_up':'p(χ<sup>2</sup>≤x)','chi2p_output_low':'p(x≤χ<sup>2</sup>)'},'chi2p_input_chi');
+var reset_p2chi = new ResetBtn(['p2chi_input_p','p2chi_input_df'],{'p2chi_output_up':'χ<sup>2</sup>','p2chi_output_low':'χ<sup>2</sup>'},'p2chi_input_p');
+var reset_f2p = new ResetBtn(['f2p_input_f','f2p_input_df'],{'f2p_output_up':'p(F≤x)','f2p_output_low':'p(x≤F)'},'f2p_input_f');
+var reset_p2f = new ResetBtn(['p2f_input_p','p2f_input_df'],{'p2f_output_up':'F-value','p2f_output_low':'F-value'},'p2f_input_p');
+var reset_chitest = new ResetBtn([],
+{'chitest_output_chi':'χ<sup>2</sup>','chitest_output_df':'df','chitest_E1':'E<sub>1</sub>','chitest_E2':'E<sub>2</sub>','chitest_E3':'E<sub>3</sub>','chitest_E4':'E<sub>4</sub>','chitest_E5':'E<sub>5</sub>','chitest_E6':'E<sub>6</sub>','chitest_E7':'E<sub>7</sub>','chitest_E8':'E<sub>8</sub>'}
+,'chitest_input11',null,{'chitest_input':''});
 var reset_poisson = new ResetBtn(['poisson_input1','poisson_input1'],{'poisson_output1':'P(X=k)','poisson_output1':'P(X≥k)'},'poisson_input1')
+var reset_gamma = new ResetBtn(['gamma_input1','gamma_input2','gamma_input3'],{'gamma_output1':'P(t)','gamma_output2':'P(t)'},'gamma_input1')
 
-  function reset_gamma(){
-    document.getElementById('gamma_input1').value = '';
-    document.getElementById('gamma_input2').value = '';
-    document.getElementById('gamma_input3').value = '';
-    document.getElementById('gamma1').innerText = 'P(x)';
-    document.getElementById('gamma2').innerText = 'P(0~x)';
-    document.getElementById('gamma_input1').focus();
-  }
 
   function show_function(){
     elem = document.getElementById('functions');
