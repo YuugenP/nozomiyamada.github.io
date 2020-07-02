@@ -1519,6 +1519,8 @@ pre code {
   width: 100%;
   margin-bottom: 1rem;
   color: #212529;
+  word-break: break-all;
+  word-wrap: break-all;
 }
 
 .table th,

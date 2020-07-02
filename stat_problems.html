@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+	.answer{margin:1em}
+	.show{color:green}
+	.show:hover{cursor: pointer;}
+	li{margin:1em}
+	h2{margin:1em}
+</style>
+<script>
+	function show_answer(){
+		elem = event.target.nextElementSibling;
+		if(elem.style.display=='none'){
+			elem.style.display = '';
+			event.target.innerText = 'hide answer';
+		}else{
+			elem.style.display='none';
+			event.target.innerText = 'show answer';
+		}
+	}
+</script>
+</head>
+
+<body>
+	<a href="tool.html" target="_blank">calculator</a>
+	<h2>hypothesis testing</h2>
+	<ol>
+		<li>
+			ผลิตภัณฑ์ของบริษัท A ที่ลูกค้าซื้อ ค่าเฉลี่ยเป็น 12000 บาทและ SD เป็น 4000 บาท<br>
+			วันนี้มีลูกค้า 300 คน และค่าเฉลี่ยที่ลูกค้าใช้เป็น 11200 บาท<br>
+			ความแตกต่างของค่าเฉลี่ยนี้สำคัญหรือไม่ (α=0.05 สองทาง)<br>
+			<code class='show' onclick='show_answer();'>show answer</code>
+			<div class='answer' style='display:none'>
+				<p>
+					<a href="https://www.codecogs.com/eqnedit.php?latex=\begin{align*}&space;&H_0:~\overline{x}&space;=&space;\mu&space;\\&space;&z&space;=&space;\frac{\overline{x}-\mu}{\sigma/\sqrt{n}}&space;=&space;\frac{12000-11200}{4000/\sqrt{300}}&space;=&space;3.464&space;\\&space;&p_z(z=3.464)&space;=&space;0.000266&space;<&space;0.025&space;\\&space;\end{align*}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\begin{align*}&space;&H_0:~\overline{x}&space;=&space;\mu&space;\\&space;&z&space;=&space;\frac{\overline{x}-\mu}{\sigma/\sqrt{n}}&space;=&space;\frac{12000-11200}{4000/\sqrt{300}}&space;=&space;3.464&space;\\&space;&p_z(z=3.464)&space;=&space;0.000266&space;<&space;0.025&space;\\&space;\end{align*}" title="\begin{align*} &H_0:~\overline{x} = \mu \\ &z = \frac{\overline{x}-\mu}{\sigma/\sqrt{n}} = \frac{12000-11200}{4000/\sqrt{300}} = 3.464 \\ &p_z(z=3.464) = 0.000266 < 0.025 \\ \end{align*}" /></a>
+				</p>
+				เพราะฉะนั้น สามารถ reject H<sub>0</sub> ได้<br>
+				ถ้า sample size ใหญ่แบบนี้ ต่างกันนิดเดียวก็สำคัญ
+			</div>
+		</li>
+		<li>
+			ที่ร้าน A ค่าเลี่ยยที่ลูกค้าใช้เป็น 3000 บาท (ไม่รู้ว่าค่าเบี่ยงเบนมาตรฐานเท่าไร)<br>
+			วันนี้มีลูกค้ามา 30 คน และใช้เฉลี่ย 3300 บาทต่อคน (ค่าเบี่ยงเบนมาตรฐาน 900 บาท)<br>
+			ความแตกต่างของค่าเฉลี่ยนี้สำคัญหรือไม่ (α=0.05 สองทาง)<br>
+			<code class='show' onclick='show_answer();'>show answer</code>
+			<div class='answer' style='display:none'>
+				H<sub>0</sub>: μ = μ<sub>0</sub>
+				<p>
+					<a href="https://www.codecogs.com/eqnedit.php?latex=\begin{align*}&space;&t&space;=&space;\frac{3280-3000}{950/\sqrt{30}}&space;=&space;1.614&space;\\&space;&p(t=1.614,&space;df=29)&space;=&space;0.058679&space;>&space;0.025&space;\end{align*}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\begin{align*}&space;&t&space;=&space;\frac{3280-3000}{950/\sqrt{30}}&space;=&space;1.614&space;\\&space;&p(t=1.614,&space;df=29)&space;=&space;0.058679&space;>&space;0.025&space;\end{align*}" title="\begin{align*} &t = \frac{3280-3000}{950/\sqrt{30}} = 1.614 \\ &p(t=1.614, df=29) = 0.058679 > 0.025 \end{align*}" /></a>	
+				</p>
+				เพราะฉะนั้น ไม่สามารถ reject H<sub>0</sub> ได้
+			</div>
+		</li>
+	</ol>
+
+
+
+	
+</body>
+</html>
