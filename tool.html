@@ -925,7 +925,7 @@
   function validation_poisson(){
     var l = document.getElementById('poisson_input1').value;
     var k = document.getElementById('poisson_input2').value;
-    if(l!='' && !Number.isInteger(Number(l))){
+    if(l!='' && Number(l)<0){
       document.getElementById('poisson_input1').classList.add('is-invalid')
     }else{
       document.getElementById('poisson_input1').classList.remove('is-invalid')
