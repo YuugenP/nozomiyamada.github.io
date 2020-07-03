@@ -80,11 +80,17 @@ function corr_arr(arr1,arr2){
   return cov(arr1,arr2)/std(arr1)/std(arr2);
 }
 
-function chi2(arr1,arr2){
+function chi2(arr1,arr2,yates=false){
+  let chi2_value = 0;
   if(arr1.length!=arr2.length){
     return NaN;
+  }else if(yates==true && arr1.length==2){
+    let sum1 = sum(arr1); let sum2 = sum(arr2);
+    let N = sum1 + sum2;
+    console.log(sum1,sum2,N);
+    chi2_value = N*((Math.abs(arr1[0]*arr2[1]-arr2[0]*arr1[1])-N/2)**2)/sum1/sum2/(arr1[0]+arr2[0])/(arr1[1]+arr2[1])
+    console.log(chi2_value);
   }else{
-    let chi2_value = 0;
     for(var i=0;i<arr1.length;i++){
       chi2_value += (arr1[i]-arr2[i])**2/arr2[i];
     }
