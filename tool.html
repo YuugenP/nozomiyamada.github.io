@@ -211,9 +211,9 @@
                 <td align="center"><strong class='stats_output answer' id="skewness2" onclick="copy_to_clipboard();">0</strong></td>
               </tr>
               <tr id='stats_output_row3' style="display: none">
-                <td align="center"><strong class='answer' id="cov" onclick="copy_to_clipboard();">covariance</strong></td>
-                <td align="center"><strong class='answer' id="corr" onclick="copy_to_clipboard();">correlation</strong></td>
-                <td colspan="2" align="center"><strong class='answer' id="regression">regression</strong></td>
+                <td align="center"><strong class='answer' id="stats_cov" onclick="copy_to_clipboard();">covariance</strong></td>
+                <td align="center"><strong class='answer' id="stats_corr" onclick="copy_to_clipboard();">correlation</strong></td>
+                <td colspan="2" align="center"><strong class='answer' id="stats_regression">regression</strong></td>
               </tr>
             </table>
             </form>
@@ -829,7 +829,7 @@
     let s1 = round(std(nums1),5);
     document.getElementById('df').innerText = N1-1;
     document.getElementById('mean').innerText = mu1;
-    document.getElementById('sem').innerText = round(sem(nums1),5)
+    document.getElementById('sem').innerText = round(sem(nums1),5);
     document.getElementById('median').innerText = round(median(nums1),5);
     document.getElementById('skewness').innerText = round(skewness(nums1),5);
     if(document.getElementById('unbiased').checked==true){
@@ -837,7 +837,6 @@
     }else{
       document.getElementById('std').innerText = round(std(nums1,false),5);
     }
-    
     if(document.getElementById("stats_add_check").checked==true){
       let nums2 = document.getElementById('stats_input2').value.trim().split(/[,\s]+/).map(Number);
       let N2 = Number(nums2.length);
@@ -845,7 +844,7 @@
       let s2 = round(std(nums2),5);
       document.getElementById('df2').innerText = N2-1;
       document.getElementById('mean2').innerText = round(mean(nums2),5);
-      document.getElementById('sem2').innerText = round(sem(nums2),5)
+      document.getElementById('sem2').innerText = round(sem(nums2),5);
       document.getElementById('median2').innerText = round(median(nums2),5);
       document.getElementById('skewness2').innerText = round(skewness(nums2),5);
       if(document.getElementById('unbiased').checked==true){
@@ -853,6 +852,7 @@
       }else{
         document.getElementById('std2').innerText = round(std(nums2,false),5);
       }
+
       document.getElementById('ttest_input1').value = `${mu1} ${s1} ${N1}`;
       document.getElementById('ttest_input2').value = `${mu2} ${s2} ${N2}`;
       show_ttest();
@@ -862,13 +862,13 @@
       if(nums1.length==nums2.length){
         let cov12 = cov(nums1,nums2);
         let regression_result = regression(nums1,nums2);
-        document.getElementById('cov').innerText = 'cov = ' + round(cov12,5);
-        document.getElementById('corr').innerText = 'corr = ' + round(corr(cov12,s1,s2),5);
-        document.getElementById('regression').innerText = `Y = ${round(regression_result[0],4)} + ${round(regression_result[1],4)} X`
+        document.getElementById('stats_cov').innerText = 'cov = ' + round(cov12,5);
+        document.getElementById('stats_corr').innerText = 'corr = ' + round(corr(cov12,s1,s2),5);
+        document.getElementById('stats_regression').innerText = `Y = ${round(regression_result[0],4)} + ${round(regression_result[1],4)} X`
       }else{
-        document.getElementById('cov').innerText = 'covariance';
-        document.getElementById('corr').innerText = 'correlation';
-        document.getElementById('regression').innerText = 'regression';
+        document.getElementById('stats_cov').innerText = 'covariance';
+        document.getElementById('stats_corr').innerText = 'correlation';
+        document.getElementById('stats_regression').innerText = 'regression';
       }
     }
     
@@ -1148,7 +1148,7 @@ class ResetBtn{
 }
 var reset_base = new ResetBtn(['num_to_convert'],{'answer':'answer'},'num_to_convert');
 var reset_gcd = new ResetBtn(['gcd_input'],{'answer_gcd':'answer'},'gcd_input');
-var reset_stats = new ResetBtn(['stats_input1','stats_input2'],{'cov':'covariance','corr':'correlation','regression':'regression'},'stats_input1',{'stats_output':0});
+var reset_stats = new ResetBtn(['stats_input1','stats_input2'],{'stats_cov':'covariance','stats_corr':'correlation','stats_regression':'regression'},'stats_input1',{'stats_output':0});
 var reset_ttest = new ResetBtn(['ttest_input1','ttest_input2'],{'ttest_output_t':'t-value','ttest_output_df':'df','ttest_output_p':'p(t≤x)'},'ttest_input1');
 var reset_ftest = new ResetBtn(['ftest_input1','ftest_input2'],{'ftest_output_f':'F-value','ftest_output_p_up':'p(F≤x)','ftest_output_p_low':'p(x≤F)'},'ftest_input1');
 var reset_z2p = new ResetBtn(['z2p_input'],{'z2p_output':'p(z≤x)'},'z2p_input');

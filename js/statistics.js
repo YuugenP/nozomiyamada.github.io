@@ -14,11 +14,12 @@ function mean(arr){
 function median(arr){
   if(!Array.isArray(arr)){arr = [arr];}
   let N = arr.length;
-  arr.sort();
+  _arr = arr.slice(); // deep copy
+  _arr.sort((a,b) => a-b);
   if(N%2==0){
-    return (arr[N/2] + arr[N/2-1])/2;
+    return (_arr[N/2] + _arr[N/2-1])/2;
   }else{
-    return arr[(N-1)/2];
+    return _arr[(N-1)/2];
   }
 }
 
