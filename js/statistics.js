@@ -71,13 +71,18 @@ function cov(arr1, arr2, unbiased=true){
     }
   }
 }
-
 function corr(cov12,s1,s2){
   return cov12/s1/s2;
 }
 
 function corr_arr(arr1,arr2){
   return cov(arr1,arr2)/std(arr1)/std(arr2);
+}
+
+function regression(arr1,arr2){
+  let coef = cov(arr1,arr2)/variance(arr1);
+  let intercept = mean(arr2) - coef*mean(arr1);
+  return [intercept, coef];
 }
 
 function chi2(arr1,arr2,yates=false){
@@ -87,14 +92,13 @@ function chi2(arr1,arr2,yates=false){
   }else if(yates==true && arr1.length==2){
     let sum1 = sum(arr1); let sum2 = sum(arr2);
     let N = sum1 + sum2;
-    console.log(sum1,sum2,N);
     chi2_value = N*((Math.abs(arr1[0]*arr2[1]-arr2[0]*arr1[1])-N/2)**2)/sum1/sum2/(arr1[0]+arr2[0])/(arr1[1]+arr2[1])
-    console.log(chi2_value);
+    return chi2_value;
   }else{
     for(var i=0;i<arr1.length;i++){
       chi2_value += (arr1[i]-arr2[i])**2/arr2[i];
     }
-  return chi2_value;
+    return chi2_value;
   }
 }
 

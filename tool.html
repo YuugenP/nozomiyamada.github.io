@@ -213,6 +213,7 @@
               <tr id='stats_output_row3' style="display: none">
                 <td align="center"><strong class='answer' id="cov" onclick="copy_to_clipboard();">covariance</strong></td>
                 <td align="center"><strong class='answer' id="corr" onclick="copy_to_clipboard();">correlation</strong></td>
+                <td colspan="2" align="center"><strong class='answer' id="regression">regression</strong></td>
               </tr>
             </table>
             </form>
@@ -860,11 +861,14 @@
       show_ftest();
       if(nums1.length==nums2.length){
         let cov12 = cov(nums1,nums2);
+        let regression_result = regression(nums1,nums2);
         document.getElementById('cov').innerText = 'cov = ' + round(cov12,5);
         document.getElementById('corr').innerText = 'corr = ' + round(corr(cov12,s1,s2),5);
+        document.getElementById('regression').innerText = `Y = ${round(regression_result[0],4)} + ${round(regression_result[1],4)} X`
       }else{
         document.getElementById('cov').innerText = 'covariance';
         document.getElementById('corr').innerText = 'correlation';
+        document.getElementById('regression').innerText = 'regression';
       }
     }
     
@@ -1131,7 +1135,7 @@ class ResetBtn{
     }
     for(var label_class in this.labelclass){ 
       for(var elem of document.getElementsByClassName(label_class)){
-        elem.innerHTML = this.labels_class[label_class];
+        elem.innerHTML = this.labelclass[label_class];
       }
     }
     for(var input_class in this.inputclass){ 
@@ -1144,7 +1148,7 @@ class ResetBtn{
 }
 var reset_base = new ResetBtn(['num_to_convert'],{'answer':'answer'},'num_to_convert');
 var reset_gcd = new ResetBtn(['gcd_input'],{'answer_gcd':'answer'},'gcd_input');
-var reset_stats = new ResetBtn(['stats_input1','stats_input2'],{'cov':'covariance','corr':'correlation'},'stats_input1',{'stats_output':0});
+var reset_stats = new ResetBtn(['stats_input1','stats_input2'],{'cov':'covariance','corr':'correlation','regression':'regression'},'stats_input1',{'stats_output':0});
 var reset_ttest = new ResetBtn(['ttest_input1','ttest_input2'],{'ttest_output_t':'t-value','ttest_output_df':'df','ttest_output_p':'p(t≤x)'},'ttest_input1');
 var reset_ftest = new ResetBtn(['ftest_input1','ftest_input2'],{'ftest_output_f':'F-value','ftest_output_p_up':'p(F≤x)','ftest_output_p_low':'p(x≤F)'},'ftest_input1');
 var reset_z2p = new ResetBtn(['z2p_input'],{'z2p_output':'p(z≤x)'},'z2p_input');
