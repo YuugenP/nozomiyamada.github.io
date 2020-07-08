@@ -115,10 +115,12 @@
             <li><code>cov(nums1, nums2, unbiased=true)</code></li>
             <li><code>corr(cov12, s1, s2)</code></li>
             <li><code>corr_arr(arr1, arr2)</code></li>
+            <li><code>regression(arr1, arr2)</code></li>
             <li><code>chi2(arr1, arr2, yates=false)</code></li>
             <li><code>chi2_independence(arr1,arr2)</code></li>
             <li><code>welch(mu1,mu2,s1,s2,n1,n2)</code></li> 
             <li><code>welch_arr(arr1, arr2)</code></li>
+            <li><code>effect_size(arr1, arr2)</code></li>
             <li><code>convert_base(num, base_from, base_to)</code></li>
             <li><code>Euler_const</code></li>
             <li><code>gauss_legendre(func,a,b,split=1000,n=5)</code></li>
@@ -211,6 +213,7 @@
                 <td align="center"><strong class='stats_output answer' id="skewness2" onclick="copy_to_clipboard();">0</strong></td>
               </tr>
               <tr id='stats_output_row3' style="display: none">
+                <td align="center"><strong class='answer' id="stats_pooled_sd" onclick="copy_to_clipboard();">pooled SD</strong></td>
                 <td align="center"><strong class='answer' id="stats_cov" onclick="copy_to_clipboard();">covariance</strong></td>
                 <td align="center"><strong class='answer' id="stats_corr" onclick="copy_to_clipboard();">correlation</strong></td>
                 <td colspan="2" align="center"><strong class='answer' id="stats_regression">regression</strong></td>
@@ -233,20 +236,21 @@
             <form onsubmit="show_ttest();return false;">
             <table class='table' style="table-layout: fixed;">
               <tr>
-                <td colspan="3"><input type='text' class="form-control" id='ttest_input1' placeholder="mean1, SD1, n1" autocomplete="off"></td>
-                <td colspan="3"><input type='text' class="form-control" id='ttest_input2' placeholder="mean2, SD2, n2" autocomplete="off"></td>
+                <td colspan="2"><input type='text' class="form-control" id='ttest_input1' placeholder="mean1, SD1, n1" autocomplete="off"></td>
+                <td colspan="2"><input type='text' class="form-control" id='ttest_input2' placeholder="mean2, SD2, n2" autocomplete="off"></td>
               </tr>
 
               <tr>
-                <td colspan="6">
+                <td colspan="4">
                   <button class="btn btn-outline-info" onclick="show_ttest();return false">calculate</button>
                   <button class="btn btn-outline-info" onclick="reset_ttest.reset();return false">reset</button>
                 </td>
               </tr>
               <tr class="table-active">
-                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();" data-toggle="tooltip" data-placement="bottom" title="click to copy"><strong id="ttest_output_t">t-value</strong></td>
-                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();" data-toggle="tooltip" data-placement="bottom" title="click to copy"><strong id="ttest_output_df">df</strong></td>
-                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();" data-toggle="tooltip" data-placement="bottom" title="click to copy"><strong id="ttest_output_p">p(t≤x)</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();" data-toggle="tooltip" data-placement="bottom" title="click to copy"><strong id="ttest_output_t">t-value</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();" data-toggle="tooltip" data-placement="bottom" title="click to copy"><strong id="ttest_output_df">df</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();" data-toggle="tooltip" data-placement="bottom" title="click to copy"><strong id="ttest_output_p">p(t≤x)</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();" data-toggle="tooltip" data-placement="bottom" title="click to copy"><strong id="ttest_output_effect">effect size g</strong></td>
               </tr>
             </table>
             </form>
@@ -859,12 +863,13 @@
       document.getElementById('ftest_input1').value = `${s1} ${N1-1}`;
       document.getElementById('ftest_input2').value = `${s2} ${N2-1}`;
       show_ftest();
+      document.getElementById('stats_pooled_sd').innerText = 'pooled SD = ' + round(Math.sqrt(pooled_variance(nums1,nums2)),5);
       if(nums1.length==nums2.length){
         let cov12 = cov(nums1,nums2);
         let regression_result = regression(nums1,nums2);
         document.getElementById('stats_cov').innerText = 'cov = ' + round(cov12,5);
         document.getElementById('stats_corr').innerText = 'corr = ' + round(corr(cov12,s1,s2),5);
-        document.getElementById('stats_regression').innerText = `Y = ${round(regression_result[0],4)} + ${round(regression_result[1],4)} X`
+        document.getElementById('stats_regression').innerText = `Y = ${round(regression_result[0],4)} + ${round(regression_result[1],4)} X`;
       }else{
         document.getElementById('stats_cov').innerText = 'covariance';
         document.getElementById('stats_corr').innerText = 'correlation';
@@ -880,6 +885,7 @@
     document.getElementById('ttest_output_t').innerText = 't = ' + round(result[0],5);
     document.getElementById('ttest_output_df').innerText = 'df = ' + round(result[1],5);
     document.getElementById('ttest_output_p').innerText = 'p = ' + round(t_to_p(Math.abs(result[0]),result[1]),5);
+    document.getElementById('ttest_output_effect').innerText = 'g = ' + round(effect_size(nums1[0],nums2[0],nums1[1],nums2[1],nums1[2],nums2[2]),5);
     document.getElementById('t2p_input_t').value = round(Math.abs(result[0]),5);
     document.getElementById('t2p_input_df').value = round(result[1],5);
     document.getElementById('p2t_input_df').value = round(result[1],5);
@@ -1148,8 +1154,8 @@ class ResetBtn{
 }
 var reset_base = new ResetBtn(['num_to_convert'],{'answer':'answer'},'num_to_convert');
 var reset_gcd = new ResetBtn(['gcd_input'],{'answer_gcd':'answer'},'gcd_input');
-var reset_stats = new ResetBtn(['stats_input1','stats_input2'],{'stats_cov':'covariance','stats_corr':'correlation','stats_regression':'regression'},'stats_input1',{'stats_output':0});
-var reset_ttest = new ResetBtn(['ttest_input1','ttest_input2'],{'ttest_output_t':'t-value','ttest_output_df':'df','ttest_output_p':'p(t≤x)'},'ttest_input1');
+var reset_stats = new ResetBtn(['stats_input1','stats_input2'],{'stats_cov':'covariance','stats_corr':'correlation','stats_regression':'regression','stats_pooled_sd':'pooled SD'},'stats_input1',{'stats_output':0});
+var reset_ttest = new ResetBtn(['ttest_input1','ttest_input2'],{'ttest_output_t':'t-value','ttest_output_df':'df','ttest_output_p':'p(t≤x)','ttest_output_effect':'effect size g'},'ttest_input1');
 var reset_ftest = new ResetBtn(['ftest_input1','ftest_input2'],{'ftest_output_f':'F-value','ftest_output_p_up':'p(F≤x)','ftest_output_p_low':'p(x≤F)'},'ftest_input1');
 var reset_z2p = new ResetBtn(['z2p_input'],{'z2p_output':'p(z≤x)'},'z2p_input');
 var reset_p2z = new ResetBtn(['p2z_input'],{'p2z_output':'z-score'},'p2z_input');
