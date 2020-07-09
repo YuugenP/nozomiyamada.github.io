@@ -823,7 +823,7 @@
   }
 
   function show_stats(){
-    let nums1 = document.getElementById('stats_input1').value.trim().split(/[,\s]+/).map(Number); // delete spaces, split, cast as Number
+    let nums1 = document.getElementById('stats_input1').value.trim().split(/[,、\s]+/).map(Number); // delete spaces, split, cast as Number
     let N1 = Number(nums1.length);
     let mu1 = round(mean(nums1),5);
     let s1 = round(std(nums1),5);
