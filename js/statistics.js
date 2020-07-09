@@ -134,6 +134,23 @@ function welch_arr(arr1,arr2){
   return [t,df];
 }
 
+function pooled_variance(arr1,arr2){
+  return (variance(arr1,false)*arr1.length + variance(arr2,false)*arr2.length)/(arr1.length+arr2.length-2);
+}
+
+function effect_size(mu1,mu2,s1,s2,n1,n2){
+  let pooled_std = Math.sqrt((s1*(n1-1)+s2*(n2-2))/(n1+n2-2))
+  return (mu2-mu1)/pooled_std;
+}
+
+function effect_size_arr(arr1,arr2){
+  let pooled_std = Math.sqrt(pooled_variance(arr1,arr2));
+  return (mean(arr2)-mean(arr1))/pooled_std;
+}
+
+
+////////// distributions //////////
+
 /** 
  * normal distribution
  * z-score -> one-tailed p(z≤x) [0≤p<0.5]
