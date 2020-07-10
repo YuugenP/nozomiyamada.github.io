@@ -1,8 +1,8 @@
 ////////// statistics /////////////
 
 function sum(arr){
-  if(!Array.isArray(arr)){arr = [arr];}
-  return arr.reduce(function(acc, cur){return acc + cur;});
+  if(!Array.isArray(arr)){arr = [arr];} // one Number -> array
+  return arr.reduce((acc, cur) => acc + cur);
 }
 
 function mean(arr){
@@ -31,7 +31,7 @@ function variance(arr, unbiased=true){
     var N = arr.length;
   }
   let mu = mean(arr);
-  return arr.reduce(function(acc, cur){return acc+(cur-mu)**2;},0)/N;
+  return arr.reduce((acc, cur) => acc+(cur-mu)**2, 0)/N;
 }
 
 function std(arr, unbiased=true){
