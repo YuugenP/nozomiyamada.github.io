@@ -48,7 +48,7 @@ function skewness(arr, regularize=false){
   let N = arr.length;
   let mu = mean(arr);
   let sd = std(arr, false);
-  let sk = arr.reduce(function(acc, cur){return acc+((cur-mu)/sd)**3;},0)/N;
+  let sk = arr.reduce((acc, cur) => acc+((cur-mu)/sd)**3 ,0)/N;
   if(regularize==false){
     return sk;
   }else{
@@ -116,6 +116,25 @@ function chi2_independence(arr1,arr2){
       chi2_value += (arr2[i]-E2)**2/E2;
     }
   return chi2_value;
+  }
+}
+
+function adjusted_residual(arr1,arr2){
+  if(arr1.length!=arr2.length){
+    return NaN;
+  }else{
+    let sum1 = sum(arr1); let sum2 = sum(arr2);
+    let sum_all = sum1 + sum2;
+    let res1 = []; let res2 = [];
+    for(var i=0;i<arr1.length;i++){
+      var E1 = (arr1[i]+arr2[i])*sum1/(sum1+sum2);
+      var E2 = (arr1[i]+arr2[i])*sum2/(sum1+sum2);
+      var res_var1 = (1-sum1/sum_all)*(1-(arr1[i]+arr2[i])/sum_all);
+      var res_var2 = (1-sum2/sum_all)*(1-(arr1[i]+arr2[i])/sum_all);
+      res1.push((arr1[i]-E1)/Math.sqrt(E1*res_var1));
+      res2.push((arr2[i]-E2)/Math.sqrt(E2*res_var2));
+    }
+  return [res1,res2];
   }
 }
 
