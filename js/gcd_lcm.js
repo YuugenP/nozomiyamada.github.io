@@ -26,6 +26,17 @@ function gcd(nums){
   return nums[0]
 }
 
+// find irreducible fraction
+function irreducible(a,b){
+  let GCD = gcd2(a,b);
+  while(GCD > 1){
+    a /= GCD;
+    b /= GCD;
+    GCD = gcd2(a,b);
+  }
+  console.log(a+'/'+b);
+}
+
 // LCM of 2 numbers
 // a, b must be integers
 // a * b = GCD * LCM
