@@ -545,7 +545,7 @@
     <div class="col-lg-12">
       <div class="bs-component">
         <div class="card border-primary mb-3" style="min-height: 20rem;">
-          <div class="card-header">χ<sup>2</sup> test</div>
+          <div class="card-header">χ<sup>2</sup> test & Residual Analysis</div>
           <div class="card-body">
             <form onsubmit="show_chitest();return false;">
             <table class='table' style="table-layout: fixed;">
@@ -593,6 +593,16 @@
                 <td align="center"><strong class='chitest_output answer' id="chitest_E6" onclick="copy_to_clipboard();">E<sub>6</sub></strong></td>
                 <td align="center"><strong class='chitest_output answer' id="chitest_E7" onclick="copy_to_clipboard();">E<sub>7</sub></strong></td>
                 <td align="center"><strong class='chitest_output answer' id="chitest_E8" onclick="copy_to_clipboard();">E<sub>8</sub></strong></td>
+              </tr>
+              <tr id='chitest_output_row_residual' style='display:none'>
+                <td align="center"><strong class='chitest_output answer' id="chitest_res1" onclick="copy_to_clipboard();">Res<sub>1</sub></strong></td>
+                <td align="center"><strong class='chitest_output answer' id="chitest_res2" onclick="copy_to_clipboard();">Res<sub>2</sub></strong></td>
+                <td align="center"><strong class='chitest_output answer' id="chitest_res3" onclick="copy_to_clipboard();">Res<sub>3</sub></strong></td>
+                <td align="center"><strong class='chitest_output answer' id="chitest_res4" onclick="copy_to_clipboard();">Res<sub>4</sub></strong></td>
+                <td align="center"><strong class='chitest_output answer' id="chitest_res5" onclick="copy_to_clipboard();">Res<sub>5</sub></strong></td>
+                <td align="center"><strong class='chitest_output answer' id="chitest_res6" onclick="copy_to_clipboard();">Res<sub>6</sub></strong></td>
+                <td align="center"><strong class='chitest_output answer' id="chitest_res7" onclick="copy_to_clipboard();">Res<sub>7</sub></strong></td>
+                <td align="center"><strong class='chitest_output answer' id="chitest_res8" onclick="copy_to_clipboard();">Res<sub>8</sub></strong></td>
               </tr>
               <tr class="table-active" id='chi_output_row2'>
                 <td colspan="2" align="center"><strong class='chitest_output answer' id="chitest_output_chi" onclick="copy_to_clipboard();">χ<sup>2</sup></strong></td>
@@ -996,15 +1006,18 @@
     if(document.getElementById('chitest_selectbox').value=="fit"){
       document.getElementById('chitest_description').innerText = "1st row: observations　2nd row: expected ratio, e.g. 1:2:3";
       document.getElementById('chitest_output_row_E').style.display = '';
+      document.getElementById('chitest_output_row_residual').style.display = 'none';
     }else{
       document.getElementById('chitest_description').innerText = "1st row: data1　2nd row: data2";
       document.getElementById('chitest_output_row_E').style.display = 'none';
+      document.getElementById('chitest_output_row_residual').style.display = '';
     }
     
   }
   const chitest_inputs1 = ['chitest_input11','chitest_input12','chitest_input13','chitest_input14','chitest_input15','chitest_input16','chitest_input17','chitest_input18']
   const chitest_inputs2 = ['chitest_input21','chitest_input22','chitest_input23','chitest_input24','chitest_input25','chitest_input26','chitest_input27','chitest_input28']
   const chitest_E = ['chitest_E1','chitest_E2','chitest_E3','chitest_E4','chitest_E5','chitest_E6','chitest_E7','chitest_E8']
+  const chitest_res = ['chitest_res1','chitest_res2','chitest_res3','chitest_res4','chitest_res5','chitest_res6','chitest_res7','chitest_res8']
   function show_chitest(){
     let arr1 = []; let arr2 = [];
     // collect input1
@@ -1037,6 +1050,14 @@
         chi2_value = chi2(arr1,arr2);
       }else{ // test for independence
         chi2_value = chi2_independence(arr1,arr2);
+        let residuals = adjusted_residual(arr1,arr2)[0];
+        for(var i=0;i<8;i++){ // Residual
+          if(residuals[i]!=undefined){
+          document.getElementById(chitest_res[i]).innerHTML = `p<sub>${i+1}</sub>=${round(2*z_to_p(Math.abs(residuals[i])),5)}`;
+          }else{
+          document.getElementById(chitest_res[i]).innerHTML = `Res<sub>${i+1}</sub>`;
+          }
+        }
       }
       let df = arr1.length-1;
       document.getElementById('chitest_output_chi').innerHTML = `χ<sup>2</sup> = ${round(chi2_value,5)}`;
@@ -1166,7 +1187,10 @@ var reset_p2chi = new ResetBtn(['p2chi_input_p','p2chi_input_df'],{'p2chi_output
 var reset_f2p = new ResetBtn(['f2p_input_f','f2p_input_df'],{'f2p_output_up':'p(F≤x)','f2p_output_low':'p(x≤F)'},'f2p_input_f');
 var reset_p2f = new ResetBtn(['p2f_input_p','p2f_input_df'],{'p2f_output_up':'F-value','p2f_output_low':'F-value'},'p2f_input_p');
 var reset_chitest = new ResetBtn([],
-{'chitest_output_chi':'χ<sup>2</sup>','chitest_output_df':'df','chitest_E1':'E<sub>1</sub>','chitest_E2':'E<sub>2</sub>','chitest_E3':'E<sub>3</sub>','chitest_E4':'E<sub>4</sub>','chitest_E5':'E<sub>5</sub>','chitest_E6':'E<sub>6</sub>','chitest_E7':'E<sub>7</sub>','chitest_E8':'E<sub>8</sub>'}
+{'chitest_output_chi':'χ<sup>2</sup>','chitest_output_df':'df',
+  'chitest_E1':'E<sub>1</sub>','chitest_E2':'E<sub>2</sub>','chitest_E3':'E<sub>3</sub>','chitest_E4':'E<sub>4</sub>','chitest_E5':'E<sub>5</sub>','chitest_E6':'E<sub>6</sub>','chitest_E7':'E<sub>7</sub>','chitest_E8':'E<sub>8</sub>',
+  'chitest_res1':'Res<sub>1</sub>','chitest_res2':'Res<sub>2</sub>','chitest_res3':'Res<sub>3</sub>','chitest_res4':'Res<sub>4</sub>','chitest_res5':'Res<sub>5</sub>','chitest_res6':'Res<sub>6</sub>','chitest_res7':'Res<sub>7</sub>','chitest_res8':'Res<sub>8</sub>'
+}
 ,'chitest_input11',null,{'chitest_input':''});
 var reset_poisson = new ResetBtn(['poisson_input1','poisson_input1'],{'poisson_output1':'P(X=k)','poisson_output1':'P(X≥k)'},'poisson_input1')
 var reset_gamma = new ResetBtn(['gamma_input1','gamma_input2','gamma_input3'],{'gamma_output1':'P(t)','gamma_output2':'P(t)'},'gamma_input1')
