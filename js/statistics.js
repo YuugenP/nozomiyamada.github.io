@@ -80,6 +80,17 @@ function corr_arr(arr1,arr2){
   return cov(arr1,arr2)/std(arr1)/std(arr2);
 }
 
+function spearman(arr1,arr2){
+  arr1 = argsort(arr1,reverse=true,plusn=1);
+  arr2 = argsort(arr2,reverse=true,plusn=1);
+  let N = arr1.length;
+  let rho = 0;
+  for(var i=0;i<N;i++){
+    rho += (arr1[i] - arr2[i])**2
+  }
+  return 1 - 6*rho/N/(N**2-1)
+}
+
 function regression(arr1,arr2){
   let coef = cov(arr1,arr2)/variance(arr1);
   let intercept = mean(arr2) - coef*mean(arr1);
