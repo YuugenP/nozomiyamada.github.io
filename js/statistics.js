@@ -234,7 +234,7 @@ function t_to_p(t,df){
  */
 function p_to_t(p,df){
   let x = inv_regularized_beta(df/2,df/2,1-p);
-  return (2*x-1)/2*Math.sqrt(df/x/(1-x))
+  return (2*x-1)/2*Math.sqrt(df/x/(1-x));
 }
 
 
@@ -282,14 +282,15 @@ function poisson_to_p(lambda, k, split=1e3, n=5){
   let poi = function(t){
     return (lambda**t) * (Math.exp(-lambda)) / gamma(t+1)
   }
-  return 1 - gauss_legendre(0, k, poi, split, n)
+  p = 1 - gauss_legendre(0, k, poi, split, n);
+  return (p>0)? p:0;
 }
 function poisson_cum(lambda, k){
   let cum = 0;
   for(var i=0;i<=k;i++){
     cum += poisson(lambda, k);
   }
-  return cum
+  return cum;
 }
 
 

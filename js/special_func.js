@@ -115,13 +115,18 @@ function inv_erf2(y, N=300){
  * @param {Int} split the number of intervals
  * @param {Int} n order of Legendre polynomial
  */
-function gamma(s,split=1e3,n=5){
-  let func = function(t){return Math.pow(t,s-1)*Math.exp(-t);}; 
-  return gauss_legendre(func,0,s*10,split,n); // must not integrate up to infinity
-}
-function incomplete_gamma(s,x,split=1e3,n=5){
-  let func = function(t){return Math.pow(t,s-1)*Math.exp(-t);} 
-  return gauss_legendre(func,0,x,split,n);
+function gamma(s,split=1e4,n=5){
+  let func = function(t){return Math.pow(t,s-1)*Math.exp(-t);};
+  if(s>=2){
+    return gauss_legendre(func,0,s*10,split,n); // must not integrate up to infinity
+  }else if(0.5<s && s<2){
+    return gamma(s+1)/s;
+  }else if(s==0.5){
+    return Math.sqrt(Math.PI);
+  }else{
+    return Math.PI/Math.sin(Math.PI*s)/gamma(1-s);
+  }
+  
 }
 function inv_gamma(y,iter=30){
   let f_prime = function(s){
@@ -132,9 +137,14 @@ function inv_gamma(y,iter=30){
   while(gamma(x0) < y){x *= 1.5;} // find initial x0 s.t. Γ(x0)>y
   return newton(gamma,f_prime,y,x0,iter);
 }
-function inv_incomplete_gamma(s,y,x0=s,iter=30){
+function incomplete_gamma(s,x,split=1e3,n=5){
+  let func = function(t){return Math.pow(t,s-1)*Math.exp(-t);} 
+  return gauss_legendre(func,0,x,split,n);
+}
+function inv_incomplete_gamma(s,y,iter=30){
   let f = function(t){return incomplete_gamma(s,t);}
   let f_prime = function(t){return Math.pow(t,s-1)*Math.exp(-t);}
+  let x0 = (y>1)? s:0.1;
   return newton(f,f_prime,y,x0,iter);
 }
 
@@ -222,7 +232,37 @@ const GL_weights = {
     [0,0.41795918367346938776],
     [0.40584515137739716691,0.38183005050511894494],
     [0.74153118559939443986,0.27970539148927666793],
-    [0.94910791234275852453,0.1294849661688696932]]
+    [0.94910791234275852453,0.1294849661688696932]],
+  10:[[-0.973906528517171720078,0.0666713443086881375936],
+    [-0.865063366688984510732,0.149451349150580593146],
+    [-0.6794095682990244062343,0.219086362515982043996],
+    [-0.4333953941292471907993,0.2692667193099963550912],
+    [-0.1488743389816312108848,0.2955242247147528701739],
+    [0.1488743389816312108848,0.295524224714752870174],
+    [0.4333953941292471907993,0.269266719309996355091],
+    [0.6794095682990244062343,0.2190863625159820439955],
+    [0.8650633666889845107321,0.1494513491505805931458],
+    [0.973906528517171720078,0.0666713443086881375936]],
+  20:[[-0.9931285991850949247861,0.0176140071391521183119],
+    [-0.9639719272779137912677,0.04060142980038694133104],
+    [-0.9122344282513259058678,0.0626720483341090635695],
+    [-0.8391169718222188233945,0.0832767415767047487248],
+    [-0.7463319064601507926143,0.1019301198172404350368],
+    [-0.6360536807265150254528,0.1181945319615184173124],
+    [-0.5108670019508270980044,0.1316886384491766268985],
+    [-0.3737060887154195606725,0.1420961093183820513293],
+    [-0.2277858511416450780805,0.1491729864726037467878],
+    [-0.07652652113349733375464,0.1527533871307258506981],
+    [0.0765265211334973337546,0.152753387130725850698],
+    [0.2277858511416450780805,0.149172986472603746788],
+    [0.3737060887154195606725,0.142096109318382051329],
+    [0.5108670019508270980044,0.1316886384491766268985],
+    [0.6360536807265150254528,0.1181945319615184173124],
+    [0.7463319064601507926143,0.101930119817240435037],
+    [0.8391169718222188233945,0.083276741576704748725],
+    [0.9122344282513259058678,0.0626720483341090635695],
+    [0.9639719272779137912677,0.040601429800386941331],
+    [0.9931285991850949247861,0.0176140071391521183119]]
   }
 
 /**
@@ -260,11 +300,12 @@ function gauss_legendre(func,a,b,split=1000,n=5){
  * @param {Number} x0 initial guess for x
  * @param {Int} iter the number of max iteration, default = 30
  */
-function newton(func,func_prime,y,x0,iter=30){
+function newton(func,func_prime,y_target,x0,iter=30){
   let x = x0;
   for(var i=0;i<iter;i++){
-    x += (y-func(x))/func_prime(x)
-    if(Math.abs(y-func(x))<1e-12){console.log(`iteration: ${i}/${iter}`);break;}
+    y = func(x);
+    x += (y_target-y)/func_prime(x)
+    if(Math.abs(y_target-y)<1e-12){console.log(`iteration: ${i}/${iter}`);break;}
   }
   return x;
 }

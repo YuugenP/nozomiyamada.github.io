@@ -594,64 +594,61 @@
             <form onsubmit="show_chitest();return false;">
             <table class='table' style="table-layout: fixed;">
               <tr>
-                <td colspan="2">
+                <td>
                   <select class="form-control" id='chitest_selectbox' onchange="chitest_select();">
                     <option value="fit" selected>fit</option>
                     <option value="independence">independence</option>
                   </select>
                 </td>
-                <td colspan="6" id="chitest_description" style="padding-top: 1.2em;">1st row: observations　2nd row: expected ratio, e.g. 1:2:3</td>
+                <td colspan="3" id="chitest_description" style="padding-top: 1.2em;">1st row: observations　2nd row: expected ratio, e.g. 1:2:3</td>
+              </tr>
+            </table>
+            <table class='table' style="table-layout: fixed;">
+              <tr id="chitest_input_row1">
+                <td><input type="text" class="form-control chitest_input1" id="chitest_input11" placeholder="value" autocomplete="off"></td>
+                <td><input type="text" class="form-control chitest_input1" autocomplete="off"></td>
+              </tr>
+              <tr id="chitest_input_row2">
+                <td><input type="text" class="form-control chitest_input2" placeholder="value" autocomplete="off"></td>
+                <td><input type="text" class="form-control chitest_input2" autocomplete="off"></td>
+              </tr>
+              <tr id="chitest_output_row_E_label">
+                <td align="center"><strong class="chitest_output answer">E<sub>1</sub></strong></td>
+                <td align="center"><strong class="chitest_output answer">E<sub>2</sub></strong></td>
+              </tr>
+              <tr id="chitest_output_row_E" class="table-active">
+                <td align="center" class="answer" onclick="copy_to_clipboard();"><strong class="chitest_output">-</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();"><strong class="chitest_output">-</strong></td>
+              </tr>
+              <tr id="chitest_output_row_res_label" style="display:none">
+                <td align="center"><strong class="chitest_output answer">Res<sub>1</sub></strong></td>
+                <td align="center"><strong class="chitest_output answer">Res<sub>2</sub></strong></td>
+              </tr>
+              <tr id="chitest_output_row_res" class="table-active" style="display:none">
+                <td align="center" class="answer" onclick="copy_to_clipboard();"><strong class="chitest_output">-</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();"><strong class="chitest_output">-</strong></td>
               </tr>
               <tr>
-                <td><input type='text' class="form-control chitest_input" id='chitest_input11' placeholder="value" autocomplete="off"></td>
-                <td><input type='text' class="form-control chitest_input" id='chitest_input12' autocomplete="off"></td>
-                <td><input type='text' class="form-control chitest_input" id='chitest_input13' autocomplete="off"></td>
-                <td><input type='text' class="form-control chitest_input" id='chitest_input14' autocomplete="off"></td>
-                <td><input type='text' class="form-control chitest_input" id='chitest_input15' autocomplete="off"></td>
-                <td><input type='text' class="form-control chitest_input" id='chitest_input16' autocomplete="off"></td>
-                <td><input type='text' class="form-control chitest_input" id='chitest_input17' autocomplete="off"></td>
-                <td><input type='text' class="form-control chitest_input" id='chitest_input18' autocomplete="off"></td>
-              </tr>
-              <tr>
-                <td><input type='text' class="form-control chitest_input" id='chitest_input21' placeholder="value" autocomplete="off"></td>
-                <td><input type='text' class="form-control chitest_input" id='chitest_input22' autocomplete="off"></td>
-                <td><input type='text' class="form-control chitest_input" id='chitest_input23' autocomplete="off"></td>
-                <td><input type='text' class="form-control chitest_input" id='chitest_input24' autocomplete="off"></td>
-                <td><input type='text' class="form-control chitest_input" id='chitest_input25' autocomplete="off"></td>
-                <td><input type='text' class="form-control chitest_input" id='chitest_input26' autocomplete="off"></td>
-                <td><input type='text' class="form-control chitest_input" id='chitest_input27' autocomplete="off"></td>
-                <td><input type='text' class="form-control chitest_input" id='chitest_input28' autocomplete="off"></td>
-              </tr>
-              <tr>
-                <td colspan="8">
+                <td id="chitest_btns" colspan="2">
                   <button class="btn btn-outline-primary" onclick="show_chitest();return false">calculate</button>
                   <button class="btn btn-outline-primary" onclick="reset_chitest.reset();return false">reset</button>
+                  <button class="btn btn-outline-primary" onclick="add_column_chitest(add=true);return false">+ column</button>
+                  <button class="btn btn-outline-primary" onclick="add_column_chitest(add=false);return false">- column</button>
                 </td>
               </tr>
-              <tr id='chitest_output_row_E'>
-                <td align="center"><strong class='chitest_output answer' id="chitest_E1" onclick="copy_to_clipboard();">E<sub>1</sub></strong></td>
-                <td align="center"><strong class='chitest_output answer' id="chitest_E2" onclick="copy_to_clipboard();">E<sub>2</sub></strong></td>
-                <td align="center"><strong class='chitest_output answer' id="chitest_E3" onclick="copy_to_clipboard();">E<sub>3</sub></strong></td>
-                <td align="center"><strong class='chitest_output answer' id="chitest_E4" onclick="copy_to_clipboard();">E<sub>4</sub></strong></td>
-                <td align="center"><strong class='chitest_output answer' id="chitest_E5" onclick="copy_to_clipboard();">E<sub>5</sub></strong></td>
-                <td align="center"><strong class='chitest_output answer' id="chitest_E6" onclick="copy_to_clipboard();">E<sub>6</sub></strong></td>
-                <td align="center"><strong class='chitest_output answer' id="chitest_E7" onclick="copy_to_clipboard();">E<sub>7</sub></strong></td>
-                <td align="center"><strong class='chitest_output answer' id="chitest_E8" onclick="copy_to_clipboard();">E<sub>8</sub></strong></td>
+            </table>
+            <table class='table' style="table-layout: fixed;">
+              <tr id="chitest_output_row_label">
+                <td align="center"><strong>χ<sup>2</sup></strong></td>
+                <td align="center"><strong>df</strong></td>
+                <td align="center"><strong>upper p</strong></td>
+                <td></td>
               </tr>
-              <tr id='chitest_output_row_residual' style='display:none'>
-                <td align="center"><strong class='chitest_output answer' id="chitest_res1" onclick="copy_to_clipboard();">Res<sub>1</sub></strong></td>
-                <td align="center"><strong class='chitest_output answer' id="chitest_res2" onclick="copy_to_clipboard();">Res<sub>2</sub></strong></td>
-                <td align="center"><strong class='chitest_output answer' id="chitest_res3" onclick="copy_to_clipboard();">Res<sub>3</sub></strong></td>
-                <td align="center"><strong class='chitest_output answer' id="chitest_res4" onclick="copy_to_clipboard();">Res<sub>4</sub></strong></td>
-                <td align="center"><strong class='chitest_output answer' id="chitest_res5" onclick="copy_to_clipboard();">Res<sub>5</sub></strong></td>
-                <td align="center"><strong class='chitest_output answer' id="chitest_res6" onclick="copy_to_clipboard();">Res<sub>6</sub></strong></td>
-                <td align="center"><strong class='chitest_output answer' id="chitest_res7" onclick="copy_to_clipboard();">Res<sub>7</sub></strong></td>
-                <td align="center"><strong class='chitest_output answer' id="chitest_res8" onclick="copy_to_clipboard();">Res<sub>8</sub></strong></td>
-              </tr>
-              <tr class="table-active" id='chi_output_row2'>
-                <td colspan="2" align="center"><strong class='chitest_output answer' id="chitest_output_chi" onclick="copy_to_clipboard();">χ<sup>2</sup></strong></td>
-                <td align="center"><strong class='chitest_output answer' id="chitest_output_df" onclick="copy_to_clipboard();">df</strong></td>
-                <td colspan="5"></td>
+              <tr class="table-active" id='chitest_output_row'>
+                <td align="center" class="answer" onclick="copy_to_clipboard();" id="chitest_output_chi"><strong class='chitest_output'>-</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();" id="chitest_output_df"><strong class='chitest_output'>-</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();" id="chitest_output_p"><strong class='chitest_output'>-</strong></td>
+                <td></td>
               </tr>
             </table>
             </form>
@@ -677,22 +674,22 @@
             <form onsubmit="show_anova();return false;">
             <table class='table' style="table-layout: fixed;">
               <tr id='anova_input_row1'>
-                <td colspan="6"><input type='text' class="form-control" id='anova_input1' placeholder="values of group1 with space" autocomplete="off"></td>
+                <td colspan="6"><input type='text' class="form-control" id='anova_input1' placeholder="values of group1 with space or comma" autocomplete="off"></td>
               </tr>
               <tr id='anova_input_row2'>
-                <td colspan="6"><input type='text' class="form-control" id='anova_input2' placeholder="values of group2 with space" autocomplete="off"></td>
+                <td colspan="6"><input type='text' class="form-control" id='anova_input2' placeholder="values of group2 with space or comma" autocomplete="off"></td>
               </tr>
               <tr id='anova_input_row3'>
-                <td colspan="6"><input type='text' class="form-control" id='anova_input3' placeholder="values of group3 with space" autocomplete="off"></td>
+                <td colspan="6"><input type='text' class="form-control" id='anova_input3' placeholder="values of group3 with space or comma" autocomplete="off"></td>
               </tr>
               <tr id='anova_input_row4' style="display: none;">
-                <td colspan="6"><input type='text' class="form-control" id='anova_input4' placeholder="values of group4 with space" autocomplete="off"></td>
+                <td colspan="6"><input type='text' class="form-control" id='anova_input4' placeholder="values of group4 with space or comma" autocomplete="off"></td>
               </tr>
               <tr id='anova_input_row5' style="display: none;">
-                <td colspan="6"><input type='text' class="form-control" id='anova_input5' placeholder="values of group5 with space" autocomplete="off"></td>
+                <td colspan="6"><input type='text' class="form-control" id='anova_input5' placeholder="values of group5 with space or comma" autocomplete="off"></td>
               </tr>
               <tr id='anova_input_row6' style="display: none;">
-                <td colspan="6"><input type='text' class="form-control" id='anova_input6' placeholder="values of group6 with space" autocomplete="off"></td>
+                <td colspan="6"><input type='text' class="form-control" id='anova_input6' placeholder="values of group6 with space or comma" autocomplete="off"></td>
               </tr>
               <tr>
                 <td colspan="6">
@@ -1185,47 +1182,55 @@ function p2f(){
 function chitest_select(){
   if(document.getElementById('chitest_selectbox').value=="fit"){
     document.getElementById('chitest_description').innerText = "1st row: observations　2nd row: expected ratio, e.g. 1:2:3";
+    document.getElementById('chitest_output_row_E_label').style.display = '';
     document.getElementById('chitest_output_row_E').style.display = '';
-    document.getElementById('chitest_output_row_residual').style.display = 'none';
+    document.getElementById('chitest_output_row_res_label').style.display = 'none';
+    document.getElementById('chitest_output_row_res').style.display = 'none';
   }else{
     document.getElementById('chitest_description').innerText = "1st row: data1　2nd row: data2";
+    document.getElementById('chitest_output_row_E_label').style.display = 'none';
     document.getElementById('chitest_output_row_E').style.display = 'none';
-    document.getElementById('chitest_output_row_residual').style.display = '';
+    document.getElementById('chitest_output_row_res_label').style.display = '';
+    document.getElementById('chitest_output_row_res').style.display = '';
   }
-  
 }
-const chitest_inputs1 = ['chitest_input11','chitest_input12','chitest_input13','chitest_input14','chitest_input15','chitest_input16','chitest_input17','chitest_input18']
-const chitest_inputs2 = ['chitest_input21','chitest_input22','chitest_input23','chitest_input24','chitest_input25','chitest_input26','chitest_input27','chitest_input28']
-const chitest_E = ['chitest_E1','chitest_E2','chitest_E3','chitest_E4','chitest_E5','chitest_E6','chitest_E7','chitest_E8']
-const chitest_res = ['chitest_res1','chitest_res2','chitest_res3','chitest_res4','chitest_res5','chitest_res6','chitest_res7','chitest_res8']
+
+function add_column_chitest(add=true){
+  let row1 = document.getElementById('chitest_input_row1');
+  let row2 = document.getElementById('chitest_input_row2');
+  let row3 = document.getElementById('chitest_output_row_E_label');
+  let row4 = document.getElementById('chitest_output_row_E');
+  let row5 = document.getElementById('chitest_output_row_res_label');
+  let row6 = document.getElementById('chitest_output_row_res');
+  if(add==true && row1.children.length<10){
+    row1.innerHTML += '<td><input type="text" class="form-control chitest_input1" autocomplete="off"></td>';
+    row2.innerHTML += '<td><input type="text" class="form-control chitest_input2" autocomplete="off"></td>';
+    row3.innerHTML += `<td align="center"><strong class="chitest_output answer">E<sub>${row1.children.length}</sub></strong></td>`;
+    row4.innerHTML += '<td align="center" class="answer" onclick="copy_to_clipboard();"><strong class="chitest_output">-</strong></td>'
+    row5.innerHTML += `<td align="center"><strong class="chitest_output answer">Res<sub>${row1.children.length}</sub></strong></td>`;
+    row6.innerHTML += '<td align="center" class="answer" onclick="copy_to_clipboard();"><strong class="chitest_output">-</strong></td>'
+  }else if(add==false && row1.children.length>=3){
+    row1.lastElementChild.remove(); row2.lastElementChild.remove();
+    row3.lastElementChild.remove(); row4.lastElementChild.remove();
+    row5.lastElementChild.remove(); row6.lastElementChild.remove();
+  }
+  document.getElementById('chitest_btns').colSpan = row1.children.length;
+  document.getElementById('chitest_output_row_label').colSpan = row1.children.length;
+  document.getElementById('chitest_output_row').colSpan = row1.children.length;
+}
+
 function show_chitest(){
-  let arr1 = []; let arr2 = [];
   // collect input1
-  for(id of chitest_inputs1){
-    var num = Number(document.getElementById(id).value);
-    if(num!=0 && num!=NaN){
-      arr1.push(num);
-    }else{break;}
-  }
-  // collect input2
-  for(id of chitest_inputs2){
-    var num = Number(document.getElementById(id).value);
-    if(num!=0 && num!=NaN){
-      arr2.push(num);
-    }else{break;}
-  }
+  arr1 = Array.from(document.getElementsByClassName('chitest_input1')).map(x=>Number(x.value));
+  arr2 = Array.from(document.getElementsByClassName('chitest_input2')).map(x=>Number(x.value));
   if(arr1.length!=0 && arr1.length==arr2.length){
     let sum1 = sum(arr1); let sum2 = sum(arr2);
     let chi2_value = 0;
     // test for fit
     if(document.getElementById('chitest_selectbox').value=='fit'){
       arr2 = arr2.map(x => x*sum1/sum2); // convert to Ei
-      for(var i=0;i<8;i++){
-        if(arr2[i]!=undefined){
-        document.getElementById(chitest_E[i]).innerHTML = `E<sub>${i+1}</sub>=${round(arr2[i],5)}`;
-        }else{
-        document.getElementById(chitest_E[i]).innerHTML = `E<sub>${i+1}</sub>`;
-        }
+      for(var i=0;i<arr1.length;i++){
+        document.getElementById('chitest_output_row_E').children[i].firstElementChild.innerText = round(arr2[i],5);
       }
       chi2_value = chi2(arr1,arr2);
     }else{ // test for independence
@@ -1240,12 +1245,14 @@ function show_chitest(){
       }
     }
     let df = arr1.length-1;
-    document.getElementById('chitest_output_chi').innerHTML = `χ<sup>2</sup> = ${round(chi2_value,5)}`;
-    document.getElementById('chitest_output_df').innerText = `df = ${df}`;
+    document.getElementById('chitest_output_chi').firstElementChild.innerText = round(chi2_value,5);
+    document.getElementById('chitest_output_df').firstElementChild.innerText = df;
+    document.getElementById('chitest_output_p').firstElementChild.innerText = round(chi_to_p(chi2_value,df),5);
     document.getElementById('chi2p_input_chi').value = round(chi2_value,5);
     document.getElementById('chi2p_input_df').value = df;
+    document.getElementById('p2chi_input_p').value = 0.05;
     document.getElementById('p2chi_input_df').value = df;
-    chi2p();
+    chi2p(); p2chi();
   }
 }
 
