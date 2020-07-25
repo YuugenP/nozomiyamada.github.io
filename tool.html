@@ -164,7 +164,7 @@
 
   <div class="row">
     <div class="col-lg-12">
-      <h2 onclick="show_hide('content_stats');">- Basic Statistics Values</h2>
+      <h2 onclick="show_hide('content_stats');">ー Basic Statistical Values</h2>
     </div>
   </div>
 
@@ -172,15 +172,15 @@
     <div class="col-lg-12">
       <div class="bs-component">
         <div class="card border-primary mb-3" style="min-height: 20rem;">
-          <div class="card-header">basic statistics values</div>
+          <div class="card-header">basic statistical values</div>
           <div class="card-body">
             <form onsubmit="show_stats();return false;">
             <table class='table' style="table-layout: fixed;">
               <tr id='stats_input_row1'>
-                <td colspan="6"><input type='text' class="form-control" id='stats_input1' placeholder="values with space" autocomplete="off"></td>
+                <td colspan="6"><input type='text' class="form-control" id='stats_input1' placeholder="values with space or comma" autocomplete="off"></td>
               </tr>
               <tr id='stats_input_row2' style="display: none;">
-                <td colspan="6"><input type='text' class="form-control" id='stats_input2' placeholder="values with space" autocomplete="off"></td>
+                <td colspan="6"><input type='text' class="form-control" id='stats_input2' placeholder="values with space or comma" autocomplete="off"></td>
               </tr>
               <tr>
                 <td colspan="6">
@@ -193,32 +193,40 @@
               <tr>
                 <td align="center"><strong>df=N-1</strong></td>
                 <td align="center"><strong>mean</strong></td>
-                <td align="center"><strong>SD</strong></td>
-                <td align="center"><strong>SEM</strong></td>
+                <td align="center"><strong data-toggle="tooltip" data-placement="bottom" title="standard deviation">SD</strong></td>
+                <td align="center"><strong data-toggle="tooltip" data-placement="bottom" title="standard error of mean">SEM</strong></td>
                 <td align="center"><strong>median</strong></td>
                 <td align="center"><strong>skewness</strong></td>
               </tr>
               <tr class="table-active" id='stats_output_row1'>
-                <td align="center"><strong class='stats_output answer' id="df" onclick="copy_to_clipboard();">0</strong></td>
-                <td align="center"><strong class='stats_output answer' id="mean"onclick="copy_to_clipboard();">0</strong></td>
-                <td align="center"><strong class='stats_output answer' id="std" onclick="copy_to_clipboard();">0</strong></td>
-                <td align="center"><strong class='stats_output answer' id="sem" onclick="copy_to_clipboard();">0</strong></td>
-                <td align="center"><strong class='stats_output answer' id="median" onclick="copy_to_clipboard();">0</strong></td>
-                <td align="center"><strong class='stats_output' id="skewness" onclick="copy_to_clipboard();">0</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();"><strong class="stats_output">-</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();"><strong class="stats_output">-</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();"><strong class="stats_output">-</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();"><strong class="stats_output">-</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();"><strong class="stats_output">-</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();"><strong class="stats_output">-</strong></td>
               </tr>
               <tr class="table-active" id='stats_output_row2' style="display: none">
-                <td align="center"><strong class='stats_output answer' id="df2" onclick="copy_to_clipboard();">0</strong></td>
-                <td align="center"><strong class='stats_output answer' id="mean2" onclick="copy_to_clipboard();">0</strong></td>
-                <td align="center"><strong class='stats_output answer' id="std2" onclick="copy_to_clipboard();">0</strong></td>
-                <td align="center"><strong class='stats_output answer' id="sem2" onclick="copy_to_clipboard();">0</strong></td>
-                <td align="center"><strong class='stats_output answer' id="median2" onclick="copy_to_clipboard();">0</strong></td>
-                <td align="center"><strong class='stats_output answer' id="skewness2" onclick="copy_to_clipboard();">0</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();"><strong class="stats_output">-</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();"><strong class="stats_output">-</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();"><strong class="stats_output">-</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();"><strong class="stats_output">-</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();"><strong class="stats_output">-</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();"><strong class="stats_output">-</strong></td>
               </tr>
               <tr id='stats_output_row3' style="display: none">
-                <td align="center"><strong class='answer' id="stats_pooled_sd" onclick="copy_to_clipboard();">pooled SD</strong></td>
-                <td align="center"><strong class='answer' id="stats_cov" onclick="copy_to_clipboard();">covariance</strong></td>
-                <td align="center"><strong class='answer' id="stats_corr" onclick="copy_to_clipboard();">correlation</strong></td>
-                <td colspan="2" align="center"><strong class='answer' id="stats_regression">regression</strong></td>
+                <td align="center"><strong>pooled SD</strong></td>
+                <td align="center"><strong>covariance</strong></td>
+                <td align="center"><strong data-toggle="tooltip" data-placement="bottom" title="Pearson's correlation">　r　</strong></td>
+                <td align="center"><strong data-toggle="tooltip" data-placement="bottom" title="Spearman's correlation">　ρ　</strong></td>
+                <td colspan="2" align="center"><strong>regression</strong></td>
+              </tr>
+              <tr class="table-active" id='stats_output_row4' style="display: none">
+                <td align="center" class="answer" onclick="copy_to_clipboard();"><strong class="stats_output" id="stats_output_pooledSD">-</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();"><strong class="stats_output">-</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();"><strong class="stats_output">-</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();"><strong class="stats_output">-</strong></td>
+                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard(onlynumber=false);"><strong class="stats_output">-</strong></td>
               </tr>
             </table>
             </form>
@@ -231,7 +239,7 @@
   
   <div class="row">
     <div class="col-lg-12">
-      <h2 onclick="show_hide('content_ttest');">- Welch's t-test & F-test</h2>
+      <h2 onclick="show_hide('content_ttest');">ー Welch's t-test & F-test</h2>
     </div>
   </div>
 
@@ -244,8 +252,8 @@
             <form onsubmit="show_ttest();return false;">
             <table class='table' style="table-layout: fixed;">
               <tr>
-                <td colspan="2"><input type='text' class="form-control" id='ttest_input1' placeholder="mean1, SD1, n1" autocomplete="off"></td>
-                <td colspan="2"><input type='text' class="form-control" id='ttest_input2' placeholder="mean2, SD2, n2" autocomplete="off"></td>
+                <td colspan="2"><input type='text' class="form-control" id="ttest_input1" placeholder="mean1, SD1, n1" autocomplete="off"></td>
+                <td colspan="2"><input type='text' class="form-control" id="ttest_input2" placeholder="mean2, SD2, n2" autocomplete="off"></td>
               </tr>
 
               <tr>
@@ -254,11 +262,17 @@
                   <button class="btn btn-outline-info" onclick="reset_ttest.reset();return false">reset</button>
                 </td>
               </tr>
-              <tr class="table-active">
-                <td align="center" class="answer" onclick="copy_to_clipboard();" data-toggle="tooltip" data-placement="bottom" title="click to copy"><strong id="ttest_output_t">t-value</strong></td>
-                <td align="center" class="answer" onclick="copy_to_clipboard();" data-toggle="tooltip" data-placement="bottom" title="click to copy"><strong id="ttest_output_df">df</strong></td>
-                <td align="center" class="answer" onclick="copy_to_clipboard();" data-toggle="tooltip" data-placement="bottom" title="click to copy"><strong id="ttest_output_p">p(t≤x)</strong></td>
-                <td align="center" class="answer" onclick="copy_to_clipboard();" data-toggle="tooltip" data-placement="bottom" title="click to copy"><strong id="ttest_output_effect">Cohen d</strong></td>
+              <tr>
+                <td align="center"><strong>t-value</strong></td>
+                <td align="center"><strong>df</strong></td>
+                <td align="center"><strong>p(|t|≤x)</strong></td>
+                <td align="center"><strong>Cohen d</strong></td>
+              </tr>
+              <tr class="table-active" id="ttest_output_row">
+                <td align="center" class="answer" onclick="copy_to_clipboard();"><strong class="ttest_output">-</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();"><strong class="ttest_output">-</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();"><strong class="ttest_output">-</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();"><strong class="ttest_output">-</strong></td>
               </tr>
             </table>
             </form>
@@ -285,10 +299,15 @@
                   <button class="btn btn-outline-info" onclick="reset_ftest.reset();return false">reset</button>
                 </td>
               </tr>
-              <tr class="table-active">
-                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();" data-toggle="tooltip" data-placement="bottom" title="click to copy"><strong id="ftest_output_f">F-value</strong></td>
-                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();" data-toggle="tooltip" data-placement="bottom" title="click to copy"><strong id="ftest_output_p_up">p(F≤x)</strong></td>
-                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();" data-toggle="tooltip" data-placement="bottom" title="click to copy"><strong id="ftest_output_p_low">p(x≤F)</strong></td>
+              <tr>
+                <td colspan="2" align="center"><strong>F-value</strong></td>
+                <td colspan="2" align="center"><strong>p(F≤x)</strong></td>
+                <td colspan="2" align="center"><strong>p(x≤F)</strong></td>
+              </tr>
+              <tr class="table-active" id="ftest_output_row">
+                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();"><strong class="ftest_output">-</strong></td>
+                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();"><strong class="ftest_output">-</strong></td>
+                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();"><strong class="ftest_output">-</strong></td>
               </tr>
             </table>
             </form>
@@ -301,7 +320,7 @@
 
   <div class="row">
     <div class="col-lg-12">
-      <h2 onclick="show_hide('content_normaldist');">- normal & t distribution</h2>
+      <h2 onclick="show_hide('content_normaldist');">ー Normal & t distribution</h2>
     </div>
   </div>
 
@@ -309,12 +328,12 @@
     <div class="col-lg-3">
       <div class="bs-component">
         <div class="card border-success mb-3" style="min-height: 16rem;">
-        <div class="card-header">z-score to p(z≤x)</div>
+        <div class="card-header">z-score to p</div>
           <div class="card-body">
             <p align="center"><img style="height: 100px; display: inline-block;" src="image/z_to_p.png"></p>
             <form onsubmit="z2p();return false;">
             <table class='table'>
-              <tr><td><input type='text' class="form-control" id='z2p_input' placeholder="z-score" autocomplete="off"></td></tr>
+              <tr><td><input type='text' class="form-control" id='z2p_input' placeholder="z ≥ 0" autocomplete="off"></td></tr>
               <tr>
                 <td>
                 <button class="btn btn-outline-success" onclick="z2p();return false">calculate</button>
@@ -322,7 +341,10 @@
                 </td>
               </tr>
               <tr class="table-active">
-                <td align="center" class="answer" onclick="copy_to_clipboard();" data-toggle="tooltip" data-placement="bottom" title="click to copy"><strong id="z2p_output">p(z≤x)</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();"><strong id="z2p_output1" class='blue'>p(z≤x)</strong></td>
+              </tr>
+              <tr class="table-active">
+                <td align="center" class="answer" onclick="copy_to_clipboard();"><strong id="z2p_output2" class='red'>p(0≤x≤z)</strong></td>
               </tr>
             </table>
             </form>
@@ -334,12 +356,12 @@
     <div class="col-lg-3">
       <div class="bs-component">
         <div class="card border-success mb-3" style="min-height: 16rem;">
-          <div class="card-header">p(z≤x) to z-score</div>
+          <div class="card-header">p to z-score</div>
           <div class="card-body">
             <p align="center"><img style="height: 100px; display: inline-block;" src="image/z_to_p.png"></p>
             <form onsubmit="p2z();return false;">
             <table class='table'>
-              <tr><td><input type='text' class="form-control" id='p2z_input' placeholder="P(z≤x)" autocomplete="off"></td></tr>
+              <tr><td><input type='text' class="form-control" id='p2z_input' placeholder="p ≤ 0.5" autocomplete="off"></td></tr>
               <tr>
                 <td>
                 <button class="btn btn-outline-success" onclick="p2z();return false">calculate</button>
@@ -347,7 +369,10 @@
                 </td>
               </tr>
               <tr class="table-active">
-                <td align="center" class="answer" onclick="copy_to_clipboard();" data-toggle="tooltip" data-placement="bottom" title="click to copy"><strong id="p2z_output">z-score</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();"><strong id="p2z_output1" class='blue'>z [p(z≤x)]</strong></td>
+              </tr>
+              <tr class="table-active">
+                <td align="center" class="answer" onclick="copy_to_clipboard();"><strong id="p2z_output2" class='red'>z [p(0≤x≤z)]</strong></td>
               </tr>
             </table>
             </form>
@@ -359,13 +384,13 @@
     <div class="col-lg-3">
       <div class="bs-component">
         <div class="card border-warning mb-3" style="min-height: 16rem;">
-          <div class="card-header">t-value to p(t≤x)</div>
+          <div class="card-header">t-value to p</div>
           <div class="card-body">
             <p align="center"><img style="height: 100px; display: inline-block;" src="image/t_to_p.png"></p>
             <form onsubmit="t2p();return false;">
             <table class='table'>
               <tr>
-                <td><input type='text' class="form-control" id='t2p_input_t' placeholder="t-value" autocomplete="off"></td>
+                <td><input type='text' class="form-control" id='t2p_input_t' placeholder="t ≥ 0" autocomplete="off"></td>
                 <td><input type='text' class="form-control" id='t2p_input_df' placeholder="df" autocomplete="off"></td>
               </tr>
               <tr>
@@ -375,7 +400,10 @@
                 </td>
               </tr>
               <tr class="table-active">
-                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();" data-toggle="tooltip" data-placement="bottom" title="click to copy"><strong id="t2p_output">p(t≤x)</strong></td>
+                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();"><strong id="t2p_output1" class='blue'>p(t≤x)</strong></td>
+              </tr>
+              <tr class="table-active">
+                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();"><strong id="t2p_output2" class='red'>p(0≤x≤t)</strong></td>
               </tr>
             </table>
             </form>
@@ -387,13 +415,13 @@
     <div class="col-lg-3">
       <div class="bs-component">
         <div class="card border-warning mb-3" style="min-height: 16rem;">
-          <div class="card-header">p(t≤x) to t-value</div>
+          <div class="card-header">p to t-value</div>
           <div class="card-body">
             <p align="center"><img style="height: 100px; display: inline-block;" src="image/t_to_p.png"></p>
             <form onsubmit="p2t();return false;">
             <table class='table'>
               <tr>
-                <td><input type='text' class="form-control" id='p2t_input_p' placeholder="p(t≤x)" autocomplete="off"></td>
+                <td><input type='text' class="form-control" id='p2t_input_p' placeholder="p ≤ 0.5" autocomplete="off"></td>
                 <td><input type='text' class="form-control" id='p2t_input_df' placeholder="df" autocomplete="off"></td>
               </tr>
               <tr>
@@ -403,7 +431,10 @@
                 </td>
               </tr>
               <tr class="table-active">
-                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();" data-toggle="tooltip" data-placement="bottom" title="click to copy"><strong id="p2t_output">t-value</strong></td>
+                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();"><strong id="p2t_output1" class='blue'>t [p(t≤x)]</strong></td>
+              </tr>
+              <tr class="table-active">
+                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();"><strong id="p2t_output2" class='red'>t [p(0≤x≤t)]</strong></td>
               </tr>
             </table>
             </form>
@@ -416,7 +447,7 @@
 
   <div class="row">
     <div class="col-lg-12">
-      <h2 onclick="show_hide('content_chidist');">- χ<sup>2</sup> & F distribution</h2>
+      <h2 onclick="show_hide('content_chidist');">ー χ<sup>2</sup> & F distribution</h2>
     </div>
   </div>
 
@@ -550,7 +581,7 @@
 
   <div class="row">
     <div class="col-lg-12">
-      <h2 onclick="show_hide('content_chi2test');">+ χ<sup>2</sup> test & Residual Analysis</h2>
+      <h2 onclick="show_hide('content_chi2test');">＋ χ<sup>2</sup> test & Residual Analysis</h2>
     </div>
   </div>
 
@@ -633,7 +664,7 @@
 
   <div class="row">
     <div class="col-lg-12">
-      <h2 onclick="show_hide('content_1danova');">+ 1D ANOVA</h2>
+      <h2 onclick="show_hide('content_1danova');">＋ 1D ANOVA</h2>
     </div>
   </div>
 
@@ -677,10 +708,10 @@
                 <td align="center"><strong>Sum</strong></td>
                 <td align="center"><strong>Mean</strong></td>
                 <td align="center"><strong>Variance</strong></td>
-                <td align="center"><strong>SD</strong></td>
+                <td align="center"><strong data-toggle="tooltip" data-placement="bottom" title="standard deviation">SD</strong></td>
               </tr>
               <tr class="table-active" id='anova_output_stats1'>
-                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();">[1]</strong></td>
+                <td align="center"><strong>[1]</strong></td>
                 <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
                 <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
                 <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
@@ -688,7 +719,7 @@
                 <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
               </tr>
               <tr class="table-active" id='anova_output_stats2'>
-                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();">[2]</strong></td>
+                <td align="center"><strong>[2]</strong></td>
                 <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
                 <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
                 <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
@@ -696,7 +727,7 @@
                 <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
               </tr>
               <tr class="table-active" id='anova_output_stats3'>
-                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();">[3]</strong></td>
+                <td align="center"><strong>[3]</strong></td>
                 <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
                 <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
                 <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
@@ -704,7 +735,7 @@
                 <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
               </tr>
               <tr class="table-active" id='anova_output_stats4' style="display: none;">
-                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();">[4]</strong></td>
+                <td align="center"><strong>[4]</strong></td>
                 <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
                 <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
                 <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
@@ -712,7 +743,7 @@
                 <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
               </tr>
               <tr class="table-active" id='anova_output_stats5' style="display: none;">
-                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();">[5]</strong></td>
+                <td align="center"><strong>[5]</strong></td>
                 <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
                 <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
                 <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
@@ -720,7 +751,7 @@
                 <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
               </tr>
               <tr class="table-active" id='anova_output_stats6' style="display: none;">
-                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();">[6]</strong></td>
+                <td align="center"><strong>[6]</strong></td>
                 <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
                 <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
                 <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
@@ -729,14 +760,14 @@
               </tr>
               <tr>
                 <td align="center"></td>
-                <td align="center"><strong>SS</strong></td>
-                <td align="center"><strong>df</strong></td>
-                <td align="center"><strong>MS</strong></td>
-                <td align="center"><strong>F</strong></td>
-                <td align="center"><strong>p</strong></td>
+                <td align="center"><strong data-toggle="tooltip" data-placement="bottom" title="sum of squares">SS</strong></td>
+                <td align="center"><strong data-toggle="tooltip" data-placement="bottom" title="degree of freedom">df</strong></td>
+                <td align="center"><strong data-toggle="tooltip" data-placement="bottom" title="mean of squares">MS</strong></td>
+                <td align="center"><strong data-toggle="tooltip" data-placement="bottom" title="F-value">F</strong></td>
+                <td align="center"><strong data-toggle="tooltip" data-placement="bottom" title="p-value">p</strong></td>
               </tr>
               <tr class="table-active" id='anova_output_result1'>
-                <td align="center"><strong class='anova_output answer' onclick="copy_to_clipboard();">Between</strong></td>
+                <td align="center"><strong>Between</strong></td>
                 <td align="center"><strong class='anova_output answer' onclick="copy_to_clipboard();"></strong></td>
                 <td align="center"><strong class='anova_output answer' onclick="copy_to_clipboard();"></strong></td>
                 <td align="center"><strong class='anova_output answer' onclick="copy_to_clipboard();"></strong></td>
@@ -744,7 +775,7 @@
                 <td align="center"><strong class='anova_output answer' onclick="copy_to_clipboard();"></strong></td>
               </tr>
               <tr class="table-active" id='anova_output_result2'>
-                <td align="center"><strong class='anova_output answer' onclick="copy_to_clipboard();">Within</strong></td>
+                <td align="center"><strong>Within</strong></td>
                 <td align="center"><strong class='anova_output answer' onclick="copy_to_clipboard();"></strong></td>
                 <td align="center"><strong class='anova_output answer' onclick="copy_to_clipboard();"></strong></td>
                 <td align="center"><strong class='anova_output answer' onclick="copy_to_clipboard();"></strong></td>
@@ -762,7 +793,7 @@
 
   <div class="row">
     <div class="col-lg-12">
-      <h2 onclick="show_hide('content_poisson');">+ Poisson & Gamma Distribution</h2>
+      <h2 onclick="show_hide('content_poisson');">＋ Poisson & Gamma Distribution</h2>
     </div>
   </div>
   
@@ -828,7 +859,7 @@
 
   <div class="row">
     <div class="col-lg-12">
-      <h2 onclick="show_hide('content_misc');">+ misc</h2>
+      <h2 onclick="show_hide('content_misc');">＋ misc</h2>
     </div>
   </div>
 
@@ -929,7 +960,7 @@
 	</nav>
 </footer>
 
-<!------- JavaScript --------->
+<!--------------------  JavaScript  -------------------->
 
 <script>
 
@@ -938,7 +969,7 @@
       let base_from = document.getElementById('base_from').value;
       let base_to = document.getElementById('base_to').value;
       let num = document.getElementById('num_to_convert').value;
-      document.getElementById('answer').innerText = convert_base(num,base_from,base_to)
+      document.getElementById("answer").innerText = convert_base(num,base_from,base_to)
   }
 
   ///// GCD and LCM /////
@@ -965,10 +996,11 @@
     }
   }
 
-  ///// show stats /////
+  ////////////////////  STATISTICAL VALUES  ////////////////////
+
   function stats_show_second_row(){
     var checked = document.getElementById("stats_add_check").checked;
-    let IDs = ['stats_input_row2','stats_output_row2','stats_output_row3'];
+    let IDs = ['stats_input_row2','stats_output_row2','stats_output_row3','stats_output_row4'];
     if(checked==true){
       for(var id of IDs){
         document.getElementById(id).style.display = '';}
@@ -979,85 +1011,83 @@
   }
 
   function show_stats(){
-    let nums1 = document.getElementById('stats_input1').value.trim().split(/[,、\s]+/).map(Number); // delete spaces, split, cast as Number
-    let N1 = Number(nums1.length);
-    let mu1 = round(mean(nums1),5);
-    let s1 = round(std(nums1),5);
-    document.getElementById('df').innerText = N1-1;
-    document.getElementById('mean').innerText = mu1;
-    document.getElementById('sem').innerText = round(sem(nums1),5);
-    document.getElementById('median').innerText = round(median(nums1),5);
-    document.getElementById('skewness').innerText = round(skewness(nums1),5);
-    if(document.getElementById('unbiased').checked==true){
-      document.getElementById('std').innerText = round(std(nums1),5);
-    }else{
-      document.getElementById('std').innerText = round(std(nums1,false),5);
+    // results of row1
+    let arr1 = document.getElementById('stats_input1').value.trim().split(/[,、\s]+/).map(Number); // delete spaces, split, cast as Number
+    let N1 = Number(arr1.length);
+    let mu1 = round(mean(arr1),5); let s1 = round(std(arr1),5);
+    let sd1 = (document.getElementById('unbiased').checked)? round(std(arr1),5):round(std(arr1,false),5);
+    let result1 = [N1-1, mu1, sd1, round(sem(arr1),5), round(median(arr1),5), round(skewness(arr1),5)];
+    for(var i=0;i<6;i++){
+      document.getElementById('stats_output_row1').children[i].firstElementChild.innerText = result1[i]; 
     }
+    // results of row2
     if(document.getElementById("stats_add_check").checked==true){
-      let nums2 = document.getElementById('stats_input2').value.trim().split(/[,\s]+/).map(Number);
-      let N2 = Number(nums2.length);
-      let mu2 = round(mean(nums2),5);
-      let s2 = round(std(nums2),5);
-      document.getElementById('df2').innerText = N2-1;
-      document.getElementById('mean2').innerText = round(mean(nums2),5);
-      document.getElementById('sem2').innerText = round(sem(nums2),5);
-      document.getElementById('median2').innerText = round(median(nums2),5);
-      document.getElementById('skewness2').innerText = round(skewness(nums2),5);
-      if(document.getElementById('unbiased').checked==true){
-        document.getElementById('std2').innerText = round(std(nums2),5);
-      }else{
-        document.getElementById('std2').innerText = round(std(nums2,false),5);
+      let arr2 = document.getElementById('stats_input2').value.trim().split(/[,\s]+/).map(Number);
+      let N2 = Number(arr2.length);
+      let mu2 = round(mean(arr2),5); let s2 = round(std(arr2),5);
+      let sd2 = (document.getElementById('unbiased').checked)? round(std(arr2),5):round(std(arr2,false),5);
+      let result2 = [N2-1, mu2, sd2, round(sem(arr2),5), round(median(arr2),5), round(skewness(arr2),5)];
+      for(var i=0;i<6;i++){
+        document.getElementById('stats_output_row2').children[i].firstElementChild.innerText = result2[i]; 
       }
-
+      // export to ttest, ftest
       document.getElementById('ttest_input1').value = `${mu1} ${s1} ${N1}`;
       document.getElementById('ttest_input2').value = `${mu2} ${s2} ${N2}`;
       show_ttest();
       document.getElementById('ftest_input1').value = `${s1} ${N1-1}`;
       document.getElementById('ftest_input2').value = `${s2} ${N2-1}`;
       show_ftest();
-      document.getElementById('stats_pooled_sd').innerText = 'pooled SD = ' + round(Math.sqrt(pooled_variance(nums1,nums2)),5);
-      if(nums1.length==nums2.length){
-        let cov12 = cov(nums1,nums2);
-        let regression_result = regression(nums1,nums2);
-        document.getElementById('stats_cov').innerText = 'cov = ' + round(cov12,5);
-        document.getElementById('stats_corr').innerText = 'corr = ' + round(corr(cov12,s1,s2),5);
-        document.getElementById('stats_regression').innerText = `Y = ${round(regression_result[0],4)} + ${round(regression_result[1],4)} X`;
+      // correlation
+      document.getElementById('stats_output_pooledSD').innerText = round(Math.sqrt(pooled_variance(arr1,arr2)),5);
+      if(arr1.length==arr2.length){
+        let cov12 = round(cov(arr1,arr2), 5);
+        let pearson = round(corr(cov12,s1,s2),5);
+        let spear = round(spearman(arr1, arr2), 5);
+        let regression_result = regression(arr1,arr2).map(x => round(x, 4));
+        var result_corr = [cov12, pearson, spear, `Y = ${regression_result[0]} + ${regression_result[1]} X`];
       }else{
-        document.getElementById('stats_cov').innerText = 'covariance';
-        document.getElementById('stats_corr').innerText = 'correlation';
-        document.getElementById('stats_regression').innerText = 'regression';
+        var result_corr = ['-','-','-','-'] 
+      }
+      for(var i=0;i<4;i++){
+        document.getElementById('stats_output_row4').children[i+1].firstElementChild.innerText = result_corr[i]; 
       }
     }
-    
   }
+
+  ////////////////////  T-TEST & F-TEST  ////////////////////
+
   function show_ttest(){
-    let nums1 = document.getElementById('ttest_input1').value.trim().split(/[,\s]+/).map(Number);
-    let nums2 = document.getElementById('ttest_input2').value.trim().split(/[,\s]+/).map(Number);
-    let result = welch(nums1[0],nums2[0],nums1[1],nums2[1],nums1[2],nums2[2]);
-    document.getElementById('ttest_output_t').innerText = 't = ' + round(result[0],5);
-    document.getElementById('ttest_output_df').innerText = 'df = ' + round(result[1],5);
-    document.getElementById('ttest_output_p').innerText = 'p = ' + round(t_to_p(Math.abs(result[0]),result[1]),5);
-    document.getElementById('ttest_output_effect').innerText = 'd = ' + round(effect_size(nums1[0],nums2[0],nums1[1],nums2[1],nums1[2],nums2[2]),5);
-    document.getElementById('t2p_input_t').value = round(Math.abs(result[0]),5);
-    document.getElementById('t2p_input_df').value = round(result[1],5);
-    document.getElementById('p2t_input_df').value = round(result[1],5);
-    t2p();
+    let arr1 = document.getElementById('ttest_input1').value.trim().split(/[,\s]+/).map(Number);
+    let arr2 = document.getElementById('ttest_input2').value.trim().split(/[,\s]+/).map(Number);
+    let result = welch(arr1[0],arr2[0],arr1[1],arr2[1],arr1[2],arr2[2]); //mean12, SD12, N12 -> t, df, p
+    result.push(effect_size(arr1[0],arr2[0],arr1[1],arr2[1],arr1[2],arr2[2])); // cohen's d
+    result = result.map(x => round(x,5));
+    for(var i=0;i<4;i++){
+      document.getElementById('ttest_output_row').children[i].firstElementChild.innerText = result[i]; 
+    }
+    document.getElementById('t2p_input_t').value = Math.abs(result[0]);
+    document.getElementById('t2p_input_df').value = result[1];
+    document.getElementById('p2t_input_p').value = 0.025;
+    document.getElementById('p2t_input_df').value = result[1];
+    t2p(); p2t();
   }
+
   function show_ftest(){
-    let nums1 = document.getElementById('ftest_input1').value.trim().split(/[,\s]+/).map(Number);
-    let nums2 = document.getElementById('ftest_input2').value.trim().split(/[,\s]+/).map(Number);
-    let fvalue = (nums1[0]/nums2[0])**2;
-    let pvalue = f_to_p(fvalue,nums1[1],nums2[1])
-    document.getElementById('ftest_output_f').innerText = 'f = ' + round(fvalue,5);
-    document.getElementById('ftest_output_p_up').innerText = 'upper p = ' + round(pvalue,5);
-    document.getElementById('ftest_output_p_low').innerText = 'lower p = ' + round(1-pvalue,5);
+    let arr1 = document.getElementById('ftest_input1').value.trim().split(/[,\s]+/).map(Number);
+    let arr2 = document.getElementById('ftest_input2').value.trim().split(/[,\s]+/).map(Number);
+    let fvalue = (arr1[0]/arr2[0])**2;
+    let pvalue = f_to_p(fvalue, arr1[1], arr2[1]);
+    let result = [fvalue, pvalue, 1-pvalue].map(x => round(x,5))
+    for(var i=0;i<3;i++){
+      document.getElementById('ftest_output_row').children[i].firstElementChild.innerText = result[i]; 
+    }
     document.getElementById('f2p_input_f').value = round(fvalue,5);
-    document.getElementById('f2p_input_df').value = `${nums1[1]} ${nums2[1]}`;
-    document.getElementById('p2f_input_df').value = `${nums1[1]} ${nums2[1]}`;
+    document.getElementById('f2p_input_df').value = `${arr1[1]} ${arr2[1]}`;
+    document.getElementById('p2f_input_df').value = `${arr1[1]} ${arr2[1]}`;
     f2p();
   }
 
-  ///// validate p value/////
+  ////////////////////  VALIDATE INPUT P-VALUE  ////////////////////
   function validateP(){
     let elem = event.target;
     let p = elem.value;
@@ -1073,27 +1103,31 @@
   document.getElementById('p2f_input_p').oninput = validateP;
 
 
-  // functions for calcualation z,t,chi<>P
+  ////////////////////  CONVERT TO P-VALUE  ////////////////////
   function z2p(){
-    let z = document.getElementById('z2p_input').value;
-    document.getElementById('z2p_output').innerText = 'p=' + round(z_to_p(z),5);
+    let z = Math.abs(document.getElementById('z2p_input').value);
+    document.getElementById('z2p_output1').innerText = 'p=' + round(z_to_p(z),5);
+    document.getElementById('z2p_output2').innerText = 'p=' + round(0.5-z_to_p(z),5);
   }
   function p2z(){
     if(!document.getElementById('p2z_input').classList.contains('is-invalid')){
       let p = document.getElementById('p2z_input').value;
-      document.getElementById('p2z_output').innerText = 'z=' + round(p_to_z(p),5);
+      document.getElementById('p2z_output1').innerText = 'outside z=' + round(p_to_z(p),5);
+      document.getElementById('p2z_output2').innerText = 'inside z=' + round(p_to_z(0.5-p),5);
     }
   }
   function t2p(){
-    let t = Number(document.getElementById('t2p_input_t').value);
+    let t = Math.abs(document.getElementById('t2p_input_t').value);
     let df = Number(document.getElementById('t2p_input_df').value);
-    document.getElementById('t2p_output').innerText = 'p=' + round(t_to_p(t,df),5);
+    document.getElementById('t2p_output1').innerText = 'p=' + round(t_to_p(t,df),5);
+    document.getElementById('t2p_output2').innerText = 'p=' + round(0.5-t_to_p(t,df),5);
   }
   function p2t(){
     if(!document.getElementById('p2t_input_p').classList.contains('is-invalid')){
       let p = Number(document.getElementById('p2t_input_p').value);
       let df = Number(document.getElementById('p2t_input_df').value);
-      document.getElementById('p2t_output').innerText = 't=' + round(p_to_t(p,df),5);
+      document.getElementById('p2t_output1').innerText = 'outside t=' + round(p_to_t(p,df),5);
+      document.getElementById('p2t_output2').innerText = 'inside t=' + round(p_to_t(0.5-p,df),5);
     }
   }
   function chi2p(){
@@ -1326,16 +1360,17 @@
     }
   }
 
+////////////////////  Reset Button  ////////////////////
 
-// inputs(array) - ID of input to be empty string
-// labelsID(dict) - {ID: innerText}
+// inputIDs(array) - ID of input to be empty string
+// labelIDs(dict) - {ID: innerText}
 // focusID(string) - one element to be focused
 // labels_class(dict) - {classname: innerText}
 class ResetBtn{
-  constructor(inputIDs,labelIDs,focusID,labelclass=null,inputclass=null){
+  constructor(focusID,inputIDs,labelIDs=null,labelclass=null,inputclass=null){
+    this.focus = focusID;
     this.inputIDs = inputIDs;
     this.labelIDs = labelIDs;
-    this.focus = focusID;
     this.labelclass = labelclass;
     this.inputclass = inputclass;
     
@@ -1360,27 +1395,27 @@ class ResetBtn{
     document.getElementById(this.focus).focus(); // focus
   }
 }
-var reset_base = new ResetBtn(['num_to_convert'],{'answer':'answer'},'num_to_convert');
-var reset_gcd = new ResetBtn(['gcd_input'],{'answer_gcd':'answer'},'gcd_input');
-var reset_stats = new ResetBtn(['stats_input1','stats_input2'],{'stats_cov':'covariance','stats_corr':'correlation','stats_regression':'regression','stats_pooled_sd':'pooled SD'},'stats_input1',{'stats_output':0});
-var reset_ttest = new ResetBtn(['ttest_input1','ttest_input2'],{'ttest_output_t':'t-value','ttest_output_df':'df','ttest_output_p':'p(t≤x)','ttest_output_effect':'Cohen d'},'ttest_input1');
-var reset_ftest = new ResetBtn(['ftest_input1','ftest_input2'],{'ftest_output_f':'F-value','ftest_output_p_up':'p(F≤x)','ftest_output_p_low':'p(x≤F)'},'ftest_input1');
-var reset_z2p = new ResetBtn(['z2p_input'],{'z2p_output':'p(z≤x)'},'z2p_input');
-var reset_p2z = new ResetBtn(['p2z_input'],{'p2z_output':'z-score'},'p2z_input');
-var reset_t2p = new ResetBtn(['t2p_input_t','t2p_input_df'],{'t2p_output':'p(t≤x)'},'t2p_input_t');
-var reset_p2t = new ResetBtn(['p2t_input_p','p2t_input_df'],{'p2t_output':'t-value'},'p2t_input_p');
-var reset_chi2p = new ResetBtn(['chi2p_input_chi','chi2p_input_df'],{'chi2p_output_up':'p(χ<sup>2</sup>≤x)','chi2p_output_low':'p(x≤χ<sup>2</sup>)'},'chi2p_input_chi');
-var reset_p2chi = new ResetBtn(['p2chi_input_p','p2chi_input_df'],{'p2chi_output_up':'χ<sup>2</sup>','p2chi_output_low':'χ<sup>2</sup>'},'p2chi_input_p');
-var reset_f2p = new ResetBtn(['f2p_input_f','f2p_input_df'],{'f2p_output_up':'p(F≤x)','f2p_output_low':'p(x≤F)'},'f2p_input_f');
-var reset_p2f = new ResetBtn(['p2f_input_p','p2f_input_df'],{'p2f_output_up':'F-value','p2f_output_low':'F-value'},'p2f_input_p');
-var reset_chitest = new ResetBtn([],
+var reset_base = new ResetBtn('num_to_convert',['num_to_convert'],{"answer":"answer"});
+var reset_gcd = new ResetBtn('gcd_input',['gcd_input'],{'answer_gcd':"answer"});
+var reset_stats = new ResetBtn('stats_input1',['stats_input1','stats_input2'],null,{"stats_output":'-'});
+var reset_ttest = new ResetBtn('ttest_input1',['ttest_input1','ttest_input2'],null,{'ttest_output':'-'});
+var reset_ftest = new ResetBtn('ftest_input1',['ftest_input1','ftest_input2'],null,{'ftest_output':'-'});
+var reset_z2p = new ResetBtn('z2p_input',['z2p_input'],{'z2p_output1':'p(z≤x)','z2p_output2':'p(0≤x≤z)'});
+var reset_p2z = new ResetBtn('p2z_input',['p2z_input'],{'p2z_output1':'z [p(z≤x)]','p2z_output2':'z [p(0≤x≤z)]'});
+var reset_t2p = new ResetBtn('t2p_input_t',['t2p_input_t','t2p_input_df'],{'t2p_output1':'p(t≤x)','t2p_output2':'p(0≤x≤t)'});
+var reset_p2t = new ResetBtn('p2t_input_p',['p2t_input_p','p2t_input_df'],{'p2t_output1':'t [p(t≤x)]','p2t_output2':'t [p(0≤x≤t)]'});
+var reset_chi2p = new ResetBtn('chi2p_input_chi',['chi2p_input_chi','chi2p_input_df'],{'chi2p_output_up':'p(χ<sup>2</sup>≤x)','chi2p_output_low':'p(x≤χ<sup>2</sup>)'});
+var reset_p2chi = new ResetBtn('p2chi_input_chi',['p2chi_input_p','p2chi_input_df'],{'p2chi_output_up':'χ<sup>2</sup>','p2chi_output_low':'χ<sup>2</sup>'});
+var reset_f2p = new ResetBtn('f2p_input_f',['f2p_input_f','f2p_input_df'],{'f2p_output_up':'p(F≤x)','f2p_output_low':'p(x≤F)'});
+var reset_p2f = new ResetBtn('p2f_input_p',['p2f_input_p','p2f_input_df'],{'p2f_output_up':'F-value','p2f_output_low':'F-value'});
+var reset_chitest = new ResetBtn('chitest_input11',[],
 {'chitest_output_chi':'χ<sup>2</sup>','chitest_output_df':'df',
   'chitest_E1':'E<sub>1</sub>','chitest_E2':'E<sub>2</sub>','chitest_E3':'E<sub>3</sub>','chitest_E4':'E<sub>4</sub>','chitest_E5':'E<sub>5</sub>','chitest_E6':'E<sub>6</sub>','chitest_E7':'E<sub>7</sub>','chitest_E8':'E<sub>8</sub>',
   'chitest_res1':'Res<sub>1</sub>','chitest_res2':'Res<sub>2</sub>','chitest_res3':'Res<sub>3</sub>','chitest_res4':'Res<sub>4</sub>','chitest_res5':'Res<sub>5</sub>','chitest_res6':'Res<sub>6</sub>','chitest_res7':'Res<sub>7</sub>','chitest_res8':'Res<sub>8</sub>'
 }
-,'chitest_input11',null,{'chitest_input':''});
-var reset_poisson = new ResetBtn(['poisson_input1','poisson_input1'],{'poisson_output1':'P(X=k)','poisson_output1':'P(X≥k)'},'poisson_input1')
-var reset_gamma = new ResetBtn(['gamma_input1','gamma_input2','gamma_input3'],{'gamma_output1':'P(t)','gamma_output2':'P(t)'},'gamma_input1')
+,null,{'chitest_input':''});
+var reset_poisson = new ResetBtn('poisson_input1',['poisson_input1','poisson_input1'],{'poisson_output1':'P(X=k)','poisson_output1':'P(X≥k)'})
+var reset_gamma = new ResetBtn('gamma_input1',['gamma_input1','gamma_input2','gamma_input3'],{'gamma_output1':'P(t)','gamma_output2':'P(t)'})
 
 
   function show_function(){
@@ -1392,16 +1427,17 @@ var reset_gamma = new ResetBtn(['gamma_input1','gamma_input2','gamma_input3'],{'
 		elem = document.getElementById(targetID);
     if(elem.style.display=='none'){
       elem.style.display = '';
-      event.target.innerHTML = event.target.innerHTML.replace('+', '-');
+      event.target.innerHTML = event.target.innerHTML.replace('＋', 'ー');
     }else{
       elem.style.display = 'none';
-      event.target.innerHTML = event.target.innerHTML.replace('-', '+');
+      event.target.innerHTML = event.target.innerHTML.replace('ー', '＋');
     }
 	}
 
-  function copy_to_clipboard(){
+  function copy_to_clipboard(onlynumber=true){
     var temp_elem = document.createElement("textarea");
-    temp_elem.textContent = Number(event.target.innerText.split('=').slice(-1)[0]);
+    temp_elem.textContent = (onlynumber)? Number(event.target.innerText.split('=').slice(-1)[0]):event.target.innerText;
+    console.log(temp_elem.textContent);
     var body_elem = document.getElementsByTagName("body")[0];
     body_elem.appendChild(temp_elem);
     temp_elem.select();

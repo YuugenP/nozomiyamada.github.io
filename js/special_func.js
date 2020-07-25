@@ -29,6 +29,7 @@ function permutation(n,k){
   return Math.round(fact(n)/fact(n-k));
 }
 
+// creater permutaion list
 function permutator(inputArr, n=0){
   let result = [];
   const permute = (arr, m = '') => {
@@ -44,6 +45,17 @@ function permutator(inputArr, n=0){
   }
   permute(inputArr);
   return result;
+}
+
+// argsort
+function argsort(arr, reverse=false, plusn=0){
+  let org = arr.slice();
+  if(reverse==false){
+    arr.sort((a,b) => a-b);
+  }else{
+    arr.sort((a,b) => b-a);
+  }
+  return org.map(x => arr.indexOf(x)+plusn);
 }
 
 

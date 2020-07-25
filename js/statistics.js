@@ -73,7 +73,8 @@ function cov(arr1, arr2, unbiased=true){
   }
 }
 function corr(cov12,s1,s2){
-  return cov12/s1/s2;
+  let result = cov12/s1/s2;
+  return (result>1)? 1:result;
 }
 
 function corr_arr(arr1,arr2){
@@ -153,7 +154,7 @@ function welch(mu1,mu2,s1,s2,n1,n2){
   let v1 = s1**2; let v2 = s2**2;
   let t = (mu1-mu2)/Math.sqrt(v1/n1+v2/n2);
   let df = (v1/n1+v2/n2)**2 / ((v1/n1)**2/(n1-1)+(v2/n2)**2/(n2-1));
-  return [t,df];
+  return [t,df,t_to_p(Math.abs(t),df)];
 }
 function welch_arr(arr1,arr2){
   let mu1 = mean(arr1); let mu2 = mean(arr2);
@@ -161,7 +162,7 @@ function welch_arr(arr1,arr2){
   let n1 = arr1.length; let n2 = arr2.length;
   let t = (mu1-mu2)/Math.sqrt(v1/n1+v2/n2);
   let df = (v1/n1+v2/n2)**2 / ((v1/n1)**2/(n1-1)+(v2/n2)**2/(n2-1));
-  return [t,df];
+  return [t,df,t_to_p(Math.abs(t),df)];
 }
 
 function pooled_variance(arr1,arr2){
@@ -192,12 +193,9 @@ function effect_size_arr(arr1,arr2){
  */
 function z_to_p(z, taylor=false, N=100){
   if(z<0){return NaN;}
-  var z = z/(2**0.5);
-  if(taylor==false){ // gauss legendre
-    return 0.5 - 0.5 * erf(z);
-  }else{ //taylor
-    return 0.5 - 0.5 * erf2(z, N);
-  }
+  z = z/(2**0.5);
+  let p = (taylor==false)? 0.5-0.5*erf(z) : 0.5-0.5*erf2(z, N);
+  return (p>0)? p:0;
 }
 /**
  * inverse normal distribution (p -> z-score)
@@ -225,7 +223,8 @@ function p_to_z(p, taylor=false, N=300){
  */
 function t_to_p(t,df){
   let x = (t+Math.sqrt(t**2+df))/(2*Math.sqrt(t**2+df));
-  return 1-regularized_beta(df/2,df/2,x);
+  let p = 1-regularized_beta(df/2,df/2,x);
+  return (p>0)? p:0;
 }
 /**
  * inverse t-distribution
@@ -249,7 +248,8 @@ function p_to_t(p,df){
  */
 function f_to_p(f, df1, df2){
   let x = df1*f/(df1*f+df2);
-  return 1-regularized_beta(df1/2,df2/2,x);
+  let p = 1-regularized_beta(df1/2,df2/2,x);
+  return (p>0)? p:0;
 }
 /**
  * inverse F-distribution
@@ -299,7 +299,8 @@ function poisson_cum(lambda, k){
  * @param {Number} df degree of freedom
  */
 function chi_to_p(chi,df){
-  return 1-incomplete_gamma(df/2,chi/2)/gamma(df/2);
+  let p = 1-incomplete_gamma(df/2,chi/2)/gamma(df/2);
+  return (p>0)? p:0;
 }
 function p_to_chi(p,df){
   return inv_incomplete_gamma(df/2,(1-p)*gamma(df/2))*2;
