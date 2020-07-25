@@ -1065,11 +1065,13 @@
     for(var i=0;i<4;i++){
       document.getElementById('ttest_output_row').children[i].firstElementChild.innerText = result[i]; 
     }
+    document.getElementById('z2p_input').value = Math.abs(result[0]);
+    document.getElementById('p2z_input').value = 0.025;
     document.getElementById('t2p_input_t').value = Math.abs(result[0]);
     document.getElementById('t2p_input_df').value = result[1];
     document.getElementById('p2t_input_p').value = 0.025;
     document.getElementById('p2t_input_df').value = result[1];
-    t2p(); p2t();
+    z2p(); p2z(); t2p(); p2t();
   }
 
   function show_ftest(){
