@@ -1236,12 +1236,8 @@ function show_chitest(){
     }else{ // test for independence
       chi2_value = chi2_independence(arr1,arr2);
       let residuals = adjusted_residual(arr1,arr2)[0];
-      for(var i=0;i<8;i++){ // Residual
-        if(residuals[i]!=undefined){
-        document.getElementById(chitest_res[i]).innerHTML = `p<sub>${i+1}</sub>=${round(2*z_to_p(Math.abs(residuals[i])),5)}`;
-        }else{
-        document.getElementById(chitest_res[i]).innerHTML = `Res<sub>${i+1}</sub>`;
-        }
+      for(var i=0;i<arr1.length;i++){
+        document.getElementById('chitest_output_row_res').children[i].firstElementChild.innerText = round(residuals[i],5);
       }
     }
     let df = arr1.length-1;

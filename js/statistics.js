@@ -300,11 +300,11 @@ function poisson_cum(lambda, k){
  * @param {Number} df degree of freedom
  */
 function chi_to_p(chi,df){
-  let p = 1-incomplete_gamma(df/2,chi/2)/gamma(df/2);
+  let p = 1-regularized_gamma(df/2,chi/2);
   return (p>0)? p:0;
 }
 function p_to_chi(p,df){
-  return inv_incomplete_gamma(df/2,(1-p)*gamma(df/2))*2;
+  return inv_regularized_gamma(df/2,(1-p))*2;
 }
 
 

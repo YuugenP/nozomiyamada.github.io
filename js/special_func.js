@@ -116,21 +116,28 @@ function inv_erf2(y, N=300){
  * @param {Int} n order of Legendre polynomial
  */
 function gamma(s,split=1e4,n=5){
+  if(s>1 && s%1==0){
+    return fact(s-1);
+  }
+  if(s%1==0.5){
+    if(s==0.5){
+      return Math.sqrt(Math.PI);
+    }else{
+      return (s-1)*gamma(s-1);
+    }
+  }
   let func = function(t){return Math.pow(t,s-1)*Math.exp(-t);};
   if(s>=2){
     return gauss_legendre(func,0,s*10,split,n); // must not integrate up to infinity
   }else if(0.5<s && s<2){
-    return gamma(s+1)/s;
-  }else if(s==0.5){
-    return Math.sqrt(Math.PI);
+    return gamma(s+1)/s; // Γ(s) = Γ(s+1)/s 
   }else{
     return Math.PI/Math.sin(Math.PI*s)/gamma(1-s);
   }
-  
 }
 function inv_gamma(y,iter=30){
   let f_prime = function(s){
-    let func = function(t){return Math.log(s)*Math.pow(t,s-1)*Math.exp(-t);} 
+    let func = function(t){return Math.log(s)*Math.pow(t,s-1)*Math.exp(-t);};
     return gauss_legendre(func,0,s*10);
   };
   let x0 = 2;
@@ -138,13 +145,41 @@ function inv_gamma(y,iter=30){
   return newton(gamma,f_prime,y,x0,iter);
 }
 function incomplete_gamma(s,x,split=1e3,n=5){
-  let func = function(t){return Math.pow(t,s-1)*Math.exp(-t);} 
-  return gauss_legendre(func,0,x,split,n);
+  if(s%1==0){
+    if(s==1){
+      return 1-Math.exp(-x);
+    }else{
+      return (s-1)*incomplete_gamma(s-1,x)-x**(s-1)*Math.exp(-x);
+    }
+  }
+  if(s%1==0.5){
+    if(s==0.5){
+      return Math.sqrt(Math.PI)*erf(Math.sqrt(x));
+    }else{
+      return (s-1)*incomplete_gamma(s-1,x)-x**(s-1)*Math.exp(-x);
+    }
+  }
+  let func = function(t){return Math.pow(t,s-1)*Math.exp(-t);};
+  if(s>2){
+    return gauss_legendre(func,0,x,split,n);
+  }else{
+    return (incomplete_gamma(s+1,x)+x**(s)*Math.exp(-x))/s;
+  }
 }
-function inv_incomplete_gamma(s,y,iter=30){
+function regularized_gamma(s,x,split=1e3,n=5){
+  return incomplete_gamma(s,x,split,n)/gamma(s);
+}
+function inv_regularized_gamma(s,y,iter=30){ // 0<y<1
+  if(y<=0.1 && s <= 1){
+    var x0 = 0.0001;
+  }else if(y<=0.1 && s <= 2){
+    var x0 = 0.1
+  }else{
+    var x0 = s;
+  }
+  y *= gamma(s);
   let f = function(t){return incomplete_gamma(s,t);}
   let f_prime = function(t){return Math.pow(t,s-1)*Math.exp(-t);}
-  let x0 = (y>1)? s:0.1;
   return newton(f,f_prime,y,x0,iter);
 }
 
