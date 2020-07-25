@@ -36,6 +36,8 @@
     .answer:hover{cursor: pointer;}
     .red{color:indianred}
     .blue{color:royalblue}
+    h2{color:midnightblue}
+    h2:hover{cursor: pointer;}
   }
   </style>
   <script src='js/statistics.js'></script>
@@ -91,11 +93,11 @@
 
   <div class="row">
     <div class="col-lg-12">
-      <h2>Math Tools</h2>
+      <h1>Math Tools</h1>
       <h5>source code -> <a href="https://github.com/nozomiyamada/JS_mathtool" target="_blank">GitHub</a></h5>
       <p>You can try all functions on the console (for Google Chrome, press F12 key to open)<br>
         Each answer displayed below can be copied to clipboard just by clicking.<br>
-        <span onclick="show_function();" class="function_list"><strong>+ list of JS functions</strong></span>
+        <span onclick="show_function();" class="function_list"><strong>[list of JS functions]</strong></span>
         <div id='functions' style="display: none;">
           <ul>
             <li><code>gcd2(a,b)</code></li>
@@ -162,15 +164,15 @@
 
   <div class="row">
     <div class="col-lg-12">
-      <h2>Statistics</h2>
+      <h2 onclick="show_hide('content_stats');">- Basic Statistics Values</h2>
     </div>
   </div>
 
-  <div class="row">
+  <div class="row" id="content_stats">
     <div class="col-lg-12">
       <div class="bs-component">
         <div class="card border-primary mb-3" style="min-height: 20rem;">
-          <div class="card-header">statistics values</div>
+          <div class="card-header">basic statistics values</div>
           <div class="card-body">
             <form onsubmit="show_stats();return false;">
             <table class='table' style="table-layout: fixed;">
@@ -228,6 +230,12 @@
   </div> <!--row statistic values -->
   
   <div class="row">
+    <div class="col-lg-12">
+      <h2 onclick="show_hide('content_ttest');">- Welch's t-test & F-test</h2>
+    </div>
+  </div>
+
+  <div class="row" id='content_ttest'>
     <div class="col-lg-6">
       <div class="bs-component">
         <div class="card border-info mb-3" style="min-height: 16rem;">
@@ -293,12 +301,11 @@
 
   <div class="row">
     <div class="col-lg-12">
-      <h2>normal & t distribution</h2>
+      <h2 onclick="show_hide('content_normaldist');">- normal & t distribution</h2>
     </div>
   </div>
 
-  <div class="row">
-
+  <div class="row" id="content_normaldist">
     <div class="col-lg-3">
       <div class="bs-component">
         <div class="card border-success mb-3" style="min-height: 16rem;">
@@ -409,11 +416,11 @@
 
   <div class="row">
     <div class="col-lg-12">
-      <h2>χ<sup>2</sup> & F distribution</h2>
+      <h2 onclick="show_hide('content_chidist');">- χ<sup>2</sup> & F distribution</h2>
     </div>
   </div>
 
-  <div class="row">
+  <div class="row" id="content_chidist">
 
     <div class="col-lg-3">
       <div class="bs-component">
@@ -543,6 +550,12 @@
 
   <div class="row">
     <div class="col-lg-12">
+      <h2 onclick="show_hide('content_chi2test');">+ χ<sup>2</sup> test & Residual Analysis</h2>
+    </div>
+  </div>
+
+  <div class="row" id="content_chi2test" style="display: none;">
+    <div class="col-lg-12">
       <div class="bs-component">
         <div class="card border-primary mb-3" style="min-height: 20rem;">
           <div class="card-header">χ<sup>2</sup> test & Residual Analysis</div>
@@ -620,11 +633,140 @@
 
   <div class="row">
     <div class="col-lg-12">
-      <h2>Poisson & Gamma Distribution</h2>
+      <h2 onclick="show_hide('content_1danova');">+ 1D ANOVA</h2>
+    </div>
+  </div>
+
+  <div class="row" id="content_1danova" style="display: none;">
+    <div class="col-lg-12">
+      <div class="bs-component">
+        <div class="card border-primary mb-3" style="min-height: 20rem;">
+          <div class="card-header">1D ANOVA</div>
+          <div class="card-body">
+            <form onsubmit="show_anova();return false;">
+            <table class='table' style="table-layout: fixed;">
+              <tr id='anova_input_row1'>
+                <td colspan="6"><input type='text' class="form-control" id='anova_input1' placeholder="values of group1 with space" autocomplete="off"></td>
+              </tr>
+              <tr id='anova_input_row2'>
+                <td colspan="6"><input type='text' class="form-control" id='anova_input2' placeholder="values of group2 with space" autocomplete="off"></td>
+              </tr>
+              <tr id='anova_input_row3'>
+                <td colspan="6"><input type='text' class="form-control" id='anova_input3' placeholder="values of group3 with space" autocomplete="off"></td>
+              </tr>
+              <tr id='anova_input_row4' style="display: none;">
+                <td colspan="6"><input type='text' class="form-control" id='anova_input4' placeholder="values of group4 with space" autocomplete="off"></td>
+              </tr>
+              <tr id='anova_input_row5' style="display: none;">
+                <td colspan="6"><input type='text' class="form-control" id='anova_input5' placeholder="values of group5 with space" autocomplete="off"></td>
+              </tr>
+              <tr id='anova_input_row6' style="display: none;">
+                <td colspan="6"><input type='text' class="form-control" id='anova_input6' placeholder="values of group6 with space" autocomplete="off"></td>
+              </tr>
+              <tr>
+                <td colspan="6">
+                  <button class="btn btn-outline-primary" onclick="show_anova();return false">calculate</button>
+                  <button class="btn btn-outline-primary" onclick="reset_anova.reset();return false">reset</button>
+                  <button class="btn btn-outline-primary" onclick="add_row_anova(add=true);return false">+ group</button>
+                  <button class="btn btn-outline-primary" onclick="add_row_anova(add=false);return false">- group</button>
+                </td>
+              </tr>
+              <tr>
+                <td align="center"><strong>Group</strong></td>
+                <td align="center"><strong>Count</strong></td>
+                <td align="center"><strong>Sum</strong></td>
+                <td align="center"><strong>Mean</strong></td>
+                <td align="center"><strong>Variance</strong></td>
+                <td align="center"><strong>SD</strong></td>
+              </tr>
+              <tr class="table-active" id='anova_output_stats1'>
+                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();">[1]</strong></td>
+                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
+                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
+                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
+                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
+                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
+              </tr>
+              <tr class="table-active" id='anova_output_stats2'>
+                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();">[2]</strong></td>
+                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
+                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
+                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
+                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
+                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
+              </tr>
+              <tr class="table-active" id='anova_output_stats3'>
+                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();">[3]</strong></td>
+                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
+                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
+                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
+                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
+                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
+              </tr>
+              <tr class="table-active" id='anova_output_stats4' style="display: none;">
+                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();">[4]</strong></td>
+                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
+                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
+                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
+                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
+                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
+              </tr>
+              <tr class="table-active" id='anova_output_stats5' style="display: none;">
+                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();">[5]</strong></td>
+                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
+                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
+                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
+                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
+                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
+              </tr>
+              <tr class="table-active" id='anova_output_stats6' style="display: none;">
+                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();">[6]</strong></td>
+                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
+                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
+                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
+                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
+                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
+              </tr>
+              <tr>
+                <td align="center"></td>
+                <td align="center"><strong>SS</strong></td>
+                <td align="center"><strong>df</strong></td>
+                <td align="center"><strong>MS</strong></td>
+                <td align="center"><strong>F</strong></td>
+                <td align="center"><strong>p</strong></td>
+              </tr>
+              <tr class="table-active" id='anova_output_result1'>
+                <td align="center"><strong class='anova_output answer' onclick="copy_to_clipboard();">Between</strong></td>
+                <td align="center"><strong class='anova_output answer' onclick="copy_to_clipboard();"></strong></td>
+                <td align="center"><strong class='anova_output answer' onclick="copy_to_clipboard();"></strong></td>
+                <td align="center"><strong class='anova_output answer' onclick="copy_to_clipboard();"></strong></td>
+                <td align="center"><strong class='anova_output answer' onclick="copy_to_clipboard();"></strong></td>
+                <td align="center"><strong class='anova_output answer' onclick="copy_to_clipboard();"></strong></td>
+              </tr>
+              <tr class="table-active" id='anova_output_result2'>
+                <td align="center"><strong class='anova_output answer' onclick="copy_to_clipboard();">Within</strong></td>
+                <td align="center"><strong class='anova_output answer' onclick="copy_to_clipboard();"></strong></td>
+                <td align="center"><strong class='anova_output answer' onclick="copy_to_clipboard();"></strong></td>
+                <td align="center"><strong class='anova_output answer' onclick="copy_to_clipboard();"></strong></td>
+                <td align="center"><strong class='anova_output answer' onclick="copy_to_clipboard();"></strong></td>
+                <td align="center"><strong class='anova_output answer' onclick="copy_to_clipboard();"></strong></td>
+              </tr>
+            </table>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div> <!--row ANOVA -->
+
+  <div class="row">
+    <div class="col-lg-12">
+      <h2 onclick="show_hide('content_poisson');">+ Poisson & Gamma Distribution</h2>
     </div>
   </div>
   
-  <div class="row">
+  <div class="row" id='content_poisson' style="display:none;">
     <div class="col-lg-5">
       <div class="bs-component">
         <div class="card border-primary mb-3" style="min-height: 20rem;">
@@ -686,11 +828,11 @@
 
   <div class="row">
     <div class="col-lg-12">
-      <h2>misc</h2>
+      <h2 onclick="show_hide('content_misc');">+ misc</h2>
     </div>
   </div>
 
-  <div class="row">
+  <div class="row" id='content_misc' style="display:none;">
     <div class="col-lg-6">
       <div class="bs-component">
         <div class="card border-secondary mb-3" style="min-height: 16rem;">
@@ -1069,6 +1211,51 @@
     }
   }
 
+  function add_row_anova(add=true){
+    let row4 = document.getElementById('anova_input_row4'); let stats4 = document.getElementById('anova_output_stats4');
+    let row5 = document.getElementById('anova_input_row5'); let stats5 = document.getElementById('anova_output_stats5');
+    let row6 = document.getElementById('anova_input_row6'); let stats6 = document.getElementById('anova_output_stats6');
+    if(add==true){
+      if(row4.style.display=='none'){
+        row4.style.display = ''; stats4.style.display = '';
+      }else if(row5.style.display=='none'){
+        row5.style.display = ''; stats5.style.display = '';
+      }else if(row6.style.display=='none'){
+        row6.style.display = ''; stats6.style.display = '';
+      }
+    }else if(add==false){
+      if(row6.style.display==''){
+        row6.style.display = 'none'; stats6.style.display = 'none';
+      }else if(row5.style.display==''){
+        row5.style.display = 'none'; stats5.style.display = 'none';
+      }else if(row4.style.display==''){
+        row4.style.display = 'none'; stats4.style.display = 'none';
+      }
+    }
+  }
+  function show_anova(){
+    let arrs = [];
+    for(var i=1;i<=6;i++){
+      var arr = document.getElementById(`anova_input${i}`).value.trim().split(/\s+/).map(Number); 
+      if(arr.toString()!=='0' && !arr.includes(NaN)){arrs.push(arr);}
+    }
+    [SS_between, df_between, SS_within, df_within, F, p] = anova(arrs);
+    for(var k=0;k<arrs.length;k++){
+      var stats = [arrs[k].length, sum(arrs[k]), mean(arrs[k]), variance(arrs[k]), std(arrs[k])].map(x => round(x,5));
+      for(var i=0;i<5;i++){
+        document.getElementById(`anova_output_stats${k+1}`).children[i+1].firstElementChild.innerText = stats[i];
+      }
+    }
+    let between = [SS_between,df_between,SS_between/df_between,F,p].map(x => round(x,5));
+    let within = [SS_within,df_within,SS_within/df_within].map(x => round(x,5));
+    for(var i=0;i<5;i++){
+      document.getElementById('anova_output_result1').children[i+1].firstElementChild.innerText = between[i];
+    }
+    for(var i=0;i<3;i++){
+      document.getElementById('anova_output_result2').children[i+1].firstElementChild.innerText = within[i];
+    }
+  }
+
   function show_poisson(){
     var elem1 = document.getElementById('poisson_input1');
     var elem2 = document.getElementById('poisson_input2');
@@ -1198,12 +1385,19 @@ var reset_gamma = new ResetBtn(['gamma_input1','gamma_input2','gamma_input3'],{'
 
   function show_function(){
     elem = document.getElementById('functions');
-    if(elem.style.display=='none'){
-      elem.style.display='block';
-    }else{
-      elem.style.display='none'
-    }
+    elem.style.display = (elem.style.display=='none')? 'block':'none';
   }
+  function show_hide(targetID){
+
+		elem = document.getElementById(targetID);
+    if(elem.style.display=='none'){
+      elem.style.display = '';
+      event.target.innerHTML = event.target.innerHTML.replace('+', '-');
+    }else{
+      elem.style.display = 'none';
+      event.target.innerHTML = event.target.innerHTML.replace('-', '+');
+    }
+	}
 
   function copy_to_clipboard(){
     var temp_elem = document.createElement("textarea");

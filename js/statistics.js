@@ -334,3 +334,19 @@ function poisson_to_p(lambda, k, split=100){
   let func = function(t){return (lambda**t)*(Math.exp(-lambda))/gamma(t+1);}
   return 1-gauss_legendre(func,0,k,split);
 }
+
+// ANOVA
+function anova(arrs){
+  let df_between = arrs.length-1;
+  let df_within = sum(arrs.map(arr => arr.length-1));
+  let means = arrs.map(arr => mean(arr)); // group means
+  let whole_mean = mean(arrs.flat()); // whole mean
+  let SS_between = 0; let SS_within = 0;
+  for(var i=0;i<arrs.length;i++){
+    SS_between += arrs[i].length*(means[i]-whole_mean)**2;
+    SS_within += sum(arrs[i].map(elem => (elem-means[i])**2));
+  }
+  let F = (SS_between/df_between)/(SS_within/df_within);
+  let p = f_to_p(F, df_between, df_within);
+  return [SS_between, df_between, SS_within, df_within, F, p];
+}
