@@ -964,362 +964,368 @@
 
 <script>
 
-  // convert base
-  function convert(){
-      let base_from = document.getElementById('base_from').value;
-      let base_to = document.getElementById('base_to').value;
-      let num = document.getElementById('num_to_convert').value;
-      document.getElementById("answer").innerText = convert_base(num,base_from,base_to)
-  }
+// convert base
+function convert(){
+    let base_from = document.getElementById('base_from').value;
+    let base_to = document.getElementById('base_to').value;
+    let num = document.getElementById('num_to_convert').value;
+    document.getElementById("answer").innerText = convert_base(num,base_from,base_to)
+}
 
-  ///// GCD and LCM /////
-  document.getElementById('gcd_input').oninput = validate_gcd;
-  function validate_gcd(){
-    let nums = document.getElementById('gcd_input').value.trim().split(/\s+/).map(Number); // delete spaces, split, cast as Number
-    if(nums.every(Number.isInteger) && !nums.includes(0)){
-      document.getElementById('gcd_input').classList.remove('is-invalid');
-    }else{
-      document.getElementById('gcd_input').classList.add('is-invalid');
-    }
+///// GCD and LCM /////
+document.getElementById('gcd_input').oninput = validate_gcd;
+function validate_gcd(){
+  let nums = document.getElementById('gcd_input').value.trim().split(/\s+/).map(Number); // delete spaces, split, cast as Number
+  if(nums.every(Number.isInteger) && !nums.includes(0)){
+    document.getElementById('gcd_input').classList.remove('is-invalid');
+  }else{
+    document.getElementById('gcd_input').classList.add('is-invalid');
   }
-  function show_gcd(){
-    let elem = document.getElementById('gcd_input');
-    let nums = elem.value.trim().split(/\s+/).map(Number);
-    let mode = document.getElementById('select_gcd').value;
-    if(nums.length>0 && !elem.classList.contains('is-invalid')){
-      if(mode=='gcd'){
-        document.getElementById('answer_gcd').innerText = 'GCD = ' + gcd(nums);
-      }else if(mode='lcm'){
-        document.getElementById('answer_gcd').innerText = 'LCM = ' + lcm(nums);
-      }
-      
-    }
-  }
-
-  ////////////////////  STATISTICAL VALUES  ////////////////////
-
-  function stats_show_second_row(){
-    var checked = document.getElementById("stats_add_check").checked;
-    let IDs = ['stats_input_row2','stats_output_row2','stats_output_row3','stats_output_row4'];
-    if(checked==true){
-      for(var id of IDs){
-        document.getElementById(id).style.display = '';}
-    }else{
-      for(var id of IDs){
-        document.getElementById(id).style.display = 'none';}
-    }
-  }
-
-  function show_stats(){
-    // results of row1
-    let arr1 = document.getElementById('stats_input1').value.trim().split(/[,、\s]+/).map(Number); // delete spaces, split, cast as Number
-    let N1 = Number(arr1.length);
-    let mu1 = round(mean(arr1),5); let s1 = round(std(arr1),5);
-    let sd1 = (document.getElementById('unbiased').checked)? round(std(arr1),5):round(std(arr1,false),5);
-    let result1 = [N1-1, mu1, sd1, round(sem(arr1),5), round(median(arr1),5), round(skewness(arr1),5)];
-    for(var i=0;i<6;i++){
-      document.getElementById('stats_output_row1').children[i].firstElementChild.innerText = result1[i]; 
-    }
-    // results of row2
-    if(document.getElementById("stats_add_check").checked==true){
-      let arr2 = document.getElementById('stats_input2').value.trim().split(/[,\s]+/).map(Number);
-      let N2 = Number(arr2.length);
-      let mu2 = round(mean(arr2),5); let s2 = round(std(arr2),5);
-      let sd2 = (document.getElementById('unbiased').checked)? round(std(arr2),5):round(std(arr2,false),5);
-      let result2 = [N2-1, mu2, sd2, round(sem(arr2),5), round(median(arr2),5), round(skewness(arr2),5)];
-      for(var i=0;i<6;i++){
-        document.getElementById('stats_output_row2').children[i].firstElementChild.innerText = result2[i]; 
-      }
-      // export to ttest, ftest
-      document.getElementById('ttest_input1').value = `${mu1} ${s1} ${N1}`;
-      document.getElementById('ttest_input2').value = `${mu2} ${s2} ${N2}`;
-      show_ttest();
-      document.getElementById('ftest_input1').value = `${s1} ${N1-1}`;
-      document.getElementById('ftest_input2').value = `${s2} ${N2-1}`;
-      show_ftest();
-      // correlation
-      document.getElementById('stats_output_pooledSD').innerText = round(Math.sqrt(pooled_variance(arr1,arr2)),5);
-      if(arr1.length==arr2.length){
-        let cov12 = round(cov(arr1,arr2), 5);
-        let pearson = round(corr(cov12,s1,s2),5);
-        let spear = round(spearman(arr1, arr2), 5);
-        let regression_result = regression(arr1,arr2).map(x => round(x, 4));
-        var result_corr = [cov12, pearson, spear, `Y = ${regression_result[0]} + ${regression_result[1]} X`];
-      }else{
-        var result_corr = ['-','-','-','-'] 
-      }
-      for(var i=0;i<4;i++){
-        document.getElementById('stats_output_row4').children[i+1].firstElementChild.innerText = result_corr[i]; 
-      }
-    }
-  }
-
-  ////////////////////  T-TEST & F-TEST  ////////////////////
-
-  function show_ttest(){
-    let arr1 = document.getElementById('ttest_input1').value.trim().split(/[,\s]+/).map(Number);
-    let arr2 = document.getElementById('ttest_input2').value.trim().split(/[,\s]+/).map(Number);
-    let result = welch(arr1[0],arr2[0],arr1[1],arr2[1],arr1[2],arr2[2]); //mean12, SD12, N12 -> t, df, p
-    result.push(effect_size(arr1[0],arr2[0],arr1[1],arr2[1],arr1[2],arr2[2])); // cohen's d
-    result = result.map(x => round(x,5));
-    for(var i=0;i<4;i++){
-      document.getElementById('ttest_output_row').children[i].firstElementChild.innerText = result[i]; 
-    }
-    document.getElementById('z2p_input').value = Math.abs(result[0]);
-    document.getElementById('p2z_input').value = 0.025;
-    document.getElementById('t2p_input_t').value = Math.abs(result[0]);
-    document.getElementById('t2p_input_df').value = result[1];
-    document.getElementById('p2t_input_p').value = 0.025;
-    document.getElementById('p2t_input_df').value = result[1];
-    z2p(); p2z(); t2p(); p2t();
-  }
-
-  function show_ftest(){
-    let arr1 = document.getElementById('ftest_input1').value.trim().split(/[,\s]+/).map(Number);
-    let arr2 = document.getElementById('ftest_input2').value.trim().split(/[,\s]+/).map(Number);
-    let fvalue = (arr1[0]/arr2[0])**2;
-    let pvalue = f_to_p(fvalue, arr1[1], arr2[1]);
-    let result = [fvalue, pvalue, 1-pvalue].map(x => round(x,5))
-    for(var i=0;i<3;i++){
-      document.getElementById('ftest_output_row').children[i].firstElementChild.innerText = result[i]; 
-    }
-    document.getElementById('f2p_input_f').value = round(fvalue,5);
-    document.getElementById('f2p_input_df').value = `${arr1[1]} ${arr2[1]}`;
-    document.getElementById('p2f_input_df').value = `${arr1[1]} ${arr2[1]}`;
-    f2p();
-  }
-
-  ////////////////////  VALIDATE INPUT P-VALUE  ////////////////////
-  function validateP(){
-    let elem = event.target;
-    let p = elem.value;
-    if(p!='' && (p<0 || p>0.5)){
-      elem.classList.add('is-invalid');
-    }else{
-      elem.classList.remove('is-invalid');
-    }
-  }
-  document.getElementById('p2z_input').oninput = validateP;
-  document.getElementById('p2t_input_p').oninput = validateP;
-  document.getElementById('p2chi_input_p').oninput = validateP;
-  document.getElementById('p2f_input_p').oninput = validateP;
-
-
-  ////////////////////  CONVERT TO P-VALUE  ////////////////////
-  function z2p(){
-    let z = Math.abs(document.getElementById('z2p_input').value);
-    document.getElementById('z2p_output1').innerText = 'p=' + round(z_to_p(z),5);
-    document.getElementById('z2p_output2').innerText = 'p=' + round(0.5-z_to_p(z),5);
-  }
-  function p2z(){
-    if(!document.getElementById('p2z_input').classList.contains('is-invalid')){
-      let p = document.getElementById('p2z_input').value;
-      document.getElementById('p2z_output1').innerText = 'outside z=' + round(p_to_z(p),5);
-      document.getElementById('p2z_output2').innerText = 'inside z=' + round(p_to_z(0.5-p),5);
-    }
-  }
-  function t2p(){
-    let t = Math.abs(document.getElementById('t2p_input_t').value);
-    let df = Number(document.getElementById('t2p_input_df').value);
-    document.getElementById('t2p_output1').innerText = 'p=' + round(t_to_p(t,df),5);
-    document.getElementById('t2p_output2').innerText = 'p=' + round(0.5-t_to_p(t,df),5);
-  }
-  function p2t(){
-    if(!document.getElementById('p2t_input_p').classList.contains('is-invalid')){
-      let p = Number(document.getElementById('p2t_input_p').value);
-      let df = Number(document.getElementById('p2t_input_df').value);
-      document.getElementById('p2t_output1').innerText = 'outside t=' + round(p_to_t(p,df),5);
-      document.getElementById('p2t_output2').innerText = 'inside t=' + round(p_to_t(0.5-p,df),5);
-    }
-  }
-  function chi2p(){
-    let chi = Number(document.getElementById('chi2p_input_chi').value);
-    let df = Number(document.getElementById('chi2p_input_df').value);
-    let answer = round(chi_to_p(chi,df),5);
-    document.getElementById('chi2p_output_up').innerHTML = 'upper p=' + answer;
-    document.getElementById('chi2p_output_low').innerHTML = 'lower p=' + round(1-answer,5);
-  }
-  function p2chi(){
-    if(!document.getElementById('p2chi_input_p').classList.contains('is-invalid')){
-      let p = Number(document.getElementById('p2chi_input_p').value);
-      let df = Number(document.getElementById('p2chi_input_df').value);
-      let answer1 = round(p_to_chi(p,df),5);
-      let answer2 = round(p_to_chi(1-p,df),5);
-      document.getElementById('p2chi_output_up').innerHTML = 'upper χ<sup>2</sup>=' + answer1;
-      document.getElementById('p2chi_output_low').innerHTML = 'lower χ<sup>2</sup>=' + answer2;
-    }
-  }
-  function f2p(){
-    let f = Number(document.getElementById('f2p_input_f').value);
-    let df = document.getElementById('f2p_input_df').value.trim().split(/\s+/).map(Number);
-    if(df.length==2 && df.every(Number)){
-      document.getElementById('f2p_input_df').classList.remove('is-invalid');
-      let answer = round(f_to_p(f,df[0],df[1]),5);
-      document.getElementById('f2p_output_up').innerHTML = 'upper p=' + answer;
-      document.getElementById('f2p_output_low').innerHTML = 'lower p=' + round(1-answer,5);
-    }else{
-      document.getElementById('f2p_input_df').classList.add('is-invalid');
-      document.getElementById('f2p_input_df').focus();
-    }
-  }
-  function p2f(){
-    if(!document.getElementById('p2f_input_p').classList.contains('is-invalid')){
-      let p = Number(document.getElementById('p2f_input_p').value);
-      let df = document.getElementById('p2f_input_df').value.trim().split(/\s+/).map(Number);
-      if(df.length==2 && df.every(Number)){
-        document.getElementById('p2f_input_df').classList.remove('is-invalid'); //validate df
-        let answer1 = round(p_to_f(p,df[0],df[1]),5);
-        let answer2 = round(p_to_f(1-p,df[0],df[1]),5);
-        document.getElementById('p2f_output_up').innerHTML = 'upper F=' + answer1;
-        document.getElementById('p2f_output_low').innerHTML = 'lower F=' + answer2;
-      }else{
-        document.getElementById('p2f_input_df').classList.add('is-invalid');
-        document.getElementById('p2f_input_df').focus();
-      }
-    }
-  }
-
-  // chi2 test
-  function chitest_select(){
-    if(document.getElementById('chitest_selectbox').value=="fit"){
-      document.getElementById('chitest_description').innerText = "1st row: observations　2nd row: expected ratio, e.g. 1:2:3";
-      document.getElementById('chitest_output_row_E').style.display = '';
-      document.getElementById('chitest_output_row_residual').style.display = 'none';
-    }else{
-      document.getElementById('chitest_description').innerText = "1st row: data1　2nd row: data2";
-      document.getElementById('chitest_output_row_E').style.display = 'none';
-      document.getElementById('chitest_output_row_residual').style.display = '';
+}
+function show_gcd(){
+  let elem = document.getElementById('gcd_input');
+  let nums = elem.value.trim().split(/\s+/).map(Number);
+  let mode = document.getElementById('select_gcd').value;
+  if(nums.length>0 && !elem.classList.contains('is-invalid')){
+    if(mode=='gcd'){
+      document.getElementById('answer_gcd').innerText = 'GCD = ' + gcd(nums);
+    }else if(mode='lcm'){
+      document.getElementById('answer_gcd').innerText = 'LCM = ' + lcm(nums);
     }
     
   }
-  const chitest_inputs1 = ['chitest_input11','chitest_input12','chitest_input13','chitest_input14','chitest_input15','chitest_input16','chitest_input17','chitest_input18']
-  const chitest_inputs2 = ['chitest_input21','chitest_input22','chitest_input23','chitest_input24','chitest_input25','chitest_input26','chitest_input27','chitest_input28']
-  const chitest_E = ['chitest_E1','chitest_E2','chitest_E3','chitest_E4','chitest_E5','chitest_E6','chitest_E7','chitest_E8']
-  const chitest_res = ['chitest_res1','chitest_res2','chitest_res3','chitest_res4','chitest_res5','chitest_res6','chitest_res7','chitest_res8']
-  function show_chitest(){
-    let arr1 = []; let arr2 = [];
-    // collect input1
-    for(id of chitest_inputs1){
-      var num = Number(document.getElementById(id).value);
-      if(num!=0 && num!=NaN){
-        arr1.push(num);
-      }else{break;}
-    }
-    // collect input2
-    for(id of chitest_inputs2){
-      var num = Number(document.getElementById(id).value);
-      if(num!=0 && num!=NaN){
-        arr2.push(num);
-      }else{break;}
-    }
-    if(arr1.length!=0 && arr1.length==arr2.length){
-      let sum1 = sum(arr1); let sum2 = sum(arr2);
-      let chi2_value = 0;
-      // test for fit
-      if(document.getElementById('chitest_selectbox').value=='fit'){
-        arr2 = arr2.map(x => x*sum1/sum2); // convert to Ei
-        for(var i=0;i<8;i++){
-          if(arr2[i]!=undefined){
-          document.getElementById(chitest_E[i]).innerHTML = `E<sub>${i+1}</sub>=${round(arr2[i],5)}`;
-          }else{
-          document.getElementById(chitest_E[i]).innerHTML = `E<sub>${i+1}</sub>`;
-          }
-        }
-        chi2_value = chi2(arr1,arr2);
-      }else{ // test for independence
-        chi2_value = chi2_independence(arr1,arr2);
-        let residuals = adjusted_residual(arr1,arr2)[0];
-        for(var i=0;i<8;i++){ // Residual
-          if(residuals[i]!=undefined){
-          document.getElementById(chitest_res[i]).innerHTML = `p<sub>${i+1}</sub>=${round(2*z_to_p(Math.abs(residuals[i])),5)}`;
-          }else{
-          document.getElementById(chitest_res[i]).innerHTML = `Res<sub>${i+1}</sub>`;
-          }
-        }
-      }
-      let df = arr1.length-1;
-      document.getElementById('chitest_output_chi').innerHTML = `χ<sup>2</sup> = ${round(chi2_value,5)}`;
-      document.getElementById('chitest_output_df').innerText = `df = ${df}`;
-      document.getElementById('chi2p_input_chi').value = round(chi2_value,5);
-      document.getElementById('chi2p_input_df').value = df;
-      document.getElementById('p2chi_input_df').value = df;
-      chi2p();
-    }
-  }
+}
 
-  function add_row_anova(add=true){
-    let row4 = document.getElementById('anova_input_row4'); let stats4 = document.getElementById('anova_output_stats4');
-    let row5 = document.getElementById('anova_input_row5'); let stats5 = document.getElementById('anova_output_stats5');
-    let row6 = document.getElementById('anova_input_row6'); let stats6 = document.getElementById('anova_output_stats6');
-    if(add==true){
-      if(row4.style.display=='none'){
-        row4.style.display = ''; stats4.style.display = '';
-      }else if(row5.style.display=='none'){
-        row5.style.display = ''; stats5.style.display = '';
-      }else if(row6.style.display=='none'){
-        row6.style.display = ''; stats6.style.display = '';
-      }
-    }else if(add==false){
-      if(row6.style.display==''){
-        row6.style.display = 'none'; stats6.style.display = 'none';
-      }else if(row5.style.display==''){
-        row5.style.display = 'none'; stats5.style.display = 'none';
-      }else if(row4.style.display==''){
-        row4.style.display = 'none'; stats4.style.display = 'none';
-      }
+////////////////////  STATISTICAL VALUES  ////////////////////
+
+function stats_show_second_row(){
+  var checked = document.getElementById("stats_add_check").checked;
+  let IDs = ['stats_input_row2','stats_output_row2','stats_output_row3','stats_output_row4'];
+  if(checked==true){
+    for(var id of IDs){
+      document.getElementById(id).style.display = '';}
+  }else{
+    for(var id of IDs){
+      document.getElementById(id).style.display = 'none';}
+  }
+}
+
+function show_stats(){
+  // results of row1
+  let arr1 = document.getElementById('stats_input1').value.trim().split(/[,、\s]+/).map(Number); // delete spaces, split, cast as Number
+  let N1 = Number(arr1.length);
+  let mu1 = round(mean(arr1),5); let s1 = round(std(arr1),5);
+  let sd1 = (document.getElementById('unbiased').checked)? round(std(arr1),5):round(std(arr1,false),5);
+  let result1 = [N1-1, mu1, sd1, round(sem(arr1),5), round(median(arr1),5), round(skewness(arr1),5)];
+  for(var i=0;i<6;i++){
+    document.getElementById('stats_output_row1').children[i].firstElementChild.innerText = result1[i]; 
+  }
+  // results of row2
+  if(document.getElementById("stats_add_check").checked==true){
+    let arr2 = document.getElementById('stats_input2').value.trim().split(/[,\s]+/).map(Number);
+    let N2 = Number(arr2.length);
+    let mu2 = round(mean(arr2),5); let s2 = round(std(arr2),5);
+    let sd2 = (document.getElementById('unbiased').checked)? round(std(arr2),5):round(std(arr2,false),5);
+    let result2 = [N2-1, mu2, sd2, round(sem(arr2),5), round(median(arr2),5), round(skewness(arr2),5)];
+    for(var i=0;i<6;i++){
+      document.getElementById('stats_output_row2').children[i].firstElementChild.innerText = result2[i]; 
+    }
+    // export to ttest, ftest
+    document.getElementById('ttest_input1').value = `${mu1} ${s1} ${N1}`;
+    document.getElementById('ttest_input2').value = `${mu2} ${s2} ${N2}`;
+    show_ttest();
+    document.getElementById('ftest_input1').value = `${s1} ${N1-1}`;
+    document.getElementById('ftest_input2').value = `${s2} ${N2-1}`;
+    show_ftest();
+    // correlation
+    document.getElementById('stats_output_pooledSD').innerText = round(Math.sqrt(pooled_variance(arr1,arr2)),5);
+    if(arr1.length==arr2.length){
+      let cov12 = round(cov(arr1,arr2), 5);
+      let pearson = round(corr(cov12,s1,s2),5);
+      let spear = round(spearman(arr1, arr2), 5);
+      let regression_result = regression(arr1,arr2).map(x => round(x, 4));
+      var result_corr = [cov12, pearson, spear, `Y = ${regression_result[0]} + ${regression_result[1]} X`];
+    }else{
+      var result_corr = ['-','-','-','-'] 
+    }
+    for(var i=0;i<4;i++){
+      document.getElementById('stats_output_row4').children[i+1].firstElementChild.innerText = result_corr[i]; 
     }
   }
-  function show_anova(){
-    let arrs = [];
-    for(var i=1;i<=6;i++){
-      var arr = document.getElementById(`anova_input${i}`).value.trim().split(/\s+/).map(Number); 
-      if(arr.toString()!=='0' && !arr.includes(NaN)){arrs.push(arr);}
+}
+
+////////////////////  T-TEST & F-TEST  ////////////////////
+
+function show_ttest(){
+  let arr1 = document.getElementById('ttest_input1').value.trim().split(/[,\s]+/).map(Number);
+  let arr2 = document.getElementById('ttest_input2').value.trim().split(/[,\s]+/).map(Number);
+  let result = welch(arr1[0],arr2[0],arr1[1],arr2[1],arr1[2],arr2[2]); //mean12, SD12, N12 -> t, df, p
+  result.push(effect_size(arr1[0],arr2[0],arr1[1],arr2[1],arr1[2],arr2[2])); // cohen's d
+  result = result.map(x => round(x,5));
+  for(var i=0;i<4;i++){
+    document.getElementById('ttest_output_row').children[i].firstElementChild.innerText = result[i]; 
+  }
+  document.getElementById('z2p_input').value = Math.abs(result[0]);
+  document.getElementById('p2z_input').value = 0.025;
+  document.getElementById('t2p_input_t').value = Math.abs(result[0]);
+  document.getElementById('t2p_input_df').value = result[1];
+  document.getElementById('p2t_input_p').value = 0.025;
+  document.getElementById('p2t_input_df').value = result[1];
+  z2p(); p2z(); t2p(); p2t();
+}
+
+function show_ftest(){
+  let arr1 = document.getElementById('ftest_input1').value.trim().split(/[,\s]+/).map(Number);
+  let arr2 = document.getElementById('ftest_input2').value.trim().split(/[,\s]+/).map(Number);
+  let fvalue = (arr1[0]/arr2[0])**2;
+  let pvalue = f_to_p(fvalue, arr1[1], arr2[1]);
+  let result = [fvalue, pvalue, 1-pvalue].map(x => round(x,5))
+  for(var i=0;i<3;i++){
+    document.getElementById('ftest_output_row').children[i].firstElementChild.innerText = result[i]; 
+  }
+  document.getElementById('f2p_input_f').value = round(fvalue,5);
+  document.getElementById('f2p_input_df').value = `${arr1[1]} ${arr2[1]}`;
+  document.getElementById('p2f_input_df').value = `${arr1[1]} ${arr2[1]}`;
+  f2p();
+}
+
+////////////////////  VALIDATE INPUT P-VALUE  ////////////////////
+function validateP(){
+  let elem = event.target;
+  let p = elem.value;
+  if(p!='' && (p<0 || p>0.5)){
+    elem.classList.add('is-invalid');
+  }else{
+    elem.classList.remove('is-invalid');
+  }
+}
+document.getElementById('p2z_input').oninput = validateP;
+document.getElementById('p2t_input_p').oninput = validateP;
+document.getElementById('p2chi_input_p').oninput = validateP;
+document.getElementById('p2f_input_p').oninput = validateP;
+
+
+////////////////////  CONVERT TO P-VALUE  ////////////////////
+function z2p(){
+  let z = Math.abs(document.getElementById('z2p_input').value);
+  document.getElementById('z2p_output1').innerText = 'p=' + round(z_to_p(z),5);
+  document.getElementById('z2p_output2').innerText = 'p=' + round(0.5-z_to_p(z),5);
+}
+function p2z(){
+  if(!document.getElementById('p2z_input').classList.contains('is-invalid')){
+    let p = document.getElementById('p2z_input').value;
+    document.getElementById('p2z_output1').innerText = 'outside z=' + round(p_to_z(p),5);
+    document.getElementById('p2z_output2').innerText = 'inside z=' + round(p_to_z(0.5-p),5);
+  }
+}
+function t2p(){
+  let t = Math.abs(document.getElementById('t2p_input_t').value);
+  let df = Number(document.getElementById('t2p_input_df').value);
+  document.getElementById('t2p_output1').innerText = 'p=' + round(t_to_p(t,df),5);
+  document.getElementById('t2p_output2').innerText = 'p=' + round(0.5-t_to_p(t,df),5);
+}
+function p2t(){
+  if(!document.getElementById('p2t_input_p').classList.contains('is-invalid')){
+    let p = Number(document.getElementById('p2t_input_p').value);
+    let df = Number(document.getElementById('p2t_input_df').value);
+    document.getElementById('p2t_output1').innerText = 'outside t=' + round(p_to_t(p,df),5);
+    document.getElementById('p2t_output2').innerText = 'inside t=' + round(p_to_t(0.5-p,df),5);
+  }
+}
+function chi2p(){
+  let chi = Number(document.getElementById('chi2p_input_chi').value);
+  let df = Number(document.getElementById('chi2p_input_df').value);
+  let answer = round(chi_to_p(chi,df),5);
+  document.getElementById('chi2p_output_up').innerHTML = 'upper p=' + answer;
+  document.getElementById('chi2p_output_low').innerHTML = 'lower p=' + round(1-answer,5);
+}
+function p2chi(){
+  if(!document.getElementById('p2chi_input_p').classList.contains('is-invalid')){
+    let p = Number(document.getElementById('p2chi_input_p').value);
+    let df = Number(document.getElementById('p2chi_input_df').value);
+    let answer1 = round(p_to_chi(p,df),5);
+    let answer2 = round(p_to_chi(1-p,df),5);
+    document.getElementById('p2chi_output_up').innerHTML = 'upper χ<sup>2</sup>=' + answer1;
+    document.getElementById('p2chi_output_low').innerHTML = 'lower χ<sup>2</sup>=' + answer2;
+  }
+}
+function f2p(){
+  let f = Number(document.getElementById('f2p_input_f').value);
+  let df = document.getElementById('f2p_input_df').value.trim().split(/\s+/).map(Number);
+  if(df.length==2 && df.every(Number)){
+    document.getElementById('f2p_input_df').classList.remove('is-invalid');
+    let answer = round(f_to_p(f,df[0],df[1]),5);
+    document.getElementById('f2p_output_up').innerHTML = 'upper p=' + answer;
+    document.getElementById('f2p_output_low').innerHTML = 'lower p=' + round(1-answer,5);
+  }else{
+    document.getElementById('f2p_input_df').classList.add('is-invalid');
+    document.getElementById('f2p_input_df').focus();
+  }
+}
+function p2f(){
+  if(!document.getElementById('p2f_input_p').classList.contains('is-invalid')){
+    let p = Number(document.getElementById('p2f_input_p').value);
+    let df = document.getElementById('p2f_input_df').value.trim().split(/\s+/).map(Number);
+    if(df.length==2 && df.every(Number)){
+      document.getElementById('p2f_input_df').classList.remove('is-invalid'); //validate df
+      let answer1 = round(p_to_f(p,df[0],df[1]),5);
+      let answer2 = round(p_to_f(1-p,df[0],df[1]),5);
+      document.getElementById('p2f_output_up').innerHTML = 'upper F=' + answer1;
+      document.getElementById('p2f_output_low').innerHTML = 'lower F=' + answer2;
+    }else{
+      document.getElementById('p2f_input_df').classList.add('is-invalid');
+      document.getElementById('p2f_input_df').focus();
     }
-    [SS_between, df_between, SS_within, df_within, F, p] = anova(arrs);
-    for(var k=0;k<arrs.length;k++){
-      var stats = [arrs[k].length, sum(arrs[k]), mean(arrs[k]), variance(arrs[k]), std(arrs[k])].map(x => round(x,5));
-      for(var i=0;i<5;i++){
-        document.getElementById(`anova_output_stats${k+1}`).children[i+1].firstElementChild.innerText = stats[i];
+  }
+}
+
+
+////////////////////  CHI2 TEST  ////////////////////
+
+function chitest_select(){
+  if(document.getElementById('chitest_selectbox').value=="fit"){
+    document.getElementById('chitest_description').innerText = "1st row: observations　2nd row: expected ratio, e.g. 1:2:3";
+    document.getElementById('chitest_output_row_E').style.display = '';
+    document.getElementById('chitest_output_row_residual').style.display = 'none';
+  }else{
+    document.getElementById('chitest_description').innerText = "1st row: data1　2nd row: data2";
+    document.getElementById('chitest_output_row_E').style.display = 'none';
+    document.getElementById('chitest_output_row_residual').style.display = '';
+  }
+  
+}
+const chitest_inputs1 = ['chitest_input11','chitest_input12','chitest_input13','chitest_input14','chitest_input15','chitest_input16','chitest_input17','chitest_input18']
+const chitest_inputs2 = ['chitest_input21','chitest_input22','chitest_input23','chitest_input24','chitest_input25','chitest_input26','chitest_input27','chitest_input28']
+const chitest_E = ['chitest_E1','chitest_E2','chitest_E3','chitest_E4','chitest_E5','chitest_E6','chitest_E7','chitest_E8']
+const chitest_res = ['chitest_res1','chitest_res2','chitest_res3','chitest_res4','chitest_res5','chitest_res6','chitest_res7','chitest_res8']
+function show_chitest(){
+  let arr1 = []; let arr2 = [];
+  // collect input1
+  for(id of chitest_inputs1){
+    var num = Number(document.getElementById(id).value);
+    if(num!=0 && num!=NaN){
+      arr1.push(num);
+    }else{break;}
+  }
+  // collect input2
+  for(id of chitest_inputs2){
+    var num = Number(document.getElementById(id).value);
+    if(num!=0 && num!=NaN){
+      arr2.push(num);
+    }else{break;}
+  }
+  if(arr1.length!=0 && arr1.length==arr2.length){
+    let sum1 = sum(arr1); let sum2 = sum(arr2);
+    let chi2_value = 0;
+    // test for fit
+    if(document.getElementById('chitest_selectbox').value=='fit'){
+      arr2 = arr2.map(x => x*sum1/sum2); // convert to Ei
+      for(var i=0;i<8;i++){
+        if(arr2[i]!=undefined){
+        document.getElementById(chitest_E[i]).innerHTML = `E<sub>${i+1}</sub>=${round(arr2[i],5)}`;
+        }else{
+        document.getElementById(chitest_E[i]).innerHTML = `E<sub>${i+1}</sub>`;
+        }
+      }
+      chi2_value = chi2(arr1,arr2);
+    }else{ // test for independence
+      chi2_value = chi2_independence(arr1,arr2);
+      let residuals = adjusted_residual(arr1,arr2)[0];
+      for(var i=0;i<8;i++){ // Residual
+        if(residuals[i]!=undefined){
+        document.getElementById(chitest_res[i]).innerHTML = `p<sub>${i+1}</sub>=${round(2*z_to_p(Math.abs(residuals[i])),5)}`;
+        }else{
+        document.getElementById(chitest_res[i]).innerHTML = `Res<sub>${i+1}</sub>`;
+        }
       }
     }
-    let between = [SS_between,df_between,SS_between/df_between,F,p].map(x => round(x,5));
-    let within = [SS_within,df_within,SS_within/df_within].map(x => round(x,5));
+    let df = arr1.length-1;
+    document.getElementById('chitest_output_chi').innerHTML = `χ<sup>2</sup> = ${round(chi2_value,5)}`;
+    document.getElementById('chitest_output_df').innerText = `df = ${df}`;
+    document.getElementById('chi2p_input_chi').value = round(chi2_value,5);
+    document.getElementById('chi2p_input_df').value = df;
+    document.getElementById('p2chi_input_df').value = df;
+    chi2p();
+  }
+}
+
+////////////////////  1D ANOVA  ////////////////////
+
+function add_row_anova(add=true){
+  let row4 = document.getElementById('anova_input_row4'); let stats4 = document.getElementById('anova_output_stats4');
+  let row5 = document.getElementById('anova_input_row5'); let stats5 = document.getElementById('anova_output_stats5');
+  let row6 = document.getElementById('anova_input_row6'); let stats6 = document.getElementById('anova_output_stats6');
+  if(add==true){
+    if(row4.style.display=='none'){
+      row4.style.display = ''; stats4.style.display = '';
+    }else if(row5.style.display=='none'){
+      row5.style.display = ''; stats5.style.display = '';
+    }else if(row6.style.display=='none'){
+      row6.style.display = ''; stats6.style.display = '';
+    }
+  }else if(add==false){
+    if(row6.style.display==''){
+      row6.style.display = 'none'; stats6.style.display = 'none';
+    }else if(row5.style.display==''){
+      row5.style.display = 'none'; stats5.style.display = 'none';
+    }else if(row4.style.display==''){
+      row4.style.display = 'none'; stats4.style.display = 'none';
+    }
+  }
+}
+function show_anova(){
+  let arrs = [];
+  for(var i=1;i<=6;i++){
+    var arr = document.getElementById(`anova_input${i}`).value.trim().split(/\s+/).map(Number); 
+    if(arr.toString()!=='0' && !arr.includes(NaN)){arrs.push(arr);}
+  }
+  [SS_between, df_between, SS_within, df_within, F, p] = anova(arrs);
+  for(var k=0;k<arrs.length;k++){
+    var stats = [arrs[k].length, sum(arrs[k]), mean(arrs[k]), variance(arrs[k]), std(arrs[k])].map(x => round(x,5));
     for(var i=0;i<5;i++){
-      document.getElementById('anova_output_result1').children[i+1].firstElementChild.innerText = between[i];
-    }
-    for(var i=0;i<3;i++){
-      document.getElementById('anova_output_result2').children[i+1].firstElementChild.innerText = within[i];
+      document.getElementById(`anova_output_stats${k+1}`).children[i+1].firstElementChild.innerText = stats[i];
     }
   }
+  let between = [SS_between,df_between,SS_between/df_between,F,p].map(x => round(x,5));
+  let within = [SS_within,df_within,SS_within/df_within].map(x => round(x,5));
+  for(var i=0;i<5;i++){
+    document.getElementById('anova_output_result1').children[i+1].firstElementChild.innerText = between[i];
+  }
+  for(var i=0;i<3;i++){
+    document.getElementById('anova_output_result2').children[i+1].firstElementChild.innerText = within[i];
+  }
+}
 
-  function show_poisson(){
-    var elem1 = document.getElementById('poisson_input1');
-    var elem2 = document.getElementById('poisson_input2');
-    if(!elem1.classList.contains('is-invalid') && !elem2.classList.contains('is-invalid')){
-      var l = Math.round(elem1.value); var k = Math.round(elem2.value);
-      p = poisson(l,k); cum = poisson_cum(l,k);
-      document.getElementById('poisson_output1').innerText = `P(X=${k})=` + round(p,5);
-      document.getElementById('poisson_output2').innerText = `P(X≥${k})=` + round(cum,5);
-    }
-  }
+////////////////////  POISSON & GAMMA  ////////////////////
 
-  // validate poisson
-  document.getElementById('poisson_input1').oninput = validation_poisson;
-  document.getElementById('poisson_input2').oninput = validation_poisson;
-  function validation_poisson(){
-    var l = document.getElementById('poisson_input1').value;
-    var k = document.getElementById('poisson_input2').value;
-    if(l!='' && Number(l)<0){
-      document.getElementById('poisson_input1').classList.add('is-invalid')
-    }else{
-      document.getElementById('poisson_input1').classList.remove('is-invalid')
-    }
-    if(k!='' && !Number.isInteger(Number(k))){
-      document.getElementById('poisson_input2').classList.add('is-invalid')
-    }else{
-      document.getElementById('poisson_input2').classList.remove('is-invalid')
-    }
+function show_poisson(){
+  var elem1 = document.getElementById('poisson_input1');
+  var elem2 = document.getElementById('poisson_input2');
+  if(!elem1.classList.contains('is-invalid') && !elem2.classList.contains('is-invalid')){
+    var l = Math.round(elem1.value); var k = Math.round(elem2.value);
+    p = poisson(l,k); cum = poisson_cum(l,k);
+    document.getElementById('poisson_output1').innerText = `P(X=${k})=` + round(p,5);
+    document.getElementById('poisson_output2').innerText = `P(X≥${k})=` + round(cum,5);
   }
+}
+
+// validate poisson
+document.getElementById('poisson_input1').oninput = validation_poisson;
+document.getElementById('poisson_input2').oninput = validation_poisson;
+function validation_poisson(){
+  var l = document.getElementById('poisson_input1').value;
+  var k = document.getElementById('poisson_input2').value;
+  if(l!='' && Number(l)<0){
+    document.getElementById('poisson_input1').classList.add('is-invalid')
+  }else{
+    document.getElementById('poisson_input1').classList.remove('is-invalid')
+  }
+  if(k!='' && !Number.isInteger(Number(k))){
+    document.getElementById('poisson_input2').classList.add('is-invalid')
+  }else{
+    document.getElementById('poisson_input2').classList.remove('is-invalid')
+  }
+}
 
 
   // validate gamma
@@ -1419,33 +1425,34 @@ var reset_chitest = new ResetBtn('chitest_input11',[],
 var reset_poisson = new ResetBtn('poisson_input1',['poisson_input1','poisson_input1'],{'poisson_output1':'P(X=k)','poisson_output1':'P(X≥k)'})
 var reset_gamma = new ResetBtn('gamma_input1',['gamma_input1','gamma_input2','gamma_input3'],{'gamma_output1':'P(t)','gamma_output2':'P(t)'})
 
+////////////////////  CONVERT TO P-VALUE  ////////////////////
 
-  function show_function(){
-    elem = document.getElementById('functions');
-    elem.style.display = (elem.style.display=='none')? 'block':'none';
+function show_function(){
+  elem = document.getElementById('functions');
+  elem.style.display = (elem.style.display=='none')? 'block':'none';
+}
+function show_hide(targetID){
+
+  elem = document.getElementById(targetID);
+  if(elem.style.display=='none'){
+    elem.style.display = '';
+    event.target.innerHTML = event.target.innerHTML.replace('＋', 'ー');
+  }else{
+    elem.style.display = 'none';
+    event.target.innerHTML = event.target.innerHTML.replace('ー', '＋');
   }
-  function show_hide(targetID){
+}
 
-		elem = document.getElementById(targetID);
-    if(elem.style.display=='none'){
-      elem.style.display = '';
-      event.target.innerHTML = event.target.innerHTML.replace('＋', 'ー');
-    }else{
-      elem.style.display = 'none';
-      event.target.innerHTML = event.target.innerHTML.replace('ー', '＋');
-    }
-	}
-
-  function copy_to_clipboard(onlynumber=true){
-    var temp_elem = document.createElement("textarea");
-    temp_elem.textContent = (onlynumber)? Number(event.target.innerText.split('=').slice(-1)[0]):event.target.innerText;
-    console.log(temp_elem.textContent);
-    var body_elem = document.getElementsByTagName("body")[0];
-    body_elem.appendChild(temp_elem);
-    temp_elem.select();
-    document.execCommand("Copy");
-    body_elem.removeChild(temp_elem);
-  }
+function copy_to_clipboard(onlynumber=true){
+  var temp_elem = document.createElement("textarea");
+  temp_elem.textContent = (onlynumber)? Number(event.target.innerText.split('=').slice(-1)[0]):event.target.innerText;
+  console.log(temp_elem.textContent);
+  var body_elem = document.getElementsByTagName("body")[0];
+  body_elem.appendChild(temp_elem);
+  temp_elem.select();
+  document.execCommand("Copy");
+  body_elem.removeChild(temp_elem);
+}
 
 </script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
