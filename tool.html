@@ -779,12 +779,12 @@
             <table class="table" style="table-layout: fixed;">
               <tbody id='anova2_table'>
                 <tr class="anova2_input_row">
-                  <td><input type="text" class="form-control anova2_input" id="anova2_input1" placeholder="Row1, Column1" autocomplete="off"></td>
-                  <td><input type="text" class="form-control anova2_input" placeholder="Row1, Column2" autocomplete="off"></td>
+                  <td><input type="text" class="form-control anova2_input" id="anova2_input1" placeholder="Row1:Column1, PASTE DATA HERE" autocomplete="off"></td>
+                  <td><input type="text" class="form-control anova2_input" placeholder="Row1:Column2" autocomplete="off"></td>
                 </tr>
                 <tr class="anova2_input_row">
-                  <td><input type="text" class="form-control anova2_input" placeholder="Row2, Column1" autocomplete="off"></td>
-                  <td><input type="text" class="form-control anova2_input" placeholder="Row2, Column2" autocomplete="off"></td>
+                  <td><input type="text" class="form-control anova2_input" placeholder="Row2:Column1" autocomplete="off"></td>
+                  <td><input type="text" class="form-control anova2_input" placeholder="Row2:Column2" autocomplete="off"></td>
                 </tr>
               </tbody>
             </table>
@@ -849,19 +849,27 @@
                   <td align="center"><strong data-toggle="tooltip" data-placement="bottom" title="F-value">F</strong></td>
                   <td align="center"><strong data-toggle="tooltip" data-placement="bottom" title="p-value">p</strong></td>
                 </tr>
-                <tr class="table-active" id='anova_output_result1'>
-                  <td align="center"><strong>Between</strong></td>
-                  <td align="center" class="answer" onclick="copy_to_clipboard();" ><strong class='anova_output'>-</strong></td>
-                  <td align="center" class="answer" onclick="copy_to_clipboard();" ><strong class='anova_output'>-</strong></td>
-                  <td align="center" class="answer" onclick="copy_to_clipboard();" ><strong class='anova_output'>-</strong></td>
-                  <td align="center" class="answer" onclick="copy_to_clipboard();" ><strong class='anova_output'>-</strong></td>
-                  <td align="center" class="answer" onclick="copy_to_clipboard();" ><strong class='anova_output'>-</strong></td>
+                <tr class="table-active" id='anova2_output_result1'>
+                  <td align="center"><strong>Row</strong></td>
+                  <td align="center" class="answer" onclick="copy_to_clipboard();" ><strong class='anova2_output'>-</strong></td>
+                  <td align="center" class="answer" onclick="copy_to_clipboard();" ><strong class='anova2_output'>-</strong></td>
+                  <td align="center" class="answer" onclick="copy_to_clipboard();" ><strong class='anova2_output'>-</strong></td>
+                  <td align="center" class="answer" onclick="copy_to_clipboard();" ><strong class='anova2_output'>-</strong></td>
+                  <td align="center" class="answer" onclick="copy_to_clipboard();" ><strong class='anova2_output'>-</strong></td>
                 </tr>
-                <tr class="table-active" id='anova_output_result2'>
-                  <td align="center"><strong>Within</strong></td>
-                  <td align="center" class="answer" onclick="copy_to_clipboard();" ><strong class='anova_output'>-</strong></td>
-                  <td align="center" class="answer" onclick="copy_to_clipboard();" ><strong class='anova_output'>-</strong></td>
-                  <td align="center" class="answer" onclick="copy_to_clipboard();" ><strong class='anova_output'>-</strong></td>
+                <tr class="table-active" id='anova2_output_result2'>
+                  <td align="center"><strong>Column</strong></td>
+                  <td align="center" class="answer" onclick="copy_to_clipboard();" ><strong class='anova2_output'>-</strong></td>
+                  <td align="center" class="answer" onclick="copy_to_clipboard();" ><strong class='anova2_output'>-</strong></td>
+                  <td align="center" class="answer" onclick="copy_to_clipboard();" ><strong class='anova2_output'>-</strong></td>
+                  <td align="center" class="answer" onclick="copy_to_clipboard();" ><strong class='anova2_output'>-</strong></td>
+                  <td align="center" class="answer" onclick="copy_to_clipboard();" ><strong class='anova2_output'>-</strong></td>
+                </tr>
+                <tr class="table-active" id='anova2_output_result3'>
+                  <td align="center"><strong>Error</strong></td>
+                  <td align="center" class="answer" onclick="copy_to_clipboard();" ><strong class='anova2_output'>-</strong></td>
+                  <td align="center" class="answer" onclick="copy_to_clipboard();" ><strong class='anova2_output'>-</strong></td>
+                  <td align="center" class="answer" onclick="copy_to_clipboard();" ><strong class='anova2_output'>-</strong></td>
                 </tr>
               </tbody>
             </table>
@@ -1358,13 +1366,15 @@ function show_anova(){
     var arr = elem.value.trim().split(/\s+/).map(Number); 
     if(arr.toString()!=='0' && !arr.includes(NaN)){arrs.push(arr);}
   }
-  [SS_between, df_between, SS_within, df_within, fvalue, p] = anova(arrs);
+  // SHOW STATS
   for(var k=0;k<arrs.length;k++){
     var stats = [arrs[k].length, sum(arrs[k]), mean(arrs[k]), variance(arrs[k]), std(arrs[k])].map(x => round(x,5));
     for(var i=0;i<5;i++){
       document.getElementsByClassName(`anova_output_row`)[k].children[i+1].firstElementChild.innerText = stats[i];
     }
   }
+  // RESULTS OF ANOVA
+  [SS_between, df_between, SS_within, df_within, fvalue, p] = anova(arrs);
   let between = [SS_between,df_between,SS_between/df_between,fvalue,p].map(x => round(x,5));
   let within = [SS_within,df_within,SS_within/df_within].map(x => round(x,5));
   for(var i=0;i<5;i++){
@@ -1410,6 +1420,76 @@ function add_rowcol_anova2(add=true, row=true){
       Array.from(document.getElementsByClassName('anova2_input_row')).forEach(elem => elem.lastElementChild.remove());
       document.getElementsByClassName('anova2_output_col')[col_n-1].remove();
     }
+  }
+}
+
+function paste_from_clipboard(event){
+  event.preventDefault();
+  let clipboardData = event.clipboardData;
+  if(clipboardData != null){
+    // COPY FROM CLIPBOARD & ADJUST ROW/COL
+    let arrs = clipboardData.getData("text/plain").split('\n').map(row => row.trim().split(/\s/).map(Number));
+    let row_n = document.getElementsByClassName('anova2_input_row').length;
+    let col_n = document.getElementsByClassName('anova2_input_row')[0].children.length;
+    let row_diff = arrs.length - row_n; let col_diff = arrs[0].length - col_n;
+    if(row_diff>=0){
+      for(var i=0;i<row_diff;i++){add_rowcol_anova2(add=true,row=true);}
+    }else{
+      for(var i=0;i<Math.abs(row_diff);i++){add_rowcol_anova2(add=false,row=true);}
+    }
+    if(col_diff>=0){
+      for(var i=0;i<col_diff;i++){add_rowcol_anova2(add=true,row=false);}
+    }else{
+      for(var i=0;i<Math.abs(col_diff);i++){add_rowcol_anova2(add=false,row=false);}
+    }
+    // PASTE
+    let input_rows = document.getElementsByClassName('anova2_input_row');
+    for(var i=0;i<input_rows.length;i++){
+      let inputs = input_rows[i].getElementsByClassName('anova2_input');
+      for(var j=0;j<inputs.length;j++){
+        inputs[j].value = arrs[i][j];
+      }
+    }
+    show_anova2();
+  }
+}
+const ELEM_ANOVA2_INPUT = document.getElementById('anova2_input1');
+ELEM_ANOVA2_INPUT.addEventListener("paste" , paste_from_clipboard);
+
+function show_anova2(){
+  // MAKE MATRIX
+  let arrs = [];
+  for(var row of document.getElementsByClassName('anova2_input_row')){
+    arrs.push(Array.from(row.getElementsByClassName('anova2_input')).map(elem => Number(elem.value)));
+  }
+  let cols = []; // TRANSPOSE
+  for(var i=0;i<arrs[0].length;i++){
+    cols.push(arrs.map(x => x[i]))
+  }
+  // SHOW STATS
+  for(var k=0;k<arrs.length;k++){
+    var stats = [arrs[k].length, sum(arrs[k]), mean(arrs[k]), variance(arrs[k]), std(arrs[k])].map(x => round(x,5));
+    for(var i=0;i<5;i++){
+      document.getElementsByClassName('anova2_output_row')[k].children[i+1].firstElementChild.innerText = stats[i];
+    }
+  }
+  for(var k=0;k<cols.length;k++){
+    var stats = [cols[k].length, sum(cols[k]), mean(cols[k]), variance(cols[k]), std(cols[k])].map(x => round(x,5));
+    for(var i=0;i<5;i++){
+      document.getElementsByClassName('anova2_output_col')[k].children[i+1].firstElementChild.innerText = stats[i];
+    }
+  }
+  // RESULTS OF ANOVA
+  [SS_row,df_row,F_row,p_row,SS_col,df_col,F_col,p_col,error,df_error] = anova2(arrs);
+  let result_row = [SS_row,df_row,SS_row/df_row,F_row,p_row].map(x => round(x,5));
+  let result_col = [SS_col,df_col,SS_col/df_col,F_col,p_col].map(x => round(x,5));
+  let result_err = [error,df_error,error/df_error].map(x => round(x,5));
+  for(var i=0;i<5;i++){
+    document.getElementById('anova2_output_result1').children[i+1].firstElementChild.innerText = result_row[i];
+    document.getElementById('anova2_output_result2').children[i+1].firstElementChild.innerText = result_col[i];
+  }
+  for(var i=0;i<3;i++){
+    document.getElementById('anova2_output_result3').children[i+1].firstElementChild.innerText = result_err[i];
   }
 }
 
@@ -1527,6 +1607,7 @@ let reset_f2p = new ResetBtn('f2p_input_f',['f2p_input_f','f2p_input_df'],{'f2p_
 let reset_p2f = new ResetBtn('p2f_input_p',['p2f_input_p','p2f_input_df'],{'p2f_output_up':'F-value','p2f_output_low':'F-value'});
 let reset_chitest = new ResetBtn('chitest_input11',[],{},{'chitest_output':'-'},['chitest_input1','chitest_input2']);
 let reset_anova = new ResetBtn('anova_input1',[],{},{'anova_output':'-'},['anova_input'])
+let reset_anova2 = new ResetBtn('anova2_input1',[],{},{'anova2_output':'-'},['anova2_input'])
 let reset_poisson = new ResetBtn('poisson_input1',['poisson_input1','poisson_input1'],{'poisson_output1':'P(X=k)','poisson_output1':'P(X≥k)'})
 let reset_gamma = new ResetBtn('gamma_input1',['gamma_input1','gamma_input2','gamma_input3'],{'gamma_output1':'P(t)','gamma_output2':'P(t)'})
 
@@ -1556,8 +1637,18 @@ function copy_to_clipboard(onlynumber=true){
   body_elem.appendChild(temp_elem);
   temp_elem.select();
   document.execCommand("Copy");
+  
+}
+
+function pastefrom(){
+  var temp_elem = document.createElement("textarea");
+  var body_elem = document.getElementsByTagName("body")[0];
+  body_elem.appendChild(temp_elem);
+  temp_elem.select();
+  document.execCommand("paste");
   body_elem.removeChild(temp_elem);
 }
+
 
 </script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

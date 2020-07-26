@@ -337,7 +337,7 @@ function poisson_to_p(lambda, k, split=100){
   return 1-gauss_legendre(func,0,k,split);
 }
 
-// ANOVA
+// 1D ANOVA
 function anova(arrs){
   let df_between = arrs.length-1;
   let df_within = sum(arrs.map(arr => arr.length-1));
@@ -351,4 +351,28 @@ function anova(arrs){
   let F = (SS_between/df_between)/(SS_within/df_within);
   let p = f_to_p(F, df_between, df_within);
   return [SS_between, df_between, SS_within, df_within, F, p];
+}
+
+// 2D ANOVA w/o replication
+function anova2(rows){
+  let cols = []; //transposed
+  for(var i=0;i<rows[0].length;i++){
+    cols.push(rows.map(x => x[i]))
+  }
+  let means_row = rows.map(row => mean(row));
+  let means_col = cols.map(col => mean(col));
+  let whole_mean = mean(rows.flat()); // whole mean
+  let SS_row = 0; let SS_col = 0; let error = 0;
+  for(var i=0;i<rows.length;i++){
+    for(var j=0;j<rows[i].length;j++){
+      SS_row += (means_row[i]-whole_mean)**2;
+      SS_col += (means_col[j]-whole_mean)**2;
+      error += (rows[i][j]+whole_mean-means_row[i]-means_col[j])**2;
+    }
+  }
+  df_row = rows.length - 1; df_col = cols.length - 1;
+  df_error = df_row * df_col;
+  F_row = (SS_row/df_row)/(error/df_error); F_col = (SS_col/df_col)/(error/df_error);
+  p_row = f_to_p(F_row,df_row,df_error); p_col = f_to_p(F_col,df_col,df_error);
+  return [SS_row,df_row,F_row,p_row,SS_col,df_col,F_col,p_col,error,df_error]
 }
