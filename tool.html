@@ -1118,7 +1118,7 @@ function paste_stats(event){
     document.getElementById("stats_add_check").checked = false;
     stats_show_second_row();
     document.getElementById("stats_input1").value = arrs.join(' ');
-  }
+  }else{return;}
   show_stats();
 }
 const ELEM_STATS_INPUT = document.getElementById('stats_input1');
@@ -1388,7 +1388,9 @@ function transpose_anova(){
   let arrs = [];
   let input_rows = document.getElementsByClassName(`anova_input`);
   for(row of input_rows){
-    var arr = row.value.trim().split(/\s+/).map(Number); 
+    if(row.value==''){return;}
+    var arr = row.value.trim().split(/\s+/).map(Number);
+    if(arr.length<2){return;}
     if(arr.toString()!=='0' && !arr.includes(NaN)){arrs.push(arr);}
   }
   arrs = transpose(arrs);
@@ -1403,6 +1405,7 @@ function transpose_anova(){
   for(var i=0;i<input_rows.length;i++){
     input_rows[i].value = arrs[i].join(' ');
   }
+  show_anova();
 }
 
 function paste_anova(event){
