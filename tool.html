@@ -613,18 +613,26 @@
                 <td><input type="text" class="form-control chitest_input2" autocomplete="off"></td>
               </tr>
               <tr id="chitest_output_row_E_label">
-                <td align="center"><strong class="chitest_output answer">E<sub>1</sub></strong></td>
-                <td align="center"><strong class="chitest_output answer">E<sub>2</sub></strong></td>
+                <td align="center"><strong>E<sub>1</sub></strong></td>
+                <td align="center"><strong>E<sub>2</sub></strong></td>
               </tr>
               <tr id="chitest_output_row_E" class="table-active">
                 <td align="center" class="answer" onclick="copy_to_clipboard();"><strong class="chitest_output">-</strong></td>
                 <td align="center" class="answer" onclick="copy_to_clipboard();"><strong class="chitest_output">-</strong></td>
               </tr>
               <tr id="chitest_output_row_res_label" style="display:none">
-                <td align="center"><strong class="chitest_output answer">Res<sub>1</sub></strong></td>
-                <td align="center"><strong class="chitest_output answer">Res<sub>2</sub></strong></td>
+                <td align="center"><strong>Res<sub>1</sub></strong></td>
+                <td align="center"><strong>Res<sub>2</sub></strong></td>
               </tr>
               <tr id="chitest_output_row_res" class="table-active" style="display:none">
+                <td align="center" class="answer" onclick="copy_to_clipboard();"><strong class="chitest_output">-</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();"><strong class="chitest_output">-</strong></td>
+              </tr>
+              <tr id="chitest_output_row_p_label" style="display:none">
+                <td align="center"><strong>p<sub>1</sub></strong></td>
+                <td align="center"><strong>p<sub>2</sub></strong></td>
+              </tr>
+              <tr id="chitest_output_row_p" class="table-active" style="display:none">
                 <td align="center" class="answer" onclick="copy_to_clipboard();"><strong class="chitest_output">-</strong></td>
                 <td align="center" class="answer" onclick="copy_to_clipboard();"><strong class="chitest_output">-</strong></td>
               </tr>
@@ -674,22 +682,22 @@
             <form onsubmit="show_anova();return false;">
             <table class='table' style="table-layout: fixed;">
               <tr id='anova_input_row1'>
-                <td colspan="6"><input type='text' class="form-control" id='anova_input1' placeholder="values of group1 with space or comma" autocomplete="off"></td>
+                <td colspan="6"><input type='text' class="form-control anova_input" id='anova_input1' placeholder="values of group1 with space or comma" autocomplete="off"></td>
               </tr>
               <tr id='anova_input_row2'>
-                <td colspan="6"><input type='text' class="form-control" id='anova_input2' placeholder="values of group2 with space or comma" autocomplete="off"></td>
+                <td colspan="6"><input type='text' class="form-control anova_input" id='anova_input2' placeholder="values of group2 with space or comma" autocomplete="off"></td>
               </tr>
               <tr id='anova_input_row3'>
-                <td colspan="6"><input type='text' class="form-control" id='anova_input3' placeholder="values of group3 with space or comma" autocomplete="off"></td>
+                <td colspan="6"><input type='text' class="form-control anova_input" id='anova_input3' placeholder="values of group3 with space or comma" autocomplete="off"></td>
               </tr>
               <tr id='anova_input_row4' style="display: none;">
-                <td colspan="6"><input type='text' class="form-control" id='anova_input4' placeholder="values of group4 with space or comma" autocomplete="off"></td>
+                <td colspan="6"><input type='text' class="form-control anova_input" id='anova_input4' placeholder="values of group4 with space or comma" autocomplete="off"></td>
               </tr>
               <tr id='anova_input_row5' style="display: none;">
-                <td colspan="6"><input type='text' class="form-control" id='anova_input5' placeholder="values of group5 with space or comma" autocomplete="off"></td>
+                <td colspan="6"><input type='text' class="form-control anova_input" id='anova_input5' placeholder="values of group5 with space or comma" autocomplete="off"></td>
               </tr>
               <tr id='anova_input_row6' style="display: none;">
-                <td colspan="6"><input type='text' class="form-control" id='anova_input6' placeholder="values of group6 with space or comma" autocomplete="off"></td>
+                <td colspan="6"><input type='text' class="form-control anova_input" id='anova_input6' placeholder="values of group6 with space or comma" autocomplete="off"></td>
               </tr>
               <tr>
                 <td colspan="6">
@@ -709,51 +717,51 @@
               </tr>
               <tr class="table-active" id='anova_output_stats1'>
                 <td align="center"><strong>[1]</strong></td>
-                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
-                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
-                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
-                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
-                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();" ><strong class='anova_output'>-</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();" ><strong class='anova_output'>-</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();" ><strong class='anova_output'>-</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();" ><strong class='anova_output'>-</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();" ><strong class='anova_output'>-</strong></td>
               </tr>
               <tr class="table-active" id='anova_output_stats2'>
                 <td align="center"><strong>[2]</strong></td>
-                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
-                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
-                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
-                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
-                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();" ><strong class='anova_output'>-</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();" ><strong class='anova_output'>-</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();" ><strong class='anova_output'>-</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();" ><strong class='anova_output'>-</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();" ><strong class='anova_output'>-</strong></td>
               </tr>
               <tr class="table-active" id='anova_output_stats3'>
                 <td align="center"><strong>[3]</strong></td>
-                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
-                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
-                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
-                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
-                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();" ><strong class='anova_output'>-</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();" ><strong class='anova_output'>-</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();" ><strong class='anova_output'>-</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();" ><strong class='anova_output'>-</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();" ><strong class='anova_output'>-</strong></td>
               </tr>
               <tr class="table-active" id='anova_output_stats4' style="display: none;">
                 <td align="center"><strong>[4]</strong></td>
-                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
-                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
-                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
-                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
-                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();" ><strong class='anova_output'>-</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();" ><strong class='anova_output'>-</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();" ><strong class='anova_output'>-</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();" ><strong class='anova_output'>-</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();" ><strong class='anova_output'>-</strong></td>
               </tr>
               <tr class="table-active" id='anova_output_stats5' style="display: none;">
                 <td align="center"><strong>[5]</strong></td>
-                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
-                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
-                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
-                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
-                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();" ><strong class='anova_output'>-</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();" ><strong class='anova_output'>-</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();" ><strong class='anova_output'>-</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();" ><strong class='anova_output'>-</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();" ><strong class='anova_output'>-</strong></td>
               </tr>
               <tr class="table-active" id='anova_output_stats6' style="display: none;">
                 <td align="center"><strong>[6]</strong></td>
-                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
-                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
-                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
-                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
-                <td align="center"><strong class='anova_output answer anova_stats' onclick="copy_to_clipboard();"></strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();" ><strong class='anova_output'>-</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();" ><strong class='anova_output'>-</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();" ><strong class='anova_output'>-</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();" ><strong class='anova_output'>-</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();" ><strong class='anova_output'>-</strong></td>
               </tr>
               <tr>
                 <td align="center"></td>
@@ -765,19 +773,17 @@
               </tr>
               <tr class="table-active" id='anova_output_result1'>
                 <td align="center"><strong>Between</strong></td>
-                <td align="center"><strong class='anova_output answer' onclick="copy_to_clipboard();"></strong></td>
-                <td align="center"><strong class='anova_output answer' onclick="copy_to_clipboard();"></strong></td>
-                <td align="center"><strong class='anova_output answer' onclick="copy_to_clipboard();"></strong></td>
-                <td align="center"><strong class='anova_output answer' onclick="copy_to_clipboard();"></strong></td>
-                <td align="center"><strong class='anova_output answer' onclick="copy_to_clipboard();"></strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();" ><strong class='anova_output'>-</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();" ><strong class='anova_output'>-</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();" ><strong class='anova_output'>-</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();" ><strong class='anova_output'>-</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();" ><strong class='anova_output'>-</strong></td>
               </tr>
               <tr class="table-active" id='anova_output_result2'>
                 <td align="center"><strong>Within</strong></td>
-                <td align="center"><strong class='anova_output answer' onclick="copy_to_clipboard();"></strong></td>
-                <td align="center"><strong class='anova_output answer' onclick="copy_to_clipboard();"></strong></td>
-                <td align="center"><strong class='anova_output answer' onclick="copy_to_clipboard();"></strong></td>
-                <td align="center"><strong class='anova_output answer' onclick="copy_to_clipboard();"></strong></td>
-                <td align="center"><strong class='anova_output answer' onclick="copy_to_clipboard();"></strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();" ><strong class='anova_output'>-</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();" ><strong class='anova_output'>-</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();" ><strong class='anova_output'>-</strong></td>
               </tr>
             </table>
             </form>
@@ -1156,7 +1162,6 @@ function f2p(){
     document.getElementById('f2p_output_low').innerHTML = 'lower p=' + round(1-answer,5);
   }else{
     document.getElementById('f2p_input_df').classList.add('is-invalid');
-    document.getElementById('f2p_input_df').focus();
   }
 }
 function p2f(){
@@ -1171,7 +1176,6 @@ function p2f(){
       document.getElementById('p2f_output_low').innerHTML = 'lower F=' + answer2;
     }else{
       document.getElementById('p2f_input_df').classList.add('is-invalid');
-      document.getElementById('p2f_input_df').focus();
     }
   }
 }
@@ -1180,43 +1184,37 @@ function p2f(){
 ////////////////////  CHI2 TEST  ////////////////////
 
 function chitest_select(){
+  let fit = ['chitest_output_row_E_label','chitest_output_row_E'];
+  let ind = ['chitest_output_row_res_label','chitest_output_row_res','chitest_output_row_p_label','chitest_output_row_p'];
   if(document.getElementById('chitest_selectbox').value=="fit"){
     document.getElementById('chitest_description').innerText = "1st row: observations　2nd row: expected ratio, e.g. 1:2:3";
-    document.getElementById('chitest_output_row_E_label').style.display = '';
-    document.getElementById('chitest_output_row_E').style.display = '';
-    document.getElementById('chitest_output_row_res_label').style.display = 'none';
-    document.getElementById('chitest_output_row_res').style.display = 'none';
+    fit.forEach(id => document.getElementById(id).style.display='');
+    ind.forEach(id => document.getElementById(id).style.display='none');
   }else{
     document.getElementById('chitest_description').innerText = "1st row: data1　2nd row: data2";
-    document.getElementById('chitest_output_row_E_label').style.display = 'none';
-    document.getElementById('chitest_output_row_E').style.display = 'none';
-    document.getElementById('chitest_output_row_res_label').style.display = '';
-    document.getElementById('chitest_output_row_res').style.display = '';
+    fit.forEach(id => document.getElementById(id).style.display='none');
+    ind.forEach(id => document.getElementById(id).style.display='');
   }
 }
 
 function add_column_chitest(add=true){
-  let row1 = document.getElementById('chitest_input_row1');
-  let row2 = document.getElementById('chitest_input_row2');
-  let row3 = document.getElementById('chitest_output_row_E_label');
-  let row4 = document.getElementById('chitest_output_row_E');
-  let row5 = document.getElementById('chitest_output_row_res_label');
-  let row6 = document.getElementById('chitest_output_row_res');
+  let row = ['chitest_input_row1','chitest_input_row2','chitest_output_row_E_label','chitest_output_row_E',
+    'chitest_output_row_res_label','chitest_output_row_res','chitest_output_row_p_label','chitest_output_row_p'].map(x=>document.getElementById(x));
   if(add==true && row1.children.length<10){
-    row1.innerHTML += '<td><input type="text" class="form-control chitest_input1" autocomplete="off"></td>';
-    row2.innerHTML += '<td><input type="text" class="form-control chitest_input2" autocomplete="off"></td>';
-    row3.innerHTML += `<td align="center"><strong class="chitest_output answer">E<sub>${row1.children.length}</sub></strong></td>`;
-    row4.innerHTML += '<td align="center" class="answer" onclick="copy_to_clipboard();"><strong class="chitest_output">-</strong></td>'
-    row5.innerHTML += `<td align="center"><strong class="chitest_output answer">Res<sub>${row1.children.length}</sub></strong></td>`;
-    row6.innerHTML += '<td align="center" class="answer" onclick="copy_to_clipboard();"><strong class="chitest_output">-</strong></td>'
+    row[0].innerHTML += '<td><input type="text" class="form-control chitest_input1" autocomplete="off"></td>';
+    row[1].innerHTML += '<td><input type="text" class="form-control chitest_input2" autocomplete="off"></td>';
+    row[2].innerHTML += `<td align="center"><strong>E<sub>${row[0].children.length}</sub></strong></td>`;
+    row[3].innerHTML += '<td align="center" class="answer" onclick="copy_to_clipboard();"><strong class="chitest_output">-</strong></td>';
+    row[4].innerHTML += `<td align="center"><strong>Res<sub>${row[0].children.length}</sub></strong></td>`;
+    row[5].innerHTML += '<td align="center" class="answer" onclick="copy_to_clipboard();"><strong class="chitest_output">-</strong></td>';
+    row[6].innerHTML += `<td align="center"><strong>p<sub>${row[0].children.length}</sub></strong></td>`;
+    row[7].innerHTML += '<td align="center" class="answer" onclick="copy_to_clipboard();"><strong class="chitest_output">-</strong></td>';
   }else if(add==false && row1.children.length>=3){
-    row1.lastElementChild.remove(); row2.lastElementChild.remove();
-    row3.lastElementChild.remove(); row4.lastElementChild.remove();
-    row5.lastElementChild.remove(); row6.lastElementChild.remove();
+    row.forEach(x => x.lastElementChild.remove());
   }
-  document.getElementById('chitest_btns').colSpan = row1.children.length;
-  document.getElementById('chitest_output_row_label').colSpan = row1.children.length;
-  document.getElementById('chitest_output_row').colSpan = row1.children.length;
+  document.getElementById('chitest_btns').colSpan = row[0].children.length;
+  document.getElementById('chitest_output_row_label').colSpan = row[0].children.length;
+  document.getElementById('chitest_output_row').colSpan = row[0].children.length;
 }
 
 function show_chitest(){
@@ -1236,8 +1234,10 @@ function show_chitest(){
     }else{ // test for independence
       chi2_value = chi2_independence(arr1,arr2);
       let residuals = adjusted_residual(arr1,arr2)[0];
+      let pvalues = residuals.map(x => z_to_p(Math.abs(x))*2);
       for(var i=0;i<arr1.length;i++){
         document.getElementById('chitest_output_row_res').children[i].firstElementChild.innerText = round(residuals[i],5);
+        document.getElementById('chitest_output_row_p').children[i].firstElementChild.innerText = round(pvalues[i],5);
       }
     }
     let df = arr1.length-1;
@@ -1282,14 +1282,14 @@ function show_anova(){
     var arr = document.getElementById(`anova_input${i}`).value.trim().split(/\s+/).map(Number); 
     if(arr.toString()!=='0' && !arr.includes(NaN)){arrs.push(arr);}
   }
-  [SS_between, df_between, SS_within, df_within, F, p] = anova(arrs);
+  [SS_between, df_between, SS_within, df_within, fvalue, p] = anova(arrs);
   for(var k=0;k<arrs.length;k++){
     var stats = [arrs[k].length, sum(arrs[k]), mean(arrs[k]), variance(arrs[k]), std(arrs[k])].map(x => round(x,5));
     for(var i=0;i<5;i++){
       document.getElementById(`anova_output_stats${k+1}`).children[i+1].firstElementChild.innerText = stats[i];
     }
   }
-  let between = [SS_between,df_between,SS_between/df_between,F,p].map(x => round(x,5));
+  let between = [SS_between,df_between,SS_between/df_between,fvalue,p].map(x => round(x,5));
   let within = [SS_within,df_within,SS_within/df_within].map(x => round(x,5));
   for(var i=0;i<5;i++){
     document.getElementById('anova_output_result1').children[i+1].firstElementChild.innerText = between[i];
@@ -1297,6 +1297,12 @@ function show_anova(){
   for(var i=0;i<3;i++){
     document.getElementById('anova_output_result2').children[i+1].firstElementChild.innerText = within[i];
   }
+  document.getElementById('f2p_input_f').value = round(fvalue,5);
+  document.getElementById('f2p_input_df').value = `${df_between} ${df_within}`;
+  document.getElementById('p2f_input_df').value = `${df_between} ${df_within}`;
+  document.getElementById('p2f_input_p').value = 0.05;
+  document.getElementById('p2f_input_df').value = `${df_between} ${df_within}`;
+  f2p(); p2f();
 }
 
 ////////////////////  POISSON & GAMMA  ////////////////////
@@ -1371,72 +1377,60 @@ function validation_poisson(){
     }
   }
 
-////////////////////  Reset Button  ////////////////////
+////////////////////  RESET BUTTON  ////////////////////
 
-// inputIDs(array) - ID of input to be empty string
-// labelIDs(dict) - {ID: innerText}
 // focusID(string) - one element to be focused
-// labels_class(dict) - {classname: innerText}
+// inputIDs(array) - ID of input to be empty string
+// labelIDs(dict) - {ID: innerHTML}
+// labelsclass(dict) - {classname: innerHTML}
+// inputclass(array) - class of input to be empty string
 class ResetBtn{
-  constructor(focusID,inputIDs,labelIDs=null,labelclass=null,inputclass=null){
+  constructor(focusID,inputIDs=[],labelIDs={},labelclass={},inputclass=[]){
     this.focus = focusID;
     this.inputIDs = inputIDs;
     this.labelIDs = labelIDs;
     this.labelclass = labelclass;
     this.inputclass = inputclass;
-    
   }
   reset(){
-    for(var elemID of this.inputIDs){ // reset input
-      document.getElementById(elemID).value = '';
+    this.inputIDs.forEach(elemID => document.getElementById(elemID).value=''); 
+    Object.keys(this.labelIDs).forEach(elemID => document.getElementById(elemID).innerHTML=this.labelIDs[elemID]); 
+    for(var label in this.labelclass){ 
+      Array.from(document.getElementsByClassName(label)).forEach(elem => elem.innerHTML = this.labelclass[label]);
     }
-    for(var labelID in this.labelIDs){ // reset label
-      document.getElementById(labelID).innerHTML = this.labelIDs[labelID];
-    }
-    for(var label_class in this.labelclass){ 
-      for(var elem of document.getElementsByClassName(label_class)){
-        elem.innerHTML = this.labelclass[label_class];
-      }
-    }
-    for(var input_class in this.inputclass){ 
-      for(var elem of document.getElementsByClassName(input_class)){
-        elem.value = this.inputclass[input_class];
-      }
+    for(var input of this.inputclass){
+      Array.from(document.getElementsByClassName(input)).forEach(elem => elem.value = '');
     }
     document.getElementById(this.focus).focus(); // focus
   }
 }
-var reset_base = new ResetBtn('num_to_convert',['num_to_convert'],{"answer":"answer"});
-var reset_gcd = new ResetBtn('gcd_input',['gcd_input'],{'answer_gcd':"answer"});
-var reset_stats = new ResetBtn('stats_input1',['stats_input1','stats_input2'],null,{"stats_output":'-'});
-var reset_ttest = new ResetBtn('ttest_input1',['ttest_input1','ttest_input2'],null,{'ttest_output':'-'});
-var reset_ftest = new ResetBtn('ftest_input1',['ftest_input1','ftest_input2'],null,{'ftest_output':'-'});
-var reset_z2p = new ResetBtn('z2p_input',['z2p_input'],{'z2p_output1':'p(z≤x)','z2p_output2':'p(0≤x≤z)'});
-var reset_p2z = new ResetBtn('p2z_input',['p2z_input'],{'p2z_output1':'z [p(z≤x)]','p2z_output2':'z [p(0≤x≤z)]'});
-var reset_t2p = new ResetBtn('t2p_input_t',['t2p_input_t','t2p_input_df'],{'t2p_output1':'p(t≤x)','t2p_output2':'p(0≤x≤t)'});
-var reset_p2t = new ResetBtn('p2t_input_p',['p2t_input_p','p2t_input_df'],{'p2t_output1':'t [p(t≤x)]','p2t_output2':'t [p(0≤x≤t)]'});
-var reset_chi2p = new ResetBtn('chi2p_input_chi',['chi2p_input_chi','chi2p_input_df'],{'chi2p_output_up':'p(χ<sup>2</sup>≤x)','chi2p_output_low':'p(x≤χ<sup>2</sup>)'});
-var reset_p2chi = new ResetBtn('p2chi_input_chi',['p2chi_input_p','p2chi_input_df'],{'p2chi_output_up':'χ<sup>2</sup>','p2chi_output_low':'χ<sup>2</sup>'});
-var reset_f2p = new ResetBtn('f2p_input_f',['f2p_input_f','f2p_input_df'],{'f2p_output_up':'p(F≤x)','f2p_output_low':'p(x≤F)'});
-var reset_p2f = new ResetBtn('p2f_input_p',['p2f_input_p','p2f_input_df'],{'p2f_output_up':'F-value','p2f_output_low':'F-value'});
-var reset_chitest = new ResetBtn('chitest_input11',[],
-{'chitest_output_chi':'χ<sup>2</sup>','chitest_output_df':'df',
-  'chitest_E1':'E<sub>1</sub>','chitest_E2':'E<sub>2</sub>','chitest_E3':'E<sub>3</sub>','chitest_E4':'E<sub>4</sub>','chitest_E5':'E<sub>5</sub>','chitest_E6':'E<sub>6</sub>','chitest_E7':'E<sub>7</sub>','chitest_E8':'E<sub>8</sub>',
-  'chitest_res1':'Res<sub>1</sub>','chitest_res2':'Res<sub>2</sub>','chitest_res3':'Res<sub>3</sub>','chitest_res4':'Res<sub>4</sub>','chitest_res5':'Res<sub>5</sub>','chitest_res6':'Res<sub>6</sub>','chitest_res7':'Res<sub>7</sub>','chitest_res8':'Res<sub>8</sub>'
-}
-,null,{'chitest_input':''});
-var reset_poisson = new ResetBtn('poisson_input1',['poisson_input1','poisson_input1'],{'poisson_output1':'P(X=k)','poisson_output1':'P(X≥k)'})
-var reset_gamma = new ResetBtn('gamma_input1',['gamma_input1','gamma_input2','gamma_input3'],{'gamma_output1':'P(t)','gamma_output2':'P(t)'})
+let reset_base = new ResetBtn('num_to_convert',['num_to_convert'],{"answer":"answer"});
+let reset_gcd = new ResetBtn('gcd_input',['gcd_input'],{'answer_gcd':"answer"});
+let reset_stats = new ResetBtn('stats_input1',['stats_input1','stats_input2'],{},{"stats_output":'-'});
+let reset_ttest = new ResetBtn('ttest_input1',['ttest_input1','ttest_input2'],{},{'ttest_output':'-'});
+let reset_ftest = new ResetBtn('ftest_input1',['ftest_input1','ftest_input2'],{},{'ftest_output':'-'});
+let reset_z2p = new ResetBtn('z2p_input',['z2p_input'],{'z2p_output1':'p(z≤x)','z2p_output2':'p(0≤x≤z)'});
+let reset_p2z = new ResetBtn('p2z_input',['p2z_input'],{'p2z_output1':'z [p(z≤x)]','p2z_output2':'z [p(0≤x≤z)]'});
+let reset_t2p = new ResetBtn('t2p_input_t',['t2p_input_t','t2p_input_df'],{'t2p_output1':'p(t≤x)','t2p_output2':'p(0≤x≤t)'});
+let reset_p2t = new ResetBtn('p2t_input_p',['p2t_input_p','p2t_input_df'],{'p2t_output1':'t [p(t≤x)]','p2t_output2':'t [p(0≤x≤t)]'});
+let reset_chi2p = new ResetBtn('chi2p_input_chi',['chi2p_input_chi','chi2p_input_df'],{'chi2p_output_up':'p(χ<sup>2</sup>≤x)','chi2p_output_low':'p(x≤χ<sup>2</sup>)'});
+let reset_p2chi = new ResetBtn('p2chi_input_p',['p2chi_input_p','p2chi_input_df'],{'p2chi_output_up':'χ<sup>2</sup>','p2chi_output_low':'χ<sup>2</sup>'});
+let reset_f2p = new ResetBtn('f2p_input_f',['f2p_input_f','f2p_input_df'],{'f2p_output_up':'p(F≤x)','f2p_output_low':'p(x≤F)'});
+let reset_p2f = new ResetBtn('p2f_input_p',['p2f_input_p','p2f_input_df'],{'p2f_output_up':'F-value','p2f_output_low':'F-value'});
+let reset_chitest = new ResetBtn('chitest_input11',[],{},{'chitest_output':'-'},['chitest_input1','chitest_input2']);
+let reset_anova = new ResetBtn('anova_input1',[],{},{'anova_output':'-'},['anova_input'])
+let reset_poisson = new ResetBtn('poisson_input1',['poisson_input1','poisson_input1'],{'poisson_output1':'P(X=k)','poisson_output1':'P(X≥k)'})
+let reset_gamma = new ResetBtn('gamma_input1',['gamma_input1','gamma_input2','gamma_input3'],{'gamma_output1':'P(t)','gamma_output2':'P(t)'})
 
-////////////////////  CONVERT TO P-VALUE  ////////////////////
+////////////////////  SHOW/HIDE FUNCTIONS  ////////////////////
 
 function show_function(){
-  elem = document.getElementById('functions');
+  let elem = document.getElementById('functions');
   elem.style.display = (elem.style.display=='none')? 'block':'none';
 }
-function show_hide(targetID){
 
-  elem = document.getElementById(targetID);
+function show_hide(targetID){
+  let elem = document.getElementById(targetID);
   if(elem.style.display=='none'){
     elem.style.display = '';
     event.target.innerHTML = event.target.innerHTML.replace('＋', 'ー');
