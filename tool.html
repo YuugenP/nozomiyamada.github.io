@@ -177,7 +177,7 @@
             <form onsubmit="show_stats();return false;">
             <table class='table' style="table-layout: fixed;">
               <tr id='stats_input_row1'>
-                <td colspan="6"><input type='text' class="form-control" id='stats_input1' placeholder="values with space or comma" autocomplete="off"></td>
+                <td colspan="6"><input type='text' class="form-control" id='stats_input1' placeholder="values with space or comma, PASTE 1 or 2 ROWS/COLUMNS TABLE HERE" autocomplete="off"></td>
               </tr>
               <tr id='stats_input_row2' style="display: none;">
                 <td colspan="6"><input type='text' class="form-control" id='stats_input2' placeholder="values with space or comma" autocomplete="off"></td>
@@ -683,7 +683,7 @@
             <table class='table' style="table-layout: fixed;" >
               <tbody id='anova_table'>
                 <tr class='anova_input_row'>
-                  <td colspan="6"><input type='text' class="form-control anova_input" id="anova_input1" placeholder="values of group1 with space or comma" autocomplete="off"></td>
+                  <td colspan="6"><input type='text' class="form-control anova_input" id="anova_input1" placeholder="values of group1 with space or comma, PASTE TABLE HERE" autocomplete="off"></td>
                 </tr>
                 <tr class='anova_input_row'>
                   <td colspan="6"><input type='text' class="form-control anova_input" placeholder="values of group2 with space or comma" autocomplete="off"></td>
@@ -697,6 +697,7 @@
                     <button class="btn btn-outline-primary" onclick="reset_anova.reset();return false">reset</button>
                     <button class="btn btn-outline-primary" onclick="add_row_anova(add=true);return false">+ group</button>
                     <button class="btn btn-outline-primary" onclick="add_row_anova(add=false);return false">- group</button>
+                    <button class="btn btn-outline-primary" onclick="transpose_anova();return false">transpose</button>
                   </td>
                 </tr>
                 <tr>
@@ -1089,9 +1090,9 @@ function show_gcd(){
 ////////////////////  STATISTICAL VALUES  ////////////////////
 
 function stats_show_second_row(){
-  var checked = document.getElementById("stats_add_check").checked;
+  let is_checked = document.getElementById("stats_add_check").checked;
   let IDs = ['stats_input_row2','stats_output_row2','stats_output_row3','stats_output_row4'];
-  if(checked==true){
+  if(is_checked==true){
     for(var id of IDs){
       document.getElementById(id).style.display = '';}
   }else{
@@ -1099,6 +1100,29 @@ function stats_show_second_row(){
       document.getElementById(id).style.display = 'none';}
   }
 }
+
+function paste_stats(event){
+  let arrs = clipboard_to_matrix(event);
+  if(transpose(arrs).length<=2){
+    arrs = transpose(arrs);
+  }
+  if(arrs.length==1 && typeof(arrs[0]=='object')){ // 1-dim vector
+    arrs = arrs[0];
+  }
+  if(arrs.length==2){
+    document.getElementById("stats_add_check").checked = true;
+    stats_show_second_row();
+    document.getElementById("stats_input1").value = arrs[0].join(' ');
+    document.getElementById("stats_input2").value = arrs[1].join(' ');
+  }else if(typeof(arrs[0])=='number'){
+    document.getElementById("stats_add_check").checked = false;
+    stats_show_second_row();
+    document.getElementById("stats_input1").value = arrs.join(' ');
+  }
+  show_stats();
+}
+const ELEM_STATS_INPUT = document.getElementById('stats_input1');
+ELEM_STATS_INPUT.addEventListener('paste', paste_stats);
 
 function show_stats(){
   // results of row1
@@ -1359,6 +1383,56 @@ function add_row_anova(add=true){
     }
   }
 }
+
+function transpose_anova(){
+  let arrs = [];
+  let input_rows = document.getElementsByClassName(`anova_input`);
+  for(row of input_rows){
+    var arr = row.value.trim().split(/\s+/).map(Number); 
+    if(arr.toString()!=='0' && !arr.includes(NaN)){arrs.push(arr);}
+  }
+  arrs = transpose(arrs);
+  let row_diff = arrs.length - input_rows.length;
+  if(row_diff>=0){
+    for(var i=0;i<row_diff;i++){add_row_anova(add=true);}
+  }else{
+    for(var i=0;i<Math.abs(row_diff);i++){add_row_anova(add=false);}
+  }
+  // PASTE
+  input_rows = document.getElementsByClassName('anova_input');
+  for(var i=0;i<input_rows.length;i++){
+    input_rows[i].value = arrs[i].join(' ');
+  }
+}
+
+function paste_anova(event){
+  arrs = clipboard_to_matrix(event);
+  if(transpose(arrs).length==1 || arrs.length>arrs[0].length){
+    arrs = transpose(arrs);
+  }
+  if(arrs.length==1 && typeof(arrs[0]=='object')){ // 1-dim vector
+    document.getElementById('anova_input1').value = arrs[0].join(' ');
+  }else{
+    // add rows
+    let input_rows = document.getElementsByClassName(`anova_input`);
+    let row_diff = arrs.length - input_rows.length;
+    if(row_diff>=0){
+      for(var i=0;i<row_diff;i++){add_row_anova(add=true);}
+    }else{
+      for(var i=0;i<Math.abs(row_diff);i++){add_row_anova(add=false);}
+    }
+    // PASTE
+    input_rows = document.getElementsByClassName('anova_input');
+    for(var i=0;i<input_rows.length;i++){
+      input_rows[i].value = arrs[i].join(' ');
+    }
+    show_anova();
+  }
+}
+
+const ELEM_ANOVA_INPUT = document.getElementById('anova_input1');
+ELEM_ANOVA_INPUT.addEventListener("paste" , paste_anova);
+
 function show_anova(){
   let arrs = [];
   let input_elems = document.getElementsByClassName(`anova_input`);
@@ -1423,38 +1497,33 @@ function add_rowcol_anova2(add=true, row=true){
   }
 }
 
-function paste_from_clipboard(event){
-  event.preventDefault();
-  let clipboardData = event.clipboardData;
-  if(clipboardData != null){
-    // COPY FROM CLIPBOARD & ADJUST ROW/COL
-    let arrs = clipboardData.getData("text/plain").split('\n').map(row => row.trim().split(/\s/).map(Number));
-    let row_n = document.getElementsByClassName('anova2_input_row').length;
-    let col_n = document.getElementsByClassName('anova2_input_row')[0].children.length;
-    let row_diff = arrs.length - row_n; let col_diff = arrs[0].length - col_n;
-    if(row_diff>=0){
-      for(var i=0;i<row_diff;i++){add_rowcol_anova2(add=true,row=true);}
-    }else{
-      for(var i=0;i<Math.abs(row_diff);i++){add_rowcol_anova2(add=false,row=true);}
-    }
-    if(col_diff>=0){
-      for(var i=0;i<col_diff;i++){add_rowcol_anova2(add=true,row=false);}
-    }else{
-      for(var i=0;i<Math.abs(col_diff);i++){add_rowcol_anova2(add=false,row=false);}
-    }
-    // PASTE
-    let input_rows = document.getElementsByClassName('anova2_input_row');
-    for(var i=0;i<input_rows.length;i++){
-      let inputs = input_rows[i].getElementsByClassName('anova2_input');
-      for(var j=0;j<inputs.length;j++){
-        inputs[j].value = arrs[i][j];
-      }
-    }
-    show_anova2();
+function paste_anova2(event){
+  let arrs = clipboard_to_matrix(event);
+  let row_n = document.getElementsByClassName('anova2_input_row').length;
+  let col_n = document.getElementsByClassName('anova2_input_row')[0].children.length;
+  let row_diff = arrs.length - row_n; let col_diff = arrs[0].length - col_n;
+  if(row_diff>=0){
+    for(var i=0;i<row_diff;i++){add_rowcol_anova2(add=true,row=true);}
+  }else{
+    for(var i=0;i<Math.abs(row_diff);i++){add_rowcol_anova2(add=false,row=true);}
   }
+  if(col_diff>=0){
+    for(var i=0;i<col_diff;i++){add_rowcol_anova2(add=true,row=false);}
+  }else{
+    for(var i=0;i<Math.abs(col_diff);i++){add_rowcol_anova2(add=false,row=false);}
+  }
+  // PASTE
+  let input_rows = document.getElementsByClassName('anova2_input_row');
+  for(var i=0;i<input_rows.length;i++){
+    let inputs = input_rows[i].getElementsByClassName('anova2_input');
+    for(var j=0;j<inputs.length;j++){
+      inputs[j].value = arrs[i][j];
+    }
+  }
+  show_anova2();
 }
 const ELEM_ANOVA2_INPUT = document.getElementById('anova2_input1');
-ELEM_ANOVA2_INPUT.addEventListener("paste" , paste_from_clipboard);
+ELEM_ANOVA2_INPUT.addEventListener("paste" , paste_anova2);
 
 function show_anova2(){
   // MAKE MATRIX
@@ -1462,10 +1531,7 @@ function show_anova2(){
   for(var row of document.getElementsByClassName('anova2_input_row')){
     arrs.push(Array.from(row.getElementsByClassName('anova2_input')).map(elem => Number(elem.value)));
   }
-  let cols = []; // TRANSPOSE
-  for(var i=0;i<arrs[0].length;i++){
-    cols.push(arrs.map(x => x[i]))
-  }
+  let cols = transpose(arrs);
   // SHOW STATS
   for(var k=0;k<arrs.length;k++){
     var stats = [arrs[k].length, sum(arrs[k]), mean(arrs[k]), variance(arrs[k]), std(arrs[k])].map(x => round(x,5));
@@ -1640,13 +1706,15 @@ function copy_to_clipboard(onlynumber=true){
   
 }
 
-function pastefrom(){
-  var temp_elem = document.createElement("textarea");
-  var body_elem = document.getElementsByTagName("body")[0];
-  body_elem.appendChild(temp_elem);
-  temp_elem.select();
-  document.execCommand("paste");
-  body_elem.removeChild(temp_elem);
+function clipboard_to_matrix(event){
+  event.preventDefault();
+  let clipboardData = event.clipboardData;
+  if(clipboardData != null){
+    // COPY FROM CLIPBOARD & ADJUST ROW/COL
+    let arrs = clipboardData.getData("text/plain").split('\n').map(row => row.trim().split(/\s/).map(Number));
+    console.log(arrs);
+    return arrs;
+  }
 }
 
 

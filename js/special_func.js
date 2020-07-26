@@ -58,6 +58,10 @@ function argsort(arr, reverse=false, plusn=0){
   return org.map(x => arr.indexOf(x)+plusn);
 }
 
+// transpose
+function transpose(matrix){
+  return matrix[0].map((_, c) => matrix.map(r => r[c]));
+}
 
 
 ////////// special functions //////////

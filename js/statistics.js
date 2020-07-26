@@ -355,10 +355,7 @@ function anova(arrs){
 
 // 2D ANOVA w/o replication
 function anova2(rows){
-  let cols = []; //transposed
-  for(var i=0;i<rows[0].length;i++){
-    cols.push(rows.map(x => x[i]))
-  }
+  let cols = transpose(rows);
   let means_row = rows.map(row => mean(row));
   let means_col = cols.map(col => mean(col));
   let whole_mean = mean(rows.flat()); // whole mean
