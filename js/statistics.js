@@ -373,3 +373,28 @@ function anova2(rows){
   p_row = f_to_p(F_row,df_row,df_error); p_col = f_to_p(F_col,df_col,df_error);
   return [SS_row,df_row,F_row,p_row,SS_col,df_col,F_col,p_col,error,df_error]
 }
+
+// 2D ANOVA with replication
+function anova2rep(tensor){
+  let means_row = tensor.map(mat => mean(mat.flat()));
+  let means_col = transpose(tensor).map(mat => mean(mat.flat()));
+  let whole_mean = mean(tensor.map(x => x.flat()).flat());
+  let SS_row = 0; let SS_col = 0; let SS_int = 0; let error = 0;
+  for(var i=0;i<means_row.length;i++){
+    SS_row += tensor[i].flat().length * (means_row[i]-whole_mean)**2;
+  }
+  for(var i=0;i<means_col.length;i++){
+    SS_col += transpose(tensor)[i].flat().length * (means_col[i]-whole_mean)**2;
+  }
+  for(var i=0;i<tensor.length;i++){
+    for(var j=0;j<tensor[i].length;j++){
+      error += sum(tensor[i][j].map(x => (x - mean(tensor[i][j]))**2));
+      SS_int += tensor[i][j].length * (mean(tensor[i][j])+whole_mean-means_row[i]-means_col[j])**2;
+    }
+  }
+  df_row = tensor.length - 1; df_col = tensor[0].length - 1;
+  df_int = df_row * df_col; df_error = tensor.map(x=>x.flat()).flat().length - (df_row+df_col+df_int+1);
+  F_row = (SS_row/df_row)/(error/df_error); F_col = (SS_col/df_col)/(error/df_error); F_int = (SS_int/df_int)/(error/df_error);
+  p_row = f_to_p(F_row,df_row,df_error); p_col = f_to_p(F_col,df_col,df_error); p_int = f_to_p(F_int,df_int,df_error);
+  return [SS_row,df_row,F_row,p_row,SS_col,df_col,F_col,p_col,SS_int,df_int,F_int,p_int,error,df_error]
+}

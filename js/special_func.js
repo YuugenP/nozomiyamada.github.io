@@ -12,7 +12,12 @@ function fact(n){
 }
 // round() like python
 function round(num, decimal=0){
-  return Math.round(num * (10**decimal)) / (10**decimal)
+  if(typeof(num)=='number'){
+    return Math.round(num * (10**decimal)) / (10**decimal);
+  }else if(typeof(num)=='object'){
+    return num.map(x => Math.round(x * (10**decimal)) / (10**decimal));
+  }
+  
 }
 // sigmoid function
 function sigmoid(x){
