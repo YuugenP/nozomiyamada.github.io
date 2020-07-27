@@ -98,55 +98,54 @@ function regression(arr1,arr2){
   return [intercept, coef];
 }
 
-function chi2(arr1,arr2,yates=false){
+function chi2_fit(arr1,arr2,yates=false){
   let chi2_value = 0;
   if(arr1.length!=arr2.length){
     return NaN;
-  }else if(yates==true && arr1.length==2){
-    let sum1 = sum(arr1); let sum2 = sum(arr2);
-    let N = sum1 + sum2;
-    chi2_value = N*((Math.abs(arr1[0]*arr2[1]-arr2[0]*arr1[1])-N/2)**2)/sum1/sum2/(arr1[0]+arr2[0])/(arr1[1]+arr2[1])
-    return chi2_value;
   }else{
+    let exp = arr2.map(x => sum(arr1)*x/sum(arr2)); 
     for(var i=0;i<arr1.length;i++){
-      chi2_value += (arr1[i]-arr2[i])**2/arr2[i];
+      chi2_value += (arr1[i]-exp[i])**2/exp[i];
     }
-    return chi2_value;
+    return [chi2_value, exp];
   }
 }
 
-function chi2_independence(arr1,arr2){
-  if(arr1.length!=arr2.length){
+function chi2_independence(mat){
+  let row_length = new Set(mat.map(x => x.length));
+  if(Array.from(row_length).length != 1){
     return NaN;
   }else{
-    let sum1 = sum(arr1); let sum2 = sum(arr2);
+    let sums_row = mat.map(sum);
+    let sums_col = transpose(mat).map(sum);
+    let whole_sum = sum(sums_row);
     let chi2_value = 0;
-    for(var i=0;i<arr1.length;i++){
-      var E1 = (arr1[i]+arr2[i])*sum1/(sum1+sum2);
-      var E2 = (arr1[i]+arr2[i])*sum2/(sum1+sum2);
-      chi2_value += (arr1[i]-E1)**2/E1;
-      chi2_value += (arr2[i]-E2)**2/E2;
+    for(var i=0;i<mat.length;i++){
+      for(var j=0;j<mat[0].length;j++){
+        var expect = sums_row[i]*sums_col[j]/whole_sum;
+        chi2_value += (mat[i][j] - expect)**2 / expect;
+      }
     }
-  return chi2_value;
+  let cramerV = Math.sqrt(chi2_value/whole_sum/(Math.min(mat.length, mat[0].length)-1)); 
+  return [chi2_value, cramerV];
   }
 }
 
-function adjusted_residual(arr1,arr2){
-  if(arr1.length!=arr2.length){
+function adjusted_residual(mat){
+  let row_length = new Set(mat.map(x => x.length));
+  if(Array.from(row_length).length != 1){
     return NaN;
   }else{
-    let sum1 = sum(arr1); let sum2 = sum(arr2);
-    let sum_all = sum1 + sum2;
-    let res1 = []; let res2 = [];
-    for(var i=0;i<arr1.length;i++){
-      var E1 = (arr1[i]+arr2[i])*sum1/(sum1+sum2);
-      var E2 = (arr1[i]+arr2[i])*sum2/(sum1+sum2);
-      var res_var1 = (1-sum1/sum_all)*(1-(arr1[i]+arr2[i])/sum_all);
-      var res_var2 = (1-sum2/sum_all)*(1-(arr1[i]+arr2[i])/sum_all);
-      res1.push((arr1[i]-E1)/Math.sqrt(E1*res_var1));
-      res2.push((arr2[i]-E2)/Math.sqrt(E2*res_var2));
+    let sums_row = mat.map(sum);
+    let sums_col = transpose(mat).map(sum);
+    let whole_sum = sum(sums_row);
+    for(var i=0;i<mat.length;i++){
+      for(var j=0;j<mat[0].length;j++){
+        var expect = sums_row[i]*sums_col[j]/whole_sum;
+        mat[i][j] = (mat[i][j] - expect) / Math.sqrt(expect*(1-sums_row[i]/whole_sum)*(1-sums_col[j]/whole_sum));
+      }
     }
-  return [res1,res2];
+  return mat;
   }
 }
 
