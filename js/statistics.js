@@ -349,7 +349,8 @@ function anova(arrs){
   }
   let F = (SS_between/df_between)/(SS_within/df_within);
   let p = f_to_p(F, df_between, df_within);
-  return [SS_between, df_between, SS_within, df_within, F, p];
+  let eta = SS_between/(SS_between+SS_within);
+  return [SS_between, df_between, SS_within, df_within, F, p, eta];
 }
 
 // 2D ANOVA w/o replication

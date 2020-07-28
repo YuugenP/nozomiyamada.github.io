@@ -657,7 +657,7 @@
             <table class='table' style="table-layout: fixed;">
               <tbody>
                 <tr class="chi2ind_input_row">
-                  <td><input type="text" class="form-control chi2ind_input" id="chi2ind_input11" placeholder="value" autocomplete="off"></td>
+                  <td><input type="text" class="form-control chi2ind_input" id="chi2ind_input11" placeholder="value, PASTE TABLE HERE" autocomplete="off"></td>
                   <td><input type="text" class="form-control chi2ind_input" autocomplete="off"></td>
                 </tr>
                 <tr class="chi2ind_input_row">
@@ -784,17 +784,23 @@
                 </tr>
                 <tr class="table-active" id='anova_output_result1'>
                   <td align="center"><strong>Between</strong></td>
-                  <td align="center" class="answer" onclick="copy_to_clipboard();" ><strong class='anova_output'>-</strong></td>
-                  <td align="center" class="answer" onclick="copy_to_clipboard();" ><strong class='anova_output'>-</strong></td>
-                  <td align="center" class="answer" onclick="copy_to_clipboard();" ><strong class='anova_output'>-</strong></td>
-                  <td align="center" class="answer" onclick="copy_to_clipboard();" ><strong class='anova_output'>-</strong></td>
-                  <td align="center" class="answer" onclick="copy_to_clipboard();" ><strong class='anova_output'>-</strong></td>
+                  <td align="center" class="answer" onclick="copy_to_clipboard();"><strong class='anova_output'>-</strong></td>
+                  <td align="center" class="answer" onclick="copy_to_clipboard();"><strong class='anova_output'>-</strong></td>
+                  <td align="center" class="answer" onclick="copy_to_clipboard();"><strong class='anova_output'>-</strong></td>
+                  <td align="center" class="answer" onclick="copy_to_clipboard();"><strong class='anova_output'>-</strong></td>
+                  <td align="center" class="answer" onclick="copy_to_clipboard();"><strong class='anova_output'>-</strong></td>
                 </tr>
                 <tr class="table-active" id='anova_output_result2'>
                   <td align="center"><strong>Within</strong></td>
-                  <td align="center" class="answer" onclick="copy_to_clipboard();" ><strong class='anova_output'>-</strong></td>
-                  <td align="center" class="answer" onclick="copy_to_clipboard();" ><strong class='anova_output'>-</strong></td>
-                  <td align="center" class="answer" onclick="copy_to_clipboard();" ><strong class='anova_output'>-</strong></td>
+                  <td align="center" class="answer" onclick="copy_to_clipboard();"><strong class='anova_output'>-</strong></td>
+                  <td align="center" class="answer" onclick="copy_to_clipboard();"><strong class='anova_output'>-</strong></td>
+                  <td align="center" class="answer" onclick="copy_to_clipboard();"><strong class='anova_output'>-</strong></td>
+                </tr>
+                <tr class="table-active" id='anova_output_result3'>
+                  <td align="center"><strong>Total</strong></td>
+                  <td align="center" class="answer" onclick="copy_to_clipboard();"><strong class='anova_output'>-</strong></td>
+                  <td align="center" class="answer" onclick="copy_to_clipboard();"><strong class='anova_output'>-</strong></td>
+                  <td align="center" class="answer" onclick="copy_to_clipboard();"><strong class='anova_output' data-toggle="tooltip" data-placement="bottom" title="correlation ratio">-</strong></td>
                 </tr>
               </tbody>
             </table>
@@ -1550,6 +1556,34 @@ function add_rowcol_chi2ind(add=true, row=true){
   }
 }
 
+function paste_chi2ind(event){
+  let arrs = clipboard_to_matrix(event);
+  let row_n = document.getElementsByClassName('chi2ind_input_row').length;
+  let col_n = document.getElementsByClassName('chi2ind_input_row')[0].children.length;
+  let row_diff = arrs.length - row_n; let col_diff = arrs[0].length - col_n;
+  if(row_diff>=0){
+    for(var i=0;i<row_diff;i++){add_rowcol_chi2ind(add=true,row=true);}
+  }else{
+    for(var i=0;i<Math.abs(row_diff);i++){add_rowcol_chi2ind(add=false,row=true);}
+  }
+  if(col_diff>=0){
+    for(var i=0;i<col_diff;i++){add_rowcol_chi2ind(add=true,row=false);}
+  }else{
+    for(var i=0;i<Math.abs(col_diff);i++){add_rowcol_chi2ind(add=false,row=false);}
+  }
+  // PASTE
+  let input_rows = document.getElementsByClassName('chi2ind_input_row');
+  for(var i=0;i<input_rows.length;i++){
+    let inputs = input_rows[i].getElementsByClassName('chi2ind_input');
+    for(var j=0;j<inputs.length;j++){
+      inputs[j].value = arrs[i][j];
+    }
+  }
+  show_chi2ind();
+}
+const ELEM_CHI2IND_INPUT = document.getElementById('chi2ind_input11');
+ELEM_CHI2IND_INPUT.addEventListener("paste" , paste_chi2ind);
+
 function show_chi2ind(){
   // MAKE MATRIX
   let mat = [];
@@ -1624,7 +1658,7 @@ function transpose_anova(){
 
 function paste_anova(event){
   arrs = clipboard_to_matrix(event);
-  if(transpose(arrs).length==1 || arrs.length>arrs[0].length){
+  if(transpose(arrs).length==1 || (arrs.length>arrs[0].length)){
     arrs = transpose(arrs);
   }
   if(arrs.length==1 && typeof(arrs[0]=='object')){ // 1-dim vector
@@ -1639,9 +1673,11 @@ function paste_anova(event){
       for(var i=0;i<Math.abs(row_diff);i++){add_row_anova(add=false);}
     }
     // PASTE
+    if(arrs.length)
     input_rows = document.getElementsByClassName('anova_input');
     for(var i=0;i<input_rows.length;i++){
-      input_rows[i].value = arrs[i].join(' ');
+      try{input_rows[i].value = arrs[i].join(' ');}
+      catch{input_rows[i].value = ''}
     }
     show_anova();
   }
@@ -1665,14 +1701,16 @@ function show_anova(){
     }
   }
   // RESULTS OF ANOVA
-  [SS_between, df_between, SS_within, df_within, fvalue, p] = anova(arrs);
-  let between = [SS_between,df_between,SS_between/df_between,fvalue,p].map(x => round(x,5));
-  let within = [SS_within,df_within,SS_within/df_within].map(x => round(x,5));
+  [SS_between, df_between, SS_within, df_within, fvalue, p, eta] = anova(arrs);
+  let between = round([SS_between,df_between,SS_between/df_between,fvalue,p], 5);
+  let within = round([SS_within,df_within,SS_within/df_within] ,5);
+  let total = [round(SS_within+SS_between,5), df_between+df_within, 'η<sup>2</sup> = '+round(eta,5)];
   for(var i=0;i<5;i++){
     document.getElementById('anova_output_result1').children[i+1].firstElementChild.innerText = between[i];
   }
   for(var i=0;i<3;i++){
     document.getElementById('anova_output_result2').children[i+1].firstElementChild.innerText = within[i];
+    document.getElementById('anova_output_result3').children[i+1].firstElementChild.innerHTML = total[i];
   }
   document.getElementById('f2p_input_f').value = round(fvalue,5);
   document.getElementById('f2p_input_df').value = `${df_between} ${df_within}`;
@@ -2002,10 +2040,17 @@ function clipboard_to_matrix(event){
   let clipboardData = event.clipboardData;
   if(clipboardData != null){
     // COPY FROM CLIPBOARD & ADJUST ROW/COL
-    let arrs = clipboardData.getData("text/plain").split('\n').map(row => row.trim().split(/\s/).map(Number));
-    console.log(arrs);
+    let arrs = clipboardData.getData("text/plain").split('\n').map(x => x.split('\t'))
+    console.log(clipboardData.getData("text/plain"));
     return arrs;
   }
+}
+
+let CLIP = '';
+document.addEventListener("paste", ccc);
+function ccc(event){
+  let clipboardData = event.clipboardData;
+  CLIP = clipboardData.getData("text/plain");
 }
 
 
