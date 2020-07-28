@@ -1,28 +1,110 @@
-////////// basic functions /////////
+////////////////////  BASIC FUNCTIONS  ////////////////////
 
-// factorial, n must be interger
+// FLATTEN MATRIX INTO 1D ARRAY
+function flatten(mat){
+  if(Array.isArray(mat)){
+    while(mat.map(x => typeof(x)).includes('object')){
+      mat = mat.flat();
+    }
+  }
+  return mat;
+}
+
+function max(arr){
+  arr = flatten(arr);
+  return Math.max.apply(null,arr);
+}
+
+function min(arr){
+  arr = flatten(arr);
+  return Math.min.apply(null,arr);
+}
+
+function sum(arr){
+  if(typeof(arr)==='number'){
+    return arr;
+  }else if(Array.isArray(arr)){
+    arr = flatten(arr);
+    return arr.reduce((acc, cur) => acc + cur);
+  }
+}
+
+// FACTORIAL
 function fact(n){
   if(n==0){
     return 1;
   }else{
     let product = 1;
-    for(i=1;i<=n;i++){product *= i;}
-    return product
+    for(i=1; i<=n; i++){product *= i;}
+    return product;
   }
 }
-// round() like python
+
+// round() LIKE PYTHON
 function round(num, decimal=0){
   if(typeof(num)=='number'){
-    return Math.round(num * (10**decimal)) / (10**decimal);
+    return Math.round(num * (10**decimal))/(10**decimal);
   }else if(typeof(num)=='object'){
-    return num.map(x => Math.round(x * (10**decimal)) / (10**decimal));
+    return num.map(x => Math.round(x*(10**decimal))/(10**decimal));
   }
-  
 }
+
+// zip() LIKE PYTHON
+function zip(...arrs){
+  let max_length = min(arrs.map(arr => arr.length));
+  let zipped = [];
+  for(var i=0; i<max_length; i++){
+    zipped.push(arrs.map(arr => arr[i]));
+  }
+  return zipped;
+}
+
+// np.zeros() LIKE PYTHON
+function zeros(shape){
+  let max_dim = shape.length;
+  let fill_elem = (elem, length) => new Array(length).fill(elem);
+  let tensor = fill_elem(0, shape[max_dim-1]);
+  for(var dim=max_dim-2; dim>=0; dim--){
+    tensor = fill_elem(tensor, shape[dim])
+    console.log(tensor);
+  }
+  return tensor;
+}
+
+// DOT PRODUCT 1D
+function dot1(arr1, arr2){
+  if(arr1.length != arr2.length){return;}
+  return zip(arr1, arr2).reduce((acc,cur) => acc+cur[0]*cur[1], 0);
+}
+
+// DOT PRODUCT 2D
+function dot2(mat1, mat2){
+  if(mat1[0].length != mat2.length){return;}
+  mat2 = transpose(mat2);
+  let new_mat = zeros([mat1.length, mat2.length]);
+  for(var i=0; i<mat1.length; i++){
+    for(var j=0; j<mat2.length; j++){
+      new_mat[i][j] = dot1(mat1[i], mat2[j]);
+    }
+  }
+}
+
+// sorted() LIKE PYTHON
+function sorted(arr, reverse=false){
+  let arr_sort = arr.slice();
+  if(reverse==false){
+    arr_sort.sort((a,b) => a-b);
+  }else{
+    arr_sort.sort((a,b) => b-a);
+  }
+  return arr_sort;
+}
+
 // sigmoid function
 function sigmoid(x){
-  return 1/(1+Math.exp(-x))
+  return 1/(1+Math.exp(-x));
 }
+
 // combination
 function combination(n,k){
   if(k>n){return 0;}
@@ -52,15 +134,18 @@ function permutator(inputArr, n=0){
   return result;
 }
 
+
+
 // argsort
 function argsort(arr, reverse=false, plusn=0){
-  let org = arr.slice();
-  if(reverse==false){
-    arr.sort((a,b) => a-b);
-  }else{
-    arr.sort((a,b) => b-a);
+  let original = arr.slice();
+  let arr_sort = sorted(arr, reverse);
+  for(var i=0; i<arr.length; i++){
+    var index = arr_sort.indexOf(original[i]);
+    original[i] = index + plusn;
+    arr_sort[index] = null; // delete elem in case of duplication
   }
-  return org.map(x => arr.indexOf(x)+plusn);
+  return original;
 }
 
 // transpose
@@ -69,7 +154,7 @@ function transpose(matrix){
 }
 
 
-////////// special functions //////////
+////////////////////  SPECIAL FUNCTIONS  ////////////////////
 
 /**
  * error function
@@ -230,21 +315,30 @@ function regularized_beta(a,b,x,split=1e3,n=5){
 function inv_regularized_beta(a,b,y,iter=30){
   let regularizer = beta(a,b); // denominator
   if(y<0.5){ // find initial x0
-    var x0 = 0;
-    while(regularized_beta(a,b,x0)<y){x0 += 0.05}
+    x0_candidate = [0.0001,0.001,0.005,0.01,0.05,0.1,0.3,0.5,0.7,0.9,0.95,0.99,0.995,0.999,0.9995];
+    for(cand of x0_candidate){
+      if(incomplete_beta(a,b,cand)/regularizer > y){
+        var x0 = cand;
+        break;
+      }
+    }
   }else{
-    var x0 = 1;
-    while(regularized_beta(a,b,x0)>y){x0 -= 0.05}
+    x0_candidate = [0.9995,0.999,0.995,0.99,0.95,0.9,0.7,0.5,0.3,0.1,0.05,0.01,0.005,0.001,0.0001];
+    for(cand of x0_candidate){
+      if(incomplete_beta(a,b,cand)/regularizer < y){
+        var x0 = cand;
+        break;
+      }
+    }
   }
-  let f = function(t){return regularized_beta(a,b,t);}
+  let f = function(t){return incomplete_beta(a,b,t)/regularizer;}
   let f_prime = function(t){return Math.pow(t,a-1) * Math.pow((1-t),b-1)/regularizer;}
   return newton(f,f_prime,y,x0,iter);
 }
 
 
 
-
-////////// methods for numeric analysis ////////// 
+////////////////////  NUMERIC ANALYSIS  ////////////////////
 
 ///// Gauss-Legendre quadrature /////
 
@@ -317,15 +411,15 @@ const GL_weights = {
  * @param {Int} split the number of intervals, default=1000
  * @param {Number} n order of Legendre polynomial, default=5
  */
-function gauss_legendre(func,a,b,split=1000,n=5){
+function gauss_legendre(func, a, b, split=1e3, n=5){
   let cum_sum = 0; // total area
   let weight = GL_weights[n]; // coef
-  let dx = (b-a)/split; // width of each interval
+  let dx = (b-a) / split; // width of each interval
   for(var i=0;i<split;i++){
     var q = dx/2;
     var r = (2*i+1)*dx/2;
     var total = 0;
-    for(var j=0;j<n;j++){
+    for(var j=0; j<n; j++){
       total += func(q*weight[j][0]+r)*weight[j][1];
     }
     cum_sum += total * q;
@@ -340,16 +434,19 @@ function gauss_legendre(func,a,b,split=1000,n=5){
  * x1 = x0 + (y-f(x0))/f'(x0)
  * @param {Function} func function to be analysed
  * @param {Function} func_prime derivative of the function
- * @param {Number} y value of the function 
+ * @param {Number} y_target value of the function 
  * @param {Number} x0 initial guess for x
  * @param {Int} iter the number of max iteration, default = 30
  */
-function newton(func,func_prime,y_target,x0,iter=30){
+function newton(func, func_prime, y_target, x0, iter=30){
   let x = x0;
-  for(var i=0;i<iter;i++){
+  for(var i=0; i<iter; i++){
     y = func(x);
-    x += (y_target-y)/func_prime(x)
-    if(Math.abs(y_target-y)<1e-12){console.log(`iteration: ${i}/${iter}`);break;}
+    x += (y_target-y) / func_prime(x)
+    if(Math.abs(y_target-y)<1e-12){
+      console.log(`iteration: ${i}/${iter}`);
+      break;
+    }
   }
   return x;
 }

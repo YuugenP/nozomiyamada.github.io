@@ -711,7 +711,7 @@
 
   <div class="row">
     <div class="col-lg-12">
-      <h2 onclick="show_hide('content_anova');">＋ 1D ANOVA</h2>
+      <h2 onclick="show_hide('content_anova');">＋ 1-way ANOVA</h2>
     </div>
   </div>
 
@@ -719,7 +719,7 @@
     <div class="col-lg-12">
       <div class="bs-component">
         <div class="card border-primary mb-3" style="min-height: 20rem;">
-          <div class="card-header">1D ANOVA</div>
+          <div class="card-header">1-way ANOVA</div>
           <div class="card-body">
             <form onsubmit="show_anova();return false;">
             <table class='table' style="table-layout: fixed;" >
@@ -814,7 +814,7 @@
 
   <div class="row">
     <div class="col-lg-12">
-      <h2 onclick="show_hide('content_anova2');">＋ 2D ANOVA w/o replication</h2>
+      <h2 onclick="show_hide('content_anova2');">＋ 2-way ANOVA w/o replication</h2>
     </div>
   </div>
 
@@ -822,7 +822,7 @@
     <div class="col-lg-12">
       <div class="bs-component">
         <div class="card border-primary mb-3" style="min-height: 20rem;">
-          <div class="card-header">2D ANOVA w/o replication</div>
+          <div class="card-header">2-way ANOVA w/o replication</div>
           <div class="card-body">
             <form onsubmit="show_anova2();return false;">
             <table class="table" style="table-layout: fixed;">
@@ -928,11 +928,11 @@
       </div>
     </div>
     
-  </div> <!--row 2D ANOVA -->
+  </div> <!--row 2-way ANOVA -->
 
   <div class="row">
     <div class="col-lg-12">
-      <h2 onclick="show_hide('content_anova2r');">＋ 2D ANOVA with replication</h2>
+      <h2 onclick="show_hide('content_anova2r');">＋ 2-way ANOVA with replication</h2>
     </div>
   </div>
 
@@ -940,7 +940,7 @@
     <div class="col-lg-12">
       <div class="bs-component">
         <div class="card border-primary mb-3" style="min-height: 20rem;">
-          <div class="card-header">2D ANOVA with replication</div>
+          <div class="card-header">2-way ANOVA with replication</div>
           <div class="card-body">
             <form onsubmit="show_anova2();return false;">
             <table class="table" style="table-layout: fixed;">
@@ -1054,7 +1054,7 @@
       </div>
     </div>
     
-  </div> <!--row 2Drep ANOVA -->
+  </div> <!--row 2-wayrep ANOVA -->
 
   <div class="row">
     <div class="col-lg-12">
@@ -1611,7 +1611,7 @@ function show_chi2ind(){
   }
 }
 
-////////////////////  1D ANOVA  ////////////////////
+////////////////////  1-way ANOVA  ////////////////////
 
 function add_row_anova(add=true){
   if(add==true){
@@ -1720,7 +1720,7 @@ function show_anova(){
   f2p(); p2f();
 }
 
-////////////////////  2D ANOVA  ////////////////////
+////////////////////  2-way ANOVA  ////////////////////
 
 function add_rowcol_anova2(add=true, row=true){
   let row_n = document.getElementsByClassName('anova2_input_row').length;
@@ -1814,7 +1814,7 @@ function show_anova2(){
   }
 }
 
-////////////////////  2D ANOVA REP ////////////////////
+////////////////////  2-way ANOVA REP ////////////////////
 
 function add_rowcol_anova2r(add=true, row=true){
   let row_n = document.getElementsByClassName('anova2r_input_row').length;

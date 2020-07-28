@@ -1,30 +1,35 @@
-////////// statistics /////////////
+////////////////////  BASIC FUNCTIONS  ////////////////////
 
-function sum(arr){
-  if(!Array.isArray(arr)){arr = [arr];} // one Number -> array
-  return arr.reduce((acc, cur) => acc + cur);
-}
 
 function mean(arr){
-  if(!Array.isArray(arr)){arr = [arr];}
-  let N = arr.length;
-  return sum(arr)/N;
+  if(typeof(arr)==='number'){
+    return arr;
+  }else if(Array.isArray(arr)){
+    arr = flatten(arr);
+    let N = arr.length;
+    return sum(arr)/N;
+  }
 }
 
 function median(arr){
-  if(!Array.isArray(arr)){arr = [arr];}
-  let N = arr.length;
-  _arr = arr.slice(); // deep copy
-  _arr.sort((a,b) => a-b);
-  if(N%2==0){
-    return (_arr[N/2] + _arr[N/2-1])/2;
-  }else{
-    return _arr[(N-1)/2];
+  if(typeof(arr)==='number'){
+    return arr;
+  }else if(Array.isArray(arr)){
+    arr = flatten(arr);
+    let N = arr.length;
+    _arr = arr.slice(); // deep copy
+    _arr.sort((a,b) => a-b);
+    if(N%2==0){
+      return (_arr[N/2] + _arr[N/2-1])/2;
+    }else{
+      return _arr[(N-1)/2];
+    }
   }
 }
 
 function variance(arr, unbiased=true){
   if(!Array.isArray(arr)){arr = [arr];}
+  arr = flatten(arr);
   if(unbiased==true){
     var N = arr.length-1;
   }else{
@@ -36,15 +41,18 @@ function variance(arr, unbiased=true){
 
 function std(arr, unbiased=true){
   if(!Array.isArray(arr)){arr = [arr];}
+  arr = flatten(arr);
   return Math.sqrt(variance(arr, unbiased))
 }
 
 function sem(arr){
+  arr = flatten(arr);
   return std(arr)/Math.sqrt(arr.length);
 }
 
 function skewness(arr, regularize=false){
   if(!Array.isArray(arr)){arr = [arr];}
+  arr = flatten(arr);
   let N = arr.length;
   let mu = mean(arr);
   let sd = std(arr, false);
@@ -72,6 +80,14 @@ function cov(arr1, arr2, unbiased=true){
     }
   }
 }
+
+function cov_matrix(arr1, arr2){
+  let vxx = variance(arr1,false);
+  let vxy = cov(arr1,arr2,false);
+  let vyy = variance(arr2,false);
+  return [[vxx,vxy],[vxy,vyy]];
+}
+
 function corr(cov12,s1,s2){
   let result = cov12/s1/s2;
   return (result>1)? 1:result;
@@ -87,9 +103,9 @@ function spearman(arr1,arr2){
   let N = arr1.length;
   let rho = 0;
   for(var i=0;i<N;i++){
-    rho += (arr1[i] - arr2[i])**2
+    rho += (arr1[i] - arr2[i])**2;
   }
-  return 1 - 6*rho/N/(N**2-1)
+  return 1 - 6*rho/N/(N**2-1);
 }
 
 function regression(arr1,arr2){
@@ -103,11 +119,11 @@ function chi2_fit(arr1,arr2,yates=false){
   if(arr1.length!=arr2.length){
     return NaN;
   }else{
-    let exp = arr2.map(x => sum(arr1)*x/sum(arr2)); 
+    let exp_arr = arr2.map(x => sum(arr1)*x/sum(arr2)); 
     for(var i=0;i<arr1.length;i++){
-      chi2_value += (arr1[i]-exp[i])**2/exp[i];
+      chi2_value += (arr1[i]-exp_arr[i])**2/exp_arr[i];
     }
-    return [chi2_value, exp];
+    return [chi2_value, exp_arr];
   }
 }
 
@@ -179,7 +195,11 @@ function effect_size_arr(arr1,arr2){
 }
 
 
-////////// distributions //////////
+////////////////////  DISTRIBUTIONS  ////////////////////
+
+function normal_pdf(x, mu=0, sd=1){
+  return Math.exp(-1*(x-mu)**2/(2*sd**2))/Math.sqrt(2*Math.PI)/sd;
+}
 
 /** 
  * normal distribution
@@ -305,7 +325,9 @@ function chi_to_p(chi,df){
 function p_to_chi(p,df){
   return inv_regularized_gamma(df/2,(1-p))*2;
 }
-
+function chi_pdf(x, k=1){
+  return x**(k/2-1) * Math.exp(-x/2) / (2**(k/2)) / gamma(k/2);
+}
 
 
 /**
@@ -336,6 +358,28 @@ function poisson_to_p(lambda, k, split=100){
   return 1-gauss_legendre(func,0,k,split);
 }
 
+/**
+ * 
+ * @param {*} a total number of groups 
+ * @param {*} q statistic
+ * @param {*} r1 sample size of group1
+ * @param {*} r2 sample size of group2
+ * @param {*} df 
+ */
+function studentized(a, q, r1, r2, df){
+  let phi = (x => 1-z_to_p(x));
+  let r = 
+  func = (x => normal(x)*(phi(x)-phi(x-q))**(r-1));
+  H = gauss_legendre(func, -10, 10, 2e3);
+}
+
+////////////////////  TEST OF NORMALITY  ////////////////////
+
+
+
+
+////////////////////  ANOVA  ////////////////////
+
 // 1D ANOVA
 function anova(arrs){
   let df_between = arrs.length-1;
@@ -351,6 +395,18 @@ function anova(arrs){
   let p = f_to_p(F, df_between, df_within);
   let eta = SS_between/(SS_between+SS_within);
   return [SS_between, df_between, SS_within, df_within, F, p, eta];
+}
+
+function tukey_kramer(arrs){
+  let means = arrs.map(arr => mean(arr)); // group means
+  [_, _, SS_within, df_within, _, _, _] = anova(arrs);
+  let MS = SS_within/df_within;
+  for(var i=0; i<arrs.length-1; i++){
+    for(var j=i+1; j<arrs.length; j++){
+      let ni = arrs[i].length; let nj = arrs[j].length;
+      let q = Math.abs(means[i]-means[j])/Math.sqrt(MS*((ni+nj)/2/ni/nj));
+    }
+  }
 }
 
 // 2D ANOVA w/o replication
