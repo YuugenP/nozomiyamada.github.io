@@ -1,36 +1,32 @@
 ////////////////////  BASIC FUNCTIONS  ////////////////////
 
-
-function mean(arr){
-  if(typeof(arr)==='number'){
-    return arr;
-  }else if(Array.isArray(arr)){
-    arr = flatten(arr);
-    let N = arr.length;
-    return sum(arr)/N;
+function mean(mat){
+  if(typeof(mat)==='number'){
+    return mat;
+  }else if(Array.isArray(mat)){
+    let arr = flatten(mat);
+    return sum(arr)/arr.length;
   }
 }
 
-function median(arr){
-  if(typeof(arr)==='number'){
-    return arr;
-  }else if(Array.isArray(arr)){
-    arr = flatten(arr);
+function median(mat){
+  if(typeof(mat)==='number'){
+    return mat;
+  }else if(Array.isArray(mat)){
+    let arr = sorted(flatten(mat));
     let N = arr.length;
-    _arr = arr.slice(); // deep copy
-    _arr.sort((a,b) => a-b);
-    if(N%2==0){
-      return (_arr[N/2] + _arr[N/2-1])/2;
+    if(N%2===0){
+      return (arr[N/2] + arr[N/2-1])/2;
     }else{
-      return _arr[(N-1)/2];
+      return arr[(N-1)/2];
     }
   }
 }
 
-function variance(arr, unbiased=true){
-  if(!Array.isArray(arr)){arr = [arr];}
-  arr = flatten(arr);
-  if(unbiased==true){
+function variance(mat, unbiased=true){
+  if(!Array.isArray(mat)){mat = [mat];}
+  let arr = flatten(mat);
+  if(unbiased===true){
     var N = arr.length-1;
   }else{
     var N = arr.length;
@@ -39,20 +35,20 @@ function variance(arr, unbiased=true){
   return arr.reduce((acc, cur) => acc+(cur-mu)**2, 0)/N;
 }
 
-function std(arr, unbiased=true){
-  if(!Array.isArray(arr)){arr = [arr];}
-  arr = flatten(arr);
+function std(mat, unbiased=true){
+  if(!Array.isArray(mat)){mat = [mat];}
+  let arr = flatten(mat);
   return Math.sqrt(variance(arr, unbiased))
 }
 
-function sem(arr){
-  arr = flatten(arr);
+function sem(mat){
+  let arr = flatten(mat);
   return std(arr)/Math.sqrt(arr.length);
 }
 
-function skewness(arr, regularize=false){
-  if(!Array.isArray(arr)){arr = [arr];}
-  arr = flatten(arr);
+function skewness(mat, regularize=false){
+  if(!Array.isArray(mat)){mat = [mat];}
+  let arr = flatten(mat);
   let N = arr.length;
   let mu = mean(arr);
   let sd = std(arr, false);
@@ -65,19 +61,12 @@ function skewness(arr, regularize=false){
 }
 
 function cov(arr1, arr2, unbiased=true){
-  if(arr1.length!=arr2.length){
+  if(arr1.length!==arr2.length){
     return NaN;
   }else{
-    let mu1 = mean(arr1); let mu2 = mean(arr2);
-    let s = 0;
-    for(var i=0;i<arr1.length;i++){
-      s += (arr1[i]-mu1)*(arr2[i]-mu2);
-    }
-    if(unbiased==true){
-      return s/(arr1.length-1);
-    }else{
-      return s/arr1.length;
-    }
+    let [mu1, mu2] = [mean(arr1), mean(arr2)];
+    let s = sum(zip(arr1, arr2).map(x => (x[0]-mu1)*(x[1]-mu2)));
+    return (unbiased)? s/(arr1.length-1) : s/arr1.length
   }
 }
 
@@ -98,13 +87,10 @@ function corr_arr(arr1,arr2){
 }
 
 function spearman(arr1,arr2){
-  arr1 = argsort(arr1,reverse=true,plusn=1);
-  arr2 = argsort(arr2,reverse=true,plusn=1);
+  arr1 = argsort(arr1,reverse=true,plusn=true);
+  arr2 = argsort(arr2,reverse=true,plusn=true);
   let N = arr1.length;
-  let rho = 0;
-  for(var i=0;i<N;i++){
-    rho += (arr1[i] - arr2[i])**2;
-  }
+  let rho = sum(zip(arr1, arr2).map(x => (x[0]-x[1])**2));
   return 1 - 6*rho/N/(N**2-1);
 }
 
@@ -114,9 +100,29 @@ function regression(arr1,arr2){
   return [intercept, coef];
 }
 
+function order_statistic(n){
+  arr = [];
+  for(let k=1; k<=n; k++){
+    fx = x => x*normal_pdf(x)*(normal_cdf(x)**(k-1))*((1-normal_cdf(x))**(n-k));
+    X = k*combination(n,k)*gauss_legendre(fx,-5,5,1e2);
+    arr.push(X);
+  }
+  return arr;
+}
+
+
+function shapiro(arr){
+  arr = sorted(arr);
+  let mu = mean(arr);
+  let sd = std(arr);
+  let cum_prob = arr.map((_,i) => (i+1)/(arr.length+1));
+  let normal_score = cum_prob.map(p => normal_inv(p));
+  console.log(normal_score);
+}
+
 function chi2_fit(arr1,arr2,yates=false){
   let chi2_value = 0;
-  if(arr1.length!=arr2.length){
+  if(arr1.length!==arr2.length){
     return NaN;
   }else{
     let exp_arr = arr2.map(x => sum(arr1)*x/sum(arr2)); 
@@ -200,6 +206,13 @@ function effect_size_arr(arr1,arr2){
 function normal_pdf(x, mu=0, sd=1){
   return Math.exp(-1*(x-mu)**2/(2*sd**2))/Math.sqrt(2*Math.PI)/sd;
 }
+function normal_cdf(x, mu=0, sd=1){
+  return (1 + erf((x-mu)/Math.sqrt(2)/sd)) * 0.5;
+}
+function normal_inv(p, mu=0, sd=1){
+  if(p<0 || p>1){return NaN;}
+  return mu + sd * Math.sqrt(2) * erf_inv(2*p-1);
+}
 
 /** 
  * normal distribution
@@ -227,9 +240,9 @@ function z_to_p(z, taylor=false, N=100){
 function p_to_z(p, taylor=false, N=300){
   if(p<0 || 0.5<p){return NaN;}
   if(taylor==false){ // Newton's method
-    return Math.sqrt(2) * inv_erf(1-2*p);
+    return Math.sqrt(2) * erf_inv(1-2*p);
   }else{ //taylor
-    return Math.sqrt(2) * inv_erf2(1-2*p, N);
+    return Math.sqrt(2) * erf_inv2(1-2*p, N);
   }
 }
 
@@ -252,7 +265,7 @@ function t_to_p(t,df){
  * use Newton's method
  */
 function p_to_t(p,df){
-  let x = inv_regularized_beta(df/2,df/2,1-p);
+  let x = regularized_beta_inv(df/2,df/2,1-p);
   return (2*x-1)/2*Math.sqrt(df/x/(1-x));
 }
 
@@ -279,7 +292,7 @@ function f_to_p(f, df1, df2){
  * f = df2*x/df1(1-x)
  */
 function p_to_f(p, df1, df2){
-  let x = inv_regularized_beta(df1/2,df2/2,1-p);
+  let x = regularized_beta_inv(df1/2,df2/2,1-p);
   return df2*x/(df1*(1-x));
 }
 
@@ -323,7 +336,7 @@ function chi_to_p(chi,df){
   return (p>0)? p:0;
 }
 function p_to_chi(p,df){
-  return inv_regularized_gamma(df/2,(1-p))*2;
+  return regularized_gamma_inv(df/2,(1-p))*2;
 }
 function chi_pdf(x, k=1){
   return x**(k/2-1) * Math.exp(-x/2) / (2**(k/2)) / gamma(k/2);

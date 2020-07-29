@@ -10,28 +10,47 @@ function flatten(mat){
   return mat;
 }
 
-function max(arr){
-  arr = flatten(arr);
-  return Math.max.apply(null,arr);
+function max(mat){
+  mat = flatten(mat);
+  return Math.max.apply(null,mat);
 }
 
-function min(arr){
-  arr = flatten(arr);
-  return Math.min.apply(null,arr);
+function min(mat){
+  mat = flatten(mat);
+  return Math.min.apply(null,mat);
 }
 
-function sum(arr){
-  if(typeof(arr)==='number'){
-    return arr;
-  }else if(Array.isArray(arr)){
-    arr = flatten(arr);
-    return arr.reduce((acc, cur) => acc + cur);
+function sum(mat){
+  if(typeof(mat) === 'number'){
+    return mat;
+  }else if(Array.isArray(mat)){
+    mat = flatten(mat);
+    return mat.reduce((acc, cur) => acc + cur);
   }
+}
+
+// CHECK DIGITS OF DECIMAL
+function check_decimal(num){
+  let int_decimal = num.toString().split('.');
+  return (int_decimal.length===1)? 0:int_decimal[1].length;
+}
+
+// np.arange(start, end, step) LIKE PYTHON
+function range(start, end, step=1){
+  if(arguments.length===1){
+    [start, end] = [0, arguments[0]];
+  }else if(arguments.length===2){
+    [start, end] = arguments;
+  }
+  let N_elem = Math.floor((end - start)/step);
+  let arr = Array(N_elem).fill(0).map((_, i) => start + (i*step));
+  let decimal_digit = check_decimal(step);
+  return arr.map(x => round(x, decimal_digit)); // round decimal
 }
 
 // FACTORIAL
 function fact(n){
-  if(n==0){
+  if(n===0){
     return 1;
   }else{
     let product = 1;
@@ -42,14 +61,14 @@ function fact(n){
 
 // round() LIKE PYTHON
 function round(num, decimal=0){
-  if(typeof(num)=='number'){
+  if(typeof(num) === 'number'){
     return Math.round(num * (10**decimal))/(10**decimal);
-  }else if(typeof(num)=='object'){
+  }else if(typeof(num) === 'object'){
     return num.map(x => Math.round(x*(10**decimal))/(10**decimal));
   }
 }
 
-// zip() LIKE PYTHON
+// zip(a,b,c...) LIKE PYTHON
 function zip(...arrs){
   let max_length = min(arrs.map(arr => arr.length));
   let zipped = [];
@@ -59,45 +78,144 @@ function zip(...arrs){
   return zipped;
 }
 
+////////////////////  VECTOR & MATRIX  ////////////////////
+
+// NORM OF VECTOR
+function norm(arr){
+  return Math.sqrt(sum(arr.map(x => x**2)));
+}
+
+// VECTOR + VECTOR
+function vec_add(arr1, arr2, subtract=false){
+  return (!subtract)? arr1.map((x,i) => x+arr2[i]) : arr1.map((x,i) => x-arr2[i])
+}
+
+// CARTESIAN PRODUCT
+function cartesian(arr1, arr2, func_xy=(x,y)=>x*y){
+  return arr1.map(x => arr2.map(y => func_xy(x,y)));
+}
+
+// SHAPE OF TENSOR
+function shape(tensor){
+  let dim_now = tensor;
+  let shape_arr = [];
+  while(Array.isArray(dim_now)){
+    shape_arr.push(dim_now.length);
+    dim_now = dim_now[0];
+  }
+  return shape_arr;
+}
+
+// DEEP COPY
+function deepcopy(mat){
+  return JSON.parse(JSON.stringify(mat));
+}
+
+// TRANSPOSE
+function transpose(mat){
+  let new_mat = deepcopy(mat);
+  return new_mat[0].map((_, c) => new_mat.map(r => r[c]));
+}
+
 // np.zeros() LIKE PYTHON
-function zeros(shape){
+function zeros(...shape){
   let max_dim = shape.length;
   let fill_elem = (elem, length) => new Array(length).fill(elem);
   let tensor = fill_elem(0, shape[max_dim-1]);
   for(var dim=max_dim-2; dim>=0; dim--){
-    tensor = fill_elem(tensor, shape[dim])
-    console.log(tensor);
+    tensor = fill_elem(tensor, shape[dim]);
   }
-  return tensor;
+  return deepcopy(tensor);
 }
 
 // DOT PRODUCT 1D
 function dot1(arr1, arr2){
-  if(arr1.length != arr2.length){return;}
+  if(arr1.length !== arr2.length){return;}
   return zip(arr1, arr2).reduce((acc,cur) => acc+cur[0]*cur[1], 0);
 }
 
 // DOT PRODUCT 2D
 function dot2(mat1, mat2){
-  if(mat1[0].length != mat2.length){return;}
+  if(mat1[0].length !== mat2.length){return;}
+  let [m, n] = [mat1.length, mat2[0].length];
   mat2 = transpose(mat2);
-  let new_mat = zeros([mat1.length, mat2.length]);
-  for(var i=0; i<mat1.length; i++){
-    for(var j=0; j<mat2.length; j++){
+  let new_mat = zeros(m, n);
+  for(var i=0; i<m; i++){
+    for(var j=0; j<n; j++){
       new_mat[i][j] = dot1(mat1[i], mat2[j]);
     }
   }
+  return new_mat;
+}
+
+// DOT PRODUCT INCLUDING 1D*2D
+function dot(tensor1, tensor2){
+  let [s1, s2] = [shape(tensor1), shape(tensor2)]; 
+  if(s1.length>2 || s2.length>2){
+    return;
+  }else if(s1.length===1 && s2.length===1){
+    return dot1(tensor1, tensor2);
+  }else if(s1.length===1 && s1[0]===s2[0]){
+    tensor2 = transpose(tensor2);
+    return tensor2.map(row => dot1(row, tensor1));
+  }else if(s2.length===1 && s1.slice(-1)[0]===s2[0]){
+    return tensor1.map(row => dot1(row, tensor2));
+  }else if(s1.slice(-1)[0]===s2[0]){
+    return dot2(tensor1, tensor2)
+  }
+}
+
+// COFACTOR MATRIX
+function cofactor(mat, row_delete=0, column_delete=0){
+  mat = mat.filter((_, index) => index !== row_delete);
+  return mat.map(row => row.filter((_, index) => index !== column_delete));
+}
+
+// DETERMINANT BY COFACTOR EXPANSION 
+function determinant(mat){
+  if(typeof(mat)==='number'){return mat;}
+  if(mat.length!==mat[0].length){return;}
+  if(mat.length===1){return mat[0];}
+  let det = 0;
+  for(var i=0; i<mat.length; i++){
+    det += (-1)**i * mat[i][0] * determinant(cofactor(mat,i,0));
+  }
+  return det;
+}
+
+// INVERSE MATRIX
+function inv_matrix(mat){
+  let new_mat = deepcopy(mat);
+  let det = determinant(mat);
+  for(var i=0; i<mat.length; i++){
+    for(var j=0; j<mat[0].length; j++){
+      new_mat[i][j] = (-1)**(i+j) * determinant(cofactor(mat,i,j)) / det;
+    }
+  }
+  return transpose(new_mat);
 }
 
 // sorted() LIKE PYTHON
 function sorted(arr, reverse=false){
   let arr_sort = arr.slice();
-  if(reverse==false){
+  if(reverse===false){
     arr_sort.sort((a,b) => a-b);
   }else{
     arr_sort.sort((a,b) => b-a);
   }
   return arr_sort;
+}
+
+// ARGSORT
+function argsort(arr, reverse=false, plus1=false){
+  let original = arr.slice();
+  let arr_sort = sorted(arr, reverse);
+  for(var i=0; i<arr.length; i++){
+    var index = arr_sort.indexOf(original[i]);
+    original[i] = index + plus1;
+    arr_sort[index] = null; // delete elem in case of duplication
+  }
+  return original;
 }
 
 // sigmoid function
@@ -135,25 +253,6 @@ function permutator(inputArr, n=0){
 }
 
 
-
-// argsort
-function argsort(arr, reverse=false, plusn=0){
-  let original = arr.slice();
-  let arr_sort = sorted(arr, reverse);
-  for(var i=0; i<arr.length; i++){
-    var index = arr_sort.indexOf(original[i]);
-    original[i] = index + plusn;
-    arr_sort[index] = null; // delete elem in case of duplication
-  }
-  return original;
-}
-
-// transpose
-function transpose(matrix){
-  return matrix[0].map((_, c) => matrix.map(r => r[c]));
-}
-
-
 ////////////////////  SPECIAL FUNCTIONS  ////////////////////
 
 /**
@@ -169,7 +268,7 @@ function erf(z,split=1e3,n=5){
 function erfc(z,split=1e3,n=5){
   return 1 - erf(z,split,n);
 }
-function inv_erf(y,iter=30){
+function erf_inv(y,iter=30){
   let f = function(t){return erf(t);}
   let f_prime = function(t){return Math.exp(-1*t*t) * 2 / Math.sqrt(Math.PI);}
   return newton(f,f_prime,y,0.5,iter);
@@ -185,7 +284,7 @@ function erf2(z, N=100){
   }
   return total * 2 / Math.PI**0.5;
 }
-function inv_erf2(y, N=300){
+function erf_inv2(y, N=300){
   let Ck = [1];  // aray of coef Ck
   for(var k=1;k<=N;k++){
     var s=0;
@@ -229,7 +328,7 @@ function gamma(s,split=1e4,n=5){
     return Math.PI/Math.sin(Math.PI*s)/gamma(1-s);
   }
 }
-function inv_gamma(y,iter=30){
+function gamma_inv(y,iter=30){
   let f_prime = function(s){
     let func = function(t){return Math.log(s)*Math.pow(t,s-1)*Math.exp(-t);};
     return gauss_legendre(func,0,s*10);
@@ -263,7 +362,7 @@ function incomplete_gamma(s,x,split=1e3,n=5){
 function regularized_gamma(s,x,split=1e3,n=5){
   return incomplete_gamma(s,x,split,n)/gamma(s);
 }
-function inv_regularized_gamma(s,y,iter=30){ // 0<y<1
+function regularized_gamma_inv(s,y,iter=30){ // 0<y<1
   if(y<=0.1 && s <= 1){
     var x0 = 0.0001;
   }else if(y<=0.1 && s <= 2){
@@ -312,7 +411,7 @@ function incomplete_beta(a,b,x,split=1e3,n=5){
 function regularized_beta(a,b,x,split=1e3,n=5){
   return incomplete_beta(a,b,x,split,n)/beta(a,b,split,n);
 }
-function inv_regularized_beta(a,b,y,iter=30){
+function regularized_beta_inv(a,b,y,iter=30){
   let regularizer = beta(a,b); // denominator
   if(y<0.5){ // find initial x0
     x0_candidate = [0.0001,0.001,0.005,0.01,0.05,0.1,0.3,0.5,0.7,0.9,0.95,0.99,0.995,0.999,0.9995];
@@ -344,7 +443,7 @@ function inv_regularized_beta(a,b,y,iter=30){
 
 // weights[n] = [[zero point x_i, weight w_i],..]
 const GL_weights = {
-  2:[[0.57735026918962576451,1.0],
+  2:[[-0.57735026918962576451,1.0],
     [0.57735026918962576451,1.0]],
   3:[[-0.77459666924148337704,0.55555555555555555552],
     [0,0.88888888888888888889],
@@ -411,11 +510,12 @@ const GL_weights = {
  * @param {Int} split the number of intervals, default=1000
  * @param {Number} n order of Legendre polynomial, default=5
  */
+/**
 function gauss_legendre(func, a, b, split=1e3, n=5){
   let cum_sum = 0; // total area
   let weight = GL_weights[n]; // coef
   let dx = (b-a) / split; // width of each interval
-  for(var i=0;i<split;i++){
+  for(let i=0; i<split; i++){
     var q = dx/2;
     var r = (2*i+1)*dx/2;
     var total = 0;
@@ -425,6 +525,18 @@ function gauss_legendre(func, a, b, split=1e3, n=5){
     cum_sum += total * q;
   }
   return cum_sum
+}*/
+function gauss_legendre(func, a, b, split=1e3, n=5){
+  let cum_sum = 0; // total area
+  let weight = GL_weights[n]; // coef
+  let dx = (b-a) / split; // width of each interval
+  for(let i=0; i<split; i++){
+    var q = dx/2;
+    var r = a+((2*i+1)*dx)/2;
+    var total = sum(weight.map(x => func(q*x[0] + r)*x[1])) * q; 
+    cum_sum += total;
+  }
+  return cum_sum;
 }
 
 ///// Newton's Method /////
