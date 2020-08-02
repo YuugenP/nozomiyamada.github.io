@@ -278,7 +278,7 @@
     let candidates2 = Object.keys(IPA2WORD).filter(x => x.match(ipa2) && x.length<=maxlength);
     let found_minimal = false;
     for(cand1 of candidates1){ // iterate candidate IPA
-      for(var i=0; i<ipa1.length; i++){ // change one character
+      for(var i=0; i<cand1.length; i++){ // change one character
         if(cand1[i]!==ipa1){continue;}
 　　　　　var pat = new RegExp('^' + cand1.slice(0,i) + ipa2 + cand1.slice(i+1)+'$');
         for(cand2 of candidates2){
