@@ -163,8 +163,8 @@
               <td>
                 <select class="form-control" id='input_ipa2' style="min-width: 7rem;">
                   <option value="i">i</option>
-                  <option value="ɪ" selected>ɪ</option>
-                  <option value="u">u</option>
+                  <option value="ɪ">ɪ</option>
+                  <option value="u" selected>u</option>
                   <option value="ʊ">ʊ</option>
                   <option value="e">e</option>
                   <option value="ɛ">ɛ</option>
@@ -276,6 +276,7 @@
     document.getElementById('result_table').innerHTML = '<tr><th>IPA of input</th><th>minimal pair (IPA)</th><th>minimal pair (word)</th></tr>'
     let candidates1 = Object.keys(IPA2WORD).filter(x => x.match(ipa1) && x.length<=maxlength);
     let candidates2 = Object.keys(IPA2WORD).filter(x => x.match(ipa2) && x.length<=maxlength);
+    let found_minimal = false;
     for(cand1 of candidates1){ // iterate candidate IPA
       for(var i=0; i<ipa1.length; i++){ // change one character
         var pat = new RegExp('^' + cand1.slice(0,i) + ipa2 + cand1.slice(i+1)+'$');
@@ -287,6 +288,9 @@
           }
         }
       }
+    }
+    if(found_minimal===false){
+      document.getElementById('result_table').insertAdjacentHTML('beforeend', '<td colspan="3">NOT FOUND</td>');
     }
   }
   
