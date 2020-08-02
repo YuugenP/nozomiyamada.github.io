@@ -33,6 +33,7 @@
     .nav-tabs {margin-bottom: 15px;}
     .progress {margin-bottom: 10px;}
     .ipacopy:hover {cursor: pointer;}
+    td{padding-right: 1em;}
   }
   </style>
 </head>
@@ -92,8 +93,10 @@
         </ol>
         - Search by two phonemes
         <ol>
-          <li>select two phonemes from dropdown lists.</li>
-          <li>Press Submit buttion.</li>
+          <li>Select two phonemes from dropdown lists.</li>
+          <li>Select maximum length. (if greater than 6, it may take a long time)</li>
+          <li>Select positions of the two phonemes.</li>
+          <li>Press search button.</li>
         </ol>
         IPA can be copied to clipboard just by clicking<br><br>
         other tools
@@ -107,7 +110,7 @@
   </div>
 
   <div class="row">
-    <div class="col-lg-6">
+    <div class="col-lg-5">
       <div class="bs-component">
 				<h3>input word (not IPA)</h3>
         <form onsubmit="find_minimal(); return false;">
@@ -115,97 +118,117 @@
 				</form>
       </div>
     </div>
-    <div class="col-lg-6">
+    <div class="col-lg-7">
       <div class="bs-component">
 				<h3>select 2 phonemes</h3>
         <form onsubmit="find_minimal2(); return false;">
           <table>
-            <tr>
-              <td>
-                <select class="form-control" id='input_ipa1' style="min-width: 7rem;">
-                  <option value="i">i</option>
-                  <option value="ɪ">ɪ</option>
-                  <option value="u">u</option>
-                  <option value="ʊ">ʊ</option>
-                  <option value="e">e</option>
-                  <option value="ɛ">ɛ</option>
-                  <option value="æ">æ</option>
-                  <option value="o">o</option>
-                  <option value="ɔ">ɔ</option>
-                  <option value="a">a</option>
-                  <option value="ɑ">ɑ</option>
-                  <option value="ə">ə</option>
-                  <option value="ɝ">ɝ</option>
-                  <option value="j">j</option>
-                  <option value="w">w</option>
-                  <option value="ɹ">ɹ</option>
-                  <option value="ɫ">ɫ</option>
-                  <option value="p">p</option>
-                  <option value="b">b</option>
-                  <option value="m">m</option>
-                  <option value="f">f</option>
-                  <option value="v">v</option>
-                  <option value="θ">θ</option>
-                  <option value="ð">ð</option>
-                  <option value="t">t</option>
-                  <option value="d">d</option>
-                  <option value="n">n</option>
-                  <option value="s">s</option>
-                  <option value="z">z</option>
-                  <option value="ʃ">ʃ</option>
-                  <option value="ʒ">ʒ</option>
-                  <option value="k">k</option>
-                  <option value="ɡ">ɡ</option>
-                  <option value="ŋ">ŋ</option>
-                  <option value="h">h</option>
-                </select>
-              </td>
-              <td>
-                <select class="form-control" id='input_ipa2' style="min-width: 7rem;">
-                  <option value="i">i</option>
-                  <option value="ɪ">ɪ</option>
-                  <option value="u" selected>u</option>
-                  <option value="ʊ">ʊ</option>
-                  <option value="e">e</option>
-                  <option value="ɛ">ɛ</option>
-                  <option value="æ">æ</option>
-                  <option value="o">o</option>
-                  <option value="ɔ">ɔ</option>
-                  <option value="a">a</option>
-                  <option value="ɑ">ɑ</option>
-                  <option value="ə">ə</option>
-                  <option value="ɝ">ɝ</option>
-                  <option value="j">j</option>
-                  <option value="w">w</option>
-                  <option value="ɹ">ɹ</option>
-                  <option value="ɫ">ɫ</option>
-                  <option value="p">p</option>
-                  <option value="b">b</option>
-                  <option value="m">m</option>
-                  <option value="f">f</option>
-                  <option value="v">v</option>
-                  <option value="θ">θ</option>
-                  <option value="ð">ð</option>
-                  <option value="t">t</option>
-                  <option value="d">d</option>
-                  <option value="n">n</option>
-                  <option value="s">s</option>
-                  <option value="z">z</option>
-                  <option value="ʃ">ʃ</option>
-                  <option value="ʒ">ʒ</option>
-                  <option value="k">k</option>
-                  <option value="ɡ">ɡ</option>
-                  <option value="ŋ">ŋ</option>
-                  <option value="h">h</option>
-                </select>
-              </td>
-              <td style="display: none;">
-                <input type="text" class="form-control" placeholder="max length: default=4" id="maxlength">
-              </td>
-              <td>
-                <input type="submit" class="btn btn-outline-info" onclick="find_minimal2();return false;">
-              </td>
-            </tr>
+            <tbody>
+              <tr>
+                <td>
+                  <select class="form-control" id='input_ipa1' style="min-width: 5rem;">
+                    <option value="i">i</option>
+                    <option value="ɪ">ɪ</option>
+                    <option value="u">u</option>
+                    <option value="ʊ">ʊ</option>
+                    <option value="e">e</option>
+                    <option value="ɛ">ɛ</option>
+                    <option value="æ">æ</option>
+                    <option value="o">o</option>
+                    <option value="ɔ">ɔ</option>
+                    <option value="a">a</option>
+                    <option value="ɑ">ɑ</option>
+                    <option value="ə">ə</option>
+                    <option value="ɝ">ɝ</option>
+                    <option value="j">j</option>
+                    <option value="w">w</option>
+                    <option value="ɹ">ɹ</option>
+                    <option value="ɫ">ɫ</option>
+                    <option value="p">p</option>
+                    <option value="b">b</option>
+                    <option value="m">m</option>
+                    <option value="f">f</option>
+                    <option value="v">v</option>
+                    <option value="θ">θ</option>
+                    <option value="ð">ð</option>
+                    <option value="t">t</option>
+                    <option value="d">d</option>
+                    <option value="n">n</option>
+                    <option value="s">s</option>
+                    <option value="z">z</option>
+                    <option value="ʃ">ʃ</option>
+                    <option value="ʒ">ʒ</option>
+                    <option value="ʧ">ʧ</option>
+                    <option value="ʤ">ʤ</option>
+                    <option value="k">k</option>
+                    <option value="ɡ">ɡ</option>
+                    <option value="ŋ">ŋ</option>
+                    <option value="h">h</option>
+                  </select>
+                </td>
+                <td>
+                  <select class="form-control" id='input_ipa2' style="min-width: 5rem;">
+                    <option value="i">i</option>
+                    <option value="ɪ">ɪ</option>
+                    <option value="u" selected>u</option>
+                    <option value="ʊ">ʊ</option>
+                    <option value="e">e</option>
+                    <option value="ɛ">ɛ</option>
+                    <option value="æ">æ</option>
+                    <option value="o">o</option>
+                    <option value="ɔ">ɔ</option>
+                    <option value="a">a</option>
+                    <option value="ɑ">ɑ</option>
+                    <option value="ə">ə</option>
+                    <option value="ɝ">ɝ</option>
+                    <option value="j">j</option>
+                    <option value="w">w</option>
+                    <option value="ɹ">ɹ</option>
+                    <option value="ɫ">ɫ</option>
+                    <option value="p">p</option>
+                    <option value="b">b</option>
+                    <option value="m">m</option>
+                    <option value="f">f</option>
+                    <option value="v">v</option>
+                    <option value="θ">θ</option>
+                    <option value="ð">ð</option>
+                    <option value="t">t</option>
+                    <option value="d">d</option>
+                    <option value="n">n</option>
+                    <option value="s">s</option>
+                    <option value="z">z</option>
+                    <option value="ʃ">ʃ</option>
+                    <option value="ʒ">ʒ</option>
+                    <option value="ʧ">ʧ</option>
+                    <option value="ʤ">ʤ</option>
+                    <option value="k">k</option>
+                    <option value="ɡ">ɡ</option>
+                    <option value="ŋ">ŋ</option>
+                    <option value="h">h</option>
+                  </select>
+                </td>
+                <td>
+                  <select class="form-control" id='maxlength' style="min-width: 5rem;">
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5" selected>5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                  </select>
+                </td>
+                <td>
+                  <input type="checkbox" id="initial" checked><label for="initial">&nbsp;initial&nbsp;</label>
+                  <input type="checkbox" id="middle"><label for="middle">&nbsp;middle&nbsp;</label>
+                  <input type="checkbox" id="final"><label for="final">&nbsp;final&nbsp;</label>
+                </td>
+                <td>
+                  <input type="submit" class="btn btn-outline-secondary" onclick="find_minimal2();return false;" value="search">
+                </td>
+              </tr>
+            </tbody>
           </table>
 				</form>
       </div>
@@ -213,7 +236,7 @@
 	</div><br>
 
 	<div class="row">
-    <div class="col-lg-10">
+    <div class="col-lg-12">
       <div class="bs-component">
 				<h3>Results</h3>
 				<table class="table table-hover">
@@ -243,7 +266,7 @@
 <script>
 	function find_minimal(){
 		let word = document.getElementById('input').value.trim().toLowerCase();
-		document.getElementById('result_table').innerHTML = '<tr><th>IPA of input</th><th>minimal pair (IPA)</th><th>minimal pair (word)</th></tr>'
+		document.getElementById('result_table').innerHTML = '<tr><th>IPA of input</th><th>minimal pair (IPA)</th><th>minimal pair (word)</th></tr>';
 		if((word in WORD2IPA) === false){
 			document.getElementById('result_table').insertAdjacentHTML('beforeend', '<td colspan="3">INPUT WORD NOT FOUND</td>');
 		}else{
@@ -253,7 +276,10 @@
 					var pat = new RegExp('^' + ipa.slice(0,i) + '.' + ipa.slice(i+1)+'$');
 					for(key in IPA2WORD){
 						if(key.match(pat) && ipa!==key){
-							var insert_html = `<tr><td class="ipacopy" onclick="copy_to_clipboard();">${ipa}</td><td class="ipacopy" onclick="copy_to_clipboard();">${key}</td><td>${IPA2WORD[key].join(', ')}</td>`;
+              words = IPA2WORD[key];
+              key = key.replace('ʧ','tʃ').replace('ʤ','dʒ');
+              ipa = ipa.replace('ʧ','tʃ').replace('ʤ','dʒ');
+							var insert_html = `<tr><td class="ipacopy" onclick="copy_to_clipboard();">${ipa}</td><td class="ipacopy" onclick="copy_to_clipboard();">${key}</td><td>${words.join(', ')}</td>`;
               document.getElementById('result_table').insertAdjacentHTML('beforeend', insert_html); 
               found_minimal = true;
 						}
@@ -269,22 +295,60 @@
   function find_minimal2(){
     let ipa1 = document.getElementById('input_ipa1').value;
     let ipa2 = document.getElementById('input_ipa2').value;
+    let is_initial = document.getElementById("initial").checked;
+    let is_middle = document.getElementById("middle").checked;
+    let is_final = document.getElementById("final").checked;
     let maxlength = document.getElementById('maxlength').value;
-    if(maxlength===""){
-      maxlength = 4;
-    }
-    document.getElementById('result_table').innerHTML = '<tr><th>IPA 1</th><th>IPA 2</th><th>minimal pair (word)</th></tr>'
-    let candidates1 = Object.keys(IPA2WORD).filter(x => x.match(ipa1) && x.length<=maxlength);
-    let candidates2 = Object.keys(IPA2WORD).filter(x => x.match(ipa2) && x.length<=maxlength);
+    document.getElementById('result_table').innerHTML = '<tr><th>IPA 1</th><th>IPA 2</th><th>minimal pair (word)</th></tr><tr id="initial_row" style="display:none;"></tr><tr id="middle_row" style="display:none;"></tr><tr id="final_row" style="display:none;"></tr>'
+    let candidates1 = Object.keys(IPA2WORD).filter(x => x.match(ipa1) && x.length<=maxlength && x.length>=2); // All IPA contain input ipa1
+    let candidates2 = Object.keys(IPA2WORD).filter(x => x.match(ipa2) && x.length<=maxlength && x.length>=2); // All IPA contain input ipa2
+    
     let found_minimal = false;
     for(cand1 of candidates1){ // iterate candidate IPA
-      for(var i=0; i<cand1.length; i++){ // change one character
-        if(cand1[i]!==ipa1){continue;}
-　　　　　var pat = new RegExp('^' + cand1.slice(0,i) + ipa2 + cand1.slice(i+1)+'$');
+      // initial position
+      if(is_initial===true && cand1[0]===ipa1){
+        var pat = ipa2 + cand1.slice(1)
         for(cand2 of candidates2){
-          if(cand2.match(pat) && cand1!==cand2){
-            var insert_html = `<tr><td class="ipacopy" onclick="copy_to_clipboard();">${cand1}</td><td class="ipacopy" onclick="copy_to_clipboard();">${cand2}</td><td>${IPA2WORD[cand1].join(', ')} / ${IPA2WORD[cand2].join(', ')}</td>`;
-            document.getElementById('result_table').insertAdjacentHTML('beforeend', insert_html); 
+          if(pat === cand2){
+            words1 = IPA2WORD[cand1];
+            words2 = IPA2WORD[cand2];
+            cand1 = cand1.replace('ʧ','tʃ').replace('ʤ','dʒ');
+            cand2 = cand2.replace('ʧ','tʃ').replace('ʤ','dʒ');
+            var insert_html = `<tr class="table-primary"><td class="ipacopy" onclick="copy_to_clipboard();">${cand1}</td><td class="ipacopy" onclick="copy_to_clipboard();">${cand2}</td><td>${words1.join(', ')} / ${words2.join(', ')}</td>`;
+            document.getElementById('initial_row').insertAdjacentHTML('afterend', insert_html); 
+            found_minimal = true;
+          }
+        }
+      }
+      // middle position
+      if(is_middle===true){
+        for(var i=1; i<cand1.length-1; i++){ // change one character
+          if(cand1[i]!==ipa1){continue;}
+          pat = cand1.slice(0,i) + ipa2 + cand1.slice(i+1);
+          for(cand2 of candidates2){
+            if(pat===cand2){
+              words1 = IPA2WORD[cand1];
+              words2 = IPA2WORD[cand2];
+              cand1 = cand1.replace('ʧ','tʃ').replace('ʤ','dʒ');
+              cand2 = cand2.replace('ʧ','tʃ').replace('ʤ','dʒ');
+              var insert_html = `<tr class="table-success"><td class="ipacopy" onclick="copy_to_clipboard();">${cand1}</td><td class="ipacopy" onclick="copy_to_clipboard();">${cand2}</td><td>${words1.join(', ')} / ${words2.join(', ')}</td>`;
+              document.getElementById('middle_row').insertAdjacentHTML('afterend', insert_html); 
+              found_minimal = true;
+            }
+          }
+        }
+      }
+      // final position
+      if(is_final===true && cand1.slice(-1)[0]===ipa1){
+        var pat = cand1.slice(0, cand1.length-1) + ipa2;
+        for(cand2 of candidates2){
+          if(pat === cand2){
+            words1 = IPA2WORD[cand1];
+            words2 = IPA2WORD[cand2];
+            cand1 = cand1.replace('ʧ','tʃ').replace('ʤ','dʒ');
+            cand2 = cand2.replace('ʧ','tʃ').replace('ʤ','dʒ');
+            var insert_html = `<tr class="table-warning"><td class="ipacopy" onclick="copy_to_clipboard();">${cand1}</td><td class="ipacopy" onclick="copy_to_clipboard();">${cand2}</td><td>${words1.join(', ')} / ${words2.join(', ')}</td>`;
+            document.getElementById('final_row').insertAdjacentHTML('afterend', insert_html); 
             found_minimal = true;
           }
         }
@@ -296,14 +360,14 @@
   }
   
   function copy_to_clipboard(){
-  var temp_elem = document.createElement("textarea");
-  temp_elem.textContent = event.target.innerText;
-  var body_elem = document.getElementsByTagName("body")[0];
-  body_elem.appendChild(temp_elem);
-  temp_elem.select();
-  document.execCommand("Copy");
-  temp_elem.remove();
-}
+    var temp_elem = document.createElement("textarea");
+    temp_elem.textContent = event.target.innerText;
+    var body_elem = document.getElementsByTagName("body")[0];
+    body_elem.appendChild(temp_elem);
+    temp_elem.select();
+    document.execCommand("Copy");
+    temp_elem.remove();
+  }
 </script>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
