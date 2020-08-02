@@ -34,6 +34,9 @@
     .progress {margin-bottom: 10px;}
     .ipacopy:hover {cursor: pointer;}
     td{padding-right: 0.5em;}
+    .blue{color:blue;}
+    .green{color:green;}
+    .golden{color:goldenrod;}
   }
   </style>
 </head>
@@ -95,7 +98,7 @@
         <ol>
           <li>Select two phonemes from dropdown lists.</li>
           <li>Select maximum length. (if greater than 6, it may take a long time)</li>
-          <li>Select positions (<font color="blue">initial</font>, <font color="green">middle</font>, <font color="goldenrod">final</font>) of the two phonemes.</li>
+          <li>Select positions (<span class="blue">initial</span>, <span class="green">middle</span>, <span class="golden">final</span>) of the two phonemes.</li>
           <li>Press search button.</li>
         </ol>
         IPA can be copied to clipboard just by clicking<br><br>
@@ -220,9 +223,9 @@
                   </select>
                 </td>
                 <td>
-                  <input type="checkbox" id="initial" checked><label for="initial">&nbsp;<font color="blue">initial</font>&nbsp;</label>
-                  <input type="checkbox" id="middle"><label for="middle">&nbsp;<font color="green">middle</font>&nbsp;</label>
-                  <input type="checkbox" id="final"><label for="final">&nbsp;<font color="goldenrod">final</font>&nbsp;</label>
+                  <input type="checkbox" id="initial" checked><label for="initial" class=blue>&nbsp;initial&nbsp;</label>
+                  <input type="checkbox" id="middle"><label for="middle" class="green">&nbsp;middle&nbsp;</label>
+                  <input type="checkbox" id="final"><label for="final" class="golden">&nbsp;final&nbsp;</label>
                 </td>
                 <td>
                   <input type="submit" class="btn btn-outline-secondary" onclick="find_minimal2();return false;" value="search">
