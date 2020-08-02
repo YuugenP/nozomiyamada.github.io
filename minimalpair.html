@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Phonology Tools</title>
+
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  <style type="text/css">
+  .bs-component + .bs-component {
+    margin-top: 1rem;
+  }
+  @media (min-width: 768px) {
+    .bs-docs-section {margin-top: 8em;}
+    .bs-component {position: relative;}
+    .bs-component .modal {
+      position: relative;
+      top: auto;
+      right: auto;
+      bottom: auto;
+      left: auto;
+      z-index: 1;
+      display: block;
+    }
+    .bs-component .modal-dialog {width: 90%;}
+    .bs-component .popover {
+      position: relative;
+      display: inline-block;
+      width: 220px;
+      margin: 20px;
+    }
+    .nav-tabs {margin-bottom: 15px;}
+    .progress {margin-bottom: 10px;}
+  }
+  </style>
+</head>
+
+<body>
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="index.html">Nozomi</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor02">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="link.html">Links</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="blog.html">Blog</a>
+        </li>
+        <li class="nav-item">
+					<a class="nav-link" href="nhk.html">NHKWeb</a>
+				</li>
+        <li class="nav-item">
+          <a class="nav-link" href="ipathai.html">タイ語入力</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="tool.html">Math Tools</a>
+				</li>
+				<li class="nav-item active">
+          <a class="nav-link" href="minimalpair.html">Phonology</a>
+        </li>
+      </ul>
+      <!--
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search">
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+      </form>
+      -->
+    </div>
+  </nav>
+</header>
+	
+<div class="container">
+
+  <div class="page-header" id="banner">
+    <div class="row my-3">
+      <div class="col-12">
+				<h2 class="display-5">Minimal Pair Searcher (EN)</h2>
+				How to use:
+				<ol>
+					<li>Input word of the English word you want to search minimal pairs.</li>
+					<li>Press ENTER key.</li>
+					<li>Results will be shown on the right side.</li>
+				</ol>
+				<p><a href="https://r12a.github.io/pickers/ipa/" target="blank_">IPA picker</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-8">
+      <div class="bs-component">
+				<h3>input word (not IPA)</h3>
+        <form onsubmit="find_minimal(); return false;">
+					<input type="text" class="form-control" id="input" placeholder="word" autocomplete="off">
+				</form>
+      </div>
+		</div>
+	</div><br>
+
+	<div class="row">
+    <div class="col-lg-8">
+      <div class="bs-component">
+				<h3>Results</h3>
+				<table class="table table-hover">
+					<tbody id="result_table">
+						<tr>
+							<th>IPA of input</th>
+							<th>minimal pair (IPA)</th>
+							<th>minimal pair (word)</th>
+						</tr>
+					</tbody>
+				</table>
+      </div>
+		</div>
+	</div>
+	
+</div>
+<br>
+
+
+<footer>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <p><font color="white">&copy; 2020 Nozomi Yamada All Rights Reserved.</font></p>
+  </nav>
+</footer>
+
+<script src="js/minimalpair.js"></script>
+<script>
+	function find_minimal(){
+		let word = document.getElementById('input').value;
+		document.getElementById('result_table').innerHTML = '<tr><th>IPA of input</th><th>minimal pair (IPA)</th><th>minimal pair (word)</th></tr>'
+		if((word in WORD2IPA) === false){
+			console.log('NOT FOUND THE INPUT WORD');
+		}else{
+			for(ipa of WORD2IPA[word]){
+				for(var i=0; i<ipa.length; i++){
+					var pat = new RegExp('^' + ipa.slice(0,i) + '.' + ipa.slice(i+1)+'$');
+					for(key in IPA2WORD){
+						if(key.match(pat) && ipa!==key){
+							var insert_html = `<tr><td>${ipa}</td><td>${key}</td><td>${IPA2WORD[key].join(', ')}</td>`;
+							document.getElementById('result_table').insertAdjacentHTML('beforeend', insert_html); 
+						}
+					}
+				}
+			}
+		}
+	}
+</script>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="./js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+  $('.bs-component [data-toggle="popover"]').popover();
+  $('.bs-component [data-toggle="tooltip"]').tooltip();
+</script>
+
+</body>
+</html>

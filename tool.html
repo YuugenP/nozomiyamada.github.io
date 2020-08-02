@@ -41,7 +41,7 @@
   }
   </style>
   <script src='js/statistics.js'></script>
-  <script src='js/special_func.js'></script>
+  <script src='js/math_func.js'></script>
   <script src='js/gcd_lcm.js'></script>
   <script src='js/misc.js'></script>
 </head>
@@ -316,7 +316,7 @@
       </div>
     </div> <!-- F-test -->
     
-  </div> <!--row statistic values -->
+  </div> <!--row T & F test -->
 
   <div class="row">
     <div class="col-lg-12">
@@ -576,8 +576,66 @@
         </div>
       </div>
     </div>
+  </div> <!-- END OF chi2 & F distribution-->
 
-  </div> <!--chi2 & F distribution-->
+  <div class="row">
+    <div class="col-lg-12">
+      <h2 onclick="show_hide('content_normalitytest');">＋ Normality Test</h2>
+    </div>
+  </div>
+
+  <div class="row" id='content_normalitytest' style="display:none">
+    <div class="col-lg-6">
+      <div class="bs-component">
+        <div class="card border-info mb-3" style="min-height: 16rem;">
+          <div class="card-header">Shapiro-Wilk Test</div>
+          <div class="card-body">
+            <form onsubmit="show_notmalitytest();return false;">
+            <table class='table' style="table-layout: fixed;">
+              <tr>
+                <td colspan="4"><input type='text' class="form-control" id="normalitytest_input" placeholder="data" autocomplete="off"></td>
+              </tr>
+
+              <tr>
+                <td colspan="4">
+                  <button class="btn btn-outline-info" onclick="show_normalitytest();return false">calculate</button>
+                  <button class="btn btn-outline-info" onclick="reset_normalitytest.reset();return false">reset</button>
+                </td>
+              </tr>
+              <tr>
+                <td align="center"><strong>t-value</strong></td>
+                <td align="center"><strong>df</strong></td>
+                <td align="center"><strong>p(|t|≤x)</strong></td>
+                <td align="center"><strong>Cohen d</strong></td>
+              </tr>
+              <tr class="table-active" id="ttest_output_row">
+                <td align="center" class="answer" onclick="copy_to_clipboard();"><strong class="ttest_output">-</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();"><strong class="ttest_output">-</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();"><strong class="ttest_output">-</strong></td>
+                <td align="center" class="answer" onclick="copy_to_clipboard();"><strong class="ttest_output">-</strong></td>
+              </tr>
+            </table>
+            </form>
+          </div>
+        </div>
+      </div> 
+    </div> <!-- Welch's t-test -->
+
+    <div class="col-lg-6">
+      <div class="bs-component">
+        <div class="card border-info mb-3" style="min-height: 16rem;">
+          <div class="card-header">Q-Q plot</div>
+          <div class="card-body">
+            <canvas id="qqplot_canvas">
+
+            </canvas>
+              
+          </div>
+        </div>
+      </div>
+    </div> <!-- END OF QQPLOT -->
+    
+  </div> <!-- END OF ROW TEST OF NORMALITY  -->
 
   <div class="row">
     <div class="col-lg-12">
@@ -1227,6 +1285,7 @@
 
 <!--------------------  JavaScript  -------------------->
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
 <script>
 
 // convert base
@@ -1465,6 +1524,30 @@ function p2f(){
   }
 }
 
+
+////////////////////  NORMALITY TEST  ////////////////////
+window.onload = make_data([0]);
+function make_data(arr){
+    [arr_sorted, norm] = qqplot(arr);
+    qqplot_data = [];
+    for(var i=0; i<arr.length; i++){
+      qqplot_data.push({x:arr_sorted[i], y:norm[i]});
+    }
+    var ctx = document.getElementById('qqplot_canvas');
+    var scatterChart = new Chart(ctx, {
+    type: 'scatter',
+    data: {
+      datasets: [{label:'Q-Q PLOT', data: qqplot_data}],
+      options: {
+        scales: {
+          xAxes: [{
+            type: 'linear',
+            position: 'bottom'
+          }]
+        }
+      }
+    }   });
+}
 
 ////////////////////  CHI2 FIT TEST ////////////////////
 

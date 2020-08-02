@@ -35,6 +35,10 @@ function variance(mat, unbiased=true){
   return arr.reduce((acc, cur) => acc+(cur-mu)**2, 0)/N;
 }
 
+function pooled_variance(arr1,arr2){
+  return (variance(arr1,false)*arr1.length + variance(arr2,false)*arr2.length)/(arr1.length+arr2.length-2);
+}
+
 function std(mat, unbiased=true){
   if(!Array.isArray(mat)){mat = [mat];}
   let arr = flatten(mat);
@@ -101,15 +105,22 @@ function regression(arr1,arr2){
 }
 
 function order_statistic(n){
-  arr = [];
+  let arr = [];
+  let cov_mat = zeros(n,n);
   for(let k=1; k<=n; k++){
-    fx = x => x*normal_pdf(x)*(normal_cdf(x)**(k-1))*((1-normal_cdf(x))**(n-k));
-    X = k*combination(n,k)*gauss_legendre(fx,-5,5,1e2);
+    let fx = x => x*normal_pdf(x)*(normal_cdf(x)**(k-1))*((1-normal_cdf(x))**(n-k));
+    let X = k*combination(n,k)*gauss_legendre(fx,-10,10,2e2);
     arr.push(X);
+    for(let l=k; l<=n; l++){
+      let fxy = (x,y) => fact(n)/fact(k-1)/fact(l-1-k)/fact(n-l)*normal_cdf(x)**(k-1)*(normal_cdf(y)-normal_cdf(x))**(l-1-k)*(1-normal_cdf(y))**(n-l)*normal_pdf(x)*normal_pdf(y)*x*y;
+      let XY = gauss_legendre2D(fxy,-5,5,1e2);
+      cov_mat[k-1][l-1] = XY;
+      cov_mat[l-1][k-1] = XY;
+    }
   }
-  return arr;
+  let norm_arr = norm(arr);
+  return [round(arr.map(x => x/norm_arr), 10), cov_mat];
 }
-
 
 function shapiro(arr){
   arr = sorted(arr);
@@ -119,6 +130,8 @@ function shapiro(arr){
   let normal_score = cum_prob.map(p => normal_inv(p));
   console.log(normal_score);
 }
+
+////////////////////  HYPOTHESIS TESTING  ////////////////////
 
 function chi2_fit(arr1,arr2,yates=false){
   let chi2_value = 0;
@@ -177,6 +190,7 @@ function welch(mu1,mu2,s1,s2,n1,n2){
   let df = (v1/n1+v2/n2)**2 / ((v1/n1)**2/(n1-1)+(v2/n2)**2/(n2-1));
   return [t,df,t_to_p(Math.abs(t),df)];
 }
+
 function welch_arr(arr1,arr2){
   let mu1 = mean(arr1); let mu2 = mean(arr2);
   let v1 = variance(arr1); let v2 = variance(arr2);
@@ -186,8 +200,19 @@ function welch_arr(arr1,arr2){
   return [t,df,t_to_p(Math.abs(t),df)];
 }
 
-function pooled_variance(arr1,arr2){
-  return (variance(arr1,false)*arr1.length + variance(arr2,false)*arr2.length)/(arr1.length+arr2.length-2);
+function mann_whitney(arr1, arr2){
+  if(arr1.length > arr2.length){
+    [arr1, arr2] = [arr2, arr1];
+  }
+  arr1 = sorted(arr1);
+  arr2 = sorted(arr2);
+  let [n1, n2] = [arr1.length, arr2.length]
+  let U = sum(arr1.map(x => arr2.filter(y => y < x).length));
+  let mu = n1*n2 / 2;
+  let sd = Math.sqrt(n1*n2*(n1+n2+1)/12);
+  let z = (U-mu)/sd;
+  let p = z_to_p(Math.abs(z));
+  return [z, p];
 }
 
 function effect_size(mu1,mu2,s1,s2,n1,n2){
@@ -203,11 +228,13 @@ function effect_size_arr(arr1,arr2){
 
 ////////////////////  DISTRIBUTIONS  ////////////////////
 
+//////////  NORMAL DISTRIBUTION  //////////
+
 function normal_pdf(x, mu=0, sd=1){
   return Math.exp(-1*(x-mu)**2/(2*sd**2))/Math.sqrt(2*Math.PI)/sd;
 }
-function normal_cdf(x, mu=0, sd=1){
-  return (1 + erf((x-mu)/Math.sqrt(2)/sd)) * 0.5;
+function normal_cdf(x, mu=0, sd=1, split=1e3){
+  return (1 + erf((x-mu)/Math.sqrt(2)/sd, split)) * 0.5;
 }
 function normal_inv(p, mu=0, sd=1){
   if(p<0 || p>1){return NaN;}
@@ -246,7 +273,15 @@ function p_to_z(p, taylor=false, N=300){
   }
 }
 
+function qqplot(arr){
+  let arr_sorted = sorted(arr);
+  let [mu, sd] = [mean(arr), std(arr)];
+  let rank = range(arr.length).map(i => (i+0.5)/arr.length);
+  rank = rank.map(x => normal_inv(x, mu, sd));
+  return [arr_sorted, rank];
+}
 
+//////////  T-DISTRIBUTION  //////////
 
 /**
  * t-distribution
