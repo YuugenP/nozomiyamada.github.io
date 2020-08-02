@@ -279,7 +279,8 @@
     let found_minimal = false;
     for(cand1 of candidates1){ // iterate candidate IPA
       for(var i=0; i<ipa1.length; i++){ // change one character
-        var pat = new RegExp('^' + cand1.slice(0,i) + ipa2 + cand1.slice(i+1)+'$');
+        if(cand1[i]!==ipa1){continue;}
+　　　　　var pat = new RegExp('^' + cand1.slice(0,i) + ipa2 + cand1.slice(i+1)+'$');
         for(cand2 of candidates2){
           if(cand2.match(pat) && cand1!==cand2){
             var insert_html = `<tr><td class="ipacopy" onclick="copy_to_clipboard();">${cand1}</td><td class="ipacopy" onclick="copy_to_clipboard();">${cand2}</td><td>${IPA2WORD[cand1].join(', ')} / ${IPA2WORD[cand2].join(', ')}</td>`;
