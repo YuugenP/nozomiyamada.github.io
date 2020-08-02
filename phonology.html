@@ -243,7 +243,7 @@
 <script>
 	function find_minimal(){
 		let word = document.getElementById('input').value.trim().toLowerCase();
-		document.getElementById('result_table').innerHTML = '<tr><th>IPA 1</th><th>IPA 2</th><th>minimal pair (word)</th></tr>'
+		document.getElementById('result_table').innerHTML = '<tr><th>IPA of input</th><th>minimal pair (IPA)</th><th>minimal pair (word)</th></tr>'
 		if((word in WORD2IPA) === false){
 			document.getElementById('result_table').insertAdjacentHTML('beforeend', '<td colspan="3">INPUT WORD NOT FOUND</td>');
 		}else{
@@ -273,7 +273,7 @@
     if(maxlength===""){
       maxlength = 4;
     }
-    document.getElementById('result_table').innerHTML = '<tr><th>IPA of input</th><th>minimal pair (IPA)</th><th>minimal pair (word)</th></tr>'
+    document.getElementById('result_table').innerHTML = '<tr><th>IPA 1</th><th>IPA 2</th><th>minimal pair (word)</th></tr>'
     let candidates1 = Object.keys(IPA2WORD).filter(x => x.match(ipa1) && x.length<=maxlength);
     let candidates2 = Object.keys(IPA2WORD).filter(x => x.match(ipa2) && x.length<=maxlength);
     let found_minimal = false;
