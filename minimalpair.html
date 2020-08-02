@@ -57,9 +57,6 @@
           <a class="nav-link" href="link.html">Links</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="blog.html">Blog</a>
-        </li>
-        <li class="nav-item">
 					<a class="nav-link" href="nhk.html">NHKWeb</a>
 				</li>
         <li class="nav-item">
@@ -141,7 +138,7 @@
 <script src="js/minimalpair.js"></script>
 <script>
 	function find_minimal(){
-		let word = document.getElementById('input').value.toLowerCase();
+		let word = document.getElementById('input').value.trim().toLowerCase();
 		document.getElementById('result_table').innerHTML = '<tr><th>IPA of input</th><th>minimal pair (IPA)</th><th>minimal pair (word)</th></tr>'
 		if((word in WORD2IPA) === false){
 			document.getElementById('result_table').insertAdjacentHTML('beforeend', '<td colspan="3">INPUT WORD NOT FOUND</td>');
