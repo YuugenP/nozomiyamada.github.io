@@ -283,7 +283,13 @@
               words = IPA2WORD[key];
               key = key.replace('ʧ','tʃ').replace('ʤ','dʒ');
               ipa = ipa.replace('ʧ','tʃ').replace('ʤ','dʒ');
-							var insert_html = `<tr><td class="ipacopy" onclick="copy_to_clipboard();">${ipa}</td><td class="ipacopy" onclick="copy_to_clipboard();">${key}</td><td>${words.join(', ')}</td>`;
+              if(i===0){
+                var insert_html = `<tr class="table-primary"><td class="ipacopy" onclick="copy_to_clipboard();">${ipa}</td><td class="ipacopy" onclick="copy_to_clipboard();">${key}</td><td>${words.join(', ')}</td>`;
+              }else if(i===ipa.length-1){
+                var insert_html = `<tr class="table-warning"><td class="ipacopy" onclick="copy_to_clipboard();">${ipa}</td><td class="ipacopy" onclick="copy_to_clipboard();">${key}</td><td>${words.join(', ')}</td>`;
+              }else{
+                var insert_html = `<tr class="table-success"><td class="ipacopy" onclick="copy_to_clipboard();">${ipa}</td><td class="ipacopy" onclick="copy_to_clipboard();">${key}</td><td>${words.join(', ')}</td>`;
+              }
               document.getElementById('result_table').insertAdjacentHTML('beforeend', insert_html); 
               found_minimal = true;
 						}
