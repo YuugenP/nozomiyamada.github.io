@@ -348,7 +348,7 @@
             cand1 = cand1.replace('ʧ','tʃ').replace('ʤ','dʒ');
             cand2 = cand2.replace('ʧ','tʃ').replace('ʤ','dʒ');
             var insert_html = `<tr class="table-primary"><td class="ipacopy" onclick="copy_to_clipboard();">${cand1}</td><td class="ipacopy" onclick="copy_to_clipboard();">${cand2}</td><td>${words1.join(', ')} / ${words2.join(', ')}</td>`;
-            document.getElementById('initial_row').insertAdjacentHTML('afterend', insert_html); 
+            document.getElementById('initial_row').insertAdjacentHTML('beforebegin', insert_html); 
             found_minimal = true;
           }
         }
@@ -365,7 +365,7 @@
               cand1 = cand1.replace('ʧ','tʃ').replace('ʤ','dʒ');
               cand2 = cand2.replace('ʧ','tʃ').replace('ʤ','dʒ');
               var insert_html = `<tr class="table-success"><td class="ipacopy" onclick="copy_to_clipboard();">${cand1}</td><td class="ipacopy" onclick="copy_to_clipboard();">${cand2}</td><td>${words1.join(', ')} / ${words2.join(', ')}</td>`;
-              document.getElementById('middle_row').insertAdjacentHTML('afterend', insert_html); 
+              document.getElementById('middle_row').insertAdjacentHTML('beforebegin', insert_html); 
               found_minimal = true;
             }
           }
@@ -381,7 +381,7 @@
             cand1 = cand1.replace('ʧ','tʃ').replace('ʤ','dʒ');
             cand2 = cand2.replace('ʧ','tʃ').replace('ʤ','dʒ');
             var insert_html = `<tr class="table-warning"><td class="ipacopy" onclick="copy_to_clipboard();">${cand1}</td><td class="ipacopy" onclick="copy_to_clipboard();">${cand2}</td><td>${words1.join(', ')} / ${words2.join(', ')}</td>`;
-            document.getElementById('final_row').insertAdjacentHTML('afterend', insert_html); 
+            document.getElementById('final_row').insertAdjacentHTML('beforebegin', insert_html); 
             found_minimal = true;
           }
         }
