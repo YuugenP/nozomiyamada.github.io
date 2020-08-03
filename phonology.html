@@ -97,7 +97,7 @@
         - Search by two phonemes
         <ol>
           <li>Select two phonemes from dropdown lists.</li>
-          <li>Select maximum length. (if greater than 6, it may take a long time)</li>
+          <li>Select minimum & maximum length. (if greater than 6, it may take a long time)</li>
           <li>Select positions (<span class="blue">initial</span>, <span class="green">middle</span>, <span class="golden">final</span>) of the two phonemes.</li>
           <li>Press search button.</li>
         </ol>
@@ -114,7 +114,7 @@
   </div>
 
   <div class="row">
-    <div class="col-lg-5">
+    <div class="col-lg-4">
       <div class="bs-component">
 				<h3>input word (not IPA)</h3>
         <form onsubmit="find_minimal(); return false;">
@@ -122,7 +122,7 @@
 				</form>
       </div>
     </div>
-    <div class="col-lg-7">
+    <div class="col-lg-8">
       <div class="bs-component">
 				<h3>select 2 phonemes</h3>
         <form onsubmit="find_minimal2(); return false;">
@@ -212,7 +212,21 @@
                   </select>
                 </td>
                 <td>
+                  <select class="form-control" id='minlength' style="min-width: 3rem;" onchange="change_max();">
+                    <option value="2">2</option>
+                    <option value="3" selected>3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                  </select>
+                </td>
+                <td>
                   <select class="form-control" id='maxlength' style="min-width: 3rem;">
+                    <option value="2">2</option>
                     <option value="3">3</option>
                     <option value="4">4</option>
                     <option value="5" selected>5</option>
@@ -301,6 +315,15 @@
       }
 		}
   }
+  function change_max(){
+    let minlength = document.getElementById('minlength').value;
+    let elem = document.getElementById('maxlength');
+    elem.innerHTML = '';
+    for(var i=minlength; i<=10; i++){
+      elem.innerHTML += `<option value="${i}">${i}</option>`
+    }
+
+  }
 
   function find_minimal2(){
     let ipa1 = document.getElementById('input_ipa1').value;
@@ -308,11 +331,11 @@
     let is_initial = document.getElementById("initial").checked;
     let is_middle = document.getElementById("middle").checked;
     let is_final = document.getElementById("final").checked;
+    let minlength = document.getElementById('minlength').value;
     let maxlength = document.getElementById('maxlength').value;
     document.getElementById('result_table').innerHTML = '<tr><th>IPA 1</th><th>IPA 2</th><th>minimal pair (word)</th></tr><tr id="initial_row" style="display:none;"></tr><tr id="middle_row" style="display:none;"></tr><tr id="final_row" style="display:none;"></tr>'
-    let candidates1 = Object.keys(IPA2WORD).filter(x => x.match(ipa1) && x.length<=maxlength && x.length>=2); // All IPA contain input ipa1
-    let candidates2 = Object.keys(IPA2WORD).filter(x => x.match(ipa2) && x.length<=maxlength && x.length>=2); // All IPA contain input ipa2
-    
+    let candidates1 = Object.keys(IPA2WORD).filter(x => x.match(ipa1) && x.length<=maxlength && x.length>=minlength); // All IPA contain input ipa1
+    let candidates2 = Object.keys(IPA2WORD).filter(x => x.match(ipa2) && x.length<=maxlength && x.length>=minlength); // All IPA contain input ipa2
     let found_minimal = false;
     for(cand1 of candidates1){ // iterate candidate IPA
       // initial position
