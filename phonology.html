@@ -110,7 +110,8 @@
   <div class="page-header mode_en">
     <div class="row my-3">
       <div class="col-12">
-				<h2 class="display-5">Minimal Pair Searcher (EN) <span class="switch" onclick="select_mode('th');">switch to THAI</span></h2>
+        <h2 class="display-5">Minimal Pair Searcher (EN)</h2>
+        <p><button type="button" class="btn btn-secondary" onclick="select_mode('th');">switch to THAI</button></p>
         1. Search by word
         <ol>
           <li>Input an English word.</li>
@@ -138,7 +139,8 @@
   <div class="page-header mode_th" style="display: none;">
     <div class="row my-3">
       <div class="col-12">
-        <h2 class="display-5">Minimal Pair Searcher (TH) <span class='switch' onclick="select_mode('en');">switch to ENGLISH</span></h2>
+        <h2 class="display-5">Minimal Pair Searcher (TH)</h2>
+        <p><button type="button" class="btn btn-secondary" onclick="select_mode('en');">switch to ENGLISH</button></p>
         <p>If you ignore tone distinction, check "<span class="red">ignore tone</span>".</p>
         1. Search by word
         <ol>
@@ -153,13 +155,25 @@
           <li>Press search button.</li>
         </ol>
         IPA can be copied to clipboard just by clicking<br><br>
-        other tools
-        <ul>
-          <li><a href="http://phonetictools.altervista.org/minimalpairfinder/" target="blank_">Minimal Pair Finder</a></li>
-          <li><a href="https://lessonpix.com/minPairs.php" target="blank_">Lesson Pix</a></li>
-          <li><a href="https://linguistics.ucla.edu/people/hayes/103/MinimalPairs/index.htm" target="blank_">UCLA Linguistics</a></li>
-          <li><a href="http://www.thai-language.com/minimal-sets">thai-language.com</a></li>
-        </ul>
+        <p>
+          other tools
+          <ul>
+            <li><a href="http://phonetictools.altervista.org/minimalpairfinder/" target="blank_">Minimal Pair Finder</a></li>
+            <li><a href="https://lessonpix.com/minPairs.php" target="blank_">Lesson Pix</a></li>
+            <li><a href="https://linguistics.ucla.edu/people/hayes/103/MinimalPairs/index.htm" target="blank_">UCLA Linguistics</a></li>
+            <li><a href="http://www.thai-language.com/minimal-sets">thai-language.com</a></li>
+          </ul>
+        </p>
+        <p>
+          Original Data:
+          <ul>
+            <li>
+              <a href="http://sealang.net/thai/dictionary.htm" target="blank_">SEAlang Library Thai</a> based on <a href="http://sealang.net/thai/tdp.htm" target="blank_">Mary Haas Thai Dictionary Project</a><br>
+              maintained by Doug Cooper, Center for Research in Computational Linguistics, Bangkok
+            </li>
+            <li><a href="http://languagelog.ldc.upenn.edu/myl/GlobalTIMIT_IS2018_submitted.pdf" target="blank_">GlobalTIMIT</a> by Dr. Nattanun Chanchaochai, Dept. of Linguistics, Chulalongkorn University</li>
+          </ul>
+        </p>
       </div>
     </div>
   </div>
@@ -356,8 +370,8 @@
                 </td>
                 <td>
                   <select class="form-control" id='minlength' style="min-width: 3rem;" onchange="change_max();">
-                    <option value="2">2</option>
-                    <option value="3" selected>3</option>
+                    <option value="2" selected>2</option>
+                    <option value="3">3</option>
                     <option value="4">4</option>
                     <option value="5">5</option>
                     <option value="6">6</option>
@@ -382,8 +396,8 @@
                 </td>
                 <td>
                   <input type="checkbox" id="initial" checked><label for="initial" class=blue>&nbsp;initial&nbsp;</label>
-                  <input type="checkbox" id="middle"><label for="middle" class="green">&nbsp;middle&nbsp;</label>
-                  <input type="checkbox" id="final"><label for="final" class="golden">&nbsp;final&nbsp;</label>
+                  <input type="checkbox" id="middle" checked><label for="middle" class="green">&nbsp;middle&nbsp;</label>
+                  <input type="checkbox" id="final" checked><label for="final" class="golden">&nbsp;final&nbsp;</label>
                 </td>
                 <td>
                   <input type="submit" class="btn btn-outline-secondary" onclick="find_minimal2(current_lang_mode);return false;" value="search">
@@ -469,7 +483,7 @@
               }
               if(i===0){ // initial
                 var insert_html = `<tr class="table-primary"><td class="ipacopy" onclick="copy_to_clipboard();">${ipa_replaced}</td><td class="ipacopy" onclick="copy_to_clipboard();">${key_replaced}</td><td>${words.join(', ')}</td>`;
-              }else if(i===ipa_to_check.length-1){ // final
+              }else if(i===ipa_to_check.length-1 || (i===ipa_to_check.length-2 && ipa_to_check[i+1].match(/[12345]/))){ // final
                 var insert_html = `<tr class="table-warning"><td class="ipacopy" onclick="copy_to_clipboard();">${ipa_replaced}</td><td class="ipacopy" onclick="copy_to_clipboard();">${key_replaced}</td><td>${words.join(', ')}</td>`;
               }else{ // middle
                 var insert_html = `<tr class="table-success"><td class="ipacopy" onclick="copy_to_clipboard();">${ipa_replaced}</td><td class="ipacopy" onclick="copy_to_clipboard();">${key_replaced}</td><td>${words.join(', ')}</td>`;
