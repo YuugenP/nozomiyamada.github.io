@@ -43,21 +43,34 @@
   }
   </style>
   <script>
-    var current_lang_mode = 'en';
-    function select_mode(lang){
-      let EN = document.getElementsByClassName('mode_en');
-      let TH = document.getElementsByClassName('mode_th');
-      if(lang==='en'){
-        Array.from(EN).forEach(x => x.style.display = '');
-        Array.from(TH).forEach(x => x.style.display = 'none');
-        current_lang_mode = 'en';
+    var current_mode = 'pair_en'; // first page
+    function select_mode(){
+      let PAIR_EN = document.getElementsByClassName('pair_en');
+      let PAIR_TH = document.getElementsByClassName('pair_th');
+      let PAIR = document.getElementsByClassName('minimalpair');
+      let TACTICS_TH = document.getElementsByClassName('tactics_th');
+      let selected = event.target.value;
+      if(selected==='pair_en'){
+        Array.from(PAIR).forEach(x => x.style.display = '');
+        Array.from(PAIR_EN).forEach(x => x.style.display = '');
+        Array.from(PAIR_TH).forEach(x => x.style.display = 'none');
+        Array.from(TACTICS_TH).forEach(x => x.style.display = 'none');
+        current_mode = 'pair_en';
         document.getElementById('ignoretone').checked = false;
         document.getElementById('input').placeholder = 'word';
-      }else if(lang==='th'){
-        Array.from(EN).forEach(x => x.style.display = 'none');
-        Array.from(TH).forEach(x => x.style.display = '');
-        current_lang_mode = 'th';
+      }else if(selected==='pair_th'){
+        Array.from(PAIR).forEach(x => x.style.display = '');
+        Array.from(PAIR_EN).forEach(x => x.style.display = 'none');
+        Array.from(PAIR_TH).forEach(x => x.style.display = '');
+        Array.from(TACTICS_TH).forEach(x => x.style.display = 'none');
+        current_mode = 'pair_th';
         document.getElementById('input').placeholder = 'คำไทย';
+      }else if(selected==='tactics_th'){
+        Array.from(PAIR).forEach(x => x.style.display = 'none');
+        Array.from(PAIR_EN).forEach(x => x.style.display = 'none');
+        Array.from(PAIR_TH).forEach(x => x.style.display = 'none');
+        Array.from(TACTICS_TH).forEach(x => x.style.display = '');
+        current_mode = 'tactics_th';
       }
     }
   </script>
@@ -107,11 +120,23 @@
 	
 <div class="container">
 
-  <div class="page-header mode_en">
+  <div class="page-header">
+    <div class="row my-3">
+      <div class="col-6">
+        <h5>Select Mode</h5>
+        <select class="form-control" onchange="select_mode();">
+          <option value="pair_en" selected>Minimal Pair Searcher (EN)</option>
+          <option value="pair_th">Minimal Pair Searcher (TH)</option>
+          <option value="tactics_th" disabled>Phonotactics (TH)</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-header pair_en">
     <div class="row my-3">
       <div class="col-12">
         <h2 class="display-5">Minimal Pair Searcher (EN)</h2>
-        <p><button type="button" class="btn btn-secondary" onclick="select_mode('th');">switch to THAI</button></p>
         1. Search by word
         <ol>
           <li>Input an English word.</li>
@@ -136,11 +161,10 @@
     </div>
   </div>
 
-  <div class="page-header mode_th" style="display: none;">
+  <div class="page-header pair_th" style="display: none;">
     <div class="row my-3">
       <div class="col-12">
         <h2 class="display-5">Minimal Pair Searcher (TH)</h2>
-        <p><button type="button" class="btn btn-secondary" onclick="select_mode('en');">switch to ENGLISH</button></p>
         <p>If you ignore tone distinction, check "<span class="red">ignore tone</span>".</p>
         1. Search by word
         <ol>
@@ -176,17 +200,17 @@
     </div>
   </div>
 
-  <div class="row mode_th"style="display: none;">
+  <div class="row pair_th"style="display: none;">
     <div class="col-lg-12">
       <input type="checkbox" id="ignoretone"><label for="ignoretone"><strong class="red">&nbsp;ignore tone</strong></label>
     </div>
   </div>
 
-  <div class="row">
+  <div class="row minimalpair">
     <div class="col-lg-4">
       <div class="bs-component">
 				<h3>input word (not IPA)</h3>
-        <form onsubmit="find_minimal(current_lang_mode); return false;">
+        <form onsubmit="find_minimal(current_mode); return false;">
 					<input type="text" class="form-control" id="input" placeholder="word" autocomplete="off">
 				</form>
       </div>
@@ -194,11 +218,11 @@
     <div class="col-lg-8">
       <div class="bs-component">
 				<h3>select 2 phonemes</h3>
-        <form onsubmit="find_minimal2(current_lang_mode); return false;">
+        <form onsubmit="find_minimal2(current_mode); return false;">
           <table>
             <tbody>
               <tr>
-                <td class="mode_en">
+                <td class="pair_en">
                   <select class="form-control" id='input_ipa1' style="min-width: 3rem;">
                     <option value="i">i</option>
                     <option value="ɪ">ɪ</option>
@@ -239,7 +263,7 @@
                     <option value="h">h</option>
                   </select>
                 </td>
-                <td class="mode_en">
+                <td class="pair_en">
                   <select class="form-control" id='input_ipa2' style="min-width: 3rem;">
                     <option value="i">i</option>
                     <option value="ɪ">ɪ</option>
@@ -280,7 +304,7 @@
                     <option value="h">h</option>
                   </select>
                 </td>
-                <td class="mode_th" style="display: none;">
+                <td class="pair_th" style="display: none;">
                   <select class="form-control" id='input_ipa1_th' style="min-width: 3rem;">
                     <option value="i" selected>i</option>
                     <option value="I">ii</option>
@@ -323,7 +347,7 @@
                     <option value="ʔ">ʔ</option>
                   </select>
                 </td>
-                <td class="mode_th" style="display: none;">
+                <td class="pair_th" style="display: none;">
                   <select class="form-control" id='input_ipa2_th' style="min-width: 3rem;">
                     <option value="i">i</option>
                     <option value="I">ii</option>
@@ -398,17 +422,17 @@
                   <input type="checkbox" id="final" checked><label for="final" class="golden">&nbsp;final&nbsp;</label>
                 </td>
                 <td>
-                  <input type="submit" class="btn btn-outline-secondary" onclick="find_minimal2(current_lang_mode);return false;" value="search">
+                  <input type="submit" class="btn btn-outline-secondary" onclick="find_minimal2(current_mode);return false;" value="search">
                 </td>
               </tr>
             </tbody>
           </table>
-				</form>
+				</form><br>
       </div>
 		</div>
-	</div><br>
+	</div>
 
-	<div class="row">
+	<div class="row minimalpair">
     <div class="col-lg-12">
       <div class="bs-component">
 				<h3>Results</h3>
@@ -423,7 +447,29 @@
 				</table>
       </div>
 		</div>
-	</div>
+  </div>
+  
+  <div class="page-header tactics_th" style="display: none;">
+    <div class="row my-3">
+      <div class="col-12">
+        <h2 class="display-5">Phonotactics (TH)</h2>
+        <p>If you ignore tone distinction, check "<span class="red">ignore tone</span>".</p>
+        1. Search by word
+        <ol>
+          <li>Input a Thai word.</li>
+          <li>Press ENTER key.</li>
+        </ol>
+        2. Search by two phonemes
+        <ol>
+          <li>Onset in Thai: <code>p p t k C K P T b c d f h k l m n p r s t w y ŋ ʔ</code></li>
+          <li>Select minimum & maximum length. (if greater than 6, it may take a long time)</li>
+          <li>Select positions (<span class="blue">initial</span>, <span class="green">middle</span>, <span class="golden">final</span>) of the two phonemes.</li>
+          <li>Press search button.</li>
+        </ol>
+        IPA can be copied to clipboard just by clicking<br><br>
+      </div>
+    </div>
+  </div>
 	
 </div><br>
 
@@ -505,7 +551,7 @@
     }
   }
 
-  function find_minimal2(lang){
+  function find_minimal2(current_mode){
     // GET VALUES & INITIALIZE
     let is_initial = document.getElementById("initial").checked;
     let is_middle = document.getElementById("middle").checked;
@@ -515,12 +561,12 @@
     let ignoretone = document.getElementById('ignoretone').checked;
     document.getElementById('result_table').innerHTML = '<tr><th>IPA 1</th><th>IPA 2</th><th>minimal pair (word)</th></tr><tr id="initial_row" style="display:none;"></tr><tr id="middle_row" style="display:none;"></tr><tr id="final_row" style="display:none;"></tr>'
     // SELECT LANGUAGE
-    if(lang==='en'){
+    if(current_mode==='pair_en'){
       var word2ipa_dic = WORD2IPA;
       var ipa2word_dic = IPA2WORD;
       var ipa1 = document.getElementById('input_ipa1').value;
       var ipa2 = document.getElementById('input_ipa2').value;
-    }else if(lang==='th'){
+    }else if(current_mode==='pair_th'){
       var word2ipa_dic = WORD2IPA_TH;
       var ipa2word_dic = IPA2WORD_TH;
       var ipa1 = document.getElementById('input_ipa1_th').value;
@@ -539,7 +585,7 @@
           if(pattern1 === pattern2 && cand1!==cand2){
             words1 = ipa2word_dic[cand1];
             words2 = ipa2word_dic[cand2];
-            if(lang==='en'){
+            if(current_mode==='pair_en'){
               var cand1_replaced = cand1.replace(/ʧ/g,'tʃ').replace(/ʤ/g,'dʒ');
               var cand2_replaced = cand2.replace(/ʧ/g,'tʃ').replace(/ʤ/g,'dʒ');
             }else{
@@ -563,7 +609,7 @@
             if(pattern1===pattern2 && cand1!==cand2){
               words1 = ipa2word_dic[cand1];
               words2 = ipa2word_dic[cand2];
-              if(lang==='en'){
+              if(current_mode==='pair_en'){
                 var cand1_replaced = cand1.replace(/ʧ/g,'tʃ').replace(/ʤ/g,'dʒ');
                 var cand2_replaced = cand2.replace(/ʧ/g,'tʃ').replace(/ʤ/g,'dʒ');
               }else{
@@ -587,7 +633,7 @@
           if(pattern1===pattern2 && cand1!==cand2){
             words1 = ipa2word_dic[cand1];
             words2 = ipa2word_dic[cand2];
-            if(lang==='en'){
+            if(current_mode==='pair_en'){
               var cand1_replaced = cand1.replace(/ʧ/g,'tʃ').replace(/ʤ/g,'dʒ');
               var cand2_replaced = cand2.replace(/ʧ/g,'tʃ').replace(/ʤ/g,'dʒ');
             }else{
