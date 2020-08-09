@@ -40,8 +40,8 @@ const WORD2IPA_TH =
         "bA3nmʉ1a1ŋda1ykɔ3tA1m"
     ],
     "อย่างไรก็ตาม": [
-        "yA2ŋra1ykɔ3tA1m",
-        "ya1ŋŋa1ykɔ3tA1m"
+        "ya1ŋŋa1ykɔ3tA1m",
+        "yA2ŋra1ykɔ3tA1m"
     ],
     "ก็ตามแต่": [
         "kɔ3tA1mtY2"
@@ -258,12 +258,12 @@ const WORD2IPA_TH =
         "na1yka1ra1nI1Ce3nna4n"
     ],
     "กรณีพิพาท": [
-        "ka1ra1nI1Pi4PA3t",
-        "kɔ1ra1nI1Pi4PA3t"
+        "kɔ1ra1nI1Pi4PA3t",
+        "ka1ra1nI1Pi4PA3t"
     ],
     "พันธกรณี": [
-        "Pa1ntha4ka1ra1nI1",
-        "Pa1nTa4kɔ1ra1nI1"
+        "Pa1nTa4kɔ1ra1nI1",
+        "Pa1ntha4ka1ra1nI1"
     ],
     "วงการสันทัดกรณี": [
         "wo1ŋkA1nsa5nTa4tka1ra1nI1"
@@ -459,7 +459,7 @@ const WORD2IPA_TH =
         "krɔ2y"
     ],
     "กระ": [
-        "kra2"
+        "kra2ʔ"
     ],
     "ตกกระ": [
         "to2kkra2"
@@ -1539,12 +1539,12 @@ const WORD2IPA_TH =
         "kri2m"
     ],
     "กริยา": [
-        "kri2yA1",
-        "ka2ri1yA1"
+        "ka2ri1yA1",
+        "kri2yA1"
     ],
     "กริยาวิเศษณ์": [
-        "ka2ri1yA1wi3sE2t",
-        "ka2ri1yA1wi4sE2t"
+        "ka2ri1yA1wi4sE2t",
+        "ka2ri1yA1wi3sE2t"
     ],
     "กริ้ว": [
         "kri3w"
@@ -1565,7 +1565,7 @@ const WORD2IPA_TH =
         "krI1TA1"
     ],
     "กรุ": [
-        "kru2"
+        "kru2ʔ"
     ],
     "กรุง": [
         "kru1ŋ"
@@ -2486,7 +2486,7 @@ const WORD2IPA_TH =
         "ki1nKA3wkX2nsi3"
     ],
     "ขอยืมก่อนนะ": [
-        "KX5yW1mkX2nna4"
+        "KX5yW1mkX2nna4ʔ"
     ],
     "แปรงฟันก่อนเข้านอน": [
         "prY1ŋfa1nkX2nKa3wnX1n"
@@ -2613,8 +2613,8 @@ const WORD2IPA_TH =
         "yO1nhu5a1yO1nkɔ3y"
     ],
     "กะ": [
-        "ka2",
-        "ka1"
+        "ka1",
+        "ka2ʔ"
     ],
     "กะการ": [
         "ka2kA1n"
@@ -2917,8 +2917,8 @@ const WORD2IPA_TH =
         "ka1nyA1yo1n"
     ],
     "กับ": [
-        "ka2p",
-        "ka1"
+        "ka1",
+        "ka2p"
     ],
     "การค้ากับต่างประเทศ": [
         "kA1nKA4ka1tA2ŋpra1TE3t"
@@ -2933,8 +2933,8 @@ const WORD2IPA_TH =
         "u2a1tlU3kmY1wka1nA4"
     ],
     "กับข้าว": [
-        "ka1pKA3w",
-        "ka1KA3w"
+        "ka1KA3w",
+        "ka1pKA3w"
     ],
     "กับทั้ง": [
         "ka2pTa4ŋ"
@@ -3373,8 +3373,8 @@ const WORD2IPA_TH =
         "KrO1ŋkA1n"
     ],
     "โฆษณาการ": [
-        "KO3sa1nA1kA1n",
-        "KO3tsa1nA1kA1n"
+        "KO3tsa1nA1kA1n",
+        "KO3sa1nA1kA1n"
     ],
     "งานการ": [
         "ŋA1nkA1n"
@@ -4163,7 +4163,7 @@ const WORD2IPA_TH =
         "kʉ2ŋrA3tCa1kA1n"
     ],
     "กุ": [
-        "ku2"
+        "ku2ʔ"
     ],
     "กุ๊กๆ": [
         "ku4kku4k"
@@ -4445,7 +4445,7 @@ const WORD2IPA_TH =
         "kre2t"
     ],
     "เกราะ": [
-        "krɔ2"
+        "krɔ2ʔ"
     ],
     "รถเกราะ": [
         "ro4tkrɔ2"
@@ -4680,7 +4680,7 @@ const WORD2IPA_TH =
         "na3ŋka3wI3"
     ],
     "เกาะ": [
-        "kɔ2"
+        "kɔ2ʔ"
     ],
     "เกาะชวา": [
         "kɔ2Ca1wA1"
@@ -4692,7 +4692,7 @@ const WORD2IPA_TH =
         "kɔ2hA1wA1y"
     ],
     "หมู่เกาะ": [
-        "mU2kɔ2"
+        "mU2kɔ2ʔ"
     ],
     "เกิด": [
         "kZ2t"
@@ -4937,8 +4937,8 @@ const WORD2IPA_TH =
         "kY2PU3t"
     ],
     "ได้แก่": [
-        "dA3yka1",
-        "da3ykY2"
+        "da3ykY2",
+        "dA3yka1"
     ],
     "แน่แก่ใจ": [
         "nY3kɛ2ca1y"
@@ -4950,16 +4950,16 @@ const WORD2IPA_TH =
         "pe1ni2tsa1ra2kY2ka1n"
     ],
     "มีแก่ใจ": [
-        "mI1ka1ca1y",
-        "mI1kY2ca1y"
+        "mI1kY2ca1y",
+        "mI1ka1ca1y"
     ],
     "รู้แก่ใจ": [
         "rU4kY2ca1y",
         "rU4ka1ca1y"
     ],
     "ละอายแก่ใจ": [
-        "la4A1ykY2ca1y",
-        "la4A1yka1ca1y"
+        "la4A1yka1ca1y",
+        "la4A1ykY2ca1y"
     ],
     "สาแก่ใจ": [
         "sA5kY2ca1y",
@@ -4984,12 +4984,12 @@ const WORD2IPA_TH =
         "he5nkɛ2nA3"
     ],
     "เหมาะแก่": [
-        "mɔ2ka1",
-        "mɔ2kɛ2"
+        "mɔ2kɛ2",
+        "mɔ2ka1"
     ],
     "ให้แก่": [
-        "ha3yka1",
-        "ha3ykɛ2"
+        "ha3ykɛ2",
+        "ha3yka1"
     ],
     "อายแก่ใจ": [
         "A1ykY2ca1y",
@@ -5189,7 +5189,7 @@ const WORD2IPA_TH =
         "kɛ4tsO1lI1n"
     ],
     "แกะ": [
-        "kɛ2"
+        "kɛ2ʔ"
     ],
     "ขนแกะ": [
         "Ko5nkɛ2"
@@ -5198,13 +5198,13 @@ const WORD2IPA_TH =
         "de2kli4a1ŋkɛ2"
     ],
     "ลูกแกะ": [
-        "lU3kkɛ2"
+        "lU3kkɛ2ʔ"
     ],
     "แกะสลัก": [
         "kɛ2sa1la2k"
     ],
     "ช่างแกะ": [
-        "CA3ŋkɛ2"
+        "CA3ŋkɛ2ʔ"
     ],
     "โก้": [
         "kO3"
@@ -5796,7 +5796,7 @@ const WORD2IPA_TH =
         "Ka1ro5m"
     ],
     "ขระ": [
-        "Kra2"
+        "Kra2ʔ"
     ],
     "ขรึม": [
         "Krʉ5m"
@@ -5989,8 +5989,8 @@ const WORD2IPA_TH =
         "KwA5n"
     ],
     "ขวายขวน": [
-        "KwA5yKo5n",
-        "KwA5yKu5a1n"
+        "KwA5yKu5a1n",
+        "KwA5yKo5n"
     ],
     "ขวิด": [
         "Kwi2t"
@@ -7739,7 +7739,7 @@ const WORD2IPA_TH =
         "Ka1yʉ3a1n"
     ],
     "เขละ": [
-        "Kle2"
+        "Kle2ʔ"
     ],
     "เขละๆ": [
         "Kle2Kle2"
@@ -7809,8 +7809,8 @@ const WORD2IPA_TH =
         "hu5a1Ka2w"
     ],
     "เข้า": [
-        "KA3w",
-        "Ka3w"
+        "Ka3w",
+        "KA3w"
     ],
     "เข้าของ": [
         "KA3wKX5ŋ"
@@ -8866,8 +8866,8 @@ const WORD2IPA_TH =
         "Kra4ŋlY4wKra4ŋla3w"
     ],
     "ครั้งหนึ่ง": [
-        "Kra4ŋnʉ1ŋ",
-        "Kra4ŋnʉ2ŋ"
+        "Kra4ŋnʉ2ŋ",
+        "Kra4ŋnʉ1ŋ"
     ],
     "ครั้งหนึ่งยังมี": [
         "Kra4ŋnʉ2ŋya1ŋmI1"
@@ -9060,12 +9060,12 @@ const WORD2IPA_TH =
         "Kri4sa1ca2k"
     ],
     "คริสตศักราช": [
-        "Kri4tsa2kka1rA2t",
-        "Kri4tta1sa2kka1rA2t"
+        "Kri4tta1sa2kka1rA2t",
+        "Kri4tsa2kka1rA2t"
     ],
     "คริสตศาสนา": [
-        "Kri4tta1sA2tsa1nA5",
-        "Kri4tsA2tsa1nA5"
+        "Kri4tsA2tsa1nA5",
+        "Kri4tta1sA2tsa1nA5"
     ],
     "คริสต์มาส": [
         "Kri4tsa1mA3t"
@@ -9075,8 +9075,8 @@ const WORD2IPA_TH =
         "Kri4tta1ŋ"
     ],
     "คริสเตียน": [
-        "Kri4sa1ti1a1n",
-        "Kri4ti1a1n"
+        "Kri4ti1a1n",
+        "Kri4sa1ti1a1n"
     ],
     "ครีบ": [
         "KrI3p"
@@ -9085,7 +9085,7 @@ const WORD2IPA_TH =
         "KrI1m"
     ],
     "ครึ": [
-        "Krʉ4"
+        "Krʉ4ʔ"
     ],
     "ครึก": [
         "Krʉ4k"
@@ -9148,8 +9148,8 @@ const WORD2IPA_TH =
         "KrW1ka1n"
     ],
     "ครุ": [
-        "Ka1ru4",
-        "kru4"
+        "kru4ʔ",
+        "Ka1ru4"
     ],
     "ครุฑ": [
         "Kru4t"
@@ -9260,7 +9260,7 @@ const WORD2IPA_TH =
         "bA2yKlX4y"
     ],
     "คละ": [
-        "Kla4"
+        "Kla4ʔ"
     ],
     "คลั่ก": [
         "Kla3k"
@@ -9659,7 +9659,7 @@ const WORD2IPA_TH =
         "KX1bu1rI2"
     ],
     "คอแบะ": [
-        "KX1bɛ2"
+        "KX1bɛ2ʔ"
     ],
     "คอพอก": [
         "KX1PX3k"
@@ -9780,13 +9780,13 @@ const WORD2IPA_TH =
         "KX1y"
     ],
     "คอยดุ": [
-        "KX1ydu2"
+        "KX1ydu2ʔ"
     ],
     "คอยระวัง": [
         "KX1yra1wa1ŋ"
     ],
     "คอยจะ": [
-        "KX1yca2"
+        "KX1yca2ʔ"
     ],
     "คอยจะกินท่าเดียว": [
         "KX1yca1ki1nTA3di1a1w"
@@ -9840,10 +9840,10 @@ const WORD2IPA_TH =
         "KX1ra4pCa3n"
     ],
     "คะ": [
-        "Ka4"
+        "Ka4ʔ"
     ],
     "กี่โมงแล้วคะ": [
-        "kI2mO1ŋlY4wKa4"
+        "kI2mO1ŋlY4wKa4ʔ"
     ],
     "คอยเดี๋ยวนะคะ": [
         "KX1ydi5a1wna4Ka4"
@@ -9861,7 +9861,7 @@ const WORD2IPA_TH =
         "ca3wKa4"
     ],
     "เพคะ": [
-        "PE1Ka4"
+        "PE1Ka4ʔ"
     ],
     "ค่ะ": [
         "Ka3"
@@ -10299,8 +10299,8 @@ const WORD2IPA_TH =
         "TX1ŋKa1m"
     ],
     "คำกริยา": [
-        "Ka1mka2ri1yA1",
-        "Ka1mkri2yA1"
+        "Ka1mkri2yA1",
+        "Ka1mka2ri1yA1"
     ],
     "คำกริยาวิเศษณ์": [
         "Ka1mka2ri1yA1wi1sE2t"
@@ -10435,8 +10435,8 @@ const WORD2IPA_TH =
         "Ka1mwi4cA1n"
     ],
     "คำวิเศษณ์": [
-        "Ka1mwi3sE2t",
-        "Ka1mwi4sE2t"
+        "Ka1mwi4sE2t",
+        "Ka1mwi3sE2t"
     ],
     "คำสบถ": [
         "Ka1msa1bo2t"
@@ -10754,7 +10754,7 @@ const WORD2IPA_TH =
         "KW1wA3"
     ],
     "คุ": [
-        "Ku4"
+        "Ku4ʔ"
     ],
     "คุก": [
         "Ku4k"
@@ -11094,7 +11094,7 @@ const WORD2IPA_TH =
         "nu2a1tKra1w"
     ],
     "เคราะห์": [
-        "Krɔ4"
+        "Krɔ4ʔ"
     ],
     "เคราะห์ดี": [
         "Krɔ4dI1"
@@ -11109,7 +11109,7 @@ const WORD2IPA_TH =
         "so5ŋKrɔ4"
     ],
     "ดาวเคราะห์": [
-        "dA1wKrɔ4"
+        "dA1wKrɔ4ʔ"
     ],
     "ดาวพระเคราะห์": [
         "dA1wPra4Krɔ4"
@@ -11268,7 +11268,7 @@ const WORD2IPA_TH =
         "KwE4ŋ"
     ],
     "เคอะ": [
-        "Kə4"
+        "Kə4ʔ"
     ],
     "ท่าทางเคอะๆ": [
         "TA3TA1ŋKə4Kə4"
@@ -11316,7 +11316,7 @@ const WORD2IPA_TH =
         "rU3pKa1wro4p"
     ],
     "เคาะ": [
-        "Kɔ4"
+        "Kɔ4ʔ"
     ],
     "เคียง": [
         "Ki1a1ŋ"
@@ -11418,7 +11418,7 @@ const WORD2IPA_TH =
         "KrY1ŋ"
     ],
     "แคระ": [
-        "Krɛ4"
+        "Krɛ4ʔ"
     ],
     "แคลง": [
         "KlY1ŋ"
@@ -11454,7 +11454,7 @@ const WORD2IPA_TH =
         "wɛ3nKwY4n"
     ],
     "แคะ": [
-        "Kɛ4"
+        "Kɛ4ʔ"
     ],
     "โค": [
         "KO1"
@@ -11803,7 +11803,7 @@ const WORD2IPA_TH =
         "pe1nŋɔ3y"
     ],
     "งะ": [
-        "ŋa4"
+        "ŋa4ʔ"
     ],
     "งั่ง": [
         "ŋa3ŋ"
@@ -11827,8 +11827,8 @@ const WORD2IPA_TH =
         "ŋa4nna3sI1la3w"
     ],
     "งั้นหรือ": [
-        "ŋa4nrə4ŋa4nrZ5",
-        "ŋa4nrʉ4"
+        "ŋa4nrʉ4",
+        "ŋa4nrə4ŋa4nrZ5"
     ],
     "ม่ายงั้น": [
         "mA3yŋa4n"
@@ -12164,7 +12164,7 @@ const WORD2IPA_TH =
         "ŋO3ŋa3w"
     ],
     "เงาะ": [
-        "ŋɔ4"
+        "ŋɔ4ʔ"
     ],
     "หัวเงาะ": [
         "hu5a1ŋɔ4"
@@ -12353,7 +12353,7 @@ const WORD2IPA_TH =
         "ŋY4m"
     ],
     "แงะ": [
-        "ŋɛ4"
+        "ŋɛ4ʔ"
     ],
     "โง่": [
         "ŋO3"
@@ -12567,8 +12567,8 @@ const WORD2IPA_TH =
         "Ko1ncX1n"
     ],
     "คนจรจัด": [
-        "Ko1ncX1ra1ca2t",
-        "Ko1ncX1nca2t"
+        "Ko1ncX1nca2t",
+        "Ko1ncX1ra1ca2t"
     ],
     "วงจร": [
         "wo1ŋcX1n"
@@ -12836,14 +12836,14 @@ const WORD2IPA_TH =
     ],
     "จะ": [
         "ca1",
-        "ca2"
+        "ca2ʔ"
     ],
     "ก่อนจะเข้านอน": [
         "kX2nca1Ka3wnX1n"
     ],
     "จะทำอย่างไร": [
-        "ca1Ta1mya1ŋŋa1y",
-        "ca1Ta1myA2ŋra1y"
+        "ca1Ta1myA2ŋra1y",
+        "ca1Ta1mya1ŋŋa1y"
     ],
     "จะเป็นไรไป": [
         "ca1pe1nra1ypa1y"
@@ -12864,7 +12864,7 @@ const WORD2IPA_TH =
         "ca3TA1nlY4w"
     ],
     "จ๊ะ": [
-        "ca4"
+        "ca4ʔ"
     ],
     "ชอบไหมจ๊ะ": [
         "CX3pma4yca4"
@@ -13420,8 +13420,8 @@ const WORD2IPA_TH =
         "ca1mnu1a1n"
     ],
     "จำนวนร้อยละ": [
-        "ca1mnu1a1nrX4yla1",
-        "ca1mnu1a1nrX4yla4"
+        "ca1mnu1a1nrX4yla4",
+        "ca1mnu1a1nrX4yla1"
     ],
     "จำนวนร้อยละสิบ": [
         "ca1mnu1a1nrX4yla1si2p"
@@ -13544,12 +13544,12 @@ const WORD2IPA_TH =
         "sX5ŋci2tsX5ŋca1y"
     ],
     "จิตร-": [
-        "ci2ttra1",
-        "ci2tta1"
+        "ci2tta1",
+        "ci2ttra1"
     ],
     "จิตรกร": [
-        "ci2ttra1kX1n",
-        "ci2tta1kX1n"
+        "ci2tta1kX1n",
+        "ci2ttra1kX1n"
     ],
     "จิตรกรรม": [
         "ci2tta1ka1m",
@@ -13616,8 +13616,8 @@ const WORD2IPA_TH =
         "cI3se3n"
     ],
     "จี้ (ให้) ถูกเส้น": [
-        "cI3ha3yTU2kse3n",
-        "cI3TU2kse3n"
+        "cI3TU2kse3n",
+        "cI3ha3yTU2kse3n"
     ],
     "นักจี้": [
         "na4kcI3"
@@ -13689,7 +13689,7 @@ const WORD2IPA_TH =
         "na4mcW2t"
     ],
     "จุ": [
-        "cu2"
+        "cu2ʔ"
     ],
     "กินจุ": [
         "ki1ncu2"
@@ -13698,7 +13698,7 @@ const WORD2IPA_TH =
         "cu2ca1y"
     ],
     "จุ๊": [
-        "cu4"
+        "cu4ʔ"
     ],
     "จุ๊ๆ": [
         "cu4cu4"
@@ -13782,7 +13782,7 @@ const WORD2IPA_TH =
         "cu1mPi4t"
     ],
     "จุ๊ย์": [
-        "cu4"
+        "cu4ʔ"
     ],
     "จุล-": [
         "cu1nla1"
@@ -13925,8 +13925,8 @@ const WORD2IPA_TH =
         "hA5yce2p"
     ],
     "เจรจา": [
-        "cE1nra1cA1",
-        "cE1ra1cA1"
+        "cE1ra1cA1",
+        "cE1nra1cA1"
     ],
     "เจรจาหว่านล้อม": [
         "cE1ra1cA1wA2nlX4m"
@@ -13974,7 +13974,7 @@ const WORD2IPA_TH =
         "cZ5"
     ],
     "เจอะ": [
-        "cə2"
+        "cə2ʔ"
     ],
     "เจ้า": [
         "cA3w",
@@ -14060,12 +14060,12 @@ const WORD2IPA_TH =
         "TE3pPa1cA3w"
     ],
     "พระเจ้า": [
-        "Pra4cA3w",
-        "Pra4ca3w"
+        "Pra4ca3w",
+        "Pra4cA3w"
     ],
     "พระองค์เจ้า": [
-        "Pra4o1ŋcA3w",
-        "Pra4o1ŋca3w"
+        "Pra4o1ŋca3w",
+        "Pra4o1ŋcA3w"
     ],
     "หม่อมเจ้า": [
         "mɔ2mcA3w"
@@ -14092,7 +14092,7 @@ const WORD2IPA_TH =
         "ca3wA1ro1m"
     ],
     "เจาะ": [
-        "cɔ2"
+        "cɔ2ʔ"
     ],
     "เจาะจง": [
         "cɔ2co1ŋ"
@@ -14651,7 +14651,7 @@ const WORD2IPA_TH =
         "CX2tCX2t"
     ],
     "ฉอเลาะ": [
-        "CX5lɔ4"
+        "CX5lɔ4ʔ"
     ],
     "ฉอเลาะกัน": [
         "CX5lɔ4ka1n"
@@ -14660,7 +14660,7 @@ const WORD2IPA_TH =
         "Ca1u2m"
     ],
     "ฉะ": [
-        "Ca2"
+        "Ca2ʔ"
     ],
     "ฉะฉาน": [
         "Ca2CA5n"
@@ -14847,12 +14847,12 @@ const WORD2IPA_TH =
         "Ci2p"
     ],
     "เสียฉิบ": [
-        "si4a1Ci4p",
-        "si4a1!Ci4psi4a1Ci2p"
+        "si4a1!Ci4psi4a1Ci2p",
+        "si4a1Ci4p"
     ],
     "หายไปฉิบเชียว": [
-        "hA5ypa1y!Ci4pCi1a1w",
-        "hA5ypa1yCi4pCi1a1w"
+        "hA5ypa1yCi4pCi1a1w",
+        "hA5ypa1y!Ci4pCi1a1w"
     ],
     "เร็วฉิบ": [
         "re1wCi4p"
@@ -14895,7 +14895,7 @@ const WORD2IPA_TH =
         "yA1CI2t"
     ],
     "ฉุ": [
-        "Cu2"
+        "Cu2ʔ"
     ],
     "ฉุก": [
         "Cu2k"
@@ -15033,13 +15033,13 @@ const WORD2IPA_TH =
         "Ca1wi5a1n"
     ],
     "เฉอะ": [
-        "Cə2"
+        "Cə2ʔ"
     ],
     "เฉา": [
         "Ca5w"
     ],
     "เฉาะ": [
-        "Cɔ2"
+        "Cɔ2ʔ"
     ],
     "เฉิด": [
         "CZ2t"
@@ -15120,7 +15120,7 @@ const WORD2IPA_TH =
         "Ca1lɛ3m"
     ],
     "แฉะ": [
-        "Cɛ2"
+        "Cɛ2ʔ"
     ],
     "ฉำแฉะ": [
         "Ca5mCɛ2"
@@ -15129,7 +15129,7 @@ const WORD2IPA_TH =
         "Cə2Cɛ2"
     ],
     "ชื้นแฉะ": [
-        "CW4nCɛ2"
+        "CW4nCɛ2ʔ"
     ],
     "เปียกแฉะ": [
         "pi2a1kCɛ2"
@@ -15363,8 +15363,8 @@ const WORD2IPA_TH =
         "Co1nbu1rI1"
     ],
     "ชลประทาน": [
-        "Co1nla1pra1TA1n",
-        "Co1npra1TA1n"
+        "Co1npra1TA1n",
+        "Co1nla1pra1TA1n"
     ],
     "ชลมารค": [
         "Co1nla1mA3k"
@@ -15568,7 +15568,7 @@ const WORD2IPA_TH =
         "Ca1u2m"
     ],
     "ชะ": [
-        "Ca4"
+        "Ca4ʔ"
     ],
     "ชะล้าง": [
         "Ca4lA4ŋ"
@@ -15965,8 +15965,8 @@ const WORD2IPA_TH =
         "CA4lo1ŋ"
     ],
     "ช้าเสียแล้ว": [
-        "CA4si4a1lY4w",
-        "CA4sa4lY4w"
+        "CA4sa4lY4w",
+        "CA4si4a1lY4w"
     ],
     "เชื่องช้า": [
         "Cʉ3a1ŋCA4"
@@ -16078,7 +16078,7 @@ const WORD2IPA_TH =
         "CA3ŋyX4mPA3"
     ],
     "ช่างโลหะ": [
-        "CA3ŋlO1ha2"
+        "CA3ŋlO1ha2ʔ"
     ],
     "ช่างสลัก": [
         "CA3ŋsa1la2k"
@@ -16400,7 +16400,7 @@ const WORD2IPA_TH =
         "CA1wka1mma1kX1n"
     ],
     "ชาวเกาะ": [
-        "CA1wkɔ2"
+        "CA1wkɔ2ʔ"
     ],
     "ชาวคณะ": [
         "CA1wKa1na4"
@@ -16532,7 +16532,7 @@ const WORD2IPA_TH =
         "Ca1mlɛ2"
     ],
     "ชิ": [
-        "Ci4"
+        "Ci4ʔ"
     ],
     "ชิง": [
         "Ci1ŋ"
@@ -16625,7 +16625,7 @@ const WORD2IPA_TH =
         "si3nCI3p"
     ],
     "ชีว-": [
-        "CI1wa4"
+        "CI1wa4ʔ"
     ],
     "ชีวประวัติ": [
         "CI1wa4pra1wa2t"
@@ -17460,8 +17460,8 @@ const WORD2IPA_TH =
         "sa4psX4n"
     ],
     "ซ่อม": [
-        "sX3m",
-        "sɔ3m"
+        "sɔ3m",
+        "sX3m"
     ],
     "ซ่อมแซม": [
         "sX3msY1m"
@@ -17482,7 +17482,7 @@ const WORD2IPA_TH =
         "sX1y"
     ],
     "ซะ": [
-        "sa4"
+        "sa4ʔ"
     ],
     "กินซะ": [
         "ki1nsa4"
@@ -17614,7 +17614,7 @@ const WORD2IPA_TH =
         "mi4na5msa4m"
     ],
     "ซิ": [
-        "si4",
+        "si4ʔ",
         "si3"
     ],
     "ซิ่": [
@@ -17837,12 +17837,12 @@ const WORD2IPA_TH =
         "se1nti1li4t"
     ],
     "เซฟ": [
-        "sE4p",
-        "sE4f"
+        "sE4f",
+        "sE4p"
     ],
     "ตู้เซฟ": [
-        "tU3sE4p",
-        "tU3sE4f"
+        "tU3sE4f",
+        "tU3sE4p"
     ],
     "เซล": [
         "se1l"
@@ -17854,11 +17854,11 @@ const WORD2IPA_TH =
         "sZ3sA3"
     ],
     "เซอร์": [
-        "sZ1",
-        "sZ3"
+        "sZ3",
+        "sZ1"
     ],
     "เซอะ": [
-        "sə4"
+        "sə4ʔ"
     ],
     "เซอูล": [
         "sE1U1l"
@@ -17873,7 +17873,7 @@ const WORD2IPA_TH =
         "sa4wsI4"
     ],
     "เซาะ": [
-        "sɔ4"
+        "sɔ4ʔ"
     ],
     "เซิฟ": [
         "sZ4p",
@@ -18063,7 +18063,7 @@ const WORD2IPA_TH =
         "la2kTA5n"
     ],
     "ฐานะ": [
-        "TA5na4"
+        "TA5na4ʔ"
     ],
     "วิทยฐานะ": [
         "wi4tTa1ya4TA5na4"
@@ -18079,7 +18079,7 @@ const WORD2IPA_TH =
     ],
     "ณ": [
         "nX1",
-        "na4"
+        "na4ʔ"
     ],
     "ณ อยุธยา": [
         "na4a1yu4tTa1yA1"
@@ -18241,9 +18241,9 @@ const WORD2IPA_TH =
         "he5ndu3a1y"
     ],
     "ดอก": [
+        "dɔ2k",
         "dɔ1kdX2k",
-        "dX2k",
-        "dɔ2k"
+        "dX2k"
     ],
     "ดอกกานพลู": [
         "dX2kkA1nPlU1"
@@ -18345,11 +18345,11 @@ const WORD2IPA_TH =
         "po1mdɔ3y"
     ],
     "ดอลล่า": [
-        "dɔ1nlA3",
-        "dX1lA3"
+        "dX1lA3",
+        "dɔ1nlA3"
     ],
     "ดะ": [
-        "da2"
+        "da2ʔ"
     ],
     "ดัก": [
         "da2k"
@@ -18481,8 +18481,8 @@ const WORD2IPA_TH =
         "PY1ŋda2ppa1ylZ1y"
     ],
     "ดับบลิว": [
-        "da2pbli1w",
-        "da2pba1li1w"
+        "da2pba1li1w",
+        "da2pbli1w"
     ],
     "ดา": [
         "dA1"
@@ -18909,7 +18909,7 @@ const WORD2IPA_TH =
         "dI1ci1ŋ"
     ],
     "ดีละ": [
-        "dI1la4",
+        "dI1la4ʔ",
         "dI1la1"
     ],
     "ดีแล้ว": [
@@ -19067,7 +19067,7 @@ const WORD2IPA_TH =
         "hu5a1dW3"
     ],
     "ดุ": [
-        "du2"
+        "du2ʔ"
     ],
     "ดุเดือด": [
         "du2dʉ2a1t"
@@ -19322,7 +19322,7 @@ const WORD2IPA_TH =
         "dZ1ntY3m"
     ],
     "เดินโต๊ะ": [
-        "dZ1nto4"
+        "dZ1nto4ʔ"
     ],
     "หญิงเดินโต๊ะ": [
         "yi5ŋdZ1nto4"
@@ -19797,8 +19797,8 @@ const WORD2IPA_TH =
         "yA2ŋnʉ2ŋyA2ŋda1y"
     ],
     "ได้": [
-        "da3y",
-        "dA3y"
+        "dA3y",
+        "da3y"
     ],
     "ได้ทำ": [
         "da3yTa1m"
@@ -19886,8 +19886,8 @@ const WORD2IPA_TH =
         "Po5nPlX1ydA3y"
     ],
     "เพื่อจะได้": [
-        "Pʉ3a1ca1dA3y",
-        "Pʉ3a1ca1da3y"
+        "Pʉ3a1ca1da3y",
+        "Pʉ3a1ca1dA3y"
     ],
     "มิได้": [
         "mi4da3y",
@@ -19898,8 +19898,8 @@ const WORD2IPA_TH =
         "mi4da3ya1ra1y"
     ],
     "ไม่ได้": [
-        "ma3yda3y",
-        "ma3ydA3y"
+        "ma3ydA3y",
+        "ma3yda3y"
     ],
     "ผมไม่ได้ไปไหน": [
         "Po5mma3yda3ypa1yna5y"
@@ -20550,7 +20550,7 @@ const WORD2IPA_TH =
         "tra1mfo5n"
     ],
     "ตริ": [
-        "tri2"
+        "tri2ʔ"
     ],
     "ตรี": [
         "trI1"
@@ -20704,8 +20704,8 @@ const WORD2IPA_TH =
         "tX2pI1"
     ],
     "ต่อไป": [
-        "tX2pa1y",
-        "tX2pa1ytX2pa1y"
+        "tX2pa1ytX2pa1y",
+        "tX2pa1y"
     ],
     "ในกาลต่อไป": [
         "na1ykA1ntX2pa1y"
@@ -20763,7 +20763,7 @@ const WORD2IPA_TH =
         "tX2ha3y"
     ],
     "ต่ออายุ": [
-        "tX2A1yu4"
+        "tX2A1yu4ʔ"
     ],
     "ติดต่อ": [
         "ti2ttX2"
@@ -20977,7 +20977,7 @@ const WORD2IPA_TH =
         "tX1lY5"
     ],
     "ตะ": [
-        "ta2"
+        "ta2ʔ"
     ],
     "ตะกร้อ": [
         "ta1krX3"
@@ -21559,8 +21559,8 @@ const WORD2IPA_TH =
         "hɔ3ŋKA5ytu5a1"
     ],
     "ตา": [
-        "ta1",
-        "tA1"
+        "tA1",
+        "ta1"
     ],
     "กะพริบตา": [
         "ka1Pri4ptA1"
@@ -21617,8 +21617,8 @@ const WORD2IPA_TH =
         "ta1rA1ŋwE1lA1"
     ],
     "๕ ตารางเมตร": [
-        "hA3ta1rA1ŋme4t",
-        "hA3ta1rA1ŋmE4t"
+        "hA3ta1rA1ŋmE4t",
+        "hA3ta1rA1ŋme4t"
     ],
     "ตาลอย": [
         "tA1lX1y"
@@ -21855,8 +21855,8 @@ const WORD2IPA_TH =
         "tA2ŋwA3"
     ],
     "ต่างหาก": [
-        "ta1ŋhA2k",
-        "tA1ŋhA2k"
+        "tA1ŋhA2k",
+        "ta1ŋhA2k"
     ],
     "ค่าส่งคิดต่างหาก": [
         "KA3so2ŋKi4ttA1ŋhA2k"
@@ -22136,7 +22136,7 @@ const WORD2IPA_TH =
         "PU3ra4ŋta1mnɛ2ŋ"
     ],
     "ติ": [
-        "ti2"
+        "ti2ʔ"
     ],
     "ติเตียน": [
         "ti2ti1a1n"
@@ -22305,7 +22305,7 @@ const WORD2IPA_TH =
         "rO3kKX1tI2p"
     ],
     "ตึ": [
-        "tʉ2"
+        "tʉ2ʔ"
     ],
     "ตึก": [
         "tʉ2k"
@@ -22362,10 +22362,10 @@ const WORD2IPA_TH =
         "tW5"
     ],
     "ตุ": [
-        "tu2"
+        "tu2ʔ"
     ],
     "ตุ๊": [
-        "tu4"
+        "tu4ʔ"
     ],
     "ตุ๊กแก": [
         "tu4kkY1"
@@ -22561,10 +22561,10 @@ const WORD2IPA_TH =
         "tZ1ra1kI1"
     ],
     "เตอะ": [
-        "tə2"
+        "tə2ʔ"
     ],
     "เตะ": [
-        "te2"
+        "te2ʔ"
     ],
     "เตะจมูก": [
         "te2ca1mU2k"
@@ -22666,15 +22666,15 @@ const WORD2IPA_TH =
         "ta2ktʉ1a1n"
     ],
     "แต่": [
-        "tY2",
-        "tY2tɛ1ta1",
-        "tɛ1",
         "tɛ1ta1",
-        "ta1"
+        "ta1",
+        "tɛ1",
+        "tY2",
+        "tY2tɛ1ta1"
     ],
     "แต่ (ถึง) กระนั้น": [
-        "tY2kra1na4n",
-        "tY2Tʉ5ŋkra1na4n"
+        "tY2Tʉ5ŋkra1na4n",
+        "tY2kra1na4n"
     ],
     "แต่ทว่า": [
         "tY2Ta1wA3"
@@ -22704,8 +22704,8 @@ const WORD2IPA_TH =
         "mu1a1tɛ1"
     ],
     "แม้แต่": [
-        "mY4tY2",
-        "mY4tɛ1"
+        "mY4tɛ1",
+        "mY4tY2"
     ],
     "ล้วนแต่": [
         "lu4a1ntɛ1"
@@ -22726,8 +22726,8 @@ const WORD2IPA_TH =
         "we4ntY2"
     ],
     "เสียแต่": [
-        "si5a1ta1",
-        "si5a1tɛ1"
+        "si5a1tɛ1",
+        "si5a1ta1"
     ],
     "หากแต่": [
         "hA2ktɛ1"
@@ -22859,10 +22859,10 @@ const WORD2IPA_TH =
         "trY1wo1ŋ"
     ],
     "แตะ": [
-        "tɛ2"
+        "tɛ2ʔ"
     ],
     "รองเท้าแตะ": [
-        "rX1ŋTA4wtɛ2"
+        "rX1ŋTA4wtɛ2ʔ"
     ],
     "โต": [
         "tO1"
@@ -22901,7 +22901,7 @@ const WORD2IPA_TH =
         "tO1ki1a1w"
     ],
     "โต๊ะ": [
-        "to4"
+        "to4ʔ"
     ],
     "โต๊ะเขียนหนังสือ": [
         "to4Ki5a1nna1ŋsW5"
@@ -22910,7 +22910,7 @@ const WORD2IPA_TH =
         "to4Krʉ3a1ŋpY3ŋ"
     ],
     "ผ้าปูโต๊ะ": [
-        "PA3pU1to4"
+        "PA3pU1to4ʔ"
     ],
     "ร่วมโต๊ะ": [
         "ru3a1mto4"
@@ -23630,8 +23630,8 @@ const WORD2IPA_TH =
         "Tu5n"
     ],
     "ถุย": [
-        "!Tu5y",
-        "Tu5y"
+        "Tu5y",
+        "!Tu5y"
     ],
     "ถู": [
         "TU5"
@@ -23718,12 +23718,12 @@ const WORD2IPA_TH =
         "Ta1lZ5ŋ"
     ],
     "เถอะ": [
-        "Tə1",
-        "Tə2"
+        "Tə2ʔ",
+        "Tə1"
     ],
     "เชิญเถอะ": [
-        "CZ1nTə2",
-        "CZ1nTə1"
+        "CZ1nTə1",
+        "CZ1nTə2ʔ"
     ],
     "เชิญเถอะคุณ": [
         "CZ1nTə1Ku1n"
@@ -23756,11 +23756,11 @@ const WORD2IPA_TH =
         "Ta3w"
     ],
     "เถาะ": [
-        "Tɔ2"
+        "Tɔ2ʔ"
     ],
     "เถิด": [
-        "Tə1",
-        "TZ2t"
+        "TZ2t",
+        "Tə1"
     ],
     "ลืมเสียเถิด": [
         "lW1msi4a1Tə1"
@@ -24369,8 +24369,8 @@ const WORD2IPA_TH =
         "TX1ŋTɛ3ŋ"
     ],
     "ทองบรอนซ์": [
-        "TX1ŋprɔ1n",
-        "TX1ŋpɔ1n"
+        "TX1ŋpɔ1n",
+        "TX1ŋprɔ1n"
     ],
     "ทองใบ": [
         "TX1ŋba1y"
@@ -24763,8 +24763,8 @@ const WORD2IPA_TH =
         "Ta4ŋTI3"
     ],
     "ทั้งนั้น": [
-        "Ta1ŋna4n",
-        "Ta4ŋna4n"
+        "Ta4ŋna4n",
+        "Ta1ŋna4n"
     ],
     "ไม่ใช่ทั้งนั้น": [
         "ma3yCa3yTa4ŋna4n"
@@ -26141,8 +26141,8 @@ const WORD2IPA_TH =
         "yO1TA1TE3sa1bA1n"
     ],
     "เทศมนตรี": [
-        "TE3tsa1mo1ntrI1",
-        "TE3sa1mo1ntrI1"
+        "TE3sa1mo1ntrI1",
+        "TE3tsa1mo1ntrI1"
     ],
     "นายกเทศมนตรี": [
         "nA1yo4kTE3sa1mo1ntrI1"
@@ -26170,7 +26170,7 @@ const WORD2IPA_TH =
         "Pra4Ta1mma1TE3tsa1nA5"
     ],
     "เทศะ": [
-        "TE1sa2"
+        "TE1sa2ʔ"
     ],
     "เทอม": [
         "TZ1m"
@@ -26437,7 +26437,7 @@ const WORD2IPA_TH =
         "sY3ksX2t"
     ],
     "แทะ": [
-        "Tɛ4"
+        "Tɛ4ʔ"
     ],
     "โท": [
         "TO1"
@@ -26533,7 +26533,7 @@ const WORD2IPA_TH =
         "ha3ya1Pa1yya1TO3t"
     ],
     "โทสะ": [
-        "TO1sa2"
+        "TO1sa2ʔ"
     ],
     "โทโส": [
         "TO1sO5"
@@ -27208,7 +27208,7 @@ const WORD2IPA_TH =
         "nX1ra1wE1"
     ],
     "นะ": [
-        "na4"
+        "na4ʔ"
     ],
     "ดีจริงนะ": [
         "dI1ci1ŋna4"
@@ -27217,7 +27217,7 @@ const WORD2IPA_TH =
         "dI1la1na4"
     ],
     "อย่านะ": [
-        "yA2na4"
+        "yA2na4ʔ"
     ],
     "ใครนะ มาเคาะประตู": [
         "Kra1yna4mA1Kɔ4pra1tU1"
@@ -27232,9 +27232,9 @@ const WORD2IPA_TH =
         "pa1ydu3a1yka1nna4"
     ],
     "น่ะ": [
-        "na3nA3",
         "na3",
-        "na2"
+        "na3nA3",
+        "na2ʔ"
     ],
     "ไปนะ": [
         "pa1yna4"
@@ -28093,8 +28093,8 @@ const WORD2IPA_TH =
         "na4mmo1n"
     ],
     "น้ำมะนาว": [
-        "nA4mma1nA1w",
-        "na4mma1nA1w"
+        "na4mma1nA1w",
+        "nA4mma1nA1w"
     ],
     "น้ำมะพร้าว": [
         "nA4mma1PrA4w"
@@ -28561,8 +28561,8 @@ const WORD2IPA_TH =
         "mU2nI4"
     ],
     "อย่างนี้": [
-        "ya1ŋnI4ya1ŋŋI4",
-        "yA2ŋnI4"
+        "yA2ŋnI4",
+        "ya1ŋnI4ya1ŋŋI4"
     ],
     "นึก": [
         "nʉ4k"
@@ -28877,7 +28877,7 @@ const WORD2IPA_TH =
         "nɛ3wpa1y"
     ],
     "แนะ": [
-        "nɛ4"
+        "nɛ4ʔ"
     ],
     "จดหมายแนะนำตัว": [
         "co2tmA5ynɛ4na1mtu1a1"
@@ -28916,8 +28916,8 @@ const WORD2IPA_TH =
         "PU3CA1yKo1nnO4n"
     ],
     "อย่างโน้น": [
-        "yA2ŋnO4n",
-        "ya1ŋnO4nya1ŋŋO4n"
+        "ya1ŋnO4nya1ŋŋO4n",
+        "yA2ŋnO4n"
     ],
     "โน้ม": [
         "nO4m"
@@ -29037,7 +29037,7 @@ const WORD2IPA_TH =
         "bX1"
     ],
     "บ่": [
-        "bɔ2",
+        "bɔ2ʔ",
         "bX2"
     ],
     "บก": [
@@ -29125,8 +29125,8 @@ const WORD2IPA_TH =
         "bo2m"
     ],
     "บรม": [
-        "bɔ1ro1m",
-        "ba1ro1m"
+        "ba1ro1m",
+        "bɔ1ro1m"
     ],
     "ความบรมสุข": [
         "KwA1mbɔ1ro1mma1su2k"
@@ -29262,8 +29262,8 @@ const WORD2IPA_TH =
         "ba1nlE1ŋ"
     ],
     "บรอนซ์": [
-        "prɔ1n",
-        "pɔ1n"
+        "pɔ1n",
+        "prɔ1n"
     ],
     "บริการน้ำ": [
         "bX1ri1kA1nnA4m"
@@ -29416,8 +29416,8 @@ const WORD2IPA_TH =
         "bX1nI1O1"
     ],
     "บอบ": [
-        "bX2p",
-        "bɔ2p"
+        "bɔ2p",
+        "bX2p"
     ],
     "บอบบาง": [
         "bX2pbA1ŋ"
@@ -29454,7 +29454,7 @@ const WORD2IPA_TH =
         "bɔ1n"
     ],
     "บ๊ะ": [
-        "!ba4"
+        "!ba4ʔ"
     ],
     "บะหมี่": [
         "ba1mI2"
@@ -29598,8 +29598,8 @@ const WORD2IPA_TH =
         "pra1kA2tsa1nI1ya1ba2t"
     ],
     "ไปรษณียบัตร": [
-        "pra1ysa1nI1ba2t",
-        "pra1ysa1nI1ya1ba2t"
+        "pra1ysa1nI1ya1ba2t",
+        "pra1ysa1nI1ba2t"
     ],
     "ลงบัตร": [
         "lo1ŋba2t"
@@ -30072,7 +30072,7 @@ const WORD2IPA_TH =
         "ba1mne2t"
     ],
     "บิ": [
-        "bi2"
+        "bi2ʔ"
     ],
     "บิด": [
         "bi2t"
@@ -30174,7 +30174,7 @@ const WORD2IPA_TH =
         "bʉ1n"
     ],
     "บุ": [
-        "bu2"
+        "bu2ʔ"
     ],
     "บุก": [
         "bu2k"
@@ -30285,12 +30285,12 @@ const WORD2IPA_TH =
         "bu3yba3y"
     ],
     "บุรพ-": [
-        "bu1pPa1",
-        "bu1ra1Pa1"
+        "bu1ra1Pa1",
+        "bu1pPa1"
     ],
     "บุรพทิศ": [
-        "bu1ra1Pa1Ti4t",
-        "bu1pPa1Ti4t"
+        "bu1pPa1Ti4t",
+        "bu1ra1Pa1Ti4t"
     ],
     "บุรี": [
         "bu1rI1"
@@ -30401,8 +30401,8 @@ const WORD2IPA_TH =
         "be1nca1"
     ],
     "เบ็ด": [
-        "be2t",
-        "be2tse2t"
+        "be2tse2t",
+        "be2t"
     ],
     "ตกเบ็ด": [
         "to2kbe2t"
@@ -30447,7 +30447,7 @@ const WORD2IPA_TH =
         "bZ3rZ3"
     ],
     "เบะ": [
-        "be2"
+        "be2ʔ"
     ],
     "เบา": [
         "ba1w"
@@ -30510,7 +30510,7 @@ const WORD2IPA_TH =
         "ba3wtA1"
     ],
     "เบาะ": [
-        "bɔ2"
+        "bɔ2ʔ"
     ],
     "เบาะๆ": [
         "bɔ2bɔ2"
@@ -30553,8 +30553,8 @@ const WORD2IPA_TH =
         "bZ2ŋ"
     ],
     "เบิ่งตา": [
-        "bə2ŋtA1",
-        "bZ2ŋtA1"
+        "bZ2ŋtA1",
+        "bə2ŋtA1"
     ],
     "เบิ้ม": [
         "bə3m"
@@ -30689,7 +30689,7 @@ const WORD2IPA_TH =
         "KA3cA3ŋbY2k"
     ],
     "แบกภาระ": [
-        "bY2kPA1ra4"
+        "bY2kPA1ra4ʔ"
     ],
     "แบกหาม": [
         "bY2khA5m"
@@ -30719,12 +30719,12 @@ const WORD2IPA_TH =
         "su2a1nbɛ2ŋ"
     ],
     "แบงก์": [
-        "bɛ1ŋ",
-        "bɛ4ŋ"
+        "bɛ4ŋ",
+        "bɛ1ŋ"
     ],
     "แบตเตอรี่": [
-        "bɛ4ttZ1rI3",
-        "bɛ2ttZ1rI3"
+        "bɛ2ttZ1rI3",
+        "bɛ4ttZ1rI3"
     ],
     "แบน": [
         "bY1n"
@@ -30799,10 +30799,10 @@ const WORD2IPA_TH =
         "bɛ4w"
     ],
     "แบะ": [
-        "bɛ2"
+        "bɛ2ʔ"
     ],
     "หน้าแบะ": [
-        "nA3bɛ2"
+        "nA3bɛ2ʔ"
     ],
     "โบ": [
         "bO1"
@@ -30983,8 +30983,8 @@ const WORD2IPA_TH =
         "PU3po2kKrX1ŋ"
     ],
     "ปกติ": [
-        "pa2ka1ti2",
-        "po2kka1ti2"
+        "po2kka1ti2",
+        "pa2ka1ti2"
     ],
     "เป็นปกติ": [
         "pe1npo2kka1ti2"
@@ -31122,8 +31122,8 @@ const WORD2IPA_TH =
         "pX1ra1pa2k"
     ],
     "ปรมาณู": [
-        "pX1ra1mA1nU1",
-        "pa1ra1mA1nU1"
+        "pa1ra1mA1nU1",
+        "pX1ra1mA1nU1"
     ],
     "พลังงานปรมาณู": [
         "Pa1la1ŋŋA1npa1ra1mA1nU1"
@@ -31141,7 +31141,7 @@ const WORD2IPA_TH =
         "prX1y"
     ],
     "ประ": [
-        "pra2"
+        "pra2ʔ"
     ],
     "ประปราย": [
         "pra2prA1y"
@@ -31393,8 +31393,8 @@ const WORD2IPA_TH =
         "pra1CA1CA3ti1rA2n"
     ],
     "ประชาธิปไตย": [
-        "pra1CA1Ti4pa1Ta1y",
-        "pra1CA1Ti4ppa1Ta1y"
+        "pra1CA1Ti4ppa1Ta1y",
+        "pra1CA1Ti4pa1Ta1y"
     ],
     "พรรคประชาธิปไตย": [
         "Pa4kpra1CA1Ti4ppa1ta1y"
@@ -31586,8 +31586,8 @@ const WORD2IPA_TH =
         "rX1ŋpra1TA1n"
     ],
     "ประธานาธิบดี": [
-        "pra1TA1nA1Ti4pbɔ1dI1",
-        "pra1TA1nA1Ti4bɔ1dI1"
+        "pra1TA1nA1Ti4bɔ1dI1",
+        "pra1TA1nA1Ti4pbɔ1dI1"
     ],
     "รองประธานาธิบดี": [
         "rX1ŋpra1TA1nA1Ti4bɔ1dI1"
@@ -31895,8 +31895,8 @@ const WORD2IPA_TH =
         "PU3tpra2kpra1m"
     ],
     "ปรัชญา": [
-        "pra2tyA1",
-        "pra2tCa1yA1pa2ra4tCa1yA1pa2ra4tyA1"
+        "pra2tCa1yA1pa2ra4tCa1yA1pa2ra4tyA1",
+        "pra2tyA1"
     ],
     "ปรัตยุบัน": [
         "pra2tta1yu4ba1n"
@@ -32017,8 +32017,8 @@ const WORD2IPA_TH =
         "prA1ro4p"
     ],
     "ปราศจาก": [
-        "prA2tsa1cA2k",
-        "prA2sa1cA2k"
+        "prA2sa1cA2k",
+        "prA2tsa1cA2k"
     ],
     "ปราศจากชีวิต": [
         "prA2tsa1cA2kCI1wi4t"
@@ -32036,7 +32036,7 @@ const WORD2IPA_TH =
         "pra1m"
     ],
     "ปริ": [
-        "pri2"
+        "pri2ʔ"
     ],
     "ปริปาก": [
         "pri2pA2k"
@@ -32058,8 +32058,8 @@ const WORD2IPA_TH =
         "pa1ri1mA1n"
     ],
     "ปริมาตร": [
-        "pX1ri1mA3t",
-        "pa1ri1mA3t"
+        "pa1ri1mA3t",
+        "pX1ri1mA3t"
     ],
     "ปริยาย": [
         "pa1ri1yA1y"
@@ -32101,7 +32101,7 @@ const WORD2IPA_TH =
         "lɛ3nprW5"
     ],
     "ปรุ": [
-        "pru2"
+        "pru2ʔ"
     ],
     "ปรุง": [
         "pru1ŋ"
@@ -32230,7 +32230,7 @@ const WORD2IPA_TH =
         "la4plɔ2y"
     ],
     "ปละ": [
-        "pla2"
+        "pla2ʔ"
     ],
     "ปลัก": [
         "pla2k"
@@ -32587,10 +32587,10 @@ const WORD2IPA_TH =
         "pX1y"
     ],
     "ปะ": [
-        "pa2"
+        "pa2ʔ"
     ],
     "รอยปะ": [
-        "rX1ypa2"
+        "rX1ypa2ʔ"
     ],
     "พบปะ": [
         "Po4ppa2"
@@ -32900,7 +32900,7 @@ const WORD2IPA_TH =
         "pA2knA4mPO1"
     ],
     "ปากเปราะ": [
-        "pA2kprɔ2"
+        "pA2kprɔ2ʔ"
     ],
     "ปากเปล่า": [
         "pA2kplA2w"
@@ -33134,7 +33134,7 @@ const WORD2IPA_TH =
         "O2ppI2k"
     ],
     "ปีติ": [
-        "pI1ti2"
+        "pI1ti2ʔ"
     ],
     "ปีน": [
         "pI1n"
@@ -33756,10 +33756,10 @@ const WORD2IPA_TH =
         "PU3tprZ1yprZ1y"
     ],
     "เปรอะ": [
-        "prə2"
+        "prə2ʔ"
     ],
     "เปราะ": [
-        "prɔ2"
+        "prɔ2ʔ"
     ],
     "เปรี้ยง": [
         "pri3a1ŋ"
@@ -33852,8 +33852,8 @@ const WORD2IPA_TH =
         "wA3ŋplA2w"
     ],
     "เสียเปล่า": [
-        "si5a1plA2w",
-        "si4a1plA2w"
+        "si4a1plA2w",
+        "si5a1plA2w"
     ],
     "เปลี้ย": [
         "pli3a1"
@@ -33943,7 +33943,7 @@ const WORD2IPA_TH =
         "sa1nA5myi1ŋpa3w"
     ],
     "เปาะ": [
-        "pɔ2"
+        "pɔ2ʔ"
     ],
     "เปิด": [
         "pZ2t"
@@ -34139,7 +34139,7 @@ const WORD2IPA_TH =
         "prɛ5n"
     ],
     "แประ": [
-        "prɛ2"
+        "prɛ2ʔ"
     ],
     "แปล": [
         "plY1"
@@ -34181,10 +34181,10 @@ const WORD2IPA_TH =
         "pɛ3w"
     ],
     "แปะ": [
-        "pɛ2"
+        "pɛ2ʔ"
     ],
     "แป๊ะ": [
-        "pɛ4"
+        "pɛ4ʔ"
     ],
     "โป": [
         "pO1"
@@ -34220,8 +34220,8 @@ const WORD2IPA_TH =
         "tA1pO1n"
     ],
     "โปรแกรม": [
-        "prO1krY1m",
-        "prO1krɛ1m"
+        "prO1krɛ1m",
+        "prO1krY1m"
     ],
     "โปร่ง": [
         "prO2ŋ"
@@ -34254,10 +34254,10 @@ const WORD2IPA_TH =
         "pO1li1O1ma1yE1la1yti4s"
     ],
     "โปะ": [
-        "po2"
+        "po2ʔ"
     ],
     "โป๊ะ": [
-        "po4"
+        "po4ʔ"
     ],
     "ไป": [
         "pa1y"
@@ -34542,8 +34542,8 @@ const WORD2IPA_TH =
         "yi2ŋPa1yX5ŋ"
     ],
     "ผรุสวาจา": [
-        "Pa1ru4tsa1wA1cA1",
-        "Pa1ru4sa1wA1cA1"
+        "Pa1ru4sa1wA1cA1",
+        "Pa1ru4tsa1wA1cA1"
     ],
     "ผรุสวาท": [
         "Pa1ru4tsa1wA3t"
@@ -34625,7 +34625,7 @@ const WORD2IPA_TH =
         "X2kPo5n"
     ],
     "ผละ": [
-        "Pla2"
+        "Pla2ʔ"
     ],
     "ผละหนี": [
         "Pla2nI5"
@@ -34661,11 +34661,11 @@ const WORD2IPA_TH =
         "PlA5m"
     ],
     "ผลิ": [
-        "Pli2"
+        "Pli2ʔ"
     ],
     "ผลิต": [
-        "pli2t",
-        "Pa1li2t"
+        "Pa1li2t",
+        "pli2t"
     ],
     "ผลิตกรรม": [
         "Pa1li2tka1m"
@@ -34737,8 +34737,8 @@ const WORD2IPA_TH =
         "Pu2tPɔ2ŋ"
     ],
     "ผ่อน": [
-        "PX2n",
-        "Pɔ2n"
+        "Pɔ2n",
+        "PX2n"
     ],
     "ผ่อนปรน": [
         "Pɔ2npro1n"
@@ -35116,7 +35116,7 @@ const WORD2IPA_TH =
         "PW2n"
     ],
     "ผุ": [
-        "Pu2"
+        "Pu2ʔ"
     ],
     "ผุพัง": [
         "Pu2̀Pa1ŋ"
@@ -35308,7 +35308,7 @@ const WORD2IPA_TH =
         "PU3sa5mre2trA3tCa1kA1n"
     ],
     "ผู้สูงอายุ": [
-        "PU3sU5ŋA1yu4"
+        "PU3sU5ŋA1yu4ʔ"
     ],
     "ผู้เสนอ": [
         "PU3sa1nZ5"
@@ -36198,8 +36198,8 @@ const WORD2IPA_TH =
         "Pa1nmA4y"
     ],
     "พรรณนา": [
-        "Pa1nra1nA1",
-        "Pa1nna1nA1"
+        "Pa1nna1nA1",
+        "Pa1nra1nA1"
     ],
     "พรรษา": [
         "Pa1nsA5"
@@ -36289,7 +36289,7 @@ const WORD2IPA_TH =
         "he5nPrX4mka1n"
     ],
     "พระ": [
-        "Pra4"
+        "Pra4ʔ"
     ],
     "พระจันทร์": [
         "Pra4ca1n"
@@ -36572,8 +36572,8 @@ const WORD2IPA_TH =
         "Prʉ1ŋPrZ3t"
     ],
     "พรืด": [
-        "Prʉ3t",
-        "PrW3t"
+        "PrW3t",
+        "Prʉ3t"
     ],
     "เสียงพรืด": [
         "si5a1ŋPrW3t"
@@ -36616,8 +36616,8 @@ const WORD2IPA_TH =
         "Prʉ4tsa1ci2kA1yo1n"
     ],
     "พฤษภาคม": [
-        "Prʉ4sa1PA1Ko1m",
-        "Prʉ4tsa1PA1Ko1m"
+        "Prʉ4tsa1PA1Ko1m",
+        "Prʉ4sa1PA1Ko1m"
     ],
     "พฤหัส": [
         "Pa4rʉ4ha2t"
@@ -36632,8 +36632,8 @@ const WORD2IPA_TH =
         "Pa4rʉ4ha2tsa1bX1dI1"
     ],
     "พล": [
-        "Pa4la4",
-        "Po1n"
+        "Po1n",
+        "Pa4la4"
     ],
     "ที่ชุมพล": [
         "TI3Cu1mPo1n"
@@ -36846,7 +36846,7 @@ const WORD2IPA_TH =
         "Pa1lI1ka1m"
     ],
     "พลุ": [
-        "Plu4"
+        "Plu4ʔ"
     ],
     "พลุก": [
         "Plu4k"
@@ -37267,7 +37267,7 @@ const WORD2IPA_TH =
         "PA3kPA1ya4p"
     ],
     "พายุ": [
-        "PA1yu4"
+        "PA1yu4ʔ"
     ],
     "พายุฟ้าคะนอง": [
         "PA1yu4fA4Ka1nX1ŋ"
@@ -37390,8 +37390,8 @@ const WORD2IPA_TH =
         "Pi4ni4t"
     ],
     "พินิจพิศดู": [
-        "Pi4ni4tPi4sa1dU1",
-        "Pi4ni4tPi4tdU1"
+        "Pi4ni4tPi4tdU1",
+        "Pi4ni4tPi4sa1dU1"
     ],
     "พิบัติ": [
         "Pi4ba2t"
@@ -37619,7 +37619,7 @@ const WORD2IPA_TH =
         "PW4nrA3p"
     ],
     "พุ": [
-        "Pu4"
+        "Pu4ʔ"
     ],
     "พุก": [
         "Pu4k"
@@ -37649,12 +37649,12 @@ const WORD2IPA_TH =
         "Pu4tTa1sa2kka1rA2t"
     ],
     "พุทธศาสนา": [
-        "Pu4tTa1sA2tsa1nA5",
-        "Pu4tTa1sA2sa1nA5"
+        "Pu4tTa1sA2sa1nA5",
+        "Pu4tTa1sA2tsa1nA5"
     ],
     "ศาสนาพุทธ": [
-        "sA2sa1nA5Pu4t",
-        "sA2tsa1nA5Pu4t"
+        "sA2tsa1nA5Pu4t",
+        "sA2sa1nA5Pu4t"
     ],
     "พุทโธ่": [
         "Pu3TO3",
@@ -37847,7 +37847,7 @@ const WORD2IPA_TH =
         "Pra1w"
     ],
     "เพราะ": [
-        "Prɔ4"
+        "Prɔ4ʔ"
     ],
     "รักเพราะสวย": [
         "ra4kPrɔ4su5a1y"
@@ -37930,7 +37930,7 @@ const WORD2IPA_TH =
         "Pla1w"
     ],
     "เพลาะ": [
-        "Plɔ4"
+        "Plɔ4ʔ"
     ],
     "เพลิง": [
         "PlZ1ŋ"
@@ -37981,7 +37981,7 @@ const WORD2IPA_TH =
         "PZ4cZ3"
     ],
     "เพาะ": [
-        "Pɔ4"
+        "Pɔ4ʔ"
     ],
     "เพิก": [
         "PZ3k"
@@ -38170,10 +38170,10 @@ const WORD2IPA_TH =
         "PlY1ŋ"
     ],
     "แพะ": [
-        "Pɛ4"
+        "Pɛ4ʔ"
     ],
     "ลูกแพะ": [
-        "lU3kPɛ4"
+        "lU3kPɛ4ʔ"
     ],
     "โพก": [
         "PO3k"
@@ -38502,8 +38502,8 @@ const WORD2IPA_TH =
         "lA4ŋfI1m"
     ],
     "ฟิลิปปินส์": [
-        "fi1li1ppi1n",
-        "fi1li4ppi1n"
+        "fi1li4ppi1n",
+        "fi1li1ppi1n"
     ],
     "ฟิวส์": [
         "fi1w"
@@ -38772,8 +38772,8 @@ const WORD2IPA_TH =
         "Pa1ya1nta1rA1y"
     ],
     "ภรรยา": [
-        "Pa1nra1yA1",
-        "Pa1nyA1"
+        "Pa1nyA1",
+        "Pa1nra1yA1"
     ],
     "ภรรยาน้อย": [
         "Pa1nra1yA1nX4y"
@@ -38953,13 +38953,13 @@ const WORD2IPA_TH =
         "PA1nrO1ŋ"
     ],
     "ภาระ": [
-        "PA1ra4"
+        "PA1ra4ʔ"
     ],
     "ภาวนา": [
         "PA1wa1nA1"
     ],
     "ภาวะ": [
-        "PA1wa4"
+        "PA1wa4ʔ"
     ],
     "ภาวะเงินเฟ้อ": [
         "PA1wa4ŋə1nfZ4"
@@ -39235,8 +39235,8 @@ const WORD2IPA_TH =
         "nA3mX1ra1su5m"
     ],
     "มฤดก": [
-        "mX1ra1do2k",
-        "ma4rʉ4do2k"
+        "ma4rʉ4do2k",
+        "mX1ra1do2k"
     ],
     "มฤตยู": [
         "ma1rʉ4tta1yU1"
@@ -39449,8 +39449,8 @@ const WORD2IPA_TH =
         "mX3pha3y"
     ],
     "มอม": [
-        "mX1m",
-        "mɔ1m"
+        "mɔ1m",
+        "mX1m"
     ],
     "มอมแมม": [
         "mɔ1mmɛ1m"
@@ -39885,7 +39885,7 @@ const WORD2IPA_TH =
         "a2nu4mA3ttrA1"
     ],
     "มาตุ": [
-        "mA1tu2"
+        "mA1tu2ʔ"
     ],
     "ม่าน": [
         "mA3n"
@@ -39903,7 +39903,7 @@ const WORD2IPA_TH =
         "la5ŋmA3nle2k"
     ],
     "มานะ": [
-        "mA1na4"
+        "mA1na4ʔ"
     ],
     "ม้าม": [
         "mA4m"
@@ -39936,8 +39936,8 @@ const WORD2IPA_TH =
         "mA1n"
     ],
     "มาร์ช": [
-        "mA4C",
-        "mA4t"
+        "mA4t",
+        "mA4C"
     ],
     "มารดา": [
         "mA1ndA1"
@@ -39958,7 +39958,7 @@ const WORD2IPA_TH =
         "mA1lA1ri1a1"
     ],
     "มิ-": [
-        "mi4"
+        "mi4ʔ"
     ],
     "จะหลับมิหลับแหล่": [
         "ca1la2pmi4la2plY2"
@@ -40096,7 +40096,7 @@ const WORD2IPA_TH =
         "mI1ya3wmI1rʉ1a1n"
     ],
     "มีอย่างหรือ": [
-        "mI1yA2ŋrʉ4"
+        "mI1yA2ŋrʉ4ʔ"
     ],
     "มีอะไร": [
         "mI1a1ra1y"
@@ -40105,7 +40105,7 @@ const WORD2IPA_TH =
         "mI1A1CI3p"
     ],
     "มีอายุ": [
-        "mI1A1yu4"
+        "mI1A1yu4ʔ"
     ],
     "มีอายุ ๑๘ ปี": [
         "mI1A1yu4si2ppY2tpI1"
@@ -40270,7 +40270,7 @@ const WORD2IPA_TH =
         "o2tmW4ki1nmW4"
     ],
     "มุ": [
-        "mu4"
+        "mu4ʔ"
     ],
     "มุก": [
         "mu4k"
@@ -40428,8 +40428,8 @@ const WORD2IPA_TH =
         "mZ1y"
     ],
     "เมรุ": [
-        "mE1n",
-        "mE1ru4"
+        "mE1ru4ʔ",
+        "mE1n"
     ],
     "เมล์": [
         "mE1"
@@ -40804,7 +40804,7 @@ const WORD2IPA_TH =
         "mO4"
     ],
     "โมฆะ": [
-        "mO1Ka4"
+        "mO1Ka4ʔ"
     ],
     "โมง": [
         "mO1ŋ"
@@ -40822,7 +40822,7 @@ const WORD2IPA_TH =
         "ho2kmO1ŋye1n"
     ],
     "โมหะ": [
-        "mO1ha2"
+        "mO1ha2ʔ"
     ],
     "โมโห": [
         "mO1hO5"
@@ -41502,7 +41502,7 @@ const WORD2IPA_TH =
         "hi5nyX4y"
     ],
     "ยะ": [
-        "ya4"
+        "ya4ʔ"
     ],
     "ย่ะ": [
         "ya3"
@@ -41799,8 +41799,8 @@ const WORD2IPA_TH =
         "yU2yA1m"
     ],
     "ย่าม": [
-        "yu3myA3m",
-        "yA3m"
+        "yA3m",
+        "yu3myA3m"
     ],
     "ยาย": [
         "yA1y"
@@ -41980,7 +41980,7 @@ const WORD2IPA_TH =
         "yI3so5ŋ"
     ],
     "ยี่หระ": [
-        "yI3ra2"
+        "yI3ra2ʔ"
     ],
     "ยี่ห้อ": [
         "yI3hX3"
@@ -42073,7 +42073,7 @@ const WORD2IPA_TH =
         "yW4"
     ],
     "ยุ": [
-        "yu4"
+        "yu4ʔ"
     ],
     "ยุยง": [
         "yu4yo1ŋ"
@@ -42163,8 +42163,8 @@ const WORD2IPA_TH =
         "yu4y"
     ],
     "ยุโรป": [
-        "yu4rO2p",
-        "yu1rO2p"
+        "yu1rO2p",
+        "yu4rO2p"
     ],
     "ยุว-": [
         "yu4wa1"
@@ -42269,10 +42269,10 @@ const WORD2IPA_TH =
         "pra1TE3tyZ1ra1ma1n"
     ],
     "เยอะ": [
-        "yə4"
+        "yə4ʔ"
     ],
     "มีเยอะ": [
-        "mI1yə4"
+        "mI1yə4ʔ"
     ],
     "เยอะแยะ": [
         "yə4yɛ4"
@@ -42302,7 +42302,7 @@ const WORD2IPA_TH =
         "rA1KA1ya1w"
     ],
     "เยาะ": [
-        "yɔ4"
+        "yɔ4ʔ"
     ],
     "หัวเราะเยาะ": [
         "hu5a1rɔ4yɔ4"
@@ -42398,7 +42398,7 @@ const WORD2IPA_TH =
         "yY3ktu1a1pra1kX2p"
     ],
     "แยกแยะ": [
-        "yY3kyɛ4"
+        "yY3kyɛ4ʔ"
     ],
     "สี่แยก": [
         "sI2yY3k"
@@ -42428,8 +42428,8 @@ const WORD2IPA_TH =
         "yY4ŋKʉ3n"
     ],
     "แยบ": [
-        "yY4p",
-        "yɛ4p"
+        "yɛ4p",
+        "yY4p"
     ],
     "แยบยล": [
         "yY3pyo1n"
@@ -42444,7 +42444,7 @@ const WORD2IPA_TH =
         "yY1sY5"
     ],
     "แยะ": [
-        "yɛ4"
+        "yɛ4ʔ"
     ],
     "โย้": [
         "yO4"
@@ -43008,8 +43008,8 @@ const WORD2IPA_TH =
         "rX4yTO1"
     ],
     "ร้อยละ": [
-        "rX4yla4",
-        "rX4yla1"
+        "rX4yla1",
+        "rX4yla4ʔ"
     ],
     "คิดเป็นร้อยละ": [
         "Ki4tpe1nrX4yla1"
@@ -43042,7 +43042,7 @@ const WORD2IPA_TH =
         "rX3rY3"
     ],
     "ระ": [
-        "ra4"
+        "ra4ʔ"
     ],
     "ระกา": [
         "ra1kA1"
@@ -43546,7 +43546,7 @@ const WORD2IPA_TH =
         "lo1ŋrA3ktʉ2k"
     ],
     "ราค": [
-        "rA1Ka4"
+        "rA1Ka4ʔ"
     ],
     "ราคา": [
         "rA1KA1"
@@ -43685,8 +43685,8 @@ const WORD2IPA_TH =
         "rA3tCa1da1mnZ1n"
     ],
     "ราชบุรี": [
-        "rA3tbu1rI1",
-        "rA3tCa1bu1rI1"
+        "rA3tCa1bu1rI1",
+        "rA3tbu1rI1"
     ],
     "ราชา": [
         "rA1CA1"
@@ -43851,8 +43851,8 @@ const WORD2IPA_TH =
         "rA1sI5"
     ],
     "ราษฎร": [
-        "rA3t",
-        "rA3tsa1dX1n"
+        "rA3tsa1dX1n",
+        "rA3t"
     ],
     "สภาผู้แทนราษฎร": [
         "sa1PA1PU3TY1nrA3tsa1dX1n"
@@ -43873,8 +43873,8 @@ const WORD2IPA_TH =
         "ra1mwo1ŋ"
     ],
     "ร่ำ": [
-        "ra3mra1y",
-        "ra3m"
+        "ra3m",
+        "ra3mra1y"
     ],
     "พูดร่ำรำพัน": [
         "PU3tra3mra1mPa1n"
@@ -43913,7 +43913,7 @@ const WORD2IPA_TH =
         "ra1mlʉ4k"
     ],
     "ริ": [
-        "ri4"
+        "ri4ʔ"
     ],
     "ริเริ่ม": [
         "ri4rZ3m"
@@ -43997,7 +43997,7 @@ const WORD2IPA_TH =
         "rI1wi1w"
     ],
     "รึ": [
-        "rʉ4"
+        "rʉ4ʔ"
     ],
     "รื่น": [
         "rW3n"
@@ -44015,7 +44015,7 @@ const WORD2IPA_TH =
         "rW4"
     ],
     "รุ": [
-        "ru4"
+        "ru4ʔ"
     ],
     "รุก": [
         "ru4k"
@@ -44210,8 +44210,8 @@ const WORD2IPA_TH =
         "rE1nU1"
     ],
     "เรดาร์": [
-        "rE1dA1",
-        "rE1dA3"
+        "rE1dA3",
+        "rE1dA1"
     ],
     "เรยอง": [
         "rE1yɔ1ŋ"
@@ -44244,7 +44244,7 @@ const WORD2IPA_TH =
         "rZ3"
     ],
     "เรอะ": [
-        "rə4"
+        "rə4ʔ"
     ],
     "เรา": [
         "ra1w"
@@ -44265,7 +44265,7 @@ const WORD2IPA_TH =
         "ra4wca1y"
     ],
     "เราะ": [
-        "rɔ4"
+        "rɔ4ʔ"
     ],
     "เริง": [
         "rZ1ŋ"
@@ -44502,8 +44502,8 @@ const WORD2IPA_TH =
         "rY3"
     ],
     "แร่วูลแฟรม": [
-        "rY3wU1lfrY1m",
-        "rY3wU1nfrY1m"
+        "rY3wU1nfrY1m",
+        "rY3wU1lfrY1m"
     ],
     "สินแร่": [
         "si5nrY3"
@@ -44797,11 +44797,11 @@ const WORD2IPA_TH =
         "ra4ysA5ra4"
     ],
     "ไรเฟิล": [
-        "ra1yfə3l",
-        "ra1yfə3n"
+        "ra1yfə3n",
+        "ra1yfə3l"
     ],
     "ฤ": [
-        "rʉ4"
+        "rʉ4ʔ"
     ],
     "ฤกษ์": [
         "rZ3k"
@@ -45223,8 +45223,8 @@ const WORD2IPA_TH =
     ],
     "ละ": [
         "la1",
-        "la1la1",
-        "la4"
+        "la4ʔ",
+        "la1la1"
     ],
     "ละเลย": [
         "la4lZ1y"
@@ -45845,7 +45845,7 @@ const WORD2IPA_TH =
         "lW4"
     ],
     "ลุ": [
-        "lu4"
+        "lu4ʔ"
     ],
     "ลุแก่โทษ": [
         "lu4kY2TO3t"
@@ -45929,7 +45929,7 @@ const WORD2IPA_TH =
         "lU3kKA2ŋ"
     ],
     "ลูกเงาะ": [
-        "lU3kŋɔ4"
+        "lU3kŋɔ4ʔ"
     ],
     "ลูกจ๊อก": [
         "lU3kcX4k"
@@ -45944,8 +45944,8 @@ const WORD2IPA_TH =
         "lU3ktA1da1mda1m"
     ],
     "ลูกเต็นนิส": [
-        "lU3kte1nni4s",
-        "lU3kte1nni4t"
+        "lU3kte1nni4t",
+        "lU3kte1nni4s"
     ],
     "ลูกเต้าเล้าอ่อน": [
         "lU3kta3wla4wX2n"
@@ -46288,7 +46288,7 @@ const WORD2IPA_TH =
         "lZ3lA3"
     ],
     "เลอะ": [
-        "lə4"
+        "lə4ʔ"
     ],
     "ทำเลอะ": [
         "Ta1mlə4"
@@ -46300,7 +46300,7 @@ const WORD2IPA_TH =
         "lə4lʉ1a1n"
     ],
     "เละ": [
-        "le4"
+        "le4ʔ"
     ],
     "เละเทะ": [
         "le4Te4"
@@ -46333,7 +46333,7 @@ const WORD2IPA_TH =
         "la4wlO1m"
     ],
     "เลาะ": [
-        "lɔ4"
+        "lɔ4ʔ"
     ],
     "เลิก": [
         "lZ3k"
@@ -46679,7 +46679,7 @@ const WORD2IPA_TH =
     ],
     "และ": [
         "lɛ4lɛ1",
-        "lɛ2"
+        "lɛ2ʔ"
     ],
     "และอื่นๆ": [
         "lɛ1W2nW2n"
@@ -46778,7 +46778,7 @@ const WORD2IPA_TH =
         "kro1mlO1ha2ki2t"
     ],
     "โลหะ": [
-        "lO1ha2"
+        "lO1ha2ʔ"
     ],
     "โลหิต": [
         "lO1hi2t"
@@ -46802,7 +46802,7 @@ const WORD2IPA_TH =
         "se3nlO1hi2tdY1ŋ"
     ],
     "โละ": [
-        "lo4"
+        "lo4ʔ"
     ],
     "ไล่": [
         "la3y"
@@ -46829,7 +46829,7 @@ const WORD2IPA_TH =
         "la4y"
     ],
     "ฦ": [
-        "lʉ4"
+        "lʉ4ʔ"
     ],
     "ฦา": [
         "lW1"
@@ -46950,7 +46950,7 @@ const WORD2IPA_TH =
         "wX4lwX4ls"
     ],
     "วะ": [
-        "wa4"
+        "wa4ʔ"
     ],
     "อะไรวะ": [
         "a1ra1ywa4"
@@ -47142,8 +47142,8 @@ const WORD2IPA_TH =
         "yA2ŋwA3"
     ],
     "ว้า": [
-        "wA4",
-        "!wA4"
+        "!wA4",
+        "wA4"
     ],
     "ว้าวุ่น": [
         "wA4wu3n"
@@ -47260,7 +47260,7 @@ const WORD2IPA_TH =
         "wY2kwA3y"
     ],
     "วาร": [
-        "wA1ra4",
+        "wA1ra4ʔ",
         "wA1n"
     ],
     "ในวาระ": [
@@ -47366,8 +47366,8 @@ const WORD2IPA_TH =
         "wa2nwi4to2k"
     ],
     "วิตถาร": [
-        "wi4tta1TA5n",
-        "wi4tTA5n"
+        "wi4tTA5n",
+        "wi4tta1TA5n"
     ],
     "วิตามิน": [
         "wi4ta1mi1n"
@@ -47724,7 +47724,7 @@ const WORD2IPA_TH =
         "wɛ3wsi5a1ŋ"
     ],
     "แวะ": [
-        "wɛ4"
+        "wɛ4ʔ"
     ],
     "โวย": [
         "wO1y"
@@ -47881,23 +47881,23 @@ const WORD2IPA_TH =
         "sa2dta1wa4sA2t"
     ],
     "อักษรศาสตร์": [
-        "a2ksX5nsA2t",
-        "a2ksX5ra1sA2t"
+        "a2ksX5ra1sA2t",
+        "a2ksX5nsA2t"
     ],
     "ศาสตราจารย์": [
-        "sA2tsa1trA1cA1n",
-        "sA2sa1trA1cA1n"
+        "sA2sa1trA1cA1n",
+        "sA2tsa1trA1cA1n"
     ],
     "ศาสตราวุธ": [
         "sA2ttrA1wu4t"
     ],
     "ศาสนา": [
-        "sA2sa1nA5",
-        "sA2tsa1nA5"
+        "sA2tsa1nA5",
+        "sA2sa1nA5"
     ],
     "ศาสนาคริสต์": [
-        "sA2sa1nA5Kri4t",
-        "sA2tsa1nA5Kri4t"
+        "sA2tsa1nA5Kri4t",
+        "sA2sa1nA5Kri4t"
     ],
     "ศาสนาพราหมณ์": [
         "sA2sa1nA5PrA1m",
@@ -47908,15 +47908,15 @@ const WORD2IPA_TH =
         "sA2tsa1nA5i2sa1lA1m"
     ],
     "หมอสอนศาสนา": [
-        "mX5sX5nsA2tsa1nA5",
-        "mX5sX5nsA2sa1nA5"
+        "mX5sX5nsA2sa1nA5",
+        "mX5sX5nsA2tsa1nA5"
     ],
     "ศิริราช": [
         "si1ri2rA3t"
     ],
     "ศิลป": [
-        "si5nla1pa2",
-        "si5nla4pa1si5n"
+        "si5nla4pa1si5n",
+        "si5nla1pa2"
     ],
     "วาทศิลป": [
         "wA1Ta4si5n"
@@ -47940,7 +47940,7 @@ const WORD2IPA_TH =
         "si2t"
     ],
     "ศีรษะ": [
-        "sI5sa2"
+        "sI5sa2ʔ"
     ],
     "ศีล": [
         "sI5n"
@@ -48205,8 +48205,8 @@ const WORD2IPA_TH =
         "sa1du2dI1"
     ],
     "สตรี": [
-        "sa2ttrI1",
-        "sa2trI1"
+        "sa2trI1",
+        "sa2ttrI1"
     ],
     "โรงเรียนสตรี": [
         "rO1ŋri1a1nsa2trI1"
@@ -48627,8 +48627,8 @@ const WORD2IPA_TH =
         "sa1mA1Ci4k"
     ],
     "สมาชิกภาพ": [
-        "sa1mA1Ci4kka1PA3p",
-        "sa1mA1Ci4kPA3p"
+        "sa1mA1Ci4kPA3p",
+        "sa1mA1Ci4kka1PA3p"
     ],
     "สมาชิกสภาผู้แทนราษฎร": [
         "sa1mA1Ci4ksa1PA1PU3TY1nrA3tsa1dX1n"
@@ -48717,8 +48717,8 @@ const WORD2IPA_TH =
         "sa5nPA1kX1n"
     ],
     "สรรเสริญ": [
-        "sa5nsZ5n",
-        "sa5nra1sZ5n"
+        "sa5nra1sZ5n",
+        "sa5nsZ5n"
     ],
     "สรวง": [
         "su5a1ŋ"
@@ -48739,8 +48739,8 @@ const WORD2IPA_TH =
         "sA5ysɔ3y"
     ],
     "สระ": [
-        "sa1ra2",
-        "sa2"
+        "sa2ʔ",
+        "sa1ra2"
     ],
     "สระ -า": [
         "sa1ra2A1"
@@ -48966,8 +48966,8 @@ const WORD2IPA_TH =
         "sa1wA5mi4Pa4k"
     ],
     "สวิง": [
-        "sa1wi1ŋ",
-        "sa1wi5ŋ"
+        "sa1wi5ŋ",
+        "sa1wi1ŋ"
     ],
     "หมัดสวิง": [
         "ma2tsa1wi1ŋ"
@@ -49246,12 +49246,12 @@ const WORD2IPA_TH =
         "sa1e1w"
     ],
     "สัก": [
-        "sa2k",
-        "sa4k"
+        "sa4k",
+        "sa2k"
     ],
     "สักครั้ง": [
-        "sa2kKra4ŋ",
-        "sa4kKra4ŋ"
+        "sa4kKra4ŋ",
+        "sa2kKra4ŋ"
     ],
     "สักนิดเดียว": [
         "sa4kni4tdi1a1w"
@@ -49777,7 +49777,7 @@ const WORD2IPA_TH =
         "sA5ra1wa4t"
     ],
     "สาระ": [
-        "sA5ra4"
+        "sA5ra4ʔ"
     ],
     "สาระแน": [
         "sA5ra4nY1"
@@ -49943,7 +49943,7 @@ const WORD2IPA_TH =
         "sa5mA1ŋ"
     ],
     "สิ": [
-        "si2",
+        "si2ʔ",
         "si3"
     ],
     "สิง": [
@@ -50313,7 +50313,7 @@ const WORD2IPA_TH =
         "TI3ba1nCA1kA1nsU5ŋsu2t"
     ],
     "สูงอายุ": [
-        "sU5ŋA1yu4"
+        "sU5ŋA1yu4ʔ"
     ],
     "หัวสูง": [
         "hu5a1sU5ŋ"
@@ -50427,7 +50427,7 @@ const WORD2IPA_TH =
         "sE5PlE1"
     ],
     "เสมหะ": [
-        "sE5mha2"
+        "sE5mha2ʔ"
     ],
     "เสมอ": [
         "sa1mZ5"
@@ -50514,7 +50514,7 @@ const WORD2IPA_TH =
         "wa1nsa5w"
     ],
     "เสาะ": [
-        "sɔ2"
+        "sɔ2ʔ"
     ],
     "เสาะท้อง": [
         "sɔ2TX4ŋ"
@@ -51084,7 +51084,7 @@ const WORD2IPA_TH =
         "nA5"
     ],
     "หนาเตอะ": [
-        "nA5tə2"
+        "nA5tə2ʔ"
     ],
     "หน้าหนา": [
         "nA3nA5"
@@ -51186,8 +51186,8 @@ const WORD2IPA_TH =
         "nI2p"
     ],
     "หนึ่ง": [
-        "nʉ1ŋ",
-        "nʉ2ŋ"
+        "nʉ2ŋ",
+        "nʉ1ŋ"
     ],
     "เด็กหนึ่งคน": [
         "de2knʉ2ŋKo1n"
@@ -51527,8 +51527,8 @@ const WORD2IPA_TH =
         "yu2tyɔ2n"
     ],
     "หยอม": [
-        "yɔ5myɛ5m",
-        "yɔ5m"
+        "yɔ5m",
+        "yɔ5myɛ5m"
     ],
     "หย่อม": [
         "yɔ2m"
@@ -51672,8 +51672,8 @@ const WORD2IPA_TH =
         "rX5"
     ],
     "หรอก": [
-        "rX1krɔ2krɔ1k",
-        "rX2k"
+        "rX2k",
+        "rX1krɔ2krɔ1k"
     ],
     "ไม่ต้องหรอก": [
         "ma3ytɔ3ŋrɔ1k"
@@ -51719,18 +51719,18 @@ const WORD2IPA_TH =
     ],
     "หรือ": [
         "rW5",
-        "rʉ4"
+        "rʉ4ʔ"
     ],
     "ดูเอาทีหรือ": [
         "dU1a1wTI1rʉ4"
     ],
     "เป็นไปได้หรือนี่": [
-        "pe1npa1yda3yrʉ4nI3",
-        "pe1npa1yda3yrə4nI3"
+        "pe1npa1yda3yrə4nI3",
+        "pe1npa1yda3yrʉ4nI3"
     ],
     "หรือคะ": [
-        "rZ5Ka4",
-        "rʉ4Ka4"
+        "rʉ4Ka4",
+        "rZ5Ka4ʔ"
     ],
     "หรู": [
         "rU5"
@@ -51892,7 +51892,7 @@ const WORD2IPA_TH =
         "le2klX5m"
     ],
     "หละ": [
-        "la2"
+        "la2ʔ"
     ],
     "หลัก": [
         "la2k"
@@ -52021,8 +52021,8 @@ const WORD2IPA_TH =
         "lA5m"
     ],
     "ข้าวหลาม": [
-        "Ka3wlA5m",
-        "KA3wlA5m"
+        "KA3wlA5m",
+        "Ka3wlA5m"
     ],
     "หลาย": [
         "lA5y"
@@ -52178,8 +52178,8 @@ const WORD2IPA_TH =
         "wA2twa2n"
     ],
     "หวัว": [
-        "wu5a1",
-        "hu5a1"
+        "hu5a1",
+        "wu5a1"
     ],
     "หว้า": [
         "wA3"
@@ -52449,8 +52449,8 @@ const WORD2IPA_TH =
         "hu5a1hi5n"
     ],
     "หา": [
-        "!ha5",
-        "hA5"
+        "hA5",
+        "!ha5"
     ],
     "หาคู่": [
         "hA5KU3"
@@ -52849,10 +52849,10 @@ const WORD2IPA_TH =
         "ma5wa1wwA3"
     ],
     "เหมาะ": [
-        "mɔ2"
+        "mɔ2ʔ"
     ],
     "แหมะ": [
-        "mɔ2"
+        "mɔ2ʔ"
     ],
     "เหมาะแหมะ": [
         "mɔ2mɛ2"
@@ -52891,7 +52891,7 @@ const WORD2IPA_TH =
         "ya3w"
     ],
     "เหยาะ": [
-        "yɔ2"
+        "yɔ2ʔ"
     ],
     "เหยาะน้ำปลาหน่อยซิ": [
         "yɔ2na4mplA1nɔ2ysi4"
@@ -53125,7 +53125,7 @@ const WORD2IPA_TH =
         "ha2w"
     ],
     "เหาะ": [
-        "hɔ2"
+        "hɔ2ʔ"
     ],
     "เหิน": [
         "hZ5n"
@@ -53240,7 +53240,7 @@ const WORD2IPA_TH =
         "yɛ5m"
     ],
     "แหยะ": [
-        "yɛ2"
+        "yɛ2ʔ"
     ],
     "แหรม": [
         "rɛ5m"
@@ -53297,11 +53297,11 @@ const WORD2IPA_TH =
         "lY5mi1ndO1cI1n"
     ],
     "แหละ": [
-        "lɛ2"
+        "lɛ2ʔ"
     ],
     "เท่านั้นแหละ": [
-        "Ta3wna4nlɛ2",
-        "Ta3wna4nlɛ1"
+        "Ta3wna4nlɛ1",
+        "Ta3wna4nlɛ2"
     ],
     "ผมก็เหมือนกันแหละ": [
         "Po5mkɔ3mʉ5a1nka1nlɛ2"
@@ -53322,7 +53322,7 @@ const WORD2IPA_TH =
         "wɛ5w"
     ],
     "แหวะ": [
-        "wɛ2"
+        "wɛ2ʔ"
     ],
     "แหะๆ": [
         "hɛ2hɛ2"
@@ -53469,8 +53469,8 @@ const WORD2IPA_TH =
         "ha5y"
     ],
     "ไห้": [
-        "ha3y",
-        "hA3y"
+        "hA3y",
+        "ha3y"
     ],
     "ขี้ร้องไห้": [
         "KI3rX4ŋhA3y"
@@ -53816,8 +53816,8 @@ const WORD2IPA_TH =
         "a2pa2ka1ti2"
     ],
     "อบิสซิเนีย": [
-        "a2bi4si1ni1a1",
-        "a2bi1si1ni1a1"
+        "a2bi1si1ni1a1",
+        "a2bi4si1ni1a1"
     ],
     "อพยพ": [
         "o2pPa1yo4p"
@@ -53829,8 +53829,8 @@ const WORD2IPA_TH =
         "a1Pa1y"
     ],
     "อภัยโทษ": [
-        "a1Pa1yTO3t",
-        "a1Pa1yya1TO3t"
+        "a1Pa1yya1TO3t",
+        "a1Pa1yTO3t"
     ],
     "อภินันทนาการ": [
         "a2Pi4na1nTa1nA1kA1n"
@@ -53926,8 +53926,8 @@ const WORD2IPA_TH =
         "yA2kma3y"
     ],
     "อย่าง": [
-        "yA2ŋ",
-        "ya2ŋ"
+        "ya2ŋ",
+        "yA2ŋ"
     ],
     "อย่างกวนๆ": [
         "yA2ŋku1a1nku1a1n"
@@ -53948,8 +53948,8 @@ const WORD2IPA_TH =
         "yA2ŋka1nE1ŋ"
     ],
     "อย่างกับ": [
-        "ya1ŋka1",
-        "yA2ŋka1"
+        "yA2ŋka1",
+        "ya1ŋka1"
     ],
     "อย่างขวานผ่าซาก": [
         "yA2ŋKwA5nPA2sA3k"
@@ -54061,8 +54061,8 @@ const WORD2IPA_TH =
         "a1yu4tTa1yA1"
     ],
     "อยู่": [
-        "yU2",
-        "yU1"
+        "yU1",
+        "yU2"
     ],
     "ทำครัวอยู่": [
         "Ta1mKru1a1yU2"
@@ -54317,8 +54317,8 @@ const WORD2IPA_TH =
         "ɔ3nɛ3n"
     ],
     "ออฟฟิศ": [
-        "ɔ4ffi4sɔ4pfi4t",
-        "ɔ4pfi4s"
+        "ɔ4pfi4s",
+        "ɔ4ffi4sɔ4pfi4t"
     ],
     "ออม": [
         "X1m"
@@ -54351,8 +54351,8 @@ const WORD2IPA_TH =
         "ɔ3yi2ŋ"
     ],
     "ออสเตรเลีย": [
-        "X4strE1li1a1",
-        "ɔ4tsa1trE1li1a1"
+        "ɔ4tsa1trE1li1a1",
+        "X4strE1li1a1"
     ],
     "ออสเตรีย": [
         "X4stri1a1"
@@ -54825,7 +54825,7 @@ const WORD2IPA_TH =
         "A1CI1wa4sʉ2ksA5"
     ],
     "อาชีวะ": [
-        "A1CI1wa4"
+        "A1CI1wa4ʔ"
     ],
     "อาเซีย": [
         "A1si1a1"
@@ -54870,7 +54870,7 @@ const WORD2IPA_TH =
         "A1TX1n"
     ],
     "อาทิ": [
-        "A1Ti4"
+        "A1Ti4ʔ"
     ],
     "อาทิตย์": [
         "A1Ti4t"
@@ -54927,8 +54927,8 @@ const WORD2IPA_TH =
         "A1yni5a1m"
     ],
     "อ้าย": [
-        "a3y",
-        "A3y"
+        "A3y",
+        "a3y"
     ],
     "กับอ้าย": [
         "ka1a3y"
@@ -54949,7 +54949,7 @@ const WORD2IPA_TH =
         "u3yA3y"
     ],
     "อายุ": [
-        "A1yu4"
+        "A1yu4ʔ"
     ],
     "ช่วงอายุ": [
         "Cu3a1ŋA1yu4"
@@ -55240,8 +55240,8 @@ const WORD2IPA_TH =
         "i2tA1lI1"
     ],
     "อิตาเลียน": [
-        "i2ttA1li1a1n",
-        "i2tA1li1a1n"
+        "i2tA1li1a1n",
+        "i2ttA1li1a1n"
     ],
     "อิทธิ": [
         "i2tTi4"
@@ -55484,7 +55484,7 @@ const WORD2IPA_TH =
         "I1cU3"
     ],
     "อีแปะ": [
-        "I1pɛ2"
+        "I1pɛ2ʔ"
     ],
     "อียิปต์": [
         "I1yi2p"
@@ -55969,8 +55969,8 @@ const WORD2IPA_TH =
         "ə4y"
     ],
     "เอ๋ย": [
-        "Z4y!Z4y",
-        "Z5y"
+        "Z5y",
+        "Z4y!Z4y"
     ],
     "โธ่เอ๋ย": [
         "TO3!Z4y"
@@ -55994,8 +55994,8 @@ const WORD2IPA_TH =
         "yW1nTA4we1w"
     ],
     "เอเวอเรสต์": [
-        "E1wZ1re4s",
-        "E1wZ1rE4t"
+        "E1wZ1rE4t",
+        "E1wZ1re4s"
     ],
     "เอส": [
         "e4s"
@@ -56010,7 +56010,7 @@ const WORD2IPA_TH =
         "Z1"
     ],
     "เออซีวะ": [
-        "Z1sI1wa4"
+        "Z1sI1wa4ʔ"
     ],
     "เออน่า": [
         "Z1nA3"
@@ -56028,7 +56028,7 @@ const WORD2IPA_TH =
         "Z3hZ1"
     ],
     "เอะ": [
-        "e2"
+        "e2ʔ"
     ],
     "เอะอะ": [
         "e2a2"
@@ -56043,7 +56043,7 @@ const WORD2IPA_TH =
         "e2a2ma4TZ3ŋ"
     ],
     "เอ๊ะ": [
-        "!e4"
+        "!e4ʔ"
     ],
     "เอา": [
         "a1w"
@@ -56419,8 +56419,8 @@ const WORD2IPA_TH =
         "hX1la1ndA1"
     ],
     "ฮะ": [
-        "!ha4",
-        "ha4"
+        "!ha4ʔ",
+        "ha4ʔ"
     ],
     "ฮ่ะๆ": [
         "ha4ha4"
@@ -56457,8 +56457,8 @@ const WORD2IPA_TH =
         "hi1ndU1"
     ],
     "ฮึ": [
-        "!hʉ4",
-        "hʉ4"
+        "!hʉ4ʔ",
+        "hʉ4ʔ"
     ],
     "ฮึก": [
         "hZ5m"
@@ -56521,7 +56521,7 @@ const WORD2IPA_TH =
         "hY1m"
     ],
     "แฮะ": [
-        "hɛ4"
+        "hɛ4ʔ"
     ],
     "สวยจริงแฮะวันนี้": [
         "su5a1yci1ŋhɛ4wa1nnI4"
@@ -56546,8 +56546,8 @@ const WORD2IPA_TH =
         "O1KE1"
     ],
     "ใหญ่ๆ": [
-        "ya2y",
-        "ya2yya2y"
+        "ya2yya2y",
+        "ya2y"
     ],
     "ตีลังกา": [
         "tI1la1ŋkA1"
@@ -56562,17 +56562,17 @@ const WORD2IPA_TH =
         "nʉ1ŋ"
     ],
     "อะ": [
-        "a2"
+        "a2ʔ"
     ],
     "มะ": [
-        "ma4",
-        "ma4Pʉ2a1k"
+        "ma4Pʉ2a1k",
+        "ma4ʔ"
     ],
     "นางตาย": [
         "nA1ŋtA1y"
     ],
     "แมะ": [
-        "mɛ4"
+        "mɛ4ʔ"
     ],
     "เงี๊ย": [
         "ŋi4a1"
@@ -56635,7 +56635,7 @@ const WORD2IPA_TH =
         "kla1ykla1y"
     ],
     "ขะ": [
-        "Ka2"
+        "Ka2ʔ"
     ],
     "ขาดๆ": [
         "KA2tKA2t"
@@ -56677,10 +56677,10 @@ const WORD2IPA_TH =
         "ŋo1ŋŋo1ŋ"
     ],
     "ง่ะ": [
-        "ŋa2"
+        "ŋa2ʔ"
     ],
     "หงะ": [
-        "ŋa2"
+        "ŋa2ʔ"
     ],
     "เงี้ยอืม": [
         "ŋi4a1"
@@ -56776,17 +56776,17 @@ const WORD2IPA_TH =
         "tɛ4ttY5"
     ],
     "แต่ละแต่ละ": [
-        "tY2la4"
+        "tY2la4ʔ"
     ],
     "ถะ": [
-        "Ta2"
+        "Ta2ʔ"
     ],
     "เออะ": [
-        "Tə2",
-        "ə2"
+        "Tə2ʔ",
+        "ə2ʔ"
     ],
     "ทะ": [
-        "Ta4"
+        "Ta4ʔ"
     ],
     "ทับทับทับ": [
         "Ta4p"
@@ -56822,7 +56822,7 @@ const WORD2IPA_TH =
         "na2rʉ5"
     ],
     "หนะ": [
-        "na2"
+        "na2ʔ"
     ],
     "นังเหลือง": [
         "na1ŋlʉ5a1ŋ"
@@ -56837,7 +56837,7 @@ const WORD2IPA_TH =
         "ni3mni3m"
     ],
     "นี่แหละ": [
-        "nI3lɛ2"
+        "nI3lɛ2ʔ"
     ],
     "เนี้ย": [
         "ni4a1"
@@ -56873,13 +56873,13 @@ const WORD2IPA_TH =
         "bU2tbʉ3ŋ"
     ],
     "แบระ": [
-        "brɛ2"
+        "brɛ2ʔ"
     ],
     "ปรากฎ": [
         "prA1ko2t"
     ],
     "ป่ะ": [
-        "pa2"
+        "pa2ʔ"
     ],
     "ปั๊บ": [
         "pa4p"
@@ -56897,7 +56897,7 @@ const WORD2IPA_TH =
         "pʉ3ŋ"
     ],
     "ปุ๊": [
-        "pu4"
+        "pu4ʔ"
     ],
     "ปุ๊ป": [
         "pu4p"
@@ -56927,7 +56927,7 @@ const WORD2IPA_TH =
         "pe1npe1n"
     ],
     "เป๊าะ": [
-        "pɔ4"
+        "pɔ4ʔ"
     ],
     "ไปเดิน": [
         "pa1ydZ1n"
@@ -56942,7 +56942,7 @@ const WORD2IPA_TH =
         "Pla2kPla2kPla2kPʉ2a1k"
     ],
     "ผะ": [
-        "Pa2"
+        "Pa2ʔ"
     ],
     "พลอ": [
         "PlX1"
@@ -56996,16 +56996,16 @@ const WORD2IPA_TH =
         "rY1ŋwi2a1ŋ"
     ],
     "แระ": [
-        "lɛ4"
+        "lɛ4ʔ"
     ],
     "ว่ะ": [
-        "wa2"
+        "wa2ʔ"
     ],
     "หว่ะ": [
-        "wa2"
+        "wa2ʔ"
     ],
     "หวะ": [
-        "wa2"
+        "wa2ʔ"
     ],
     "ว่าที่": [
         "wA3"
@@ -57062,7 +57062,7 @@ const WORD2IPA_TH =
         "lʉ5a1ŋlʉ5a1ŋ"
     ],
     "เหอะ": [
-        "hə2"
+        "hə2ʔ"
     ],
     "แหง": [
         "ŋY5"
@@ -57086,13 +57086,13 @@ const WORD2IPA_TH =
         "X2"
     ],
     "อ่ะ": [
-        "a2"
+        "a2ʔ"
     ],
     "อึ": [
-        "ʉ2"
+        "ʉ2ʔ"
     ],
     "อิ": [
-        "i2"
+        "i2ʔ"
     ],
     "อึ้ม": [
         "ʉ3m"
@@ -57110,7 +57110,7 @@ const WORD2IPA_TH =
         "ə3y"
     ],
     "เอ่อะ": [
-        "ə2"
+        "ə2ʔ"
     ],
     "เอ่า": [
         "a2w"
@@ -57158,7 +57158,7 @@ const WORD2IPA_TH =
         "Ko1nKo1n"
     ],
     "บะ": [
-        "ba2"
+        "ba2ʔ"
     ],
     "สีน้ำ": [
         "sI5na4m"
@@ -57170,16 +57170,16 @@ const WORD2IPA_TH =
         "nʉ2ŋPa1n"
     ],
     "1000": [
-        "Pa1n",
-        "nʉ2ŋPa1n"
+        "nʉ2ŋPa1n",
+        "Pa1n"
     ],
     "149": [
         "nʉ2ŋrX4ysI2si2pka3w",
         "rX4ysI2si2pka3w"
     ],
     "15-25": [
-        "si2phA3Tʉ5ŋyI3si2phA3",
-        "si2phA3Tʉ5ŋyI3phA3"
+        "si2phA3Tʉ5ŋyI3phA3",
+        "si2phA3Tʉ5ŋyI3si2phA3"
     ],
     "15-30": [
         "si2phA3Tʉ5ŋsA5msi2p"
@@ -57198,8 +57198,8 @@ const WORD2IPA_TH =
         "yI3si2phA3Tʉ5ŋsA5msi2phA3"
     ],
     "3-4": [
-        "sA5mTʉ5ŋsI2",
-        "sA5msI2"
+        "sA5msI2",
+        "sA5mTʉ5ŋsI2"
     ],
     "350": [
         "sA5mrX4yhA3si2p"
@@ -57295,8 +57295,8 @@ const WORD2IPA_TH =
         "yI3si2p"
     ],
     "21": [
-        "yI3pʔe2t",
         "yI3si2pʔe2t",
+        "yI3pʔe2t",
         "yI3si2pnʉ2ŋ"
     ],
     "22": [
@@ -57324,48 +57324,48 @@ const WORD2IPA_TH =
         "yI3si2pce2t"
     ],
     "28": [
-        "yI3ppY2t",
-        "yI3si2ppY2t"
+        "yI3si2ppY2t",
+        "yI3ppY2t"
     ],
     "29": [
-        "yI3si2pkA3w",
-        "yI3pkA3w"
+        "yI3pkA3w",
+        "yI3si2pkA3w"
     ],
     "30": [
         "sA5msi2p"
     ],
     "31": [
+        "sA5mʔe2t",
         "sA5msi2pʔe2t",
-        "sA5msi2pnʉ2ŋ",
-        "sA5mʔe2t"
+        "sA5msi2pnʉ2ŋ"
     ],
     "32": [
-        "sA5msi2psX5ŋ",
-        "sA5msX5ŋ"
+        "sA5msX5ŋ",
+        "sA5msi2psX5ŋ"
     ],
     "33": [
-        "sA5msA5m",
-        "sA5msi2psA5m"
+        "sA5msi2psA5m",
+        "sA5msA5m"
     ],
     "34": [
         "sA5msI2",
         "sA5msi2psI2"
     ],
     "35": [
-        "sA5mhA3",
-        "sA5msi2phA3"
+        "sA5msi2phA3",
+        "sA5mhA3"
     ],
     "36": [
-        "sA5msi2pho2k",
-        "sA5mho2k"
+        "sA5mho2k",
+        "sA5msi2pho2k"
     ],
     "37": [
         "sA5mce2t",
         "sA5msi2pce2t"
     ],
     "38": [
-        "sA5mpY2t",
-        "sA5msi2ppY2t"
+        "sA5msi2ppY2t",
+        "sA5mpY2t"
     ],
     "39": [
         "sA5msi2pkA3w",
@@ -57375,8 +57375,8 @@ const WORD2IPA_TH =
         "sI2si2p"
     ],
     "41": [
-        "sI2si2pʔe2t",
         "sI2si2pnʉ2ŋ",
+        "sI2si2pʔe2t",
         "sI2ʔe2t"
     ],
     "42": [
@@ -57388,56 +57388,56 @@ const WORD2IPA_TH =
         "sI2sA5m"
     ],
     "44": [
-        "sI2si2psI2",
-        "sI2sI2"
+        "sI2sI2",
+        "sI2si2psI2"
     ],
     "45": [
-        "sI2hA3",
-        "sI2si2phA3"
+        "sI2si2phA3",
+        "sI2hA3"
     ],
     "46": [
         "sI2ho2k",
         "sI2si2pho2k"
     ],
     "47": [
-        "sI2ce2t",
-        "sI2si2pce2t"
+        "sI2si2pce2t",
+        "sI2ce2t"
     ],
     "48": [
         "sI2si2ppY2t",
         "sI2pY2t"
     ],
     "49": [
-        "sI2kA3w",
-        "sI2si2pkA3w"
+        "sI2si2pkA3w",
+        "sI2kA3w"
     ],
     "50": [
         "hA3si2p"
     ],
     "51": [
+        "hA3si2pʔe2t",
         "hA3ʔe2t",
-        "hA3si2pnʉ2ŋ",
-        "hA3si2pʔe2t"
+        "hA3si2pnʉ2ŋ"
     ],
     "52": [
-        "hA3sX5ŋ",
-        "hA3si2psX5ŋ"
+        "hA3si2psX5ŋ",
+        "hA3sX5ŋ"
     ],
     "53": [
-        "hA3sA5m",
-        "hA3si2psA5m"
+        "hA3si2psA5m",
+        "hA3sA5m"
     ],
     "54": [
-        "hA3sI2",
-        "hA3si2psI2"
+        "hA3si2psI2",
+        "hA3sI2"
     ],
     "55": [
-        "hA3hA3",
-        "hA3si2phA3"
+        "hA3si2phA3",
+        "hA3hA3"
     ],
     "56": [
-        "hA3si2pho2k",
-        "hA3ho2k"
+        "hA3ho2k",
+        "hA3si2pho2k"
     ],
     "57": [
         "hA3si2pce2t",
@@ -57448,28 +57448,28 @@ const WORD2IPA_TH =
         "hA3pY2t"
     ],
     "59": [
-        "hA3si2pkA3w",
-        "hA3kA3w"
+        "hA3kA3w",
+        "hA3si2pkA3w"
     ],
     "60": [
         "ho2ksi2p"
     ],
     "61": [
-        "ho2ksi2pʔe2t",
         "ho2kʔe2t",
-        "ho2ksi2pnʉ2ŋ"
+        "ho2ksi2pnʉ2ŋ",
+        "ho2ksi2pʔe2t"
     ],
     "62": [
-        "ho2ksX5ŋ",
-        "ho2ksi2psX5ŋ"
+        "ho2ksi2psX5ŋ",
+        "ho2ksX5ŋ"
     ],
     "63": [
         "ho2ksi2psA5m",
         "ho2ksA5m"
     ],
     "64": [
-        "ho2ksi2psI2",
-        "ho2ksI2"
+        "ho2ksI2",
+        "ho2ksi2psI2"
     ],
     "65": [
         "ho2ksi2phA3",
@@ -57484,36 +57484,36 @@ const WORD2IPA_TH =
         "ho2kce2t"
     ],
     "68": [
-        "ho2kpY2t",
-        "ho2ksi2ppY2t"
+        "ho2ksi2ppY2t",
+        "ho2kpY2t"
     ],
     "69": [
-        "ho2kkA3w",
-        "ho2ksi2pkA3w"
+        "ho2ksi2pkA3w",
+        "ho2kkA3w"
     ],
     "70": [
         "ce2tsi2p"
     ],
     "71": [
         "ce2tʔe2t",
-        "ce2tsi2pʔe2t",
-        "ce2tsi2pnʉ2ŋ"
+        "ce2tsi2pnʉ2ŋ",
+        "ce2tsi2pʔe2t"
     ],
     "72": [
-        "ce2tsX5ŋ",
-        "ce2tsi2psX5ŋ"
+        "ce2tsi2psX5ŋ",
+        "ce2tsX5ŋ"
     ],
     "73": [
         "ce2tsi2psA5m",
         "ce2tsA5m"
     ],
     "74": [
-        "ce2tsi2psI2",
-        "ce2tsI2"
+        "ce2tsI2",
+        "ce2tsi2psI2"
     ],
     "75": [
-        "ce2tsi2phA3",
-        "ce2tʰA3"
+        "ce2tʰA3",
+        "ce2tsi2phA3"
     ],
     "76": [
         "ce2tsi2pho2k",
@@ -57524,40 +57524,40 @@ const WORD2IPA_TH =
         "ce2tce2t"
     ],
     "78": [
-        "ce2tpY2t",
-        "ce2tsi2ppY2t"
+        "ce2tsi2ppY2t",
+        "ce2tpY2t"
     ],
     "79": [
-        "ce2tsi2pkA3w",
-        "ce2tkA3w"
+        "ce2tkA3w",
+        "ce2tsi2pkA3w"
     ],
     "80": [
         "pY2tsi2p"
     ],
     "81": [
-        "pY2tsi2pʔe2t",
         "pY2tʔe2t",
+        "pY2tsi2pʔe2t",
         "pY2tsi2pnʉ2ŋ"
     ],
     "82": [
-        "pY2tsX5ŋ",
-        "pY2tsi2psX5ŋ"
+        "pY2tsi2psX5ŋ",
+        "pY2tsX5ŋ"
     ],
     "83": [
-        "pY2tsA5m",
-        "pY2tsi2psA5m"
+        "pY2tsi2psA5m",
+        "pY2tsA5m"
     ],
     "84": [
-        "pY2tsi2psI2",
-        "pY2tsI2"
+        "pY2tsI2",
+        "pY2tsi2psI2"
     ],
     "85": [
-        "pY2tʰA3",
-        "pY2tsi2phA3"
+        "pY2tsi2phA3",
+        "pY2tʰA3"
     ],
     "86": [
-        "pY2tsi2pho2k",
-        "pY2tʰo2k"
+        "pY2tʰo2k",
+        "pY2tsi2pho2k"
     ],
     "87": [
         "pY2tce2t",
@@ -57568,32 +57568,32 @@ const WORD2IPA_TH =
         "pY2tpY2t"
     ],
     "89": [
-        "pY2tsi2pkA3w",
-        "pY2tkA3w"
+        "pY2tkA3w",
+        "pY2tsi2pkA3w"
     ],
     "90": [
         "kA3wsi2p"
     ],
     "91": [
-        "kA3wʔe2t",
         "kA3wsi2pnʉ2ŋ",
-        "kA3wsi2pʔe2t"
+        "kA3wsi2pʔe2t",
+        "kA3wʔe2t"
     ],
     "92": [
         "kA3wsX5ŋ",
         "kA3wsi2psX5ŋ"
     ],
     "93": [
-        "kA3wsA5m",
-        "kA3wsi2psA5m"
+        "kA3wsi2psA5m",
+        "kA3wsA5m"
     ],
     "94": [
         "kA3wsI2",
         "kA3wsi2psI2"
     ],
     "95": [
-        "kA3wsi2phA3",
-        "kA3whA3"
+        "kA3whA3",
+        "kA3wsi2phA3"
     ],
     "96": [
         "kA3wsi2pho2k",
@@ -57604,25 +57604,25 @@ const WORD2IPA_TH =
         "kA3wsi2pce2t"
     ],
     "98": [
-        "kA3wsi2ppY2t",
-        "kA3wpY2t"
+        "kA3wpY2t",
+        "kA3wsi2ppY2t"
     ],
     "99": [
-        "kA3wsi2pkA3w",
-        "kA3wkA3w"
+        "kA3wkA3w",
+        "kA3wsi2pkA3w"
     ],
     "100": [
         "nʉ2ŋrX4y",
         "rX4y"
     ],
     "101": [
-        "rX4yʔe2t",
+        "rX4ynʉ2ŋ",
         "nʉ2ŋrX4ynʉ2ŋ",
-        "rX4ynʉ2ŋ"
+        "rX4yʔe2t"
     ],
     "102": [
-        "nʉ2ŋrX4ysX5ŋ",
-        "rX4ysX5ŋ"
+        "rX4ysX5ŋ",
+        "nʉ2ŋrX4ysX5ŋ"
     ],
     "103": [
         "nʉ2ŋrX4ysA5m",
@@ -57637,34 +57637,34 @@ const WORD2IPA_TH =
         "rX4yhA3"
     ],
     "106": [
-        "rX4yho2k",
-        "nʉ2ŋrX4yho2k"
+        "nʉ2ŋrX4yho2k",
+        "rX4yho2k"
     ],
     "107": [
         "rX4yce2t",
         "nʉ2ŋrX4yce2t"
     ],
     "108": [
-        "nʉ2ŋrX4ypY2t",
-        "rX4ypY2t"
+        "rX4ypY2t",
+        "nʉ2ŋrX4ypY2t"
     ],
     "109": [
-        "rX4ykA3w",
-        "nʉ2ŋrX4ykA3w"
+        "nʉ2ŋrX4ykA3w",
+        "rX4ykA3w"
     ],
     "110": [
         "nʉ2ŋrX4ysi2p",
         "rX4ysi2p"
     ],
     "111": [
-        "rX4ysi2pnʉ2ŋ",
         "nʉ2ŋrX4ysi2pnʉ2ŋ",
+        "nʉ2ŋrX4ysi2pʔe2t",
         "rX4ysi2pʔe2t",
-        "nʉ2ŋrX4ysi2pʔe2t"
+        "rX4ysi2pnʉ2ŋ"
     ],
     "112": [
-        "nʉ2ŋrX4ysi2psX5ŋ",
-        "rX4ysi2psX5ŋ"
+        "rX4ysi2psX5ŋ",
+        "nʉ2ŋrX4ysi2psX5ŋ"
     ],
     "113": [
         "rX4ysi2psA5m",
@@ -57679,20 +57679,20 @@ const WORD2IPA_TH =
         "nʉ2ŋrX4ysi2phA3"
     ],
     "116": [
-        "nʉ2ŋrX4ysi2pho2k",
-        "rX4ysi2pho2k"
+        "rX4ysi2pho2k",
+        "nʉ2ŋrX4ysi2pho2k"
     ],
     "117": [
         "nʉ2ŋrX4ysi2pce2t",
         "rX4ysi2pce2t"
     ],
     "118": [
-        "nʉ2ŋrX4ysi2ppY2t",
-        "rX4ysi2ppY2t"
+        "rX4ysi2ppY2t",
+        "nʉ2ŋrX4ysi2ppY2t"
     ],
     "119": [
-        "nʉ2ŋrX4ysi2pkA3w",
-        "rX4ysi2pkA3w"
+        "rX4ysi2pkA3w",
+        "nʉ2ŋrX4ysi2pkA3w"
     ],
     "120": [
         "nʉ2ŋrX4yyI3si2p",
@@ -57730,8 +57730,8 @@ const WORD2IPA_TH =
         "kru1ŋTE3p"
     ],
     "กรุงเทพมหานคร": [
-        "kru1ŋTE3pma4hA5na4KX1n",
-        "kru1ŋTE3pma1hA5na4KX1n"
+        "kru1ŋTE3pma1hA5na4KX1n",
+        "kru1ŋTE3pma4hA5na4KX1n"
     ],
     "กลั่นแกล้ง": [
         "kla2nklY3ŋ"
@@ -57797,8 +57797,8 @@ const WORD2IPA_TH =
         "kI1wI3"
     ],
     "กุลวดี": [
-        "ku1nwa4dI1",
         "ku1nla1wa1dI1",
+        "ku1nwa4dI1",
         "ku1nwa1dI1"
     ],
     "กู้ยืม": [
@@ -57808,8 +57808,8 @@ const WORD2IPA_TH =
         "kA3mpU1"
     ],
     "ก๊าซ": [
-        "kA4t",
-        "kA4s"
+        "kA4s",
+        "kA4t"
     ],
     "ก๋วยเตี๋ยว": [
         "ku5a1yti5a1w",
@@ -57831,8 +57831,8 @@ const WORD2IPA_TH =
         "KX3mU1n"
     ],
     "ข้อๆ": [
-        "KX3KX3",
-        "Kɔ3KX3"
+        "Kɔ3KX3",
+        "KX3KX3"
     ],
     "คณานับ": [
         "Ka1nA1na4p"
@@ -57844,10 +57844,10 @@ const WORD2IPA_TH =
         "Ka1nlX1ŋ"
     ],
     "คริสต์ศตวรรษ": [
-        "Kri4tsa2tta2wa4t",
-        "Kri4tsa2ta2wa4t",
         "Kri4tta1sa2ta2wa4t",
-        "Kri4tta1sa2tta2wa4t"
+        "Kri4tta1sa2tta2wa4t",
+        "Kri4tsa2ta2wa4t",
+        "Kri4tsa2tta2wa4t"
     ],
     "ครุภัณฑ์": [
         "Ka4ru4Pa1n",
@@ -57897,8 +57897,8 @@ const WORD2IPA_TH =
         "KA1nTI1"
     ],
     "คายๆ": [
-        "KA1yKA1y",
-        "Ka1yKA1y"
+        "Ka1yKA1y",
+        "KA1yKA1y"
     ],
     "คาราโอเกะ": [
         "KA1rA1ʔO1ke2ʔ"
@@ -58054,8 +58054,8 @@ const WORD2IPA_TH =
         "da1ŋda1ŋ"
     ],
     "ดัชท์": [
-        "da4tC",
-        "da4t"
+        "da4t",
+        "da4tC"
     ],
     "ดาวน์โหลด": [
         "dA1wlO2t"
@@ -58082,8 +58082,8 @@ const WORD2IPA_TH =
         "dI1sA1y"
     ],
     "ดีๆ": [
-        "dI1dI1",
-        "di1dI1"
+        "di1dI1",
+        "dI1dI1"
     ],
     "ดุสิต": [
         "du1si2t",
@@ -58106,8 +58106,8 @@ const WORD2IPA_TH =
         "tX2ptO3"
     ],
     "ตะวันออกเฉียงเหนือ": [
-        "ta2wa1nʔX2kCi5a1ŋnʉ5a1",
-        "ta1wa1nʔX2kCi5a1ŋnʉ5a1"
+        "ta1wa1nʔX2kCi5a1ŋnʉ5a1",
+        "ta2wa1nʔX2kCi5a1ŋnʉ5a1"
     ],
     "ตะเพียน": [
         "ta1Pi1a1n"
@@ -58228,10 +58228,10 @@ const WORD2IPA_TH =
         "Tʉ1m"
     ],
     "ทุพโภชนาการ": [
-        "Tu4pPa4PO3tCa1nA1kA1n",
         "Tu4pPO1Ca1nA1kA1n",
         "Tu4pPa4PO1Ca1nA1kA1n",
-        "Tu4pPO3tCa1nA1kA1n"
+        "Tu4pPO3tCa1nA1kA1n",
+        "Tu4pPa4PO3tCa1nA1kA1n"
     ],
     "ท้าว": [
         "TA4w"
@@ -58240,8 +58240,8 @@ const WORD2IPA_TH =
         "TX1ra1nI1so5ŋ"
     ],
     "ธรรมสังเวช": [
-        "Ta1msa5ŋwE3t",
-        "Ta1mma4sa5ŋwE3t"
+        "Ta1mma4sa5ŋwE3t",
+        "Ta1msa5ŋwE3t"
     ],
     "ธรรมะ": [
         "Ta1mma4ʔ"
@@ -58250,8 +58250,8 @@ const WORD2IPA_TH =
         "Ta4t"
     ],
     "ธัญพืช": [
-        "Ta1nya4PW3t",
-        "Ta1nya1PW3t"
+        "Ta1nya1PW3t",
+        "Ta1nya4PW3t"
     ],
     "ธันย์": [
         "Ta1n"
@@ -58327,8 +58327,8 @@ const WORD2IPA_TH =
         "ni1wsI1lY1n"
     ],
     "นิวยอร์ก": [
-        "ni1wyX2k",
-        "ni1wyX4k"
+        "ni1wyX4k",
+        "ni1wyX2k"
     ],
     "นิเวศ": [
         "ni4wE3t"
@@ -58349,8 +58349,8 @@ const WORD2IPA_TH =
         "nɔ4t"
     ],
     "น้อยๆ": [
-        "nX4ynX4y",
-        "nɔ4ynX4y"
+        "nɔ4ynX4y",
+        "nX4ynX4y"
     ],
     "น้ำประสานทอง": [
         "nA4mpra1sA5nTX1ŋ"
@@ -58424,19 +58424,19 @@ const WORD2IPA_TH =
     "ปฏิจจสมุปบาท": [
         "pa1ti2tca2sa1mu2pa1bA2t",
         "pa2ti2tca2sa1mu2pa1bA2t",
-        "pa2ti2ca2sa1mu2pa1bA2t",
-        "pa1ti2ca2sa1mu2pa1bA2t"
+        "pa1ti2ca2sa1mu2pa1bA2t",
+        "pa2ti2ca2sa1mu2pa1bA2t"
     ],
     "ปฐมครู": [
-        "pa1To5mKrU1",
-        "pa1To5mma1KrU1"
+        "pa1To5mma1KrU1",
+        "pa1To5mKrU1"
     ],
     "ปณิศ": [
         "pa1ni4t"
     ],
     "ประกาศิต": [
-        "pra1kA1si2t",
-        "pra2kA1si2t"
+        "pra2kA1si2t",
+        "pra1kA1si2t"
     ],
     "ประชา": [
         "pra1CA1",
@@ -58446,24 +58446,24 @@ const WORD2IPA_TH =
         "pra1nI1pra1nX1m"
     ],
     "ประพจน์": [
-        "pra1Po4t",
-        "pra2Po4t"
+        "pra2Po4t",
+        "pra1Po4t"
     ],
     "ประภา": [
-        "pra1PA1",
-        "pra2PA1"
+        "pra2PA1",
+        "pra1PA1"
     ],
     "ประยงค์": [
         "pra2yo1ŋ",
         "pra1yo1ŋ"
     ],
     "ประสบ": [
-        "pra1so2p",
-        "pra2so2p"
+        "pra2so2p",
+        "pra1so2p"
     ],
     "ประสบการณ์": [
-        "pra1so2pkA1n",
-        "pra2so2pkA1n"
+        "pra2so2pkA1n",
+        "pra1so2pkA1n"
     ],
     "ปริภูมิ": [
         "pa2ri4PU1m",
@@ -58482,8 +58482,8 @@ const WORD2IPA_TH =
         "pA1rI3t"
     ],
     "ปิโตรเลียม": [
-        "pi2trO1li3a1m",
-        "pi2trO1li1a1m"
+        "pi2trO1li1a1m",
+        "pi2trO1li3a1m"
     ],
     "ปุ่มป่ำ": [
         "pu2mpa2m"
@@ -58523,8 +58523,8 @@ const WORD2IPA_TH =
         "PW2t"
     ],
     "ผู้บริโภค": [
-        "PU3bɔ1ri1PO3k",
-        "PU3ba1ri1PO3k"
+        "PU3ba1ri1PO3k",
+        "PU3bɔ1ri1PO3k"
     ],
     "ผู้ประกอบการ": [
         "PU3pra1kX2pkA1n"
@@ -58570,8 +58570,8 @@ const WORD2IPA_TH =
         "Pra4Pu4tTa1ʔo1ŋ"
     ],
     "พระยาพหลฯ": [
-        "Pra4yA1Pa1ho5n",
-        "Pra4yA1Pa4ho5n"
+        "Pra4yA1Pa4ho5n",
+        "Pra4yA1Pa1ho5n"
     ],
     "พระราม": [
         "Pra4rA1m"
@@ -58657,8 +58657,8 @@ const WORD2IPA_TH =
         "Pi1nTu4ʔ"
     ],
     "พิพิธภัณฑสถาน": [
-        "Pi4Pi4Ta1Pa1nTa4sa1TA5n",
-        "Pi4Pi4tTa1Pa1nTa4sa1TA5n"
+        "Pi4Pi4tTa1Pa1nTa4sa1TA5n",
+        "Pi4Pi4Ta1Pa1nTa4sa1TA5n"
     ],
     "พิมรัก": [
         "Pi1mra4k"
@@ -58683,8 +58683,8 @@ const WORD2IPA_TH =
         "Pu4tTa1Po4t"
     ],
     "พูๆ": [
-        "Pu1PU1",
-        "PU1PU1"
+        "PU1PU1",
+        "Pu1PU1"
     ],
     "พ่อขุน": [
         "PX3Ku5n"
@@ -58700,8 +58700,8 @@ const WORD2IPA_TH =
         "fX4tfX1ra4t"
     ],
     "ฟังไจ": [
-        "fa1ŋca1y",
-        "fa1ŋcA1y"
+        "fa1ŋcA1y",
+        "fa1ŋca1y"
     ],
     "ฟาเรนไฮต์": [
         "fA1re1nhA1y"
@@ -58728,8 +58728,8 @@ const WORD2IPA_TH =
         "PU1mpa1nyA1"
     ],
     "ภูมิอากาศ": [
-        "PU1mʔA1kA2t",
-        "PU1mi4ʔA1kA2t"
+        "PU1mi4ʔA1kA2t",
+        "PU1mʔA1kA2t"
     ],
     "มกุฎราชกุมาร": [
         "ma1ku2trA3tCa1ku2mA1n",
@@ -58762,8 +58762,8 @@ const WORD2IPA_TH =
         "mu1a1yTa1y"
     ],
     "มหา": [
-        "ma4hA5",
-        "ma1hA5"
+        "ma1hA5",
+        "ma4hA5"
     ],
     "มอนโร": [
         "mɔ1nrO1"
@@ -58772,8 +58772,8 @@ const WORD2IPA_TH =
         "mX1tZ1sa1y"
     ],
     "มะละกา": [
-        "ma1la4kA1",
         "ma4la4kA1",
+        "ma1la4kA1",
         "ma1la1kA1"
     ],
     "มะเหมี่ยว": [
@@ -58799,8 +58799,8 @@ const WORD2IPA_TH =
         "mA3ttra1kA1n"
     ],
     "มาริลีน": [
-        "mA1ri1lI1n",
-        "mA1ri1li1n"
+        "mA1ri1li1n",
+        "mA1ri1lI1n"
     ],
     "มาร์ค": [
         "mA4k"
@@ -58815,8 +58815,8 @@ const WORD2IPA_TH =
         "mi4ʔ"
     ],
     "มิคสัญญี": [
-        "mi4kKa4sa5nyI1",
-        "mi4kKa1sa5nyI1"
+        "mi4kKa1sa5nyI1",
+        "mi4kKa4sa5nyI1"
     ],
     "มิติ": [
         "mi4ti2ʔ"
@@ -58828,8 +58828,8 @@ const WORD2IPA_TH =
         "mi1nli1kra1m"
     ],
     "มิโซะ": [
-        "mi4so4ʔ",
-        "mi4so2ʔ"
+        "mi4so2ʔ",
+        "mi4so4ʔ"
     ],
     "มีนบุรี": [
         "mI1nbu1rI1"
@@ -58909,8 +58909,8 @@ const WORD2IPA_TH =
         "ro4tsu2Ko1n"
     ],
     "รหัส": [
-        "ra1ha2t",
-        "ra4ha2t"
+        "ra4ha2t",
+        "ra1ha2t"
     ],
     "ระนาบ": [
         "ra1nA3p"
@@ -58934,13 +58934,13 @@ const WORD2IPA_TH =
         "rA3ksa2p"
     ],
     "ราช": [
-        "rA3tCa4",
-        "rA3t",
-        "rA3tCa1"
+        "rA3tCa1",
+        "rA3tCa4ʔ",
+        "rA3t"
     ],
     "ราชกิจจานุเบกษา": [
-        "rA3tCa1ki2tcA1nu4bE2ksA5",
-        "rA3tCa4ki2tcA1nu4bE2ksA5"
+        "rA3tCa4ki2tcA1nu4bE2ksA5",
+        "rA3tCa1ki2tcA1nu4bE2ksA5"
     ],
     "ราชย์": [
         "rA3t"
@@ -58970,12 +58970,12 @@ const WORD2IPA_TH =
         "ru3a1mPE3t"
     ],
     "ร้อนๆ": [
-        "rɔ4nrX4n",
-        "rX4nrX4n"
+        "rX4nrX4n",
+        "rɔ4nrX4n"
     ],
     "ร้านๆ": [
-        "rA4nrA4n",
-        "ra4nrA4n"
+        "ra4nrA4n",
+        "rA4nrA4n"
     ],
     "ลงตัว": [
         "lo1ŋtu1a1"
@@ -59017,8 +59017,8 @@ const WORD2IPA_TH =
         "lA1te3ʔ"
     ],
     "ลิฟต์": [
-        "li4p",
-        "li4f"
+        "li4f",
+        "li4p"
     ],
     "ลิ้ว": [
         "li4w"
@@ -59027,8 +59027,8 @@ const WORD2IPA_TH =
         "lI1"
     ],
     "ลีก": [
-        "lI4k",
-        "lI2k"
+        "lI2k",
+        "lI4k"
     ],
     "ลี้ภัย": [
         "lI4Pa1y"
@@ -59043,8 +59043,8 @@ const WORD2IPA_TH =
         "lU3kPa1so5m"
     ],
     "ลูกๆ": [
-        "lu3klU3k",
-        "lU3klU3k"
+        "lU3klU3k",
+        "lu3klU3k"
     ],
     "ล็อก": [
         "lɔ4k"
@@ -59073,8 +59073,8 @@ const WORD2IPA_TH =
         "wa4Ci4ra4yA1nna4wi4sE2t"
     ],
     "วนอุทยาน": [
-        "wa4na4ʔu2tTa1yA1n",
-        "wa1na4ʔu2tTa1yA1n"
+        "wa1na4ʔu2tTa1yA1n",
+        "wa4na4ʔu2tTa1yA1n"
     ],
     "วนา": [
         "wa1nA1",
@@ -59123,16 +59123,16 @@ const WORD2IPA_TH =
         "wi4mA1dA1"
     ],
     "วิศวะ": [
-        "wi4tsa1wA1́ʔ",
-        "wi4twA1́ʔ"
+        "wi4twA1́ʔ",
+        "wi4tsa1wA1́ʔ"
     ],
     "วิเอง": [
         "wi4ʔE1ŋ"
     ],
     "วีดีทัศน์": [
+        "wI1di1Ta4t",
         "wI1dI1Ta4t",
         "wi1di1Ta4t",
-        "wI1di1Ta4t",
         "wi1dI1Ta4t"
     ],
     "วีรพร": [
@@ -59155,8 +59155,8 @@ const WORD2IPA_TH =
         "sI5sa1kE2t"
     ],
     "ศักดินา": [
-        "sa2kdi2nA1",
-        "sa2kdi1nA1"
+        "sa2kdi1nA1",
+        "sa2kdi2nA1"
     ],
     "ศักดิ์ศรี": [
         "sa2ksI5"
@@ -59190,8 +59190,8 @@ const WORD2IPA_TH =
         "sa1pX1"
     ],
     "สมดุล": [
-        "so5mdu1n",
-        "sa1ma1du1n"
+        "sa1ma1du1n",
+        "so5mdu1n"
     ],
     "สมาส": [
         "sa1mA2t"
@@ -59275,8 +59275,8 @@ const WORD2IPA_TH =
         "sA5ra1so5nTE3t"
     ],
     "สาวๆ": [
-        "sa5wsA5w",
-        "sA5wsA5w"
+        "sA5wsA5w",
+        "sa5wsA5w"
     ],
     "สำคัญๆ": [
         "sa5mKa1nsa5mKa1n"
@@ -59439,8 +59439,8 @@ const WORD2IPA_TH =
         "mX3kY1ŋ"
     ],
     "หยาบๆ": [
-        "yA2pyA2p",
-        "ya2pyA2p"
+        "ya2pyA2p",
+        "yA2pyA2p"
     ],
     "หริ่ง": [
         "ri2ŋ"
@@ -59476,8 +59476,8 @@ const WORD2IPA_TH =
         "hX2pra1Cu1m"
     ],
     "หิมพานต์": [
-        "hi5mma4PA1n",
-        "hi5mma1PA1n"
+        "hi5mma1PA1n",
+        "hi5mma4PA1n"
     ],
     "หุ่นยนต์": [
         "hu2nyo1n"
@@ -59495,8 +59495,8 @@ const WORD2IPA_TH =
         "ʔa2nu4ra4k"
     ],
     "อนุสัญญาฯ": [
-        "ʔa2nu4sa5nyA1",
-        "ʔa1nu4sa5nyA1"
+        "ʔa1nu4sa5nyA1",
+        "ʔa2nu4sa5nyA1"
     ],
     "อยู่ๆ": [
         "yU2yU2"
@@ -59558,8 +59558,8 @@ const WORD2IPA_TH =
         "ʔA2tsa1wa4ʔ"
     ],
     "อาเซียน": [
-        "ʔA1si3a1n",
-        "ʔA1si1a1n"
+        "ʔA1si1a1n",
+        "ʔA1si3a1n"
     ],
     "อาเพศ": [
         "ʔA1PE3t"
@@ -59610,8 +59610,8 @@ const WORD2IPA_TH =
         "ʔu5mʔi5m"
     ],
     "อเล็กซานเดอร์": [
-        "ʔa1le4ksA1ndZ3",
-        "ʔa1le4ksa1ndZ3"
+        "ʔa1le4ksa1ndZ3",
+        "ʔa1le4ksA1ndZ3"
     ],
     "ฮกเกี้ยน": [
         "ho4kki3a1n"
@@ -59709,8 +59709,8 @@ const WORD2IPA_TH =
         "se1w"
     ],
     "เซลีเนียม": [
-        "sE1li1ni3a1m",
-        "sE1lI1ni3a1m"
+        "sE1lI1ni3a1m",
+        "sE1li1ni3a1m"
     ],
     "เซลเซียส": [
         "se1wsi3a1t"
@@ -59755,8 +59755,8 @@ const WORD2IPA_TH =
         "TE1PI1"
     ],
     "เทฟลอน": [
-        "Te4flɔ3n",
-        "Te4plɔ3n"
+        "Te4plɔ3n",
+        "Te4flɔ3n"
     ],
     "เทศกาล": [
         "TE3tsa1kA1n"
@@ -59975,8 +59975,8 @@ const WORD2IPA_TH =
         "KY1"
     ],
     "แคนาดา": [
-        "KY1na1dA1",
-        "Kɛ1nna1dA1"
+        "Kɛ1nna1dA1",
+        "KY1na1dA1"
     ],
     "แคลอรี": [
         "KY1lX1rI3"
@@ -59985,8 +59985,8 @@ const WORD2IPA_TH =
         "KY1li4fX1ni1a1"
     ],
     "แคลเซียม": [
-        "Kɛ1wsi3a1m",
-        "Kɛ1lsi3a1m"
+        "Kɛ1lsi3a1m",
+        "Kɛ1wsi3a1m"
     ],
     "แจน": [
         "cY1n"
@@ -60029,8 +60029,8 @@ const WORD2IPA_TH =
         "nɛ4nY1w"
     ],
     "แน่ๆ": [
-        "nɛ3nY3",
-        "nY3nY3"
+        "nY3nY3",
+        "nɛ3nY3"
     ],
     "แน่‍ใจ": [
         "nY3ca1y"
@@ -60072,8 +60072,8 @@ const WORD2IPA_TH =
         "mY4knI1si3a1m"
     ],
     "แมงกานีส": [
-        "mɛ1ŋkA1nI3s",
-        "mɛ1ŋkA1nI3t"
+        "mɛ1ŋkA1nI3t",
+        "mɛ1ŋkA1nI3s"
     ],
     "แมนดี้": [
         "mY1ndI3"
@@ -60113,12 +60113,12 @@ const WORD2IPA_TH =
         "nY5m"
     ],
     "แห้งๆ": [
-        "hY3ŋhY3ŋ",
-        "hɛ3ŋhY3ŋ"
+        "hɛ3ŋhY3ŋ",
+        "hY3ŋhY3ŋ"
     ],
     "โกลเด้น": [
-        "kO1lde3n",
-        "kO1de3n"
+        "kO1de3n",
+        "kO1lde3n"
     ],
     "โขกสับ": [
         "KO2ksa2p"
@@ -60192,8 +60192,8 @@ const WORD2IPA_TH =
         "PO3kKa1Pa1n"
     ],
     "โภชนาการ": [
-        "PO1Ca1nA1kA1n",
-        "PO3tCa1nA1kA1n"
+        "PO3tCa1nA1kA1n",
+        "PO1Ca1nA1kA1n"
     ],
     "โมก": [
         "mO3k"
@@ -60266,8 +60266,8 @@ const WORD2IPA_TH =
         "Ta1yrX1y"
     ],
     "ไนโตรเจน": [
-        "na1ytrO1cE1n",
-        "na1ytrO1ce3n"
+        "na1ytrO1ce3n",
+        "na1ytrO1cE1n"
     ],
     "ไบโอ": [
         "ba1yʔO1"
@@ -60342,10 +60342,10 @@ const IPA2WORD_TH =
     "bA3nmʉ1a1ŋda1ykɔ3tA1m": [
         "บ้านเมืองใดก็ตาม"
     ],
-    "yA2ŋra1ykɔ3tA1m": [
+    "ya1ŋŋa1ykɔ3tA1m": [
         "อย่างไรก็ตาม"
     ],
-    "ya1ŋŋa1ykɔ3tA1m": [
+    "yA2ŋra1ykɔ3tA1m": [
         "อย่างไรก็ตาม"
     ],
     "kɔ3tA1mtY2": [
@@ -60566,16 +60566,16 @@ const IPA2WORD_TH =
     "na1yka1ra1nI1Ce3nna4n": [
         "ในกรณีเช่นนั้น"
     ],
-    "ka1ra1nI1Pi4PA3t": [
-        "กรณีพิพาท"
-    ],
     "kɔ1ra1nI1Pi4PA3t": [
         "กรณีพิพาท"
     ],
-    "Pa1ntha4ka1ra1nI1": [
-        "พันธกรณี"
+    "ka1ra1nI1Pi4PA3t": [
+        "กรณีพิพาท"
     ],
     "Pa1nTa4kɔ1ra1nI1": [
+        "พันธกรณี"
+    ],
+    "Pa1ntha4ka1ra1nI1": [
         "พันธกรณี"
     ],
     "wo1ŋkA1nsa5nTa4tka1ra1nI1": [
@@ -60768,7 +60768,7 @@ const IPA2WORD_TH =
     "krɔ2y": [
         "กร่อย"
     ],
-    "kra2": [
+    "kra2ʔ": [
         "กระ"
     ],
     "to2kkra2": [
@@ -61844,16 +61844,16 @@ const IPA2WORD_TH =
     "kri2m": [
         "กริ่ม"
     ],
-    "kri2yA1": [
-        "กริยา"
-    ],
     "ka2ri1yA1": [
         "กริยา"
     ],
-    "ka2ri1yA1wi3sE2t": [
-        "กริยาวิเศษณ์"
+    "kri2yA1": [
+        "กริยา"
     ],
     "ka2ri1yA1wi4sE2t": [
+        "กริยาวิเศษณ์"
+    ],
+    "ka2ri1yA1wi3sE2t": [
         "กริยาวิเศษณ์"
     ],
     "kri3w": [
@@ -61872,7 +61872,7 @@ const IPA2WORD_TH =
     "krI4t": [
         "กรี๊ด"
     ],
-    "kru2": [
+    "kru2ʔ": [
         "กรุ"
     ],
     "kru1ŋ": [
@@ -62790,7 +62790,7 @@ const IPA2WORD_TH =
     "ki1nKA3wkX2nsi3": [
         "กินข้าวก่อนซิ"
     ],
-    "KX5yW1mkX2nna4": [
+    "KX5yW1mkX2nna4ʔ": [
         "ขอยืมก่อนนะ"
     ],
     "prY1ŋfa1nkX2nKa3wnX1n": [
@@ -62917,13 +62917,13 @@ const IPA2WORD_TH =
     "yO1nhu5a1yO1nkɔ3y": [
         "โยนหัวโยนก้อย"
     ],
-    "ka2": [
-        "กะ"
-    ],
     "ka1": [
         "กะ",
         "กะ-",
         "กับ"
+    ],
+    "ka2ʔ": [
+        "กะ"
     ],
     "ka2kA1n": [
         "กะการ"
@@ -63234,10 +63234,10 @@ const IPA2WORD_TH =
     "u2a1tlU3kmY1wka1nA4": [
         "อวดลูกแมวกับน้า"
     ],
-    "ka1pKA3w": [
+    "ka1KA3w": [
         "กับข้าว"
     ],
-    "ka1KA3w": [
+    "ka1pKA3w": [
         "กับข้าว"
     ],
     "ka2pTa4ŋ": [
@@ -63669,10 +63669,10 @@ const IPA2WORD_TH =
     "KrO1ŋkA1n": [
         "โครงการ"
     ],
-    "KO3sa1nA1kA1n": [
+    "KO3tsa1nA1kA1n": [
         "โฆษณาการ"
     ],
-    "KO3tsa1nA1kA1n": [
+    "KO3sa1nA1kA1n": [
         "โฆษณาการ"
     ],
     "ŋA1nkA1n": [
@@ -64445,7 +64445,7 @@ const IPA2WORD_TH =
     "kʉ2ŋrA3tCa1kA1n": [
         "กึ่งราชการ"
     ],
-    "ku2": [
+    "ku2ʔ": [
         "กุ"
     ],
     "ku4kku4k": [
@@ -64725,7 +64725,7 @@ const IPA2WORD_TH =
     "kre2t": [
         "เกร็ด"
     ],
-    "krɔ2": [
+    "krɔ2ʔ": [
         "เกราะ"
     ],
     "ro4tkrɔ2": [
@@ -64959,7 +64959,7 @@ const IPA2WORD_TH =
     "na3ŋka3wI3": [
         "นั่งเก้าอี้"
     ],
-    "kɔ2": [
+    "kɔ2ʔ": [
         "เกาะ"
     ],
     "kɔ2Ca1wA1": [
@@ -64971,7 +64971,7 @@ const IPA2WORD_TH =
     "kɔ2hA1wA1y": [
         "เกาะฮาวาย"
     ],
-    "mU2kɔ2": [
+    "mU2kɔ2ʔ": [
         "หมู่เกาะ"
     ],
     "kZ2t": [
@@ -65217,10 +65217,10 @@ const IPA2WORD_TH =
     "kY2PU3t": [
         "แก่พูด"
     ],
-    "dA3yka1": [
+    "da3ykY2": [
         "ได้แก่"
     ],
-    "da3ykY2": [
+    "dA3yka1": [
         "ได้แก่"
     ],
     "nY3kɛ2ca1y": [
@@ -65241,10 +65241,10 @@ const IPA2WORD_TH =
     "rU4ka1ca1y": [
         "รู้แก่ใจ"
     ],
-    "la4A1ykY2ca1y": [
+    "la4A1yka1ca1y": [
         "ละอายแก่ใจ"
     ],
-    "la4A1yka1ca1y": [
+    "la4A1ykY2ca1y": [
         "ละอายแก่ใจ"
     ],
     "sA5kY2ca1y": [
@@ -65271,16 +65271,16 @@ const IPA2WORD_TH =
     "he5nkɛ2nA3": [
         "เห็นแก่หน้า"
     ],
-    "mɔ2ka1": [
-        "เหมาะแก่"
-    ],
     "mɔ2kɛ2": [
         "เหมาะแก่"
     ],
-    "ha3yka1": [
-        "ให้แก่"
+    "mɔ2ka1": [
+        "เหมาะแก่"
     ],
     "ha3ykɛ2": [
+        "ให้แก่"
+    ],
+    "ha3yka1": [
         "ให้แก่"
     ],
     "A1ykY2ca1y": [
@@ -65483,7 +65483,7 @@ const IPA2WORD_TH =
     "kɛ4tsO1lI1n": [
         "แก๊สโซลีน"
     ],
-    "kɛ2": [
+    "kɛ2ʔ": [
         "แกะ"
     ],
     "Ko5nkɛ2": [
@@ -65492,13 +65492,13 @@ const IPA2WORD_TH =
     "de2kli4a1ŋkɛ2": [
         "เด็กเลี้ยงแกะ"
     ],
-    "lU3kkɛ2": [
+    "lU3kkɛ2ʔ": [
         "ลูกแกะ"
     ],
     "kɛ2sa1la2k": [
         "แกะสลัก"
     ],
-    "CA3ŋkɛ2": [
+    "CA3ŋkɛ2ʔ": [
         "ช่างแกะ"
     ],
     "kO3": [
@@ -66092,7 +66092,7 @@ const IPA2WORD_TH =
     "Ka1ro5m": [
         "ขรม"
     ],
-    "Kra2": [
+    "Kra2ʔ": [
         "ขระ"
     ],
     "Krʉ5m": [
@@ -66288,10 +66288,10 @@ const IPA2WORD_TH =
     "KwA5n": [
         "ขวาน"
     ],
-    "KwA5yKo5n": [
+    "KwA5yKu5a1n": [
         "ขวายขวน"
     ],
-    "KwA5yKu5a1n": [
+    "KwA5yKo5n": [
         "ขวายขวน"
     ],
     "Kwi2t": [
@@ -68048,7 +68048,7 @@ const IPA2WORD_TH =
     "Ka1yʉ3a1n": [
         "เขยื้อน"
     ],
-    "Kle2": [
+    "Kle2ʔ": [
         "เขละ"
     ],
     "Kle2Kle2": [
@@ -69176,10 +69176,10 @@ const IPA2WORD_TH =
     "Kra4ŋlY4wKra4ŋla3w": [
         "ครั้งแล้วครั้งเล่า"
     ],
-    "Kra4ŋnʉ1ŋ": [
+    "Kra4ŋnʉ2ŋ": [
         "ครั้งหนึ่ง"
     ],
-    "Kra4ŋnʉ2ŋ": [
+    "Kra4ŋnʉ1ŋ": [
         "ครั้งหนึ่ง"
     ],
     "Kra4ŋnʉ2ŋya1ŋmI1": [
@@ -69374,16 +69374,16 @@ const IPA2WORD_TH =
     "Kri4sa1ca2k": [
         "คริสต์จักร"
     ],
-    "Kri4tsa2kka1rA2t": [
-        "คริสตศักราช"
-    ],
     "Kri4tta1sa2kka1rA2t": [
         "คริสตศักราช"
     ],
-    "Kri4tta1sA2tsa1nA5": [
-        "คริสตศาสนา"
+    "Kri4tsa2kka1rA2t": [
+        "คริสตศักราช"
     ],
     "Kri4tsA2tsa1nA5": [
+        "คริสตศาสนา"
+    ],
+    "Kri4tta1sA2tsa1nA5": [
         "คริสตศาสนา"
     ],
     "Kri4tsa1mA3t": [
@@ -69395,10 +69395,10 @@ const IPA2WORD_TH =
     "Kri4tta1ŋ": [
         "คริสตัง"
     ],
-    "Kri4sa1ti1a1n": [
+    "Kri4ti1a1n": [
         "คริสเตียน"
     ],
-    "Kri4ti1a1n": [
+    "Kri4sa1ti1a1n": [
         "คริสเตียน"
     ],
     "KrI3p": [
@@ -69407,7 +69407,7 @@ const IPA2WORD_TH =
     "KrI1m": [
         "ครีม"
     ],
-    "Krʉ4": [
+    "Krʉ4ʔ": [
         "ครึ"
     ],
     "Krʉ4k": [
@@ -69470,10 +69470,10 @@ const IPA2WORD_TH =
     "KrW1ka1n": [
         "ครือกัน"
     ],
-    "Ka1ru4": [
+    "kru4ʔ": [
         "ครุ"
     ],
-    "kru4": [
+    "Ka1ru4": [
         "ครุ"
     ],
     "Kru4t": [
@@ -69584,7 +69584,7 @@ const IPA2WORD_TH =
     "bA2yKlX4y": [
         "บ่ายคล้อย"
     ],
-    "Kla4": [
+    "Kla4ʔ": [
         "คละ"
     ],
     "Kla3k": [
@@ -69978,7 +69978,7 @@ const IPA2WORD_TH =
     "KX1bu1rI2": [
         "คอบุหรี่"
     ],
-    "KX1bɛ2": [
+    "KX1bɛ2ʔ": [
         "คอแบะ"
     ],
     "KX1PX3k": [
@@ -70098,13 +70098,13 @@ const IPA2WORD_TH =
     "KX1y": [
         "คอย"
     ],
-    "KX1ydu2": [
+    "KX1ydu2ʔ": [
         "คอยดุ"
     ],
     "KX1yra1wa1ŋ": [
         "คอยระวัง"
     ],
-    "KX1yca2": [
+    "KX1yca2ʔ": [
         "คอยจะ"
     ],
     "KX1yca1ki1nTA3di1a1w": [
@@ -70158,10 +70158,10 @@ const IPA2WORD_TH =
     "KX1ra4pCa3n": [
         "คอรัปชั่น"
     ],
-    "Ka4": [
+    "Ka4ʔ": [
         "คะ"
     ],
-    "kI2mO1ŋlY4wKa4": [
+    "kI2mO1ŋlY4wKa4ʔ": [
         "กี่โมงแล้วคะ"
     ],
     "KX1ydi5a1wna4Ka4": [
@@ -70179,7 +70179,7 @@ const IPA2WORD_TH =
     "ca3wKa4": [
         "เจ้าคะ"
     ],
-    "PE1Ka4": [
+    "PE1Ka4ʔ": [
         "เพคะ"
     ],
     "Ka3": [
@@ -70597,10 +70597,10 @@ const IPA2WORD_TH =
     "TX1ŋKa1m": [
         "ทองคำ"
     ],
-    "Ka1mka2ri1yA1": [
+    "Ka1mkri2yA1": [
         "คำกริยา"
     ],
-    "Ka1mkri2yA1": [
+    "Ka1mka2ri1yA1": [
         "คำกริยา"
     ],
     "Ka1mka2ri1yA1wi1sE2t": [
@@ -70735,10 +70735,10 @@ const IPA2WORD_TH =
     "Ka1mwi4cA1n": [
         "คำวิจารณ์"
     ],
-    "Ka1mwi3sE2t": [
+    "Ka1mwi4sE2t": [
         "คำวิเศษณ์"
     ],
-    "Ka1mwi4sE2t": [
+    "Ka1mwi3sE2t": [
         "คำวิเศษณ์"
     ],
     "Ka1msa1bo2t": [
@@ -71053,7 +71053,7 @@ const IPA2WORD_TH =
     "KW1wA3": [
         "คือว่า"
     ],
-    "Ku4": [
+    "Ku4ʔ": [
         "คุ"
     ],
     "Ku4k": [
@@ -71395,7 +71395,7 @@ const IPA2WORD_TH =
     "nu2a1tKra1w": [
         "หนวดเครา"
     ],
-    "Krɔ4": [
+    "Krɔ4ʔ": [
         "เคราะห์"
     ],
     "Krɔ4dI1": [
@@ -71410,7 +71410,7 @@ const IPA2WORD_TH =
     "so5ŋKrɔ4": [
         "สงเคราะห์"
     ],
-    "dA1wKrɔ4": [
+    "dA1wKrɔ4ʔ": [
         "ดาวเคราะห์"
     ],
     "dA1wPra4Krɔ4": [
@@ -71569,7 +71569,7 @@ const IPA2WORD_TH =
     "KwE4ŋ": [
         "เคว้ง"
     ],
-    "Kə4": [
+    "Kə4ʔ": [
         "เคอะ"
     ],
     "TA3TA1ŋKə4Kə4": [
@@ -71614,7 +71614,7 @@ const IPA2WORD_TH =
     "rU3pKa1wro4p": [
         "รูปเคารพ"
     ],
-    "Kɔ4": [
+    "Kɔ4ʔ": [
         "เคาะ"
     ],
     "Ki1a1ŋ": [
@@ -71713,7 +71713,7 @@ const IPA2WORD_TH =
     "KrY1ŋ": [
         "แครง"
     ],
-    "Krɛ4": [
+    "Krɛ4ʔ": [
         "แคระ"
     ],
     "KlY1ŋ": [
@@ -71749,7 +71749,7 @@ const IPA2WORD_TH =
     "wɛ3nKwY4n": [
         "แว่นแคว้น"
     ],
-    "Kɛ4": [
+    "Kɛ4ʔ": [
         "แคะ"
     ],
     "KO1": [
@@ -72089,7 +72089,7 @@ const IPA2WORD_TH =
     "pe1nŋɔ3y": [
         "เป็นง่อย"
     ],
-    "ŋa4": [
+    "ŋa4ʔ": [
         "งะ"
     ],
     "ŋa3ŋ": [
@@ -72113,10 +72113,10 @@ const IPA2WORD_TH =
     "ŋa4nna3sI1la3w": [
         "งั้นน่ะซีเล่า"
     ],
-    "ŋa4nrə4ŋa4nrZ5": [
+    "ŋa4nrʉ4": [
         "งั้นหรือ"
     ],
-    "ŋa4nrʉ4": [
+    "ŋa4nrə4ŋa4nrZ5": [
         "งั้นหรือ"
     ],
     "mA3yŋa4n": [
@@ -72453,7 +72453,7 @@ const IPA2WORD_TH =
     "ŋO3ŋa3w": [
         "โง่เง่า"
     ],
-    "ŋɔ4": [
+    "ŋɔ4ʔ": [
         "เงาะ"
     ],
     "hu5a1ŋɔ4": [
@@ -72642,7 +72642,7 @@ const IPA2WORD_TH =
     "ŋY4m": [
         "แง้ม"
     ],
-    "ŋɛ4": [
+    "ŋɛ4ʔ": [
         "แงะ"
     ],
     "ŋO3": [
@@ -72861,10 +72861,10 @@ const IPA2WORD_TH =
     "Ko1ncX1n": [
         "คนจร"
     ],
-    "Ko1ncX1ra1ca2t": [
+    "Ko1ncX1nca2t": [
         "คนจรจัด"
     ],
-    "Ko1ncX1nca2t": [
+    "Ko1ncX1ra1ca2t": [
         "คนจรจัด"
     ],
     "wo1ŋcX1n": [
@@ -73126,16 +73126,16 @@ const IPA2WORD_TH =
     "ca1": [
         "จะ"
     ],
-    "ca2": [
+    "ca2ʔ": [
         "จะ"
     ],
     "kX2nca1Ka3wnX1n": [
         "ก่อนจะเข้านอน"
     ],
-    "ca1Ta1mya1ŋŋa1y": [
+    "ca1Ta1myA2ŋra1y": [
         "จะทำอย่างไร"
     ],
-    "ca1Ta1myA2ŋra1y": [
+    "ca1Ta1mya1ŋŋa1y": [
         "จะทำอย่างไร"
     ],
     "ca1pe1nra1ypa1y": [
@@ -73156,7 +73156,7 @@ const IPA2WORD_TH =
     "ca3TA1nlY4w": [
         "จ้ะทานแล้ว"
     ],
-    "ca4": [
+    "ca4ʔ": [
         "จ๊ะ"
     ],
     "CX3pma4yca4": [
@@ -73704,10 +73704,10 @@ const IPA2WORD_TH =
     "ca1mnu1a1n": [
         "จำนวน"
     ],
-    "ca1mnu1a1nrX4yla1": [
+    "ca1mnu1a1nrX4yla4": [
         "จำนวนร้อยละ"
     ],
-    "ca1mnu1a1nrX4yla4": [
+    "ca1mnu1a1nrX4yla1": [
         "จำนวนร้อยละ"
     ],
     "ca1mnu1a1nrX4yla1si2p": [
@@ -73830,16 +73830,16 @@ const IPA2WORD_TH =
     "sX5ŋci2tsX5ŋca1y": [
         "สองจิตสองใจ"
     ],
-    "ci2ttra1": [
-        "จิตร-"
-    ],
     "ci2tta1": [
         "จิตร-"
     ],
-    "ci2ttra1kX1n": [
-        "จิตรกร"
+    "ci2ttra1": [
+        "จิตร-"
     ],
     "ci2tta1kX1n": [
+        "จิตรกร"
+    ],
+    "ci2ttra1kX1n": [
         "จิตรกร"
     ],
     "ci2tta1ka1m": [
@@ -73908,12 +73908,12 @@ const IPA2WORD_TH =
     "cI3se3n": [
         "จี้เส้น"
     ],
+    "cI3TU2kse3n": [
+        "จี้ (ให้) ถูกเส้น"
+    ],
     "cI3ha3yTU2kse3n": [
         "จี้ (ให้) ถูกเส้น",
         "จี้ให้ถูกเส้น"
-    ],
-    "cI3TU2kse3n": [
-        "จี้ (ให้) ถูกเส้น"
     ],
     "na4kcI3": [
         "นักจี้"
@@ -73984,7 +73984,7 @@ const IPA2WORD_TH =
     "na4mcW2t": [
         "น้ำจืด"
     ],
-    "cu2": [
+    "cu2ʔ": [
         "จุ"
     ],
     "ki1ncu2": [
@@ -73993,7 +73993,7 @@ const IPA2WORD_TH =
     "cu2ca1y": [
         "จุใจ"
     ],
-    "cu4": [
+    "cu4ʔ": [
         "จุ๊",
         "จุ๊ย์"
     ],
@@ -74220,10 +74220,10 @@ const IPA2WORD_TH =
     "hA5yce2p": [
         "หายเจ็บ"
     ],
-    "cE1nra1cA1": [
+    "cE1ra1cA1": [
         "เจรจา"
     ],
-    "cE1ra1cA1": [
+    "cE1nra1cA1": [
         "เจรจา"
     ],
     "cE1ra1cA1wA2nlX4m": [
@@ -74272,7 +74272,7 @@ const IPA2WORD_TH =
     "cZ5": [
         "เจ๋อ"
     ],
-    "cə2": [
+    "cə2ʔ": [
         "เจอะ"
     ],
     "ca3w": [
@@ -74360,16 +74360,16 @@ const IPA2WORD_TH =
     "TE3pPa1cA3w": [
         "เทพเจ้า"
     ],
-    "Pra4cA3w": [
-        "พระเจ้า"
-    ],
     "Pra4ca3w": [
         "พระเจ้า"
     ],
-    "Pra4o1ŋcA3w": [
-        "พระองค์เจ้า"
+    "Pra4cA3w": [
+        "พระเจ้า"
     ],
     "Pra4o1ŋca3w": [
+        "พระองค์เจ้า"
+    ],
+    "Pra4o1ŋcA3w": [
         "พระองค์เจ้า"
     ],
     "mɔ2mcA3w": [
@@ -74393,7 +74393,7 @@ const IPA2WORD_TH =
     "ca3wA1ro1m": [
         "เจ้าอารมณ์"
     ],
-    "cɔ2": [
+    "cɔ2ʔ": [
         "เจาะ"
     ],
     "cɔ2co1ŋ": [
@@ -74948,7 +74948,7 @@ const IPA2WORD_TH =
     "CX2tCX2t": [
         "ฉอดๆ"
     ],
-    "CX5lɔ4": [
+    "CX5lɔ4ʔ": [
         "ฉอเลาะ"
     ],
     "CX5lɔ4ka1n": [
@@ -74958,7 +74958,7 @@ const IPA2WORD_TH =
         "ฉอุ่ม",
         "ชอุ่ม"
     ],
-    "Ca2": [
+    "Ca2ʔ": [
         "ฉะ"
     ],
     "Ca2CA5n": [
@@ -75150,16 +75150,16 @@ const IPA2WORD_TH =
     "Ci2p": [
         "ฉิบ"
     ],
-    "si4a1Ci4p": [
-        "เสียฉิบ"
-    ],
     "si4a1!Ci4psi4a1Ci2p": [
         "เสียฉิบ"
     ],
-    "hA5ypa1y!Ci4pCi1a1w": [
-        "หายไปฉิบเชียว"
+    "si4a1Ci4p": [
+        "เสียฉิบ"
     ],
     "hA5ypa1yCi4pCi1a1w": [
+        "หายไปฉิบเชียว"
+    ],
+    "hA5ypa1y!Ci4pCi1a1w": [
         "หายไปฉิบเชียว"
     ],
     "re1wCi4p": [
@@ -75204,7 +75204,7 @@ const IPA2WORD_TH =
     "yA1CI2t": [
         "ยาฉีด"
     ],
-    "Cu2": [
+    "Cu2ʔ": [
         "ฉุ"
     ],
     "Cu2k": [
@@ -75339,13 +75339,13 @@ const IPA2WORD_TH =
     "Ca1wi5a1n": [
         "เฉวียน"
     ],
-    "Cə2": [
+    "Cə2ʔ": [
         "เฉอะ"
     ],
     "Ca5w": [
         "เฉา"
     ],
-    "Cɔ2": [
+    "Cɔ2ʔ": [
         "เฉาะ"
     ],
     "CZ2t": [
@@ -75426,7 +75426,7 @@ const IPA2WORD_TH =
     "Ca1lɛ3m": [
         "แฉล้ม"
     ],
-    "Cɛ2": [
+    "Cɛ2ʔ": [
         "แฉะ"
     ],
     "Ca5mCɛ2": [
@@ -75435,7 +75435,7 @@ const IPA2WORD_TH =
     "Cə2Cɛ2": [
         "เฉอะแฉะ"
     ],
-    "CW4nCɛ2": [
+    "CW4nCɛ2ʔ": [
         "ชื้นแฉะ"
     ],
     "pi2a1kCɛ2": [
@@ -75674,10 +75674,10 @@ const IPA2WORD_TH =
     "Co1nbu1rI1": [
         "ชลบุรี"
     ],
-    "Co1nla1pra1TA1n": [
+    "Co1npra1TA1n": [
         "ชลประทาน"
     ],
-    "Co1npra1TA1n": [
+    "Co1nla1pra1TA1n": [
         "ชลประทาน"
     ],
     "Co1nla1mA3k": [
@@ -75872,7 +75872,7 @@ const IPA2WORD_TH =
     "Cɛ3mCX4y": [
         "แช่มช้อย"
     ],
-    "Ca4": [
+    "Ca4ʔ": [
         "ชะ"
     ],
     "Ca4lA4ŋ": [
@@ -76245,10 +76245,10 @@ const IPA2WORD_TH =
     "CA4lo1ŋ": [
         "ช้าลง"
     ],
-    "CA4si4a1lY4w": [
+    "CA4sa4lY4w": [
         "ช้าเสียแล้ว"
     ],
-    "CA4sa4lY4w": [
+    "CA4si4a1lY4w": [
         "ช้าเสียแล้ว"
     ],
     "Cʉ3a1ŋCA4": [
@@ -76359,7 +76359,7 @@ const IPA2WORD_TH =
     "CA3ŋyX4mPA3": [
         "ช่างย้อมผ้า"
     ],
-    "CA3ŋlO1ha2": [
+    "CA3ŋlO1ha2ʔ": [
         "ช่างโลหะ"
     ],
     "CA3ŋsa1la2k": [
@@ -76677,7 +76677,7 @@ const IPA2WORD_TH =
     "CA1wka1mma1kX1n": [
         "ชาวกรรมกร"
     ],
-    "CA1wkɔ2": [
+    "CA1wkɔ2ʔ": [
         "ชาวเกาะ"
     ],
     "CA1wKa1na4": [
@@ -76809,7 +76809,7 @@ const IPA2WORD_TH =
     "Ca1mlɛ2": [
         "ชำแหละ"
     ],
-    "Ci4": [
+    "Ci4ʔ": [
         "ชิ"
     ],
     "Ci1ŋ": [
@@ -76902,7 +76902,7 @@ const IPA2WORD_TH =
     "si3nCI3p": [
         "สิ้นชีพ"
     ],
-    "CI1wa4": [
+    "CI1wa4ʔ": [
         "ชีว-"
     ],
     "CI1wa4pra1wa2t": [
@@ -77733,12 +77733,12 @@ const IPA2WORD_TH =
     "sa4psX4n": [
         "ซับซ้อน"
     ],
-    "sX3m": [
-        "ซ่อม"
-    ],
     "sɔ3m": [
         "ซ่อม",
         "ส้อม"
+    ],
+    "sX3m": [
+        "ซ่อม"
     ],
     "sX3msY1m": [
         "ซ่อมแซม"
@@ -77758,7 +77758,7 @@ const IPA2WORD_TH =
     "sX1y": [
         "ซอย"
     ],
-    "sa4": [
+    "sa4ʔ": [
         "ซะ"
     ],
     "ki1nsa4": [
@@ -77894,7 +77894,7 @@ const IPA2WORD_TH =
     "mi4na5msa4m": [
         "มิหนำซ้ำ"
     ],
-    "si4": [
+    "si4ʔ": [
         "ซิ"
     ],
     "si3": [
@@ -78116,16 +78116,16 @@ const IPA2WORD_TH =
     "se1nti1li4t": [
         "เซนติลิตร"
     ],
-    "sE4p": [
-        "เซฟ"
-    ],
     "sE4f": [
         "เซฟ"
     ],
-    "tU3sE4p": [
-        "ตู้เซฟ"
+    "sE4p": [
+        "เซฟ"
     ],
     "tU3sE4f": [
+        "ตู้เซฟ"
+    ],
+    "tU3sE4p": [
         "ตู้เซฟ"
     ],
     "se1l": [
@@ -78141,7 +78141,7 @@ const IPA2WORD_TH =
     "sZ1": [
         "เซอร์"
     ],
-    "sə4": [
+    "sə4ʔ": [
         "เซอะ"
     ],
     "sE1U1l": [
@@ -78156,7 +78156,7 @@ const IPA2WORD_TH =
     "sa4wsI4": [
         "เซ้าซี้"
     ],
-    "sɔ4": [
+    "sɔ4ʔ": [
         "เซาะ"
     ],
     "sZ4p": [
@@ -78357,7 +78357,7 @@ const IPA2WORD_TH =
     "la2kTA5n": [
         "หลักฐาน"
     ],
-    "TA5na4": [
+    "TA5na4ʔ": [
         "ฐานะ"
     ],
     "wi4tTa1ya4TA5na4": [
@@ -78380,7 +78380,7 @@ const IPA2WORD_TH =
         "น",
         "นอ"
     ],
-    "na4": [
+    "na4ʔ": [
         "ณ",
         "นะ"
     ],
@@ -78540,13 +78540,13 @@ const IPA2WORD_TH =
     "he5ndu3a1y": [
         "เห็นด้วย"
     ],
+    "dɔ2k": [
+        "ดอก"
+    ],
     "dɔ1kdX2k": [
         "ดอก"
     ],
     "dX2k": [
-        "ดอก"
-    ],
-    "dɔ2k": [
         "ดอก"
     ],
     "dX2kkA1nPlU1": [
@@ -78648,14 +78648,14 @@ const IPA2WORD_TH =
     "po1mdɔ3y": [
         "ปมด้อย"
     ],
+    "dX1lA3": [
+        "ดอลล่า"
+    ],
     "dɔ1nlA3": [
         "ดอลล่า",
         "ดอลลาร์"
     ],
-    "dX1lA3": [
-        "ดอลล่า"
-    ],
-    "da2": [
+    "da2ʔ": [
         "ดะ"
     ],
     "da2k": [
@@ -78787,10 +78787,10 @@ const IPA2WORD_TH =
     "PY1ŋda2ppa1ylZ1y": [
         "แพงดับไปเลย"
     ],
-    "da2pbli1w": [
+    "da2pba1li1w": [
         "ดับบลิว"
     ],
-    "da2pba1li1w": [
+    "da2pbli1w": [
         "ดับบลิว"
     ],
     "dA1": [
@@ -79214,7 +79214,7 @@ const IPA2WORD_TH =
     "dI1ci1ŋ": [
         "ดีจริง"
     ],
-    "dI1la4": [
+    "dI1la4ʔ": [
         "ดีละ"
     ],
     "dI1la1": [
@@ -79376,7 +79376,7 @@ const IPA2WORD_TH =
     "hu5a1dW3": [
         "หัวดื้อ"
     ],
-    "du2": [
+    "du2ʔ": [
         "ดุ"
     ],
     "du2dʉ2a1t": [
@@ -79633,7 +79633,7 @@ const IPA2WORD_TH =
     "dZ1ntY3m": [
         "เดินแต้ม"
     ],
-    "dZ1nto4": [
+    "dZ1nto4ʔ": [
         "เดินโต๊ะ"
     ],
     "yi5ŋdZ1nto4": [
@@ -80201,10 +80201,10 @@ const IPA2WORD_TH =
     "Po5nPlX1ydA3y": [
         "ผลพลอยได้"
     ],
-    "Pʉ3a1ca1dA3y": [
+    "Pʉ3a1ca1da3y": [
         "เพื่อจะได้"
     ],
-    "Pʉ3a1ca1da3y": [
+    "Pʉ3a1ca1dA3y": [
         "เพื่อจะได้"
     ],
     "mi4da3y": [
@@ -80219,10 +80219,10 @@ const IPA2WORD_TH =
     "mi4da3ya1ra1y": [
         "มิได้อะไร"
     ],
-    "ma3yda3y": [
+    "ma3ydA3y": [
         "ไม่ได้"
     ],
-    "ma3ydA3y": [
+    "ma3yda3y": [
         "ไม่ได้"
     ],
     "Po5mma3yda3ypa1yna5y": [
@@ -80868,7 +80868,7 @@ const IPA2WORD_TH =
     "tra1mfo5n": [
         "ตรำฝน"
     ],
-    "tri2": [
+    "tri2ʔ": [
         "ตริ"
     ],
     "trI1": [
@@ -81021,10 +81021,10 @@ const IPA2WORD_TH =
     "tX2pI1": [
         "ต่อปี"
     ],
-    "tX2pa1y": [
+    "tX2pa1ytX2pa1y": [
         "ต่อไป"
     ],
-    "tX2pa1ytX2pa1y": [
+    "tX2pa1y": [
         "ต่อไป"
     ],
     "na1ykA1ntX2pa1y": [
@@ -81084,7 +81084,7 @@ const IPA2WORD_TH =
     "tX2ha3y": [
         "ต่อให้"
     ],
-    "tX2A1yu4": [
+    "tX2A1yu4ʔ": [
         "ต่ออายุ"
     ],
     "ti2ttX2": [
@@ -81301,7 +81301,7 @@ const IPA2WORD_TH =
     "tX1lY5": [
         "ตอแหล"
     ],
-    "ta2": [
+    "ta2ʔ": [
         "ตะ"
     ],
     "ta1krX3": [
@@ -81882,12 +81882,12 @@ const IPA2WORD_TH =
     "hɔ3ŋKA5ytu5a1": [
         "ห้องขายตั๋ว"
     ],
+    "tA1": [
+        "ตา"
+    ],
     "ta1": [
         "ตา",
         "แต่"
-    ],
-    "tA1": [
-        "ตา"
     ],
     "ka1Pri4ptA1": [
         "กะพริบตา"
@@ -81934,10 +81934,10 @@ const IPA2WORD_TH =
     "ta1rA1ŋwE1lA1": [
         "ตารางเวลา"
     ],
-    "hA3ta1rA1ŋme4t": [
+    "hA3ta1rA1ŋmE4t": [
         "๕ ตารางเมตร"
     ],
-    "hA3ta1rA1ŋmE4t": [
+    "hA3ta1rA1ŋme4t": [
         "๕ ตารางเมตร"
     ],
     "tA1lX1y": [
@@ -82174,10 +82174,10 @@ const IPA2WORD_TH =
     "tA2ŋwA3": [
         "ต่างว่า"
     ],
-    "ta1ŋhA2k": [
+    "tA1ŋhA2k": [
         "ต่างหาก"
     ],
-    "tA1ŋhA2k": [
+    "ta1ŋhA2k": [
         "ต่างหาก"
     ],
     "KA3so2ŋKi4ttA1ŋhA2k": [
@@ -82455,7 +82455,7 @@ const IPA2WORD_TH =
     "PU3ra4ŋta1mnɛ2ŋ": [
         "ผู้รั้งตำแหน่ง"
     ],
-    "ti2": [
+    "ti2ʔ": [
         "ติ"
     ],
     "ti2ti1a1n": [
@@ -82626,7 +82626,7 @@ const IPA2WORD_TH =
     "rO3kKX1tI2p": [
         "โรคคอตีบ"
     ],
-    "tʉ2": [
+    "tʉ2ʔ": [
         "ตึ"
     ],
     "tʉ2k": [
@@ -82683,10 +82683,10 @@ const IPA2WORD_TH =
     "tW5": [
         "ตื๋อ"
     ],
-    "tu2": [
+    "tu2ʔ": [
         "ตุ"
     ],
-    "tu4": [
+    "tu4ʔ": [
         "ตุ๊"
     ],
     "tu4kkY1": [
@@ -82884,10 +82884,10 @@ const IPA2WORD_TH =
     "tZ1ra1kI1": [
         "เตอรกี"
     ],
-    "tə2": [
+    "tə2ʔ": [
         "เตอะ"
     ],
-    "te2": [
+    "te2ʔ": [
         "เตะ"
     ],
     "te2ca1mU2k": [
@@ -82989,16 +82989,16 @@ const IPA2WORD_TH =
     "ta2ktʉ1a1n": [
         "ตักเตือน"
     ],
-    "tY2": [
-        "แต่"
-    ],
-    "tY2tɛ1ta1": [
+    "tɛ1ta1": [
         "แต่"
     ],
     "tɛ1": [
         "แต่"
     ],
-    "tɛ1ta1": [
+    "tY2": [
+        "แต่"
+    ],
+    "tY2tɛ1ta1": [
         "แต่"
     ],
     "tY2Tʉ5ŋkra1na4n": [
@@ -83031,10 +83031,10 @@ const IPA2WORD_TH =
     "mu1a1tɛ1": [
         "มัวแต่"
     ],
-    "mY4tY2": [
+    "mY4tɛ1": [
         "แม้แต่"
     ],
-    "mY4tɛ1": [
+    "mY4tY2": [
         "แม้แต่"
     ],
     "lu4a1ntɛ1": [
@@ -83055,10 +83055,10 @@ const IPA2WORD_TH =
     "we4ntY2": [
         "เว้นแต่"
     ],
-    "si5a1ta1": [
+    "si5a1tɛ1": [
         "เสียแต่"
     ],
-    "si5a1tɛ1": [
+    "si5a1ta1": [
         "เสียแต่"
     ],
     "hA2ktɛ1": [
@@ -83190,10 +83190,10 @@ const IPA2WORD_TH =
     "trY1wo1ŋ": [
         "แตรวง"
     ],
-    "tɛ2": [
+    "tɛ2ʔ": [
         "แตะ"
     ],
-    "rX1ŋTA4wtɛ2": [
+    "rX1ŋTA4wtɛ2ʔ": [
         "รองเท้าแตะ"
     ],
     "tO1": [
@@ -83232,7 +83232,7 @@ const IPA2WORD_TH =
     "tO1ki1a1w": [
         "โตเกียว"
     ],
-    "to4": [
+    "to4ʔ": [
         "โต๊ะ"
     ],
     "to4Ki5a1nna1ŋsW5": [
@@ -83241,7 +83241,7 @@ const IPA2WORD_TH =
     "to4Krʉ3a1ŋpY3ŋ": [
         "โต๊ะเครื่องแป้ง"
     ],
-    "PA3pU1to4": [
+    "PA3pU1to4ʔ": [
         "ผ้าปูโต๊ะ"
     ],
     "ru3a1mto4": [
@@ -83957,10 +83957,10 @@ const IPA2WORD_TH =
     "Tu5n": [
         "ถุน"
     ],
-    "!Tu5y": [
+    "Tu5y": [
         "ถุย"
     ],
-    "Tu5y": [
+    "!Tu5y": [
         "ถุย"
     ],
     "TU5": [
@@ -84047,18 +84047,18 @@ const IPA2WORD_TH =
     "Ta1lZ5ŋ": [
         "เถลิง"
     ],
+    "Tə2ʔ": [
+        "เถอะ",
+        "เออะ"
+    ],
     "Tə1": [
         "เถอะ",
         "เถิด"
     ],
-    "Tə2": [
-        "เถอะ",
-        "เออะ"
-    ],
-    "CZ1nTə2": [
+    "CZ1nTə1": [
         "เชิญเถอะ"
     ],
-    "CZ1nTə1": [
+    "CZ1nTə2ʔ": [
         "เชิญเถอะ"
     ],
     "CZ1nTə1Ku1n": [
@@ -84089,7 +84089,7 @@ const IPA2WORD_TH =
     "mA4yTa5w": [
         "ไม้เถา"
     ],
-    "Tɔ2": [
+    "Tɔ2ʔ": [
         "เถาะ"
     ],
     "TZ2t": [
@@ -84687,10 +84687,10 @@ const IPA2WORD_TH =
     "TX1ŋTɛ3ŋ": [
         "ทองแท่ง"
     ],
-    "TX1ŋprɔ1n": [
+    "TX1ŋpɔ1n": [
         "ทองบรอนซ์"
     ],
-    "TX1ŋpɔ1n": [
+    "TX1ŋprɔ1n": [
         "ทองบรอนซ์"
     ],
     "TX1ŋba1y": [
@@ -85071,10 +85071,10 @@ const IPA2WORD_TH =
     "Ta4ŋTI3": [
         "ทั้งที่"
     ],
-    "Ta1ŋna4n": [
+    "Ta4ŋna4n": [
         "ทั้งนั้น"
     ],
-    "Ta4ŋna4n": [
+    "Ta1ŋna4n": [
         "ทั้งนั้น"
     ],
     "ma3yCa3yTa4ŋna4n": [
@@ -86434,10 +86434,10 @@ const IPA2WORD_TH =
     "yO1TA1TE3sa1bA1n": [
         "โยธาเทศบาล"
     ],
-    "TE3tsa1mo1ntrI1": [
+    "TE3sa1mo1ntrI1": [
         "เทศมนตรี"
     ],
-    "TE3sa1mo1ntrI1": [
+    "TE3tsa1mo1ntrI1": [
         "เทศมนตรี"
     ],
     "nA1yo4kTE3sa1mo1ntrI1": [
@@ -86464,7 +86464,7 @@ const IPA2WORD_TH =
     "Pra4Ta1mma1TE3tsa1nA5": [
         "พระธรรมเทศนา"
     ],
-    "TE1sa2": [
+    "TE1sa2ʔ": [
         "เทศะ"
     ],
     "TZ1m": [
@@ -86728,7 +86728,7 @@ const IPA2WORD_TH =
         "แทรกสอด",
         "แซกสอด"
     ],
-    "Tɛ4": [
+    "Tɛ4ʔ": [
         "แทะ"
     ],
     "TO1": [
@@ -86823,7 +86823,7 @@ const IPA2WORD_TH =
     "ha3ya1Pa1yya1TO3t": [
         "ให้อภัยโทษ"
     ],
-    "TO1sa2": [
+    "TO1sa2ʔ": [
         "โทสะ"
     ],
     "TO1sO5": [
@@ -87481,7 +87481,7 @@ const IPA2WORD_TH =
     "dI1la1na4": [
         "ดีละนะ"
     ],
-    "yA2na4": [
+    "yA2na4ʔ": [
         "อย่านะ"
     ],
     "Kra1yna4mA1Kɔ4pra1tU1": [
@@ -87496,13 +87496,13 @@ const IPA2WORD_TH =
     "pa1ydu3a1yka1nna4": [
         "ไปด้วยกันนะ"
     ],
-    "na3nA3": [
-        "น่ะ"
-    ],
     "na3": [
         "น่ะ"
     ],
-    "na2": [
+    "na3nA3": [
+        "น่ะ"
+    ],
+    "na2ʔ": [
         "น่ะ",
         "หนะ"
     ],
@@ -88364,10 +88364,10 @@ const IPA2WORD_TH =
     "na4mmo1n": [
         "น้ำมนต์"
     ],
-    "nA4mma1nA1w": [
+    "na4mma1nA1w": [
         "น้ำมะนาว"
     ],
-    "na4mma1nA1w": [
+    "nA4mma1nA1w": [
         "น้ำมะนาว"
     ],
     "nA4mma1PrA4w": [
@@ -88837,10 +88837,10 @@ const IPA2WORD_TH =
     "mU2nI4": [
         "หมู่นี้"
     ],
-    "ya1ŋnI4ya1ŋŋI4": [
+    "yA2ŋnI4": [
         "อย่างนี้"
     ],
-    "yA2ŋnI4": [
+    "ya1ŋnI4ya1ŋŋI4": [
         "อย่างนี้"
     ],
     "nʉ4k": [
@@ -89156,7 +89156,7 @@ const IPA2WORD_TH =
     "nɛ3wpa1y": [
         "แน่วไป"
     ],
-    "nɛ4": [
+    "nɛ4ʔ": [
         "แนะ"
     ],
     "co2tmA5ynɛ4na1mtu1a1": [
@@ -89195,10 +89195,10 @@ const IPA2WORD_TH =
     "PU3CA1yKo1nnO4n": [
         "ผู้ชายคนโน้น"
     ],
-    "yA2ŋnO4n": [
+    "ya1ŋnO4nya1ŋŋO4n": [
         "อย่างโน้น"
     ],
-    "ya1ŋnO4nya1ŋŋO4n": [
+    "yA2ŋnO4n": [
         "อย่างโน้น"
     ],
     "nO4m": [
@@ -89316,7 +89316,7 @@ const IPA2WORD_TH =
         "บ",
         "บอ"
     ],
-    "bɔ2": [
+    "bɔ2ʔ": [
         "บ่",
         "เบาะ"
     ],
@@ -89406,10 +89406,10 @@ const IPA2WORD_TH =
     "bo2m": [
         "บ่ม"
     ],
-    "bɔ1ro1m": [
+    "ba1ro1m": [
         "บรม"
     ],
-    "ba1ro1m": [
+    "bɔ1ro1m": [
         "บรม"
     ],
     "KwA1mbɔ1ro1mma1su2k": [
@@ -89548,10 +89548,10 @@ const IPA2WORD_TH =
     "ba1nlE1ŋ": [
         "บรรเลง"
     ],
-    "prɔ1n": [
+    "pɔ1n": [
         "บรอนซ์"
     ],
-    "pɔ1n": [
+    "prɔ1n": [
         "บรอนซ์"
     ],
     "bX1ri1kA1nnA4m": [
@@ -89699,10 +89699,10 @@ const IPA2WORD_TH =
         "บอนีโอ",
         "บอร์นีโอ"
     ],
-    "bX2p": [
+    "bɔ2p": [
         "บอบ"
     ],
-    "bɔ2p": [
+    "bX2p": [
         "บอบ"
     ],
     "bX2pbA1ŋ": [
@@ -89738,7 +89738,7 @@ const IPA2WORD_TH =
     "bɔ1n": [
         "บอลล์"
     ],
-    "!ba4": [
+    "!ba4ʔ": [
         "บ๊ะ"
     ],
     "ba1mI2": [
@@ -89881,10 +89881,10 @@ const IPA2WORD_TH =
     "pra1kA2tsa1nI1ya1ba2t": [
         "ประกาศนียบัตร"
     ],
-    "pra1ysa1nI1ba2t": [
+    "pra1ysa1nI1ya1ba2t": [
         "ไปรษณียบัตร"
     ],
-    "pra1ysa1nI1ya1ba2t": [
+    "pra1ysa1nI1ba2t": [
         "ไปรษณียบัตร"
     ],
     "lo1ŋba2t": [
@@ -90339,7 +90339,7 @@ const IPA2WORD_TH =
     "ba1mne2t": [
         "บำเหน็จ"
     ],
-    "bi2": [
+    "bi2ʔ": [
         "บิ"
     ],
     "bi2t": [
@@ -90441,7 +90441,7 @@ const IPA2WORD_TH =
     "bʉ1n": [
         "บึน"
     ],
-    "bu2": [
+    "bu2ʔ": [
         "บุ"
     ],
     "bu2k": [
@@ -90553,16 +90553,16 @@ const IPA2WORD_TH =
     "bu3yba3y": [
         "บุ้ยใบ้"
     ],
-    "bu1pPa1": [
-        "บุรพ-"
-    ],
     "bu1ra1Pa1": [
         "บุรพ-"
     ],
-    "bu1ra1Pa1Ti4t": [
-        "บุรพทิศ"
+    "bu1pPa1": [
+        "บุรพ-"
     ],
     "bu1pPa1Ti4t": [
+        "บุรพทิศ"
+    ],
+    "bu1ra1Pa1Ti4t": [
         "บุรพทิศ"
     ],
     "bu1rI1": [
@@ -90673,10 +90673,10 @@ const IPA2WORD_TH =
     "be1nca1": [
         "เบญจ-"
     ],
-    "be2t": [
+    "be2tse2t": [
         "เบ็ด"
     ],
-    "be2tse2t": [
+    "be2t": [
         "เบ็ด"
     ],
     "to2kbe2t": [
@@ -90721,7 +90721,7 @@ const IPA2WORD_TH =
     "bZ3rZ3": [
         "เบ้อเร่อ"
     ],
-    "be2": [
+    "be2ʔ": [
         "เบะ"
     ],
     "ba1w": [
@@ -90826,10 +90826,10 @@ const IPA2WORD_TH =
     "bZ2ŋ": [
         "เบิ่ง"
     ],
-    "bə2ŋtA1": [
+    "bZ2ŋtA1": [
         "เบิ่งตา"
     ],
-    "bZ2ŋtA1": [
+    "bə2ŋtA1": [
         "เบิ่งตา"
     ],
     "bə3m": [
@@ -90962,7 +90962,7 @@ const IPA2WORD_TH =
     "KA3cA3ŋbY2k": [
         "ค่าจ้างแบก"
     ],
-    "bY2kPA1ra4": [
+    "bY2kPA1ra4ʔ": [
         "แบกภาระ"
     ],
     "bY2khA5m": [
@@ -90992,17 +90992,17 @@ const IPA2WORD_TH =
     "su2a1nbɛ2ŋ": [
         "ส่วนแบ่ง"
     ],
-    "bɛ1ŋ": [
-        "แบงก์"
-    ],
     "bɛ4ŋ": [
         "แบงก์",
         "แบงค์"
     ],
-    "bɛ4ttZ1rI3": [
-        "แบตเตอรี่"
+    "bɛ1ŋ": [
+        "แบงก์"
     ],
     "bɛ2ttZ1rI3": [
+        "แบตเตอรี่"
+    ],
+    "bɛ4ttZ1rI3": [
         "แบตเตอรี่"
     ],
     "bY1n": [
@@ -91077,10 +91077,10 @@ const IPA2WORD_TH =
     "bɛ4w": [
         "แบ๊ว"
     ],
-    "bɛ2": [
+    "bɛ2ʔ": [
         "แบะ"
     ],
-    "nA3bɛ2": [
+    "nA3bɛ2ʔ": [
         "หน้าแบะ"
     ],
     "bO1": [
@@ -91264,10 +91264,10 @@ const IPA2WORD_TH =
     "PU3po2kKrX1ŋ": [
         "ผู้ปกครอง"
     ],
-    "pa2ka1ti2": [
+    "po2kka1ti2": [
         "ปกติ"
     ],
-    "po2kka1ti2": [
+    "pa2ka1ti2": [
         "ปกติ"
     ],
     "pe1npo2kka1ti2": [
@@ -91405,10 +91405,10 @@ const IPA2WORD_TH =
     "pX1ra1pa2k": [
         "ปรปักษ์"
     ],
-    "pX1ra1mA1nU1": [
+    "pa1ra1mA1nU1": [
         "ปรมาณู"
     ],
-    "pa1ra1mA1nU1": [
+    "pX1ra1mA1nU1": [
         "ปรมาณู"
     ],
     "Pa1la1ŋŋA1npa1ra1mA1nU1": [
@@ -91426,7 +91426,7 @@ const IPA2WORD_TH =
     "prX1y": [
         "ปรอย"
     ],
-    "pra2": [
+    "pra2ʔ": [
         "ประ"
     ],
     "pra2prA1y": [
@@ -91677,10 +91677,10 @@ const IPA2WORD_TH =
     "pra1CA1CA3ti1rA2n": [
         "ประชาชาติอิหร่าน"
     ],
-    "pra1CA1Ti4pa1Ta1y": [
+    "pra1CA1Ti4ppa1Ta1y": [
         "ประชาธิปไตย"
     ],
-    "pra1CA1Ti4ppa1Ta1y": [
+    "pra1CA1Ti4pa1Ta1y": [
         "ประชาธิปไตย"
     ],
     "Pa4kpra1CA1Ti4ppa1ta1y": [
@@ -91872,10 +91872,10 @@ const IPA2WORD_TH =
     "rX1ŋpra1TA1n": [
         "รองประธาน"
     ],
-    "pra1TA1nA1Ti4pbɔ1dI1": [
+    "pra1TA1nA1Ti4bɔ1dI1": [
         "ประธานาธิบดี"
     ],
-    "pra1TA1nA1Ti4bɔ1dI1": [
+    "pra1TA1nA1Ti4pbɔ1dI1": [
         "ประธานาธิบดี"
     ],
     "rX1ŋpra1TA1nA1Ti4bɔ1dI1": [
@@ -92181,10 +92181,10 @@ const IPA2WORD_TH =
     "PU3tpra2kpra1m": [
         "พูดปรักปรำ"
     ],
-    "pra2tyA1": [
+    "pra2tCa1yA1pa2ra4tCa1yA1pa2ra4tyA1": [
         "ปรัชญา"
     ],
-    "pra2tCa1yA1pa2ra4tCa1yA1pa2ra4tyA1": [
+    "pra2tyA1": [
         "ปรัชญา"
     ],
     "pra2tta1yu4ba1n": [
@@ -92300,10 +92300,10 @@ const IPA2WORD_TH =
     "prA1ro4p": [
         "ปรารภ"
     ],
-    "prA2tsa1cA2k": [
+    "prA2sa1cA2k": [
         "ปราศจาก"
     ],
-    "prA2sa1cA2k": [
+    "prA2tsa1cA2k": [
         "ปราศจาก"
     ],
     "prA2tsa1cA2kCI1wi4t": [
@@ -92321,7 +92321,7 @@ const IPA2WORD_TH =
     "pra1m": [
         "ปรำ"
     ],
-    "pri2": [
+    "pri2ʔ": [
         "ปริ"
     ],
     "pri2pA2k": [
@@ -92345,10 +92345,10 @@ const IPA2WORD_TH =
     "pa1ri1mA1n": [
         "ปริมาณ"
     ],
-    "pX1ri1mA3t": [
+    "pa1ri1mA3t": [
         "ปริมาตร"
     ],
-    "pa1ri1mA3t": [
+    "pX1ri1mA3t": [
         "ปริมาตร"
     ],
     "pa1ri1yA1y": [
@@ -92391,7 +92391,7 @@ const IPA2WORD_TH =
     "lɛ3nprW5": [
         "แล่นปรื๋อ"
     ],
-    "pru2": [
+    "pru2ʔ": [
         "ปรุ"
     ],
     "pru1ŋ": [
@@ -92517,7 +92517,7 @@ const IPA2WORD_TH =
     "la4plɔ2y": [
         "ละปล่อย"
     ],
-    "pla2": [
+    "pla2ʔ": [
         "ปละ"
     ],
     "pla2k": [
@@ -92870,11 +92870,11 @@ const IPA2WORD_TH =
     "pX1y": [
         "ปอย"
     ],
-    "pa2": [
+    "pa2ʔ": [
         "ปะ",
         "ป่ะ"
     ],
-    "rX1ypa2": [
+    "rX1ypa2ʔ": [
         "รอยปะ"
     ],
     "Po4ppa2": [
@@ -93185,7 +93185,7 @@ const IPA2WORD_TH =
     "pA2knA4mPO1": [
         "ปากน้ำโพ"
     ],
-    "pA2kprɔ2": [
+    "pA2kprɔ2ʔ": [
         "ปากเปราะ"
     ],
     "pA2kplA2w": [
@@ -93417,7 +93417,7 @@ const IPA2WORD_TH =
     "O2ppI2k": [
         "โอบปีก"
     ],
-    "pI1ti2": [
+    "pI1ti2ʔ": [
         "ปีติ"
     ],
     "pI1n": [
@@ -94040,10 +94040,10 @@ const IPA2WORD_TH =
     "PU3tprZ1yprZ1y": [
         "พูดเปรยๆ"
     ],
-    "prə2": [
+    "prə2ʔ": [
         "เปรอะ"
     ],
-    "prɔ2": [
+    "prɔ2ʔ": [
         "เปราะ"
     ],
     "pri3a1ŋ": [
@@ -94136,10 +94136,10 @@ const IPA2WORD_TH =
     "wA3ŋplA2w": [
         "ว่างเปล่า"
     ],
-    "si5a1plA2w": [
+    "si4a1plA2w": [
         "เสียเปล่า"
     ],
-    "si4a1plA2w": [
+    "si5a1plA2w": [
         "เสียเปล่า"
     ],
     "pli3a1": [
@@ -94229,7 +94229,7 @@ const IPA2WORD_TH =
     "sa1nA5myi1ŋpa3w": [
         "สนามยิงเป้า"
     ],
-    "pɔ2": [
+    "pɔ2ʔ": [
         "เปาะ"
     ],
     "pZ2t": [
@@ -94431,7 +94431,7 @@ const IPA2WORD_TH =
     "prɛ5n": [
         "แปร๋น"
     ],
-    "prɛ2": [
+    "prɛ2ʔ": [
         "แประ"
     ],
     "plY1": [
@@ -94473,10 +94473,10 @@ const IPA2WORD_TH =
     "pɛ3w": [
         "แป้ว"
     ],
-    "pɛ2": [
+    "pɛ2ʔ": [
         "แปะ"
     ],
-    "pɛ4": [
+    "pɛ4ʔ": [
         "แป๊ะ"
     ],
     "pO1": [
@@ -94512,10 +94512,10 @@ const IPA2WORD_TH =
     "tA1pO1n": [
         "ตาโปน"
     ],
-    "prO1krY1m": [
+    "prO1krɛ1m": [
         "โปรแกรม"
     ],
-    "prO1krɛ1m": [
+    "prO1krY1m": [
         "โปรแกรม"
     ],
     "prO2ŋ": [
@@ -94548,10 +94548,10 @@ const IPA2WORD_TH =
     "pO1li1O1ma1yE1la1yti4s": [
         "โปลิโอไมเอไลติส"
     ],
-    "po2": [
+    "po2ʔ": [
         "โปะ"
     ],
-    "po4": [
+    "po4ʔ": [
         "โป๊ะ"
     ],
     "pa1y": [
@@ -94836,10 +94836,10 @@ const IPA2WORD_TH =
     "yi2ŋPa1yX5ŋ": [
         "หยิ่งผยอง"
     ],
-    "Pa1ru4tsa1wA1cA1": [
+    "Pa1ru4sa1wA1cA1": [
         "ผรุสวาจา"
     ],
-    "Pa1ru4sa1wA1cA1": [
+    "Pa1ru4tsa1wA1cA1": [
         "ผรุสวาจา"
     ],
     "Pa1ru4tsa1wA3t": [
@@ -94923,7 +94923,7 @@ const IPA2WORD_TH =
     "X2kPo5n": [
         "ออกผล"
     ],
-    "Pla2": [
+    "Pla2ʔ": [
         "ผละ"
     ],
     "Pla2nI5": [
@@ -94959,7 +94959,7 @@ const IPA2WORD_TH =
     "PlA5m": [
         "ผลาม"
     ],
-    "Pli2": [
+    "Pli2ʔ": [
         "ผลิ"
     ],
     "Pa1li2t": [
@@ -95034,10 +95034,10 @@ const IPA2WORD_TH =
     "Pu2tPɔ2ŋ": [
         "ผุดผ่อง"
     ],
-    "PX2n": [
+    "Pɔ2n": [
         "ผ่อน"
     ],
-    "Pɔ2n": [
+    "PX2n": [
         "ผ่อน"
     ],
     "Pɔ2npro1n": [
@@ -95416,7 +95416,7 @@ const IPA2WORD_TH =
     "PW2n": [
         "ผื่น"
     ],
-    "Pu2": [
+    "Pu2ʔ": [
         "ผุ"
     ],
     "Pu2̀Pa1ŋ": [
@@ -95610,7 +95610,7 @@ const IPA2WORD_TH =
     "PU3sa5mre2trA3tCa1kA1n": [
         "ผู้สำเร็จราชการ"
     ],
-    "PU3sU5ŋA1yu4": [
+    "PU3sU5ŋA1yu4ʔ": [
         "ผู้สูงอายุ"
     ],
     "PU3sa1nZ5": [
@@ -96511,10 +96511,10 @@ const IPA2WORD_TH =
     "Pa1nmA4y": [
         "พรรณไม้"
     ],
-    "Pa1nra1nA1": [
+    "Pa1nna1nA1": [
         "พรรณนา"
     ],
-    "Pa1nna1nA1": [
+    "Pa1nra1nA1": [
         "พรรณนา"
     ],
     "Pa1nsA5": [
@@ -96601,7 +96601,7 @@ const IPA2WORD_TH =
     "he5nPrX4mka1n": [
         "เห็นพร้อมกัน"
     ],
-    "Pra4": [
+    "Pra4ʔ": [
         "พระ"
     ],
     "Pra4ca1n": [
@@ -96885,10 +96885,10 @@ const IPA2WORD_TH =
     "Prʉ1ŋPrZ3t": [
         "พรึงเพริด"
     ],
-    "Prʉ3t": [
+    "PrW3t": [
         "พรืด"
     ],
-    "PrW3t": [
+    "Prʉ3t": [
         "พรืด"
     ],
     "si5a1ŋPrW3t": [
@@ -96930,10 +96930,10 @@ const IPA2WORD_TH =
     "Prʉ4tsa1ci2kA1yo1n": [
         "พฤศจิกายน"
     ],
-    "Prʉ4sa1PA1Ko1m": [
+    "Prʉ4tsa1PA1Ko1m": [
         "พฤษภาคม"
     ],
-    "Prʉ4tsa1PA1Ko1m": [
+    "Prʉ4sa1PA1Ko1m": [
         "พฤษภาคม"
     ],
     "Pa4rʉ4ha2t": [
@@ -96948,10 +96948,10 @@ const IPA2WORD_TH =
     "Pa4rʉ4ha2tsa1bX1dI1": [
         "พฤหัสบดี"
     ],
-    "Pa4la4": [
+    "Po1n": [
         "พล"
     ],
-    "Po1n": [
+    "Pa4la4": [
         "พล"
     ],
     "TI3Cu1mPo1n": [
@@ -97171,7 +97171,7 @@ const IPA2WORD_TH =
     "Pa1lI1ka1m": [
         "พลีกรรม"
     ],
-    "Plu4": [
+    "Plu4ʔ": [
         "พลุ"
     ],
     "Plu4k": [
@@ -97582,7 +97582,7 @@ const IPA2WORD_TH =
     "PA3kPA1ya4p": [
         "ภาคพายัพ"
     ],
-    "PA1yu4": [
+    "PA1yu4ʔ": [
         "พายุ"
     ],
     "PA1yu4fA4Ka1nX1ŋ": [
@@ -97702,10 +97702,10 @@ const IPA2WORD_TH =
     "Pi4ni4t": [
         "พินิจ"
     ],
-    "Pi4ni4tPi4sa1dU1": [
+    "Pi4ni4tPi4tdU1": [
         "พินิจพิศดู"
     ],
-    "Pi4ni4tPi4tdU1": [
+    "Pi4ni4tPi4sa1dU1": [
         "พินิจพิศดู"
     ],
     "Pi4ba2t": [
@@ -97926,7 +97926,7 @@ const IPA2WORD_TH =
     "PW4nrA3p": [
         "พื้นราบ"
     ],
-    "Pu4": [
+    "Pu4ʔ": [
         "พุ"
     ],
     "Pu4k": [
@@ -97958,16 +97958,16 @@ const IPA2WORD_TH =
     "Pu4tTa1sa2kka1rA2t": [
         "พุทธศักราช"
     ],
-    "Pu4tTa1sA2tsa1nA5": [
-        "พุทธศาสนา"
-    ],
     "Pu4tTa1sA2sa1nA5": [
         "พุทธศาสนา"
     ],
-    "sA2sa1nA5Pu4t": [
-        "ศาสนาพุทธ"
+    "Pu4tTa1sA2tsa1nA5": [
+        "พุทธศาสนา"
     ],
     "sA2tsa1nA5Pu4t": [
+        "ศาสนาพุทธ"
+    ],
+    "sA2sa1nA5Pu4t": [
         "ศาสนาพุทธ"
     ],
     "Pu3TO3": [
@@ -98152,7 +98152,7 @@ const IPA2WORD_TH =
     "Pra1w": [
         "เพรา"
     ],
-    "Prɔ4": [
+    "Prɔ4ʔ": [
         "เพราะ"
     ],
     "ra4kPrɔ4su5a1y": [
@@ -98239,7 +98239,7 @@ const IPA2WORD_TH =
     "Pla1w": [
         "เพลา"
     ],
-    "Plɔ4": [
+    "Plɔ4ʔ": [
         "เพลาะ"
     ],
     "PlZ1ŋ": [
@@ -98290,7 +98290,7 @@ const IPA2WORD_TH =
     "PZ4cZ3": [
         "เพ้อเจ้อ"
     ],
-    "Pɔ4": [
+    "Pɔ4ʔ": [
         "เพาะ"
     ],
     "PZ3k": [
@@ -98476,10 +98476,10 @@ const IPA2WORD_TH =
     "PlY1ŋ": [
         "แพลง"
     ],
-    "Pɛ4": [
+    "Pɛ4ʔ": [
         "แพะ"
     ],
-    "lU3kPɛ4": [
+    "lU3kPɛ4ʔ": [
         "ลูกแพะ"
     ],
     "PO3k": [
@@ -98813,10 +98813,10 @@ const IPA2WORD_TH =
     "lA4ŋfI1m": [
         "ล้างฟิล์ม"
     ],
-    "fi1li1ppi1n": [
+    "fi1li4ppi1n": [
         "ฟิลิปปินส์"
     ],
-    "fi1li4ppi1n": [
+    "fi1li1ppi1n": [
         "ฟิลิปปินส์"
     ],
     "fi1w": [
@@ -99085,10 +99085,10 @@ const IPA2WORD_TH =
         "ภยันตราย",
         "ภัยอันตราย"
     ],
-    "Pa1nra1yA1": [
+    "Pa1nyA1": [
         "ภรรยา"
     ],
-    "Pa1nyA1": [
+    "Pa1nra1yA1": [
         "ภรรยา"
     ],
     "Pa1nra1yA1nX4y": [
@@ -99256,13 +99256,13 @@ const IPA2WORD_TH =
     "PA1nrO1ŋ": [
         "ภารโรง"
     ],
-    "PA1ra4": [
+    "PA1ra4ʔ": [
         "ภาระ"
     ],
     "PA1wa1nA1": [
         "ภาวนา"
     ],
-    "PA1wa4": [
+    "PA1wa4ʔ": [
         "ภาวะ"
     ],
     "PA1wa4ŋə1nfZ4": [
@@ -99735,10 +99735,10 @@ const IPA2WORD_TH =
     "mX3pha3y": [
         "มอบให้"
     ],
-    "mX1m": [
+    "mɔ1m": [
         "มอม"
     ],
-    "mɔ1m": [
+    "mX1m": [
         "มอม"
     ],
     "mɔ1mmɛ1m": [
@@ -100167,7 +100167,7 @@ const IPA2WORD_TH =
     "a2nu4mA3ttrA1": [
         "อนุมาตรา"
     ],
-    "mA1tu2": [
+    "mA1tu2ʔ": [
         "มาตุ"
     ],
     "mA3n": [
@@ -100185,7 +100185,7 @@ const IPA2WORD_TH =
     "la5ŋmA3nle2k": [
         "หลังม่านเหล็ก"
     ],
-    "mA1na4": [
+    "mA1na4ʔ": [
         "มานะ"
     ],
     "mA4m": [
@@ -100216,10 +100216,10 @@ const IPA2WORD_TH =
     "mA1n": [
         "มาร"
     ],
-    "mA4C": [
+    "mA4t": [
         "มาร์ช"
     ],
-    "mA4t": [
+    "mA4C": [
         "มาร์ช"
     ],
     "mA1ndA1": [
@@ -100237,8 +100237,9 @@ const IPA2WORD_TH =
     "mA1lA1ri1a1": [
         "มาลาเรีย"
     ],
-    "mi4": [
-        "มิ-"
+    "mi4ʔ": [
+        "มิ-",
+        "มิ"
     ],
     "ca1la2pmi4la2plY2": [
         "จะหลับมิหลับแหล่"
@@ -100370,7 +100371,7 @@ const IPA2WORD_TH =
     "mI1ya3wmI1rʉ1a1n": [
         "มีเหย้ามีเรือน"
     ],
-    "mI1yA2ŋrʉ4": [
+    "mI1yA2ŋrʉ4ʔ": [
         "มีอย่างหรือ"
     ],
     "mI1a1ra1y": [
@@ -100379,7 +100380,7 @@ const IPA2WORD_TH =
     "mI1A1CI3p": [
         "มีอาชีพ"
     ],
-    "mI1A1yu4": [
+    "mI1A1yu4ʔ": [
         "มีอายุ"
     ],
     "mI1A1yu4si2ppY2tpI1": [
@@ -100544,7 +100545,7 @@ const IPA2WORD_TH =
     "o2tmW4ki1nmW4": [
         "อดมื้อกินมื้อ"
     ],
-    "mu4": [
+    "mu4ʔ": [
         "มุ"
     ],
     "mu4k": [
@@ -100698,10 +100699,10 @@ const IPA2WORD_TH =
     "mZ1y": [
         "เมย"
     ],
-    "mE1n": [
+    "mE1ru4ʔ": [
         "เมรุ"
     ],
-    "mE1ru4": [
+    "mE1n": [
         "เมรุ"
     ],
     "mE1": [
@@ -101077,7 +101078,7 @@ const IPA2WORD_TH =
     "mO4": [
         "โม้"
     ],
-    "mO1Ka4": [
+    "mO1Ka4ʔ": [
         "โมฆะ"
     ],
     "mO1ŋ": [
@@ -101095,7 +101096,7 @@ const IPA2WORD_TH =
     "ho2kmO1ŋye1n": [
         "หกโมงเย็น"
     ],
-    "mO1ha2": [
+    "mO1ha2ʔ": [
         "โมหะ"
     ],
     "mO1hO5": [
@@ -101773,7 +101774,7 @@ const IPA2WORD_TH =
     "hi5nyX4y": [
         "หินย้อย"
     ],
-    "ya4": [
+    "ya4ʔ": [
         "ยะ"
     ],
     "ya3": [
@@ -102066,10 +102067,10 @@ const IPA2WORD_TH =
     "yU2yA1m": [
         "อยู่ยาม"
     ],
-    "yu3myA3m": [
+    "yA3m": [
         "ย่าม"
     ],
-    "yA3m": [
+    "yu3myA3m": [
         "ย่าม"
     ],
     "yA1y": [
@@ -102250,7 +102251,7 @@ const IPA2WORD_TH =
     "yI3so5ŋ": [
         "ยี่สง"
     ],
-    "yI3ra2": [
+    "yI3ra2ʔ": [
         "ยี่หระ"
     ],
     "yI3hX3": [
@@ -102343,7 +102344,7 @@ const IPA2WORD_TH =
     "yW4": [
         "ยื้อ"
     ],
-    "yu4": [
+    "yu4ʔ": [
         "ยุ"
     ],
     "yu4yo1ŋ": [
@@ -102431,10 +102432,10 @@ const IPA2WORD_TH =
     "yu4y": [
         "ยุ้ย"
     ],
-    "yu4rO2p": [
+    "yu1rO2p": [
         "ยุโรป"
     ],
-    "yu1rO2p": [
+    "yu4rO2p": [
         "ยุโรป"
     ],
     "yu4wa1": [
@@ -102540,10 +102541,10 @@ const IPA2WORD_TH =
     "pra1TE3tyZ1ra1ma1n": [
         "ประเทศเยอรมัน"
     ],
-    "yə4": [
+    "yə4ʔ": [
         "เยอะ"
     ],
-    "mI1yə4": [
+    "mI1yə4ʔ": [
         "มีเยอะ"
     ],
     "yə4yɛ4": [
@@ -102566,7 +102567,7 @@ const IPA2WORD_TH =
     "ya1wwa1y": [
         "เยาว์วัย"
     ],
-    "yɔ4": [
+    "yɔ4ʔ": [
         "เยาะ"
     ],
     "hu5a1rɔ4yɔ4": [
@@ -102662,7 +102663,7 @@ const IPA2WORD_TH =
     "yY3ktu1a1pra1kX2p": [
         "แยกตัวประกอบ"
     ],
-    "yY3kyɛ4": [
+    "yY3kyɛ4ʔ": [
         "แยกแยะ"
     ],
     "sI2yY3k": [
@@ -102692,10 +102693,10 @@ const IPA2WORD_TH =
     "yY4ŋKʉ3n": [
         "แย้งขึ้น"
     ],
-    "yY4p": [
+    "yɛ4p": [
         "แยบ"
     ],
-    "yɛ4p": [
+    "yY4p": [
         "แยบ"
     ],
     "yY3pyo1n": [
@@ -102710,7 +102711,7 @@ const IPA2WORD_TH =
     "yY1sY5": [
         "แยแส"
     ],
-    "yɛ4": [
+    "yɛ4ʔ": [
         "แยะ"
     ],
     "yO4": [
@@ -103263,10 +103264,10 @@ const IPA2WORD_TH =
     "rX4yTO1": [
         "ร้อยโท"
     ],
-    "rX4yla4": [
+    "rX4yla1": [
         "ร้อยละ"
     ],
-    "rX4yla1": [
+    "rX4yla4ʔ": [
         "ร้อยละ"
     ],
     "Ki4tpe1nrX4yla1": [
@@ -103300,7 +103301,7 @@ const IPA2WORD_TH =
     "rX3rY3": [
         "ร่อแร่"
     ],
-    "ra4": [
+    "ra4ʔ": [
         "ระ"
     ],
     "ra1kA1": [
@@ -103801,7 +103802,7 @@ const IPA2WORD_TH =
     "lo1ŋrA3ktʉ2k": [
         "ลงรากตึก"
     ],
-    "rA1Ka4": [
+    "rA1Ka4ʔ": [
         "ราค"
     ],
     "rA1KA1": [
@@ -103943,10 +103944,10 @@ const IPA2WORD_TH =
     "rA3tCa1da1mnZ1n": [
         "ราชดำเนิน"
     ],
-    "rA3tbu1rI1": [
+    "rA3tCa1bu1rI1": [
         "ราชบุรี"
     ],
-    "rA3tCa1bu1rI1": [
+    "rA3tbu1rI1": [
         "ราชบุรี"
     ],
     "rA1CA1": [
@@ -104130,10 +104131,10 @@ const IPA2WORD_TH =
     "ra1mwo1ŋ": [
         "รำวง"
     ],
-    "ra3mra1y": [
+    "ra3m": [
         "ร่ำ"
     ],
-    "ra3m": [
+    "ra3mra1y": [
         "ร่ำ"
     ],
     "PU3tra3mra1mPa1n": [
@@ -104172,7 +104173,7 @@ const IPA2WORD_TH =
     "ra1mlʉ4k": [
         "รำลึก"
     ],
-    "ri4": [
+    "ri4ʔ": [
         "ริ"
     ],
     "ri4rZ3m": [
@@ -104256,7 +104257,7 @@ const IPA2WORD_TH =
     "rI1wi1w": [
         "รีวิว"
     ],
-    "rʉ4": [
+    "rʉ4ʔ": [
         "รึ",
         "ฤ",
         "หรือ"
@@ -104277,7 +104278,7 @@ const IPA2WORD_TH =
     "rW4": [
         "รื้อ"
     ],
-    "ru4": [
+    "ru4ʔ": [
         "รุ"
     ],
     "ru4k": [
@@ -104472,10 +104473,10 @@ const IPA2WORD_TH =
     "rE1nU1": [
         "เรณู"
     ],
-    "rE1dA1": [
+    "rE1dA3": [
         "เรดาร์"
     ],
-    "rE1dA3": [
+    "rE1dA1": [
         "เรดาร์"
     ],
     "rE1yɔ1ŋ": [
@@ -104508,7 +104509,7 @@ const IPA2WORD_TH =
     "rZ3": [
         "เร่อ"
     ],
-    "rə4": [
+    "rə4ʔ": [
         "เรอะ"
     ],
     "ra1w": [
@@ -104529,7 +104530,7 @@ const IPA2WORD_TH =
     "ra4wca1y": [
         "เร้าใจ"
     ],
-    "rɔ4": [
+    "rɔ4ʔ": [
         "เราะ"
     ],
     "rZ1ŋ": [
@@ -104766,10 +104767,10 @@ const IPA2WORD_TH =
     "rY3": [
         "แร่"
     ],
-    "rY3wU1lfrY1m": [
+    "rY3wU1nfrY1m": [
         "แร่วูลแฟรม"
     ],
-    "rY3wU1nfrY1m": [
+    "rY3wU1lfrY1m": [
         "แร่วูลแฟรม"
     ],
     "si5nrY3": [
@@ -105066,10 +105067,10 @@ const IPA2WORD_TH =
     "ra4ysA5ra4": [
         "ไร้สาระ"
     ],
-    "ra1yfə3l": [
+    "ra1yfə3n": [
         "ไรเฟิล"
     ],
-    "ra1yfə3n": [
+    "ra1yfə3l": [
         "ไรเฟิล"
     ],
     "rZ3k": [
@@ -105495,10 +105496,10 @@ const IPA2WORD_TH =
     "la1": [
         "ละ"
     ],
-    "la1la1": [
+    "la4ʔ": [
         "ละ"
     ],
-    "la4": [
+    "la1la1": [
         "ละ"
     ],
     "la4lZ1y": [
@@ -106126,7 +106127,7 @@ const IPA2WORD_TH =
     "lW4": [
         "ลื้อ"
     ],
-    "lu4": [
+    "lu4ʔ": [
         "ลุ"
     ],
     "lu4kY2TO3t": [
@@ -106210,7 +106211,7 @@ const IPA2WORD_TH =
     "lU3kKA2ŋ": [
         "ลูกข่าง"
     ],
-    "lU3kŋɔ4": [
+    "lU3kŋɔ4ʔ": [
         "ลูกเงาะ"
     ],
     "lU3kcX4k": [
@@ -106225,10 +106226,10 @@ const IPA2WORD_TH =
     "lU3ktA1da1mda1m": [
         "ลูกตาดำๆ"
     ],
-    "lU3kte1nni4s": [
+    "lU3kte1nni4t": [
         "ลูกเต็นนิส"
     ],
-    "lU3kte1nni4t": [
+    "lU3kte1nni4s": [
         "ลูกเต็นนิส"
     ],
     "lU3kta3wla4wX2n": [
@@ -106574,7 +106575,7 @@ const IPA2WORD_TH =
     "lZ3lA3": [
         "เล่อล่า"
     ],
-    "lə4": [
+    "lə4ʔ": [
         "เลอะ"
     ],
     "Ta1mlə4": [
@@ -106586,7 +106587,7 @@ const IPA2WORD_TH =
     "lə4lʉ1a1n": [
         "เลอะเลือน"
     ],
-    "le4": [
+    "le4ʔ": [
         "เละ"
     ],
     "le4Te4": [
@@ -106620,7 +106621,7 @@ const IPA2WORD_TH =
     "la4wlO1m": [
         "เล้าโลม"
     ],
-    "lɔ4": [
+    "lɔ4ʔ": [
         "เลาะ"
     ],
     "lZ3k": [
@@ -106968,7 +106969,7 @@ const IPA2WORD_TH =
     "lɛ4lɛ1": [
         "และ"
     ],
-    "lɛ2": [
+    "lɛ2ʔ": [
         "และ",
         "แหละ"
     ],
@@ -107066,7 +107067,7 @@ const IPA2WORD_TH =
     "kro1mlO1ha2ki2t": [
         "กรมโลหกิจ"
     ],
-    "lO1ha2": [
+    "lO1ha2ʔ": [
         "โลหะ"
     ],
     "lO1hi2t": [
@@ -107090,7 +107091,7 @@ const IPA2WORD_TH =
     "se3nlO1hi2tdY1ŋ": [
         "เส้นโลหิตแดง"
     ],
-    "lo4": [
+    "lo4ʔ": [
         "โละ"
     ],
     "la3y": [
@@ -107117,7 +107118,7 @@ const IPA2WORD_TH =
     "la4y": [
         "ไล้"
     ],
-    "lʉ4": [
+    "lʉ4ʔ": [
         "ฦ"
     ],
     "wX1": [
@@ -107236,7 +107237,7 @@ const IPA2WORD_TH =
     "wX4lwX4ls": [
         "วอลซ์"
     ],
-    "wa4": [
+    "wa4ʔ": [
         "วะ"
     ],
     "a1ra1ywa4": [
@@ -107420,10 +107421,10 @@ const IPA2WORD_TH =
     "yA2ŋwA3": [
         "อย่างว่า"
     ],
-    "wA4": [
+    "!wA4": [
         "ว้า"
     ],
-    "!wA4": [
+    "wA4": [
         "ว้า"
     ],
     "wA4wu3n": [
@@ -107545,8 +107546,9 @@ const IPA2WORD_TH =
     "wY2kwA3y": [
         "แหวกว่าย"
     ],
-    "wA1ra4": [
-        "วาร"
+    "wA1ra4ʔ": [
+        "วาร",
+        "วาระ"
     ],
     "na1ywA1ra4": [
         "ในวาระ"
@@ -107650,10 +107652,10 @@ const IPA2WORD_TH =
     "wa2nwi4to2k": [
         "หวั่นวิตก"
     ],
-    "wi4tta1TA5n": [
+    "wi4tTA5n": [
         "วิตถาร"
     ],
-    "wi4tTA5n": [
+    "wi4tta1TA5n": [
         "วิตถาร"
     ],
     "wi4ta1mi1n": [
@@ -108006,7 +108008,7 @@ const IPA2WORD_TH =
     "wɛ3wsi5a1ŋ": [
         "แว่วเสียง"
     ],
-    "wɛ4": [
+    "wɛ4ʔ": [
         "แวะ"
     ],
     "wO1y": [
@@ -108172,32 +108174,32 @@ const IPA2WORD_TH =
     "sa2dta1wa4sA2t": [
         "สัตวศาสตร์"
     ],
-    "a2ksX5nsA2t": [
-        "อักษรศาสตร์"
-    ],
     "a2ksX5ra1sA2t": [
         "อักษรศาสตร์"
     ],
-    "sA2tsa1trA1cA1n": [
-        "ศาสตราจารย์"
+    "a2ksX5nsA2t": [
+        "อักษรศาสตร์"
     ],
     "sA2sa1trA1cA1n": [
+        "ศาสตราจารย์"
+    ],
+    "sA2tsa1trA1cA1n": [
         "ศาสตราจารย์"
     ],
     "sA2ttrA1wu4t": [
         "ศาสตราวุธ"
     ],
+    "sA2tsa1nA5": [
+        "ศาสนา"
+    ],
     "sA2sa1nA5": [
         "ศาสนา",
         "สาสนา"
     ],
-    "sA2tsa1nA5": [
-        "ศาสนา"
-    ],
-    "sA2sa1nA5Kri4t": [
+    "sA2tsa1nA5Kri4t": [
         "ศาสนาคริสต์"
     ],
-    "sA2tsa1nA5Kri4t": [
+    "sA2sa1nA5Kri4t": [
         "ศาสนาคริสต์"
     ],
     "sA2sa1nA5PrA1m": [
@@ -108212,19 +108214,19 @@ const IPA2WORD_TH =
     "sA2tsa1nA5i2sa1lA1m": [
         "ศาสนาอิสลาม"
     ],
-    "mX5sX5nsA2tsa1nA5": [
+    "mX5sX5nsA2sa1nA5": [
         "หมอสอนศาสนา"
     ],
-    "mX5sX5nsA2sa1nA5": [
+    "mX5sX5nsA2tsa1nA5": [
         "หมอสอนศาสนา"
     ],
     "si1ri2rA3t": [
         "ศิริราช"
     ],
-    "si5nla1pa2": [
+    "si5nla4pa1si5n": [
         "ศิลป"
     ],
-    "si5nla4pa1si5n": [
+    "si5nla1pa2": [
         "ศิลป"
     ],
     "si5nla4pa1ka1m": [
@@ -108246,7 +108248,7 @@ const IPA2WORD_TH =
         "ศิษย์",
         "สิทธิ์"
     ],
-    "sI5sa2": [
+    "sI5sa2ʔ": [
         "ศีรษะ"
     ],
     "sI5n": [
@@ -108517,12 +108519,12 @@ const IPA2WORD_TH =
     "sa1du2dI1": [
         "สดุดี"
     ],
+    "sa2trI1": [
+        "สตรี"
+    ],
     "sa2ttrI1": [
         "สตรี",
         "สัตรี"
-    ],
-    "sa2trI1": [
-        "สตรี"
     ],
     "rO1ŋri1a1nsa2trI1": [
         "โรงเรียนสตรี"
@@ -108934,10 +108936,10 @@ const IPA2WORD_TH =
     "sa1mA1Ci4k": [
         "สมาชิก"
     ],
-    "sa1mA1Ci4kka1PA3p": [
+    "sa1mA1Ci4kPA3p": [
         "สมาชิกภาพ"
     ],
-    "sa1mA1Ci4kPA3p": [
+    "sa1mA1Ci4kka1PA3p": [
         "สมาชิกภาพ"
     ],
     "sa1mA1Ci4ksa1PA1PU3TY1nrA3tsa1dX1n": [
@@ -109021,10 +109023,10 @@ const IPA2WORD_TH =
     "sa5nPA1kX1n": [
         "สรรพากร"
     ],
-    "sa5nsZ5n": [
+    "sa5nra1sZ5n": [
         "สรรเสริญ"
     ],
-    "sa5nra1sZ5n": [
+    "sa5nsZ5n": [
         "สรรเสริญ"
     ],
     "su5a1ŋ": [
@@ -109045,10 +109047,10 @@ const IPA2WORD_TH =
     "sA5ysɔ3y": [
         "สายสร้อย"
     ],
-    "sa1ra2": [
+    "sa2ʔ": [
         "สระ"
     ],
-    "sa2": [
+    "sa1ra2": [
         "สระ"
     ],
     "sa1ra2A1": [
@@ -109268,12 +109270,12 @@ const IPA2WORD_TH =
     "sa1wA5mi4": [
         "สวามิ"
     ],
+    "sa1wi5ŋ": [
+        "สวิง"
+    ],
     "sa1wi1ŋ": [
         "สวิง",
         "สะวิง"
-    ],
-    "sa1wi5ŋ": [
-        "สวิง"
     ],
     "ma2tsa1wi1ŋ": [
         "หมัดสวิง"
@@ -109529,10 +109531,10 @@ const IPA2WORD_TH =
     "sa1e1w": [
         "สะเอว"
     ],
-    "sa2kKra4ŋ": [
+    "sa4kKra4ŋ": [
         "สักครั้ง"
     ],
-    "sa4kKra4ŋ": [
+    "sa2kKra4ŋ": [
         "สักครั้ง"
     ],
     "sa4kni4tdi1a1w": [
@@ -110037,7 +110039,7 @@ const IPA2WORD_TH =
     "sA5ra1wa4t": [
         "สารวัตร"
     ],
-    "sA5ra4": [
+    "sA5ra4ʔ": [
         "สาระ"
     ],
     "sA5ra4nY1": [
@@ -110199,7 +110201,7 @@ const IPA2WORD_TH =
     "sa5mA1ŋ": [
         "สำอาง"
     ],
-    "si2": [
+    "si2ʔ": [
         "สิ"
     ],
     "si5ŋ": [
@@ -110550,7 +110552,7 @@ const IPA2WORD_TH =
     "TI3ba1nCA1kA1nsU5ŋsu2t": [
         "ที่บัญชาการสูงสุด"
     ],
-    "sU5ŋA1yu4": [
+    "sU5ŋA1yu4ʔ": [
         "สูงอายุ"
     ],
     "hu5a1sU5ŋ": [
@@ -110654,7 +110656,7 @@ const IPA2WORD_TH =
     "sE5PlE1": [
         "เสเพล"
     ],
-    "sE5mha2": [
+    "sE5mha2ʔ": [
         "เสมหะ"
     ],
     "sa1mZ5": [
@@ -110736,7 +110738,7 @@ const IPA2WORD_TH =
     "wa1nsa5w": [
         "วันเสาร์"
     ],
-    "sɔ2": [
+    "sɔ2ʔ": [
         "เสาะ"
     ],
     "sɔ2TX4ŋ": [
@@ -111295,7 +111297,7 @@ const IPA2WORD_TH =
     "nA5": [
         "หนา"
     ],
-    "nA5tə2": [
+    "nA5tə2ʔ": [
         "หนาเตอะ"
     ],
     "nA3nA5": [
@@ -111391,13 +111393,13 @@ const IPA2WORD_TH =
     "nI2p": [
         "หนีบ"
     ],
-    "nʉ1ŋ": [
-        "หนึ่ง",
-        "นึง"
-    ],
     "nʉ2ŋ": [
         "หนึ่ง",
         "1"
+    ],
+    "nʉ1ŋ": [
+        "หนึ่ง",
+        "นึง"
     ],
     "de2knʉ2ŋKo1n": [
         "เด็กหนึ่งคน"
@@ -111733,10 +111735,10 @@ const IPA2WORD_TH =
     "yu2tyɔ2n": [
         "หยุดหย่อน"
     ],
-    "yɔ5myɛ5m": [
+    "yɔ5m": [
         "หยอม"
     ],
-    "yɔ5m": [
+    "yɔ5myɛ5m": [
         "หยอม"
     ],
     "yɔ2m": [
@@ -111881,10 +111883,10 @@ const IPA2WORD_TH =
     "rX5": [
         "หรอ"
     ],
-    "rX1krɔ2krɔ1k": [
+    "rX2k": [
         "หรอก"
     ],
-    "rX2k": [
+    "rX1krɔ2krɔ1k": [
         "หรอก"
     ],
     "ma3ytɔ3ŋrɔ1k": [
@@ -111933,16 +111935,16 @@ const IPA2WORD_TH =
     "dU1a1wTI1rʉ4": [
         "ดูเอาทีหรือ"
     ],
-    "pe1npa1yda3yrʉ4nI3": [
-        "เป็นไปได้หรือนี่"
-    ],
     "pe1npa1yda3yrə4nI3": [
         "เป็นไปได้หรือนี่"
     ],
-    "rZ5Ka4": [
-        "หรือคะ"
+    "pe1npa1yda3yrʉ4nI3": [
+        "เป็นไปได้หรือนี่"
     ],
     "rʉ4Ka4": [
+        "หรือคะ"
+    ],
+    "rZ5Ka4ʔ": [
         "หรือคะ"
     ],
     "rU5": [
@@ -112104,7 +112106,7 @@ const IPA2WORD_TH =
     "le2klX5m": [
         "เหล็กหลอม"
     ],
-    "la2": [
+    "la2ʔ": [
         "หละ"
     ],
     "la2k": [
@@ -112230,10 +112232,10 @@ const IPA2WORD_TH =
     "lA5m": [
         "หลาม"
     ],
-    "Ka3wlA5m": [
+    "KA3wlA5m": [
         "ข้าวหลาม"
     ],
-    "KA3wlA5m": [
+    "Ka3wlA5m": [
         "ข้าวหลาม"
     ],
     "lA5y": [
@@ -112390,12 +112392,12 @@ const IPA2WORD_TH =
     "wA2twa2n": [
         "หวาดหวั่น"
     ],
-    "wu5a1": [
-        "หวัว"
-    ],
     "hu5a1": [
         "หวัว",
         "หัว"
+    ],
+    "wu5a1": [
+        "หวัว"
     ],
     "wA2ŋ": [
         "หว่าง"
@@ -112653,10 +112655,10 @@ const IPA2WORD_TH =
     "hu5a1hi5n": [
         "หัวหิน"
     ],
-    "!ha5": [
+    "hA5": [
         "หา"
     ],
-    "hA5": [
+    "!ha5": [
         "หา"
     ],
     "hA5KU3": [
@@ -113054,7 +113056,7 @@ const IPA2WORD_TH =
     "ma5wa1wwA3": [
         "เหมาเอาว่า"
     ],
-    "mɔ2": [
+    "mɔ2ʔ": [
         "เหมาะ",
         "แหมะ"
     ],
@@ -113094,7 +113096,7 @@ const IPA2WORD_TH =
     "ya3w": [
         "เหย้า"
     ],
-    "yɔ2": [
+    "yɔ2ʔ": [
         "เหยาะ"
     ],
     "yɔ2na4mplA1nɔ2ysi4": [
@@ -113325,7 +113327,7 @@ const IPA2WORD_TH =
     "ha2w": [
         "เห่า"
     ],
-    "hɔ2": [
+    "hɔ2ʔ": [
         "เหาะ"
     ],
     "hZ5n": [
@@ -113443,7 +113445,7 @@ const IPA2WORD_TH =
     "yɛ5m": [
         "แหยม"
     ],
-    "yɛ2": [
+    "yɛ2ʔ": [
         "แหยะ"
     ],
     "rɛ5m": [
@@ -113498,10 +113500,10 @@ const IPA2WORD_TH =
     "lY5mi1ndO1cI1n": [
         "แหลมอินโดจีน"
     ],
-    "Ta3wna4nlɛ2": [
+    "Ta3wna4nlɛ1": [
         "เท่านั้นแหละ"
     ],
-    "Ta3wna4nlɛ1": [
+    "Ta3wna4nlɛ2": [
         "เท่านั้นแหละ"
     ],
     "Po5mkɔ3mʉ5a1nka1nlɛ2": [
@@ -113522,7 +113524,7 @@ const IPA2WORD_TH =
     "wɛ5w": [
         "แหวว"
     ],
-    "wɛ2": [
+    "wɛ2ʔ": [
         "แหวะ"
     ],
     "hɛ2hɛ2": [
@@ -114003,10 +114005,10 @@ const IPA2WORD_TH =
     "a2pa2ka1ti2": [
         "อปกติ"
     ],
-    "a2bi4si1ni1a1": [
+    "a2bi1si1ni1a1": [
         "อบิสซิเนีย"
     ],
-    "a2bi1si1ni1a1": [
+    "a2bi4si1ni1a1": [
         "อบิสซิเนีย"
     ],
     "o2pPa1yo4p": [
@@ -114018,10 +114020,10 @@ const IPA2WORD_TH =
     "a1Pa1y": [
         "อภัย"
     ],
-    "a1Pa1yTO3t": [
+    "a1Pa1yya1TO3t": [
         "อภัยโทษ"
     ],
-    "a1Pa1yya1TO3t": [
+    "a1Pa1yTO3t": [
         "อภัยโทษ"
     ],
     "a2Pi4na1nTa1nA1kA1n": [
@@ -114498,10 +114500,10 @@ const IPA2WORD_TH =
     "ɔ3nɛ3n": [
         "อ้อนแอ้น"
     ],
-    "ɔ4ffi4sɔ4pfi4t": [
+    "ɔ4pfi4s": [
         "ออฟฟิศ"
     ],
-    "ɔ4pfi4s": [
+    "ɔ4ffi4sɔ4pfi4t": [
         "ออฟฟิศ"
     ],
     "X1m": [
@@ -114534,10 +114536,10 @@ const IPA2WORD_TH =
     "ɔ3yi2ŋ": [
         "อ้อยอิ่ง"
     ],
-    "X4strE1li1a1": [
+    "ɔ4tsa1trE1li1a1": [
         "ออสเตรเลีย"
     ],
-    "ɔ4tsa1trE1li1a1": [
+    "X4strE1li1a1": [
         "ออสเตรเลีย"
     ],
     "X4stri1a1": [
@@ -115011,7 +115013,7 @@ const IPA2WORD_TH =
     "A1CI1wa4sʉ2ksA5": [
         "อาชีวศึกษา"
     ],
-    "A1CI1wa4": [
+    "A1CI1wa4ʔ": [
         "อาชีวะ"
     ],
     "A1si1a1": [
@@ -115053,7 +115055,7 @@ const IPA2WORD_TH =
     "A1TX1n": [
         "อาทร"
     ],
-    "A1Ti4": [
+    "A1Ti4ʔ": [
         "อาทิ"
     ],
     "A1Ti4t": [
@@ -115110,12 +115112,12 @@ const IPA2WORD_TH =
     "A1yni5a1m": [
         "อายเหนียม"
     ],
-    "a3y": [
-        "อ้าย"
-    ],
     "A3y": [
         "อ้าย",
         "ไอ้"
+    ],
+    "a3y": [
+        "อ้าย"
     ],
     "ka1a3y": [
         "กับอ้าย"
@@ -115135,7 +115137,7 @@ const IPA2WORD_TH =
     "u3yA3y": [
         "อุ้ยอ้าย"
     ],
-    "A1yu4": [
+    "A1yu4ʔ": [
         "อายุ"
     ],
     "Cu3a1ŋA1yu4": [
@@ -115423,10 +115425,10 @@ const IPA2WORD_TH =
     "i2tA1lI1": [
         "อิตาลี"
     ],
-    "i2ttA1li1a1n": [
+    "i2tA1li1a1n": [
         "อิตาเลียน"
     ],
-    "i2tA1li1a1n": [
+    "i2ttA1li1a1n": [
         "อิตาเลียน"
     ],
     "i2tTi4": [
@@ -115661,7 +115663,7 @@ const IPA2WORD_TH =
     "I1cU3": [
         "อีจู้"
     ],
-    "I1pɛ2": [
+    "I1pɛ2ʔ": [
         "อีแปะ"
     ],
     "I1yi2p": [
@@ -116153,10 +116155,10 @@ const IPA2WORD_TH =
     "ə4y": [
         "เอ๊ย"
     ],
-    "Z4y!Z4y": [
+    "Z5y": [
         "เอ๋ย"
     ],
-    "Z5y": [
+    "Z4y!Z4y": [
         "เอ๋ย"
     ],
     "TO3!Z4y": [
@@ -116180,10 +116182,10 @@ const IPA2WORD_TH =
     "yW1nTA4we1w": [
         "ยืนเท้าเอว"
     ],
-    "E1wZ1re4s": [
+    "E1wZ1rE4t": [
         "เอเวอเรสต์"
     ],
-    "E1wZ1rE4t": [
+    "E1wZ1re4s": [
         "เอเวอเรสต์"
     ],
     "e4s": [
@@ -116198,7 +116200,7 @@ const IPA2WORD_TH =
     "Z1": [
         "เออ"
     ],
-    "Z1sI1wa4": [
+    "Z1sI1wa4ʔ": [
         "เออซีวะ"
     ],
     "Z1nA3": [
@@ -116216,7 +116218,7 @@ const IPA2WORD_TH =
     "Z3hZ1": [
         "เอ้อเฮอ"
     ],
-    "e2": [
+    "e2ʔ": [
         "เอะ"
     ],
     "e2a2": [
@@ -116231,7 +116233,7 @@ const IPA2WORD_TH =
     "e2a2ma4TZ3ŋ": [
         "เอะอะมะเทิ่ง"
     ],
-    "!e4": [
+    "!e4ʔ": [
         "เอ๊ะ"
     ],
     "a1w": [
@@ -116599,10 +116601,10 @@ const IPA2WORD_TH =
     "hX1la1ndA1": [
         "ฮอลันดา"
     ],
-    "!ha4": [
+    "!ha4ʔ": [
         "ฮะ"
     ],
-    "ha4": [
+    "ha4ʔ": [
         "ฮะ"
     ],
     "ha4ha4": [
@@ -116642,10 +116644,10 @@ const IPA2WORD_TH =
     "hi1ndU1": [
         "ฮินดู"
     ],
-    "!hʉ4": [
+    "!hʉ4ʔ": [
         "ฮึ"
     ],
-    "hʉ4": [
+    "hʉ4ʔ": [
         "ฮึ"
     ],
     "hʉ4khZ5m": [
@@ -116706,7 +116708,7 @@ const IPA2WORD_TH =
     "hY1m": [
         "แฮม"
     ],
-    "hɛ4": [
+    "hɛ4ʔ": [
         "แฮะ"
     ],
     "su5a1yci1ŋhɛ4wa1nnI4": [
@@ -116746,20 +116748,20 @@ const IPA2WORD_TH =
     "bʉ5ŋbʉ5ŋ": [
         "บึ๋งบึ๋ง"
     ],
-    "a2": [
+    "a2ʔ": [
         "อะ",
         "อ่ะ"
     ],
-    "ma4": [
+    "ma4Pʉ2a1k": [
         "มะ"
     ],
-    "ma4Pʉ2a1k": [
+    "ma4ʔ": [
         "มะ"
     ],
     "nA1ŋtA1y": [
         "นางตาย"
     ],
-    "mɛ4": [
+    "mɛ4ʔ": [
         "แมะ"
     ],
     "ŋi4a1": [
@@ -116817,7 +116819,7 @@ const IPA2WORD_TH =
     "kla1ykla1y": [
         "ไกลๆ"
     ],
-    "Ka2": [
+    "Ka2ʔ": [
         "ขะ"
     ],
     "KA2tKA2t": [
@@ -116859,7 +116861,7 @@ const IPA2WORD_TH =
     "ŋo1ŋŋo1ŋ": [
         "งงๆ"
     ],
-    "ŋa2": [
+    "ŋa2ʔ": [
         "ง่ะ",
         "หงะ"
     ],
@@ -116944,17 +116946,17 @@ const IPA2WORD_TH =
         "แต็ดแต๋",
         "แต๊ดแต๋"
     ],
-    "tY2la4": [
+    "tY2la4ʔ": [
         "แต่ละแต่ละ"
     ],
-    "Ta2": [
+    "Ta2ʔ": [
         "ถะ"
     ],
-    "ə2": [
+    "ə2ʔ": [
         "เออะ",
         "เอ่อะ"
     ],
-    "Ta4": [
+    "Ta4ʔ": [
         "ทะ"
     ],
     "TA1ŋTI3": [
@@ -116991,7 +116993,7 @@ const IPA2WORD_TH =
     "ni3mni3m": [
         "นิ่มๆ"
     ],
-    "nI3lɛ2": [
+    "nI3lɛ2ʔ": [
         "นี่แหละ"
     ],
     "ni4a1": [
@@ -117022,7 +117024,7 @@ const IPA2WORD_TH =
     "bU2tbʉ3ŋ": [
         "บูดบึ้ง"
     ],
-    "brɛ2": [
+    "brɛ2ʔ": [
         "แบระ"
     ],
     "pa4p": [
@@ -117038,7 +117040,7 @@ const IPA2WORD_TH =
     "pʉ3ŋ": [
         "ปึ้ง"
     ],
-    "pu4": [
+    "pu4ʔ": [
         "ปุ๊"
     ],
     "pu4ppu4p": [
@@ -117056,7 +117058,7 @@ const IPA2WORD_TH =
     "pI1nKʉ3n": [
         "ปีนขึ้น"
     ],
-    "pɔ4": [
+    "pɔ4ʔ": [
         "เป๊าะ"
     ],
     "pa1ydZ1n": [
@@ -117071,7 +117073,7 @@ const IPA2WORD_TH =
     "Pla2kPla2kPla2kPʉ2a1k": [
         "ผลักผลักผลักเผือก"
     ],
-    "Pa2": [
+    "Pa2ʔ": [
         "ผะ"
     ],
     "PlX1": [
@@ -117122,10 +117124,10 @@ const IPA2WORD_TH =
     "rY1ŋwi2a1ŋ": [
         "แรงเหวี่ยง"
     ],
-    "lɛ4": [
+    "lɛ4ʔ": [
         "แระ"
     ],
-    "wa2": [
+    "wa2ʔ": [
         "ว่ะ",
         "หว่ะ",
         "หวะ"
@@ -117176,7 +117178,7 @@ const IPA2WORD_TH =
     "lʉ5a1ŋlʉ5a1ŋ": [
         "เหลืองๆ"
     ],
-    "hə2": [
+    "hə2ʔ": [
         "เหอะ"
     ],
     "ŋY5": [
@@ -117191,10 +117193,10 @@ const IPA2WORD_TH =
     "X2": [
         "อ่อ"
     ],
-    "ʉ2": [
+    "ʉ2ʔ": [
         "อึ"
     ],
-    "i2": [
+    "i2ʔ": [
         "อิ"
     ],
     "ʉ3m": [
@@ -117255,7 +117257,7 @@ const IPA2WORD_TH =
     "Ko1nKo1n": [
         "คนๆ"
     ],
-    "ba2": [
+    "ba2ʔ": [
         "บะ"
     ],
     "sI5na4m": [
@@ -117274,10 +117276,10 @@ const IPA2WORD_TH =
     "rX4ysI2si2pka3w": [
         "149"
     ],
-    "si2phA3Tʉ5ŋyI3si2phA3": [
+    "si2phA3Tʉ5ŋyI3phA3": [
         "15-25"
     ],
-    "si2phA3Tʉ5ŋyI3phA3": [
+    "si2phA3Tʉ5ŋyI3si2phA3": [
         "15-25"
     ],
     "si2phA3Tʉ5ŋsA5msi2p": [
@@ -117295,12 +117297,12 @@ const IPA2WORD_TH =
     "yI3si2phA3Tʉ5ŋsA5msi2phA3": [
         "25-35"
     ],
-    "sA5mTʉ5ŋsI2": [
-        "3-4"
-    ],
     "sA5msI2": [
         "3-4",
         "34"
+    ],
+    "sA5mTʉ5ŋsI2": [
+        "3-4"
     ],
     "sA5mrX4yhA3si2p": [
         "350"
@@ -117341,10 +117343,10 @@ const IPA2WORD_TH =
     "si2psI2": [
         "14"
     ],
-    "yI3pʔe2t": [
+    "yI3si2pʔe2t": [
         "21"
     ],
-    "yI3si2pʔe2t": [
+    "yI3pʔe2t": [
         "21"
     ],
     "yI3si2pnʉ2ŋ": [
@@ -117386,17 +117388,20 @@ const IPA2WORD_TH =
     "yI3si2pce2t": [
         "27"
     ],
+    "yI3si2ppY2t": [
+        "28"
+    ],
     "yI3ppY2t": [
         "28"
     ],
-    "yI3si2ppY2t": [
-        "28"
+    "yI3pkA3w": [
+        "29"
     ],
     "yI3si2pkA3w": [
         "29"
     ],
-    "yI3pkA3w": [
-        "29"
+    "sA5mʔe2t": [
+        "31"
     ],
     "sA5msi2pʔe2t": [
         "31"
@@ -117404,34 +117409,31 @@ const IPA2WORD_TH =
     "sA5msi2pnʉ2ŋ": [
         "31"
     ],
-    "sA5mʔe2t": [
-        "31"
+    "sA5msX5ŋ": [
+        "32"
     ],
     "sA5msi2psX5ŋ": [
         "32"
     ],
-    "sA5msX5ŋ": [
-        "32"
-    ],
-    "sA5msA5m": [
+    "sA5msi2psA5m": [
         "33"
     ],
-    "sA5msi2psA5m": [
+    "sA5msA5m": [
         "33"
     ],
     "sA5msi2psI2": [
         "34"
     ],
-    "sA5mhA3": [
-        "35"
-    ],
     "sA5msi2phA3": [
         "35"
     ],
-    "sA5msi2pho2k": [
-        "36"
+    "sA5mhA3": [
+        "35"
     ],
     "sA5mho2k": [
+        "36"
+    ],
+    "sA5msi2pho2k": [
         "36"
     ],
     "sA5mce2t": [
@@ -117440,10 +117442,10 @@ const IPA2WORD_TH =
     "sA5msi2pce2t": [
         "37"
     ],
-    "sA5mpY2t": [
+    "sA5msi2ppY2t": [
         "38"
     ],
-    "sA5msi2ppY2t": [
+    "sA5mpY2t": [
         "38"
     ],
     "sA5msi2pkA3w": [
@@ -117452,10 +117454,10 @@ const IPA2WORD_TH =
     "sA5mkA3w": [
         "39"
     ],
-    "sI2si2pʔe2t": [
+    "sI2si2pnʉ2ŋ": [
         "41"
     ],
-    "sI2si2pnʉ2ŋ": [
+    "sI2si2pʔe2t": [
         "41"
     ],
     "sI2ʔe2t": [
@@ -117473,16 +117475,16 @@ const IPA2WORD_TH =
     "sI2sA5m": [
         "43"
     ],
-    "sI2si2psI2": [
-        "44"
-    ],
     "sI2sI2": [
         "44"
     ],
-    "sI2hA3": [
-        "45"
+    "sI2si2psI2": [
+        "44"
     ],
     "sI2si2phA3": [
+        "45"
+    ],
+    "sI2hA3": [
         "45"
     ],
     "sI2ho2k": [
@@ -117491,10 +117493,10 @@ const IPA2WORD_TH =
     "sI2si2pho2k": [
         "46"
     ],
-    "sI2ce2t": [
+    "sI2si2pce2t": [
         "47"
     ],
-    "sI2si2pce2t": [
+    "sI2ce2t": [
         "47"
     ],
     "sI2si2ppY2t": [
@@ -117503,11 +117505,14 @@ const IPA2WORD_TH =
     "sI2pY2t": [
         "48"
     ],
+    "sI2si2pkA3w": [
+        "49"
+    ],
     "sI2kA3w": [
         "49"
     ],
-    "sI2si2pkA3w": [
-        "49"
+    "hA3si2pʔe2t": [
+        "51"
     ],
     "hA3ʔe2t": [
         "51"
@@ -117515,25 +117520,22 @@ const IPA2WORD_TH =
     "hA3si2pnʉ2ŋ": [
         "51"
     ],
-    "hA3si2pʔe2t": [
-        "51"
+    "hA3si2psX5ŋ": [
+        "52"
     ],
     "hA3sX5ŋ": [
         "52"
     ],
-    "hA3si2psX5ŋ": [
-        "52"
+    "hA3si2psA5m": [
+        "53"
     ],
     "hA3sA5m": [
         "53"
     ],
-    "hA3si2psA5m": [
-        "53"
-    ],
-    "hA3sI2": [
+    "hA3si2psI2": [
         "54"
     ],
-    "hA3si2psI2": [
+    "hA3sI2": [
         "54"
     ],
     "hA3si2phA3": [
@@ -117554,14 +117556,11 @@ const IPA2WORD_TH =
     "hA3pY2t": [
         "58"
     ],
-    "hA3si2pkA3w": [
-        "59"
-    ],
     "hA3kA3w": [
         "59"
     ],
-    "ho2ksi2pʔe2t": [
-        "61"
+    "hA3si2pkA3w": [
+        "59"
     ],
     "ho2kʔe2t": [
         "61"
@@ -117569,10 +117568,13 @@ const IPA2WORD_TH =
     "ho2ksi2pnʉ2ŋ": [
         "61"
     ],
-    "ho2ksX5ŋ": [
-        "62"
+    "ho2ksi2pʔe2t": [
+        "61"
     ],
     "ho2ksi2psX5ŋ": [
+        "62"
+    ],
+    "ho2ksX5ŋ": [
         "62"
     ],
     "ho2ksi2psA5m": [
@@ -117581,10 +117583,10 @@ const IPA2WORD_TH =
     "ho2ksA5m": [
         "63"
     ],
-    "ho2ksi2psI2": [
+    "ho2ksI2": [
         "64"
     ],
-    "ho2ksI2": [
+    "ho2ksi2psI2": [
         "64"
     ],
     "ho2ksi2phA3": [
@@ -117605,31 +117607,31 @@ const IPA2WORD_TH =
     "ho2kce2t": [
         "67"
     ],
-    "ho2kpY2t": [
-        "68"
-    ],
     "ho2ksi2ppY2t": [
         "68"
     ],
-    "ho2kkA3w": [
-        "69"
+    "ho2kpY2t": [
+        "68"
     ],
     "ho2ksi2pkA3w": [
+        "69"
+    ],
+    "ho2kkA3w": [
         "69"
     ],
     "ce2tʔe2t": [
         "71"
     ],
-    "ce2tsi2pʔe2t": [
-        "71"
-    ],
     "ce2tsi2pnʉ2ŋ": [
         "71"
     ],
-    "ce2tsX5ŋ": [
-        "72"
+    "ce2tsi2pʔe2t": [
+        "71"
     ],
     "ce2tsi2psX5ŋ": [
+        "72"
+    ],
+    "ce2tsX5ŋ": [
         "72"
     ],
     "ce2tsi2psA5m": [
@@ -117638,16 +117640,16 @@ const IPA2WORD_TH =
     "ce2tsA5m": [
         "73"
     ],
-    "ce2tsi2psI2": [
-        "74"
-    ],
     "ce2tsI2": [
         "74"
     ],
-    "ce2tsi2phA3": [
-        "75"
+    "ce2tsi2psI2": [
+        "74"
     ],
     "ce2tʰA3": [
+        "75"
+    ],
+    "ce2tsi2phA3": [
         "75"
     ],
     "ce2tsi2pho2k": [
@@ -117662,55 +117664,55 @@ const IPA2WORD_TH =
     "ce2tce2t": [
         "77"
     ],
-    "ce2tpY2t": [
-        "78"
-    ],
     "ce2tsi2ppY2t": [
         "78"
     ],
-    "ce2tsi2pkA3w": [
-        "79"
+    "ce2tpY2t": [
+        "78"
     ],
     "ce2tkA3w": [
         "79"
     ],
-    "pY2tsi2pʔe2t": [
-        "81"
+    "ce2tsi2pkA3w": [
+        "79"
     ],
     "pY2tʔe2t": [
+        "81"
+    ],
+    "pY2tsi2pʔe2t": [
         "81"
     ],
     "pY2tsi2pnʉ2ŋ": [
         "81"
     ],
-    "pY2tsX5ŋ": [
-        "82"
-    ],
     "pY2tsi2psX5ŋ": [
         "82"
     ],
-    "pY2tsA5m": [
-        "83"
+    "pY2tsX5ŋ": [
+        "82"
     ],
     "pY2tsi2psA5m": [
         "83"
     ],
-    "pY2tsi2psI2": [
-        "84"
+    "pY2tsA5m": [
+        "83"
     ],
     "pY2tsI2": [
         "84"
     ],
-    "pY2tʰA3": [
-        "85"
+    "pY2tsi2psI2": [
+        "84"
     ],
     "pY2tsi2phA3": [
         "85"
     ],
-    "pY2tsi2pho2k": [
-        "86"
+    "pY2tʰA3": [
+        "85"
     ],
     "pY2tʰo2k": [
+        "86"
+    ],
+    "pY2tsi2pho2k": [
         "86"
     ],
     "pY2tce2t": [
@@ -117725,19 +117727,19 @@ const IPA2WORD_TH =
     "pY2tpY2t": [
         "88"
     ],
-    "pY2tsi2pkA3w": [
-        "89"
-    ],
     "pY2tkA3w": [
         "89"
     ],
-    "kA3wʔe2t": [
-        "91"
+    "pY2tsi2pkA3w": [
+        "89"
     ],
     "kA3wsi2pnʉ2ŋ": [
         "91"
     ],
     "kA3wsi2pʔe2t": [
+        "91"
+    ],
+    "kA3wʔe2t": [
         "91"
     ],
     "kA3wsX5ŋ": [
@@ -117746,10 +117748,10 @@ const IPA2WORD_TH =
     "kA3wsi2psX5ŋ": [
         "92"
     ],
-    "kA3wsA5m": [
+    "kA3wsi2psA5m": [
         "93"
     ],
-    "kA3wsi2psA5m": [
+    "kA3wsA5m": [
         "93"
     ],
     "kA3wsI2": [
@@ -117758,10 +117760,10 @@ const IPA2WORD_TH =
     "kA3wsi2psI2": [
         "94"
     ],
-    "kA3wsi2phA3": [
+    "kA3whA3": [
         "95"
     ],
-    "kA3whA3": [
+    "kA3wsi2phA3": [
         "95"
     ],
     "kA3wsi2pho2k": [
@@ -117776,31 +117778,31 @@ const IPA2WORD_TH =
     "kA3wsi2pce2t": [
         "97"
     ],
-    "kA3wsi2ppY2t": [
-        "98"
-    ],
     "kA3wpY2t": [
         "98"
     ],
-    "kA3wsi2pkA3w": [
-        "99"
+    "kA3wsi2ppY2t": [
+        "98"
     ],
     "kA3wkA3w": [
         "99"
     ],
-    "rX4yʔe2t": [
+    "kA3wsi2pkA3w": [
+        "99"
+    ],
+    "rX4ynʉ2ŋ": [
         "101"
     ],
     "nʉ2ŋrX4ynʉ2ŋ": [
         "101"
     ],
-    "rX4ynʉ2ŋ": [
+    "rX4yʔe2t": [
         "101"
     ],
-    "nʉ2ŋrX4ysX5ŋ": [
+    "rX4ysX5ŋ": [
         "102"
     ],
-    "rX4ysX5ŋ": [
+    "nʉ2ŋrX4ysX5ŋ": [
         "102"
     ],
     "nʉ2ŋrX4ysA5m": [
@@ -117818,10 +117820,10 @@ const IPA2WORD_TH =
     "nʉ2ŋrX4yhA3": [
         "105"
     ],
-    "rX4yho2k": [
+    "nʉ2ŋrX4yho2k": [
         "106"
     ],
-    "nʉ2ŋrX4yho2k": [
+    "rX4yho2k": [
         "106"
     ],
     "rX4yce2t": [
@@ -117833,10 +117835,10 @@ const IPA2WORD_TH =
     "nʉ2ŋrX4ypY2t": [
         "108"
     ],
-    "rX4ykA3w": [
+    "nʉ2ŋrX4ykA3w": [
         "109"
     ],
-    "nʉ2ŋrX4ykA3w": [
+    "rX4ykA3w": [
         "109"
     ],
     "nʉ2ŋrX4ysi2p": [
@@ -117845,22 +117847,22 @@ const IPA2WORD_TH =
     "rX4ysi2p": [
         "110"
     ],
-    "rX4ysi2pnʉ2ŋ": [
-        "111"
-    ],
     "nʉ2ŋrX4ysi2pnʉ2ŋ": [
-        "111"
-    ],
-    "rX4ysi2pʔe2t": [
         "111"
     ],
     "nʉ2ŋrX4ysi2pʔe2t": [
         "111"
     ],
-    "nʉ2ŋrX4ysi2psX5ŋ": [
-        "112"
+    "rX4ysi2pʔe2t": [
+        "111"
+    ],
+    "rX4ysi2pnʉ2ŋ": [
+        "111"
     ],
     "rX4ysi2psX5ŋ": [
+        "112"
+    ],
+    "nʉ2ŋrX4ysi2psX5ŋ": [
         "112"
     ],
     "rX4ysi2psA5m": [
@@ -117881,10 +117883,10 @@ const IPA2WORD_TH =
     "nʉ2ŋrX4ysi2phA3": [
         "115"
     ],
-    "nʉ2ŋrX4ysi2pho2k": [
+    "rX4ysi2pho2k": [
         "116"
     ],
-    "rX4ysi2pho2k": [
+    "nʉ2ŋrX4ysi2pho2k": [
         "116"
     ],
     "nʉ2ŋrX4ysi2pce2t": [
@@ -117893,16 +117895,16 @@ const IPA2WORD_TH =
     "rX4ysi2pce2t": [
         "117"
     ],
-    "nʉ2ŋrX4ysi2ppY2t": [
-        "118"
-    ],
     "rX4ysi2ppY2t": [
         "118"
     ],
-    "nʉ2ŋrX4ysi2pkA3w": [
-        "119"
+    "nʉ2ŋrX4ysi2ppY2t": [
+        "118"
     ],
     "rX4ysi2pkA3w": [
+        "119"
+    ],
+    "nʉ2ŋrX4ysi2pkA3w": [
         "119"
     ],
     "nʉ2ŋrX4yyI3si2p": [
@@ -117935,10 +117937,10 @@ const IPA2WORD_TH =
     "krI4tkrA4t": [
         "กรี๊ดกร๊าด"
     ],
-    "kru1ŋTE3pma4hA5na4KX1n": [
+    "kru1ŋTE3pma1hA5na4KX1n": [
         "กรุงเทพมหานคร"
     ],
-    "kru1ŋTE3pma1hA5na4KX1n": [
+    "kru1ŋTE3pma4hA5na4KX1n": [
         "กรุงเทพมหานคร"
     ],
     "kla2nklY3ŋ": [
@@ -118001,10 +118003,10 @@ const IPA2WORD_TH =
     "kI1wI3": [
         "กีวี"
     ],
-    "ku1nwa4dI1": [
+    "ku1nla1wa1dI1": [
         "กุลวดี"
     ],
-    "ku1nla1wa1dI1": [
+    "ku1nwa4dI1": [
         "กุลวดี"
     ],
     "ku1nwa1dI1": [
@@ -118040,10 +118042,10 @@ const IPA2WORD_TH =
     "KX3mU1n": [
         "ข้อมูล"
     ],
-    "KX3KX3": [
+    "Kɔ3KX3": [
         "ข้อๆ"
     ],
-    "Kɔ3KX3": [
+    "KX3KX3": [
         "ข้อๆ"
     ],
     "Ka1nA1na4p": [
@@ -118055,16 +118057,16 @@ const IPA2WORD_TH =
     "Ka1nlX1ŋ": [
         "ครรลอง"
     ],
-    "Kri4tsa2tta2wa4t": [
+    "Kri4tta1sa2ta2wa4t": [
+        "คริสต์ศตวรรษ"
+    ],
+    "Kri4tta1sa2tta2wa4t": [
         "คริสต์ศตวรรษ"
     ],
     "Kri4tsa2ta2wa4t": [
         "คริสต์ศตวรรษ"
     ],
-    "Kri4tta1sa2ta2wa4t": [
-        "คริสต์ศตวรรษ"
-    ],
-    "Kri4tta1sa2tta2wa4t": [
+    "Kri4tsa2tta2wa4t": [
         "คริสต์ศตวรรษ"
     ],
     "Ka4ru4Pa1n": [
@@ -118118,10 +118120,10 @@ const IPA2WORD_TH =
     "KA1nTI1": [
         "คานธี"
     ],
-    "KA1yKA1y": [
+    "Ka1yKA1y": [
         "คายๆ"
     ],
-    "Ka1yKA1y": [
+    "KA1yKA1y": [
         "คายๆ"
     ],
     "KA1rA1ʔO1ke2ʔ": [
@@ -118266,10 +118268,10 @@ const IPA2WORD_TH =
     "da1ŋda1ŋ": [
         "ดังๆ"
     ],
-    "da4tC": [
+    "da4t": [
         "ดัชท์"
     ],
-    "da4t": [
+    "da4tC": [
         "ดัชท์"
     ],
     "dA1wlO2t": [
@@ -118296,10 +118298,10 @@ const IPA2WORD_TH =
     "dI1sA1y": [
         "ดีไซน์"
     ],
-    "dI1dI1": [
+    "di1dI1": [
         "ดีๆ"
     ],
-    "di1dI1": [
+    "dI1dI1": [
         "ดีๆ"
     ],
     "du1si2t": [
@@ -118326,10 +118328,10 @@ const IPA2WORD_TH =
     "tX2ptO3": [
         "ตอบโต้"
     ],
-    "ta2wa1nʔX2kCi5a1ŋnʉ5a1": [
+    "ta1wa1nʔX2kCi5a1ŋnʉ5a1": [
         "ตะวันออกเฉียงเหนือ"
     ],
-    "ta1wa1nʔX2kCi5a1ŋnʉ5a1": [
+    "ta2wa1nʔX2kCi5a1ŋnʉ5a1": [
         "ตะวันออกเฉียงเหนือ"
     ],
     "ta1Pi1a1n": [
@@ -118449,9 +118451,6 @@ const IPA2WORD_TH =
     "Tʉ1m": [
         "ทึม"
     ],
-    "Tu4pPa4PO3tCa1nA1kA1n": [
-        "ทุพโภชนาการ"
-    ],
     "Tu4pPO1Ca1nA1kA1n": [
         "ทุพโภชนาการ"
     ],
@@ -118461,22 +118460,25 @@ const IPA2WORD_TH =
     "Tu4pPO3tCa1nA1kA1n": [
         "ทุพโภชนาการ"
     ],
+    "Tu4pPa4PO3tCa1nA1kA1n": [
+        "ทุพโภชนาการ"
+    ],
     "TX1ra1nI1so5ŋ": [
         "ธรณีสงฆ์"
     ],
-    "Ta1msa5ŋwE3t": [
+    "Ta1mma4sa5ŋwE3t": [
         "ธรรมสังเวช"
     ],
-    "Ta1mma4sa5ŋwE3t": [
+    "Ta1msa5ŋwE3t": [
         "ธรรมสังเวช"
     ],
     "Ta1mma4ʔ": [
         "ธรรมะ"
     ],
-    "Ta1nya4PW3t": [
+    "Ta1nya1PW3t": [
         "ธัญพืช"
     ],
-    "Ta1nya1PW3t": [
+    "Ta1nya4PW3t": [
         "ธัญพืช"
     ],
     "TI1ra1Pa1n": [
@@ -118569,10 +118571,10 @@ const IPA2WORD_TH =
     "nɔ4t": [
         "น็อต"
     ],
-    "nX4ynX4y": [
+    "nɔ4ynX4y": [
         "น้อยๆ"
     ],
-    "nɔ4ynX4y": [
+    "nX4ynX4y": [
         "น้อยๆ"
     ],
     "nA4mpra1sA5nTX1ŋ": [
@@ -118653,25 +118655,25 @@ const IPA2WORD_TH =
     "pa2ti2tca2sa1mu2pa1bA2t": [
         "ปฏิจจสมุปบาท"
     ],
-    "pa2ti2ca2sa1mu2pa1bA2t": [
-        "ปฏิจจสมุปบาท"
-    ],
     "pa1ti2ca2sa1mu2pa1bA2t": [
         "ปฏิจจสมุปบาท"
     ],
-    "pa1To5mKrU1": [
-        "ปฐมครู"
+    "pa2ti2ca2sa1mu2pa1bA2t": [
+        "ปฏิจจสมุปบาท"
     ],
     "pa1To5mma1KrU1": [
+        "ปฐมครู"
+    ],
+    "pa1To5mKrU1": [
         "ปฐมครู"
     ],
     "pa1ni4t": [
         "ปณิศ"
     ],
-    "pra1kA1si2t": [
+    "pra2kA1si2t": [
         "ประกาศิต"
     ],
-    "pra2kA1si2t": [
+    "pra1kA1si2t": [
         "ประกาศิต"
     ],
     "pra2CA1": [
@@ -118680,16 +118682,16 @@ const IPA2WORD_TH =
     "pra1nI1pra1nX1m": [
         "ประนีประนอม"
     ],
-    "pra1Po4t": [
-        "ประพจน์"
-    ],
     "pra2Po4t": [
         "ประพจน์"
     ],
-    "pra1PA1": [
-        "ประภา"
+    "pra1Po4t": [
+        "ประพจน์"
     ],
     "pra2PA1": [
+        "ประภา"
+    ],
+    "pra1PA1": [
         "ประภา"
     ],
     "pra2yo1ŋ": [
@@ -118722,10 +118724,10 @@ const IPA2WORD_TH =
     "pA1rI3t": [
         "ปารีส"
     ],
-    "pi2trO1li3a1m": [
+    "pi2trO1li1a1m": [
         "ปิโตรเลียม"
     ],
-    "pi2trO1li1a1m": [
+    "pi2trO1li3a1m": [
         "ปิโตรเลียม"
     ],
     "pu2mpa2m": [
@@ -118767,10 +118769,10 @@ const IPA2WORD_TH =
     "PW2t": [
         "ผืด"
     ],
-    "PU3bɔ1ri1PO3k": [
+    "PU3ba1ri1PO3k": [
         "ผู้บริโภค"
     ],
-    "PU3ba1ri1PO3k": [
+    "PU3bɔ1ri1PO3k": [
         "ผู้บริโภค"
     ],
     "PU3pra1kX2pkA1n": [
@@ -118815,10 +118817,10 @@ const IPA2WORD_TH =
     "Pra4Pu4tTa1ʔo1ŋ": [
         "พระพุทธองค์"
     ],
-    "Pra4yA1Pa1ho5n": [
+    "Pra4yA1Pa4ho5n": [
         "พระยาพหลฯ"
     ],
-    "Pra4yA1Pa4ho5n": [
+    "Pra4yA1Pa1ho5n": [
         "พระยาพหลฯ"
     ],
     "Pra4rA1m": [
@@ -118906,10 +118908,10 @@ const IPA2WORD_TH =
     "Pi1nTu4ʔ": [
         "พินทุ"
     ],
-    "Pi4Pi4Ta1Pa1nTa4sa1TA5n": [
+    "Pi4Pi4tTa1Pa1nTa4sa1TA5n": [
         "พิพิธภัณฑสถาน"
     ],
-    "Pi4Pi4tTa1Pa1nTa4sa1TA5n": [
+    "Pi4Pi4Ta1Pa1nTa4sa1TA5n": [
         "พิพิธภัณฑสถาน"
     ],
     "Pi1mra4k": [
@@ -118933,10 +118935,10 @@ const IPA2WORD_TH =
     "Pu4tTa1Po4t": [
         "พุทธพจน์"
     ],
-    "Pu1PU1": [
+    "PU1PU1": [
         "พูๆ"
     ],
-    "PU1PU1": [
+    "Pu1PU1": [
         "พูๆ"
     ],
     "PX3Ku5n": [
@@ -118954,10 +118956,10 @@ const IPA2WORD_TH =
     "fX4tfX1ra4t": [
         "ฟอสฟอรัส"
     ],
-    "fa1ŋca1y": [
+    "fa1ŋcA1y": [
         "ฟังไจ"
     ],
-    "fa1ŋcA1y": [
+    "fa1ŋca1y": [
         "ฟังไจ"
     ],
     "fA1re1nhA1y": [
@@ -118978,10 +118980,10 @@ const IPA2WORD_TH =
     "PU1mpa1nyA1": [
         "ภูมิปัญญา"
     ],
-    "PU1mʔA1kA2t": [
+    "PU1mi4ʔA1kA2t": [
         "ภูมิอากาศ"
     ],
-    "PU1mi4ʔA1kA2t": [
+    "PU1mʔA1kA2t": [
         "ภูมิอากาศ"
     ],
     "ma1ku2trA3tCa1ku2mA1n": [
@@ -119026,10 +119028,10 @@ const IPA2WORD_TH =
     "mX1tZ1sa1y": [
         "มอเตอร์ไซค์"
     ],
-    "ma1la4kA1": [
+    "ma4la4kA1": [
         "มะละกา"
     ],
-    "ma4la4kA1": [
+    "ma1la4kA1": [
         "มะละกา"
     ],
     "ma1la1kA1": [
@@ -119059,10 +119061,10 @@ const IPA2WORD_TH =
     "mA3ttra1kA1n": [
         "มาตรการ"
     ],
-    "mA1ri1lI1n": [
+    "mA1ri1li1n": [
         "มาริลีน"
     ],
-    "mA1ri1li1n": [
+    "mA1ri1lI1n": [
         "มาริลีน"
     ],
     "mA4k": [
@@ -119071,13 +119073,10 @@ const IPA2WORD_TH =
     "mA1lI1": [
         "มาลี"
     ],
-    "mi4ʔ": [
-        "มิ"
-    ],
-    "mi4kKa4sa5nyI1": [
+    "mi4kKa1sa5nyI1": [
         "มิคสัญญี"
     ],
-    "mi4kKa1sa5nyI1": [
+    "mi4kKa4sa5nyI1": [
         "มิคสัญญี"
     ],
     "mi4ti2ʔ": [
@@ -119089,10 +119088,10 @@ const IPA2WORD_TH =
     "mi1nli1kra1m": [
         "มิลลิกรัม"
     ],
-    "mi4so4ʔ": [
+    "mi4so2ʔ": [
         "มิโซะ"
     ],
-    "mi4so2ʔ": [
+    "mi4so4ʔ": [
         "มิโซะ"
     ],
     "mI1nbu1rI1": [
@@ -119199,13 +119198,13 @@ const IPA2WORD_TH =
     "rA3ksa2p": [
         "รากศัพท์"
     ],
-    "rA3tCa4": [
+    "rA3tCa4ʔ": [
         "ราช"
     ],
-    "rA3tCa1ki2tcA1nu4bE2ksA5": [
+    "rA3tCa4ki2tcA1nu4bE2ksA5": [
         "ราชกิจจานุเบกษา"
     ],
-    "rA3tCa4ki2tcA1nu4bE2ksA5": [
+    "rA3tCa1ki2tcA1nu4bE2ksA5": [
         "ราชกิจจานุเบกษา"
     ],
     "rA1CA1Ti4rA3t": [
@@ -119232,16 +119231,16 @@ const IPA2WORD_TH =
     "ru3a1mPE3t": [
         "ร่วมเพศ"
     ],
-    "rɔ4nrX4n": [
-        "ร้อนๆ"
-    ],
     "rX4nrX4n": [
         "ร้อนๆ"
     ],
-    "rA4nrA4n": [
-        "ร้านๆ"
+    "rɔ4nrX4n": [
+        "ร้อนๆ"
     ],
     "ra4nrA4n": [
+        "ร้านๆ"
+    ],
+    "rA4nrA4n": [
         "ร้านๆ"
     ],
     "lo1ŋtu1a1": [
@@ -119304,10 +119303,10 @@ const IPA2WORD_TH =
     "lU3kPa1so5m": [
         "ลูกผสม"
     ],
-    "lu3klU3k": [
+    "lU3klU3k": [
         "ลูกๆ"
     ],
-    "lU3klU3k": [
+    "lu3klU3k": [
         "ลูกๆ"
     ],
     "lɔ4k": [
@@ -119340,10 +119339,10 @@ const IPA2WORD_TH =
     "wa4Ci4ra4yA1nna4wi4sE2t": [
         "วชิรญาณวิเสศ"
     ],
-    "wa4na4ʔu2tTa1yA1n": [
+    "wa1na4ʔu2tTa1yA1n": [
         "วนอุทยาน"
     ],
-    "wa1na4ʔu2tTa1yA1n": [
+    "wa4na4ʔu2tTa1yA1n": [
         "วนอุทยาน"
     ],
     "wa1nA1": [
@@ -119370,9 +119369,6 @@ const IPA2WORD_TH =
     "wA1CU1": [
         "วาชู"
     ],
-    "wA1ra4ʔ": [
-        "วาระ"
-    ],
     "wi4ci2ttrA1": [
         "วิจิตรา"
     ],
@@ -119385,22 +119381,22 @@ const IPA2WORD_TH =
     "wi4mA1dA1": [
         "วิมาดา"
     ],
-    "wi4tsa1wA1́ʔ": [
+    "wi4twA1́ʔ": [
         "วิศวะ"
     ],
-    "wi4twA1́ʔ": [
+    "wi4tsa1wA1́ʔ": [
         "วิศวะ"
     ],
     "wi4ʔE1ŋ": [
         "วิเอง"
     ],
+    "wI1di1Ta4t": [
+        "วีดีทัศน์"
+    ],
     "wI1dI1Ta4t": [
         "วีดีทัศน์"
     ],
     "wi1di1Ta4t": [
-        "วีดีทัศน์"
-    ],
-    "wI1di1Ta4t": [
         "วีดีทัศน์"
     ],
     "wi1dI1Ta4t": [
@@ -119422,10 +119418,10 @@ const IPA2WORD_TH =
     "sI5sa1kE2t": [
         "ศรีสะเกษ"
     ],
-    "sa2kdi2nA1": [
+    "sa2kdi1nA1": [
         "ศักดินา"
     ],
-    "sa2kdi1nA1": [
+    "sa2kdi2nA1": [
         "ศักดินา"
     ],
     "sa2ksI5": [
@@ -119461,10 +119457,10 @@ const IPA2WORD_TH =
     "sa1pX1": [
         "สปอร์"
     ],
-    "so5mdu1n": [
+    "sa1ma1du1n": [
         "สมดุล"
     ],
-    "sa1ma1du1n": [
+    "so5mdu1n": [
         "สมดุล"
     ],
     "sa1mA2t": [
@@ -119554,10 +119550,10 @@ const IPA2WORD_TH =
     "sA5ra1so5nTE3t": [
         "สารสนเทศ"
     ],
-    "sa5wsA5w": [
+    "sA5wsA5w": [
         "สาวๆ"
     ],
-    "sA5wsA5w": [
+    "sa5wsA5w": [
         "สาวๆ"
     ],
     "sa5mKa1nsa5mKa1n": [
@@ -119716,10 +119712,10 @@ const IPA2WORD_TH =
     "mX3kY1ŋ": [
         "หม้อแกง"
     ],
-    "yA2pyA2p": [
+    "ya2pyA2p": [
         "หยาบๆ"
     ],
-    "ya2pyA2p": [
+    "yA2pyA2p": [
         "หยาบๆ"
     ],
     "ri2ŋ": [
@@ -119755,10 +119751,10 @@ const IPA2WORD_TH =
     "hX2pra1Cu1m": [
         "หอประชุม"
     ],
-    "hi5mma4PA1n": [
+    "hi5mma1PA1n": [
         "หิมพานต์"
     ],
-    "hi5mma1PA1n": [
+    "hi5mma4PA1n": [
         "หิมพานต์"
     ],
     "hX3ŋCu4t": [
@@ -119773,10 +119769,10 @@ const IPA2WORD_TH =
     "ʔa2nu4ra4k": [
         "อนุรักษ์"
     ],
-    "ʔa2nu4sa5nyA1": [
+    "ʔa1nu4sa5nyA1": [
         "อนุสัญญาฯ"
     ],
-    "ʔa1nu4sa5nyA1": [
+    "ʔa2nu4sa5nyA1": [
         "อนุสัญญาฯ"
     ],
     "yU2yU2": [
@@ -119842,10 +119838,10 @@ const IPA2WORD_TH =
     "ʔA2tsa1wa4ʔ": [
         "อาสวะ"
     ],
-    "ʔA1si3a1n": [
+    "ʔA1si1a1n": [
         "อาเซียน"
     ],
-    "ʔA1si1a1n": [
+    "ʔA1si3a1n": [
         "อาเซียน"
     ],
     "ʔA1PE3t": [
@@ -119896,10 +119892,10 @@ const IPA2WORD_TH =
     "ʔu5mʔi5m": [
         "อุ๋มอิ๋ม"
     ],
-    "ʔa1le4ksA1ndZ3": [
+    "ʔa1le4ksa1ndZ3": [
         "อเล็กซานเดอร์"
     ],
-    "ʔa1le4ksa1ndZ3": [
+    "ʔa1le4ksA1ndZ3": [
         "อเล็กซานเดอร์"
     ],
     "ho4kki3a1n": [
@@ -119998,10 +119994,10 @@ const IPA2WORD_TH =
     "se1w": [
         "เซลล์"
     ],
-    "sE1li1ni3a1m": [
+    "sE1lI1ni3a1m": [
         "เซลีเนียม"
     ],
-    "sE1lI1ni3a1m": [
+    "sE1li1ni3a1m": [
         "เซลีเนียม"
     ],
     "se1wsi3a1t": [
@@ -120049,10 +120045,10 @@ const IPA2WORD_TH =
     "TE1PI1": [
         "เทพี"
     ],
-    "Te4flɔ3n": [
+    "Te4plɔ3n": [
         "เทฟลอน"
     ],
-    "Te4plɔ3n": [
+    "Te4flɔ3n": [
         "เทฟลอน"
     ],
     "TE3tsa1kA1n": [
@@ -120263,10 +120259,10 @@ const IPA2WORD_TH =
     "KY1": [
         "แค"
     ],
-    "KY1na1dA1": [
+    "Kɛ1nna1dA1": [
         "แคนาดา"
     ],
-    "Kɛ1nna1dA1": [
+    "KY1na1dA1": [
         "แคนาดา"
     ],
     "KY1lX1rI3": [
@@ -120275,10 +120271,10 @@ const IPA2WORD_TH =
     "KY1li4fX1ni1a1": [
         "แคลิฟอร์เนีย"
     ],
-    "Kɛ1wsi3a1m": [
+    "Kɛ1lsi3a1m": [
         "แคลเซียม"
     ],
-    "Kɛ1lsi3a1m": [
+    "Kɛ1wsi3a1m": [
         "แคลเซียม"
     ],
     "cY1n": [
@@ -120317,10 +120313,10 @@ const IPA2WORD_TH =
     "nɛ4nY1w": [
         "แนะแนว"
     ],
-    "nɛ3nY3": [
+    "nY3nY3": [
         "แน่ๆ"
     ],
-    "nY3nY3": [
+    "nɛ3nY3": [
         "แน่ๆ"
     ],
     "bY2kTI1ri1a1": [
@@ -120356,10 +120352,10 @@ const IPA2WORD_TH =
     "mY4knI1si3a1m": [
         "แมกนีเซียม"
     ],
-    "mɛ1ŋkA1nI3s": [
+    "mɛ1ŋkA1nI3t": [
         "แมงกานีส"
     ],
-    "mɛ1ŋkA1nI3t": [
+    "mɛ1ŋkA1nI3s": [
         "แมงกานีส"
     ],
     "mY1ndI3": [
@@ -120399,16 +120395,16 @@ const IPA2WORD_TH =
     "nY5m": [
         "แหนม"
     ],
-    "hY3ŋhY3ŋ": [
-        "แห้งๆ"
-    ],
     "hɛ3ŋhY3ŋ": [
         "แห้งๆ"
     ],
-    "kO1lde3n": [
-        "โกลเด้น"
+    "hY3ŋhY3ŋ": [
+        "แห้งๆ"
     ],
     "kO1de3n": [
+        "โกลเด้น"
+    ],
+    "kO1lde3n": [
         "โกลเด้น"
     ],
     "KO2ksa2p": [
@@ -120480,10 +120476,10 @@ const IPA2WORD_TH =
     "PO3kKa1Pa1n": [
         "โภคภัณฑ์"
     ],
-    "PO1Ca1nA1kA1n": [
+    "PO3tCa1nA1kA1n": [
         "โภชนาการ"
     ],
-    "PO3tCa1nA1kA1n": [
+    "PO1Ca1nA1kA1n": [
         "โภชนาการ"
     ],
     "mO3k": [
@@ -120555,10 +120551,10 @@ const IPA2WORD_TH =
     "Ta1yrX1y": [
         "ไทรอยด์"
     ],
-    "na1ytrO1cE1n": [
+    "na1ytrO1ce3n": [
         "ไนโตรเจน"
     ],
-    "na1ytrO1ce3n": [
+    "na1ytrO1cE1n": [
         "ไนโตรเจน"
     ],
     "ba1yʔO1": [
