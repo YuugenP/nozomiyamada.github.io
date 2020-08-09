@@ -461,7 +461,11 @@
         </ol>
         2. Search by two phonemes
         <ol>
-          <li>Onset in Thai: <code>p p t k C K P T b c d f h k l m n p r s t w y ŋ ʔ</code></li>
+          <li>
+            Onset in Thai: <br>
+            <code>b p pʰ m f d t tʰ n s r l c cʰ k kʰ ŋ w y h ʔ</code><br>
+            <code>b pr pl pʰr pʰl m f d t tʰ n s r l c cʰ k kʰ ŋ w y h ʔ</code><br>
+          </li>
           <li>Select minimum & maximum length. (if greater than 6, it may take a long time)</li>
           <li>Select positions (<span class="blue">initial</span>, <span class="green">middle</span>, <span class="golden">final</span>) of the two phonemes.</li>
           <li>Press search button.</li>
@@ -484,7 +488,7 @@
 <script src="js/minimalpair_th.js"></script>
 <script>
 
-  function change_max(lang){
+  function change_max(){
     var minlength = document.getElementById('minlength').value;
     var elem = document.getElementById('maxlength');
     var max = elem.value;
@@ -495,15 +499,15 @@
     elem.selectedIndex = ((max - minlength)>=0)? max - minlength : 0;
   }
 
-	function find_minimal(lang){
+	function find_minimal(current_mode){
 		let word = document.getElementById('input').value.trim().toLowerCase(); // delete space, lowercase
 		document.getElementById('result_table').innerHTML = '<tr><th>IPA of input</th><th>minimal pair (IPA)</th><th>minimal pair (word)</th></tr>';
     let ignoretone = document.getElementById('ignoretone').checked;
     // DICTIONARY
-    if(lang==='en'){
+    if(current_mode==='pair_en'){
       var word2ipa_dic = WORD2IPA;
       var ipa2word_dic = IPA2WORD;
-    }else if(lang==='th'){
+    }else if(current_mode==='pair_th'){
       var word2ipa_dic = WORD2IPA_TH;
       var ipa2word_dic = IPA2WORD_TH;
     }
@@ -520,7 +524,7 @@
             let key_to_check = (ignoretone)? ignore_tone(key) : key; // for THAI
             if(key_to_check.match(pat) && ipa!=key && !key_to_check[i].match(/[12345]/)){ // if match and not the same one
               let words = ipa2word_dic[key];
-              if(lang==='en'){
+              if(current_mode==='pair_en'){
                 var key_replaced = key.replace(/ʧ/g,'tʃ').replace(/ʤ/g,'dʒ');
                 var ipa_replaced = ipa.replace(/ʧ/g,'tʃ').replace(/ʤ/g,'dʒ');
               }else{
@@ -541,7 +545,7 @@
         }
       }
       if(found_minimal===false){ // input word exists, but minimal pair is not found
-        if(lang==='en'){
+        if(current_mode==='pair_en'){
           var ipa_replaced = ipa.replace(/ʧ/g,'tʃ').replace(/ʤ/g,'dʒ');
         }else{
           var ipa_replaced = reverse_vowel(replace_asp(ipa));
