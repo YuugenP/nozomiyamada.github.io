@@ -1,13 +1,13 @@
 function final_devoicing(word){
-	let final_features = CONSONANTS[word.slice(-1)[0]];
-	console.log(final_features);
-	if(final_features["voice"]!==true){
+	let final_features = deepcopy(CONSONANTS[word.slice(-1)[0]]);
+	if(final_features["voice"]!=true){
+		console.log('voicelss');
 		return word;
 	}else{
 		final_features["voice"] = false;
 		for(c in CONSONANTS){
 			var features = CONSONANTS[c];
-			if(JSON.stringify(final_features) == JSON.stringify(features)){
+			if(check_features(final_features, features)){
 				return word.slice(0, word.length-1) + c;
 			}
 		}
@@ -15,7 +15,13 @@ function final_devoicing(word){
 	}
 }
 
+function check_features(feat1, feat2){
+	return JSON.stringify(feat1) == JSON.stringify(feat2);
+}
 
+function deepcopy(obj){
+  return JSON.parse(JSON.stringify(obj));
+}
 
 const CONSONANTS = {
   "p":{
@@ -120,7 +126,8 @@ const CONSONANTS = {
 		"continuant": false,
 		"sibilant": false,
 		"voice": true,
-		"lateral": false
+		"lateral": false,
+		"aspiration": false
   },
 	"n": {
 		"syllabic": false,
@@ -182,90 +189,96 @@ const CONSONANTS = {
 		"lateral": false,
 		"aspiration": false,
   },
-    "ŋ": {
-        "syllabic": false,
-        "consonantal": true,
-        "sonorant": true,
-        "nasal": true,
-        "anterior": false,
-        "coronal": false,
-        "high": true,
-        "back": true,
-        "continuant": false,
-        "sibilant": false,
-        "voice": true,
-        "lateral": false
+  "ŋ": {
+		"syllabic": false,
+		"consonantal": true,
+		"sonorant": true,
+		"nasal": true,
+		"anterior": false,
+		"coronal": false,
+		"high": true,
+		"back": true,
+		"continuant": false,
+		"sibilant": false,
+		"voice": true,
+		"lateral": false,
+		"aspiration": false
+	},
+  "f": {
+		"syllabic": false,
+		"consonantal": true,
+		"sonorant": false,
+		"nasal": false,
+		"anterior": true,
+		"coronal": false,
+		"high": false,
+		"back": false,
+		"continuant": true,
+		"sibilant": false,
+		"voice": false,
+		"lateral": false,
+		"aspiration": false
+  },
+	"v": {
+		"syllabic": false,
+		"consonantal": true,
+		"sonorant": false,
+		"nasal": false,
+		"anterior": true,
+		"coronal": false,
+		"high": false,
+		"back": false,
+		"continuant": true,
+		"sibilant": false,
+		"voice": true,
+		"lateral": false,
+		"aspiration": false
     },
-    "f": {
-        "syllabic": false,
-        "consonantal": true,
-        "sonorant": false,
-        "nasal": false,
-        "anterior": true,
-        "coronal": false,
-        "high": false,
-        "back": false,
-        "continuant": true,
-        "sibilant": false,
-        "voice": false,
-        "lateral": false
+  "s": {
+		"syllabic": false,
+		"consonantal": true,
+		"sonorant": false,
+		"nasal": false,
+		"anterior": true,
+		"coronal": true,
+		"high": false,
+		"back": false,
+		"continuant": true,
+		"sibilant": true,
+		"voice": false,
+		"lateral": false,
+		"aspiration": false
+  },
+  "z": {
+		"syllabic": false,
+		"consonantal": true,
+		"sonorant": false,
+		"nasal": false,
+		"anterior": true,
+		"coronal": true,
+		"high": false,
+		"back": false,
+		"continuant": true,
+		"sibilant": true,
+		"voice": true,
+		"lateral": false,
+		"aspiration": false
     },
-    "v": {
-        "syllabic": false,
-        "consonantal": true,
-        "sonorant": false,
-        "nasal": false,
-        "anterior": true,
-        "coronal": false,
-        "high": false,
-        "back": false,
-        "continuant": true,
-        "sibilant": false,
-        "voice": true,
-        "lateral": false
-    },
-    "s": {
-        "syllabic": false,
-        "consonantal": true,
-        "sonorant": false,
-        "nasal": false,
-        "anterior": true,
-        "coronal": true,
-        "high": false,
-        "back": false,
-        "continuant": true,
-        "sibilant": true,
-        "voice": false,
-        "lateral": false
-    },
-    "z": {
-        "syllabic": false,
-        "consonantal": true,
-        "sonorant": false,
-        "nasal": false,
-        "anterior": true,
-        "coronal": true,
-        "high": false,
-        "back": false,
-        "continuant": true,
-        "sibilant": true,
-        "voice": true,
-        "lateral": false
-    },
-    "θ": {
-        "syllabic": false,
-        "consonantal": true,
-        "sonorant": false,
-        "nasal": false,
-        "anterior": true,
-        "coronal": true,
-        "high": false,
-        "back": false,
-        "continuant": true,
-        "sibilant": false,
-        "voice": false,
-        "lateral": false
-    },
+	"θ": {
+		"syllabic": false,
+		"consonantal": true,
+		"sonorant": false,
+		"nasal": false,
+		"anterior": true,
+		"coronal": true,
+		"high": false,
+		"back": false,
+		"continuant": true,
+		"sibilant": false,
+		"voice": false,
+		"lateral": false,
+		"aspiration": false
+  },
     "ð": {
         "syllabic": false,
         "consonantal": true,
