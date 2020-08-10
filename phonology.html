@@ -455,32 +455,33 @@
         <h2 class="display-5">Phonotactics (TH)</h2>
         How to use
         <ol>
-          <li>Select a pattern of phonotactics</li>
+          <li>Select a pattern of phonotactics.</li>
           <li>
-            Select type of target words. <br>
+            Select types of target words. <br>
             ("all" not recommended because it includes not only words but also phrases)
           </li>
-          <li>Press search button.</li>
+          <li>Press search button or ENTER key.</li>
         </ol>
         Phonemes in Thai
         <ol>
           <li>
-            onset: 21 + 16<br>
+            onset: 21 + 12 (+ 4)<br>
             <span class="blue">b p pʰ m f d t tʰ n s r l c cʰ k kʰ ŋ w y h ʔ</span><br>
-            <span class="blue">br pr pl pʰr pʰl fr fl dr tr tʰr kr kl kw kʰr kʰl kʰw</span>
+            <span class="blue">(br) pr pl pʰr pʰl (fr) (fl) (dr) tr tʰr kr kl kw kʰr kʰl kʰw</span>
           </li>
           <li>
             vowel: 9 + 9<br>
             <span class="green">a e i o u ɔ ə ɛ ʉ aa ee ii oo uu ɔɔ əə ɛɛ ʉʉ</span>
           </li>
           <li>
-            coda: 9<br>
-            <span class="golden">p m t n k ŋ w y ʔ</span>
+            coda: 9 (+ 4)<br>
+            <span class="golden"
+            >p m t n k ŋ w y ʔ (s) (f) (l) (c)</span>
           </li>
         </ol>
-        possible onset + vowel pattern = 21 * 18 + 16 * 18 = 378 + 288 = 666<br>
+        possible onset + vowel pattern = 21 * 18 + 12 * 18 = 378 + 216 = 594<br>
         possible vowel + coda pattern = 18 * 9 = 162<br>
-        possible syllable pattern = 37 * 18 * 9 = 5994<br>
+        possible syllable pattern = 33 * 18 * 9 = 5346<br>
       </div>
     </div>
   </div>
@@ -492,7 +493,7 @@
           <table>
             <tr>
               <td>
-                <select class="form-control" style="min-width: 30rem;" id="tactics_mode">
+                <select class="form-control" id="tactics_mode">
                   <option value="1" selected>word-initial onset (single consonant)</option>
                   <option value="2">word-initial onset (cluster)</option>
                   <option value="3">word-initial onset (both)</option>
@@ -749,67 +750,137 @@
     }else if(mode==7 || mode==8){
       var candidates = IPAs.filter(x => !x.slice(-1)[0].match(/[12345]/) && (x.match(/[AEIOUWXYZaeiouɔəɛʉ]/g)||[]).length <= syl_max);
     }
-    let count1 = {}; let count2 = {};
+    let count1 = {}; let count2 = {}; // {'kaa':[23, [กา, การ]], } key is IPA pattern, value is [count, [words]]
     for(ipa of candidates){
+      var orth = IPA2WORD_TH[ipa][0];
       if(mode==1){
-        count1[ipa[0]] = (ipa[0] in count1)? count1[ipa[0]]+1 : 1;
+        var onset = ipa[0];
+        if(onset in count1){
+          count1[onset][0] += 1; // add count
+          if(count1[onset][1].length<100){count1[onset][1].push(orth);} // add word to list 
+        }else{
+          count1[onset] = [1, [orth]];
+        }
       }else if(mode==2){
-        count1[ipa.slice(0,2)] = (ipa.slice(0,2) in count1)? count1[ipa.slice(0,2)]+1 : 1;
+        var onset = ipa.slice(0,2);
+        if(onset in count1){
+          count1[onset][0] += 1; // add count
+          if(count1[onset][1].length<100){count1[onset][1].push(orth);} // add word to list 
+        }else{
+          count1[onset] = [1, [orth]];
+        }
       }else if(mode==3){
-        var c = ipa.match(/(.{1,2})[AEIOUWXYZaeiouɔəɛʉ]/)[1];
-        count1[c] = (c in count1)? count1[c]+1 : 1;
-      }else if(mode==4){
-        count1[ipa.slice(0,2)] = (ipa.slice(0,2) in count1)? count1[ipa.slice(0,2)]+1 : 1;
-        count2[ipa.slice(0,3)] = (ipa.slice(0,3) in count2)? count2[ipa.slice(0,3)]+1 : 1;
+        var onset = ipa.match(/(.{1,2})[AEIOUWXYZaeiouɔəɛʉ]/)[1];
+        if(onset in count1){
+          count1[onset][0] += 1; // add count
+          if(count1[onset][1].length<100){count1[onset][1].push(orth);} // add word to list 
+        }else{
+          count1[onset] = [1, [orth]];
+        }
+      }
+      if(mode==4){
+        var onset1 = ipa.slice(0,2);
+        if(onset1 in count1){
+          count1[onset1][0] += 1; // add count
+          if(count1[onset1][1].length<100){count1[onset1][1].push(orth);} // add word to list 
+        }else{
+          count1[onset1] = [1, [orth]];
+        }
+        var onset2 = ipa.slice(0,3);
+        if(onset2 in count2){
+          count2[onset2][0] += 1; // add count
+          if(count2[onset2][1].length<100){count2[onset2][1].push(orth);} // add word to list 
+        }else{
+          count2[onset2] = [1, [orth]];
+        }
       }else if(mode==5){
-        count1[ipa.slice(0,3)] = (ipa.slice(0,3) in count1)? count1[ipa.slice(0,3)]+1 : 1;
-        count2[ipa.slice(0,4)] = (ipa.slice(0,4) in count2)? count2[ipa.slice(0,4)]+1 : 1;
+        var onset1 = ipa.slice(0,3);
+        if(onset1 in count1){
+          count1[onset1][0] += 1; // add count
+          if(count1[onset1][1].length<100){count1[onset1][1].push(orth);} // add word to list 
+        }else{
+          count1[onset1] = [1, [orth]];
+        }
+        var onset2 = ipa.slice(0,4);
+        if(onset2 in count2){
+          count2[onset2][0] += 1; // add count
+          if(count2[onset2][1].length<100){count2[onset2][1].push(orth);} // add word to list 
+        }else{
+          count2[onset2] = [1, [orth]];
+        }
       }else if(mode==6){
-        var cv = ipa.match(/(.{1,2}[AEIOUWXYZaeiouɔəɛʉ])/)[1];
-        count1[cv] = (cv in count1)? count1[cv]+1 : 1;
-        var cv2 = ipa.match(/(.{1,2}[AEIOUWXYZaeiouɔəɛʉ][12345])/)[1];
-        count2[cv2] = (cv2 in count2)? count2[cv2]+1 : 1;
+        var onset1 = ipa.match(/(.{1,2}[AEIOUWXYZaeiouɔəɛʉ])/)[1];
+        if(onset1 in count1){
+          count1[onset1][0] += 1; // add count
+          if(count1[onset1][1].length<100){count1[onset1][1].push(orth);} // add word to list 
+        }else{
+          count1[onset1] = [1, [orth]];
+        }
+        var onset2 = ipa.match(/(.{1,2}[AEIOUWXYZaeiouɔəɛʉ][12345])/)[1];
+        if(onset2 in count2){
+          count2[onset2][0] += 1; // add count
+          if(count2[onset2][1].length<100){count2[onset2][1].push(orth);} // add word to list 
+        }else{
+          count2[onset2] = [1, [orth]];
+        }
       }else if(mode==7){
         var final = ipa.slice(-1)[0];
-        count1[final] = (final in count1)? count1[final]+1 : 1;
+        if(final in count1){
+          count1[final][0] += 1; // add count
+          if(count1[final][1].length<100){count1[final][1].push(orth);} // add word to list 
+        }else{
+          count1[final] = [1, [orth]];
+        }
       }else if(mode==8){
-        var final = ignore_tone(ipa.slice(ipa.length-3));
-        count1[final] = (final in count1)? count1[final]+1 : 1;
+        var final1 = ignore_tone(ipa.slice(ipa.length-3));
+        if(final1 in count1){
+          count1[final1][0] += 1; // add count
+          if(count1[final1][1].length<100){count1[final1][1].push(orth);} // add word to list 
+        }else{
+          count1[final1] = [1, [orth]];
+        }
         var final2 = ipa.slice(ipa.length-3);
-        count2[final2] = (final2 in count2)? count2[final2]+1 : 1;
+        if(final2 in count2){
+          count2[final2][0] += 1; // add count
+          if(count2[final2][1].length<100){count2[final2][1].push(orth);} // add word to list 
+        }else{
+          count2[final2] = [1, [orth]];
+        }
       }
     }
     // tone insensitive
-    count1 = sort_count(count1); // convert to array & sort
-    let total1 = sum(count1.map(x => x[1]));
-    count1 = count1.map(x => [reverse(x[0]), x[1]]); // reverse aspiration & vowel
-    count1 = count1.map(x => [x[0], x[1], x[1]/total1*100]); // %
-    count1 = count1.map((x, i) => [x[0], x[1], round(x[2], 2), round(sum(count1.map(x => x[2]).slice(0,i+1)), 2)]);
-    document.getElementById('tactics_result1').innerHTML = "<tr><th>rank</th><th>phoneme(s)</th><th>count</th><th>%</th><th>cum %</th></tr>";
-    document.getElementById('tactics_result2').innerHTML = "<tr><th>rank</th><th>phoneme(s)</th><th>count</th><th>%</th><th>cum %</th></tr>";
+    count1_raw = sort_count(count1); // convert to array & sort, count = [[IPA, [count, [words]]],,]
+    let total1 = sum(count1_raw.map(x => x[1][0]));
+    count1 = count1_raw.map(x => [reverse(x[0]), x[1][0]]); // reverse aspiration & vowel, exclude word list
+    count1 = count1.map(x => [x[0], x[1], x[1]/total1*100]); // count1 = [IPA, count, %]
+    count1 = count1.map((x, i) => [x[0], x[1], round(x[2], 2), round(sum(count1.map(x => x[2]).slice(0,i+1)), 2)]); // count1 = [IPA, count, %, cum%]
+    document.getElementById('tactics_result1').innerHTML = '<tr><th data-toggle="tooltip" data-placement="right" title="aaaa">rank</th><th>phoneme(s)</th><th>count</th><th>%</th><th>cum %</th></tr>';
+    document.getElementById('tactics_result2').innerHTML = '<tr><th>rank</th><th>phoneme(s)</th><th>count</th><th>%</th><th>cum %</th></tr>';
     for(var i=1; i<=count1.length; i++){
       var row = count1[i-1];
-      var insert_html = `<tr><td>${i}<td>${row[0]}</td><td>${row[1]}</td><td>${row[2]}</td><td>${row[3]}</td></tr>`;
+      var insert_html = `<tr><td>${i}</td><th data-toggle="tooltip" data-placement="right" title="${count1_raw[i-1][1][1].join(' ')}">${row[0]}</th><td>${row[1]}</td><td>${row[2]}</td><td>${row[3]}</td></tr>`;
       document.getElementById('tactics_result1').insertAdjacentHTML('beforeend', insert_html);
     }
+    $(document.getElementById('tactics_result1')).find('[data-toggle="tooltip"]').tooltip();
     // tone sensitive
     if(mode==4 || mode==5 || mode==6 || mode==8){
-      count2 = sort_count(count2); // convert to array & sort
-      let total2 = sum(count2.map(x => x[1]));
-      count2 = count2.map(x => [reverse(x[0]), x[1]]); // reverse aspiration & vowel
+      count2_raw = sort_count(count2); // convert to array & sort
+      let total2 = sum(count2_raw.map(x => x[1][0]));
+      count2 = count2_raw.map(x => [reverse(x[0]), x[1][0]]); // reverse aspiration & vowel
       count2 = count2.map(x => [x[0], x[1], x[1]/total2*100]); // %
       count2 = count2.map((x, i) => [x[0], x[1], round(x[2], 2), round(sum(count2.map(x => x[2]).slice(0,i+1)), 2)]);
       for(var i=1; i<=count2.length; i++){
         var row = count2[i-1];
-        var insert_html = `<tr><td>${i}<td>${row[0]}</td><td>${row[1]}</td><td>${row[2]}</td><td>${row[3]}</td></tr>`;
+        var insert_html = `<tr><td>${i}<th data-toggle="tooltip" data-placement="right" title="${count2_raw[i-1][1][1].join(' ')}">${row[0]}</td><td>${row[1]}</td><td>${row[2]}</td><td>${row[3]}</td></tr>`;
         document.getElementById('tactics_result2').insertAdjacentHTML('beforeend', insert_html);
       }
+      $(document.getElementById('tactics_result2')).find('[data-toggle="tooltip"]').tooltip();
     }
   }
 
-  function sort_count(obj){
-    let arr = Object.keys(obj).map(key => [key, obj[key]]);
-    return arr.sort((x,y) => y[1]-x[1]);
+  function sort_count(obj){ // obj = {'kaa':[23, [กา, การ]], } sort by count
+    let arr = Object.keys(obj).map(key => [key, obj[key]]); // convert into array [[key, value],,] = [[IPA, [count, [words]]],,]
+    return arr.sort((x, y) => y[1][0]-x[1][0]);
   }
 
   ////////// function for converting character //////////
