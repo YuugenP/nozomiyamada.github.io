@@ -127,7 +127,7 @@
         <select class="form-control" onchange="select_mode();">
           <option value="pair_en" selected>Minimal Pair Searcher (EN)</option>
           <option value="pair_th">Minimal Pair Searcher (TH)</option>
-          <option value="tactics_th" disabled>Phonotactics (TH)</option>
+          <option value="tactics_th">Phonotactics (TH)</option>
         </select>
       </div>
     </div>
@@ -453,31 +453,106 @@
     <div class="row my-3">
       <div class="col-12">
         <h2 class="display-5">Phonotactics (TH)</h2>
-        <p>If you ignore tone distinction, check "<span class="red">ignore tone</span>".</p>
-        1. Search by word
+        How to use
         <ol>
-          <li>Input a Thai word.</li>
-          <li>Press ENTER key.</li>
+          <li>Select a pattern of phonotactics</li>
+          <li>
+            Select type of target words. <br>
+            ("all" not recommended because it includes not only words but also phrases)
+          </li>
+          <li>Press search button.</li>
         </ol>
-        2. Search by two phonemes
+        Phonemes in Thai
         <ol>
           <li>
-            Onsets in Thai: 21 + 15<br>
+            onset: 21 + 16<br>
             <span class="blue">b p pʰ m f d t tʰ n s r l c cʰ k kʰ ŋ w y h ʔ</span><br>
-            <span class="blue">pr pl pʰr pʰl fr fl dr tr tʰr kr kl kw kʰr kʰl kʰw</span>
+            <span class="blue">br pr pl pʰr pʰl fr fl dr tr tʰr kr kl kw kʰr kʰl kʰw</span>
           </li>
           <li>
-            Vowels in Thai: 18<br>
-            <span class="green">b p pʰ m f d t tʰ n s r l c cʰ k kʰ ŋ w y h ʔ</span><br>
+            vowel: 9 + 9<br>
+            <span class="green">a e i o u ɔ ə ɛ ʉ aa ee ii oo uu ɔɔ əə ɛɛ ʉʉ</span>
           </li>
           <li>
-            Codas in Thai: 9<br>
-            <span class="golden">p m t n k ŋ w y ʔ</span><br>
+            coda: 9<br>
+            <span class="golden">p m t n k ŋ w y ʔ</span>
           </li>
         </ol>
-        possible syllable pattern = 36 * 18 * 9 = 5832<br><br>
+        possible onset + vowel pattern = 21 * 18 + 16 * 18 = 378 + 288 = 666<br>
+        possible vowel + coda pattern = 18 * 9 = 162<br>
+        possible syllable pattern = 37 * 18 * 9 = 5994<br>
       </div>
     </div>
+  </div>
+
+  <div class="row tactics_th" style="display: none;">
+    <div class="col-lg-12">
+      <div class="bs-component">
+        <form onsubmit="find_tactics(); return false;">
+          <table>
+            <tr>
+              <td>
+                <select class="form-control" style="min-width: 30rem;" id="tactics_mode">
+                  <option value="1" selected>word-initial onset (single consonant)</option>
+                  <option value="2">word-initial onset (cluster)</option>
+                  <option value="3">word-initial onset (both)</option>
+                  <option value="4">word-initial onset (single consonant) + vowel</option>
+                  <option value="5">word-initial onset (cluster) + vowel</option>
+                  <option value="6">word-initial onset (both) + vowel</option>
+                  <option value="7">word-final coda</option>
+                  <option value="8">vowel + word-final coda</option>
+                </select>
+              </td>
+              <td>
+                <select class="form-control" id="syl_number">
+                  <option value="1" selected>only monosyllabic words</option>
+                  <option value="2">monosyllabic + disyallbic</option>
+                  <option value="10">all</option>
+                </select>
+              </td>
+              <td>
+                <input type="submit" class="btn btn-outline-secondary" onclick="find_tactics();return false;" value="search">
+              </td>
+            </tr>
+          </table></br>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="row tactics_th" style="display: none;">
+    <div class="col-lg-6">
+      <div class="bs-component">
+        <h5>tone insensitive</h5>
+				<table class="table table-hover">
+					<tbody id="tactics_result1">
+						<tr>
+							<th>rank</th>
+              <th>phoneme(s)</th>
+              <th>count</th>
+              <th>%</th>
+              <th>cum %</th>
+						</tr>
+					</tbody>
+				</table>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="bs-component">
+        <h5>tone sensitive</h5>
+				<table class="table table-hover">
+					<tbody id="tactics_result2">
+						<tr>
+							<th>rank</th>
+              <th>phoneme(s)</th>
+              <th>count</th>
+              <th>%</th>
+              <th>cum %</th>
+						</tr>
+					</tbody>
+				</table>
+      </div>
+		</div>
   </div>
 	
 </div><br>
@@ -533,8 +608,8 @@
                 var key_replaced = key.replace(/ʧ/g,'tʃ').replace(/ʤ/g,'dʒ');
                 var ipa_replaced = ipa.replace(/ʧ/g,'tʃ').replace(/ʤ/g,'dʒ');
               }else{
-                var key_replaced = reverse_vowel(replace_asp(key));
-                var ipa_replaced = reverse_vowel(replace_asp(ipa));
+                var key_replaced = reverse_vowel(reverse_asp(key));
+                var ipa_replaced = reverse_vowel(reverse_asp(ipa));
               }
               if(i===0){ // initial
                 var insert_html = `<tr class="table-primary"><td class="ipacopy" onclick="copy_to_clipboard();">${ipa_replaced}</td><td class="ipacopy" onclick="copy_to_clipboard();">${key_replaced}</td><td>${words.join(', ')}</td>`;
@@ -553,7 +628,7 @@
         if(current_mode==='pair_en'){
           var ipa_replaced = ipa.replace(/ʧ/g,'tʃ').replace(/ʤ/g,'dʒ');
         }else{
-          var ipa_replaced = reverse_vowel(replace_asp(ipa));
+          var ipa_replaced = reverse_vowel(reverse_asp(ipa));
         }
         document.getElementById('result_table').insertAdjacentHTML('beforeend', `<td class="ipacopy" onclick="copy_to_clipboard();">${ipa_replaced}</td><td colspan="2">MINIMAL PAIR NOT FOUND</td>`);
       }
@@ -598,8 +673,8 @@
               var cand1_replaced = cand1.replace(/ʧ/g,'tʃ').replace(/ʤ/g,'dʒ');
               var cand2_replaced = cand2.replace(/ʧ/g,'tʃ').replace(/ʤ/g,'dʒ');
             }else{
-              var cand1_replaced = reverse_vowel(replace_asp(cand1));
-              var cand2_replaced = reverse_vowel(replace_asp(cand2));
+              var cand1_replaced = reverse_vowel(reverse_asp(cand1));
+              var cand2_replaced = reverse_vowel(reverse_asp(cand2));
             }
             var insert_html = `<tr class="table-primary"><td class="ipacopy" onclick="copy_to_clipboard();">${cand1_replaced}</td><td class="ipacopy" onclick="copy_to_clipboard();">${cand2_replaced}</td><td>${words1.join(', ')} / ${words2.join(', ')}</td>`;
             document.getElementById('initial_row').insertAdjacentHTML('beforebegin', insert_html); 
@@ -622,8 +697,8 @@
                 var cand1_replaced = cand1.replace(/ʧ/g,'tʃ').replace(/ʤ/g,'dʒ');
                 var cand2_replaced = cand2.replace(/ʧ/g,'tʃ').replace(/ʤ/g,'dʒ');
               }else{
-                var cand1_replaced = reverse_vowel(replace_asp(cand1));
-                var cand2_replaced = reverse_vowel(replace_asp(cand2));
+                var cand1_replaced = reverse_vowel(reverse_asp(cand1));
+                var cand2_replaced = reverse_vowel(reverse_asp(cand2));
               }
               var insert_html = `<tr class="table-success"><td class="ipacopy" onclick="copy_to_clipboard();">${cand1_replaced}</td><td class="ipacopy" onclick="copy_to_clipboard();">${cand2_replaced}</td><td>${words1.join(', ')} / ${words2.join(', ')}</td>`;
               document.getElementById('middle_row').insertAdjacentHTML('beforebegin', insert_html); 
@@ -646,8 +721,8 @@
               var cand1_replaced = cand1.replace(/ʧ/g,'tʃ').replace(/ʤ/g,'dʒ');
               var cand2_replaced = cand2.replace(/ʧ/g,'tʃ').replace(/ʤ/g,'dʒ');
             }else{
-              var cand1_replaced = reverse_vowel(replace_asp(cand1));
-              var cand2_replaced = reverse_vowel(replace_asp(cand2));
+              var cand1_replaced = reverse_vowel(reverse_asp(cand1));
+              var cand2_replaced = reverse_vowel(reverse_asp(cand2));
             }
             var insert_html = `<tr class="table-warning"><td class="ipacopy" onclick="copy_to_clipboard();">${cand1_replaced}</td><td class="ipacopy" onclick="copy_to_clipboard();">${cand2_replaced}</td><td>${words1.join(', ')} / ${words2.join(', ')}</td>`;
             document.getElementById('final_row').insertAdjacentHTML('beforebegin', insert_html); 
@@ -660,12 +735,90 @@
       document.getElementById('result_table').insertAdjacentHTML('beforeend', '<td colspan="3">NOT FOUND</td>');
     }
   }
+
+  function find_tactics(){
+    let IPAs = Object.keys(IPA2WORD_TH);
+    let syl_max = Number(document.getElementById('syl_number').value);
+    let mode = document.getElementById('tactics_mode').value;
+    if(mode==1 || mode==4){
+      var candidates = IPAs.filter(x => x[1].match(/[AEIOUWXYZaeiouɔəɛʉ]/) && (x.match(/[AEIOUWXYZaeiouɔəɛʉ]/g)||[]).length <= syl_max);
+    }else if(mode==2 || mode==5){
+      var candidates = IPAs.filter(x => x[2].match(/[AEIOUWXYZaeiouɔəɛʉ]/) && (x.match(/[AEIOUWXYZaeiouɔəɛʉ]/g)||[]).length <= syl_max);
+    }else if(mode==3 || mode==6){
+      var candidates = IPAs.filter(x => (x[1].match(/[AEIOUWXYZaeiouɔəɛʉ]/) || x[2].match(/[AEIOUWXYZaeiouɔəɛʉ]/)) && (x.match(/[AEIOUWXYZaeiouɔəɛʉ]/g)||[]).length <= syl_max);
+    }else if(mode==7 || mode==8){
+      var candidates = IPAs.filter(x => !x.slice(-1)[0].match(/[12345]/) && (x.match(/[AEIOUWXYZaeiouɔəɛʉ]/g)||[]).length <= syl_max);
+    }
+    let count1 = {}; let count2 = {};
+    for(ipa of candidates){
+      if(mode==1){
+        count1[ipa[0]] = (ipa[0] in count1)? count1[ipa[0]]+1 : 1;
+      }else if(mode==2){
+        count1[ipa.slice(0,2)] = (ipa.slice(0,2) in count1)? count1[ipa.slice(0,2)]+1 : 1;
+      }else if(mode==3){
+        var c = ipa.match(/(.{1,2})[AEIOUWXYZaeiouɔəɛʉ]/)[1];
+        count1[c] = (c in count1)? count1[c]+1 : 1;
+      }else if(mode==4){
+        count1[ipa.slice(0,2)] = (ipa.slice(0,2) in count1)? count1[ipa.slice(0,2)]+1 : 1;
+        count2[ipa.slice(0,3)] = (ipa.slice(0,3) in count2)? count2[ipa.slice(0,3)]+1 : 1;
+      }else if(mode==5){
+        count1[ipa.slice(0,3)] = (ipa.slice(0,3) in count1)? count1[ipa.slice(0,3)]+1 : 1;
+        count2[ipa.slice(0,4)] = (ipa.slice(0,4) in count2)? count2[ipa.slice(0,4)]+1 : 1;
+      }else if(mode==6){
+        var cv = ipa.match(/(.{1,2}[AEIOUWXYZaeiouɔəɛʉ])/)[1];
+        count1[cv] = (cv in count1)? count1[cv]+1 : 1;
+        var cv2 = ipa.match(/(.{1,2}[AEIOUWXYZaeiouɔəɛʉ][12345])/)[1];
+        count2[cv2] = (cv2 in count2)? count2[cv2]+1 : 1;
+      }else if(mode==7){
+        var final = ipa.slice(-1)[0];
+        count1[final] = (final in count1)? count1[final]+1 : 1;
+      }else if(mode==8){
+        var final = ignore_tone(ipa.slice(ipa.length-3));
+        count1[final] = (final in count1)? count1[final]+1 : 1;
+        var final2 = ipa.slice(ipa.length-3);
+        count2[final2] = (final2 in count2)? count2[final2]+1 : 1;
+      }
+    }
+    // tone insensitive
+    count1 = sort_count(count1); // convert to array & sort
+    let total1 = sum(count1.map(x => x[1]));
+    count1 = count1.map(x => [reverse(x[0]), x[1]]); // reverse aspiration & vowel
+    count1 = count1.map(x => [x[0], x[1], x[1]/total1*100]); // %
+    count1 = count1.map((x, i) => [x[0], x[1], round(x[2], 2), round(sum(count1.map(x => x[2]).slice(0,i+1)), 2)]);
+    document.getElementById('tactics_result1').innerHTML = "<tr><th>rank</th><th>phoneme(s)</th><th>count</th><th>%</th><th>cum %</th></tr>";
+    document.getElementById('tactics_result2').innerHTML = "<tr><th>rank</th><th>phoneme(s)</th><th>count</th><th>%</th><th>cum %</th></tr>";
+    for(var i=1; i<=count1.length; i++){
+      var row = count1[i-1];
+      var insert_html = `<tr><td>${i}<td>${row[0]}</td><td>${row[1]}</td><td>${row[2]}</td><td>${row[3]}</td></tr>`;
+      document.getElementById('tactics_result1').insertAdjacentHTML('beforeend', insert_html);
+    }
+    // tone sensitive
+    if(mode==4 || mode==5 || mode==6 || mode==8){
+      count2 = sort_count(count2); // convert to array & sort
+      let total2 = sum(count2.map(x => x[1]));
+      count2 = count2.map(x => [reverse(x[0]), x[1]]); // reverse aspiration & vowel
+      count2 = count2.map(x => [x[0], x[1], x[1]/total2*100]); // %
+      count2 = count2.map((x, i) => [x[0], x[1], round(x[2], 2), round(sum(count2.map(x => x[2]).slice(0,i+1)), 2)]);
+      for(var i=1; i<=count2.length; i++){
+        var row = count2[i-1];
+        var insert_html = `<tr><td>${i}<td>${row[0]}</td><td>${row[1]}</td><td>${row[2]}</td><td>${row[3]}</td></tr>`;
+        document.getElementById('tactics_result2').insertAdjacentHTML('beforeend', insert_html);
+      }
+    }
+  }
+
+  function sort_count(obj){
+    let arr = Object.keys(obj).map(key => [key, obj[key]]);
+    return arr.sort((x,y) => y[1]-x[1]);
+  }
+
+  ////////// function for converting character //////////
   
   function ignore_tone(text){
     return text.replace(/1/g,'').replace(/2/g,'').replace(/3/g,'').replace(/4/g,'').replace(/5/g,'');
   }
 
-  function replace_asp(w){
+  function reverse_asp(w){
     w = w.replace(/K/g,'kʰ');
     w = w.replace(/P/g,'pʰ');
     w = w.replace(/T/g,'tʰ');
@@ -767,6 +920,23 @@
     return w;
   }
 
+  function reverse_long_v(w){
+    w = w.replace(/A/g,"aa");
+    w = w.replace(/E/g,"ee");
+    w = w.replace(/I/g,"ii");
+    w = w.replace(/O/g,"oo");
+    w = w.replace(/U/g,"uu");
+    w = w.replace(/W/g,"ʉʉ");
+    w = w.replace(/X/g,"ɔɔ");
+    w = w.replace(/Y/g,"ɛɛ");
+    w = w.replace(/Z/g,"əə");
+    return w;
+  }
+
+  function reverse(w){
+    return reverse_long_v(reverse_vowel(reverse_asp(w)));
+  }
+
   function copy_to_clipboard(){
     var temp_elem = document.createElement("textarea");
     temp_elem.textContent = event.target.innerText;
@@ -781,6 +951,8 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="./js/bootstrap.min.js"></script>
+<script src='js/statistics.js'></script>
+<script src='js/math_func.js'></script>
 
 <script type="text/javascript">
   $('.bs-component [data-toggle="popover"]').popover();
