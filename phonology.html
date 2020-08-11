@@ -809,7 +809,7 @@
     }else if(mode==3 || mode==6){
       var candidates = IPAs.filter(x => (x[1].match(selected_vowel) || x[2].match(selected_vowel)) && (x.match(/[AEIOJRUVWXYZaeiouɔəɛʉ]/g)||[]).length <= syl_max);
     }else if(mode==7 || mode==8){
-      var candidates = IPAs.filter(x => x[x.length-3].match(selected_vowel) && (x.match(/[AEIOJRUVWXYZaeiouɔəɛʉ]/g)||[]).length <= syl_max);
+      var candidates = IPAs.filter(x => (x[x.length-3].match(selected_vowel) || x[x.length-2].match(selected_vowel)) && (x.match(/[AEIOJRUVWXYZaeiouɔəɛʉ]/g)||[]).length <= syl_max);
     }
     let count1 = {}; let count2 = {}; // {'kaa':[23, [กา, การ]], } key is IPA pattern, value is [count, [words]]
 
@@ -840,11 +840,12 @@
         add_dict(pattern1, count1, orth);
         add_dict(pattern2, count2, orth);
       }else if(mode==7){
-        var pattern = ipa.slice(-1)[0];
+        var pattern = ipa.match(/[AEIOJRUVWXYZaeiouɔəɛʉ][12345](.?)$/)[1]; // final vowel
+        if(pattern==""){pattern = 'ไม่มี';}
         add_dict(pattern, count1, orth);
       }else if(mode==8){
-        var pattern1 = ignore_tone(ipa.slice(ipa.length-3));
-        var pattern2 = ipa.slice(ipa.length-3);
+        var pattern1 = ignore_tone(ipa).match(/([AEIOJRUVWXYZaeiouɔəɛʉ].?)$/)[1]; // final vowel
+        var pattern2 = ipa.match(/([AEIOJRUVWXYZaeiouɔəɛʉ][12345].?)$/)[1];;
         add_dict(pattern1, count1, orth);
         add_dict(pattern2, count2, orth);
       }
