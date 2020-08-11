@@ -38,6 +38,7 @@
     .green{color:green;}
     .golden{color:goldenrod;}
     .red{color: crimson;}
+    .gray{color:dimgray;}
     .switch{text-decoration: underline; font-size: 0.6em;}
     .switch:hover{cursor: pointer;}
   }
@@ -458,8 +459,9 @@
           <li>Select a pattern of phonotactics.</li>
           <li>
             Select types of target words. <br>
-            ("all" not recommended because it includes not only words but also phrases)
+            ("all words" not recommended because the data include not only words but also phrases)<br>
           </li>
+          <li>You can search "not existing" pattern instead. (under construction)</li>
           <li>Press search button or ENTER key.</li>
         </ol>
         Phonemes in Thai
@@ -508,8 +510,12 @@
                 <select class="form-control" id="syl_number">
                   <option value="1" selected>only monosyllabic words</option>
                   <option value="2">monosyllabic + disyallbic</option>
-                  <option value="10">all</option>
+                  <option value="3">mono + di + tri</option>
+                  <option value="10">all words</option>
                 </select>
+              </td>
+              <td>
+                <input type="checkbox" id="notexist" disabled><label for="notexist" class="gray">&nbsp;not existing&nbsp;</label>
               </td>
               <td>
                 <input type="submit" class="btn btn-outline-secondary" onclick="find_tactics();return false;" value="search">
@@ -738,9 +744,14 @@
   }
 
   function find_tactics(){
+    let ONSETS = ["b", "p", "P", "m", "f", "d", "t", "T", "n", "s", "r", "l", "c", "C", "k", "K", "ŋ", "w", "y", "h", "ʔ"];
+    let CLUSTERS = ["pr", "pl", "Pr", "Pl", "tr", "Tr", "kr", "kl", "kw", "Kr", "Kl", "Kw"];
+    let CODAS = ["p", "m", "t", "n", "k", "ŋ", "w", "y", "ʔ"];
+    let VOWELS = ["A", "E", "I", "O", "U", "W", "X", "Y", "Z", "a", "e", "i", "o", "u", "ɔ", "ə", "ɛ", "ʉ"];
     let IPAs = Object.keys(IPA2WORD_TH);
-    let syl_max = Number(document.getElementById('syl_number').value);
-    let mode = document.getElementById('tactics_mode').value;
+    let syl_max = Number(document.getElementById('syl_number').value); // syl_max = 0 : not existing word
+    let mode = document.getElementById('tactics_mode').value; 
+    let isnotexist = document.getElementById('notexist').checked; 
     if(mode==1 || mode==4){
       var candidates = IPAs.filter(x => x[1].match(/[AEIOUWXYZaeiouɔəɛʉ]/) && (x.match(/[AEIOUWXYZaeiouɔəɛʉ]/g)||[]).length <= syl_max);
     }else if(mode==2 || mode==5){
@@ -751,103 +762,54 @@
       var candidates = IPAs.filter(x => !x.slice(-1)[0].match(/[12345]/) && (x.match(/[AEIOUWXYZaeiouɔəɛʉ]/g)||[]).length <= syl_max);
     }
     let count1 = {}; let count2 = {}; // {'kaa':[23, [กา, การ]], } key is IPA pattern, value is [count, [words]]
+
     for(ipa of candidates){
       var orth = IPA2WORD_TH[ipa][0];
       if(mode==1){
-        var onset = ipa[0];
-        if(onset in count1){
-          count1[onset][0] += 1; // add count
-          if(count1[onset][1].length<100){count1[onset][1].push(orth);} // add word to list 
-        }else{
-          count1[onset] = [1, [orth]];
-        }
+        var pattern = ipa[0];
+        add_dict(pattern, count1, orth);
       }else if(mode==2){
-        var onset = ipa.slice(0,2);
-        if(onset in count1){
-          count1[onset][0] += 1; // add count
-          if(count1[onset][1].length<100){count1[onset][1].push(orth);} // add word to list 
-        }else{
-          count1[onset] = [1, [orth]];
-        }
+        var pattern = ipa.slice(0,2);
+        add_dict(pattern, count1, orth);
       }else if(mode==3){
-        var onset = ipa.match(/(.{1,2})[AEIOUWXYZaeiouɔəɛʉ]/)[1];
-        if(onset in count1){
-          count1[onset][0] += 1; // add count
-          if(count1[onset][1].length<100){count1[onset][1].push(orth);} // add word to list 
-        }else{
-          count1[onset] = [1, [orth]];
-        }
-      }
-      if(mode==4){
-        var onset1 = ipa.slice(0,2);
-        if(onset1 in count1){
-          count1[onset1][0] += 1; // add count
-          if(count1[onset1][1].length<100){count1[onset1][1].push(orth);} // add word to list 
-        }else{
-          count1[onset1] = [1, [orth]];
-        }
-        var onset2 = ipa.slice(0,3);
-        if(onset2 in count2){
-          count2[onset2][0] += 1; // add count
-          if(count2[onset2][1].length<100){count2[onset2][1].push(orth);} // add word to list 
-        }else{
-          count2[onset2] = [1, [orth]];
-        }
+        var pattern = ipa.match(/(.{1,2})[AEIOUWXYZaeiouɔəɛʉ]/)[1];
+        add_dict(pattern, count1, orth);
+      }else if(mode==4){
+        var pattern1 = ipa.slice(0,2);
+        var pattern2 = ipa.slice(0,3);
+        add_dict(pattern1, count1, orth);
+        add_dict(pattern2, count2, orth);
       }else if(mode==5){
-        var onset1 = ipa.slice(0,3);
-        if(onset1 in count1){
-          count1[onset1][0] += 1; // add count
-          if(count1[onset1][1].length<100){count1[onset1][1].push(orth);} // add word to list 
-        }else{
-          count1[onset1] = [1, [orth]];
-        }
-        var onset2 = ipa.slice(0,4);
-        if(onset2 in count2){
-          count2[onset2][0] += 1; // add count
-          if(count2[onset2][1].length<100){count2[onset2][1].push(orth);} // add word to list 
-        }else{
-          count2[onset2] = [1, [orth]];
-        }
+        var pattern1 = ipa.slice(0,3);
+        var pattern2 = ipa.slice(0,4);
+        add_dict(pattern1, count1, orth);
+        add_dict(pattern2, count2, orth);
       }else if(mode==6){
-        var onset1 = ipa.match(/(.{1,2}[AEIOUWXYZaeiouɔəɛʉ])/)[1];
-        if(onset1 in count1){
-          count1[onset1][0] += 1; // add count
-          if(count1[onset1][1].length<100){count1[onset1][1].push(orth);} // add word to list 
-        }else{
-          count1[onset1] = [1, [orth]];
-        }
-        var onset2 = ipa.match(/(.{1,2}[AEIOUWXYZaeiouɔəɛʉ][12345])/)[1];
-        if(onset2 in count2){
-          count2[onset2][0] += 1; // add count
-          if(count2[onset2][1].length<100){count2[onset2][1].push(orth);} // add word to list 
-        }else{
-          count2[onset2] = [1, [orth]];
-        }
+        var pattern1 = ipa.match(/(.{1,2}[AEIOUWXYZaeiouɔəɛʉ])/)[1];
+        var pattern2 = ipa.match(/(.{1,2}[AEIOUWXYZaeiouɔəɛʉ][12345])/)[1];
+        add_dict(pattern1, count1, orth);
+        add_dict(pattern2, count2, orth);
       }else if(mode==7){
-        var final = ipa.slice(-1)[0];
-        if(final in count1){
-          count1[final][0] += 1; // add count
-          if(count1[final][1].length<100){count1[final][1].push(orth);} // add word to list 
-        }else{
-          count1[final] = [1, [orth]];
-        }
+        var pattern = ipa.slice(-1)[0];
+        add_dict(pattern, count1, orth);
       }else if(mode==8){
-        var final1 = ignore_tone(ipa.slice(ipa.length-3));
-        if(final1 in count1){
-          count1[final1][0] += 1; // add count
-          if(count1[final1][1].length<100){count1[final1][1].push(orth);} // add word to list 
-        }else{
-          count1[final1] = [1, [orth]];
-        }
-        var final2 = ipa.slice(ipa.length-3);
-        if(final2 in count2){
-          count2[final2][0] += 1; // add count
-          if(count2[final2][1].length<100){count2[final2][1].push(orth);} // add word to list 
-        }else{
-          count2[final2] = [1, [orth]];
-        }
+        var pattern1 = ignore_tone(ipa.slice(ipa.length-3));
+        var pattern2 = ipa.slice(ipa.length-3);
+        add_dict(pattern1, count1, orth);
+        add_dict(pattern2, count2, orth);
       }
     }
+    if(mode==1){
+      var notexist1 = new Set(ONSETS.filter(x => !(x in count1)));
+    }else if(mode==2){
+      var notexist1 = new Set(CLUSTERS.filter(x => !(x in count1)));
+    }else if(mode==3){
+      var notexist1 = new Set(ONSETS.concat(CLUSTERS).filter(x => !(x in count1)));
+    }else if(mode==4){
+      var notexist1 = new Set(ONSETS.concat(CLUSTERS).filter(x => !(x in count1)));
+    }
+    
+    console.log(notexist1);
     // tone insensitive
     count1_raw = sort_count(count1); // convert to array & sort, count = [[IPA, [count, [words]]],,]
     let total1 = sum(count1_raw.map(x => x[1][0]));
@@ -882,6 +844,15 @@
     let arr = Object.keys(obj).map(key => [key, obj[key]]); // convert into array [[key, value],,] = [[IPA, [count, [words]]],,]
     return arr.sort((x, y) => y[1][0]-x[1][0]);
   }
+
+  function add_dict(pattern, dict, orth){
+      if(pattern in dict){
+        dict[pattern][0] += 1; // add count
+        if(dict[pattern][1].length<100){dict[pattern][1].push(orth);} // add word to list, if <100 
+      }else{
+        dict[pattern] = [1, [orth]]
+      }
+    }
 
   ////////// function for converting character //////////
   
