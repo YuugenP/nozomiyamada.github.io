@@ -461,6 +461,7 @@
             Select types of target words. <br>
             ("all words" not recommended for count because the data include not only words but also phrases)<br>
           </li>
+          <li>Select a vowel. (only for patterns including vowel)</li>
           <li>You can search "not existing" pattern instead.</li>
           <li>Press search button or ENTER key.</li>
         </ol>
@@ -472,8 +473,8 @@
             <span class="blue">(br) pr pl pʰr pʰl (fr) (fl) (dr) tr tʰr kr kl kw kʰr kʰl kʰw</span>
           </li>
           <li>
-            vowel: 9 + 9<br>
-            <span class="green">a e i o u ɔ ə ɛ ʉ aa ee ii oo uu ɔɔ əə ɛɛ ʉʉ</span>
+            vowel: 9 + 9 + 3<br>
+            <span class="green">a e i o u ɔ ə ɛ ʉ / aa ee ii oo uu ɔɔ əə ɛɛ ʉʉ / ia ua ʉa</span>
           </li>
           <li>
             coda: 9 (+ 4)<br>
@@ -481,9 +482,9 @@
             >p m t n k ŋ w y ʔ (s) (f) (l) (c)</span>
           </li>
         </ol>
-        possible onset + vowel pattern = 21 * 18 + 12 * 18 = 378 + 216 = 594<br>
-        possible vowel + coda pattern = 18 * 9 = 162<br>
-        possible syllable pattern = 33 * 18 * 9 = 5346<br>
+        possible onset + vowel pattern = 21 * 21 + 12 * 21 = 441 + 252 = 693<br>
+        possible vowel + coda pattern = 21 * 9 = 189<br>
+        possible syllable pattern = 33 * 21 * 9 = 6237<br>
       </div>
     </div>
   </div>
@@ -535,6 +536,9 @@
                   <option value="A">aa</option>
                   <option value="ə">ə</option>
                   <option value="Z">əə</option>
+                  <option value="J">ia</option>
+                  <option value="V">ua</option>
+                  <option value="R">ʉa</option>
                 </select>
               </td>
               <td>
@@ -792,13 +796,13 @@
     document.getElementById('tactics_result2').innerHTML = '<tr><th>rank</th><th>phoneme(s)</th><th>count</th><th>%</th><th>cum %</th></tr>';
     
     if(mode==1 || mode==4){
-      var candidates = IPAs.filter(x => x[1].match(selected_vowel) && (x.match(/[AEIOUWXYZaeiouɔəɛʉ]/g)||[]).length <= syl_max);
+      var candidates = IPAs.filter(x => x[1].match(selected_vowel) && (x.match(/[AEIOJRUVWXYZaeiouɔəɛʉ]/g)||[]).length <= syl_max);
     }else if(mode==2 || mode==5){
-      var candidates = IPAs.filter(x => x[2].match(selected_vowel) && (x.match(/[AEIOUWXYZaeiouɔəɛʉ]/g)||[]).length <= syl_max);
+      var candidates = IPAs.filter(x => x[2].match(selected_vowel) && (x.match(/[AEIOJRUVWXYZaeiouɔəɛʉ]/g)||[]).length <= syl_max);
     }else if(mode==3 || mode==6){
-      var candidates = IPAs.filter(x => (x[1].match(selected_vowel) || x[2].match(selected_vowel)) && (x.match(/[AEIOUWXYZaeiouɔəɛʉ]/g)||[]).length <= syl_max);
+      var candidates = IPAs.filter(x => (x[1].match(selected_vowel) || x[2].match(selected_vowel)) && (x.match(/[AEIOJRUVWXYZaeiouɔəɛʉ]/g)||[]).length <= syl_max);
     }else if(mode==7 || mode==8){
-      var candidates = IPAs.filter(x => (x[x.length-2].match(selected_vowel) || x[x.length-3].match(selected_vowel)) && (x.match(/[AEIOUWXYZaeiouɔəɛʉ]/g)||[]).length <= syl_max);
+      var candidates = IPAs.filter(x => (x[x.length-2].match(selected_vowel) || x[x.length-3].match(selected_vowel)) && (x.match(/[AEIOJRUVWXYZaeiouɔəɛʉ]/g)||[]).length <= syl_max);
     }
     let count1 = {}; let count2 = {}; // {'kaa':[23, [กา, การ]], } key is IPA pattern, value is [count, [words]]
 
@@ -811,7 +815,7 @@
         var pattern = ipa.slice(0,2);
         add_dict(pattern, count1, orth);
       }else if(mode==3){
-        var pattern = ipa.match(/(.{1,2})[AEIOUWXYZaeiouɔəɛʉ]/)[1];
+        var pattern = ipa.match(/(.{1,2})[AEIOJRUVWXYZaeiouɔəɛʉ]/)[1];
         add_dict(pattern, count1, orth);
       }else if(mode==4){
         var pattern1 = ipa.slice(0,2);
@@ -824,8 +828,8 @@
         add_dict(pattern1, count1, orth);
         add_dict(pattern2, count2, orth);
       }else if(mode==6){
-        var pattern1 = ipa.match(/(.{1,2}[AEIOUWXYZaeiouɔəɛʉ])/)[1];
-        var pattern2 = ipa.match(/(.{1,2}[AEIOUWXYZaeiouɔəɛʉ][12345])/)[1];
+        var pattern1 = ipa.match(/(.{1,2}[AEIOJRUVWXYZaeiouɔəɛʉ])/)[1];
+        var pattern2 = ipa.match(/(.{1,2}[AEIOJRUVWXYZaeiouɔəɛʉ][12345])/)[1];
         add_dict(pattern1, count1, orth);
         add_dict(pattern2, count2, orth);
       }else if(mode==7){
@@ -967,6 +971,11 @@
     w = w.replace(/I3/g,"îi");
     w = w.replace(/I4/g,"íi");
     w = w.replace(/I5/g,"ǐi");
+    w = w.replace(/J1/g,"ia");
+    w = w.replace(/J2/g,"ìa");
+    w = w.replace(/J3/g,"îa");
+    w = w.replace(/J4/g,"ía");
+    w = w.replace(/J5/g,"ǐa");
     w = w.replace(/i1/g,"i");
     w = w.replace(/i2/g,"ì");
     w = w.replace(/i3/g,"î");
@@ -987,6 +996,11 @@
     w = w.replace(/U3/g,"ûu");
     w = w.replace(/U4/g,"úu");
     w = w.replace(/U5/g,"ǔu");
+    w = w.replace(/V1/g,"ua");
+    w = w.replace(/V2/g,"ùa");
+    w = w.replace(/V3/g,"ûa");
+    w = w.replace(/V4/g,"úa");
+    w = w.replace(/V5/g,"ǔa");
     w = w.replace(/u1/g,"u");
     w = w.replace(/u2/g,"ù");
     w = w.replace(/u3/g,"û");
@@ -997,6 +1011,11 @@
     w = w.replace(/W3/g,"ʉ̂ʉ");
     w = w.replace(/W4/g,"ʉ́ʉ");
     w = w.replace(/W5/g,"ʉ̌ʉ");
+    w = w.replace(/R1/g,"ʉa");
+    w = w.replace(/R2/g,"ʉ̀a");
+    w = w.replace(/R3/g,"ʉ̂a");
+    w = w.replace(/R4/g,"ʉ́a");
+    w = w.replace(/R5/g,"ʉ̌a");
     w = w.replace(/ʉ1/g,"ʉ");
     w = w.replace(/ʉ2/g,"ʉ̀");
     w = w.replace(/ʉ3/g,"ʉ̂");
@@ -1045,6 +1064,9 @@
     w = w.replace(/X/g,"ɔɔ");
     w = w.replace(/Y/g,"ɛɛ");
     w = w.replace(/Z/g,"əə");
+    w = w.replace(/J/g,"ia");
+    w = w.replace(/V/g,"ua");
+    w = w.replace(/R/g,"ʉa");
     return w;
   }
 
