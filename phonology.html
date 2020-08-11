@@ -495,7 +495,7 @@
           <table>
             <tr>
               <td>
-                <select class="form-control" id="tactics_mode">
+                <select class="form-control" id="tactics_mode" onchange="show_select_vowel();">
                   <option value="1" selected>word-initial onset (single consonant)</option>
                   <option value="2">word-initial onset (cluster)</option>
                   <option value="3">word-initial onset (both)</option>
@@ -512,6 +512,29 @@
                   <option value="2">monosyllabic + disyallbic</option>
                   <option value="3">mono + di + tri</option>
                   <option value="10">all words</option>
+                </select>
+              </td>
+              <td style="display: none;" id="select_vowel_td">
+                <select class="form-control" id="select_vowel">
+                  <option value="AEIOUWXYZaeiouɔəɛʉ">all</option>
+                  <option value="i">i</option>
+                  <option value="I">ii</option>
+                  <option value="e">e</option>
+                  <option value="E">ee</option>
+                  <option value="ɛ">ɛ</option>
+                  <option value="Y">ɛɛ</option>
+                  <option value="ʉ">ʉ</option>
+                  <option value="W">ʉʉ</option>
+                  <option value="u">u</option>
+                  <option value="U">uu</option>
+                  <option value="o">o</option>
+                  <option value="O">oo</option>
+                  <option value="ɔ">ɔ</option>
+                  <option value="X">ɔɔ</option>
+                  <option value="a">a</option>
+                  <option value="A">aa</option>
+                  <option value="ə">ə</option>
+                  <option value="Z">əə</option>
                 </select>
               </td>
               <td>
@@ -743,26 +766,39 @@
     }
   }
 
+  ////////////////////  phonotactics  ////////////////////
+
+  function show_select_vowel(){
+    let mode = document.getElementById('tactics_mode').value;
+    if(mode==4 || mode==5 || mode==6 || mode==8){
+      document.getElementById('select_vowel_td').style.display = '';
+    }else{
+      document.getElementById('select_vowel_td').style.display = 'none';
+      document.getElementById('select_vowel').selectedIndex = 0;
+    }
+  }
+
   function find_tactics(){
     let ONSETS = ["b", "p", "P", "m", "f", "d", "t", "T", "n", "s", "r", "l", "c", "C", "k", "K", "ŋ", "w", "y", "h", "ʔ"];
     let CLUSTERS = ["pr", "pl", "Pr", "Pl", "tr", "Tr", "kr", "kl", "kw", "Kr", "Kl", "Kw"];
     let CODAS = ["p", "m", "t", "n", "k", "ŋ", "w", "y", "ʔ"];
-    let VOWELS = ["A", "E", "I", "O", "U", "W", "X", "Y", "Z", "a", "e", "i", "o", "u", "ɔ", "ə", "ɛ", "ʉ"];
+    let VOWELS = document.getElementById('select_vowel').value.split('');
     let IPAs = Object.keys(IPA2WORD_TH);
     let syl_max = Number(document.getElementById('syl_number').value); // syl_max = 0 : not existing word
     let mode = document.getElementById('tactics_mode').value; 
     let isnotexist = document.getElementById('notexist').checked; 
+    let selected_vowel = new RegExp(`[${document.getElementById('select_vowel').value}]`);
     document.getElementById('tactics_result1').innerHTML = '<tr><th>rank</th><th>phoneme(s)</th><th>count</th><th>%</th><th>cum %</th></tr>';
     document.getElementById('tactics_result2').innerHTML = '<tr><th>rank</th><th>phoneme(s)</th><th>count</th><th>%</th><th>cum %</th></tr>';
     
     if(mode==1 || mode==4){
-      var candidates = IPAs.filter(x => x[1].match(/[AEIOUWXYZaeiouɔəɛʉ]/) && (x.match(/[AEIOUWXYZaeiouɔəɛʉ]/g)||[]).length <= syl_max);
+      var candidates = IPAs.filter(x => x[1].match(selected_vowel) && (x.match(/[AEIOUWXYZaeiouɔəɛʉ]/g)||[]).length <= syl_max);
     }else if(mode==2 || mode==5){
-      var candidates = IPAs.filter(x => x[2].match(/[AEIOUWXYZaeiouɔəɛʉ]/) && (x.match(/[AEIOUWXYZaeiouɔəɛʉ]/g)||[]).length <= syl_max);
+      var candidates = IPAs.filter(x => x[2].match(selected_vowel) && (x.match(/[AEIOUWXYZaeiouɔəɛʉ]/g)||[]).length <= syl_max);
     }else if(mode==3 || mode==6){
-      var candidates = IPAs.filter(x => (x[1].match(/[AEIOUWXYZaeiouɔəɛʉ]/) || x[2].match(/[AEIOUWXYZaeiouɔəɛʉ]/)) && (x.match(/[AEIOUWXYZaeiouɔəɛʉ]/g)||[]).length <= syl_max);
+      var candidates = IPAs.filter(x => (x[1].match(selected_vowel) || x[2].match(selected_vowel)) && (x.match(/[AEIOUWXYZaeiouɔəɛʉ]/g)||[]).length <= syl_max);
     }else if(mode==7 || mode==8){
-      var candidates = IPAs.filter(x => !x.slice(-1)[0].match(/[12345]/) && (x.match(/[AEIOUWXYZaeiouɔəɛʉ]/g)||[]).length <= syl_max);
+      var candidates = IPAs.filter(x => (x[x.length-2].match(selected_vowel) || x[x.length-3].match(selected_vowel)) && (x.match(/[AEIOUWXYZaeiouɔəɛʉ]/g)||[]).length <= syl_max);
     }
     let count1 = {}; let count2 = {}; // {'kaa':[23, [กา, การ]], } key is IPA pattern, value is [count, [words]]
 
