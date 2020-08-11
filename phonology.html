@@ -459,9 +459,9 @@
           <li>Select a pattern of phonotactics.</li>
           <li>
             Select types of target words. <br>
-            ("all words" not recommended because the data include not only words but also phrases)<br>
+            ("all words" not recommended for count because the data include not only words but also phrases)<br>
           </li>
-          <li>You can search "not existing" pattern instead. (under construction)</li>
+          <li>You can search "not existing" pattern instead.</li>
           <li>Press search button or ENTER key.</li>
         </ol>
         Phonemes in Thai
@@ -515,7 +515,7 @@
                 </select>
               </td>
               <td>
-                <input type="checkbox" id="notexist" disabled><label for="notexist" class="gray">&nbsp;not existing&nbsp;</label>
+                <input type="checkbox" id="notexist"><label for="notexist">&nbsp;not existing&nbsp;</label>
               </td>
               <td>
                 <input type="submit" class="btn btn-outline-secondary" onclick="find_tactics();return false;" value="search">
@@ -752,6 +752,9 @@
     let syl_max = Number(document.getElementById('syl_number').value); // syl_max = 0 : not existing word
     let mode = document.getElementById('tactics_mode').value; 
     let isnotexist = document.getElementById('notexist').checked; 
+    document.getElementById('tactics_result1').innerHTML = '<tr><th>rank</th><th>phoneme(s)</th><th>count</th><th>%</th><th>cum %</th></tr>';
+    document.getElementById('tactics_result2').innerHTML = '<tr><th>rank</th><th>phoneme(s)</th><th>count</th><th>%</th><th>cum %</th></tr>';
+    
     if(mode==1 || mode==4){
       var candidates = IPAs.filter(x => x[1].match(/[AEIOUWXYZaeiouɔəɛʉ]/) && (x.match(/[AEIOUWXYZaeiouɔəɛʉ]/g)||[]).length <= syl_max);
     }else if(mode==2 || mode==5){
@@ -806,38 +809,72 @@
     }else if(mode==3){
       var notexist1 = new Set(ONSETS.concat(CLUSTERS).filter(x => !(x in count1)));
     }else if(mode==4){
-      var notexist1 = new Set(ONSETS.concat(CLUSTERS).filter(x => !(x in count1)));
+      let possible1 = flatten(cartesian(ONSETS, VOWELS, (x,y)=>x+y));
+      let possible2 = flatten(cartesian(possible1, [1,2,3,4,5], (x,y)=>x+y));
+      var notexist1 = new Set(possible1.filter(x => !(x in count1)));
+      var notexist2 = new Set(possible2.filter(x => !(x in count2)));
+    }else if(mode==5){
+      let possible1 = flatten(cartesian(CLUSTERS, VOWELS, (x,y)=>x+y));
+      let possible2 = flatten(cartesian(possible1, [1,2,3,4,5], (x,y)=>x+y));
+      var notexist1 = new Set(possible1.filter(x => !(x in count1)));
+      var notexist2 = new Set(possible2.filter(x => !(x in count2)));
+    }else if(mode==6){
+      let possible1 = flatten(cartesian(ONSETS.concat(CLUSTERS), VOWELS, (x,y)=>x+y));
+      let possible2 = flatten(cartesian(possible1, [1,2,3,4,5], (x,y)=>x+y));
+      var notexist1 = new Set(possible1.filter(x => !(x in count1)));
+      var notexist2 = new Set(possible2.filter(x => !(x in count2)));
+    }else if(mode==7){
+      var notexist1 = new Set(CODAS.filter(x => !(x in count1)));
+    }else if(mode==8){
+      let possible1 = flatten(cartesian(VOWELS, CODAS, (x,y)=>x+y));
+      let possible2 = flatten(cartesian([1,2,3,4,5], CODAS, (x,y)=>x+y));
+      possible2 = flatten(cartesian(VOWELS, possible2, (x,y)=>x+y));
+      var notexist1 = new Set(possible1.filter(x => !(x in count1)));
+      var notexist2 = new Set(possible2.filter(x => !(x in count2)));
     }
-    
-    console.log(notexist1);
-    // tone insensitive
-    count1_raw = sort_count(count1); // convert to array & sort, count = [[IPA, [count, [words]]],,]
-    let total1 = sum(count1_raw.map(x => x[1][0]));
-    count1 = count1_raw.map(x => [reverse(x[0]), x[1][0]]); // reverse aspiration & vowel, exclude word list
-    count1 = count1.map(x => [x[0], x[1], x[1]/total1*100]); // count1 = [IPA, count, %]
-    count1 = count1.map((x, i) => [x[0], x[1], round(x[2], 2), round(sum(count1.map(x => x[2]).slice(0,i+1)), 2)]); // count1 = [IPA, count, %, cum%]
-    document.getElementById('tactics_result1').innerHTML = '<tr><th data-toggle="tooltip" data-placement="right" title="aaaa">rank</th><th>phoneme(s)</th><th>count</th><th>%</th><th>cum %</th></tr>';
-    document.getElementById('tactics_result2').innerHTML = '<tr><th>rank</th><th>phoneme(s)</th><th>count</th><th>%</th><th>cum %</th></tr>';
-    for(var i=1; i<=count1.length; i++){
-      var row = count1[i-1];
-      var insert_html = `<tr><td>${i}</td><th data-toggle="tooltip" data-placement="right" title="${count1_raw[i-1][1][1].join(' ')}">${row[0]}</th><td>${row[1]}</td><td>${row[2]}</td><td>${row[3]}</td></tr>`;
-      document.getElementById('tactics_result1').insertAdjacentHTML('beforeend', insert_html);
-    }
-    $(document.getElementById('tactics_result1')).find('[data-toggle="tooltip"]').tooltip();
-    // tone sensitive
-    if(mode==4 || mode==5 || mode==6 || mode==8){
-      count2_raw = sort_count(count2); // convert to array & sort
-      let total2 = sum(count2_raw.map(x => x[1][0]));
-      count2 = count2_raw.map(x => [reverse(x[0]), x[1][0]]); // reverse aspiration & vowel
-      count2 = count2.map(x => [x[0], x[1], x[1]/total2*100]); // %
-      count2 = count2.map((x, i) => [x[0], x[1], round(x[2], 2), round(sum(count2.map(x => x[2]).slice(0,i+1)), 2)]);
-      for(var i=1; i<=count2.length; i++){
-        var row = count2[i-1];
-        var insert_html = `<tr><td>${i}<th data-toggle="tooltip" data-placement="right" title="${count2_raw[i-1][1][1].join(' ')}">${row[0]}</td><td>${row[1]}</td><td>${row[2]}</td><td>${row[3]}</td></tr>`;
-        document.getElementById('tactics_result2').insertAdjacentHTML('beforeend', insert_html);
+    if(isnotexist==false){
+      // tone insensitive
+      count1_raw = sort_count(count1); // convert to array & sort, count = [[IPA, [count, [words]]],,]
+      let total1 = sum(count1_raw.map(x => x[1][0]));
+      count1 = count1_raw.map(x => [reverse(x[0]), x[1][0]]); // reverse aspiration & vowel, exclude word list
+      count1 = count1.map(x => [x[0], x[1], x[1]/total1*100]); // count1 = [IPA, count, %]
+      count1 = count1.map((x, i) => [x[0], x[1], round(x[2], 2), round(sum(count1.map(x => x[2]).slice(0,i+1)), 2)]); // count1 = [IPA, count, %, cum%]
+      for(var i=1; i<=count1.length; i++){
+        var row = count1[i-1];
+        var insert_html = `<tr><td>${i}</td><td data-toggle="tooltip" data-placement="right" title="${count1_raw[i-1][1][1].join(' ')}">${row[0]}</td><td>${row[1]}</td><td>${row[2]}</td><td>${row[3]}</td></tr>`;
+        document.getElementById('tactics_result1').insertAdjacentHTML('beforeend', insert_html);
       }
-      $(document.getElementById('tactics_result2')).find('[data-toggle="tooltip"]').tooltip();
+      $(document.getElementById('tactics_result1')).find('[data-toggle="tooltip"]').tooltip();
+      // tone sensitive
+      if(mode==4 || mode==5 || mode==6 || mode==8){
+        count2_raw = sort_count(count2); // convert to array & sort
+        let total2 = sum(count2_raw.map(x => x[1][0]));
+        count2 = count2_raw.map(x => [reverse(x[0]), x[1][0]]); // reverse aspiration & vowel
+        count2 = count2.map(x => [x[0], x[1], x[1]/total2*100]); // %
+        count2 = count2.map((x, i) => [x[0], x[1], round(x[2], 2), round(sum(count2.map(x => x[2]).slice(0,i+1)), 2)]);
+        for(var i=1; i<=count2.length; i++){
+          var row = count2[i-1];
+          var insert_html = `<tr><td>${i}</td><td data-toggle="tooltip" data-placement="right" title="${count2_raw[i-1][1][1].join(' ')}">${row[0]}</td><td>${row[1]}</td><td>${row[2]}</td><td>${row[3]}</td></tr>`;
+          document.getElementById('tactics_result2').insertAdjacentHTML('beforeend', insert_html);
+        }
+        $(document.getElementById('tactics_result2')).find('[data-toggle="tooltip"]').tooltip();
+      }
+    }else if(isnotexist==true){
+      notexist1 = sorted(Array.from(notexist1).map(x => reverse(x)));
+      for(var i=1; i<=notexist1.length; i++){
+        var insert_html = `<tr><td>${i}</td><td>${notexist1[i-1]}</td><td></td><td></td><td></td></tr>`;
+        document.getElementById('tactics_result1').insertAdjacentHTML('beforeend', insert_html);
+      }
+      if(mode==4 || mode==5 || mode==6 || mode==8){
+        notexist2 = sorted(Array.from(notexist2).map(x => reverse(x)));
+        for(var i=1; i<=notexist2.length; i++){
+          var insert_html = `<tr><td>${i}</td><td>${notexist2[i-1]}</td><td></td><td></td><td></td></tr>`;
+          document.getElementById('tactics_result2').insertAdjacentHTML('beforeend', insert_html);
+        }
+      }
     }
+
+    
   }
 
   function sort_count(obj){ // obj = {'kaa':[23, [กา, การ]], } sort by count
