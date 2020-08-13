@@ -25378,7 +25378,7 @@ const WORD2IPA_TH =
         "Ta1mPi2t"
     ],
     "ทำไม": [
-        "tha1mma1y"
+        "Ta1mma1y"
     ],
     "ทำร้าย": [
         "Ta1mrA4y"
@@ -85653,7 +85653,7 @@ const IPA2WORD_TH =
     "Ta1mPi2t": [
         "ทำผิด"
     ],
-    "tha1mma1y": [
+    "Ta1mma1y": [
         "ทำไม"
     ],
     "Ta1mrA4y": [
