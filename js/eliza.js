@@ -105,11 +105,11 @@ function canned(input_text){
 
 // 2. yes-no question
 function yes_no(input_text){
-    const result = /(Are|Were|Can|Could|Do|Did|May|Might|Must|Shall|Should|Have|Had|Will|Would) you (.*?)[ \?\.]*$/.exec(input_text);
+    var result = /(Are|Were|Can|Could|Do|Did|May|Might|Must|Shall|Should|Have|Had|Will|Would) you (.*?)[ \?\.]*$/.exec(input_text);
     if(result==null){
         return null;
     }else{
-        const aux = result[1];
+        var aux = result[1];
         sent = result[2];
         sent = sent.replace(/ (me|us) /, ' YYOOUU ');
         sent = sent.replace(/ (me|us)$/, ' YYOOUU');
@@ -146,7 +146,7 @@ function keyword(input_text){
 
 // 4. reflecting
 function reflecting(input_text){
-    const result = /(^[Yy]ou| you) ((:?\S+ ){2,3})me([ ,\.\?]|$)/.exec(input_text);
+    var result = /(^[Yy]ou| you) ((:?\S+ ){2,3})me([ ,\.\?]|$)/.exec(input_text);
     if(result==null){
         return null;
     }else{
@@ -155,6 +155,7 @@ function reflecting(input_text){
     }
 }
 
+/*
 // 5. repeating
 function repeating(input_text){
     const pattern1 = /^(My|I|I'm|Mine)/;
@@ -185,6 +186,7 @@ function repeating(input_text){
         return res.replace(/[\.\?]+$/,'') + '?'; // delete puctuation + add ?
     }
 }
+*/
 
 // 6. give up
 var choices = ['Please go on.', "That's very interesting.", "I see."];
@@ -200,8 +202,8 @@ function give_up(){
 }
 
 function select_res(t){
-    const candidates = [canned(t),yes_no(t),keyword(t),reflecting(t),repeating(t),give_up()];
-    for(let i=0; i<6; i++){
+    const candidates = [canned(t),yes_no(t),keyword(t),reflecting(t),give_up()];
+    for(let i=0; i<5; i++){
         if(candidates[i] != null){
             return [i+1, candidates[i]];
         }
