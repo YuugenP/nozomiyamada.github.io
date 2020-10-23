@@ -47,8 +47,8 @@
   <script src="./js/eliza.js" charset="utf-8"></script>
   <script type="text/javascript">
     function response(input_text){
-      const response = select_res(input_text);
-      let target = document.getElementById("result");
+      var response = select_res(input_text);
+      var target = document.getElementById("result");
       
       target.innerHTML += `>>>${input_text}\n(${response[0]}) ${response[1]}\n`; // append response
       document.getElementById("text").value = ""; // clear input form
