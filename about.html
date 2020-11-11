@@ -2,48 +2,12 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
   <title>About</title>
-
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-  <style type="text/css">
-  .bs-component + .bs-component {
-    margin-top: 1rem;
-  }
-  @media (min-width: 768px) {
-    .bs-docs-section {
-      margin-top: 8em;
-    }
-    .bs-component {
-      position: relative;
-    }
-    .bs-component .modal {
-      position: relative;
-      top: auto;
-      right: auto;
-      bottom: auto;
-      left: auto;
-      z-index: 1;
-      display: block;
-    }
-    .bs-component .modal-dialog {
-      width: 90%;
-    }
-    .bs-component .popover {
-      position: relative;
-      display: inline-block;
-      width: 220px;
-      margin: 20px;
-    }
-    .nav-tabs {
-      margin-bottom: 15px;
-    }
-    .progress {
-      margin-bottom: 10px;
-    }
-  }
-  </style>
+  <link rel="stylesheet" type="text/css" href="css/custom.css">
 </head>
 <body>
 
@@ -65,9 +29,6 @@
         <li class="nav-item">
           <a class="nav-link" href="link.html">Links</a>
         </li>
-        <li class="nav-item">
-					<a class="nav-link" href="nhk.html">NHKWeb</a>
-				</li>
         <li class="nav-item">
           <a class="nav-link" href="ipathai.html">タイ語入力</a>
         </li>
@@ -125,10 +86,25 @@
       <div class="bs-component">
         <h2>About Nozomi Yamada</h2>
         <ul style="list-style:none;">
-          <li><b>Origin</b><br>Tokyo, Japan</li>
-          <li><br><b>Academic Background</b><br>Bachelor of Science (Physics, Biology)<br>The University of Tokyo</li>
-          <li><br><b>Fields of Interest</b><br>Computational Linguistics<br>Phonology/Phonetics<br>Language Change<br>Thai Linguistics</li>
-          <li><br><b>Programming Language</b><br>Python, JavaScript, MySQL, Matlab, R, PHP</li>
+          <li>
+            <b>ORIGIN</b>
+            <br>Tokyo, Japan
+          </li>
+          <li>
+            <br><b>ACADEMIC BACKGROUND</b>
+            <br>Bachelor of Science (Physics, Biology)
+            <br>The University of Tokyo
+          </li>
+          <li>
+            <br><b>FIELDS OF INTEREST</b>
+            <br>Computational Linguistics
+            <br>Phonology/Phonetics
+            <br>Language Change
+          </li>
+          <li>
+            <br><b>PROGRAMMING LANGUAGE</b>
+            <br>Python, JavaScript, MySQL, Matlab, R
+          </li>
         </ul>
       </div>
     </div>
@@ -136,21 +112,17 @@
 
 </div>
 
-
 <footer>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <p><font color="white">&copy; 2020 Nozomi Yamada All Rights Reserved.</font></p>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<p><font color="white">&copy; 2020 Nozomi Yamada All Rights Reserved.</font></p>
   </nav>
+  <script type="text/javascript" src="./js/jquery-3.5.1.js"></script>
+  <script src="./js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript">
+    $('body [data-toggle="popover"]').popover();
+    $('body [data-toggle="tooltip"]').tooltip();
+  </script>
 </footer>
-
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="./js/bootstrap.min.js"></script>
-
-<script type="text/javascript">
-  $('.bs-component [data-toggle="popover"]').popover();
-  $('.bs-component [data-toggle="tooltip"]').tooltip();
-</script>
 
 </body>
 </html>

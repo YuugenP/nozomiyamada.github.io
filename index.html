@@ -2,38 +2,12 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
   <title>Nozomi Yamada</title>
-
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-  <style type="text/css">
-  .bs-component + .bs-component {
-    margin-top: 1rem;
-  }
-  @media (min-width: 768px) {
-    .bs-docs-section {margin-top: 8em;}
-    .bs-component {position: relative;}
-    .bs-component .modal {
-      position: relative;
-      top: auto;
-      right: auto;
-      bottom: auto;
-      left: auto;
-      z-index: 1;
-      display: block;
-    }
-    .bs-component .modal-dialog {width: 90%;}
-    .bs-component .popover {
-      position: relative;
-      display: inline-block;
-      width: 220px;
-      margin: 20px;
-    }
-    .nav-tabs {margin-bottom: 15px;}
-    .progress {margin-bottom: 10px;}
-  }
-  </style>
+  <link rel="stylesheet" type="text/css" href="css/custom.css">
 </head>
 
 <body>
@@ -55,9 +29,6 @@
         <li class="nav-item">
           <a class="nav-link" href="link.html">Links</a>
         </li>
-        <li class="nav-item">
-					<a class="nav-link" href="nhk.html">NHKWeb</a>
-				</li>
         <li class="nav-item">
           <a class="nav-link" href="ipathai.html">タイ語入力</a>
         </li>
@@ -84,16 +55,17 @@
     <div class="row my-3">
       <div class="col-12">
         <h1 class="display-4">ようこそ ยินดีต้อนรับ</h1>
-        <p>Welcome to Nozomi's website.<br />
-          Last Update: 2 August, 2020<br />
+        <p>
+          Last Update: 11 November, 2020<br>
           Email: y.nozomi320 AT gmail.com<br />
-          GitHub Repositiries > <a href='https://github.com/nozomiyamada?tab=repositories' target="_blank">here</a>
+          GitHub Repositiries > <a href='https://github.com/nozomiyamada?tab=repositories' target="_blank">here</a><br>
+          Thai Web Corpus > <a href='https://web.thaicorpus.tk/' target="_blank">GO</a>
         </p>
       </div>
     </div>
   </div>
   
-  <div class="row my-3">
+  <div class="row mb-3">
     <div class="col-lg-6">
       <div class="bs-component">
         <h2>wɛlkəm</h2>
@@ -103,18 +75,15 @@
         </div>
     </div>
     <div class="col-lg-6">
-      <div class="bs-component">
-        <h2>NLP Lab@Chula</h2>
-        <p>Go to <a href="https://attapol.github.io/lab.html" target="_blank">website</a></p>
-        <p>
-          release:
-          <ul>
-            <li><a href="https://attapol.github.io/tlc.html" target="_blank">Thai Literature Corpus (TLC)</a></li>
-            <li><a href="https://github.com/ponrawee/ssg" target="_blank">CRF Syllable Segmenter for Thai</a></li>
-            <li><a href="https://pythainlp.github.io/attacut/" target="_blank">Attacut: Tokenizer for Thai</a></li>
-          </ul>
-        </p>
-      </div>
+      <h2>NLP Lab@Chula</h2>
+      <p>Go to <a href="https://attapol.github.io/lab.html" target="_blank">website</a><br>
+        release:
+        <ul>
+          <li><a href="https://attapol.github.io/tlc.html" target="_blank">Thai Literature Corpus (TLC)</a></li>
+          <li><a href="https://github.com/ponrawee/ssg" target="_blank">CRF Syllable Segmenter for Thai</a></li>
+          <li><a href="https://pythainlp.github.io/attacut/" target="_blank">Attacut: Tokenizer for Thai</a></li>
+        </ul>
+      </p>
     </div>
   </div>
 
@@ -195,21 +164,17 @@
   </div>
 </div>
 
-
 <footer>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 		<p><font color="white">&copy; 2020 Nozomi Yamada All Rights Reserved.</font></p>
-	</nav>
+  </nav>
+  <script type="text/javascript" src="./js/jquery-3.5.1.js"></script>
+  <script src="./js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript">
+    $('body [data-toggle="popover"]').popover();
+    $('body [data-toggle="tooltip"]').tooltip();
+  </script>
 </footer>
-
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="./js/bootstrap.min.js"></script>
-
-<script type="text/javascript">
-  $('.bs-component [data-toggle="popover"]').popover();
-  $('.bs-component [data-toggle="tooltip"]').tooltip();
-</script>
 
 </body>
 </html>

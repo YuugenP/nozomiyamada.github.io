@@ -1,0 +1,14 @@
+body{
+	font-family: 'Nunito', 'Roboto', 'Sarabun',  sans-serif;
+	scroll-behavior: smooth;
+}
+
+h2{
+	color: darkblue;
+}
+
+h2:hover{cursor: pointer;}
+.blue{color: blue}
+.red{color: indianred}
+.pointer:hover{cursor: pointer;}
+.answer:hover{cursor: pointer;}

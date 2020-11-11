@@ -2,46 +2,12 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Math Tools</title>
+  <title>Math & Statistics Tools</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-  <style type="text/css">
-  .bs-component + .bs-component {
-    margin-top: 1rem;
-  }
-  @media (min-width: 768px) {
-    .bs-docs-section {margin-top: 8em;}
-    .bs-component {position: relative;}
-    .bs-component .modal {
-      position: relative;
-      top: auto;
-      right: auto;
-      bottom: auto;
-      left: auto;
-      z-index: 1;
-      display: block;
-    }
-    .bs-component .modal-dialog {width: 90%;}
-    .bs-component .popover {
-      position: relative;
-      display: inline-block;
-      width: 220px;
-      margin: 20px;
-    }
-    .nav-tabs {margin-bottom: 15px;}
-    .progress {margin-bottom: 10px;}
-    .function_list:hover {cursor: pointer; color:dodgerblue}
-    .answer:hover{cursor: pointer;}
-    .red{color:indianred}
-    .blue{color:royalblue}
-    h2{color:midnightblue}
-    h2:hover{cursor: pointer;}
-  }
-  </style>
-  <script src='js/statistics.js'></script>
-  <script src='js/math_func.js'></script>
-  <script src='js/gcd_lcm.js'></script>
-  <script src='js/misc.js'></script>
+  <link rel="stylesheet" type="text/css" href="css/custom.css">
 </head>
 
 <body>
@@ -63,9 +29,6 @@
         <li class="nav-item">
           <a class="nav-link" href="link.html">Links</a>
         </li>
-        <li class="nav-item">
-					<a class="nav-link" href="nhk.html">NHKWeb</a>
-				</li>
         <li class="nav-item">
           <a class="nav-link" href="ipathai.html">タイ語入力</a>
         </li>
@@ -91,7 +54,7 @@
 
   <div class="row">
     <div class="col-lg-12">
-      <h1>Math Tools</h1>
+      <h1>Math & Statistics Tools</h1>
       <h5>source code -> <a href="https://github.com/nozomiyamada/JS_mathtool" target="_blank">GitHub</a></h5>
       <p>You can try all functions on the console (for Google Chrome, press F12 key to open)<br>
         Each answer displayed below can be copied to clipboard just by clicking.<br>
@@ -159,23 +122,266 @@
     </div>
   </div>
   
-
+  <!-- SELECT TEST -->
+  <div class="row">
+    <div class="col-lg-12">
+      <h2 onclick="show_hide('test_list');">＋ What do you want to do?</h2>
+    </div>
+  </div>
+  <div class="row" id="test_list" style="display: none;">
+    <div class="col-lg-12">
+      <table class="table table-hover">
+        <tbody>
+          <tr>
+            <th>name of test</th>
+            <th>description</th>
+            <th style="width: 20%">hypotheses</th>
+          </tr>
+          <tr>
+            <th>z-test
+              <br><span class="badge badge-pill badge-danger">parametric</span> 
+              <br><span class="badge badge-pill badge-secondary pointer" data-toggle="tooltip" data-placement="right" data-html="true" 
+              title="จัดสอบแล้วคะแนนเป็นการแจกแจงแบบปกติโดยมีค่าเฉลี่ย μ<sub>0</sub>=60 และ SD σ=5.2<br>ทีนี้ ค่าเฉลี่ยของกลุ่มหนึง μ<sub>1</sub>=68 ต่างกันกับค่าเฉลี่ยของปราชากรหรือไม่">example</span>
+            </th>
+            <td>to determine whether two <b>means</b> are different
+              <br>(to determine whether two samples come from the same population)
+              <ul>
+                <li>population must be normal distribution</li>
+                <li>sample number is large enough</li>
+                <li>population SD <i>σ</i> are required</li>
+              </ul>
+            </td>
+            <td>H<sub>0</sub> : μ<sub>0</sub> = μ<sub>1</sub><br>H<sub>1</sub> : μ<sub>0</sub> ≠ μ<sub>1</sub></td>
+          </tr>
+          <tr>
+            <th>Welch's t-test
+              <br><span class="badge badge-pill badge-danger">parametric</span> 
+              <br><span class="badge badge-pill badge-secondary pointer" data-toggle="tooltip" data-placement="right" data-html="true" 
+              title="วัดขนาดของกลุ่ม A (20 อัน) กับกลุ่ม B (15 อัน) แล้วได้ค่าเฉลี่ย μ<sub>0</sub>=30 และ μ<sub>1</sub>=26<br>ทีนี้ μ<sub>0</sub> กับ μ<sub>1</sub> ต่างกันหรือไม่">example</span>
+            </th>
+            <td>to determine whether two <b>means</b> are different
+              <ul>
+                <li>df (degree of freedom) = sample number - 1</li>
+                <li>use sample SD <i>s</i> instead of population SD</li>
+                <li>for Welch's t-test, the assumption of equal variances are NOT required</li>
+                <li>increasing sample size results in decreasing p-value</li>
+                <li>effect size (Cohen d) is useful to know how much they differ</li>
+              </ul>
+            </td>
+            <td>H<sub>0</sub> : μ<sub>0</sub> = μ<sub>1</sub><br>H<sub>1</sub> : μ<sub>0</sub> ≠ μ<sub>1</sub></td>
+          </tr>
+          <tr>
+            <th>Mann-Whitney U-test
+              <br><span class="badge badge-pill badge-primary">nonparametric</span>
+              <br><span class="badge badge-pill badge-secondary pointer" data-toggle="tooltip" data-placement="right" data-html="true" 
+              title="ทำแบบสอบถามเกี่ยวกับนิยาย มีผู้ชาย 15 คนและผู้หญิง 16 คน ให้ลงคะแนนตามความพอใจ (เต็ม 100)<br>ทีนี้ ความพอใจของผู้ชายกับผู้หญิงต่างกันหรือไม่">example</span> 
+            </th>
+            <td>to determine whether two <b>means</b> are different
+              <ul>
+                <li>can deal with ordinal scale</li>
+                <li>the assumption of normal distribution are NOT required</li>
+                <li>is often used instead of t-test</li>
+              </ul>
+              </td>
+            <td>H<sub>0</sub> : μ<sub>0</sub> = μ<sub>1</sub><br>H<sub>1</sub> : μ<sub>0</sub> ≠ μ<sub>1</sub></td>
+          </tr>
+          <tr>
+            <th>paired t-test
+              <br><span class="badge badge-pill badge-danger">parametric</span> 
+              <br><span class="badge badge-pill badge-secondary pointer" data-toggle="tooltip" data-placement="right" data-html="true" 
+              title="วัดความดันโลหิตของ 20 คน ทั้งก่อนกินยา (a) กับหลังกินยา (b)<br>ทีนี้ a กับ b ต่างกันหรือไม่ (เฉลี่ยของผลต่าง μ=b-a เป็น 0 หรือไม่)">example</span>
+            </th>
+            <td>to determine whether <b>two paired data</b> are different
+              <ul>
+                <li>only "differences" of the two data are required</li>
+              </ul>
+            </td>
+            <td>H<sub>0</sub> : μ = 0<br>H<sub>1</sub> : μ ≠ 0</td>
+          </tr>
+          <tr>
+            <th>Wilcoxon signed-rank test
+              <br><span class="badge badge-pill badge-primary">nonparametric</span>
+              <br><span class="badge badge-pill badge-secondary pointer" data-toggle="tooltip" data-placement="right" data-html="true" 
+              title="ทำแบบสอบถามเกี่ยวกับนิยาย มีผู้ชาย 15 คนและผู้หญิง 16 คน ให้ลงคะแนนตามความพอใจ (เต็ม 100)<br>ทีนี้ ความพอใจของผู้ชายกับผู้หญิงต่างกันหรือไม่">example</span> 
+            </th>
+            <td>to determine whether <b>two paired data</b> are different
+              <ul>
+                <li>can deal with ordinal scale</li>
+                <li>the assumption of normal distribution are NOT required</li>
+                <li>is often used instead of paired t-test</li>
+              </ul>
+            </td>
+            <td>H<sub>0</sub> : μ = 0<br>H<sub>1</sub> : μ ≠ 0</td>
+          </tr>
+          <tr>
+            <th>F-test
+              <br><span class="badge badge-pill badge-danger">parametric</span> 
+              <br><span class="badge badge-pill badge-secondary pointer" data-toggle="tooltip" data-placement="right" data-html="true" 
+              title="ความกระจายของคะแนนสอบของคลาส A กับคลาส B ต่างกันหรือไม่">example</span>
+            </th>
+            <td>to determine whether two <b>variances</b> are different
+              <ul>
+                <li>df (degree of freedom) = sample number - 1</li>
+                <li>for Welch's t-test, the assumption of equal variances are NOT required</li>
+              </ul>
+            </td>
+            <td>H<sub>0</sub> : s<sub>0</sub><sup>2</sup> = s<sub>1</sub><sup>2</sup><br>H<sub>1</sub> : s<sub>0</sub><sup>2</sup> ≠ s<sub>1</sub><sup>2</sup></td>
+          </tr>
+          <tr>
+            <th>Pearson's correlation
+              <br><span class="badge badge-pill badge-danger">parametric</span> 
+            </th>
+            <td>to measure how much two data correlates
+              <ul>
+                <li>X and Y must have the same length</li>
+                <li>X and Y must be interval/ratio scale</li>
+                <li><b>linear</b> correlation is assumed</li>
+                <li>If the true correlation is not linear, it may not help</li>
+              </ul>
+            </td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <th>Spearman's rank correlation
+              <br><span class="badge badge-pill badge-primary">nonparametric</span> 
+            </th>
+            <td>to measure how much two data correlates
+              <ul>
+                <li>X and Y must have the same length</li>
+                <li>X and Y must can be ordinal scale</li>
+              </ul>
+            </td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <th>Shapiro-Wilk test
+              <br>(test of normality)
+              <br><span class="badge badge-pill badge-danger">parametric</span>
+            </th>
+            <td>to determine whether samples are normally distributed
+              <ul>
+                <li>if normally distributed, Q-Q plot will be linear</li>
+              </ul>
+            </td>
+            <td>H<sub>0</sub> : normally distributed<br>H<sub>1</sub> : NOT normally distributed</td>
+          </tr>
+          <tr>
+            <th>χ<sup>2</sup> test<br>(goodness of fit)
+              <br><span class="badge badge-pill badge-primary">nonparametric</span> 
+              <br><span class="badge badge-pill badge-secondary pointer" data-toggle="tooltip" data-placement="right" data-html="true" 
+              title="มีลูกเต๋าอันหนึ่ง ทอย 120 ครั้งแล้ว ได้ distribution (21,25,17,23,15,19)<br>ทีนี้ ผลที่ได้มาตามความน่าจะเป็นที่เท่ากัน (1/6) หรือไม่">example</span>
+            </th>
+            <td>to determine whether distribution of samples follows an ideal distribution
+              <ul>
+                <li>data must have two sets of distributions</li>
+                <li>one is distribution of observed numbers, the other is ideal (expected) distribution</li>
+                <li>distribution can have any number of groups/categories</li>
+              </ul>
+            <td>H<sub>0</sub> : observed distribution is identical to ideal distribution<br>H<sub>1</sub> : observed distribution is NOT identical to ideal distribution</td>
+          </tr>
+          <tr>
+            <th>χ<sup>2</sup> test<br>(independence)
+              <br><span class="badge badge-pill badge-primary">nonparametric</span> 
+              <br><span class="badge badge-pill badge-secondary pointer" data-toggle="tooltip" data-placement="right" data-html="true" 
+              title="มีข้อมูลเกี่ยวกับจำนวนผู้ใช้เครือข่ายมือถือ 3 บริษัท ซึ่งแยกเป็น 3 รุ่น<br>ทีนี้ ระหว่างเครือข่ายกับรุ่นมีความสัมพันธ์หรือไม่">example</span>
+            </th>
+            <td>to determine whether two parameters are independent
+              <ul>
+                <li>data must have exactly two variables (dimensions)</li>
+                <li>each dimension can have any number of groups/categories (m×n table)</li>
+                <li>each value of the table should be more than 5</li>
+                <li>If it is less than 5, you should apply Yates's correction</li>
+                <li>does not say which categories are different more</li>
+                <li>If you want to know it, <b>Residual Analysis</b> is required</li>
+              </ul>
+              <td>H<sub>0</sub> : two parameters are independent<br>H<sub>1</sub> : two parameters are NOT independent</td>
+          </tr>
+          <tr>
+            <th>1-way ANOVA
+              <br>(Analysis of Variance)
+              <br><span class="badge badge-pill badge-danger">parametric</span> 
+              <br><span class="badge badge-pill badge-secondary pointer" data-toggle="tooltip" data-placement="right" data-html="true" 
+              title="เฉลี่ยของคะแนนสอบในคลาส A, B, C ต่างกันหรือไม่">example</span>
+            </th>
+            <td>to determine whether all <b>means</b> are different
+              <ul>
+                <li>must have three or more groups</li>
+                <li>ANOVA does not say which groups are different more</li>
+                <li>If you want to know it, <b>Multiple Comparisons</b> are required</li>
+              </ul>
+            </td>
+            <td>H<sub>0</sub> : all μ<sub>i</sub> are equal<br>H<sub>1</sub> : NOT all μ<sub>i</sub> are equal</td>
+          </tr>
+          <tr>
+            <th>2-way ANOVA<br>without replication
+              <br><span class="badge badge-pill badge-danger">parametric</span> 
+              <br><span class="badge badge-pill badge-secondary pointer" data-toggle="tooltip" data-placement="right" data-html="true" 
+              title="มีข้อมูลคะแนนเฉลี่ยของ CU-TEP แต่ละชั้นปีและเพศ (มีทั้งหมด 8 กลุ่ม)<br>ทีนี้ ระหว่างชั้นปีหรือระหว่างเพศมีความต่างหรือไม่">example</span>
+            </th>
+            <td>to determine whether all <b>means</b> are different
+              <ul>
+                <li>must have two different dimensions</li>
+                <li>each dimension has two or more groups (total n×m groups)</li>
+                <li>the data of each group is only one value</li>
+                <li><b>no interaction</b> between rows and columns</li>
+                <li>does not say which groups are different more</li>
+                <li>If you want to know it, Multiple Comparisons are required</li>
+              </ul>
+            </td>
+            <td>H<sub>0</sub> : all μ<sub>i</sub> are equal<br>H<sub>1</sub> : NOT all μ<sub>i</sub> are equal</td>
+          </tr>
+          <tr>
+            <th>2-way ANOVA<br>with replication
+              <br><span class="badge badge-pill badge-danger">parametric</span> 
+              <br><span class="badge badge-pill badge-secondary pointer" data-toggle="tooltip" data-placement="right" data-html="true" 
+              title="มีข้อมูลคะแนน CU-TEP แต่ละชั้นปีและเพศ (มีทั้งหมด 8 กลุ่ม คะแนนของแต่ละคน)<br>ทีนี้ ระหว่างชั้นปีหรือระหว่างเพศมีความต่างหรือไม่">example</span>
+            </th>
+            <td>to determine whether all <b>means</b> are different
+              <ul>
+                <li>must have two different dimensions</li>
+                <li>each dimension has two or more groups (total n×m groups)</li>
+                <li>the data of each group can replicate (can have multiple values)</li>
+                <li>can calculate the interaction between rows and columns</li>
+                <li>does not say which groups are different</li>
+                <li>If you want to know it, Multiple Comparisons are required</li>
+              </ul>
+            </td>
+            <td>H<sub>0</sub> : all μ<sub>i</sub> are equal<br>H<sub>1</sub> : NOT all μ<sub>i</sub> are equal</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div> <!-- END OF SELECT TEST -->
+  
+  <!------------------------------ BASIC STATISTICS ------------------------------>
   <div class="row">
     <div class="col-lg-12">
       <h2 onclick="show_hide('content_stats');">ー Basic Statistical Values</h2>
     </div>
   </div>
-
   <div class="row" id="content_stats">
-    <div class="col-lg-12">
-      <div class="bs-component">
-        <div class="card border-primary mb-3" style="min-height: 20rem;">
-          <div class="card-header">basic statistical values</div>
+    <div class="col-lg-12 mb-3">
+      <div class="card border-primary" style="min-height: 20rem;">
+        <!-- START OF FORM -->
+        <form onsubmit="show_stats();return false;">
+          <div class="card-header">basic statistical values
+            <!-- UNBIASED SWITCH -->
+            <div class="custom-control custom-switch" style="float:right;">
+              <input type="checkbox" class="custom-control-input" name="is_unbiased" id="unbiased_switch" checked>
+              <label class="custom-control-label" for="unbiased_switch" data-toggle="tooltip" data-placement="top"
+              title="unbiased estimate of variance">UNBIASED</label>
+            </div>
+            <!-- 2 DATA SWITCH -->
+            <div class="custom-control custom-switch" style="float:right;">
+              <input type="checkbox" class="custom-control-input" name="is_twodata" id="twodata_switch" onchange="stats_second_row();">
+              <label class="custom-control-label" for="twodata_switch" data-toggle="tooltip" data-placement="top"
+              title="use 2 data for t-test & correlation">2 DATA　</label>
+            </div>
+          </div>
           <div class="card-body">
-            <form onsubmit="show_stats();return false;">
             <table class='table' style="table-layout: fixed;">
               <tr id='stats_input_row1'>
-                <td colspan="6"><input type='text' class="form-control" id='stats_input1' placeholder="values with space or comma, PASTE 1 or 2 ROWS/COLUMNS TABLE HERE" autocomplete="off"></td>
+                <td colspan="6"><input type='text' class="form-control" id='stats_input1' placeholder="values with space or comma (PASTE 1 or 2 ROWS/COLUMNS TABLE HERE)" autocomplete="off"></td>
               </tr>
               <tr id='stats_input_row2' style="display: none;">
                 <td colspan="6"><input type='text' class="form-control" id='stats_input2' placeholder="values with space or comma" autocomplete="off"></td>
@@ -184,12 +390,10 @@
                 <td colspan="6">
                   <button class="btn btn-outline-primary" onclick="show_stats();return false">calculate</button>
                   <button class="btn btn-outline-primary" onclick="reset_stats.reset();return false">reset</button>
-                  <input type="checkbox" id="unbiased" checked><label for="unbiased">&nbsp;unbiased</label>
-                  <input type="checkbox" id="stats_add_check" onchange="stats_show_second_row();"><label for="stats_add_check">&nbsp;2 data</label>
                 </td>
               </tr>
               <tr>
-                <td align="center"><strong>df=N-1</strong></td>
+                <td align="center"><strong data-toggle="tooltip" data-placement="bottom" title="degree of freedom">df=N-1</strong></td>
                 <td align="center"><strong>mean</strong></td>
                 <td align="center"><strong data-toggle="tooltip" data-placement="bottom" title="standard deviation">SD</strong></td>
                 <td align="center"><strong data-toggle="tooltip" data-placement="bottom" title="standard error of mean">SEM</strong></td>
@@ -216,8 +420,8 @@
                 <td align="center"><strong>pooled SD</strong></td>
                 <td align="center"><strong>covariance</strong></td>
                 <td align="center"><strong data-toggle="tooltip" data-placement="bottom" title="Pearson's correlation">　r　</strong></td>
-                <td align="center"><strong data-toggle="tooltip" data-placement="bottom" title="Spearman's correlation">　ρ　</strong></td>
-                <td colspan="2" align="center"><strong>regression</strong></td>
+                <td align="center"><strong data-toggle="tooltip" data-placement="bottom" title="Spearman's rank correlation">　ρ　</strong></td>
+                <td colspan="2" align="center"><strong>linear regression</strong></td>
               </tr>
               <tr class="table-active" id='stats_output_row4' style="display: none">
                 <td align="center" class="answer" onclick="copy_to_clipboard();"><strong class="stats_output" id="stats_output_pooledSD">-</strong></td>
@@ -227,14 +431,13 @@
                 <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard(onlynumber=false);"><strong class="stats_output">-</strong></td>
               </tr>
             </table>
-            </form>
           </div>
-        </div>
+        </form>
       </div>
     </div>
-    
-  </div> <!--row statistic values -->
-  
+  </div> <!-- END OF BASIC STATISTICS -->
+
+  <!------------------------------ T-TEST & F-TEST ------------------------------>
   <div class="row">
     <div class="col-lg-12">
       <h2 onclick="show_hide('content_ttest');">ー Welch's t-test & F-test</h2>
@@ -242,80 +445,77 @@
   </div>
 
   <div class="row" id='content_ttest'>
-    <div class="col-lg-6">
-      <div class="bs-component">
-        <div class="card border-info mb-3" style="min-height: 16rem;">
-          <div class="card-header">Welch's t-test</div>
-          <div class="card-body">
-            <form onsubmit="show_ttest();return false;">
-            <table class='table' style="table-layout: fixed;">
-              <tr>
-                <td colspan="2"><input type='text' class="form-control" id="ttest_input1" placeholder="mean1, SD1, n1" autocomplete="off"></td>
-                <td colspan="2"><input type='text' class="form-control" id="ttest_input2" placeholder="mean2, SD2, n2" autocomplete="off"></td>
-              </tr>
+    <div class="col-lg-6 mb-3">
+      <div class="card border-info" style="min-height: 16rem;">
+        <div class="card-header">Welch's t-test</div>
+        <div class="card-body">
+          <form onsubmit="show_ttest();return false;">
+          <table class='table' style="table-layout: fixed;">
+            <tr>
+              <td colspan="2"><input type='text' class="form-control" id="ttest_input1" placeholder="mean1, SD1, n1" autocomplete="off"></td>
+              <td colspan="2"><input type='text' class="form-control" id="ttest_input2" placeholder="mean2, SD2, n2" autocomplete="off"></td>
+            </tr>
 
-              <tr>
-                <td colspan="4">
-                  <button class="btn btn-outline-info" onclick="show_ttest();return false">calculate</button>
-                  <button class="btn btn-outline-info" onclick="reset_ttest.reset();return false">reset</button>
-                </td>
-              </tr>
-              <tr>
-                <td align="center"><strong>t-value</strong></td>
-                <td align="center"><strong>df</strong></td>
-                <td align="center"><strong>p(|t|≤x)</strong></td>
-                <td align="center"><strong>Cohen d</strong></td>
-              </tr>
-              <tr class="table-active" id="ttest_output_row">
-                <td align="center" class="answer" onclick="copy_to_clipboard();"><strong class="ttest_output">-</strong></td>
-                <td align="center" class="answer" onclick="copy_to_clipboard();"><strong class="ttest_output">-</strong></td>
-                <td align="center" class="answer" onclick="copy_to_clipboard();"><strong class="ttest_output">-</strong></td>
-                <td align="center" class="answer" onclick="copy_to_clipboard();"><strong class="ttest_output">-</strong></td>
-              </tr>
-            </table>
-            </form>
-          </div>
+            <tr>
+              <td colspan="4">
+                <button class="btn btn-outline-info" onclick="show_ttest();return false">calculate</button>
+                <button class="btn btn-outline-info" onclick="reset_ttest.reset();return false">reset</button>
+              </td>
+            </tr>
+            <tr>
+              <td align="center"><strong>t-value</strong></td>
+              <td align="center"><strong>df</strong></td>
+              <td align="center"><strong>p(|t|≤x)</strong></td>
+              <td align="center"><strong>Cohen d</strong></td>
+            </tr>
+            <tr class="table-active" id="ttest_output_row">
+              <td align="center" class="answer" onclick="copy_to_clipboard();"><strong class="ttest_output">-</strong></td>
+              <td align="center" class="answer" onclick="copy_to_clipboard();"><strong class="ttest_output">-</strong></td>
+              <td align="center" class="answer" onclick="copy_to_clipboard();"><strong class="ttest_output">-</strong></td>
+              <td align="center" class="answer" onclick="copy_to_clipboard();"><strong class="ttest_output">-</strong></td>
+            </tr>
+          </table>
+          </form>
         </div>
       </div> 
     </div> <!-- Welch's t-test -->
 
-    <div class="col-lg-6">
-      <div class="bs-component">
-        <div class="card border-info mb-3" style="min-height: 16rem;">
-          <div class="card-header">F-test of 2 variances</div>
-          <div class="card-body">
-            <form onsubmit="show_ftest();return false;">
-            <table class='table' style="table-layout: fixed;">
-              <tr>
-                <td colspan="3"><input type='text' class="form-control" id='ftest_input1' placeholder="SD1, df1" autocomplete="off"></td>
-                <td colspan="3"><input type='text' class="form-control" id='ftest_input2' placeholder="SD2, df2" autocomplete="off"></td>
-              </tr>
+    <div class="col-lg-6 mb-3">
+      <div class="card border-info" style="min-height: 16rem;">
+        <div class="card-header">F-test of 2 variances</div>
+        <div class="card-body">
+          <form onsubmit="show_ftest();return false;">
+          <table class='table' style="table-layout: fixed;">
+            <tr>
+              <td colspan="3"><input type='text' class="form-control" id='ftest_input1' placeholder="SD1, df1" autocomplete="off"></td>
+              <td colspan="3"><input type='text' class="form-control" id='ftest_input2' placeholder="SD2, df2" autocomplete="off"></td>
+            </tr>
 
-              <tr>
-                <td colspan="6">
-                  <button class="btn btn-outline-info" onclick="show_ftest();return false">calculate</button>
-                  <button class="btn btn-outline-info" onclick="reset_ftest.reset();return false">reset</button>
-                </td>
-              </tr>
-              <tr>
-                <td colspan="2" align="center"><strong>F-value</strong></td>
-                <td colspan="2" align="center"><strong>p(F≤x)</strong></td>
-                <td colspan="2" align="center"><strong>p(x≤F)</strong></td>
-              </tr>
-              <tr class="table-active" id="ftest_output_row">
-                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();"><strong class="ftest_output">-</strong></td>
-                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();"><strong class="ftest_output">-</strong></td>
-                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();"><strong class="ftest_output">-</strong></td>
-              </tr>
-            </table>
-            </form>
-          </div>
+            <tr>
+              <td colspan="6">
+                <button class="btn btn-outline-info" onclick="show_ftest();return false">calculate</button>
+                <button class="btn btn-outline-info" onclick="reset_ftest.reset();return false">reset</button>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2" align="center"><strong>F-value</strong></td>
+              <td colspan="2" align="center"><strong>p(F≤x)</strong></td>
+              <td colspan="2" align="center"><strong>p(x≤F)</strong></td>
+            </tr>
+            <tr class="table-active" id="ftest_output_row">
+              <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();"><strong class="ftest_output">-</strong></td>
+              <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();"><strong class="ftest_output">-</strong></td>
+              <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();"><strong class="ftest_output">-</strong></td>
+            </tr>
+          </table>
+          </form>
         </div>
       </div>
     </div> <!-- F-test -->
     
-  </div> <!--row T & F test -->
+  </div> <!-- END OF T-TEST & F-TEST -->
 
+  <!------------------------------ NORM DIST & T DIST ------------------------------>
   <div class="row">
     <div class="col-lg-12">
       <h2 onclick="show_hide('content_normaldist');">ー Normal & t distribution</h2>
@@ -323,126 +523,119 @@
   </div>
 
   <div class="row" id="content_normaldist">
-    <div class="col-lg-3">
-      <div class="bs-component">
-        <div class="card border-success mb-3" style="min-height: 16rem;">
-        <div class="card-header">z-score to p</div>
-          <div class="card-body">
-            <p align="center"><img style="height: 100px; display: inline-block;" src="image/z_to_p.png"></p>
-            <form onsubmit="z2p();return false;">
-            <table class='table'>
-              <tr><td><input type='text' class="form-control" id='z2p_input' placeholder="z ≥ 0" autocomplete="off"></td></tr>
-              <tr>
-                <td>
-                <button class="btn btn-outline-success" onclick="z2p();return false">calculate</button>
-                <button class="btn btn-outline-success" onclick="reset_z2p.reset();return false">reset</button>
-                </td>
-              </tr>
-              <tr class="table-active">
-                <td align="center" class="answer" onclick="copy_to_clipboard();"><strong id="z2p_output1" class='blue'>p(z≤x)</strong></td>
-              </tr>
-              <tr class="table-active">
-                <td align="center" class="answer" onclick="copy_to_clipboard();"><strong id="z2p_output2" class='red'>p(0≤x≤z)</strong></td>
-              </tr>
-            </table>
-            </form>
-          </div>
+    <div class="col-lg-3 mb-3">
+      <div class="card border-success mb-3" style="min-height: 16rem;">
+      <div class="card-header">z-score to p</div>
+        <div class="card-body">
+          <p align="center"><img style="height: 100px; display: inline-block;" src="image/z_to_p.png"></p>
+          <form onsubmit="z2p();return false;">
+          <table class='table'>
+            <tr><td><input type='text' class="form-control" id='z2p_input' placeholder="z ≥ 0" autocomplete="off"></td></tr>
+            <tr>
+              <td>
+              <button class="btn btn-outline-success" onclick="z2p();return false">calculate</button>
+              <button class="btn btn-outline-success" onclick="reset_z2p.reset();return false">reset</button>
+              </td>
+            </tr>
+            <tr class="table-active">
+              <td align="center" class="answer" onclick="copy_to_clipboard();"><strong id="z2p_output1" class='blue'>p(z≤x)</strong></td>
+            </tr>
+            <tr class="table-active">
+              <td align="center" class="answer" onclick="copy_to_clipboard();"><strong id="z2p_output2" class='red'>p(0≤x≤z)</strong></td>
+            </tr>
+          </table>
+          </form>
         </div>
       </div>
     </div>
 
-    <div class="col-lg-3">
-      <div class="bs-component">
-        <div class="card border-success mb-3" style="min-height: 16rem;">
-          <div class="card-header">p to z-score</div>
-          <div class="card-body">
-            <p align="center"><img style="height: 100px; display: inline-block;" src="image/p_to_z.png"></p>
-            <form onsubmit="p2z();return false;">
-            <table class='table'>
-              <tr><td><input type='text' class="form-control" id='p2z_input' placeholder="p ≤ 0.5" autocomplete="off"></td></tr>
-              <tr>
-                <td>
-                <button class="btn btn-outline-success" onclick="p2z();return false">calculate</button>
-                <button class="btn btn-outline-success" onclick="reset_p2z.reset();return false">reset</button>
-                </td>
-              </tr>
-              <tr class="table-active">
-                <td align="center" class="answer" onclick="copy_to_clipboard();"><strong id="p2z_output1" class='blue'>z [p(z≤x)]</strong></td>
-              </tr>
-              <tr class="table-active">
-                <td align="center" class="answer" onclick="copy_to_clipboard();"><strong id="p2z_output2" class='red'>z [p(0≤x≤z)]</strong></td>
-              </tr>
-            </table>
-            </form>
-          </div>
+    <div class="col-lg-3 mb-3">
+      <div class="card border-success mb-3" style="min-height: 16rem;">
+        <div class="card-header">p to z-score</div>
+        <div class="card-body">
+          <p align="center"><img style="height: 100px; display: inline-block;" src="image/p_to_z.png"></p>
+          <form onsubmit="p2z();return false;">
+          <table class='table'>
+            <tr><td><input type='text' class="form-control" id='p2z_input' placeholder="p ≤ 0.5" autocomplete="off"></td></tr>
+            <tr>
+              <td>
+              <button class="btn btn-outline-success" onclick="p2z();return false">calculate</button>
+              <button class="btn btn-outline-success" onclick="reset_p2z.reset();return false">reset</button>
+              </td>
+            </tr>
+            <tr class="table-active">
+              <td align="center" class="answer" onclick="copy_to_clipboard();"><strong id="p2z_output1" class='blue'>z [p(z≤x)]</strong></td>
+            </tr>
+            <tr class="table-active">
+              <td align="center" class="answer" onclick="copy_to_clipboard();"><strong id="p2z_output2" class='red'>z [p(0≤x≤z)]</strong></td>
+            </tr>
+          </table>
+          </form>
         </div>
       </div>
     </div>
 
-    <div class="col-lg-3">
-      <div class="bs-component">
-        <div class="card border-warning mb-3" style="min-height: 16rem;">
-          <div class="card-header">t-value to p</div>
-          <div class="card-body">
-            <p align="center"><img style="height: 100px; display: inline-block;" src="image/t_to_p.png"></p>
-            <form onsubmit="t2p();return false;">
-            <table class='table'>
-              <tr>
-                <td><input type='text' class="form-control" id='t2p_input_t' placeholder="t ≥ 0" autocomplete="off"></td>
-                <td><input type='text' class="form-control" id='t2p_input_df' placeholder="df" autocomplete="off"></td>
-              </tr>
-              <tr>
-                <td colspan="2">
-                <button class="btn btn-outline-warning" onclick="t2p();return false">calculate</button>
-                <button class="btn btn-outline-warning" onclick="reset_t2p.reset();return false">reset</button>
-                </td>
-              </tr>
-              <tr class="table-active">
-                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();"><strong id="t2p_output1" class='blue'>p(t≤x)</strong></td>
-              </tr>
-              <tr class="table-active">
-                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();"><strong id="t2p_output2" class='red'>p(0≤x≤t)</strong></td>
-              </tr>
-            </table>
-            </form>
-          </div>
+    <div class="col-lg-3 mb-3">
+      <div class="card border-warning" style="min-height: 16rem;">
+        <div class="card-header">t-value to p</div>
+        <div class="card-body">
+          <p align="center"><img style="height: 100px; display: inline-block;" src="image/t_to_p.png"></p>
+          <form onsubmit="t2p();return false;">
+          <table class='table'>
+            <tr>
+              <td><input type='text' class="form-control" id='t2p_input_t' placeholder="t ≥ 0" autocomplete="off"></td>
+              <td><input type='text' class="form-control" id='t2p_input_df' placeholder="df" autocomplete="off"></td>
+            </tr>
+            <tr>
+              <td colspan="2">
+              <button class="btn btn-outline-warning" onclick="t2p();return false">calculate</button>
+              <button class="btn btn-outline-warning" onclick="reset_t2p.reset();return false">reset</button>
+              </td>
+            </tr>
+            <tr class="table-active">
+              <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();"><strong id="t2p_output1" class='blue'>p(t≤x)</strong></td>
+            </tr>
+            <tr class="table-active">
+              <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();"><strong id="t2p_output2" class='red'>p(0≤x≤t)</strong></td>
+            </tr>
+          </table>
+          </form>
         </div>
       </div>
     </div>
 
-    <div class="col-lg-3">
-      <div class="bs-component">
-        <div class="card border-warning mb-3" style="min-height: 16rem;">
-          <div class="card-header">p to t-value</div>
-          <div class="card-body">
-            <p align="center"><img style="height: 100px; display: inline-block;" src="image/p_to_t.png"></p>
-            <form onsubmit="p2t();return false;">
-            <table class='table'>
-              <tr>
-                <td><input type='text' class="form-control" id='p2t_input_p' placeholder="p ≤ 0.5" autocomplete="off"></td>
-                <td><input type='text' class="form-control" id='p2t_input_df' placeholder="df" autocomplete="off"></td>
-              </tr>
-              <tr>
-                <td colspan="2">
-                <button class="btn btn-outline-warning" onclick="p2t();return false">calculate</button>
-                <button class="btn btn-outline-warning" onclick="reset_p2t.reset();return false">reset</button>
-                </td>
-              </tr>
-              <tr class="table-active">
-                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();"><strong id="p2t_output1" class='blue'>t [p(t≤x)]</strong></td>
-              </tr>
-              <tr class="table-active">
-                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();"><strong id="p2t_output2" class='red'>t [p(0≤x≤t)]</strong></td>
-              </tr>
-            </table>
-            </form>
-          </div>
+    <div class="col-lg-3 mb-3">
+      <div class="card border-warning" style="min-height: 16rem;">
+        <div class="card-header">p to t-value</div>
+        <div class="card-body">
+          <p align="center"><img style="height: 100px; display: inline-block;" src="image/p_to_t.png"></p>
+          <form onsubmit="p2t();return false;">
+          <table class='table'>
+            <tr>
+              <td><input type='text' class="form-control" id='p2t_input_p' placeholder="p ≤ 0.5" autocomplete="off"></td>
+              <td><input type='text' class="form-control" id='p2t_input_df' placeholder="df" autocomplete="off"></td>
+            </tr>
+            <tr>
+              <td colspan="2">
+              <button class="btn btn-outline-warning" onclick="p2t();return false">calculate</button>
+              <button class="btn btn-outline-warning" onclick="reset_p2t.reset();return false">reset</button>
+              </td>
+            </tr>
+            <tr class="table-active">
+              <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();"><strong id="p2t_output1" class='blue'>t [p(t≤x)]</strong></td>
+            </tr>
+            <tr class="table-active">
+              <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();"><strong id="p2t_output2" class='red'>t [p(0≤x≤t)]</strong></td>
+            </tr>
+          </table>
+          </form>
         </div>
       </div>
     </div>
 
-  </div> <!--row normal & t distribution-->
+  </div> <!-- END OF NORM DIST & T DIST-->
 
+  <!------------------------------ CHI DIST & F DIST ------------------------------>
   <div class="row">
     <div class="col-lg-12">
       <h2 onclick="show_hide('content_chidist');">ー χ<sup>2</sup> & F distribution</h2>
@@ -1281,7 +1474,21 @@
 <footer>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 		<p><font color="white">&copy; 2020 Nozomi Yamada All Rights Reserved.</font></p>
-	</nav>
+  </nav>
+  <!-- import JS libralies -->
+  <script src='js/statistics.js'></script>
+  <script src='js/math_func.js'></script>
+  <script src='js/gcd_lcm.js'></script>
+  <script src='js/misc.js'></script>
+  <!-- import JS for this page -->
+  <script src='js/tool.js'></script>
+  <!-- import jQuery & bootstrap-->
+  <script type="text/javascript" src="./js/jquery-3.5.1.js"></script>
+  <script src="./js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript">
+    $('body [data-toggle="popover"]').popover();
+    $('body [data-toggle="tooltip"]').tooltip();
+  </script>
 </footer>
 
 <!--------------------  JavaScript  -------------------->
@@ -1289,153 +1496,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
 <script>
 
-// convert base
-function convert(){
-    let base_from = document.getElementById('base_from').value;
-    let base_to = document.getElementById('base_to').value;
-    let num = document.getElementById('num_to_convert').value;
-    document.getElementById("answer").innerText = convert_base(num,base_from,base_to)
-}
 
-///// GCD and LCM /////
-document.getElementById('gcd_input').oninput = validate_gcd;
-function validate_gcd(){
-  let nums = document.getElementById('gcd_input').value.trim().split(/[,、\s]+/).map(Number); // delete spaces, split, cast as Number
-  if(nums.every(Number.isInteger) && !nums.includes(0)){
-    document.getElementById('gcd_input').classList.remove('is-invalid');
-  }else{
-    document.getElementById('gcd_input').classList.add('is-invalid');
-  }
-}
-function show_gcd(){
-  let elem = document.getElementById('gcd_input');
-  let nums = elem.value.trim().split(/\s+/).map(Number);
-  let mode = document.getElementById('select_gcd').value;
-  if(nums.length>0 && !elem.classList.contains('is-invalid')){
-    if(mode=='gcd'){
-      document.getElementById('answer_gcd').innerText = 'GCD = ' + gcd(nums);
-    }else if(mode='lcm'){
-      document.getElementById('answer_gcd').innerText = 'LCM = ' + lcm(nums);
-    }
-    
-  }
-}
 
-////////////////////  STATISTICAL VALUES  ////////////////////
 
-function stats_show_second_row(){
-  let is_checked = document.getElementById("stats_add_check").checked;
-  let IDs = ['stats_input_row2','stats_output_row2','stats_output_row3','stats_output_row4'];
-  if(is_checked==true){
-    for(var id of IDs){
-      document.getElementById(id).style.display = '';}
-  }else{
-    for(var id of IDs){
-      document.getElementById(id).style.display = 'none';}
-  }
-}
-
-function paste_stats(event){
-  let arrs = clipboard_to_matrix(event);
-  if(transpose(arrs).length<=2){
-    arrs = transpose(arrs);
-  }
-  if(arrs.length==1 && typeof(arrs[0]=='object')){ // 1-dim vector
-    arrs = arrs[0];
-  }
-  if(arrs.length==2){
-    document.getElementById("stats_add_check").checked = true;
-    stats_show_second_row();
-    document.getElementById("stats_input1").value = arrs[0].join(' ');
-    document.getElementById("stats_input2").value = arrs[1].join(' ');
-  }else if(typeof(arrs[0])=='number'){
-    document.getElementById("stats_add_check").checked = false;
-    stats_show_second_row();
-    document.getElementById("stats_input1").value = arrs.join(' ');
-  }else{return;}
-  show_stats();
-}
-const ELEM_STATS_INPUT = document.getElementById('stats_input1');
-ELEM_STATS_INPUT.addEventListener('paste', paste_stats);
-
-function show_stats(){
-  // results of row1
-  let arr1 = document.getElementById('stats_input1').value.trim().split(/[,、\s]+/).map(Number); // delete spaces, split, cast as Number
-  let N1 = Number(arr1.length);
-  let mu1 = round(mean(arr1),5); let s1 = round(std(arr1),5);
-  let sd1 = (document.getElementById('unbiased').checked)? round(std(arr1),5):round(std(arr1,false),5);
-  let result1 = [N1-1, mu1, sd1, round(sem(arr1),5), round(median(arr1),5), round(skewness(arr1),5)];
-  for(var i=0;i<6;i++){
-    document.getElementById('stats_output_row1').children[i].firstElementChild.innerText = result1[i]; 
-  }
-  // results of row2
-  if(document.getElementById("stats_add_check").checked==true){
-    let arr2 = document.getElementById('stats_input2').value.trim().split(/[,\s]+/).map(Number);
-    let N2 = Number(arr2.length);
-    let mu2 = round(mean(arr2),5); let s2 = round(std(arr2),5);
-    let sd2 = (document.getElementById('unbiased').checked)? round(std(arr2),5):round(std(arr2,false),5);
-    let result2 = [N2-1, mu2, sd2, round(sem(arr2),5), round(median(arr2),5), round(skewness(arr2),5)];
-    for(var i=0;i<6;i++){
-      document.getElementById('stats_output_row2').children[i].firstElementChild.innerText = result2[i]; 
-    }
-    // export to ttest, ftest
-    document.getElementById('ttest_input1').value = `${mu1} ${s1} ${N1}`;
-    document.getElementById('ttest_input2').value = `${mu2} ${s2} ${N2}`;
-    show_ttest();
-    document.getElementById('ftest_input1').value = `${s1} ${N1-1}`;
-    document.getElementById('ftest_input2').value = `${s2} ${N2-1}`;
-    show_ftest();
-    // correlation
-    document.getElementById('stats_output_pooledSD').innerText = round(Math.sqrt(pooled_variance(arr1,arr2)),5);
-    if(arr1.length==arr2.length){
-      let cov12 = round(cov(arr1,arr2), 5);
-      let pearson = round(corr(cov12,s1,s2),5);
-      let spear = round(spearman(arr1, arr2), 5);
-      let regression_result = regression(arr1,arr2).map(x => round(x, 4));
-      var result_corr = [cov12, pearson, spear, `Y = ${regression_result[0]} + ${regression_result[1]} X`];
-    }else{
-      var result_corr = ['-','-','-','-'] 
-    }
-    for(var i=0;i<4;i++){
-      document.getElementById('stats_output_row4').children[i+1].firstElementChild.innerText = result_corr[i]; 
-    }
-  }
-}
-
-////////////////////  T-TEST & F-TEST  ////////////////////
-
-function show_ttest(){
-  let arr1 = document.getElementById('ttest_input1').value.trim().split(/[,\s]+/).map(Number);
-  let arr2 = document.getElementById('ttest_input2').value.trim().split(/[,\s]+/).map(Number);
-  let result = welch(arr1[0],arr2[0],arr1[1],arr2[1],arr1[2],arr2[2]); //mean12, SD12, N12 -> t, df, p
-  result.push(effect_size(arr1[0],arr2[0],arr1[1],arr2[1],arr1[2],arr2[2])); // cohen's d
-  result = result.map(x => round(x,5));
-  for(var i=0;i<4;i++){
-    document.getElementById('ttest_output_row').children[i].firstElementChild.innerText = result[i]; 
-  }
-  document.getElementById('z2p_input').value = Math.abs(result[0]);
-  document.getElementById('p2z_input').value = 0.025;
-  document.getElementById('t2p_input_t').value = Math.abs(result[0]);
-  document.getElementById('t2p_input_df').value = result[1];
-  document.getElementById('p2t_input_p').value = 0.025;
-  document.getElementById('p2t_input_df').value = result[1];
-  z2p(); p2z(); t2p(); p2t();
-}
-
-function show_ftest(){
-  let arr1 = document.getElementById('ftest_input1').value.trim().split(/[,\s]+/).map(Number);
-  let arr2 = document.getElementById('ftest_input2').value.trim().split(/[,\s]+/).map(Number);
-  let fvalue = (arr1[0]/arr2[0])**2;
-  let pvalue = f_to_p(fvalue, arr1[1], arr2[1]);
-  let result = [fvalue, pvalue, 1-pvalue].map(x => round(x,5))
-  for(var i=0;i<3;i++){
-    document.getElementById('ftest_output_row').children[i].firstElementChild.innerText = result[i]; 
-  }
-  document.getElementById('f2p_input_f').value = round(fvalue,5);
-  document.getElementById('f2p_input_df').value = `${arr1[1]} ${arr2[1]}`;
-  document.getElementById('p2f_input_df').value = `${arr1[1]} ${arr2[1]}`;
-  f2p();
-}
 
 ////////////////////  VALIDATE INPUT P-VALUE  ////////////////////
 function validateP(){
@@ -2118,16 +2181,7 @@ function copy_to_clipboard(onlynumber=true){
   document.execCommand("Copy");
 }
 
-function clipboard_to_matrix(event){
-  event.preventDefault();
-  let clipboardData = event.clipboardData;
-  if(clipboardData != null){
-    // COPY FROM CLIPBOARD & ADJUST ROW/COL
-    let arrs = clipboardData.getData("text/plain").split('\n').map(x => x.split('\t'))
-    console.log(clipboardData.getData("text/plain"));
-    return arrs;
-  }
-}
+
 
 let CLIP = '';
 document.addEventListener("paste", ccc);
@@ -2138,13 +2192,6 @@ function ccc(event){
 
 
 </script>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="./js/bootstrap.min.js"></script>
 
-<script type="text/javascript">
-  $('.bs-component [data-toggle="popover"]').popover();
-  $('.bs-component [data-toggle="tooltip"]').tooltip();
-</script>
 </body>
 </html>
