@@ -39,7 +39,7 @@ function show_stats(){
 		// <#stats_output_row1><td><strong>...</strong></td> strong is grandchild
     document.getElementById('stats_output_row1').children[i].firstElementChild.innerText = result1[i]; 
   }
-  // results of row2
+  // results of row2 (if any)
   if(document.getElementById("twodata_switch").checked==true){
     let arr2 = document.getElementById('stats_input2').value.trim().split(/[,\s]+/).map(Number);
     let N2 = Number(arr2.length);
@@ -70,6 +70,11 @@ function show_stats(){
     }
     for(var i=0; i<4; i++){
       document.getElementById('stats_output_row4').children[i+1].firstElementChild.innerText = result_corr[i]; 
+    }
+  }else{ // only row1 => open normality test
+    make_qqplot(arr1);
+    if(document.getElementById('content_normalitytest').style.display=='none'){
+      document.getElementById('label_normality').click();
     }
   }
 }
@@ -133,6 +138,60 @@ function show_ftest(){
   document.getElementById('p2f_input_df').value = `${arr1[1]} ${arr2[1]}`;
   f2p();
 }
+
+///////////////////////////// SHAPIRO-WILK TEST ///////////////////////////// 
+
+function show_normality(){
+  let arr = document.getElementById('normality_input').value.trim().split(/[,\s]+/).map(Number);
+  result = shapiro_wilk(arr); // [W, z, p]
+  for(var i=0; i<3; i++){
+    document.querySelectorAll('.normality_output')[i].innerText = round(result[i], 4);
+  }
+  make_qqplot(arr);
+}
+
+// make qq plot
+function make_qqplot(arr){
+  // prepare data
+  [arr_sorted, norm] = qqplot(arr);
+  qqplot_data = [];
+  for(var i=0; i<arr.length; i++){
+    qqplot_data.push({x:arr_sorted[i], y:norm[i]});
+  }
+  // initialize canvas
+  document.getElementById('qqplot_canvas').innerHTML = '';
+  // draw chart 
+	new Chart(document.getElementById('qqplot_canvas'), {
+		type: 'scatter',
+		data: {
+			datasets: [{
+          data:qqplot_data,
+          backgroundColor: '#4f4f4f',
+      }]
+		},
+		options: {
+      responsive: true,
+      legend: {display: false},
+			scales: {
+        xAxes: [{
+          scaleLabel: {
+            display: true,
+            labelString: 'Actual Values',
+          },
+        }],
+        yAxes: [{
+          scaleLabel: {
+            display: true,
+            labelString: 'Theoretical Values',
+          },
+        }]
+			}
+		}
+	});
+}
+
+// initialize plot when load page
+window.onload = make_qqplot([0]);
 
 
 ///////////////////////////// MISC ///////////////////////////// 
