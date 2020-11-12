@@ -64,11 +64,11 @@ function show_stats(){
       let pearson = round(corr(cov12,s1,s2), 4);
       let spear = round(spearman(arr1, arr2), 4);
       let regression_result = regression(arr1,arr2).map(x => round(x, 4));
-      var result_corr = [cov12, pearson, spear, `Y = ${regression_result[0]} + ${regression_result[1]}X`];
+      var result_corr = [cov12, pearson, spear, `Y = ${regression_result[1]}X + ${regression_result[0]}`];
     }else{
       var result_corr = ['-','-','-','-'] 
     }
-    for(var i=0;i<4;i++){
+    for(var i=0; i<4; i++){
       document.getElementById('stats_output_row4').children[i+1].firstElementChild.innerText = result_corr[i]; 
     }
   }

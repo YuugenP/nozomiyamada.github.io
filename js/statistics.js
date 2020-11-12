@@ -104,6 +104,7 @@ function regression(arr1,arr2){
   return [intercept, coef];
 }
 
+// calculate order statistic for Shapiro-wilk
 function order_statistic(n){
   let arr = [];
   let cov_mat = zeros(n,n);
@@ -122,13 +123,11 @@ function order_statistic(n){
   return [round(arr.map(x => x/norm_arr), 10), cov_mat];
 }
 
-function shapiro(arr){
+function qqplot(arr){
   arr = sorted(arr);
-  let mu = mean(arr);
-  let sd = std(arr);
-  let cum_prob = arr.map((_,i) => (i+1)/(arr.length+1));
+  let cum_prob = arr.map((_,i) => (i+1)/(arr.length+1)); // [1/n+1, 2/n+1,...]
   let normal_score = cum_prob.map(p => normal_inv(p));
-  console.log(normal_score);
+  return normal_score;
 }
 
 ////////////////////  HYPOTHESIS TESTING  ////////////////////
