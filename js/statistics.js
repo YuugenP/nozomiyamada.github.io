@@ -128,7 +128,7 @@ function qqplot(arr){
   let [mu, sd] = [mean(arr), std(arr)]; // sample mean & SD
   let rank = range(arr.length).map(i => (i+0.5)/arr.length); // [0.5/n, 1.5/n,...]
   rank = rank.map(x => normal_inv(x, mu, sd)); // [0.5/n, 1.5/n,...] => ideal normal distribution
-  return [arr_sorted, rank]; // [original values, theoretical values]
+  return [arr_sorted, rank]; // [sorted original values, theoretical values]
 }
 
 function shapiro_wilk(arr){
@@ -145,6 +145,8 @@ function shapiro_wilk(arr){
     sigma = 1.0308 - 0.26758 * (v + 2/u);
     z = (Math.log(1 - W) - mu) / sigma;
     return [W, z, z_to_p(Math.abs(z))];
+  }else{
+    return [0, 0, 0]
   }
 }
 

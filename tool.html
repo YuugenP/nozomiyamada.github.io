@@ -450,7 +450,7 @@
   <div class="row" id='content_normality' style="display:none">
     <div class="col-lg-6 mb-3">
       <div class="card border-info mb-3" style="height: 100%;">
-        <div class="card-header">Shapiro-Wilk Test</div>
+        <div class="card-header">Shapiro-Wilk Test (N≦50)</div>
         <div class="card-body">
           <form onsubmit="show_normalitytest();return false;">
           <table class='table' style="table-layout: fixed;">
@@ -2130,10 +2130,10 @@ function show_function(){
 function show_hide(targetID){
   let elem = document.getElementById(targetID);
   if(elem.style.display=='none'){
-    elem.style.display = '';
+    $(elem).show('normal');
     event.target.innerHTML = event.target.innerHTML.replace('＋', 'ー');
   }else{
-    elem.style.display = 'none';
+    $(elem).hide('fast');
     event.target.innerHTML = event.target.innerHTML.replace('ー', '＋');
   }
 }
