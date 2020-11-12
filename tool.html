@@ -2,6 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Math & Statistics Tools</title>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -9,6 +10,7 @@
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="css/custom.css">
   <script type="text/javascript" src="js/Chart.bundle.min.js"></script>
+  
 </head>
 
 <body>
@@ -699,30 +701,29 @@
   <div class="row" id="content_chidist">
 
     <div class="col-lg-3">
-      <div class="bs-component">
-        <div class="card border-success mb-3" style="min-height: 16rem;">
+      <div class="card border-success mb-3" style="min-height: 16rem;">
         <div class="card-header">χ<sup>2</sup> to p</div>
           <div class="card-body">
             <p align="center"><img style="height: 100px; display: inline-block;" src="image/chi_to_p.png"></p>
             <form onsubmit="chi2p();return false;">
-            <table class='table'>
-              <tr>
-                <td><input type='text' class="form-control" id='chi2p_input_chi' placeholder="chi2" autocomplete="off"></td>
-                <td><input type='text' class="form-control" id='chi2p_input_df' placeholder="df" autocomplete="off"></td>
-              </tr>
-              <tr>
-                <td colspan="2">
-                <button class="btn btn-outline-success" onclick="chi2p();return false">calculate</button>
-                <button class="btn btn-outline-success" onclick="reset_chi2p.reset();return false">reset</button>
-                </td>
-              </tr>
-              <tr class="table-active">
-                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();"><strong id="chi2p_output_up" class='blue'>p(χ<sup>2</sup>≤x)</strong></td>
-              </tr>
-              <tr class="table-active">
-                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();"><strong id="chi2p_output_low" class='red'>p(x≤χ<sup>2</sup>)</strong></td>
-              </tr>
-            </table>
+              <table class='table'>
+                <tr>
+                  <td><input type='text' class="form-control" id='chi2p_input_chi' placeholder="chi2" autocomplete="off"></td>
+                  <td><input type='text' class="form-control" id='chi2p_input_df' placeholder="df" autocomplete="off"></td>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                  <button class="btn btn-outline-success" onclick="chi2p();return false">calculate</button>
+                  <button class="btn btn-outline-success" onclick="reset_chi2p.reset();return false">reset</button>
+                  </td>
+                </tr>
+                <tr class="table-active">
+                  <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();"><strong id="chi2p_output_up" class='blue'>p(χ<sup>2</sup>≤x)</strong></td>
+                </tr>
+                <tr class="table-active">
+                  <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();"><strong id="chi2p_output_low" class='red'>p(x≤χ<sup>2</sup>)</strong></td>
+                </tr>
+              </table>
             </form>
           </div>
         </div>
@@ -730,30 +731,29 @@
     </div>
 
     <div class="col-lg-3">
-      <div class="bs-component">
-        <div class="card border-success mb-3" style="min-height: 16rem;">
-          <div class="card-header">p to χ<sup>2</sup></div>
+      <div class="card border-success mb-3" style="min-height: 16rem;">
+        <div class="card-header">p to χ<sup>2</sup></div>
           <div class="card-body">
             <p align="center"><img style="height: 100px; display: inline-block;" src="image/p_to_chi.png"></p>
             <form onsubmit="p2chi();return false;">
-            <table class='table'>
-              <tr>
-                <td><input type='text' class="form-control" id='p2chi_input_p' placeholder="p" autocomplete="off"></td>
-                <td><input type='text' class="form-control" id='p2chi_input_df' placeholder="df" autocomplete="off"></td>
-              </tr>
-              <tr>
-                <td colspan="2">
-                <button class="btn btn-outline-success" onclick="p2chi();return false">calculate</button>
-                <button class="btn btn-outline-success" onclick="reset_p2chi.reset();return false">reset</button>
-                </td>
-              </tr>
-              <tr class="table-active">
-                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();"><strong id="p2chi_output_up" class='blue'>χ<sup>2</sup></strong></td>
-              </tr>
-              <tr class="table-active">
-                <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();"><strong id="p2chi_output_low" class='red'>χ<sup>2</sup></strong></td>
-              </tr>
-            </table>
+              <table class='table'>
+                <tr>
+                  <td><input type='text' class="form-control" id='p2chi_input_p' placeholder="p" autocomplete="off"></td>
+                  <td><input type='text' class="form-control" id='p2chi_input_df' placeholder="df" autocomplete="off"></td>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                  <button class="btn btn-outline-success" onclick="p2chi();return false">calculate</button>
+                  <button class="btn btn-outline-success" onclick="reset_p2chi.reset();return false">reset</button>
+                  </td>
+                </tr>
+                <tr class="table-active">
+                  <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();"><strong id="p2chi_output_up" class='blue'>χ<sup>2</sup></strong></td>
+                </tr>
+                <tr class="table-active">
+                  <td colspan="2" align="center" class="answer" onclick="copy_to_clipboard();"><strong id="p2chi_output_low" class='red'>χ<sup>2</sup></strong></td>
+                </tr>
+              </table>
             </form>
           </div>
         </div>
