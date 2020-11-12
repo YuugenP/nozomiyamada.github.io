@@ -72,9 +72,10 @@ function show_stats(){
       document.getElementById('stats_output_row4').children[i+1].firstElementChild.innerText = result_corr[i]; 
     }
   }else{ // only row1 => open normality test
-    make_qqplot(arr1);
-    if(document.getElementById('content_normalitytest').style.display=='none'){
+    if(document.getElementById('content_normality').style.display=='none'){
       document.getElementById('label_normality').click();
+      document.getElementById('normality_input').value = document.getElementById('stats_input1').value; // copy values to shapiro-wilk
+      show_normality();
     }
   }
 }
