@@ -182,14 +182,14 @@
               <br><span class="badge badge-pill badge-secondary pointer" data-toggle="tooltip" data-placement="right" data-html="true" 
               title="ทำแบบสอบถามเกี่ยวกับนิยาย มีผู้ชาย 15 คนและผู้หญิง 16 คน ให้ลงคะแนนตามความพอใจ (เต็ม 100)<br>ทีนี้ ความพอใจของผู้ชายกับผู้หญิงต่างกันหรือไม่">example</span> 
             </th>
-            <td>to determine whether two <b>means</b> are different
+            <td>to determine whether two <b>medians</b> are different
               <ul>
                 <li>can deal with ordinal scale</li>
                 <li>the assumption of normal distribution are NOT required</li>
                 <li>is often used instead of t-test</li>
               </ul>
               </td>
-            <td>H<sub>0</sub> : μ<sub>0</sub> = μ<sub>1</sub><br>H<sub>1</sub> : μ<sub>0</sub> ≠ μ<sub>1</sub></td>
+            <td>H<sub>0</sub> : medians of the two data are identical P(x<sub>i</sub>≧y<sub>j</sub>)=1/2<br>H<sub>1</sub> : medians of the two data are NOT identical P(x<sub>i</sub>≧y<sub>j</sub>)≠1/2</td>
           </tr>
           <tr>
             <th>paired t-test
@@ -455,7 +455,7 @@
       <div class="card border-info mb-3" style="height: 100%;">
         <div class="card-header">Shapiro-Wilk Test (N≦50)</div>
         <div class="card-body">
-          <form onsubmit="show_normalitytest();return false;">
+          <form onsubmit="show_normality();return false;">
           <table class='table' style="table-layout: fixed;">
             <tr>
               <td colspan="3"><input type='text' class="form-control" id="normality_input" placeholder="data" autocomplete="off"></td>
@@ -740,7 +740,7 @@
           <form onsubmit="p2chi();return false;">
             <table class='table'>
               <tr>
-                <td><input type='text' class="form-control" id='p2chi_input_p' placeholder="p" autocomplete="off"></td>
+                <td><input type='text' class="form-control" id='p2chi_input_p' placeholder="p ≤ 0.5" autocomplete="off"></td>
                 <td><input type='text' class="form-control" id='p2chi_input_df' placeholder="df" autocomplete="off"></td>
               </tr>
               <tr>
@@ -798,7 +798,7 @@
           <form onsubmit="p2f();return false;">
             <table class='table'>
               <tr>
-                <td><input type='text' class="form-control" id='p2f_input_p' placeholder="p" autocomplete="off"></td>
+                <td><input type='text' class="form-control" id='p2f_input_p' placeholder="p ≤ 0.5" autocomplete="off"></td>
                 <td><input type='text' class="form-control" id='p2f_input_df' placeholder="df1 df2" autocomplete="off"></td>
               </tr>
               <tr>
@@ -1486,99 +1486,6 @@
 <!--------------------  JavaScript  -------------------->
 
 <script>
-
-
-
-
-
-////////////////////  VALIDATE INPUT P-VALUE  ////////////////////
-function validateP(){
-  let elem = event.target;
-  let p = elem.value;
-  if(p!='' && (p<0 || p>0.5)){
-    elem.classList.add('is-invalid');
-  }else{
-    elem.classList.remove('is-invalid');
-  }
-}
-document.getElementById('p2z_input').oninput = validateP;
-document.getElementById('p2t_input_p').oninput = validateP;
-document.getElementById('p2chi_input_p').oninput = validateP;
-document.getElementById('p2f_input_p').oninput = validateP;
-
-
-////////////////////  CONVERT TO P-VALUE  ////////////////////
-function z2p(){
-  let z = Math.abs(document.getElementById('z2p_input').value);
-  document.getElementById('z2p_output1').innerText = 'p=' + round(z_to_p(z),5);
-  document.getElementById('z2p_output2').innerText = 'p=' + round(0.5-z_to_p(z),5);
-}
-function p2z(){
-  if(!document.getElementById('p2z_input').classList.contains('is-invalid')){
-    let p = document.getElementById('p2z_input').value;
-    document.getElementById('p2z_output1').innerText = 'outside z=' + round(p_to_z(p),5);
-    document.getElementById('p2z_output2').innerText = 'inside z=' + round(p_to_z(0.5-p),5);
-  }
-}
-function t2p(){
-  let t = Math.abs(document.getElementById('t2p_input_t').value);
-  let df = Number(document.getElementById('t2p_input_df').value);
-  document.getElementById('t2p_output1').innerText = 'p=' + round(t_to_p(t,df),5);
-  document.getElementById('t2p_output2').innerText = 'p=' + round(0.5-t_to_p(t,df),5);
-}
-function p2t(){
-  if(!document.getElementById('p2t_input_p').classList.contains('is-invalid')){
-    let p = Number(document.getElementById('p2t_input_p').value);
-    let df = Number(document.getElementById('p2t_input_df').value);
-    document.getElementById('p2t_output1').innerText = 'outside t=' + round(p_to_t(p,df),5);
-    document.getElementById('p2t_output2').innerText = 'inside t=' + round(p_to_t(0.5-p,df),5);
-  }
-}
-function chi2p(){
-  let chi = Number(document.getElementById('chi2p_input_chi').value);
-  let df = Number(document.getElementById('chi2p_input_df').value);
-  let answer = round(chi_to_p(chi,df),5);
-  document.getElementById('chi2p_output_up').innerHTML = 'upper p=' + answer;
-  document.getElementById('chi2p_output_low').innerHTML = 'lower p=' + round(1-answer,5);
-}
-function p2chi(){
-  if(!document.getElementById('p2chi_input_p').classList.contains('is-invalid')){
-    let p = Number(document.getElementById('p2chi_input_p').value);
-    let df = Number(document.getElementById('p2chi_input_df').value);
-    let answer1 = round(p_to_chi(p,df),5);
-    let answer2 = round(p_to_chi(1-p,df),5);
-    document.getElementById('p2chi_output_up').innerHTML = 'upper χ<sup>2</sup>=' + answer1;
-    document.getElementById('p2chi_output_low').innerHTML = 'lower χ<sup>2</sup>=' + answer2;
-  }
-}
-function f2p(){
-  let f = Number(document.getElementById('f2p_input_f').value);
-  let df = document.getElementById('f2p_input_df').value.trim().split(/\s+/).map(Number);
-  if(df.length==2 && df.every(Number)){
-    document.getElementById('f2p_input_df').classList.remove('is-invalid');
-    let answer = round(f_to_p(f,df[0],df[1]),5);
-    document.getElementById('f2p_output_up').innerHTML = 'upper p=' + answer;
-    document.getElementById('f2p_output_low').innerHTML = 'lower p=' + round(1-answer,5);
-  }else{
-    document.getElementById('f2p_input_df').classList.add('is-invalid');
-  }
-}
-function p2f(){
-  if(!document.getElementById('p2f_input_p').classList.contains('is-invalid')){
-    let p = Number(document.getElementById('p2f_input_p').value);
-    let df = document.getElementById('p2f_input_df').value.trim().split(/\s+/).map(Number);
-    if(df.length==2 && df.every(Number)){
-      document.getElementById('p2f_input_df').classList.remove('is-invalid'); //validate df
-      let answer1 = round(p_to_f(p,df[0],df[1]),5);
-      let answer2 = round(p_to_f(1-p,df[0],df[1]),5);
-      document.getElementById('p2f_output_up').innerHTML = 'upper F=' + answer1;
-      document.getElementById('p2f_output_low').innerHTML = 'lower F=' + answer2;
-    }else{
-      document.getElementById('p2f_input_df').classList.add('is-invalid');
-    }
-  }
-}
-
 
 
 ////////////////////  CHI2 FIT TEST ////////////////////

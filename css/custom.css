@@ -8,7 +8,7 @@ h2{
 }
 
 h2:hover{cursor: pointer;}
-.blue{color: blue}
+.blue{color: #2b7cff}
 .red{color: indianred}
 .pointer:hover{cursor: pointer;}
 .answer:hover{cursor: pointer;}

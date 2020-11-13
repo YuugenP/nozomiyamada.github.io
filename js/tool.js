@@ -1,13 +1,13 @@
 ///////////////////////////// UTILS /////////////////////////////
 
-///// COPY FROM CLIPBOARD & ADJUST ROW/COLUMN
+// COPY FROM CLIPBOARD & ADJUST ROW/COLUMN
 function clipboard_to_matrix(event){
   event.preventDefault();
   let clipboardData = event.clipboardData;
   if(clipboardData != null){
 		// split with tab -> make 2D array
     let arrs = clipboardData.getData("text/plain").split('\n').map(x => x.split('\t'))
-    console.log(clipboardData.getData("text/plain"));
+    //console.log(arrs, transpose(arrs));
     return arrs;
   }
 }
@@ -83,14 +83,17 @@ function show_stats(){
 ///// copy & paste data from excel
 const ELEM_STATS_INPUT = document.getElementById('stats_input1');
 ELEM_STATS_INPUT.addEventListener('paste', paste_stats);
-
 function paste_stats(event){
   let arrs = clipboard_to_matrix(event);
   if(transpose(arrs).length<=2){ // if two columns data (rows may be more than 2), transpose first
     arrs = transpose(arrs);
-  }
-  if(arrs.length==1 && typeof(arrs[0]=='object')){ // 1-dim vector in array [[1,2,3...]]
-    arrs = arrs[0];
+	}
+	if(arrs.length==1){
+		if(typeof(arrs[0]=='object')){ // 1-dim vector in 2D array [[1,2,3...]]
+			arrs = arrs[0].map(x => Number(x));
+		}else{
+			arrs = arrs.map(x => Number(x));
+		}
   }
   if(arrs.length==2){ // if two rows data, show 2nd input row
     document.getElementById("twodata_switch").checked = true;
@@ -99,7 +102,7 @@ function paste_stats(event){
     document.getElementById("stats_input2").value = arrs[1].join(' ');
   }else if(typeof(arrs[0])=='number'){
     document.getElementById("twodata_switch").checked = false;
-    stats_show_second_row();
+    stats_second_row();
     document.getElementById("stats_input1").value = arrs.join(' ');
   }else{return;}
   show_stats();
@@ -151,7 +154,7 @@ function show_normality(){
   make_qqplot(arr);
 }
 
-// make qq plot
+///// make qq plot
 function make_qqplot(arr){
   // prepare data
   [arr_sorted, norm] = qqplot(arr);
@@ -191,8 +194,98 @@ function make_qqplot(arr){
 	});
 }
 
-// initialize plot when load page
+///// initialize plot when load page
 window.onload = make_qqplot([0]);
+
+///////////////////////////// FUNCTIONS OF DISTRIBUTION /////////////////////////////
+
+function z2p(){
+  let z = Math.abs(document.getElementById('z2p_input').value);
+  document.getElementById('z2p_output1').innerText = 'p=' + round(z_to_p(z),5);
+  document.getElementById('z2p_output2').innerText = 'p=' + round(0.5-z_to_p(z),5);
+}
+function p2z(){
+  if(!document.getElementById('p2z_input').classList.contains('is-invalid')){
+    let p = document.getElementById('p2z_input').value;
+    document.getElementById('p2z_output1').innerText = 'outside z=' + round(p_to_z(p),5);
+    document.getElementById('p2z_output2').innerText = 'inside z=' + round(p_to_z(0.5-p),5);
+  }
+}
+function t2p(){
+  let t = Math.abs(document.getElementById('t2p_input_t').value);
+  let df = Number(document.getElementById('t2p_input_df').value);
+  document.getElementById('t2p_output1').innerText = 'p=' + round(t_to_p(t,df),5);
+  document.getElementById('t2p_output2').innerText = 'p=' + round(0.5-t_to_p(t,df),5);
+}
+function p2t(){
+  if(!document.getElementById('p2t_input_p').classList.contains('is-invalid')){
+    let p = Number(document.getElementById('p2t_input_p').value);
+    let df = Number(document.getElementById('p2t_input_df').value);
+    document.getElementById('p2t_output1').innerText = 'outside t=' + round(p_to_t(p,df),5);
+    document.getElementById('p2t_output2').innerText = 'inside t=' + round(p_to_t(0.5-p,df),5);
+  }
+}
+function chi2p(){
+  let chi = Number(document.getElementById('chi2p_input_chi').value);
+  let df = Number(document.getElementById('chi2p_input_df').value);
+  let answer = round(chi_to_p(chi,df),5);
+  document.getElementById('chi2p_output_up').innerHTML = 'upper p=' + answer;
+  document.getElementById('chi2p_output_low').innerHTML = 'lower p=' + round(1-answer,5);
+}
+function p2chi(){
+  if(!document.getElementById('p2chi_input_p').classList.contains('is-invalid')){
+    let p = Number(document.getElementById('p2chi_input_p').value);
+    let df = Number(document.getElementById('p2chi_input_df').value);
+    let answer1 = round(p_to_chi(p,df),5);
+    let answer2 = round(p_to_chi(1-p,df),5);
+    document.getElementById('p2chi_output_up').innerHTML = 'upper χ<sup>2</sup>=' + answer1;
+    document.getElementById('p2chi_output_low').innerHTML = 'lower χ<sup>2</sup>=' + answer2;
+  }
+}
+function f2p(){
+  let f = Number(document.getElementById('f2p_input_f').value);
+  let df = document.getElementById('f2p_input_df').value.trim().split(/\s+/).map(Number);
+  if(df.length==2 && df.every(Number)){
+    document.getElementById('f2p_input_df').classList.remove('is-invalid');
+    let answer = round(f_to_p(f,df[0],df[1]),5);
+    document.getElementById('f2p_output_up').innerHTML = 'upper p=' + answer;
+    document.getElementById('f2p_output_low').innerHTML = 'lower p=' + round(1-answer,5);
+  }else{
+    document.getElementById('f2p_input_df').classList.add('is-invalid');
+  }
+}
+function p2f(){
+  if(!document.getElementById('p2f_input_p').classList.contains('is-invalid')){
+    let p = Number(document.getElementById('p2f_input_p').value);
+    let df = document.getElementById('p2f_input_df').value.trim().split(/\s+/).map(Number);
+    if(df.length==2 && df.every(Number)){
+      document.getElementById('p2f_input_df').classList.remove('is-invalid'); //validate df
+      let answer1 = round(p_to_f(p,df[0],df[1]),5);
+      let answer2 = round(p_to_f(1-p,df[0],df[1]),5);
+      document.getElementById('p2f_output_up').innerHTML = 'upper F=' + answer1;
+      document.getElementById('p2f_output_low').innerHTML = 'lower F=' + answer2;
+    }else{
+      document.getElementById('p2f_input_df').classList.add('is-invalid');
+    }
+  }
+}
+
+///////////////////////////// VALIDATE INPUT VALUE /////////////////////////////
+
+// p value must be in range 0-0.5
+function validateP(){
+  let elem = event.target;
+  let p = elem.value;
+  if(p!='' && (p<0 || p>0.5)){
+    elem.classList.add('is-invalid');
+  }else{
+    elem.classList.remove('is-invalid');
+  }
+}
+document.getElementById('p2z_input').oninput = validateP;
+document.getElementById('p2t_input_p').oninput = validateP;
+document.getElementById('p2chi_input_p').oninput = validateP;
+document.getElementById('p2f_input_p').oninput = validateP;
 
 
 ///////////////////////////// MISC ///////////////////////////// 
@@ -225,6 +318,5 @@ function show_gcd(){
     }else if(mode='lcm'){
       document.getElementById('answer_gcd').innerText = 'LCM = ' + lcm(nums);
     }
-    
   }
 }

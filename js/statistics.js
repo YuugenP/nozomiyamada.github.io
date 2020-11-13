@@ -45,6 +45,7 @@ function std(mat, unbiased=true){
   return Math.sqrt(variance(arr, unbiased))
 }
 
+// standard error of mean
 function sem(mat){
   let arr = flatten(mat);
   return std(arr)/Math.sqrt(arr.length);
@@ -64,6 +65,7 @@ function skewness(mat, regularize=false){
   }
 }
 
+// covariance
 function cov(arr1, arr2, unbiased=true){
   if(arr1.length!==arr2.length){
     return NaN;
@@ -74,6 +76,7 @@ function cov(arr1, arr2, unbiased=true){
   }
 }
 
+// covariance matrix
 function cov_matrix(arr1, arr2){
   let vxx = variance(arr1,false);
   let vxy = cov(arr1,arr2,false);
@@ -81,15 +84,18 @@ function cov_matrix(arr1, arr2){
   return [[vxx,vxy],[vxy,vyy]];
 }
 
-function corr(cov12,s1,s2){
+// Pearson correlation from covariance/(sd1 * sd2)
+function corr(cov12, s1, s2){
   let result = cov12/s1/s2;
   return (result>1)? 1:result;
 }
 
-function corr_arr(arr1,arr2){
+// Pearson correlation from original data
+function corr_arr(arr1, arr2){
   return cov(arr1,arr2)/std(arr1)/std(arr2);
 }
 
+// Spearman rank correlation
 function spearman(arr1,arr2){
   arr1 = argsort(arr1,reverse=true,plusn=true);
   arr2 = argsort(arr2,reverse=true,plusn=true);
@@ -98,6 +104,7 @@ function spearman(arr1,arr2){
   return 1 - 6*rho/N/(N**2-1);
 }
 
+// linear regression
 function regression(arr1,arr2){
   let coef = cov(arr1,arr2)/variance(arr1);
   let intercept = mean(arr2) - coef*mean(arr1);
@@ -123,6 +130,7 @@ function order_statistic(n){
   return [round(arr.map(x => x/norm_arr), 10), cov_mat];
 }
 
+// qqplot
 function qqplot(arr){
   let arr_sorted = sorted(arr);
   let [mu, sd] = [mean(arr), std(arr)]; // sample mean & SD
@@ -220,12 +228,14 @@ function welch_arr(arr1,arr2){
 }
 
 function mann_whitney(arr1, arr2){
+  // make arr1 longer than arr2
   if(arr1.length > arr2.length){
     [arr1, arr2] = [arr2, arr1];
   }
   arr1 = sorted(arr1);
   arr2 = sorted(arr2);
   let [n1, n2] = [arr1.length, arr2.length]
+  // count x 
   let U = sum(arr1.map(x => arr2.filter(y => y < x).length));
   let mu = n1*n2 / 2;
   let sd = Math.sqrt(n1*n2*(n1+n2+1)/12);
@@ -234,11 +244,13 @@ function mann_whitney(arr1, arr2){
   return [z, p];
 }
 
-function effect_size(mu1,mu2,s1,s2,n1,n2){
+// effect size: Cohen d (from mean & SD & sample size)
+function effect_size(mu1, mu2, s1, s2, n1, n2){
   let pooled_std = Math.sqrt((s1*(n1-1)+s2*(n2-2))/(n1+n2-2))
   return (mu2-mu1)/pooled_std;
 }
 
+// effect size: Cohen d (from raw data)
 function effect_size_arr(arr1,arr2){
   let pooled_std = Math.sqrt(pooled_variance(arr1,arr2));
   return (mean(arr2)-mean(arr1))/pooled_std;
@@ -247,8 +259,7 @@ function effect_size_arr(arr1,arr2){
 
 ////////////////////  DISTRIBUTIONS  ////////////////////
 
-//////////  NORMAL DISTRIBUTION  //////////
-
+/////  NORMAL DISTRIBUTION
 function normal_pdf(x, mu=0, sd=1){
   return Math.exp(-1*(x-mu)**2/(2*sd**2))/Math.sqrt(2*Math.PI)/sd;
 }
