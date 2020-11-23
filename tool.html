@@ -300,7 +300,7 @@
                 <li>does not say which categories are different more</li>
                 <li>If you want to know it, <b>Residual Analysis</b> is required</li>
               </ul>
-              <td>H<sub>0</sub> : two parameters are independent<br>H<sub>1</sub> : two parameters are NOT independent</td>
+              <td>H<sub>0</sub> : two parameters are dependent<br>H<sub>1</sub> : two parameters are independent</td>
           </tr>
           <tr>
             <th>1-way ANOVA
@@ -1488,43 +1488,7 @@
 <script>
 
 
-////////////////////  CHI2 FIT TEST ////////////////////
 
-function add_column_chi2fit(add=true){
-  let row = ['chi2fit_input_row1','chi2fit_input_row2','chi2fit_output_row_E_label','chi2fit_output_row_E'].map(x=>document.getElementById(x));
-  if(add==true && row[0].children.length<15){
-    row[0].innerHTML += '<td><input type="text" class="form-control chi2fit_input1" autocomplete="off"></td>';
-    row[1].innerHTML += '<td><input type="text" class="form-control chi2fit_input2" autocomplete="off"></td>';
-    row[2].innerHTML += `<td align="center"><strong>E<sub>${row[0].children.length}</sub></strong></td>`;
-    row[3].innerHTML += '<td align="center" class="answer" onclick="copy_to_clipboard();"><strong class="chi2fit_output">-</strong></td>';
-  }else if(add==false && row[0].children.length>=3){
-    row.forEach(x => x.lastElementChild.remove());
-  }
-  document.getElementById('chi2fit_btns').colSpan = row[0].children.length;
-  document.getElementById('chi2fit_output_row_label').colSpan = row[0].children.length;
-  document.getElementById('chi2fit_output_row').colSpan = row[0].children.length;
-}
-
-function show_chi2fit(){
-  // collect input1
-  arr1 = Array.from(document.getElementsByClassName('chi2fit_input1')).map(x=>Number(x.value));
-  arr2 = Array.from(document.getElementsByClassName('chi2fit_input2')).map(x=>Number(x.value));
-  if(arr1.length!=0 && arr1.length==arr2.length){
-    [chi2_value, exp] = chi2_fit(arr1, arr2);
-      for(var i=0;i<exp.length;i++){
-        document.getElementById('chi2fit_output_row_E').children[i].firstElementChild.innerText = round(exp[i],5);
-      }
-    let df = arr1.length-1;
-    document.getElementById('chi2fit_output_chi').innerText = round(chi2_value,5);
-    document.getElementById('chi2fit_output_df').innerText = df;
-    document.getElementById('chi2fit_output_p').innerText = round(chi_to_p(chi2_value,df),5);
-    document.getElementById('chi2p_input_chi').value = round(chi2_value,5);
-    document.getElementById('chi2p_input_df').value = df;
-    document.getElementById('p2chi_input_p').value = 0.05;
-    document.getElementById('p2chi_input_df').value = df;
-    chi2p(); p2chi();
-  }
-}
 
 ////////////////////  CHI2 IND TEST ////////////////////
 

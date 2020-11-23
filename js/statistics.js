@@ -160,6 +160,7 @@ function shapiro_wilk(arr){
 
 //////////////////////////////  HYPOTHESIS TESTING  //////////////////////////////
 
+///// chi2 test /////
 function chi2_fit(arr1,arr2,yates=false){
   let chi2_value = 0;
   if(arr1.length!==arr2.length){
@@ -211,6 +212,7 @@ function adjusted_residual(mat){
   }
 }
 
+///// T-TEST & U-TEST /////
 function welch(mu1,mu2,s1,s2,n1,n2){
   let v1 = s1**2; let v2 = s2**2;
   let t = (mu1-mu2)/Math.sqrt(v1/n1+v2/n2);
@@ -228,20 +230,20 @@ function welch_arr(arr1,arr2){
 }
 
 function mann_whitney(arr1, arr2){
-  // make arr1 longer than arr2
-  if(arr1.length > arr2.length){
-    [arr1, arr2] = [arr2, arr1];
-  }
   arr1 = sorted(arr1);
   arr2 = sorted(arr2);
   let [n1, n2] = [arr1.length, arr2.length]
-  // count x 
-  let U = sum(arr1.map(x => arr2.filter(y => y < x).length));
+  // sum up ranks
+  let U1 = sum(arr1.map(x => arr2.filter(y => y < x).length));
+  let U2 = sum(arr2.map(x => arr1.filter(y => y < x).length));
+  // choose smaller U
+  let U = Math.min(U1, U2); 
+  // approximation as normal distribution
   let mu = n1*n2 / 2;
   let sd = Math.sqrt(n1*n2*(n1+n2+1)/12);
   let z = (U-mu)/sd;
   let p = z_to_p(Math.abs(z));
-  return [z, p];
+  return [U, z, p];
 }
 
 // effect size: Cohen d (from mean & SD & sample size)
@@ -259,7 +261,7 @@ function effect_size_arr(arr1,arr2){
 
 ////////////////////  DISTRIBUTIONS  ////////////////////
 
-/////  NORMAL DISTRIBUTION
+/////  NORMAL DISTRIBUTION /////
 function normal_pdf(x, mu=0, sd=1){
   return Math.exp(-1*(x-mu)**2/(2*sd**2))/Math.sqrt(2*Math.PI)/sd;
 }
@@ -443,8 +445,6 @@ function studentized(a, q, r1, r2, df){
   func = (x => normal(x)*(phi(x)-phi(x-q))**(r-1));
   H = gauss_legendre(func, -10, 10, 2e3);
 }
-
-////////////////////  TEST OF NORMALITY  ////////////////////
 
 
 

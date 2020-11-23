@@ -71,12 +71,12 @@ function show_stats(){
     for(var i=0; i<4; i++){
       document.getElementById('stats_output_row4').children[i+1].firstElementChild.innerText = result_corr[i]; 
     }
-  }else{ // only row1 => open normality test
+  }else{ // only row1 => open shapiro-wilk test
     if(document.getElementById('content_normality').style.display=='none'){
       document.getElementById('label_normality').click();
-      document.getElementById('normality_input').value = document.getElementById('stats_input1').value; // copy values to shapiro-wilk
-      show_normality();
-    }
+		}
+		document.getElementById('normality_input').value = document.getElementById('stats_input1').value; // copy values to shapiro-wilk
+    show_normality();
   }
 }
 
@@ -158,10 +158,12 @@ function show_normality(){
 function make_qqplot(arr){
   // prepare data
   [arr_sorted, norm] = qqplot(arr);
-  qqplot_data = [];
+  let qqplot_data = [];
   for(var i=0; i<arr.length; i++){
     qqplot_data.push({x:arr_sorted[i], y:norm[i]});
   }
+  let mu = round(mean(arr), 2);
+
   // initialize canvas
   document.getElementById('qqplot_canvas').innerHTML = '';
   // draw chart 
@@ -170,11 +172,15 @@ function make_qqplot(arr){
 		data: {
 			datasets: [{
           data:qqplot_data,
-          backgroundColor: '#4f4f4f',
+          backgroundColor: '#4f4f4f'
       }]
 		},
 		options: {
       responsive: true,
+      title: {
+        display: true,
+        text: `N=${arr.length}, mean=${mu}`
+      },
       legend: {display: false},
 			scales: {
         xAxes: [{
@@ -287,6 +293,45 @@ document.getElementById('p2t_input_p').oninput = validateP;
 document.getElementById('p2chi_input_p').oninput = validateP;
 document.getElementById('p2f_input_p').oninput = validateP;
 
+
+///////////////////////////// CHI2 FITNESS TEST /////////////////////////////
+
+function add_column_chi2fit(add=true){
+  let row = ['chi2fit_input_row1','chi2fit_input_row2','chi2fit_output_row_E_label','chi2fit_output_row_E'].map(x=>document.getElementById(x));
+  if(add==true && row[0].children.length<15){
+    row[0].innerHTML += '<td><input type="text" class="form-control chi2fit_input1" autocomplete="off"></td>';
+    row[1].innerHTML += '<td><input type="text" class="form-control chi2fit_input2" autocomplete="off"></td>';
+    row[2].innerHTML += `<td align="center"><strong>E<sub>${row[0].children.length}</sub></strong></td>`;
+    row[3].innerHTML += '<td align="center" class="answer" onclick="copy_to_clipboard();"><strong class="chi2fit_output">-</strong></td>';
+  }else if(add==false && row[0].children.length>=3){
+    row.forEach(x => x.lastElementChild.remove());
+	}
+	// adjust colspan of button, output label
+  document.getElementById('chi2fit_btns').colSpan = row[0].children.length;
+  document.getElementById('chi2fit_output_row_label').colSpan = row[0].children.length;
+  document.getElementById('chi2fit_output_row').colSpan = row[0].children.length;
+}
+
+function show_chi2fit(){
+  // collect input1
+  arr1 = Array.from(document.getElementsByClassName('chi2fit_input1')).map(x=>Number(x.value));
+  arr2 = Array.from(document.getElementsByClassName('chi2fit_input2')).map(x=>Number(x.value));
+  if(arr1.length!=0 && arr1.length==arr2.length){
+    [chi2_value, exp] = chi2_fit(arr1, arr2);
+      for(var i=0;i<exp.length;i++){
+        document.getElementById('chi2fit_output_row_E').children[i].firstElementChild.innerText = round(exp[i],5);
+      }
+    let df = arr1.length-1;
+    document.getElementById('chi2fit_output_chi').innerText = round(chi2_value,5);
+    document.getElementById('chi2fit_output_df').innerText = df;
+    document.getElementById('chi2fit_output_p').innerText = round(chi_to_p(chi2_value,df),5);
+    document.getElementById('chi2p_input_chi').value = round(chi2_value,5);
+    document.getElementById('chi2p_input_df').value = df;
+    document.getElementById('p2chi_input_p').value = 0.05;
+    document.getElementById('p2chi_input_df').value = df;
+    chi2p(); p2chi();
+  }
+}
 
 ///////////////////////////// MISC ///////////////////////////// 
 
