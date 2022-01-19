@@ -14,10 +14,13 @@
     input { 
       text-align: center; 
       text-transform: lowercase;
-      max-width: 2em;
-      max-height: 2em; 
+      max-width: 3em;
+      max-height: 2.5em; 
       margin-left: auto; 
-      margin-right: auto};
+      margin-right: auto;
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
+    }
   </style>
 </head>
 
@@ -50,7 +53,7 @@
             </td>
           </tr>
           <tr>
-            <th>2</th>
+            <th class="my-4">2</th>
             <td v-bind:class="[w2.color1]" @dblclick="toggle(2,1); show_result()">
               <input type="text" class="form-control" maxlength="1" v-model="w2.chr1" @input="show_result()">
             </td>
@@ -67,7 +70,7 @@
               <input type="text" class="form-control" maxlength="1" v-model="w2.chr5" @input="show_result()">
             </td>
           </tr>
-          <tr>
+          <tr class="my-4">
             <th>3</th>
             <td v-bind:class="[w3.color1]" @dblclick="toggle(3,1); show_result()">
               <input type="text" class="form-control" maxlength="1" v-model="w3.chr1" @input="show_result()">
