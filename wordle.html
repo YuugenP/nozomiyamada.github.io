@@ -150,7 +150,7 @@
       toggle: function(w_index, chr_index){
         eval(`color_now = this.w${w_index}.color${chr_index}`);
         if(color_now == 'table-success'){
-          eval(`this.w${w_index}.color${chr_index} = 'table-default'`);
+          eval(`this.w${w_index}.color${chr_index} = ''`);
         }else if(color_now == 'table-warning'){
           eval(`this.w${w_index}.color${chr_index} = 'table-success'`);
         }else{
