@@ -13,7 +13,7 @@
   <style>
     input { 
       text-align: center; 
-      text-transform: lowercase;
+      text-transform: uppercase;
       max-width: 3em;
       max-height: 2.5em; 
       margin-left: auto; 
@@ -168,7 +168,7 @@
         word3 = make_list(this.w3);
         word4 = make_list(this.w4);
         word5 = make_list(this.w5);
-        console.log(word1.map(x=>x[0]).join(''), word1.map(x=>x[1]).join('/'));
+        // console.log(word1.map(x=>x[0]).join(''), word1.map(x=>x[1]).join('/'));
         result = search_words(word1,word2,word3,word4,word5);
         if(result != null){
           this.candidates = result; //+ '\n' + word1.map(x=>x[0]).join('') + '\n' + word1.map(x=>x[1]).join('/');

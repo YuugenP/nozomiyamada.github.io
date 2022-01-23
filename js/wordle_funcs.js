@@ -17,7 +17,7 @@ function search_words(w1, w2, w3, w4, w5){
     if(w5.map(x => x[0]).join('').length==5){
         candidate = candidate.filter(x => check_word(w5, x))
     }
-    return candidate.slice(0,50).join("  ");
+    return candidate.slice(0,50).join("  ").toUpperCase();
 }
 
 // make list function
