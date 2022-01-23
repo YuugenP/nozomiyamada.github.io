@@ -170,7 +170,7 @@
         word5 = make_list(this.w5);
         result = search_words(word1,word2,word3,word4,word5);
         if(result != null){
-          this.candidates = result + ' ' + this.w1.color1;
+          this.candidates = result;
         }
         // if input event, move focus
         if(input_event && input_event.target.value.length != 0){
