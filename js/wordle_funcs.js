@@ -34,7 +34,7 @@ function make_list(w){
 // inputword is list of (chr, color) e.g. [('p', 'green'),('r','yellow'),('o','white')]
 function check_word(inputword, targetword){
     for(var i=0; i<5; i++){
-        chr = inputword[i][0];
+        chr = inputword[i][0].toLowerCase();
         color = inputword[i][1];
         // console.log(i, chr, color);
         if(color==="green" && targetword[i] !== chr){
