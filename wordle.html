@@ -160,7 +160,7 @@
         }else{
           eval(`this.w${w_index}.color${chr_index} = 'yellow'`);
         }
-        this.show_result();
+        this.show_result(null);
       },
       show_result: function(input_event){
         word1 = make_list(this.w1);
@@ -168,12 +168,13 @@
         word3 = make_list(this.w3);
         word4 = make_list(this.w4);
         word5 = make_list(this.w5);
+        console.log(word1.map(x=>x[0]).join(''), word1.map(x=>x[1]).join('/'));
         result = search_words(word1,word2,word3,word4,word5);
         if(result != null){
-          this.candidates = result;
+          this.candidates = result + '\n' + word1.map(x=>x[0]).join('') + '\n' + word1.map(x=>x[1]).join('/');
         }
         // if input event, move focus
-        if(input_event && input_event.target.value.length != 0){
+        if(input_event!=null && input_event.target.value.length != 0){
           var elems = document.querySelectorAll('input');
           for(var i=0; i<elems.length; i++){
             if(elems[i] == input_event.target){
