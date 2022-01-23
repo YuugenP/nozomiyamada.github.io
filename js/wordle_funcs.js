@@ -43,7 +43,12 @@ function check_word(inputword, targetword){
             return false;
         }else if(color==="table-warning" && targetword.includes(chr) == false){
             return false;
-        }else if(color==="" && targetword.includes(chr) == true){
+        }else if(color==="" && targetword.includes(chr) == true){ // grey color, but contains the chr -> // TRUE iff contains 2 identical chrs   
+            for(list of inputword){
+                if(list[0]==chr && (list[1]=='table-success'||list[1]=='table-warning')){
+                    return true;
+                }
+            }
             return false;
         }
     }
