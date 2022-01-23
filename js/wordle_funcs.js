@@ -37,15 +37,15 @@ function check_word(inputword, targetword){
         chr = inputword[i][0];
         color = inputword[i][1];
         // console.log(i, chr, color);
-        if(color==="table-success" && targetword[i] !== chr){
+        if(color==="green" && targetword[i] !== chr){
             return false;
-        }else if(color==="table-warning" && targetword[i] == chr){
+        }else if(color==="yellow" && targetword[i] == chr){
             return false;
-        }else if(color==="table-warning" && targetword.includes(chr) == false){
+        }else if(color==="yellow" && targetword.includes(chr) == false){
             return false;
-        }else if(color==="" && targetword.includes(chr) == true){ // grey color, but contains the chr -> // TRUE iff contains 2 identical chrs   
+        }else if(color==="grey" && targetword.includes(chr) == true){ // grey color, but contains the chr -> // TRUE iff contains 2 identical chrs   
             for(list of inputword){
-                if(list[0]==chr && (list[1]=='table-success'||list[1]=='table-warning')){
+                if(list[0]==chr && (list[1]=='green'||list[1]=='yellow')){
                     return true;
                 }
             }

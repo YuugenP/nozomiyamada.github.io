@@ -21,6 +21,9 @@
       margin-top: 0.5em;
       margin-bottom: 0.5em;
     }
+    .green{background-color: #79A86B;}
+    .yellow{background-color: #C6B566;}
+    .grey{background-color: #797C7E;}
   </style>
 </head>
 
@@ -139,22 +142,22 @@
 	var vue = new Vue({
 		el: '#main',
 		data: {
-      w1: {chr1:'',chr2:'',chr3:'',chr4:'',chr5:'',color1:'',color2:'',color3:'',color4:'',color5:''},
-      w2: {chr1:'',chr2:'',chr3:'',chr4:'',chr5:'',color1:'',color2:'',color3:'',color4:'',color5:''},
-      w3: {chr1:'',chr2:'',chr3:'',chr4:'',chr5:'',color1:'',color2:'',color3:'',color4:'',color5:''},
-      w4: {chr1:'',chr2:'',chr3:'',chr4:'',chr5:'',color1:'',color2:'',color3:'',color4:'',color5:''},
-      w5: {chr1:'',chr2:'',chr3:'',chr4:'',chr5:'',color1:'',color2:'',color3:'',color4:'',color5:''},
+      w1: {chr1:'',chr2:'',chr3:'',chr4:'',chr5:'',color1:'grey',color2:'grey',color3:'grey',color4:'grey',color5:'grey'},
+      w2: {chr1:'',chr2:'',chr3:'',chr4:'',chr5:'',color1:'grey',color2:'grey',color3:'grey',color4:'grey',color5:'grey'},
+      w3: {chr1:'',chr2:'',chr3:'',chr4:'',chr5:'',color1:'grey',color2:'grey',color3:'grey',color4:'grey',color5:'grey'},
+      w4: {chr1:'',chr2:'',chr3:'',chr4:'',chr5:'',color1:'grey',color2:'grey',color3:'grey',color4:'grey',color5:'grey'},
+      w5: {chr1:'',chr2:'',chr3:'',chr4:'',chr5:'',color1:'grey',color2:'grey',color3:'grey',color4:'grey',color5:'grey'},
       candidates: "no answer"
     },
     methods: {
       toggle: function(w_index, chr_index){
         eval(`color_now = this.w${w_index}.color${chr_index}`);
-        if(color_now == 'table-success'){
-          eval(`this.w${w_index}.color${chr_index} = ''`);
-        }else if(color_now == 'table-warning'){
-          eval(`this.w${w_index}.color${chr_index} = 'table-success'`);
+        if(color_now == 'green'){
+          eval(`this.w${w_index}.color${chr_index} = 'grey'`);
+        }else if(color_now == 'yellow'){
+          eval(`this.w${w_index}.color${chr_index} = 'green'`);
         }else{
-          eval(`this.w${w_index}.color${chr_index} = 'table-warning'`);
+          eval(`this.w${w_index}.color${chr_index} = 'yellow'`);
         }
       },
       show_result: function(input_event){
