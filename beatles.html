@@ -103,8 +103,7 @@
     var player;
     function onYouTubeIframeAPIReady() {
         player = new YT.Player('player', {
-          height: '360',
-          width: '640',
+          width: '100%',
         });
       }
 
@@ -123,7 +122,7 @@
         vue.url = data[3];
         vue.yt_vocal = (data[4]=='')? '' : 'https://youtu.be/' + data[4];
         player.cueVideoById({videoId: data[5]});
-        spotify.innerHTML = `<iframe width="640" style="border-radius:10px" src="https://open.spotify.com/embed/track/${data[6]}" allow="autoplay; clipboard-write; encrypted-media; fullscreen"></iframe>`
+        spotify.innerHTML = `<iframe width="100%" style="border-radius:10px" src="https://open.spotify.com/embed/track/${data[6]}" allow="autoplay; clipboard-write; encrypted-media; fullscreen"></iframe>`
         vue.lyrics = data[7];
       } 
     }
