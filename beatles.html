@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Beatles データベース</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="css/custom.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6/dist/vue.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="page-header">
+      <div class="row my-3">
+        <div class="col-12">
+          <h1 class="display-4">Beatles Database</h1>
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-lg-12">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <button class="btn btn-danger" onclick="song_input.value='';song_input.focus();">clear</button>
+          </div>
+          <input type="input-group-text" class="form-control" list="songlist" id="song_input" placeholder="曲名" oninput="make_list(this.value);" onchange="make_data(this.value);">
+          <datalist id="songlist"></datalist>
+        </div>
+      </div>
+      <div class="col-lg-12 mt-3">
+        <button type="button" class="btn btn-primary mb-1" onclick="song_input.value='Ticket To Ride'; make_data('Ticket To Ride')">Ticket To Ride</button>
+        <button type="button" class="btn btn-primary mb-1" onclick="song_input.value='Help!'; make_data('Help!')">Help!</button>
+        <button type="button" class="btn btn-primary mb-1" onclick="song_input.value='The Night Before'; make_data('The Night Before')">The Night Before</button>
+        <button type="button" class="btn btn-primary mb-1" onclick="song_input.value='You\'re Going to Lose That Girl'; make_data('You\'re Going to Lose That Girl')">You're Going to Lose That Girl</button>
+        <button type="button" class="btn btn-primary mb-1" onclick="song_input.value='I Saw Her Standing There'; make_data('I Saw Her Standing There')">I Saw Her Standing There</button>
+        <button type="button" class="btn btn-primary mb-1" onclick="song_input.value='Day Tripper'; make_data('Day Tripper')">Day Tripper</button>
+        <button type="button" class="btn btn-primary mb-1" onclick="song_input.value='Back In The U.S.S.R'; make_data('Back In The U.S.S.R')">Back In The U.S.S.R</button>
+        <button type="button" class="btn btn-outline-primary mb-1" onclick="song_input.value='Baby\'s In Black'; make_data('Baby\'s In Black')">Baby's In Black</button>
+        <button type="button" class="btn btn-outline-primary mb-1" onclick="song_input.value='She Said She Said'; make_data('She Said She Said')">She Said She Said</button>
+        <button type="button" class="btn btn-outline-primary mb-1" onclick="song_input.value='Nowhere Man'; make_data('Nowhere Man')">Nowhere Man</button>
+        <button type="button" class="btn btn-outline-primary mb-1" onclick="song_input.value='Paperback Writer'; make_data('Paperback Writer')">Paperback Writer</button>
+        <button type="button" class="btn btn-outline-primary mb-1" onclick="song_input.value='I Feel Fine'; make_data('I Feel Fine')">I Feel Fine</button>
+        <button type="button" class="btn btn-outline-primary mb-1" onclick="song_input.value='Roll Over Beethoven'; make_data('Roll Over Beethoven')">Roll Over Beethoven</button>
+        <button type="button" class="btn btn-outline-primary mb-1" onclick="song_input.value='Norwegian Wood'; make_data('Norwegian Wood')">Norwegian Wood</button>
+        <button type="button" class="btn btn-outline-primary mb-1" onclick="song_input.value='I Call Your Name'; make_data('I Call Your Name')">I Call Your Name</button>
+        <button type="button" class="btn btn-outline-primary mb-1" onclick="song_input.value=''; make_data('')"></button>
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-lg-12" id="vue_songdata">
+        <h3>{{song}} ({{year}})</h3>
+        ボーカル：{{vocal}}<br>
+        コーラス：{{chorus}}<br>
+        曲データ：<a v-bind:href="url" target="_blank">{{url}}</a><br>
+        ボーカル動画：<a v-bind:href="yt_vocal" target="_blank">{{yt_vocal}}</a><br><br>
+        <div id="spotify"></div><br>
+        <div id="player"></div><br>
+        <div v-html="lyrics"></div><br>
+      </div>
+    </div>
+  </div>
+  
+  <script src="js/beatles.js"></script>
+  <script>
+
+    var vue = new Vue({
+      el: "#vue_songdata",
+      data: {
+        song: '-',
+        year: '',
+        vocal: '',
+        chorus: '',
+        url: 'https://beatlesdata.info/',
+        yt_vocal: '',
+        lyrics: ''
+      }
+    }) 
+
+    function make_list(present_input){
+      songlist.innerHTML = ""; // initialize
+      // get present input
+      if(present_input.length >= 1){
+        var num_candidate = 0; 
+        for(var song of SONGNAMES){
+          if(song.toLowerCase().startsWith(present_input.toLowerCase())){
+            songlist.innerHTML += `<option value="${song}">${song}</option>`;
+            num_candidate += 1;
+            if(num_candidate >= 10){break;} // show only 10 candidates
+          }
+        }
+      }
+    }
+
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    var player;
+    function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+          height: '360',
+          width: '640',
+        });
+      }
+
+      // 4. The API will call this function when the video player is ready.
+      function onPlayerReady(event) {
+        event.target.playVideo();
+      }
+
+    function make_data(input){
+      if(input in SONGDATA){
+        data = SONGDATA[input];
+        vue.song = input;
+        vue.year = data[0];
+        vue.vocal = data[1];
+        vue.chorus = data[2];
+        vue.url = data[3];
+        vue.yt_vocal = (data[4]=='')? '' : 'https://youtu.be/' + data[4];
+        player.cueVideoById({videoId: data[5]});
+        spotify.innerHTML = `<iframe width="640" style="border-radius:10px" src="https://open.spotify.com/embed/track/${data[6]}" allow="autoplay; clipboard-write; encrypted-media; fullscreen"></iframe>`
+        vue.lyrics = data[7];
+      } 
+    }
+
+  </script>
+</body>
+</html>
