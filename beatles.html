@@ -46,7 +46,6 @@
         <button type="button" class="btn btn-outline-info mb-1" onclick="song_input.value='Roll Over Beethoven'; make_data('Roll Over Beethoven')">Roll Over Beethoven</button>
         <button type="button" class="btn btn-outline-info mb-1" onclick="song_input.value='Norwegian Wood'; make_data('Norwegian Wood')">Norwegian Wood</button>
         <button type="button" class="btn btn-outline-info mb-1" onclick="song_input.value='I Call Your Name'; make_data('I Call Your Name')">I Call Your Name</button>
-        <button type="button" class="btn btn-outline-info mb-1" onclick="song_input.value=''; make_data('')"></button>
       </div>
     </div>
 
@@ -60,6 +59,7 @@
         <div id="spotify"></div><br>
         <div id="player"></div><br>
         <div v-html="lyrics"></div><br>
+        <div id="bandscore"></div><br>
       </div>
     </div>
   </div>
@@ -128,6 +128,7 @@
         player.cueVideoById({videoId: data[5]});
         spotify.innerHTML = `<audio controls id="audioplayer"><source src="music/${input}.mp3"></audio><iframe width="100%" src="https://open.spotify.com/embed/track/${data[6]}" allow="autoplay; clipboard-write; encrypted-media; fullscreen"></iframe>`
         vue.lyrics = data[7];
+        bandscore.innerHTML = (PDFs.includes(input))? `<iframe src="music/scores/${input}.pdf" width="100%" height="1200"></iframe>` : '';       
         audioplayer.focus();
       } 
     }
