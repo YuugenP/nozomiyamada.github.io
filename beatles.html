@@ -86,7 +86,8 @@
       if(present_input.length >= 1){
         var num_candidate = 0; 
         for(var song of SONGNAMES){
-          if(song.toLowerCase().startsWith(present_input.toLowerCase())){
+          // if(song.toLowerCase().startsWith(present_input.toLowerCase())){
+          if(song.toLowerCase().match(present_input.toLowerCase())){
             songlist.innerHTML += `<option value="${song}">${song}</option>`;
             num_candidate += 1;
             if(num_candidate >= 10){break;} // show only 10 candidates
