@@ -34,19 +34,19 @@
         <button type="button" class="btn btn-primary mb-1" onclick="song_input.value='Ticket To Ride'; make_data('Ticket To Ride')">Ticket To Ride</button>
         <button type="button" class="btn btn-primary mb-1" onclick="song_input.value='Help!'; make_data('Help!')">Help!</button>
         <button type="button" class="btn btn-primary mb-1" onclick="song_input.value='The Night Before'; make_data('The Night Before')">The Night Before</button>
-        <button type="button" class="btn btn-primary mb-1" onclick="song_input.value='You\'re Going to Lose That Girl'; make_data('You\'re Going to Lose That Girl')">You're Going to Lose That Girl</button>
+        <button type="button" class="btn btn-primary mb-1" onclick="song_input.value='You\'re Going To Lose That Girl'; make_data('You\'re Going To Lose That Girl')">You're Going To Lose That Girl</button>
         <button type="button" class="btn btn-primary mb-1" onclick="song_input.value='I Saw Her Standing There'; make_data('I Saw Her Standing There')">I Saw Her Standing There</button>
         <button type="button" class="btn btn-primary mb-1" onclick="song_input.value='Day Tripper'; make_data('Day Tripper')">Day Tripper</button>
-        <button type="button" class="btn btn-primary mb-1" onclick="song_input.value='Back In The U.S.S.R'; make_data('Back In The U.S.S.R')">Back In The U.S.S.R</button>
-        <button type="button" class="btn btn-outline-primary mb-1" onclick="song_input.value='Baby\'s In Black'; make_data('Baby\'s In Black')">Baby's In Black</button>
-        <button type="button" class="btn btn-outline-primary mb-1" onclick="song_input.value='She Said She Said'; make_data('She Said She Said')">She Said She Said</button>
-        <button type="button" class="btn btn-outline-primary mb-1" onclick="song_input.value='Nowhere Man'; make_data('Nowhere Man')">Nowhere Man</button>
-        <button type="button" class="btn btn-outline-primary mb-1" onclick="song_input.value='Paperback Writer'; make_data('Paperback Writer')">Paperback Writer</button>
-        <button type="button" class="btn btn-outline-primary mb-1" onclick="song_input.value='I Feel Fine'; make_data('I Feel Fine')">I Feel Fine</button>
-        <button type="button" class="btn btn-outline-primary mb-1" onclick="song_input.value='Roll Over Beethoven'; make_data('Roll Over Beethoven')">Roll Over Beethoven</button>
-        <button type="button" class="btn btn-outline-primary mb-1" onclick="song_input.value='Norwegian Wood'; make_data('Norwegian Wood')">Norwegian Wood</button>
-        <button type="button" class="btn btn-outline-primary mb-1" onclick="song_input.value='I Call Your Name'; make_data('I Call Your Name')">I Call Your Name</button>
-        <button type="button" class="btn btn-outline-primary mb-1" onclick="song_input.value=''; make_data('')"></button>
+        <button type="button" class="btn btn-primary mb-1" onclick="song_input.value='Back In The U.S.S.R.'; make_data('Back In The U.S.S.R.')">Back In The U.S.S.R.</button>
+        <button type="button" class="btn btn-outline-info mb-1" onclick="song_input.value='Baby\'s In Black'; make_data('Baby\'s In Black')">Baby's In Black</button>
+        <button type="button" class="btn btn-outline-info mb-1" onclick="song_input.value='She Said She Said'; make_data('She Said She Said')">She Said She Said</button>
+        <button type="button" class="btn btn-outline-info mb-1" onclick="song_input.value='Nowhere Man'; make_data('Nowhere Man')">Nowhere Man</button>
+        <button type="button" class="btn btn-outline-info mb-1" onclick="song_input.value='Paperback Writer'; make_data('Paperback Writer')">Paperback Writer</button>
+        <button type="button" class="btn btn-outline-info mb-1" onclick="song_input.value='I Feel Fine'; make_data('I Feel Fine')">I Feel Fine</button>
+        <button type="button" class="btn btn-outline-info mb-1" onclick="song_input.value='Roll Over Beethoven'; make_data('Roll Over Beethoven')">Roll Over Beethoven</button>
+        <button type="button" class="btn btn-outline-info mb-1" onclick="song_input.value='Norwegian Wood'; make_data('Norwegian Wood')">Norwegian Wood</button>
+        <button type="button" class="btn btn-outline-info mb-1" onclick="song_input.value='I Call Your Name'; make_data('I Call Your Name')">I Call Your Name</button>
+        <button type="button" class="btn btn-outline-info mb-1" onclick="song_input.value=''; make_data('')"></button>
       </div>
     </div>
 
@@ -82,12 +82,15 @@
 
     function make_list(present_input){
       songlist.innerHTML = ""; // initialize
+      present_input = present_input.replace(/[’]/g, "'");
+      song_input.value = present_input;
+      input_replaced = present_input.toLowerCase();
       // get present input
-      if(present_input.length >= 1){
+      if(input_replaced.length >= 1){
         var num_candidate = 0; 
         for(var song of SONGNAMES){
-          // if(song.toLowerCase().startsWith(present_input.toLowerCase())){
-          if(song.toLowerCase().match(present_input.toLowerCase())){
+          song_replaced = song.toLowerCase();
+          if(song_replaced.match(input_replaced)){
             songlist.innerHTML += `<option value="${song}">${song}</option>`;
             num_candidate += 1;
             if(num_candidate >= 10){break;} // show only 10 candidates
@@ -123,8 +126,9 @@
         vue.url = data[3];
         vue.yt_vocal = (data[4]=='')? '' : 'https://youtu.be/' + data[4];
         player.cueVideoById({videoId: data[5]});
-        spotify.innerHTML = `<audio controls><source src="music/${input}.mp3"></audio><iframe width="100%" src="https://open.spotify.com/embed/track/${data[6]}" allow="autoplay; clipboard-write; encrypted-media; fullscreen"></iframe>`
+        spotify.innerHTML = `<audio controls id="audioplayer"><source src="music/${input}.mp3"></audio><iframe width="100%" src="https://open.spotify.com/embed/track/${data[6]}" allow="autoplay; clipboard-write; encrypted-media; fullscreen"></iframe>`
         vue.lyrics = data[7];
+        audioplayer.focus();
       } 
     }
 
