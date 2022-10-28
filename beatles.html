@@ -103,7 +103,17 @@
         var num_candidate = 0; 
         for(var song of SONGNAMES){
           song_replaced = song.toLowerCase();
-          if(song_replaced.match(input_replaced)){
+          pattern1 = new RegExp("^" + input_replaced); // initial match
+          if(song_replaced.match(pattern1)){
+            songlist.innerHTML += `<option value="${song}">${song}</option>`;
+            num_candidate += 1;
+            if(num_candidate >= 10){break;} // show only 10 candidates
+          }
+        }
+        for(var song of SONGNAMES){
+          song_replaced = song.toLowerCase();
+          pattern2 = new RegExp("^.+" + input_replaced); // non-initial match
+          if(song_replaced.match(pattern2)){
             songlist.innerHTML += `<option value="${song}">${song}</option>`;
             num_candidate += 1;
             if(num_candidate >= 10){break;} // show only 10 candidates
