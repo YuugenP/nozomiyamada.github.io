@@ -33,32 +33,46 @@
           <div class="input-group-prepend">
             <button class="btn btn-danger" onclick="song_input.value='';song_input.focus();">clear</button>
           </div>
-          <input type="input-group-text" class="form-control" list="songlist" id="song_input" placeholder="曲名" oninput="make_list(this.value);" onchange="make_data(this.value);">
+          <input type="input-group-text" class="form-control" list="songlist" id="song_input" placeholder="曲名で検索" oninput="make_list(this.value);" onchange="make_data(this.value);">
           <datalist id="songlist"></datalist>
         </div>
       </div>
       <div class="col-lg-12 mt-3">
-        <button type="button" class="btn btn-primary mb-1" onclick="song_input.value='A Hard Day\'s Night'; make_data('A Hard Day\'s Night')">A Hard Day's Night</button>
-        <button type="button" class="btn btn-primary mb-1" onclick="song_input.value='Ticket To Ride'; make_data('Ticket To Ride')">Ticket To Ride</button>
-        <button type="button" class="btn btn-primary mb-1" onclick="song_input.value='I Saw Her Standing There'; make_data('I Saw Her Standing There')">I Saw Her Standing There</button>
-        <button type="button" class="btn btn-primary mb-1" onclick="song_input.value='In My Life'; make_data('In My Life')">In My Life</button>
-        <button type="button" class="btn btn-primary mb-1" onclick="song_input.value='Drive My Car'; make_data('Drive My Car')">Drive My Car</button>
-        <button type="button" class="btn btn-primary mb-1" onclick="song_input.value='Come Together'; make_data('Come Together')">Come Together</button>
-        <button type="button" class="btn btn-primary mb-1" onclick="song_input.value='Get Back'; make_data('Get Back');">Get Back</button>
-        <button type="button" class="btn btn-primary mb-1" onclick="song_input.value='Day Tripper'; make_data('Day Tripper')">Day Tripper</button>
-        <button type="button" class="btn btn-primary mb-1" onclick="song_input.value='She Loves You'; make_data('She Loves You')">She Loves You</button>
-        <button type="button" class="btn btn-outline-primary mb-1" onclick="song_input.value='Back In The U.S.S.R.'; make_data('Back In The U.S.S.R.')">Back In The U.S.S.R.</button>
-        <button type="button" class="btn btn-outline-primary mb-1" onclick="song_input.value='I Want To Hold Your Hand'; make_data('I Want To Hold Your Hand')">I Want To Hold Your Hand</button>
-        <button type="button" class="btn btn-outline-primary mb-1" onclick="song_input.value='Help!'; make_data('Help!')">Help!</button>
-        <button type="button" class="btn btn-outline-primary mb-1" onclick="song_input.value='Two Of Us'; make_data('Two Of Us')">Two Of Us</button>
-        <button type="button" class="btn btn-outline-primary mb-1" onclick="song_input.value='Don\'t Let Me Down'; make_data('Don\'t Let Me Down')">Don't Let Me Down</button>
-        <button type="button" class="btn btn-outline-primary mb-1" onclick="song_input.value='Baby\'s In Black'; make_data('Baby\'s In Black')">Baby's In Black</button>
-        <button type="button" class="btn btn-outline-primary mb-1" onclick="song_input.value='The Night Before'; make_data('The Night Before')">The Night Before</button>
-        <button type="button" class="btn btn-outline-primary mb-1" onclick="song_input.value='You\'re Going To Lose That Girl'; make_data('You\'re Going To Lose That Girl')">You're Going To Lose That Girl</button>
-        <button type="button" class="btn btn-outline-primary mb-1" onclick="song_input.value='Birthday'; make_data('Birthday')">Birthday</button>
-        <button type="button" class="btn btn-outline-primary mb-1" onclick="song_input.value='I Feel Fine'; make_data('I Feel Fine')">I Feel Fine</button>
-        <button type="button" class="btn btn-outline-primary mb-1" onclick="song_input.value='She Said She Said'; make_data('She Said She Said')">She Said She Said</button>
-        
+        <div class="card">
+          <div class="card-body">
+            <button type="button" class="btn btn-info mb-1" onclick="make_data('I Want To Hold Your Hand')">I Want To Hold Your Hand</button>
+            <button type="button" class="btn btn-info mb-1" onclick="make_data('Let It Be')">Let It Be</button>
+            <button type="button" class="btn btn-info mb-1" onclick="make_data('Don\'t Let Me Down')">Don't Let Me Down</button>
+            <button type="button" class="btn btn-info mb-1" onclick="make_data('All My Loving')">All My Loving</button>
+            <button type="button" class="btn btn-info mb-1" onclick="make_data('Please Please Me')">Please Please Me</button>
+            <button type="button" class="btn btn-info mb-1" onclick="make_data('I Feel Fine')">I Feel Fine</button>
+            <button type="button" class="btn btn-info mb-1" onclick="make_data('Can\'t Buy Me Love')">Can't Buy Me Love</button>
+            <button type="button" class="btn btn-info mb-1" onclick="make_data('Hey Bulldog')">Hey Bulldog</button>
+            <button type="button" class="btn btn-info mb-1" onclick="make_data('Birthday')">Birthday</button>
+            <button type="button" class="btn btn-info mb-1" onclick="make_data('Eight Days A Week')">Eight Days A Week</button>
+            <button type="button" class="btn btn-info mb-1" onclick="make_data('No Reply')">No Reply</button>
+            <button type="button" class="btn btn-info mb-1" onclick="make_data('I\'ve Got A Feeling')">I've Got A Feeling</button>
+            <button type="button" class="btn btn-info mb-1" onclick="make_data('Nowhere Man')">Nowhere Man</button>
+            <button type="button" class="btn btn-info mb-1" onclick="make_data('She Said She Said')">She Said She Said</button>
+            <button type="button" class="btn btn-info mb-1" onclick="make_data('Two Of Us')">Two Of Us</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <button type="button" class="btn btn-primary mb-1" onclick="song_input.value='A Hard Day\'s Night'; make_data('A Hard Day\'s Night')">A Hard Day's Night</button>
+            <button type="button" class="btn btn-primary mb-1" onclick="song_input.value='Ticket To Ride'; make_data('Ticket To Ride')">Ticket To Ride</button>
+            <button type="button" class="btn btn-primary mb-1" onclick="song_input.value='I Saw Her Standing There'; make_data('I Saw Her Standing There')">I Saw Her Standing There</button>
+            <button type="button" class="btn btn-primary mb-1" onclick="song_input.value='In My Life'; make_data('In My Life')">In My Life</button>
+            <button type="button" class="btn btn-primary mb-1" onclick="song_input.value='Drive My Car'; make_data('Drive My Car')">Drive My Car</button>
+            <button type="button" class="btn btn-primary mb-1" onclick="song_input.value='Come Together'; make_data('Come Together')">Come Together</button>
+            <button type="button" class="btn btn-primary mb-1" onclick="song_input.value='Get Back'; make_data('Get Back');">Get Back</button>
+            <button type="button" class="btn btn-primary mb-1" onclick="song_input.value='Day Tripper'; make_data('Day Tripper')">Day Tripper</button>
+            <button type="button" class="btn btn-primary mb-1" onclick="song_input.value='She Loves You'; make_data('She Loves You')">She Loves You</button>
+            <button type="button" class="btn btn-primary mb-1" onclick="song_input.value='Back In The U.S.S.R.'; make_data('Back In The U.S.S.R.')">Back In The U.S.S.R.</button>
+            <button type="button" class="btn btn-primary mb-1" onclick="song_input.value='Help!'; make_data('Help!')">Help!</button>
+            <button type="button" class="btn btn-primary mb-1" onclick="song_input.value='Baby\'s In Black'; make_data('Baby\'s In Black')">Baby's In Black</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -142,6 +156,7 @@
 
     function make_data(input){
       if(input in SONGDATA){
+        song_input.value = input; // change the input form
         data = SONGDATA[input];
         vue.song = input;
         vue.year = data[0];
