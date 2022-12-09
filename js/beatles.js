@@ -130,7 +130,7 @@ const SONGDATA = {
     'Happiness Is A Warm Gun':[,'','','','','','71LsKf3xISiOlY1mj7FFPP',],
     'Martha My Dear':[,'','','','','','1swmf4hFMJYRNA8Rq9PVaW',],
     "I'm So Tired":[,'','','','','','2X9H5BokS1u5O46YpNYNsZ',],
-    'Blackbird':[1968,'ポール','','https://beatlesdata.info/10/11_blackbird.html','','','5jgFfDIR6FR0gvlA56Nakr',],
+    'Blackbird':[1968,'ポール','','https://beatlesdata.info/10/11_blackbird.html','','RDxfjUEBT9I','5jgFfDIR6FR0gvlA56Nakr','<br>Blackbird singing in the dead of night<br>Take these broken wings and learn to fly<br>All your life<br>You were only waiting for this moment to arise<br><br>Blackbird singing in the dead of night<br>Take these sunken eyes and learn to see<br>All your life<br>You were only waiting for this moment to be free<br><br>Blackbird fly, blackbird fly<br>Into the light of the dark black night<br><br>Blackbird fly, blackbird fly<br>Into the light of the dark black night<br><br>Blackbird singing in the dead of night<br>Take these broken wings and learn to fly<br>All your life<br>You were only waiting for this moment to arise<br>You were only waiting for this moment to arise<br>You were only waiting for this moment to arise<br>'],
     'Piggies':[,'','','','','','4ZmjfLdJXbqjAENqk7eWSE',],
     'Rocky Raccoon':[,'','','','','','1ITQbrueGLl581a25XXm9c',],
     "Don't Pass Me By":[,'','','','','','4zq4rrfHZeZsTbo5vjJXSV',],
