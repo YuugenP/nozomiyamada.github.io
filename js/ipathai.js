@@ -22,13 +22,28 @@ function Copy() {
 
 function Click(char){
     target = document.getElementById("inputform");
-    target.value += char; // append result
+    if (target.selectionStart || target.selectionStart === 0){
+        let startPos = target.selectionStart;
+        let endPos = target.selectionEnd;
+        target.value = target.value.substring(0, startPos) + char + target.value.substring(endPos, target.value.length)
+        target.selectionStart = startPos + target.value.length; 
+        target.selectionEnd = startPos + target.value.length;
+    } else {
+        target.value += char
+    }
     target.focus({preventScroll:true});
 }
 
 function ClickTone(tone){
+    var selectedFlag;
     target = document.getElementById("inputform");
-    finalchar = target.value.slice(-1);
+    if (target.selectionStart || target.selectionStart === 0){
+        var startPos = target.selectionStart;
+        var endPos = target.selectionEnd;
+        selectedFlag = true
+    }
+    finalchar = (selectedFlag) ? target.value.substring(startPos - 1, startPos) : finalchar = target.value.slice(-1);
+    console.log(finalchar)
     switch (tone) {
         case 2:
             dic = {"a":"à","i":"ì","ɯ":"ɯ̀","u":"ù","e":"è","ɛ":"ɛ̀","o":"ò","ɔ":"ɔ̀","ə":"ə̀"};
@@ -44,7 +59,9 @@ function ClickTone(tone){
             break;
     }
     if (dic[finalchar]){
-        target.value = (target.value.slice(0,-1) + dic[finalchar]);
+        target.value = (selectedFlag) ? (target.value.substring(0, startPos - 1) + dic[finalchar] + target.value.substring(endPos, target.value.length)) : 
+        (target.value.slice(0,-1) + dic[finalchar]);
     }
+
     target.focus({preventScroll:true});
 }
